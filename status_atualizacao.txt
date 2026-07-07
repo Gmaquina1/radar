@@ -1,0 +1,7 @@
+Status: ok
+Verificado em: 2026-07-06T22:30:14
+Base eventos: 2026-07-06T21:41:29
+Base lotes: 2026-07-03T16:17:14
+Eventos futuros: 434
+Lotes: 3107
+Patios: 132

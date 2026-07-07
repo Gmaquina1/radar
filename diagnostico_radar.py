@@ -1,0 +1,128 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import argparse
+import csv
+import json
+from datetime import datetime
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parent
+REQUIRED_FILES = [
+    "index.html",
+    "radar-leiloes.html",
+    "gerar_site_github.py",
+    "atualizar_radar_leiloes.py",
+    "indexador_lotes.py",
+    "verificar_mapa_google.py",
+    "executar_atualizacao_radar.py",
+    ".github/workflows/atualizar-radar.yml",
+    "radar_leiloes_eventos_futuros.csv",
+    "radar_leiloes_eventos_todos.csv",
+    "radar_leiloes_patios.csv",
+    "radar_leiloes_base_completa.csv",
+    "radar_leiloes_resumo.json",
+    "lotes.json",
+    "lotes.csv",
+    "leiloes_do_brasil_completo.kml",
+]
+
+
+def read_json(path: Path) -> dict:
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+
+def count_csv(path: Path) -> int:
+    if not path.exists():
+        return 0
+    try:
+        with path.open(newline="", encoding="utf-8") as handle:
+            return sum(1 for _ in csv.DictReader(handle))
+    except Exception:
+        return 0
+
+
+def iso_now() -> str:
+    return datetime.now().isoformat(timespec="seconds")
+
+
+def build_status(extra: dict | None = None) -> dict:
+    resumo = read_json(ROOT / "radar_leiloes_resumo.json")
+    lotes = read_json(ROOT / "lotes.json")
+    missing = [name for name in REQUIRED_FILES if not (ROOT / name).exists()]
+
+    index = (ROOT / "index.html").read_text(encoding="utf-8", errors="replace") if (ROOT / "index.html").exists() else ""
+    workflow = (
+        (ROOT / ".github/workflows/atualizar-radar.yml").read_text(encoding="utf-8", errors="replace")
+        if (ROOT / ".github/workflows/atualizar-radar.yml").exists()
+        else ""
+    )
+
+    eventos_csv = count_csv(ROOT / "radar_leiloes_eventos_futuros.csv")
+    patios_csv = count_csv(ROOT / "radar_leiloes_patios.csv")
+    lotes_lista = lotes.get("lotes", [])
+    total_lotes = len(lotes_lista) if isinstance(lotes_lista, list) else int(lotes.get("total_lotes") or 0)
+
+    checks = {
+        "arquivos_obrigatorios": not missing,
+        "workflow_existe": ".github/workflows/atualizar-radar.yml" not in missing,
+        "workflow_agendado_30min": "*/30 * * * *" in workflow,
+        "workflow_resincronizacao_6h": "17 */6 * * *" in workflow,
+        "workflow_commit_status": "status_atualizacao.json" in workflow,
+        "mapa_no_site": "1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U" in index,
+        "eventos_csv_ok": eventos_csv > 0,
+        "lotes_json_ok": total_lotes > 0,
+    }
+
+    status = {
+        "status": "ok" if all(checks.values()) else "atencao",
+        "verificado_em": iso_now(),
+        "atualizado_em_base_eventos": resumo.get("atualizado_em", ""),
+        "atualizado_em_base_lotes": lotes.get("atualizado_em", ""),
+        "eventos_futuros": int(resumo.get("eventos_futuros_ou_hoje") or eventos_csv),
+        "patios": int(resumo.get("patios") or patios_csv),
+        "lotes": int(lotes.get("total_lotes") or total_lotes),
+        "mapa_id": "1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U",
+        "checks": checks,
+        "arquivos_faltando": missing,
+    }
+    if extra:
+        status.update(extra)
+    return status
+
+
+def write_status(status: dict) -> None:
+    (ROOT / "status_atualizacao.json").write_text(
+        json.dumps(status, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    lines = [
+        f"Status: {status.get('status')}",
+        f"Verificado em: {status.get('verificado_em')}",
+        f"Base eventos: {status.get('atualizado_em_base_eventos')}",
+        f"Base lotes: {status.get('atualizado_em_base_lotes')}",
+        f"Eventos futuros: {status.get('eventos_futuros')}",
+        f"Lotes: {status.get('lotes')}",
+        f"Patios: {status.get('patios')}",
+    ]
+    (ROOT / "status_atualizacao.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Gera diagnostico do Radar de Leiloes.")
+    parser.add_argument("--falhar-se-atencao", action="store_true")
+    args = parser.parse_args()
+
+    status = build_status()
+    write_status(status)
+    print(json.dumps(status, ensure_ascii=False, indent=2))
+    return 1 if args.falhar_se_atencao and status["status"] != "ok" else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

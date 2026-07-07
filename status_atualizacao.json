@@ -1,0 +1,21 @@
+{
+  "status": "ok",
+  "verificado_em": "2026-07-06T22:30:14",
+  "atualizado_em_base_eventos": "2026-07-06T21:41:29",
+  "atualizado_em_base_lotes": "2026-07-03T16:17:14",
+  "eventos_futuros": 434,
+  "patios": 132,
+  "lotes": 3107,
+  "mapa_id": "1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U",
+  "checks": {
+    "arquivos_obrigatorios": true,
+    "workflow_existe": true,
+    "workflow_agendado_30min": true,
+    "workflow_resincronizacao_6h": true,
+    "workflow_commit_status": true,
+    "mapa_no_site": true,
+    "eventos_csv_ok": true,
+    "lotes_json_ok": true
+  },
+  "arquivos_faltando": []
+}
