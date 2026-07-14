@@ -9,6 +9,17 @@
   <meta http-equiv="Expires" content="0">
   <meta name="description" content="Radar de Leilões G MAQUINA: busca nacional de leilões e lotes futuros, atualizada diariamente.">
   <title>Radar de Leilões G MAQUINA</title>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F2ZZFWTKE5"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments)}
+    let analyticsAccepted=false;
+    try{analyticsAccepted=localStorage.getItem('radar_premium_aviso_v1')==='aceito'}catch{}
+    gtag('consent','default',{analytics_storage:analyticsAccepted?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+    gtag('js',new Date());
+    gtag('config','G-F2ZZFWTKE5',{allow_google_signals:false});
+  </script>
   <style>
     :root{color-scheme:dark;--bg:#141d26;--surface:#1b2631;--card:#202c38;--card2:#263442;--line:#344555;--soft:rgba(255,255,255,.09);--text:#f1f5f8;--muted:#9cabb8;--yellow:#f7b801;--yellow2:#ffd02a;--green:#25c281;--blue:#4e9fe6;--danger:#ef6262;--shadow:0 18px 54px rgba(2,8,13,.28)}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;background:var(--bg);color:var(--text);font-family:Inter,Manrope,"Segoe UI",Arial,sans-serif}button,input,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{color:inherit}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}::selection{color:#080a0c;background:var(--yellow)}
@@ -131,7 +142,7 @@
     <section class="disclaimer-card" role="dialog" aria-modal="true" aria-labelledby="disclaimer-title" tabindex="-1">
       <div class="disclaimer-icon"><svg class="icon" style="width:26px;height:26px"><use href="#i-search"/></svg></div>
       <h2 id="disclaimer-title">Antes de continuar</h2>
-      <p>O <strong>Radar de Leilões G MAQUINA</strong> é um site independente de busca e organização de oportunidades. Não realizamos leilões, não somos leiloeiros e não intermediamos lances, pagamentos, vendas ou entregas. Confirme sempre todas as informações no site oficial do leiloeiro antes de tomar qualquer decisão.</p>
+      <p>O <strong>Radar de Leilões G MAQUINA</strong> é um site independente de busca e organização de oportunidades. Não realizamos leilões, não somos leiloeiros e não intermediamos lances, pagamentos, vendas ou entregas. Confirme sempre todas as informações no site oficial do leiloeiro antes de tomar qualquer decisão. Utilizamos medição de acesso para melhorar o Radar.</p>
       <button type="button" id="accept-disclaimer">LI E ENTENDI • CONTINUAR</button>
     </section>
   </div>
@@ -147,6 +158,7 @@
   const DISCLAIMER_STORE='radar_premium_aviso_v1';
   const SEARCH_STORE='radar_premium_busca_v1';
   const $=id=>document.getElementById(id);
+  const track=(eventName,params={})=>{if(typeof window.gtag==='function')window.gtag('event',eventName,params)};
   const norm=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR');
   const esc=v=>String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const icon=name=>`<svg class="icon"><use href="#i-${name}"/></svg>`;
@@ -170,11 +182,11 @@
   function loadSaved(){try{return JSON.parse(localStorage.getItem(STORE)||'[]')}catch{return[]}}
   function saveSaved(rows){localStorage.setItem(STORE,JSON.stringify(rows))}
   function isSaved(row){return loadSaved().includes(lotId(row))}
-  function toggleSaved(row){const id=lotId(row);const saved=loadSaved();const next=saved.includes(id)?saved.filter(item=>item!==id):[...saved,id];saveSaved(next);toast(saved.includes(id)?'Lote removido dos salvos.':'Lote salvo neste dispositivo.');render()}
+  function toggleSaved(row){const id=lotId(row);const saved=loadSaved();const wasSaved=saved.includes(id);const next=wasSaved?saved.filter(item=>item!==id):[...saved,id];saveSaved(next);track('save_lot',{action:wasSaved?'remove':'save',lot_title:displayTitle(row),auctioneer:auctioneer(row.leiloeiro)});toast(wasSaved?'Lote removido dos salvos.':'Lote salvo neste dispositivo.');render()}
   function toast(message){const el=$('toast');el.textContent=message;el.hidden=false;clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.hidden=true,2300)}
   function disclaimerAccepted(){try{return localStorage.getItem(DISCLAIMER_STORE)==='aceito'}catch{return false}}
   function openDisclaimer(){const overlay=$('disclaimer');overlay.hidden=false;document.body.classList.add('modal-open');setTimeout(()=>overlay.querySelector('.disclaimer-card').focus(),20)}
-  function acceptDisclaimer(){try{localStorage.setItem(DISCLAIMER_STORE,'aceito')}catch{}$('disclaimer').hidden=true;document.body.classList.remove('modal-open')}
+  function acceptDisclaimer(){try{localStorage.setItem(DISCLAIMER_STORE,'aceito')}catch{}if(typeof window.gtag==='function'){window.gtag('consent','update',{analytics_storage:'granted'});track('analytics_consent',{status:'granted'})}$('disclaimer').hidden=true;document.body.classList.remove('modal-open')}
   function formatDate(row){if(!row.data)return row.data_original||'Data a confirmar';const [y,m,d]=row.data.split('-');return `${d}/${m}/${y}${row.hora?` · ${row.hora}`:''}`}
   function auctioneer(value){return String(value||'Leiloeiro não informado').replace(/^https?:\/\//,'').replace(/^www\./,'').replace(/\/$/,'')}
   function setupCarousels(){document.querySelectorAll('[data-carousel]').forEach(carousel=>{const slides=[...carousel.querySelectorAll('img')];const dots=[...carousel.querySelectorAll('[data-slide]')];let current=0,timer=null,touchStart=0;const show=index=>{current=(index+slides.length)%slides.length;slides.forEach((slide,i)=>slide.classList.toggle('active',i===current));dots.forEach((dot,i)=>dot.classList.toggle('active',i===current))};const stop=()=>{if(timer)clearInterval(timer);timer=null};const play=()=>{stop();timer=setInterval(()=>show(current+1),4200)};dots.forEach(dot=>dot.addEventListener('click',event=>{event.stopPropagation();show(Number(dot.dataset.slide));play()}));carousel.addEventListener('touchstart',event=>{touchStart=event.changedTouches[0].clientX;stop()},{passive:true});carousel.addEventListener('touchend',event=>{const distance=event.changedTouches[0].clientX-touchStart;if(Math.abs(distance)>35)show(current+(distance<0?1:-1));play()},{passive:true});carousel.addEventListener('mouseenter',stop);carousel.addEventListener('mouseleave',play);carousel.addEventListener('focusin',stop);carousel.addEventListener('focusout',play);show(0);play()})}
@@ -199,24 +211,25 @@
       const lotLink=safeUrl(row.link_lote||row.link_evento);
       const title=displayTitle(row);
       const event=title!==row.evento?row.evento:'';
-      return `<article class="result-card"><div class="result-top"><div class="result-badges"><span class="available"><i></i>FUTURO</span></div><button type="button" class="save-btn ${saved?'saved':''}" data-save-index="${index}" aria-label="${saved?'Remover lote dos salvos':'Salvar lote'}">${icon('bookmark')}</button></div><span class="lot-number">LOTE ${esc(row.lote||'—')}</span><h3>${esc(title)}</h3>${event?`<p class="event-name">${esc(event)}</p>`:'<p class="event-name">Leilão oficial</p>'}<div class="result-meta"><span>${icon('pin')}${esc(row.local||row.uf||'Local a confirmar')}</span><span>${icon('calendar')}${esc(formatDate(row))}</span><span>${icon('gavel')}${esc(auctioneer(row.leiloeiro))}</span></div><div class="result-bottom"><div class="price-row"><div><small>${row.lance_atual?'LANCE INFORMADO':'MODALIDADE'}</small><strong>${esc(row.lance_atual||'Leilão online')}</strong></div></div><div class="card-actions single">${lotLink?`<a class="primary" href="${esc(lotLink)}" target="_blank" rel="noopener">ABRIR OPORTUNIDADE ${icon('external')}</a>`:''}</div></div></article>`;
+      return `<article class="result-card"><div class="result-top"><div class="result-badges"><span class="available"><i></i>FUTURO</span></div><button type="button" class="save-btn ${saved?'saved':''}" data-save-index="${index}" aria-label="${saved?'Remover lote dos salvos':'Salvar lote'}">${icon('bookmark')}</button></div><span class="lot-number">LOTE ${esc(row.lote||'—')}</span><h3>${esc(title)}</h3>${event?`<p class="event-name">${esc(event)}</p>`:'<p class="event-name">Leilão oficial</p>'}<div class="result-meta"><span>${icon('pin')}${esc(row.local||row.uf||'Local a confirmar')}</span><span>${icon('calendar')}${esc(formatDate(row))}</span><span>${icon('gavel')}${esc(auctioneer(row.leiloeiro))}</span></div><div class="result-bottom"><div class="price-row"><div><small>${row.lance_atual?'LANCE INFORMADO':'MODALIDADE'}</small><strong>${esc(row.lance_atual||'Leilão online')}</strong></div></div><div class="card-actions single">${lotLink?`<a class="primary" href="${esc(lotLink)}" target="_blank" rel="noopener" data-open-index="${index}">ABRIR OPORTUNIDADE ${icon('external')}</a>`:''}</div></div></article>`;
     }).join('');
     grid.querySelectorAll('[data-save-index]').forEach(btn=>btn.addEventListener('click',()=>toggleSaved(current[Number(btn.dataset.saveIndex)])));
+    grid.querySelectorAll('[data-open-index]').forEach(link=>link.addEventListener('click',()=>{const row=current[Number(link.dataset.openIndex)];if(row)track('open_opportunity',{lot_title:displayTitle(row),auctioneer:auctioneer(row.leiloeiro),state:row.uf||'nao_informado'})}));
     $('load-more').hidden=state.visible>=current.length;
   }
   function resetVisible(){state.visible=12;render()}
   function clearFilters(){state.query='';state.category='all';state.uf='';state.days='all';state.savedOnly=false;$('search-input').value='';$('state-filter').value='';$('date-filter').value='all';localStorage.removeItem(SEARCH_STORE);resetVisible()}
-  function showSaved(event){if(event)event.preventDefault();state.savedOnly=true;state.visible=12;render();$('resultados').scrollIntoView({behavior:'smooth'})}
+  function showSaved(event){if(event)event.preventDefault();state.savedOnly=true;state.visible=12;render();track('view_saved_lots',{result_count:current.length});$('resultados').scrollIntoView({behavior:'smooth'})}
   function setup(){state.query=localStorage.getItem(SEARCH_STORE)||'';$('search-input').value=state.query;$('metric-events').textContent=formatNumber((BASE.eventos||[]).length);$('metric-lots').textContent=formatNumber(lots.length);$('metric-yards').textContent=formatNumber((BASE.patios||[]).length);$('map-frame').src=BASE.mapa||'';const events=BASE.eventos||[];const count=uf=>events.filter(row=>row.uf===uf).length;$('region-mg').textContent=formatNumber(count('MG'));$('region-sp').textContent=formatNumber(count('SP'));$('region-pr').textContent=formatNumber(count('PR'));$('region-other').textContent=formatNumber(events.length-count('MG')-count('SP')-count('PR'));const ufs=[...new Set(lots.map(row=>row.uf).filter(Boolean))].sort();$('state-filter').innerHTML='<option value="">Todos os estados</option>'+ufs.map(uf=>`<option value="${esc(uf)}">${esc(uf)}</option>`).join('');$('updated-label').textContent='ATUALIZADO TODOS OS DIAS';$('footer-update').textContent='Site atualizado todos os dias.';render()}
-  $('search-form').addEventListener('submit',event=>{event.preventDefault();state.query=$('search-input').value.trim();localStorage.setItem(SEARCH_STORE,state.query);state.savedOnly=false;resetVisible();$('resultados').scrollIntoView({behavior:'smooth'})});
+  $('search-form').addEventListener('submit',event=>{event.preventDefault();state.query=$('search-input').value.trim();localStorage.setItem(SEARCH_STORE,state.query);state.savedOnly=false;resetVisible();track('search',{search_term:state.query||'busca_vazia',result_count:current.length,search_source:'campo_principal'});$('resultados').scrollIntoView({behavior:'smooth'})});
   $('search-input').addEventListener('input',event=>{state.query=event.target.value;localStorage.setItem(SEARCH_STORE,state.query)});
-  document.querySelectorAll('[data-category]').forEach(btn=>btn.addEventListener('click',()=>{state.category=btn.dataset.category;state.savedOnly=false;resetVisible()}));
-  document.querySelectorAll('[data-feature-search]').forEach(btn=>btn.addEventListener('click',()=>{state.query=btn.dataset.featureSearch;$('search-input').value=state.query;localStorage.setItem(SEARCH_STORE,state.query);state.category='all';state.savedOnly=false;resetVisible();$('resultados').scrollIntoView({behavior:'smooth'})}));
+  document.querySelectorAll('[data-category]').forEach(btn=>btn.addEventListener('click',()=>{state.category=btn.dataset.category;state.savedOnly=false;resetVisible();track('filter_category',{category:state.category,result_count:current.length})}));
+  document.querySelectorAll('[data-feature-search]').forEach(btn=>btn.addEventListener('click',()=>{state.query=btn.dataset.featureSearch;$('search-input').value=state.query;localStorage.setItem(SEARCH_STORE,state.query);state.category='all';state.savedOnly=false;resetVisible();track('search',{search_term:state.query,result_count:current.length,search_source:'atalho_destaque'});$('resultados').scrollIntoView({behavior:'smooth'})}));
   document.querySelectorAll('[data-show-saved]').forEach(item=>item.addEventListener('click',showSaved));
-  $('state-filter').addEventListener('change',event=>{state.uf=event.target.value;state.savedOnly=false;resetVisible()});
-  $('date-filter').addEventListener('change',event=>{state.days=event.target.value;state.savedOnly=false;resetVisible()});
+  $('state-filter').addEventListener('change',event=>{state.uf=event.target.value;state.savedOnly=false;resetVisible();track('filter_state',{state:state.uf||'todos',result_count:current.length})});
+  $('date-filter').addEventListener('change',event=>{state.days=event.target.value;state.savedOnly=false;resetVisible();track('filter_date',{days:state.days,result_count:current.length})});
   $('show-all').addEventListener('click',()=>{state.savedOnly=false;resetVisible()});
-  $('load-more').addEventListener('click',()=>{state.visible+=12;render()});
+  $('load-more').addEventListener('click',()=>{state.visible+=12;render();track('view_more_results',{visible_results:Math.min(state.visible,current.length),total_results:current.length})});
   $('accept-disclaimer').addEventListener('click',acceptDisclaimer);
   $('open-disclaimer').addEventListener('click',openDisclaimer);
   window.addEventListener('keydown',event=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='k'){event.preventDefault();$('search-input').focus()}});

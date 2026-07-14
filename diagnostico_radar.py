@@ -87,6 +87,9 @@ def build_status(extra: dict | None = None) -> dict:
         "resultados_sem_fotos_de_lote": "data-lot-photo" not in index
         and '<div class="result-photo">' not in index
         and "IMAGEM REAL DE REFERÊNCIA" not in index,
+        "google_analytics_configurado": index.count("G-F2ZZFWTKE5") >= 2
+        and "googletagmanager.com/gtag/js" in index
+        and "open_opportunity" in index,
         "site_informa_atualizacao_diaria": "ATUALIZADO TODOS OS DIAS" in index,
         "site_tem_aviso_independente": "site independente de busca" in index and "LI E ENTENDI" in index,
         "eventos_csv_ok": eventos_csv > 0,
