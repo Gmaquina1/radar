@@ -1,5 +1,5 @@
 Status: ok
-Verificado em: 2026-07-14T11:24:31-03:00
+Verificado em: 2026-07-14T11:42:22-03:00
 Base eventos: 2026-07-13T22:35:37-03:00
 Base lotes: 2026-07-13T22:44:53-03:00
 Eventos futuros: 433

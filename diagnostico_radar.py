@@ -79,7 +79,9 @@ def build_status(extra: dict | None = None) -> dict:
         "workflow_diario_16h": '0 19 * * *' in workflow,
         "workflow_gera_diagnostico": "diagnostico_radar.py" in workflow or "executar_atualizacao_radar.py" in workflow,
         "workflow_indexa_lotes": "indexador_lotes.py" in workflow or "executar_atualizacao_radar.py" in workflow,
-        "mapa_no_site": "1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U" in index,
+        "dados_do_mapa_preservados_sem_exibicao": "1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U" in index
+        and 'id="map-frame"' not in index
+        and 'href="#mapa"' not in index,
         "base_embutida_no_site": 'id="radar-data"' in index,
         "carrosseis_fotos_reais_embutidos": index.count("data:image/jpeg;base64,") >= 9
         and index.count('data-carousel="') >= 3
