@@ -12,6 +12,7 @@ https://gmaquina1.github.io/radar/
 - abre o lote no site oficial do leiloeiro;
 - lê editais disponíveis para ampliar a qualidade da pesquisa;
 - informa claramente que o Radar é independente e não realiza nem intermedeia leilões;
+- usa fotografias reais incorporadas ao HTML, sem depender de servidor externo ou da pasta de imagens no aparelho do visitante;
 - salva oportunidades no próprio aparelho do visitante;
 - atualiza mapa, eventos, lotes e editais todos os dias às 16h de Brasília;
 - mantém uma cópia dos lotes de eventos ativos quando um portal bloqueia temporariamente a consulta.
@@ -39,7 +40,7 @@ Também é possível executar manualmente em **Actions → Atualizar Radar diari
 - `atualizar_radar_leiloes.py`: atualiza mapa, datas e links de editais;
 - `indexador_lotes.py`: lê sites, APIs, HTML e documentos PDF;
 - `lotes.json`: base dos lotes;
-- `assets/`: imagens do visual Premium;
+- as fotografias reais já estão incorporadas em `index.html` e `site_template.html`;
 - `.github/workflows/atualizar-radar.yml`: agendamento diário.
 
 ## GitHub Pages

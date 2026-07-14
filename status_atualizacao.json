@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "verificado_em": "2026-07-14T00:13:02-03:00",
+  "verificado_em": "2026-07-14T00:24:21-03:00",
   "atualizado_em_base_eventos": "2026-07-13T22:35:37-03:00",
   "atualizado_em_base_lotes": "2026-07-13T22:44:53-03:00",
   "eventos_futuros": 433,
@@ -18,6 +18,7 @@
     "workflow_indexa_lotes": true,
     "mapa_no_site": true,
     "base_embutida_no_site": true,
+    "fotos_reais_embutidas": true,
     "site_informa_atualizacao_diaria": true,
     "site_tem_aviso_independente": true,
     "eventos_csv_ok": true,

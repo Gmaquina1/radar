@@ -16,9 +16,6 @@ REQUIRED_FILES = [
     ".nojekyll",
     "radar-leiloes.html",
     "site_template.html",
-    "assets/excavator.png",
-    "assets/dump-truck.webp",
-    "assets/pickup.webp",
     "gerar_site_github.py",
     "atualizar_radar_leiloes.py",
     "indexador_lotes.py",
@@ -84,6 +81,8 @@ def build_status(extra: dict | None = None) -> dict:
         "workflow_indexa_lotes": "indexador_lotes.py" in workflow or "executar_atualizacao_radar.py" in workflow,
         "mapa_no_site": "1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U" in index,
         "base_embutida_no_site": 'id="radar-data"' in index,
+        "fotos_reais_embutidas": index.count("data:image/jpeg;base64,") >= 3
+        and "FOTO REAL • REFERÊNCIA VISUAL" in index,
         "site_informa_atualizacao_diaria": "ATUALIZADO TODOS OS DIAS" in index,
         "site_tem_aviso_independente": "site independente de busca" in index and "LI E ENTENDI" in index,
         "eventos_csv_ok": eventos_csv > 0,
