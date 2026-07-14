@@ -83,7 +83,7 @@ def build_status(extra: dict | None = None) -> dict:
         "base_embutida_no_site": 'id="radar-data"' in index,
         "carrosseis_fotos_reais_embutidos": index.count("data:image/jpeg;base64,") >= 9
         and index.count('data-carousel="') >= 3
-        and "FOTOS REAIS • BRASIL" in index,
+        and "FOTOS REAIS • REFERÊNCIA VISUAL" in index,
         "site_preparado_para_foto_do_lote": "foto_lote" in index
         and "FOTO DO LOTE" in index
         and "IMAGEM REAL DE REFERÊNCIA" in index,
