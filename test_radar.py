@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import unittest
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 import indexador_lotes as indexador
+import atualizar_radar_leiloes as atualizador
 
 
 class RadarTests(unittest.TestCase):
@@ -48,6 +51,29 @@ class RadarTests(unittest.TestCase):
 
     def test_rejeita_link_social(self) -> None:
         self.assertFalse(indexador.looks_like_lot("WhatsApp", "https://api.whatsapp.com/send?text=lote"))
+
+    def test_lote_extraido_do_pdf_guarda_link_do_edital(self) -> None:
+        evento = {**self.evento, "link_edital": "https://exemplo.com/edital.pdf"}
+        rows = indexador.lot_rows_from_text(
+            evento,
+            "https://exemplo.com/leilao/1",
+            "https://exemplo.com/edital.pdf",
+            "\nLOTE 01 - Caminhao basculante, lance minimo R$ 90.000,00\n",
+            "pdf_ok",
+        )
+        self.assertEqual(rows[0]["link_edital"], "https://exemplo.com/edital.pdf")
+
+    def test_remove_evento_de_hoje_com_horario_passado(self) -> None:
+        now = datetime(2026, 7, 14, 16, 0, tzinfo=ZoneInfo("America/Sao_Paulo"))
+        passado = {"data": "2026-07-14", "hora_marcador": "10:00"}
+        futuro = {"data": "2026-07-14", "hora_marcador": "18:00"}
+        self.assertFalse(atualizador.is_upcoming_event(passado, now))
+        self.assertTrue(atualizador.is_upcoming_event(futuro, now))
+
+    def test_remove_lote_de_data_passada(self) -> None:
+        now = datetime(2026, 7, 14, 16, 0, tzinfo=ZoneInfo("America/Sao_Paulo"))
+        self.assertFalse(indexador.upcoming_lot({"data": "2026-07-13", "hora": "18:00"}, now))
+        self.assertTrue(indexador.upcoming_lot({"data": "2026-07-15", "hora": "08:00"}, now))
 
 
 if __name__ == "__main__":

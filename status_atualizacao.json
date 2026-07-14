@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "verificado_em": "2026-07-13T22:46:17-03:00",
+  "verificado_em": "2026-07-13T23:51:38-03:00",
   "atualizado_em_base_eventos": "2026-07-13T22:35:37-03:00",
   "atualizado_em_base_lotes": "2026-07-13T22:44:53-03:00",
   "eventos_futuros": 433,
@@ -13,12 +13,13 @@
   "checks": {
     "arquivos_obrigatorios": true,
     "workflow_existe": true,
-    "workflow_agendado_30min": true,
-    "workflow_resincronizacao_6h": true,
+    "workflow_diario_16h": true,
     "workflow_gera_diagnostico": true,
     "workflow_indexa_lotes": true,
     "mapa_no_site": true,
     "base_embutida_no_site": true,
+    "site_informa_atualizacao_diaria": true,
+    "site_abre_edital": true,
     "eventos_csv_ok": true,
     "lotes_json_ok": true,
     "lotes_csv_consistente": true

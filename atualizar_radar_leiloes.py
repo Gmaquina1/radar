@@ -46,6 +46,10 @@ FIELDS = [
     "resumo_edital",
     "descricao",
 ]
+VALID_UFS = {
+    "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG",
+    "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO",
+}
 
 
 URL_RE = re.compile(r"https?://[^\s<>\"']+", re.I)
@@ -404,22 +408,41 @@ def enrich_rows(rows, workers=8):
 
 
 def update_status(row, today):
-    if row.get("data"):
-        row["status_data"] = "futuro_ou_hoje" if date.fromisoformat(row["data"]) >= today else "passado"
-    else:
-        row["status_data"] = "sem_data"
+    reference = today if isinstance(today, datetime) else datetime.combine(today, datetime.min.time(), tzinfo=TIMEZONE)
+    row["status_data"] = "futuro_ou_hoje" if is_upcoming_event(row, reference) else "passado"
     return row
+
+
+def is_upcoming_event(row, now=None):
+    """Retorna verdadeiro apenas quando o horario do leilao ainda nao passou."""
+    now = now or datetime.now(TIMEZONE)
+    data_iso = row.get("data", "")
+    if not data_iso:
+        return False
+    try:
+        event_day = date.fromisoformat(data_iso)
+    except ValueError:
+        return False
+    if event_day > now.date():
+        return True
+    if event_day < now.date():
+        return False
+    hour = format_hour_24(row.get("hora_marcador", ""))
+    if not hour:
+        return True
+    event_at = datetime.fromisoformat(f"{data_iso}T{hour}").replace(tzinfo=TIMEZONE)
+    return event_at > now
 
 
 def infer_uf(*values):
     merged = " ".join(value or "" for value in values)
     for match in re.finditer(r"[-,\/]\s*([A-Z]{2})(?:\s|,|$)", merged):
         uf = match.group(1)
-        if uf not in {"DO", "DE", "DA", "EM", "KM", "BR"}:
+        if uf in VALID_UFS:
             return uf
     for match in UF_RE.finditer(merged):
         uf = match.group(1)
-        if uf not in {"DO", "DE", "DA", "EM", "KM", "BR"}:
+        if uf in VALID_UFS:
             return uf
     return ""
 
@@ -502,7 +525,10 @@ def main():
 
     out = Path(args.saida).resolve()
     out.mkdir(parents=True, exist_ok=True)
-    today = date.fromisoformat(args.data_base) if args.data_base else datetime.now(TIMEZONE).date()
+    now = datetime.now(TIMEZONE)
+    today = date.fromisoformat(args.data_base) if args.data_base else now.date()
+    if args.data_base:
+        now = datetime.combine(today, datetime.min.time(), tzinfo=TIMEZONE)
 
     kml_path = out / "leiloes_do_brasil_completo.kml"
     if args.usar_kml_local:
@@ -520,7 +546,7 @@ def main():
     ]
     if not args.sem_editais:
         eventos = enrich_rows(eventos, args.workers)
-        eventos = [update_status(row, today) for row in eventos]
+        eventos = [update_status(row, now) for row in eventos]
         enriched_by_key = {
             (row.get("nome", ""), row.get("link", "")): row
             for row in eventos
@@ -530,7 +556,7 @@ def main():
             for row in rows
         ]
 
-    futuros = [row for row in eventos if row["status_data"] == "futuro_ou_hoje"]
+    futuros = [row for row in eventos if is_upcoming_event(row, now)]
     patios = [row for row in rows if row["camada"] == "[PÁTIO DO LEILOEIRO]"]
 
     write_csv(out / "radar_leiloes_eventos_futuros.csv", futuros)

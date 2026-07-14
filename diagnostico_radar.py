@@ -13,7 +13,12 @@ ROOT = Path(__file__).resolve().parent
 TIMEZONE = ZoneInfo("America/Sao_Paulo")
 REQUIRED_FILES = [
     "index.html",
+    ".nojekyll",
     "radar-leiloes.html",
+    "site_template.html",
+    "assets/excavator.png",
+    "assets/dump-truck.webp",
+    "assets/pickup.webp",
     "gerar_site_github.py",
     "atualizar_radar_leiloes.py",
     "indexador_lotes.py",
@@ -74,12 +79,13 @@ def build_status(extra: dict | None = None) -> dict:
     checks = {
         "arquivos_obrigatorios": not missing,
         "workflow_existe": ".github/workflows/atualizar-radar.yml" not in missing,
-        "workflow_agendado_30min": "*/30 * * * *" in workflow,
-        "workflow_resincronizacao_6h": "17 */6 * * *" in workflow,
+        "workflow_diario_16h": '0 19 * * *' in workflow,
         "workflow_gera_diagnostico": "diagnostico_radar.py" in workflow or "executar_atualizacao_radar.py" in workflow,
         "workflow_indexa_lotes": "indexador_lotes.py" in workflow or "executar_atualizacao_radar.py" in workflow,
         "mapa_no_site": "1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U" in index,
         "base_embutida_no_site": 'id="radar-data"' in index,
+        "site_informa_atualizacao_diaria": "ATUALIZAÇÃO DIÁRIA" in index and "16H" in index,
+        "site_abre_edital": "ABRIR EDITAL COMPLETO" in index,
         "eventos_csv_ok": eventos_csv > 0,
         "lotes_json_ok": total_lotes > 0,
         "lotes_csv_consistente": lotes_csv == total_lotes,

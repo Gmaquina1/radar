@@ -44,6 +44,8 @@ FIELDS = [
     "local",
     "link_evento",
     "link_lote",
+    "link_edital",
+    "resumo_edital",
     "fonte",
     "capturado_em",
     "status_captura",
@@ -539,6 +541,7 @@ def capture_status(status_code: int, page: str) -> str:
 
 
 def event_base(event: dict[str, str], link_evento: str, source_url: str, status: str) -> dict[str, str]:
+    source_is_edital = bool(PDF_RE.search(source_url or "") or "drive.google.com" in domain(source_url))
     return {
         "leiloeiro": domain(source_url or link_evento),
         "evento": event.get("nome", ""),
@@ -548,6 +551,8 @@ def event_base(event: dict[str, str], link_evento: str, source_url: str, status:
         "uf": event.get("uf", ""),
         "local": event.get("endereco_ou_localizacao", ""),
         "link_evento": link_evento,
+        "link_edital": event.get("link_edital", "") or (source_url if source_is_edital else ""),
+        "resumo_edital": event.get("resumo_edital", ""),
         "fonte": source_url or link_evento,
         "capturado_em": datetime.now(TIMEZONE).isoformat(timespec="seconds"),
         "status_captura": status,
@@ -755,13 +760,24 @@ def extract_one_event(index: int, event: dict[str, str], delay: float) -> tuple[
         status = capture_status(status_code, page)
         page_lots = extract_lots_from_page(event, source_url, page, final_url, status) if status_code == 200 else []
         attempts.append({"url": source_url, "status": status, "http": status_code, "lotes": len(page_lots)})
-        if page_lots:
-            extracted.extend(page_lots)
-            final_status = "html_ok"
-            break
-
-        # Se a pagina do evento aponta para um edital, usa o PDF como segunda fonte.
+        # Mesmo quando a pagina ja mostra lotes, le tambem o edital. Muitos portais
+        # resumem o bem na tela, mas deixam a descricao completa somente no PDF.
+        pdf_candidates = []
+        event_edital = clean_text(event.get("link_edital", ""))
+        if event_edital:
+            pdf_candidates.append(event_edital)
         for pdf_url in pdf_links_from_html(page, final_url):
+            if pdf_url not in pdf_candidates:
+                pdf_candidates.append(pdf_url)
+
+        if page_lots:
+            if pdf_candidates:
+                for row in page_lots:
+                    row["link_edital"] = row.get("link_edital") or pdf_candidates[0]
+                    row["resumo_edital"] = row.get("resumo_edital") or event.get("resumo_edital", "")
+            extracted.extend(page_lots)
+
+        for pdf_url in pdf_candidates[:2]:
             pdf_code, pdf_raw, pdf_type, pdf_final = fetch_bytes(pdf_url)
             if pdf_code != 200 or not (pdf_raw[:4] == b"%PDF" or "pdf" in pdf_type.casefold()):
                 continue
@@ -769,10 +785,11 @@ def extract_one_event(index: int, event: dict[str, str], delay: float) -> tuple[
             attempts.append({"url": pdf_url, "status": "pdf_link_ok" if pdf_lots else "pdf_link_sem_lotes", "http": pdf_code, "lotes": len(pdf_lots)})
             if pdf_lots:
                 extracted.extend(pdf_lots)
-                final_status = "pdf_link_ok"
+                final_status = "html_pdf_ok" if page_lots else "pdf_link_ok"
                 final_url = pdf_final or pdf_url
-                break
         if extracted:
+            if final_status not in {"html_pdf_ok", "pdf_link_ok"}:
+                final_status = "html_ok"
             break
         final_status = status
 
@@ -862,6 +879,29 @@ def valid_lot(row: dict[str, str]) -> bool:
     if re.fullmatch(r"\d+\.\d{2,}", number):
         return False
     return True
+
+
+def upcoming_lot(row: dict[str, str], now: datetime | None = None) -> bool:
+    """Mantem somente lotes cujo leilao ainda nao comecou no horario de Brasilia."""
+    now = now or datetime.now(TIMEZONE)
+    event_date = clean_text(row.get("data", ""))
+    if not event_date:
+        return False
+    try:
+        event_day = datetime.strptime(event_date, "%Y-%m-%d").date()
+    except ValueError:
+        return False
+    if event_day > now.date():
+        return True
+    if event_day < now.date():
+        return False
+    hour_match = re.search(r"(\d{1,2})[:h](\d{2})?", clean_text(row.get("hora", "")), re.I)
+    if not hour_match:
+        return True
+    hour = min(23, int(hour_match.group(1)))
+    minute = min(59, int(hour_match.group(2) or 0))
+    event_at = datetime(event_day.year, event_day.month, event_day.day, hour, minute, tzinfo=TIMEZONE)
+    return event_at > now
 
 
 def clean_existing_outputs(json_path: Path, csv_path: Path) -> int:
@@ -973,7 +1013,7 @@ def main() -> None:
             continue
         seen.add(key)
         deduped.append(row)
-    lots = deduped
+    lots = [row for row in deduped if upcoming_lot(row)]
 
     payload = {
         "atualizado_em": datetime.now(TIMEZONE).isoformat(timespec="seconds"),
