@@ -112,7 +112,7 @@ def enrich_and_dedupe_lots(
             continue
         preferred, other = (row, current) if quality(row) > quality(current) else (current, row)
         merged = {**other, **preferred}
-        for field in ("lote", "link_edital", "resumo_edital", "link_evento", "lance_atual"):
+        for field in ("lote", "foto_lote", "link_edital", "resumo_edital", "link_evento", "lance_atual"):
             merged[field] = preferred.get(field) or other.get(field, "")
         selected[key] = merged
     return sorted(

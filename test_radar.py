@@ -52,6 +52,33 @@ class RadarTests(unittest.TestCase):
     def test_rejeita_link_social(self) -> None:
         self.assertFalse(indexador.looks_like_lot("WhatsApp", "https://api.whatsapp.com/send?text=lote"))
 
+    def test_extrai_foto_do_json_do_lote(self) -> None:
+        item = {"title": "Lote 12 - Escavadeira", "images": [{"url": "/fotos/lote-12.jpg"}]}
+        self.assertEqual(
+            indexador.image_from_dict(item, "https://leiloeiro.com/evento/1"),
+            "https://leiloeiro.com/fotos/lote-12.jpg",
+        )
+
+    def test_extrai_foto_de_card_html(self) -> None:
+        page = '<a href="/lote/7"><img data-src="/fotos/7.webp" alt="Lote 7 - Caminhão"></a>'
+        event = {"nome": "Leilão teste", "data": "2099-01-01", "link": "https://leiloeiro.com/evento"}
+        rows = indexador.extract_lots_from_page(
+            event,
+            event["link"],
+            page,
+            "https://leiloeiro.com/evento",
+            "ok",
+        )
+        self.assertEqual(rows[0]["foto_lote"], "https://leiloeiro.com/fotos/7.webp")
+
+    def test_rejeita_logo_como_foto_do_lote(self) -> None:
+        self.assertEqual(indexador.valid_image_url("/assets/logo-site.png", "https://leiloeiro.com"), "")
+
+    def test_extrai_foto_de_background_do_card(self) -> None:
+        parser = indexador.LinkParser()
+        parser.feed('<a href="/lote/9"><div style="background-image:url(/fotos/9.jpg)">Lote 9</div></a>')
+        self.assertEqual(parser.link_images["/lote/9"], "/fotos/9.jpg")
+
     def test_lote_extraido_do_pdf_guarda_link_do_edital(self) -> None:
         evento = {**self.evento, "link_edital": "https://exemplo.com/edital.pdf"}
         rows = indexador.lot_rows_from_text(

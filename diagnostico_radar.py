@@ -81,8 +81,12 @@ def build_status(extra: dict | None = None) -> dict:
         "workflow_indexa_lotes": "indexador_lotes.py" in workflow or "executar_atualizacao_radar.py" in workflow,
         "mapa_no_site": "1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U" in index,
         "base_embutida_no_site": 'id="radar-data"' in index,
-        "fotos_reais_embutidas": index.count("data:image/jpeg;base64,") >= 3
-        and "FOTO REAL • REFERÊNCIA VISUAL" in index,
+        "carrosseis_fotos_reais_embutidos": index.count("data:image/jpeg;base64,") >= 9
+        and index.count('data-carousel="') >= 3
+        and "FOTOS REAIS • BRASIL" in index,
+        "site_preparado_para_foto_do_lote": "foto_lote" in index
+        and "FOTO DO LOTE" in index
+        and "IMAGEM REAL DE REFERÊNCIA" in index,
         "site_informa_atualizacao_diaria": "ATUALIZADO TODOS OS DIAS" in index,
         "site_tem_aviso_independente": "site independente de busca" in index and "LI E ENTENDI" in index,
         "eventos_csv_ok": eventos_csv > 0,

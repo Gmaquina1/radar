@@ -44,6 +44,7 @@ FIELDS = [
     "local",
     "link_evento",
     "link_lote",
+    "foto_lote",
     "link_edital",
     "resumo_edital",
     "fonte",
@@ -106,7 +107,9 @@ class LinkParser(HTMLParser):
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
         self.links: list[tuple[str, str]] = []
+        self.link_images: dict[str, str] = {}
         self._href: str | None = None
+        self._image = ""
         self._text: list[str] = []
         self.title = ""
         self._in_title = False
@@ -115,13 +118,39 @@ class LinkParser(HTMLParser):
         self.visible_text: list[str] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
-        if tag.lower() in {"script", "style", "noscript", "svg"}:
+        lower_tag = tag.lower()
+        attrs_dict = {k.lower(): v or "" for k, v in attrs}
+        if lower_tag in {"script", "style", "noscript", "svg"}:
             self._ignored_depth += 1
-        if tag.lower() == "a":
-            attrs_dict = {k.lower(): v or "" for k, v in attrs}
+        if lower_tag == "a":
             self._href = attrs_dict.get("href")
             self._text = []
-        elif tag.lower() == "title":
+            self._image = ""
+        elif lower_tag in {"img", "source"} and self._href is not None:
+            srcset = attrs_dict.get("srcset", "").split(",")[0].strip().split(" ")[0]
+            self._image = next(
+                (
+                    value
+                    for value in (
+                        attrs_dict.get("src"),
+                        attrs_dict.get("data-src"),
+                        attrs_dict.get("data-lazy-src"),
+                        attrs_dict.get("data-original"),
+                        attrs_dict.get("data-bg"),
+                        attrs_dict.get("data-background-image"),
+                        srcset,
+                    )
+                    if value
+                ),
+                "",
+            )
+            if attrs_dict.get("alt"):
+                self._text.append(attrs_dict["alt"])
+        elif self._href is not None and "background" in attrs_dict.get("style", "").casefold():
+            match = re.search(r"url\([\"']?([^\)\"']+)", attrs_dict["style"], re.I)
+            if match:
+                self._image = match.group(1)
+        elif lower_tag == "title":
             self._in_title = True
             self._title_text = []
 
@@ -132,8 +161,11 @@ class LinkParser(HTMLParser):
             text = clean_text(" ".join(self._text))
             if text:
                 self.links.append((self._href, text))
+            if self._image:
+                self.link_images[self._href] = self._image
             self._href = None
             self._text = []
+            self._image = ""
         elif tag.lower() == "title":
             self._in_title = False
             self.title = clean_text(" ".join(self._title_text))
@@ -350,6 +382,76 @@ def url_from_dict(data: dict, base_url: str) -> str:
     return ""
 
 
+def valid_image_url(value: str, base_url: str = "") -> str:
+    value = html.unescape(str(value or "")).replace("\\/", "/").strip()
+    if not value or value.startswith(("data:", "blob:", "javascript:")):
+        return ""
+    url = absolute_url(base_url, value)
+    parsed = urllib.parse.urlparse(url)
+    if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+        return ""
+    lowered = url.casefold()
+    blocked = ("logo", "avatar", "icon", "placeholder", "spacer", "pixel", "whatsapp", "facebook", "instagram")
+    if any(word in lowered for word in blocked) or parsed.path.casefold().endswith(".svg"):
+        return ""
+    return url
+
+
+def image_from_value(value: object, base_url: str) -> str:
+    if isinstance(value, str):
+        return valid_image_url(value, base_url)
+    if isinstance(value, list):
+        for item in value:
+            found = image_from_value(item, base_url)
+            if found:
+                return found
+        return ""
+    if isinstance(value, dict):
+        for key in ("url", "src", "href", "imageUrl", "imageURL", "photoUrl", "thumbnailUrl", "original", "large"):
+            if value.get(key):
+                found = image_from_value(value[key], base_url)
+                if found:
+                    return found
+        for item in value.values():
+            if isinstance(item, (dict, list)):
+                found = image_from_value(item, base_url)
+                if found:
+                    return found
+    return ""
+
+
+def image_from_dict(data: dict, base_url: str) -> str:
+    image_keys = (
+        "image",
+        "images",
+        "imagem",
+        "imagens",
+        "photo",
+        "photos",
+        "foto",
+        "fotos",
+        "picture",
+        "pictures",
+        "thumbnail",
+        "thumbnailUrl",
+        "imageUrl",
+        "imageURL",
+        "photoUrl",
+        "coverImage",
+        "featuredImage",
+        "productImages",
+        "lotImages",
+        "media",
+        "gallery",
+    )
+    for key in image_keys:
+        if data.get(key) not in (None, "", []):
+            found = image_from_value(data[key], base_url)
+            if found:
+                return found
+    return ""
+
+
 def lot_number(value: str) -> str:
     match = LOT_RE.search(value or "")
     return match.group(1) if match else ""
@@ -455,6 +557,7 @@ def lot_from_superbid_offer(
         "hora": api_hour or event.get("hora_marcador", ""),
         "local": local,
         "link_lote": offer_link(source_url, offer, title),
+        "foto_lote": image_from_dict(product, source_url) or image_from_dict(offer, source_url),
     }
     return row
 
@@ -669,6 +772,7 @@ def extract_lots_from_page(event: dict[str, str], link_evento: str, page: str, f
                     "lance_atual": price_from_dict(item),
                     "lote": lot_number(title),
                     "link_lote": link_lote,
+                    "foto_lote": image_from_dict(item, final_url),
                 }
             )
 
@@ -690,6 +794,7 @@ def extract_lots_from_page(event: dict[str, str], link_evento: str, page: str, f
                 "lance_atual": nearby_price.group(0) if nearby_price else "",
                 "lote": lot_number(title),
                 "link_lote": link_lote,
+                "foto_lote": valid_image_url(parser.link_images.get(href, ""), final_url),
             }
         )
 

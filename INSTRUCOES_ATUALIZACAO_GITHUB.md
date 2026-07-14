@@ -11,7 +11,7 @@ Não envie o arquivo ZIP fechado. Primeiro extraia o pacote no computador.
 3. Clique em **Upload files**.
 4. Abra a pasta extraída do pacote.
 5. Selecione tudo que está dentro dela.
-6. Confirme que a pasta `.github` também foi selecionada. As fotos reais já ficam incorporadas nos arquivos do site e não dependem de uma pasta de imagens para abrir.
+6. Confirme que a pasta `.github` também foi selecionada. As nove fotos reais dos carrosséis já ficam incorporadas nos arquivos do site e não dependem de uma pasta de imagens para abrir.
 7. Arraste os arquivos para a tela do GitHub.
 8. Aguarde o envio terminar.
 9. Em **Commit changes**, escreva: `Instalar Radar Premium`.
