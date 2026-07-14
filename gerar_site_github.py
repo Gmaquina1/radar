@@ -141,7 +141,7 @@ def main() -> None:
         "patios": patios,
         "lotes": lots,
         "gerado_em": now.isoformat(timespec="seconds"),
-        "proxima_atualizacao": "Diariamente às 16h (horário de Brasília)",
+        "proxima_atualizacao": "Atualização diária",
         "mapa": MAP_EMBED_URL,
         "versao": app_version,
         "editais_eventos": edital_events,

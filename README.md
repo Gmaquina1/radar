@@ -10,7 +10,8 @@ https://gmaquina1.github.io/radar/
 - mostra somente leilões e lotes que ainda irão acontecer;
 - pesquisa por máquina, veículo, imóvel, cidade, estado, leiloeiro e conteúdo do edital;
 - abre o lote no site oficial do leiloeiro;
-- mostra **Abrir edital completo** quando o PDF ou documento foi localizado;
+- lê editais disponíveis para ampliar a qualidade da pesquisa;
+- informa claramente que o Radar é independente e não realiza nem intermedeia leilões;
 - salva oportunidades no próprio aparelho do visitante;
 - atualiza mapa, eventos, lotes e editais todos os dias às 16h de Brasília;
 - mantém uma cópia dos lotes de eventos ativos quando um portal bloqueia temporariamente a consulta.

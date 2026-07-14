@@ -39,4 +39,4 @@ O GitHub executará a atualização diariamente às 16h de Brasília. O GitHub p
 
 ## Importante
 
-O Radar mostra somente eventos com data futura ou horário de hoje ainda não iniciado. Quando um edital é encontrado e lido, o resultado correspondente apresenta o botão **Abrir edital completo**.
+O Radar mostra somente eventos com data futura ou horário de hoje ainda não iniciado. Os editais disponíveis são lidos para melhorar a pesquisa, mas o Radar não realiza nem intermedeia os leilões.
