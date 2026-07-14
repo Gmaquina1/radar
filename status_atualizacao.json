@@ -1,21 +1,27 @@
 {
   "status": "ok",
-  "verificado_em": "2026-07-06T22:30:14",
-  "atualizado_em_base_eventos": "2026-07-06T21:41:29",
-  "atualizado_em_base_lotes": "2026-07-03T16:17:14",
-  "eventos_futuros": 434,
+  "verificado_em": "2026-07-13T22:46:17-03:00",
+  "atualizado_em_base_eventos": "2026-07-13T22:35:37-03:00",
+  "atualizado_em_base_lotes": "2026-07-13T22:44:53-03:00",
+  "eventos_futuros": 433,
   "patios": 132,
-  "lotes": 3107,
+  "lotes": 3584,
+  "lotes_capturados_agora": 3473,
+  "lotes_preservados": 111,
+  "eventos_indexados_com_lotes": 151,
   "mapa_id": "1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U",
   "checks": {
     "arquivos_obrigatorios": true,
     "workflow_existe": true,
     "workflow_agendado_30min": true,
     "workflow_resincronizacao_6h": true,
-    "workflow_commit_status": true,
+    "workflow_gera_diagnostico": true,
+    "workflow_indexa_lotes": true,
     "mapa_no_site": true,
+    "base_embutida_no_site": true,
     "eventos_csv_ok": true,
-    "lotes_json_ok": true
+    "lotes_json_ok": true,
+    "lotes_csv_consistente": true
   },
   "arquivos_faltando": []
 }

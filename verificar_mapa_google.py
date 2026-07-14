@@ -5,6 +5,7 @@ import argparse
 import hashlib
 import os
 import sys
+import time
 import urllib.request
 from pathlib import Path
 
@@ -17,19 +18,27 @@ def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
-def baixar_kml() -> bytes:
-    request = urllib.request.Request(
-        KML_URL,
-        headers={
-            "User-Agent": "Mozilla/5.0 RadarLeiloesGMaquina/1.0",
-            "Accept": "application/vnd.google-earth.kml+xml,application/xml,text/xml,*/*",
-        },
-    )
-    with urllib.request.urlopen(request, timeout=30) as response:
-        data = response.read()
-    if len(data) < 10_000:
-        raise SystemExit("KML baixado parece incompleto. Verifique o link do mapa.")
-    return data
+def baixar_kml(attempts: int = 4) -> bytes:
+    last_error = ""
+    for attempt in range(1, attempts + 1):
+        request = urllib.request.Request(
+            KML_URL,
+            headers={
+                "User-Agent": "Mozilla/5.0 RadarLeiloesGMaquina/1.0",
+                "Accept": "application/vnd.google-earth.kml+xml,application/xml,text/xml,*/*",
+            },
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=45) as response:
+                data = response.read()
+            if len(data) < 10_000 or b"<kml" not in data[:5000].lower():
+                raise RuntimeError("KML baixado parece incompleto ou invalido.")
+            return data
+        except Exception as exc:
+            last_error = str(exc)
+            if attempt < attempts:
+                time.sleep(3 * attempt)
+    raise SystemExit(f"Falha ao verificar o mapa depois de {attempts} tentativas: {last_error}")
 
 
 def escrever_output_github(nome: str, valor: str) -> None:

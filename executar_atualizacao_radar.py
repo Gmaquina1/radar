@@ -8,15 +8,17 @@ import sys
 import time
 from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from diagnostico_radar import build_status, write_status
 
 
 ROOT = Path(__file__).resolve().parent
+TIMEZONE = ZoneInfo("America/Sao_Paulo")
 
 
 def iso_now() -> str:
-    return datetime.now().isoformat(timespec="seconds")
+    return datetime.now(TIMEZONE).isoformat(timespec="seconds")
 
 
 def run_step(name: str, command: list[str], attempts: int = 1) -> dict:

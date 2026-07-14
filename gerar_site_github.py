@@ -4,12 +4,14 @@ from __future__ import annotations
 import csv
 import datetime as dt
 import json
+import os
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 
 ROOT = Path(__file__).resolve().parent
 MAP_EMBED_URL = "https://www.google.com/maps/d/u/0/embed?mid=1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U&ehbc=2E312F"
-APP_VERSION = "v2026.07.07.3"
+TIMEZONE = ZoneInfo("America/Sao_Paulo")
 
 
 def read_csv(name: str) -> list[dict[str, str]]:
@@ -37,14 +39,16 @@ def read_lotes() -> list[dict[str, str]]:
 
 
 def main() -> None:
-    generated_at = dt.datetime.now().isoformat(timespec="seconds")
+    now = dt.datetime.now(TIMEZONE)
+    generated_at = now.isoformat(timespec="seconds")
+    app_version = os.environ.get("RADAR_VERSION") or now.strftime("v%Y.%m.%d.%H%M")
     payload = {
         "eventos": read_csv("radar_leiloes_eventos_futuros.csv"),
         "patios": read_csv("radar_leiloes_patios.csv"),
         "lotes": read_lotes(),
         "gerado_em": generated_at,
         "mapa": MAP_EMBED_URL,
-        "versao": APP_VERSION,
+        "versao": app_version,
     }
     data = json.dumps(payload, ensure_ascii=False).replace("</", "<\\/")
 
@@ -164,8 +168,15 @@ $('btnBuscar').addEventListener('click',searchAndScroll);$('q').addEventListener
 </html>
 '''.replace("__RADAR_DATA__", data)
 
-    for name in ("index.html", "radar-leiloes.html"):
-        (ROOT / name).write_text(html, encoding="utf-8")
+    (ROOT / "index.html").write_text(html, encoding="utf-8")
+    # Mantem o endereco antigo funcionando sem duplicar varios megabytes a cada commit.
+    (ROOT / "radar-leiloes.html").write_text(
+        "<!doctype html><html lang=\"pt-BR\"><meta charset=\"utf-8\">"
+        "<meta http-equiv=\"refresh\" content=\"0;url=./\">"
+        "<title>Radar de Leilões G MAQUINA</title>"
+        "<p>Abrindo o <a href=\"./\">Radar de Leilões</a>...</p></html>\n",
+        encoding="utf-8",
+    )
 
 
 if __name__ == "__main__":

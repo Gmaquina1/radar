@@ -6,9 +6,11 @@ import csv
 import json
 from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 
 ROOT = Path(__file__).resolve().parent
+TIMEZONE = ZoneInfo("America/Sao_Paulo")
 REQUIRED_FILES = [
     "index.html",
     "radar-leiloes.html",
@@ -48,7 +50,7 @@ def count_csv(path: Path) -> int:
 
 
 def iso_now() -> str:
-    return datetime.now().isoformat(timespec="seconds")
+    return datetime.now(TIMEZONE).isoformat(timespec="seconds")
 
 
 def build_status(extra: dict | None = None) -> dict:
@@ -67,16 +69,20 @@ def build_status(extra: dict | None = None) -> dict:
     patios_csv = count_csv(ROOT / "radar_leiloes_patios.csv")
     lotes_lista = lotes.get("lotes", [])
     total_lotes = len(lotes_lista) if isinstance(lotes_lista, list) else int(lotes.get("total_lotes") or 0)
+    lotes_csv = count_csv(ROOT / "lotes.csv")
 
     checks = {
         "arquivos_obrigatorios": not missing,
         "workflow_existe": ".github/workflows/atualizar-radar.yml" not in missing,
         "workflow_agendado_30min": "*/30 * * * *" in workflow,
         "workflow_resincronizacao_6h": "17 */6 * * *" in workflow,
-        "workflow_commit_status": "status_atualizacao.json" in workflow,
+        "workflow_gera_diagnostico": "diagnostico_radar.py" in workflow or "executar_atualizacao_radar.py" in workflow,
+        "workflow_indexa_lotes": "indexador_lotes.py" in workflow or "executar_atualizacao_radar.py" in workflow,
         "mapa_no_site": "1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U" in index,
+        "base_embutida_no_site": 'id="radar-data"' in index,
         "eventos_csv_ok": eventos_csv > 0,
         "lotes_json_ok": total_lotes > 0,
+        "lotes_csv_consistente": lotes_csv == total_lotes,
     }
 
     status = {
@@ -87,6 +93,9 @@ def build_status(extra: dict | None = None) -> dict:
         "eventos_futuros": int(resumo.get("eventos_futuros_ou_hoje") or eventos_csv),
         "patios": int(resumo.get("patios") or patios_csv),
         "lotes": int(lotes.get("total_lotes") or total_lotes),
+        "lotes_capturados_agora": int(lotes.get("total_lotes_capturados_agora") or 0),
+        "lotes_preservados": int(lotes.get("total_lotes_preservados") or 0),
+        "eventos_indexados_com_lotes": int(lotes.get("eventos_com_lotes") or 0),
         "mapa_id": "1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U",
         "checks": checks,
         "arquivos_faltando": missing,
@@ -118,7 +127,13 @@ def main() -> int:
     parser.add_argument("--falhar-se-atencao", action="store_true")
     args = parser.parse_args()
 
-    status = build_status()
+    previous = read_json(ROOT / "status_atualizacao.json")
+    keep = {
+        key: previous[key]
+        for key in ("ultima_execucao", "erro_em", "etapas")
+        if key in previous
+    }
+    status = build_status(keep)
     write_status(status)
     print(json.dumps(status, ensure_ascii=False, indent=2))
     return 1 if args.falhar_se_atencao and status["status"] != "ok" else 0

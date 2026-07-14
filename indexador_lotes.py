@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import csv
 import html
+import io
 import json
 import re
 import time
@@ -15,12 +16,19 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from html.parser import HTMLParser
 from pathlib import Path
+from zoneinfo import ZoneInfo
+
+try:
+    from pypdf import PdfReader
+except Exception:  # pragma: no cover - instalado pelo GitHub Actions
+    PdfReader = None
 
 
 ROOT = Path(__file__).resolve().parent
 EVENTOS_CSV = ROOT / "radar_leiloes_eventos_futuros.csv"
 LOTES_JSON = ROOT / "lotes.json"
 LOTES_CSV = ROOT / "lotes.csv"
+TIMEZONE = ZoneInfo("America/Sao_Paulo")
 
 FIELDS = [
     "titulo",
@@ -56,6 +64,13 @@ IGNORE_ANCHORS = {
     "termos",
     "politica de privacidade",
     "política de privacidade",
+    "whatsapp",
+    "facebook",
+    "twitter",
+    "instagram",
+    "linkedin",
+    "compartilhar",
+    "copiar link",
 }
 
 BLOCKED_TITLES = (
@@ -71,6 +86,11 @@ PRICE_RE = re.compile(r"R\$\s?[\d\.\,]+", re.I)
 LOT_RE = re.compile(r"\b(?:lote|lt\.?)\s*[:#º°-]?\s*(\d+[A-Za-z]?)", re.I)
 URL_RE = re.compile(r"https?://[^\s<>'\"]+", re.I)
 EVENT_ID_RE = re.compile(r"-(\d{5,})(?:[/?#]|$)")
+PDF_RE = re.compile(r"\.pdf(?:$|[?#])", re.I)
+PDF_LOT_RE = re.compile(
+    r"(?im)(?:^|\n)\s*(?:lote|item)\s*(?:n\s*[.º°o]?\s*)?[:#º°\-]?\s*"
+    r"(\d{1,5}(?:[.\-/][A-Za-z0-9]{1,5})?[A-Za-z]?)\b"
+)
 SUPERBID_API = "https://offer-query.superbid.net/offers/"
 SUPERBID_LIKE_DOMAINS = (
     "sold.com.br",
@@ -89,8 +109,12 @@ class LinkParser(HTMLParser):
         self.title = ""
         self._in_title = False
         self._title_text: list[str] = []
+        self._ignored_depth = 0
+        self.visible_text: list[str] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag.lower() in {"script", "style", "noscript", "svg"}:
+            self._ignored_depth += 1
         if tag.lower() == "a":
             attrs_dict = {k.lower(): v or "" for k, v in attrs}
             self._href = attrs_dict.get("href")
@@ -100,6 +124,8 @@ class LinkParser(HTMLParser):
             self._title_text = []
 
     def handle_endtag(self, tag: str) -> None:
+        if tag.lower() in {"script", "style", "noscript", "svg"} and self._ignored_depth:
+            self._ignored_depth -= 1
         if tag.lower() == "a" and self._href:
             text = clean_text(" ".join(self._text))
             if text:
@@ -115,6 +141,10 @@ class LinkParser(HTMLParser):
             self._text.append(data)
         if self._in_title:
             self._title_text.append(data)
+        if not self._ignored_depth:
+            value = clean_text(data)
+            if value:
+                self.visible_text.append(value)
 
 
 def clean_text(value: str | None) -> str:
@@ -142,6 +172,10 @@ def first_url(value: str) -> str:
     return urls[0].rstrip(").,;") if urls else ""
 
 
+def all_urls(value: str) -> list[str]:
+    return [item.rstrip(").,;]") for item in URL_RE.findall(value or "")]
+
+
 def absolute_url(base: str, url: str) -> str:
     return urllib.parse.urljoin(base, html.unescape(url or ""))
 
@@ -151,6 +185,43 @@ def domain(url: str) -> str:
         return urllib.parse.urlparse(url).netloc.replace("www.", "")
     except Exception:
         return ""
+
+
+def unwrap_google_url(url: str) -> str:
+    """Extrai o destino real de links de redirecionamento do Google."""
+    try:
+        parsed = urllib.parse.urlparse(url)
+        if parsed.netloc.endswith("google.com") and parsed.path == "/url":
+            return urllib.parse.parse_qs(parsed.query).get("q", [url])[0]
+    except Exception:
+        pass
+    return url
+
+
+def event_urls(event: dict[str, str], maximum: int = 4) -> list[str]:
+    """Prioriza a pagina do leilao, mas tambem usa editais/PDFs como fonte de lotes."""
+    urls: list[str] = []
+    for field in ("site_leiloeiro", "link", "link_edital", "descricao"):
+        value = event.get(field, "")
+        candidates = all_urls(value)
+        if not candidates and value.strip().lower().startswith("www."):
+            candidates = ["https://" + value.strip()]
+        for candidate in candidates:
+            candidate = unwrap_google_url(html.unescape(candidate))
+            if candidate not in urls:
+                urls.append(candidate)
+
+    def priority(url: str) -> tuple[int, int]:
+        host = domain(url)
+        if is_superbid_like(url):
+            return (0, len(url))
+        if "drive.google.com" in host or PDF_RE.search(url):
+            return (2, len(url))
+        if host.endswith("google.com"):
+            return (3, len(url))
+        return (1, len(url))
+
+    return sorted(urls, key=priority)[:maximum]
 
 
 def parse_event_id(url: str) -> str:
@@ -174,7 +245,13 @@ def read_events(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
-def fetch(url: str, timeout: int = 6) -> tuple[int, str, str]:
+def fetch_bytes(url: str, timeout: int = 12, max_bytes: int = 20_000_000) -> tuple[int, bytes, str, str]:
+    if "drive.google.com" in domain(url):
+        parsed = urllib.parse.urlparse(url)
+        match = re.search(r"/file/d/([^/]+)", parsed.path)
+        file_id = match.group(1) if match else urllib.parse.parse_qs(parsed.query).get("id", [""])[0]
+        if file_id:
+            url = f"https://drive.google.com/uc?export=download&id={file_id}"
     request = urllib.request.Request(
         url,
         headers={
@@ -188,17 +265,25 @@ def fetch(url: str, timeout: int = 6) -> tuple[int, str, str]:
     )
     try:
         with urllib.request.urlopen(request, timeout=timeout) as response:
-            raw = response.read()
-            charset = response.headers.get_content_charset() or "utf-8"
-            return response.status, raw.decode(charset, errors="replace"), response.geturl()
+            raw = response.read(max_bytes + 1)[:max_bytes]
+            return response.status, raw, response.headers.get("content-type", ""), response.geturl()
     except urllib.error.HTTPError as exc:
         try:
-            raw = exc.read().decode("utf-8", errors="replace")
+            raw = exc.read(500_000)
         except Exception:
-            raw = ""
-        return exc.code, raw, url
+            raw = b""
+        return exc.code, raw, exc.headers.get("content-type", ""), url
     except Exception as exc:
-        return 0, str(exc), url
+        return 0, str(exc).encode("utf-8", errors="replace"), "", url
+
+
+def fetch(url: str, timeout: int = 12) -> tuple[int, str, str]:
+    status, raw, content_type, final_url = fetch_bytes(url, timeout=timeout)
+    charset = "utf-8"
+    match = re.search(r"charset=([\w-]+)", content_type or "", re.I)
+    if match:
+        charset = match.group(1)
+    return status, raw.decode(charset, errors="replace"), final_url
 
 
 def extract_json_blocks(page: str) -> list[object]:
@@ -431,6 +516,9 @@ def looks_like_lot(text: str, url: str = "") -> bool:
         return False
     if low in IGNORE_ANCHORS:
         return False
+    host = domain(url)
+    if any(item in host for item in ("whatsapp.com", "facebook.com", "twitter.com", "x.com", "linkedin.com")):
+        return False
     if LOT_RE.search(low) or PRICE_RE.search(text):
         return True
     if any(part in path for part in ("/lote", "/oferta", "/item", "/produto/", "/veiculo/", "/maquina/")):
@@ -461,9 +549,90 @@ def event_base(event: dict[str, str], link_evento: str, source_url: str, status:
         "local": event.get("endereco_ou_localizacao", ""),
         "link_evento": link_evento,
         "fonte": source_url or link_evento,
-        "capturado_em": datetime.now().isoformat(timespec="seconds"),
+        "capturado_em": datetime.now(TIMEZONE).isoformat(timespec="seconds"),
         "status_captura": status,
     }
+
+
+def pdf_text(raw: bytes) -> str:
+    if not raw or PdfReader is None:
+        return ""
+    try:
+        reader = PdfReader(io.BytesIO(raw))
+        pages = [(page.extract_text() or "") for page in reader.pages[:120]]
+        return "\n".join(pages)
+    except Exception:
+        return ""
+
+
+def lot_rows_from_text(
+    event: dict[str, str],
+    link_evento: str,
+    source_url: str,
+    text: str,
+    status: str,
+    maximum: int = 1500,
+) -> list[dict[str, str]]:
+    """Transforma blocos iniciados por LOTE/ITEM em registros pesquisaveis."""
+    normalized = html.unescape(text or "").replace("\r", "\n")
+    normalized = re.sub(r"[ \t]+", " ", normalized)
+    matches = list(PDF_LOT_RE.finditer(normalized))
+    if not matches:
+        return []
+
+    base = event_base(event, link_evento, source_url, status)
+    rows: list[dict[str, str]] = []
+    seen: set[str] = set()
+    for position, match in enumerate(matches[:maximum]):
+        number = clean_text(match.group(1)).upper()
+        start = match.end()
+        end = matches[position + 1].start() if position + 1 < len(matches) else min(len(normalized), start + 2500)
+        segment = clean_text(normalized[start:end])[:1800]
+        if not segment or number in seen:
+            continue
+        # Evita confundir clausulas de edital (ex.: "lote 9.19") com numero de bem.
+        if re.fullmatch(r"\d+\.\d{2,}", number):
+            continue
+        seen.add(number)
+        # Editais costumam trazer cabecalhos repetidos entre o numero e a descricao.
+        segment = re.sub(r"^(?:[-–—:|]\s*)+", "", segment)
+        title_piece = re.split(
+            r"\b(?:avalia[cç][aã]o|lance\s+m[ií]nimo|valor\s+m[ií]nimo|localiza[cç][aã]o|observa[cç][oõ]es?)\b",
+            segment,
+            maxsplit=1,
+            flags=re.I,
+        )[0]
+        title_piece = clean_text(title_piece)[:210]
+        if len(title_piece) < 3:
+            title_piece = segment[:210]
+        price_match = PRICE_RE.search(segment)
+        rows.append(
+            {
+                **base,
+                "titulo": f"Lote {number} - {title_piece}"[:240],
+                "descricao": segment[:600],
+                "lance_atual": price_match.group(0) if price_match else "",
+                "lote": number,
+                "link_lote": source_url + ("&" if "#" in source_url else "#") + f"lote-{urllib.parse.quote(number)}",
+            }
+        )
+    return rows
+
+
+def extract_lots_from_pdf(
+    event: dict[str, str], link_evento: str, source_url: str, raw: bytes
+) -> list[dict[str, str]]:
+    text = pdf_text(raw)
+    return lot_rows_from_text(event, link_evento, source_url, text, "pdf_ok")
+
+
+def pdf_links_from_html(page: str, base_url: str, maximum: int = 2) -> list[str]:
+    found: list[str] = []
+    for candidate in re.findall(r"(?:href|src)=[\"']([^\"']+)[\"']", page or "", flags=re.I):
+        url = absolute_url(base_url, candidate)
+        if (PDF_RE.search(url) or "drive.google.com" in domain(url)) and url not in found:
+            found.append(url)
+    return found[:maximum]
 
 
 def extract_lots_from_page(event: dict[str, str], link_evento: str, page: str, final_url: str, status: str) -> list[dict[str, str]]:
@@ -519,25 +688,93 @@ def extract_lots_from_page(event: dict[str, str], link_evento: str, page: str, f
             }
         )
 
+    # Alguns portais exibem os lotes apenas como texto, sem links individuais.
+    if not lots:
+        visible_lots = lot_rows_from_text(
+            event,
+            link_evento,
+            final_url,
+            "\n".join(parser.visible_text),
+            "html_texto_ok",
+        )
+        for row in visible_lots:
+            key = (row.get("lote", "") + "|" + row.get("titulo", "")).casefold()
+            if key not in seen:
+                seen.add(key)
+                lots.append(row)
+
     return lots
 
 
 def extract_one_event(index: int, event: dict[str, str], delay: float) -> tuple[int, list[dict[str, str]], dict]:
-    link = first_url(event.get("link", ""))
-    if not link:
-        return index, [], {"n": index, "evento": event.get("nome", ""), "status": "sem_link", "lotes": 0}
+    urls = event_urls(event)
+    if not urls:
+        return index, [], {
+            "n": index,
+            "evento": event.get("nome", ""),
+            "data": event.get("data", ""),
+            "status": "sem_link",
+            "lotes": 0,
+        }
 
-    status_code, page, final_url = fetch(link)
-    status = capture_status(status_code, page)
     extracted: list[dict[str, str]] = []
-    api_status = ""
+    attempts: list[dict[str, object]] = []
+    final_status = "sem_lotes"
+    final_url = urls[0]
 
-    if is_superbid_like(final_url or link):
-        api_lots, api_status = extract_superbid_lots(event, link, final_url or link)
-        extracted.extend(api_lots)
+    for source_url in urls:
+        if is_superbid_like(source_url):
+            api_lots, api_status = extract_superbid_lots(event, source_url, source_url)
+            attempts.append({"url": source_url, "status": api_status, "lotes": len(api_lots)})
+            if api_lots:
+                extracted.extend(api_lots)
+                final_status = api_status
+                final_url = source_url
+                break
 
-    if not extracted and status.startswith("http_"):
-        extracted.extend(extract_lots_from_page(event, link, page, final_url, status))
+        status_code, raw, content_type, fetched_url = fetch_bytes(source_url)
+        final_url = fetched_url or source_url
+        raw_is_pdf = raw[:4] == b"%PDF"
+        is_pdf = bool(PDF_RE.search(final_url) or "pdf" in content_type.casefold() or raw_is_pdf)
+        if is_pdf and status_code == 200:
+            pdf_lots = extract_lots_from_pdf(event, source_url, final_url, raw)
+            pdf_status = "pdf_ok" if pdf_lots else "pdf_sem_lotes"
+            attempts.append({"url": source_url, "status": pdf_status, "http": status_code, "lotes": len(pdf_lots)})
+            if pdf_lots:
+                extracted.extend(pdf_lots)
+                final_status = pdf_status
+                break
+            final_status = pdf_status
+            continue
+
+        charset = "utf-8"
+        charset_match = re.search(r"charset=([\w-]+)", content_type or "", re.I)
+        if charset_match:
+            charset = charset_match.group(1)
+        page = raw.decode(charset, errors="replace")
+        status = capture_status(status_code, page)
+        page_lots = extract_lots_from_page(event, source_url, page, final_url, status) if status_code == 200 else []
+        attempts.append({"url": source_url, "status": status, "http": status_code, "lotes": len(page_lots)})
+        if page_lots:
+            extracted.extend(page_lots)
+            final_status = "html_ok"
+            break
+
+        # Se a pagina do evento aponta para um edital, usa o PDF como segunda fonte.
+        for pdf_url in pdf_links_from_html(page, final_url):
+            pdf_code, pdf_raw, pdf_type, pdf_final = fetch_bytes(pdf_url)
+            if pdf_code != 200 or not (pdf_raw[:4] == b"%PDF" or "pdf" in pdf_type.casefold()):
+                continue
+            pdf_lots = extract_lots_from_pdf(event, source_url, pdf_final or pdf_url, pdf_raw)
+            attempts.append({"url": pdf_url, "status": "pdf_link_ok" if pdf_lots else "pdf_link_sem_lotes", "http": pdf_code, "lotes": len(pdf_lots)})
+            if pdf_lots:
+                extracted.extend(pdf_lots)
+                final_status = "pdf_link_ok"
+                final_url = pdf_final or pdf_url
+                break
+        if extracted:
+            break
+        final_status = status
 
     if delay:
         time.sleep(delay)
@@ -545,11 +782,12 @@ def extract_one_event(index: int, event: dict[str, str], delay: float) -> tuple[
     log = {
         "n": index,
         "evento": event.get("nome", ""),
-        "link": link,
+        "data": event.get("data", ""),
+        "link": urls[0],
         "final_url": final_url,
-        "status": api_status or status,
-        "html_status": status,
+        "status": final_status,
         "lotes": len(extracted),
+        "fontes_tentadas": attempts,
     }
     return index, extracted, log
 
@@ -605,9 +843,91 @@ def extract_lots(
     return lots, logs
 
 
+def load_previous_lots(path: Path) -> list[dict[str, str]]:
+    if not path.exists():
+        return []
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return []
+    rows = data.get("lotes", []) if isinstance(data, dict) else data
+    return [row for row in rows if isinstance(row, dict) and valid_lot(row)] if isinstance(rows, list) else []
+
+
+def valid_lot(row: dict[str, str]) -> bool:
+    number = clean_text(row.get("lote", ""))
+    title = clean_text(row.get("titulo", ""))
+    if not title or title.casefold() in IGNORE_ANCHORS:
+        return False
+    if re.fullmatch(r"\d+\.\d{2,}", number):
+        return False
+    return True
+
+
+def clean_existing_outputs(json_path: Path, csv_path: Path) -> int:
+    try:
+        payload = json.loads(json_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        raise SystemExit(f"Nao foi possivel limpar {json_path}: {exc}")
+    if not isinstance(payload, dict):
+        raise SystemExit(f"Formato invalido em {json_path}")
+    rows = [row for row in payload.get("lotes", []) if isinstance(row, dict) and valid_lot(row)]
+    payload["lotes"] = rows
+    payload["total_lotes"] = len(rows)
+    payload["total_lotes_preservados"] = sum(
+        1 for row in rows if str(row.get("status_captura", "")).startswith("preservado_apos_falha:")
+    )
+    json_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    write_csv(csv_path, rows)
+    return len(rows)
+
+
+def event_key(value: str) -> str:
+    return slugify(value or "").casefold()
+
+
+def event_date_key(name: str, event_date: str) -> str:
+    return event_key(name) + "|" + clean_text(event_date)
+
+
+def preserve_unavailable_lots(
+    events: list[dict[str, str]],
+    fresh_lots: list[dict[str, str]],
+    logs: list[dict],
+    previous_lots: list[dict[str, str]],
+) -> tuple[list[dict[str, str]], int]:
+    """Mantem lotes do evento ativo quando a consulta atual foi bloqueada ou falhou."""
+    fresh_event_keys = {event_date_key(row.get("evento", ""), row.get("data", "")) for row in fresh_lots}
+    current_event_keys = {event_date_key(event.get("nome", ""), event.get("data", "")) for event in events}
+    failed_event_keys = {
+        event_date_key(str(log.get("evento", "")), str(log.get("data", "")))
+        for log in logs
+        if int(log.get("lotes") or 0) == 0
+    }
+    allowed = (current_event_keys & failed_event_keys) - fresh_event_keys
+
+    carried: list[dict[str, str]] = []
+    for old in previous_lots:
+        key = event_date_key(old.get("evento", ""), old.get("data", ""))
+        if key not in allowed:
+            continue
+        old_number = clean_text(old.get("lote", ""))
+        old_title = clean_text(old.get("titulo", "")).casefold()
+        if re.fullmatch(r"\d+\.\d{2,}", old_number) or old_title in IGNORE_ANCHORS:
+            continue
+        row = dict(old)
+        old_status = row.get("status_captura", "")
+        if str(old_status).startswith("preservado_apos_falha:"):
+            row["status_captura"] = old_status
+        else:
+            row["status_captura"] = f"preservado_apos_falha:{old_status}"[:120]
+        carried.append(row)
+    return fresh_lots + carried, len(carried)
+
+
 def write_csv(path: Path, rows: list[dict[str, str]]) -> None:
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=FIELDS)
+        writer = csv.DictWriter(handle, fieldnames=FIELDS, lineterminator="\n")
         writer.writeheader()
         for row in rows:
             writer.writerow({field: row.get(field, "") for field in FIELDS})
@@ -621,22 +941,74 @@ def main() -> None:
     parser.add_argument("--limite", type=int, default=0, help="0 = todos os eventos")
     parser.add_argument("--delay", type=float, default=0.4)
     parser.add_argument("--workers", type=int, default=8)
+    parser.add_argument("--somente-limpeza", action="store_true", help="Remove resultados invalidos sem acessar a internet")
     args = parser.parse_args()
 
+    if args.somente_limpeza:
+        total = clean_existing_outputs(Path(args.saida), Path(args.csv))
+        print(json.dumps({"total_lotes": total, "modo": "somente_limpeza"}, ensure_ascii=False))
+        return
+
     events = read_events(Path(args.eventos))
-    lots, logs = extract_lots(events, args.limite, args.delay, args.workers)
+    selected_events = events[: args.limite] if args.limite else events
+    output_path = Path(args.saida)
+    previous_lots = load_previous_lots(output_path)
+    fresh_lots, logs = extract_lots(events, args.limite, args.delay, args.workers)
+    lots, preserved_count = preserve_unavailable_lots(selected_events, fresh_lots, logs, previous_lots)
+
+    deduped: list[dict[str, str]] = []
+    seen: set[str] = set()
+    for row in lots:
+        if not valid_lot(row):
+            continue
+        key = "|".join(
+            (
+                event_key(row.get("evento", "")),
+                clean_text(row.get("lote", "")).casefold(),
+                clean_text(row.get("titulo", "")).casefold(),
+                row.get("link_lote", "").casefold(),
+            )
+        )
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append(row)
+    lots = deduped
+
     payload = {
-        "atualizado_em": datetime.now().isoformat(timespec="seconds"),
-        "total_eventos_lidos": len(events if not args.limite else events[: args.limite]),
+        "atualizado_em": datetime.now(TIMEZONE).isoformat(timespec="seconds"),
+        "total_eventos_lidos": len(selected_events),
         "total_lotes": len(lots),
+        "total_lotes_capturados_agora": len(fresh_lots),
+        "total_lotes_preservados": preserved_count,
         "eventos_com_lotes": sum(1 for log in logs if int(log.get("lotes") or 0) > 0),
-        "eventos_com_erro": sum(1 for log in logs if "erro" in str(log.get("status", ""))),
+        "eventos_sem_lotes": sum(1 for log in logs if int(log.get("lotes") or 0) == 0),
+        "eventos_com_erro_ou_bloqueio": sum(
+            1
+            for log in logs
+            if any(word in str(log.get("status", "")) for word in ("erro", "bloqueado", "http_0"))
+        ),
         "lotes": lots,
         "logs": logs,
     }
-    Path(args.saida).write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    output_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     write_csv(Path(args.csv), lots)
-    print(json.dumps({k: payload[k] for k in ("atualizado_em", "total_eventos_lidos", "total_lotes")}, ensure_ascii=False))
+    print(
+        json.dumps(
+            {
+                key: payload[key]
+                for key in (
+                    "atualizado_em",
+                    "total_eventos_lidos",
+                    "total_lotes",
+                    "total_lotes_capturados_agora",
+                    "total_lotes_preservados",
+                    "eventos_com_lotes",
+                )
+            },
+            ensure_ascii=False,
+        )
+    )
 
 
 if __name__ == "__main__":

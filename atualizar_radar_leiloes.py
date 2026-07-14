@@ -17,6 +17,7 @@ from datetime import date, datetime, timedelta
 from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 try:
     from pypdf import PdfReader
@@ -26,6 +27,7 @@ except Exception:  # pragma: no cover - GitHub Actions installs this normally.
 
 MAP_ID = "1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U"
 KML_URL = f"https://www.google.com/maps/d/kml?forcekml=1&mid={MAP_ID}"
+TIMEZONE = ZoneInfo("America/Sao_Paulo")
 FIELDS = [
     "nome",
     "camada",
@@ -368,7 +370,7 @@ def enrich_row_datetime(row):
             continue
         try:
             captured_date = date.fromisoformat(info["data"])
-            today = date.today()
+            today = datetime.now(TIMEZONE).date()
             if captured_date < today - timedelta(days=2) or captured_date > today + timedelta(days=370):
                 continue
         except ValueError:
@@ -480,7 +482,7 @@ def parse_kml(kml_path, today):
 
 def write_csv(path, rows):
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=FIELDS)
+        writer = csv.DictWriter(handle, fieldnames=FIELDS, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -500,7 +502,7 @@ def main():
 
     out = Path(args.saida).resolve()
     out.mkdir(parents=True, exist_ok=True)
-    today = date.fromisoformat(args.data_base) if args.data_base else date.today()
+    today = date.fromisoformat(args.data_base) if args.data_base else datetime.now(TIMEZONE).date()
 
     kml_path = out / "leiloes_do_brasil_completo.kml"
     if args.usar_kml_local:
@@ -537,7 +539,7 @@ def main():
     write_csv(out / "radar_leiloes_base_completa.csv", rows)
 
     summary = {
-        "atualizado_em": datetime.now().isoformat(timespec="seconds"),
+        "atualizado_em": datetime.now(TIMEZONE).isoformat(timespec="seconds"),
         "data_base": today.isoformat(),
         "total_registros": len(rows),
         "eventos_atualizacao": len(eventos),
