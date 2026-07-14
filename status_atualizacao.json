@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "verificado_em": "2026-07-14T01:08:22-03:00",
+  "verificado_em": "2026-07-14T01:13:31-03:00",
   "atualizado_em_base_eventos": "2026-07-13T22:35:37-03:00",
   "atualizado_em_base_lotes": "2026-07-13T22:44:53-03:00",
   "eventos_futuros": 433,
@@ -19,7 +19,7 @@
     "mapa_no_site": true,
     "base_embutida_no_site": true,
     "carrosseis_fotos_reais_embutidos": true,
-    "site_preparado_para_foto_do_lote": true,
+    "resultados_sem_fotos_de_lote": true,
     "site_informa_atualizacao_diaria": true,
     "site_tem_aviso_independente": true,
     "eventos_csv_ok": true,

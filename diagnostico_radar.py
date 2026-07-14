@@ -84,9 +84,9 @@ def build_status(extra: dict | None = None) -> dict:
         "carrosseis_fotos_reais_embutidos": index.count("data:image/jpeg;base64,") >= 9
         and index.count('data-carousel="') >= 3
         and "FOTOS REAIS • REFERÊNCIA VISUAL" in index,
-        "site_preparado_para_foto_do_lote": "foto_lote" in index
-        and "FOTO DO LOTE" in index
-        and "IMAGEM REAL DE REFERÊNCIA" in index,
+        "resultados_sem_fotos_de_lote": "data-lot-photo" not in index
+        and '<div class="result-photo">' not in index
+        and "IMAGEM REAL DE REFERÊNCIA" not in index,
         "site_informa_atualizacao_diaria": "ATUALIZADO TODOS OS DIAS" in index,
         "site_tem_aviso_independente": "site independente de busca" in index and "LI E ENTENDI" in index,
         "eventos_csv_ok": eventos_csv > 0,
