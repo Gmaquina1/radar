@@ -1,0 +1,128 @@
+name: Atualizar Radar e novos lotes
+
+on:
+  workflow_dispatch:
+  schedule:
+    # O cron do GitHub usa UTC. Executa a cada 6 horas.
+    - cron: "17 */6 * * *"
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: atualizar-radar
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    # Impede que o commit automático provoque uma execução em loop.
+    if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+
+    env:
+      TZ: America/Sao_Paulo
+      PYTHONUNBUFFERED: "1"
+
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependências
+        shell: bash
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install tzdata
+
+      - name: Conferir arquivos essenciais
+        shell: bash
+        run: |
+          test -f atualizar_radar_leiloes.py
+          test -f indexador_lotes.py
+          test -f gerar_site_github.py
+          test -f executar_atualizacao_radar.py
+          test -f diagnostico_radar.py
+          test -f .github/workflows/atualizar-radar.yml
+
+      - name: Procurar novos leilões e novos lotes
+        id: atualizar
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          python executar_atualizacao_radar.py             --workers-mapa 24             --workers-lotes 16             --delay-lotes 0             2>&1 | tee atualizacao.log
+
+      - name: Executar testes de segurança
+        id: testes
+        if: always()
+        continue-on-error: true
+        run: python -m unittest -v test_radar.py
+
+      - name: Mostrar resultado
+        if: always()
+        shell: bash
+        run: |
+          echo "===== STATUS DO RADAR ====="
+          cat status_atualizacao.txt 2>/dev/null || true
+          echo
+          echo "===== ARQUIVOS MODIFICADOS ====="
+          git status --short
+
+      - name: Salvar atualização no GitHub
+        if: steps.atualizar.outcome == 'success' && steps.testes.outcome == 'success'
+        shell: bash
+        run: |
+          git config user.name "Radar G MÁQUINA"
+          git config user.email "actions@users.noreply.github.com"
+
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "A coleta foi executada, mas nenhum arquivo mudou."
+            exit 0
+          fi
+
+          git commit -m "Atualização automática do Radar - $(date '+%d/%m/%Y %H:%M')"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Guardar relatório da execução
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-atualizacao-radar
+          path: |
+            atualizacao.log
+            status_atualizacao.json
+            status_atualizacao.txt
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Confirmar conclusão
+        if: always()
+        shell: bash
+        run: |
+          if [ "${{ steps.atualizar.outcome }}" != "success" ]; then
+            echo "A coleta apresentou erro. A base antiga foi preservada."
+            exit 1
+          fi
+
+          if [ "${{ steps.testes.outcome }}" != "success" ]; then
+            echo "Os testes de segurança apresentaram erro."
+            exit 1
+          fi
+
+          echo "Radar atualizado com sucesso."

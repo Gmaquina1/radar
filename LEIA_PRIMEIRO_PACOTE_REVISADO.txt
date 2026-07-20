@@ -1,0 +1,55 @@
+RADAR DE LEILÕES — PACOTE COMPLETO REVISADO
+
+Este pacote usa como base o arquivo ultima.zip enviado pelo proprietário.
+
+REVISÃO REALIZADA
+- O site e o visual original foram preservados.
+- O indexador original de lotes foi preservado.
+- O workflow do GitHub foi revisado.
+- A atualização executa automaticamente a cada 6 horas.
+- O envio de qualquer alteração para a branch main também inicia a coleta.
+- O commit automático não cria um ciclo infinito.
+- A base anterior é restaurada quando a coleta apresenta erro.
+- JSON e CSV são comparados antes da publicação.
+- O domínio radar.empaez.com foi preservado no arquivo CNAME.
+- O status passa a informar:
+  - quantidade anterior;
+  - quantidade final;
+  - lotes novos detectados;
+  - lotes removidos ou encerrados.
+
+ATENÇÃO: A PASTA .github É OBRIGATÓRIA
+
+O GitHub somente executa a atualização quando este arquivo estiver no caminho:
+
+.github/workflows/atualizar-radar.yml
+
+Não envie apenas os arquivos que aparecem na raiz.
+
+FORMA MAIS SEGURA DE ENVIAR PELO SITE DO GITHUB
+
+1. Extraia o ZIP.
+2. No repositório Gmaquina1/radar, abra Add file > Upload files.
+3. Arraste primeiro a pasta .github inteira para a tela do GitHub.
+4. Confirme que aparece:
+   .github/workflows/atualizar-radar.yml
+5. Depois arraste todos os demais arquivos.
+6. Confirme o commit na branch main.
+7. Abra Actions > Atualizar Radar e novos lotes.
+8. Clique em Run workflow caso a execução não comece automaticamente.
+
+COMO SABER SE FUNCIONOU
+
+Abra status_atualizacao.txt no repositório.
+
+A data da base de lotes deve ser a data da nova execução.
+O total pode permanecer igual quando entram e saem quantidades semelhantes.
+Por isso confira também:
+- Lotes novos detectados
+- Lotes removidos ou encerrados
+
+IMPORTANTE
+
+A base dentro deste ZIP ainda contém os dados da última coleta existente.
+A coleta nova depende de acesso à internet e será executada pelo GitHub Actions
+depois que a pasta .github for enviada corretamente.

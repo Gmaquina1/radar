@@ -9,8 +9,10 @@ import subprocess
 import sys
 import tempfile
 import time
+import unicodedata
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import urlsplit, urlunsplit
 from zoneinfo import ZoneInfo
 
 from diagnostico_radar import build_status, write_status
@@ -57,6 +59,58 @@ def count_csv(path: Path) -> int:
         return 0
 
 
+def normalize_text(value: object) -> str:
+    text = unicodedata.normalize("NFKD", str(value or ""))
+    text = "".join(char for char in text if not unicodedata.combining(char))
+    return " ".join(text.casefold().split())
+
+
+def normalize_url(value: object) -> str:
+    text = str(value or "").strip()
+    if not text:
+        return ""
+    try:
+        parts = urlsplit(text)
+        path = parts.path.rstrip("/") or "/"
+        return urlunsplit(
+            (
+                parts.scheme.casefold(),
+                parts.netloc.casefold(),
+                path,
+                "",
+                "",
+            )
+        )
+    except ValueError:
+        return text.casefold().rstrip("/")
+
+
+def lot_key(row: dict) -> str:
+    lot_url = normalize_url(row.get("link_lote"))
+    if lot_url:
+        return f"url:{lot_url}"
+
+    return "dados:" + "|".join(
+        [
+            normalize_text(row.get("leiloeiro")),
+            normalize_text(row.get("evento")),
+            normalize_text(row.get("lote")),
+            normalize_text(row.get("titulo")),
+        ]
+    )
+
+
+def lot_keys(payload: dict) -> set[str]:
+    rows = payload.get("lotes", [])
+    if not isinstance(rows, list):
+        return set()
+    return {
+        lot_key(row)
+        for row in rows
+        if isinstance(row, dict) and lot_key(row)
+    }
+
+
 def parse_datetime(value: object) -> datetime | None:
     text = str(value or "").strip()
     if not text:
@@ -70,7 +124,7 @@ def parse_datetime(value: object) -> datetime | None:
     return parsed.astimezone(TIMEZONE)
 
 
-def is_recent(value: object, maximum_hours: float = 6.0) -> bool:
+def is_recent(value: object, maximum_hours: float = 8.0) -> bool:
     parsed = parse_datetime(value)
     if parsed is None:
         return False
@@ -101,8 +155,16 @@ def run_step(name: str, command: list[str], attempts: int = 1) -> dict:
     last_code = 1
 
     for attempt in range(1, attempts + 1):
-        print(f"::group::{name} - tentativa {attempt}/{attempts}", flush=True)
-        result = subprocess.run(command, cwd=ROOT, text=True, check=False)
+        print(
+            f"::group::{name} - tentativa {attempt}/{attempts}",
+            flush=True,
+        )
+        result = subprocess.run(
+            command,
+            cwd=ROOT,
+            text=True,
+            check=False,
+        )
         print("::endgroup::", flush=True)
         last_code = result.returncode
 
@@ -130,16 +192,26 @@ def run_step(name: str, command: list[str], attempts: int = 1) -> dict:
 
 
 def validate_events() -> tuple[bool, str]:
-    resumo = read_json(ROOT / "radar_leiloes_resumo.json")
-    total_csv = count_csv(ROOT / "radar_leiloes_eventos_futuros.csv")
-    updated_at = resumo.get("atualizado_em")
+    summary = read_json(ROOT / "radar_leiloes_resumo.json")
+    event_total = count_csv(
+        ROOT / "radar_leiloes_eventos_futuros.csv"
+    )
+    updated_at = summary.get("atualizado_em")
 
-    if total_csv < 10:
-        return False, f"A coleta retornou apenas {total_csv} eventos futuros."
+    if event_total < 10:
+        return (
+            False,
+            f"A coleta retornou apenas {event_total} eventos futuros.",
+        )
+
     if not is_recent(updated_at):
-        return False, f"A data da base de eventos não foi renovada: {updated_at!r}."
+        return (
+            False,
+            "A data da base de eventos não foi renovada: "
+            f"{updated_at!r}.",
+        )
 
-    return True, f"{total_csv} eventos futuros coletados."
+    return True, f"{event_total} eventos futuros coletados."
 
 
 def validate_lots(previous_total: int) -> tuple[bool, str]:
@@ -148,29 +220,59 @@ def validate_lots(previous_total: int) -> tuple[bool, str]:
     rows_total = len(rows) if isinstance(rows, list) else 0
     informed_total = int(payload.get("total_lotes") or rows_total)
     csv_total = count_csv(ROOT / "lotes.csv")
-    fresh_total = int(payload.get("total_lotes_capturados_agora") or 0)
-    preserved_total = int(payload.get("total_lotes_preservados") or 0)
+    captured_total = int(
+        payload.get("total_lotes_capturados_agora") or 0
+    )
+    preserved_total = int(
+        payload.get("total_lotes_preservados") or 0
+    )
     updated_at = payload.get("atualizado_em")
 
-    minimum_safe = max(25, int(previous_total * 0.05)) if previous_total else 25
+    minimum_safe = (
+        max(25, int(previous_total * 0.05))
+        if previous_total
+        else 25
+    )
 
     if not is_recent(updated_at):
-        return False, f"A data da base de lotes não foi renovada: {updated_at!r}."
-    if rows_total != informed_total:
-        return False, f"O lotes.json informa {informed_total}, mas contém {rows_total} registros."
-    if csv_total != rows_total:
-        return False, f"O lotes.csv contém {csv_total}, mas o JSON contém {rows_total}."
-    if rows_total < minimum_safe:
-        return False, (
-            f"A nova base ficou com apenas {rows_total} lotes. "
-            f"O mínimo de segurança nesta execução era {minimum_safe}."
+        return (
+            False,
+            "A data da base de lotes não foi renovada: "
+            f"{updated_at!r}.",
         )
-    if fresh_total == 0 and preserved_total == 0:
-        return False, "Nenhum lote novo foi capturado e nenhum lote anterior foi preservado."
 
-    return True, (
+    if rows_total != informed_total:
+        return (
+            False,
+            f"O JSON informa {informed_total} lotes, "
+            f"mas contém {rows_total}.",
+        )
+
+    if csv_total != rows_total:
+        return (
+            False,
+            f"O CSV contém {csv_total} lotes, "
+            f"mas o JSON contém {rows_total}.",
+        )
+
+    if rows_total < minimum_safe:
+        return (
+            False,
+            f"A nova base ficou com apenas {rows_total} lotes. "
+            f"O mínimo de segurança era {minimum_safe}.",
+        )
+
+    if captured_total == 0 and preserved_total == 0:
+        return (
+            False,
+            "Nenhum lote foi capturado nem preservado.",
+        )
+
+    return (
+        True,
         f"{rows_total} lotes na base final; "
-        f"{fresh_total} capturados agora e {preserved_total} preservados."
+        f"{captured_total} capturados nesta execução e "
+        f"{preserved_total} preservados.",
     )
 
 
@@ -199,7 +301,10 @@ def fail_and_restore(
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Atualiza eventos, lotes e site com proteção da base anterior."
+        description=(
+            "Atualiza eventos, lotes e site com proteção "
+            "da base anterior."
+        )
     )
     parser.add_argument("--workers-mapa", type=int, default=24)
     parser.add_argument("--workers-lotes", type=int, default=16)
@@ -214,10 +319,13 @@ def main() -> int:
         if isinstance(previous_rows, list)
         else int(previous_payload.get("total_lotes") or 0)
     )
+    previous_keys = lot_keys(previous_payload)
 
     results: list[dict] = []
 
-    with tempfile.TemporaryDirectory(prefix="backup_radar_") as temporary:
+    with tempfile.TemporaryDirectory(
+        prefix="backup_radar_"
+    ) as temporary:
         backup = Path(temporary)
         backup_generated_files(backup)
 
@@ -238,7 +346,10 @@ def main() -> int:
                 backup,
                 results,
                 event_step["nome"],
-                "Não foi possível atualizar os eventos. A base anterior foi restaurada.",
+                (
+                    "Não foi possível atualizar os eventos. "
+                    "A base anterior foi restaurada."
+                ),
                 event_step["codigo"],
             )
 
@@ -273,7 +384,10 @@ def main() -> int:
                     backup,
                     results,
                     lot_step["nome"],
-                    "Não foi possível concluir a busca dos lotes. A base anterior foi restaurada.",
+                    (
+                        "Não foi possível concluir a busca dos "
+                        "lotes. A base anterior foi restaurada."
+                    ),
                     lot_step["codigo"],
                 )
 
@@ -288,6 +402,17 @@ def main() -> int:
                     3,
                 )
 
+        final_payload = read_json(ROOT / "lotes.json")
+        final_rows = final_payload.get("lotes", [])
+        final_total = (
+            len(final_rows)
+            if isinstance(final_rows, list)
+            else int(final_payload.get("total_lotes") or 0)
+        )
+        final_keys = lot_keys(final_payload)
+        new_count = len(final_keys - previous_keys)
+        removed_count = len(previous_keys - final_keys)
+
         for name, command, attempts in [
             (
                 "Gerar novamente o site",
@@ -296,7 +421,11 @@ def main() -> int:
             ),
             (
                 "Gerar diagnóstico final",
-                [sys.executable, "diagnostico_radar.py", "--falhar-se-atencao"],
+                [
+                    sys.executable,
+                    "diagnostico_radar.py",
+                    "--falhar-se-atencao",
+                ],
                 1,
             ),
         ]:
@@ -308,7 +437,10 @@ def main() -> int:
                     backup,
                     results,
                     name,
-                    "A etapa final apresentou erro. A base anterior foi restaurada.",
+                    (
+                        "A etapa final apresentou erro. "
+                        "A base anterior foi restaurada."
+                    ),
                     result["codigo"],
                 )
 
@@ -316,8 +448,14 @@ def main() -> int:
             {
                 "status": "ok",
                 "ultima_execucao": iso_now(),
-                "mensagem": "Eventos, lotes e site atualizados com sucesso.",
+                "mensagem": (
+                    "Eventos, lotes e site atualizados com sucesso."
+                ),
                 "base_anterior_restaurada": False,
+                "lotes_antes": previous_total,
+                "lotes_depois": final_total,
+                "lotes_novos_detectados": new_count,
+                "lotes_removidos_ou_encerrados": removed_count,
                 "etapas": results,
             }
         )

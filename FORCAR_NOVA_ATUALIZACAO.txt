@@ -1,0 +1,2 @@
+Este arquivo força um novo commit e uma nova execução do GitHub Actions.
+Pacote revisado em: 2026-07-20T13:20:01-03:00
