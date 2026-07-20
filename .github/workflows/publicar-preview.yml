@@ -2,12 +2,6 @@ name: Publicar preview
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - "frontend/**"
-      - ".github/workflows/publicar-preview.yml"
 
 permissions:
   contents: write
@@ -23,38 +17,35 @@ jobs:
     steps:
       - name: Baixar o repositório
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Instalar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "20"
           cache: npm
           cache-dependency-path: frontend/package-lock.json
 
-      - name: Instalar dependências do frontend
-        working-directory: frontend
-        run: npm ci
+      - name: Gerar preview em preview/
+        run: ./scripts/publicar-preview.sh
 
-      - name: Gerar build do preview
-        working-directory: frontend
-        env:
-          VITE_ALGOLIA_APP_ID: ${{ vars.VITE_ALGOLIA_APP_ID }}
-          VITE_ALGOLIA_SEARCH_API_KEY: ${{ vars.VITE_ALGOLIA_SEARCH_API_KEY }}
-          VITE_ALGOLIA_INDEX_NAME: ${{ vars.VITE_ALGOLIA_INDEX_NAME }}
-        run: npm run build
-
-      - name: Copiar build para preview
+      - name: Verificar alterações do preview
+        id: preview_changes
         shell: bash
         run: |
-          rm -rf preview
-          mkdir -p preview
-          cp -R frontend/dist/. preview/
+          if git status --porcelain -- preview | grep -q .; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
 
-      - name: Publicar preview no GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./preview
-          destination_dir: preview
-          keep_files: true
-          enable_jekyll: true
+      - name: Commitar preview atualizado
+        if: steps.preview_changes.outputs.changed == 'true'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview
+          git commit -m "Publica preview do frontend"
+          git push
