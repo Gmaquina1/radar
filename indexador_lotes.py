@@ -28,6 +28,7 @@ ROOT = Path(__file__).resolve().parent
 EVENTOS_CSV = ROOT / "radar_leiloes_eventos_futuros.csv"
 LOTES_JSON = ROOT / "lotes.json"
 LOTES_CSV = ROOT / "lotes.csv"
+RELATORIO_JSON = ROOT / "relatorio_atualizacao_lotes.json"
 TIMEZONE = ZoneInfo("America/Sao_Paulo")
 
 FIELDS = [
@@ -1070,6 +1071,71 @@ def preserve_unavailable_lots(
     return fresh_lots + carried, len(carried)
 
 
+def stable_lot_key(row: dict[str, str]) -> str:
+    lot_url = clean_text(row.get("link_lote", "")).split("#", 1)[0].rstrip("/").casefold()
+    if lot_url:
+        return "url:" + lot_url
+    return "dados:" + "|".join(
+        (
+            domain(row.get("link_evento", "") or row.get("fonte", "")),
+            event_key(row.get("evento", "")),
+            clean_text(row.get("lote", "")).casefold(),
+            clean_text(row.get("titulo", "")).casefold(),
+        )
+    )
+
+
+def build_update_report(
+    previous_lots: list[dict[str, str]],
+    final_lots: list[dict[str, str]],
+    fresh_lots: list[dict[str, str]],
+    logs: list[dict],
+    preserved_count: int,
+) -> dict:
+    previous_keys = {stable_lot_key(row) for row in previous_lots if stable_lot_key(row)}
+    final_keys = {stable_lot_key(row) for row in final_lots if stable_lot_key(row)}
+    fresh_keys = {stable_lot_key(row) for row in fresh_lots if stable_lot_key(row)}
+    per_auctioneer: dict[str, int] = {}
+    errors: dict[str, int] = {}
+    failed_urls: list[dict[str, object]] = []
+    blocked = invalid = errored = 0
+    for log in logs:
+        attempts = log.get("fontes_tentadas") or []
+        host = domain(str(log.get("link") or log.get("final_url") or "")) or "sem_link"
+        if int(log.get("lotes") or 0) > 0:
+            per_auctioneer[host] = per_auctioneer.get(host, 0) + int(log.get("lotes") or 0)
+        status = str(log.get("status") or "")
+        if "bloqueado" in status:
+            blocked += 1
+        if status in {"sem_link", "http_404"} or "http_404" in status:
+            invalid += 1
+        if any(word in status for word in ("erro", "http_0", "bloqueado")):
+            errored += 1
+            errors[host] = errors.get(host, 0) + 1
+        for attempt in attempts:
+            attempt_status = str(attempt.get("status") or "")
+            if int(attempt.get("lotes") or 0) == 0 and any(word in attempt_status for word in ("erro", "bloqueado", "http_0", "http_4", "http_5")):
+                failed_urls.append({"url": attempt.get("url", ""), "status": attempt_status, "http": attempt.get("http", "")})
+    return {
+        "executado_em": datetime.now(TIMEZONE).isoformat(timespec="seconds"),
+        "lotes_antes": len(previous_lots),
+        "lotes_depois": len(final_lots),
+        "lotes_realmente_novos": len(final_keys - previous_keys),
+        "lotes_removidos_ou_encerrados": len(previous_keys - final_keys),
+        "lotes_preservados": preserved_count,
+        "lotes_capturados_agora": len(fresh_lots),
+        "lotes_capturados_com_chave_nova": len(fresh_keys - previous_keys),
+        "eventos_analisados": len(logs),
+        "eventos_com_lotes": sum(1 for log in logs if int(log.get("lotes") or 0) > 0),
+        "eventos_com_erro": errored,
+        "eventos_bloqueados": blocked,
+        "links_invalidos": invalid,
+        "quantidade_coletada_por_leiloeiro": dict(sorted(per_auctioneer.items())),
+        "erros_por_leiloeiro": dict(sorted(errors.items())),
+        "urls_que_falharam": failed_urls[:500],
+    }
+
+
 def write_csv(path: Path, rows: list[dict[str, str]]) -> None:
     with path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=FIELDS, lineterminator="\n")
@@ -1087,6 +1153,7 @@ def main() -> None:
     parser.add_argument("--delay", type=float, default=0.4)
     parser.add_argument("--workers", type=int, default=8)
     parser.add_argument("--somente-limpeza", action="store_true", help="Remove resultados invalidos sem acessar a internet")
+    parser.add_argument("--permitir-sem-lotes", action="store_true", help="Permite gravar uma base sem nenhum portal consultado com sucesso")
     args = parser.parse_args()
 
     if args.somente_limpeza:
@@ -1119,6 +1186,20 @@ def main() -> None:
         seen.add(key)
         deduped.append(row)
     lots = [row for row in deduped if upcoming_lot(row)]
+
+    report = build_update_report(previous_lots, lots, fresh_lots, logs, preserved_count)
+
+    if report["eventos_analisados"] > 0 and report["eventos_com_lotes"] == 0 and not args.permitir_sem_lotes:
+        failed_report = build_update_report(previous_lots, previous_lots, fresh_lots, logs, len(previous_lots))
+        failed_report["status"] = "falha_sem_portal_com_lotes"
+        failed_report["base_anterior_preservada"] = True
+        failed_report["lotes_candidatos_apos_limpeza"] = len(lots)
+        RELATORIO_JSON.write_text(json.dumps(failed_report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        raise SystemExit("Nenhum portal retornou lotes; base anterior preservada e lotes.json/lotes.csv nao foram sobrescritos.")
+
+    report["status"] = "ok"
+    report["base_anterior_preservada"] = False
+    RELATORIO_JSON.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     payload = {
         "atualizado_em": datetime.now(TIMEZONE).isoformat(timespec="seconds"),
