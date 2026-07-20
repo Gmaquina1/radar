@@ -7,6 +7,7 @@ import json
 import re
 import sys
 import time
+import traceback
 import xml.etree.ElementTree as ET
 import urllib.error
 import urllib.parse
@@ -154,6 +155,24 @@ def format_hour_24(value):
     return f"{hour:02d}:{minute:02d}"
 
 
+def count_kml_placemarks(kml_path):
+    if not kml_path.exists():
+        return 0
+    root = ET.parse(kml_path).getroot()
+    ns = {"kml": "http://www.opengis.net/kml/2.2"}
+    return len(root.findall(".//kml:Placemark", ns))
+
+
+def sha256_file(path):
+    if not path.exists():
+        return ""
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
 def download_kml(target, attempts=4):
     request = urllib.request.Request(
         KML_URL,
@@ -163,26 +182,47 @@ def download_kml(target, attempts=4):
             "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8",
         },
     )
-    last_error = ""
+    old_sha256 = sha256_file(target)
+    old_markers = count_kml_placemarks(target)
+    last_traceback = ""
+    downloaded_at = datetime.now(TIMEZONE).isoformat(timespec="seconds")
     for attempt in range(1, attempts + 1):
         try:
             with urllib.request.urlopen(request, timeout=45) as response:
                 data = response.read()
+                http_status = response.status
+                final_url = response.geturl()
             if len(data) < 10_000:
                 raise RuntimeError("KML baixado parece incompleto.")
             if b"<kml" not in data[:500].lower() and b"<kml" not in data.lower()[:5000]:
                 raise RuntimeError("Resposta recebida nao parece ser um KML.")
-            target.write_bytes(data)
+            tmp = target.with_suffix(target.suffix + ".download")
+            tmp.write_bytes(data)
+            new_sha256 = hashlib.sha256(data).hexdigest()
+            new_markers = count_kml_placemarks(tmp)
+            tmp.replace(target)
             (target.with_suffix(target.suffix + ".sha256")).write_text(
-                hashlib.sha256(data).hexdigest() + "\n",
+                new_sha256 + "\n",
                 encoding="utf-8",
             )
-            return
-        except Exception as exc:
-            last_error = str(exc)
+            return {
+                "downloaded_at": downloaded_at,
+                "http_status": http_status,
+                "final_url": final_url,
+                "downloaded_bytes": len(data),
+                "old_sha256": old_sha256,
+                "new_sha256": new_sha256,
+                "old_markers": old_markers,
+                "new_markers": new_markers,
+                "source": "google_my_maps_live_kml",
+            }
+        except Exception:
+            last_traceback = traceback.format_exc()
             if attempt < attempts:
                 time.sleep(3 * attempt)
-    raise SystemExit(f"Falha ao baixar KML depois de {attempts} tentativas: {last_error}")
+    print("ERRO_DOWNLOAD_KML_GOOGLE_MY_MAPS", file=sys.stderr)
+    print(last_traceback, file=sys.stderr)
+    raise SystemExit(f"Falha ao baixar KML depois de {attempts} tentativas; base local preservada.")
 
 
 def parent_map(root):
@@ -531,12 +571,23 @@ def main():
         now = datetime.combine(today, datetime.min.time(), tzinfo=TIMEZONE)
 
     kml_path = out / "leiloes_do_brasil_completo.kml"
+    download_info = {
+        "downloaded_at": "",
+        "http_status": "",
+        "final_url": "",
+        "downloaded_bytes": "",
+        "old_sha256": sha256_file(kml_path),
+        "new_sha256": sha256_file(kml_path),
+        "old_markers": count_kml_placemarks(kml_path),
+        "new_markers": count_kml_placemarks(kml_path),
+        "source": "local_existing_kml",
+    }
     if args.usar_kml_local:
         if not kml_path.exists():
             raise SystemExit(f"KML local nao encontrado: {kml_path}")
         print(f"Usando KML local: {kml_path}")
     else:
-        download_kml(kml_path)
+        download_info = download_kml(kml_path)
     rows = parse_kml(kml_path, today)
 
     eventos = [
@@ -576,6 +627,7 @@ def main():
         "eventos_com_data_hora_de_site": sum(1 for row in futuros if row.get("fonte_data_hora") == "site"),
         "eventos_por_uf": Counter(row["uf"] or "Sem UF" for row in futuros).most_common(),
         "datas": Counter(row["data"] or "sem_data" for row in futuros).most_common(),
+        "download_kml": download_info,
     }
     (out / "radar_leiloes_resumo.json").write_text(
         json.dumps(summary, ensure_ascii=False, indent=2),
@@ -583,6 +635,19 @@ def main():
     )
 
     print(json.dumps(summary, ensure_ascii=False, indent=2))
+    print(
+        "DOWNLOAD_KML_COMPROVADO "
+        f"source={download_info['source']} "
+        f"downloaded_at={download_info['downloaded_at']} "
+        f"http_status={download_info['http_status']} "
+        f"final_url={download_info['final_url']} "
+        f"downloaded_bytes={download_info['downloaded_bytes']} "
+        f"old_sha256={download_info['old_sha256']} "
+        f"new_sha256={download_info['new_sha256']} "
+        f"old_markers={download_info['old_markers']} "
+        f"new_markers={download_info['new_markers']} "
+        f"eventos_atuais_e_futuros={len(futuros)}"
+    )
 
 
 if __name__ == "__main__":
