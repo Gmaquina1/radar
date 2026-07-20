@@ -53,3 +53,19 @@ Em **Settings → Pages**, utilize:
 - Folder: `/(root)`
 
 Depois de salvar, aguarde alguns minutos e atualize o site com `Ctrl + F5`.
+
+## Nova interface React isolada
+
+A pasta `frontend/` contém uma nova interface experimental em React, TypeScript e Vite. Ela lê o `lotes.json` existente em tempo de execução, mantém pesquisa local como fallback quando a Algolia não está configurada e não substitui o site atual publicado na raiz.
+
+Para executar localmente:
+
+```bash
+cd frontend
+npm install
+npm run dev
+npm run build
+npm run test
+```
+
+Variáveis públicas opcionais para pesquisa Algolia estão documentadas em `frontend/.env.example`. Não use chaves administrativas no frontend.
