@@ -1,15 +1,15 @@
 {
-  "executado_em": "2026-07-20T14:00:38-03:00",
-  "lotes_antes": 3584,
+  "executado_em": "2026-07-20T14:16:48-03:00",
+  "lotes_antes": 3330,
   "lotes_depois": 3330,
-  "lotes_realmente_novos": 1545,
-  "lotes_removidos_ou_encerrados": 1886,
+  "lotes_realmente_novos": 0,
+  "lotes_removidos_ou_encerrados": 0,
   "lotes_preservados": 73,
-  "lotes_capturados_agora": 3344,
-  "lotes_capturados_com_chave_nova": 1596,
-  "eventos_analisados": 449,
-  "eventos_com_lotes": 123,
-  "eventos_com_erro": 135,
+  "lotes_capturados_agora": 3262,
+  "lotes_capturados_com_chave_nova": 5,
+  "eventos_analisados": 447,
+  "eventos_com_lotes": 121,
+  "eventos_com_erro": 134,
   "eventos_bloqueados": 128,
   "links_invalidos": 4,
   "quantidade_coletada_por_leiloeiro": {
@@ -19,12 +19,10 @@
     "drive.google.com": 166,
     "eckertleiloes.com.br": 120,
     "edgarcarvalholeiloeiro.com.br": 55,
-    "hisaleiloes.com.br": 62,
     "lancecertoleiloes.com.br": 267,
     "lancevip.com.br": 20,
     "lbleiloes.com.br": 41,
     "leilao.detran.mg.gov.br": 24,
-    "leilao.sodresantoro.com.br": 20,
     "leilaoonline.com.br": 236,
     "leiloesfreire.com.br": 52,
     "liderleiloes.com.br": 50,
@@ -48,7 +46,6 @@
   },
   "erros_por_leiloeiro": {
     "alvesleiloes.com.br": 2,
-    "andreluizleiloes.com.br": 1,
     "apabrfleiloes.com.br": 2,
     "bianchileiloes.com.br": 1,
     "bidgo.com.br": 4,
@@ -338,11 +335,6 @@
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-agua-boa-mg/7216/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www.andreluizleiloes.com.br/evento/corporativo-783835?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
     },
     {
       "url": "https://www.winleiloes.com.br/leilao/110/lotes",
@@ -718,6 +710,11 @@
       "url": "https://www.joaoemilio.com.br/leilao/5930/lotes",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www.lancecertoleiloes.com.br/leilao/050826PRFVE?pag=1",
+      "status": "http_500",
+      "http": 500
     },
     {
       "url": "https://www.apabrfleiloes.com.br/leilao/prefeitura-de-capitolio-terrenos/462/#Pagina=1&Index=1",
