@@ -1,0 +1,60 @@
+name: Publicar preview
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "frontend/**"
+      - ".github/workflows/publicar-preview.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publicar-preview
+  cancel-in-progress: true
+
+jobs:
+  publicar-preview:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Instalar dependências do frontend
+        working-directory: frontend
+        run: npm ci
+
+      - name: Gerar build do preview
+        working-directory: frontend
+        env:
+          VITE_ALGOLIA_APP_ID: ${{ vars.VITE_ALGOLIA_APP_ID }}
+          VITE_ALGOLIA_SEARCH_API_KEY: ${{ vars.VITE_ALGOLIA_SEARCH_API_KEY }}
+          VITE_ALGOLIA_INDEX_NAME: ${{ vars.VITE_ALGOLIA_INDEX_NAME }}
+        run: npm run build
+
+      - name: Copiar build para preview
+        shell: bash
+        run: |
+          rm -rf preview
+          mkdir -p preview
+          cp -R frontend/dist/. preview/
+
+      - name: Publicar preview no GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./preview
+          destination_dir: preview
+          keep_files: true
+          enable_jekyll: true

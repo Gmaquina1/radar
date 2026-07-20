@@ -13,3 +13,8 @@ frontend/.env
 frontend/.env.local
 
 !frontend/.env.example
+node_modules/
+.sites-runtime/
+frontend/*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts
