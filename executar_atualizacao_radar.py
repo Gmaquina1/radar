@@ -36,6 +36,7 @@ GENERATED_FILES = [
     "monitoramento.json",
     "status_atualizacao.json",
     "status_atualizacao.txt",
+    "relatorio_atualizacao_lotes.json",
 ]
 
 

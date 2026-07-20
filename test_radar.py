@@ -102,6 +102,30 @@ class RadarTests(unittest.TestCase):
         self.assertFalse(indexador.upcoming_lot({"data": "2026-07-13", "hora": "18:00"}, now))
         self.assertTrue(indexador.upcoming_lot({"data": "2026-07-15", "hora": "08:00"}, now))
 
+    def test_relatorio_compara_chaves_estaveis(self) -> None:
+        anterior = [{"link_lote": "https://exemplo.com/lote/1", "titulo": "Lote 1"}]
+        atual = [{"link_lote": "https://exemplo.com/lote/2", "titulo": "Lote 2"}]
+        logs = [{"link": "https://exemplo.com/leilao", "status": "html_ok", "lotes": 1, "fontes_tentadas": []}]
+        report = indexador.build_update_report(anterior, atual, atual, logs, 0)
+        self.assertEqual(report["lotes_antes"], 1)
+        self.assertEqual(report["lotes_depois"], 1)
+        self.assertEqual(report["lotes_realmente_novos"], 1)
+        self.assertEqual(report["lotes_removidos_ou_encerrados"], 1)
+        self.assertEqual(report["eventos_com_lotes"], 1)
+
+    def test_relatorio_detecta_portais_bloqueados_e_falhas(self) -> None:
+        logs = [{
+            "link": "https://bloqueado.com/leilao",
+            "status": "bloqueado_http_403",
+            "lotes": 0,
+            "fontes_tentadas": [{"url": "https://bloqueado.com/leilao", "status": "bloqueado_http_403", "http": 403, "lotes": 0}],
+        }]
+        report = indexador.build_update_report([], [], [], logs, 0)
+        self.assertEqual(report["eventos_bloqueados"], 1)
+        self.assertEqual(report["eventos_com_erro"], 1)
+        self.assertEqual(report["erros_por_leiloeiro"], {"bloqueado.com": 1})
+        self.assertEqual(report["urls_que_falharam"][0]["http"], 403)
+
 
 if __name__ == "__main__":
     unittest.main()
