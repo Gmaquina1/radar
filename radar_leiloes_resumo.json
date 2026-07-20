@@ -1,12 +1,12 @@
 {
-  "atualizado_em": "2026-07-20T14:11:30-03:00",
+  "atualizado_em": "2026-07-20T15:53:04-03:00",
   "data_base": "2026-07-20",
   "total_registros": 745,
   "eventos_atualizacao": 613,
   "eventos_futuros_ou_hoje": 447,
   "patios": 132,
   "eventos_com_link": 445,
-  "eventos_com_data_hora_de_edital": 64,
+  "eventos_com_data_hora_de_edital": 62,
   "eventos_com_data_hora_de_site": 29,
   "eventos_por_uf": [
     [
@@ -209,7 +209,7 @@
     ]
   ],
   "download_kml": {
-    "downloaded_at": "2026-07-20T14:10:12-03:00",
+    "downloaded_at": "2026-07-20T15:51:33-03:00",
     "http_status": 200,
     "final_url": "https://www.google.com/maps/d/kml?forcekml=1&mid=1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U",
     "downloaded_bytes": 1015245,

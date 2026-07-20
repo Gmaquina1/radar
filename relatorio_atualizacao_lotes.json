@@ -1,15 +1,15 @@
 {
-  "executado_em": "2026-07-20T14:16:48-03:00",
+  "executado_em": "2026-07-20T15:57:58-03:00",
   "lotes_antes": 3330,
-  "lotes_depois": 3330,
-  "lotes_realmente_novos": 0,
-  "lotes_removidos_ou_encerrados": 0,
-  "lotes_preservados": 73,
-  "lotes_capturados_agora": 3262,
-  "lotes_capturados_com_chave_nova": 5,
+  "lotes_depois": 3319,
+  "lotes_realmente_novos": 2,
+  "lotes_removidos_ou_encerrados": 4,
+  "lotes_preservados": 175,
+  "lotes_capturados_agora": 3149,
+  "lotes_capturados_com_chave_nova": 7,
   "eventos_analisados": 447,
-  "eventos_com_lotes": 121,
-  "eventos_com_erro": 134,
+  "eventos_com_lotes": 118,
+  "eventos_com_erro": 140,
   "eventos_bloqueados": 128,
   "links_invalidos": 4,
   "quantidade_coletada_por_leiloeiro": {
@@ -28,11 +28,10 @@
     "liderleiloes.com.br": 50,
     "lipinskileiloes.com.br": 25,
     "marcotulioleiloes.com.br": 147,
-    "marcusviniciusleiloes.com.br": 102,
     "nordesteleiloes.com.br": 11,
     "peterlongoleiloes.com.br": 9,
     "rauppleiloes.com.br": 52,
-    "rossileiloes.com.br": 572,
+    "rossileiloes.com.br": 561,
     "rpleiloes.com.br": 29,
     "rz.leilao.br": 47,
     "sandrasantosleiloes.com.br": 10,
@@ -63,6 +62,7 @@
     "levyleiloes.com.br": 2,
     "lkleiloes.com.br": 1,
     "lottileiloes.com.br": 2,
+    "marcusviniciusleiloes.com.br": 6,
     "mercado.bomvalor.com.br": 6,
     "mgl.com.br": 25,
     "nsleiloes.leilao.br": 11,
@@ -87,6 +87,11 @@
       "http": 0
     },
     {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/706/prefeitura-municipal-de-serranopolis-de-minas-mg",
+      "status": "erro",
+      "http": 0
+    },
+    {
       "url": "https://www.sumareleiloes.com.br/leiloes/5089",
       "status": "erro",
       "http": 0
@@ -98,6 +103,11 @@
     },
     {
       "url": "https://www.sumareleiloes.com.br/leiloes/5089",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/706/prefeitura-municipal-de-serranopolis-de-minas-mg",
       "status": "erro",
       "http": 0
     },
@@ -607,6 +617,16 @@
       "http": 403
     },
     {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/686/prefeitura-municipal-de-engenheiro-navarro-mg-veiculos-maquinas-e-outros",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/686/prefeitura-municipal-de-engenheiro-navarro-mg-veiculos-maquinas-e-outros",
+      "status": "erro",
+      "http": 0
+    },
+    {
       "url": "https://www.lkleiloes.com.br/leilao/266/lotes",
       "status": "bloqueado_http_403",
       "http": 403
@@ -677,6 +697,16 @@
       "http": 403
     },
     {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/717/prefeitura-municipal-de-japonvar-mg-veiculos-caminhonete-onibus-van-microonibus-ambulancia-sucatas-diversas-e-outros",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/717/prefeitura-municipal-de-japonvar-mg-veiculos-caminhonete-onibus-van-microonibus-ambulancia-sucatas-diversas-e-outros",
+      "status": "erro",
+      "http": 0
+    },
+    {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-tangara-da-serra-mt/7188/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
@@ -710,11 +740,6 @@
       "url": "https://www.joaoemilio.com.br/leilao/5930/lotes",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/050826PRFVE?pag=1",
-      "status": "http_500",
-      "http": 500
     },
     {
       "url": "https://www.apabrfleiloes.com.br/leilao/prefeitura-de-capitolio-terrenos/462/#Pagina=1&Index=1",
