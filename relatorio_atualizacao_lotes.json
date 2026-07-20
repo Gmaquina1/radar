@@ -1,12 +1,12 @@
 {
-  "executado_em": "2026-07-20T16:17:07-03:00",
-  "lotes_antes": 3319,
-  "lotes_depois": 3324,
-  "lotes_realmente_novos": 5,
-  "lotes_removidos_ou_encerrados": 0,
+  "executado_em": "2026-07-20T17:01:46-03:00",
+  "lotes_antes": 3324,
+  "lotes_depois": 3319,
+  "lotes_realmente_novos": 1,
+  "lotes_removidos_ou_encerrados": 6,
   "lotes_preservados": 73,
   "lotes_capturados_agora": 3251,
-  "lotes_capturados_com_chave_nova": 5,
+  "lotes_capturados_com_chave_nova": 1,
   "eventos_analisados": 447,
   "eventos_com_lotes": 121,
   "eventos_com_erro": 134,
@@ -612,11 +612,6 @@
       "http": 403
     },
     {
-      "url": "https://www.nordesteleiloes.com.br/leiloes/129-prefeitura-de-dom-cavati-mg",
-      "status": "http_504",
-      "http": 504
-    },
-    {
       "url": "https://www.pwleiloes.com.br/leilao/prefeitura-municipal-de-ouro-fino/584/#Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
@@ -715,11 +710,6 @@
       "url": "https://www.joaoemilio.com.br/leilao/5930/lotes",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/050826PRFVE?pag=1",
-      "status": "http_500",
-      "http": 500
     },
     {
       "url": "https://www.apabrfleiloes.com.br/leilao/prefeitura-de-capitolio-terrenos/462/#Pagina=1&Index=1",
