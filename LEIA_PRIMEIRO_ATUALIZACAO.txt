@@ -1,0 +1,35 @@
+RADAR DE LEILÕES — VERSÃO ATUALIZADA
+
+Este pacote foi criado usando como base exata o arquivo "ultima.zip" enviado pelo proprietário.
+
+O visual do site, os arquivos de dados, o indexador de lotes, o mapa, as fotos e todas as funções existentes foram preservados.
+
+O que foi alterado:
+1. A atualização automática passa a executar a cada 6 horas.
+2. O envio deste pacote para a branch main inicia uma atualização automaticamente.
+3. Continua existindo o botão Run workflow na aba Actions.
+4. A atualização procura novos eventos e novos lotes.
+5. O site é gerado novamente e os dados são salvos automaticamente.
+6. Se a coleta falhar, a base anterior é restaurada.
+7. O sistema não aceita uma base vazia ou muito menor por erro de coleta.
+8. O status mostra a data real da base de eventos e de lotes.
+9. O relatório da execução fica disponível na aba Actions por 14 dias.
+
+COMO INSTALAR
+
+Opção mais simples:
+- Extraia este ZIP.
+- Abra o repositório Gmaquina1/radar no GitHub.
+- Envie todos os arquivos e pastas, substituindo os existentes.
+- Confirme o commit na branch main.
+
+Depois:
+- Abra a aba Actions.
+- Entre em "Atualizar Radar e novos lotes".
+- Aguarde a execução terminar.
+- Confira o arquivo status_atualizacao.txt.
+
+IMPORTANTE
+
+Os novos lotes não puderam ser coletados dentro deste ambiente porque a coleta depende de acesso externo aos sites dos leiloeiros.
+Assim que o pacote for enviado ao GitHub, o GitHub Actions fará a coleta pela internet e publicará os novos dados.
