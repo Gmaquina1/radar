@@ -1,1714 +1,91 @@
 {
-  "executado_em": "2026-07-20T13:37:20-03:00",
+  "executado_em": "2026-07-20T14:00:38-03:00",
   "lotes_antes": 3584,
-  "lotes_depois": 3584,
-  "lotes_realmente_novos": 0,
-  "lotes_removidos_ou_encerrados": 0,
-  "lotes_preservados": 3584,
-  "lotes_capturados_agora": 0,
-  "lotes_capturados_com_chave_nova": 0,
-  "eventos_analisados": 433,
-  "eventos_com_lotes": 0,
-  "eventos_com_erro": 433,
-  "eventos_bloqueados": 1,
-  "links_invalidos": 0,
-  "quantidade_coletada_por_leiloeiro": {},
+  "lotes_depois": 3330,
+  "lotes_realmente_novos": 1545,
+  "lotes_removidos_ou_encerrados": 1886,
+  "lotes_preservados": 73,
+  "lotes_capturados_agora": 3344,
+  "lotes_capturados_com_chave_nova": 1596,
+  "eventos_analisados": 449,
+  "eventos_com_lotes": 123,
+  "eventos_com_erro": 135,
+  "eventos_bloqueados": 128,
+  "links_invalidos": 4,
+  "quantidade_coletada_por_leiloeiro": {
+    "bolsadeleiloes.com.br": 100,
+    "bsbleiloes.com.br": 104,
+    "casadeleiloes.com.br": 1,
+    "drive.google.com": 166,
+    "eckertleiloes.com.br": 120,
+    "edgarcarvalholeiloeiro.com.br": 55,
+    "hisaleiloes.com.br": 62,
+    "lancecertoleiloes.com.br": 267,
+    "lancevip.com.br": 20,
+    "lbleiloes.com.br": 41,
+    "leilao.detran.mg.gov.br": 24,
+    "leilao.sodresantoro.com.br": 20,
+    "leilaoonline.com.br": 236,
+    "leiloesfreire.com.br": 52,
+    "liderleiloes.com.br": 50,
+    "lipinskileiloes.com.br": 25,
+    "marcotulioleiloes.com.br": 147,
+    "marcusviniciusleiloes.com.br": 102,
+    "nordesteleiloes.com.br": 11,
+    "peterlongoleiloes.com.br": 9,
+    "rauppleiloes.com.br": 52,
+    "rossileiloes.com.br": 572,
+    "rpleiloes.com.br": 29,
+    "rz.leilao.br": 47,
+    "sandrasantosleiloes.com.br": 10,
+    "sfleiloes.com.br": 17,
+    "sodresantoro.com.br": 94,
+    "sold.com.br": 833,
+    "tesouroleiloes.com.br": 15,
+    "topoleiloes.com.br": 24,
+    "vieiracolecionismo.com.br": 36,
+    "webleiloes.com.br": 3
+  },
   "erros_por_leiloeiro": {
-    "adrianoleiloeiro.com.br": 5,
-    "ajleiloes.com.br": 2,
-    "alvaroantonioleiloes.com.br": 1,
-    "alvesleiloes.com.br": 1,
-    "andreluizleiloes.com.br": 11,
-    "apabrfleiloes.com.br": 1,
-    "baldisseraleiloeiros.com.br": 1,
-    "bbmnetleiloes.com.br": 5,
-    "beedz.com.br": 1,
-    "bidgo.com.br": 3,
-    "bisleiloes.com.br": 2,
-    "bolsadeleiloes.com.br": 4,
-    "brunoleiloes.com.br": 2,
-    "cargneluttileiloes.com.br": 2,
-    "casadeleiloes.com.br": 2,
-    "casaleiloeira.com.br": 4,
-    "ccjleiloes.com.br": 1,
-    "claudiokussleiloes.com.br": 1,
-    "clicleiloes.com.br": 2,
-    "copart.com.br": 10,
-    "danielgarcialeiloes.com.br": 9,
-    "destakleiloes.com.br": 1,
+    "alvesleiloes.com.br": 2,
+    "andreluizleiloes.com.br": 1,
+    "apabrfleiloes.com.br": 2,
+    "bianchileiloes.com.br": 1,
+    "bidgo.com.br": 4,
+    "clicleiloes.com.br": 4,
+    "danielgarcialeiloes.com.br": 19,
+    "destakleiloes.com.br": 2,
     "diegoleiloes.com.br": 1,
-    "drive.google.com": 73,
-    "e-leiloes.com.br": 3,
-    "eblonline.com.br": 3,
-    "eckertleiloes.com.br": 11,
-    "edgarcarvalholeiloeiro.com.br": 2,
-    "elevaleiloes.com.br": 1,
-    "euamoleilao.com.br": 1,
-    "favaretoleiloes.com.br": 1,
+    "eblonline.com.br": 7,
     "fernandaleiloes.lel.br": 1,
-    "freitasleiloeiro.com.br": 4,
-    "galvanileiloes.com.br": 1,
-    "goldenlance.com.br": 2,
-    "gpleiloes.com.br": 3,
-    "grleiloes.com": 1,
-    "guariglialeiloes.com.br": 1,
-    "hisaleiloes.com.br": 2,
-    "italoleiloes.com": 2,
-    "jeremyleiloes.com.br": 1,
-    "jmleiloes.leilao.br": 6,
-    "joaoemilio.com.br": 6,
-    "kronberg.lel.br": 1,
-    "kwara.com.br": 6,
-    "lancecertoleiloes.com.br": 5,
-    "lbleiloes.com.br": 3,
-    "leilao.detran.mg.gov.br": 3,
-    "leilaoonline.com.br": 8,
-    "leilo.com.br": 3,
-    "leiloes.ac.gov.br": 1,
-    "leiloesbrasil.com.br": 1,
-    "leiloesfreire.com.br": 6,
-    "leiloesmager.com.br": 1,
-    "leiloesoliveira.com.br": 1,
-    "leiloespb.com.br": 1,
-    "levyleiloes.com.br": 1,
-    "liderleiloes.com.br": 2,
-    "lipinskileiloes.com.br": 1,
-    "loopleiloes.com.br": 2,
+    "grleiloes.com": 2,
+    "guariglialeiloes.com.br": 2,
+    "italoleiloes.com": 4,
+    "joaoemilio.com.br": 7,
+    "leiloesmager.com.br": 2,
+    "levyleiloes.com.br": 2,
+    "lkleiloes.com.br": 1,
     "lottileiloes.com.br": 2,
-    "mafraleiloes.com.br": 1,
-    "maisleilao.com.br": 1,
-    "marangonileiloes.com.br": 1,
-    "marcotulioleiloes.com.br": 1,
-    "marcusviniciusleiloes.com.br": 3,
-    "mercado.bomvalor.com.br": 16,
-    "mgl.com.br": 20,
-    "mjleiloes.com.br": 1,
-    "monzonleiloes.com.br": 3,
-    "nordesteleiloes.com.br": 1,
-    "nsleiloes.leilao.br": 6,
-    "pagliarinileiloes.com.br": 1,
-    "palaciodosleiloes.com.br": 3,
-    "patiorochaleiloes.com.br": 2,
-    "pestanaleiloes.com.br": 5,
-    "peterlongoleiloes.com.br": 1,
-    "pietosoleiloes.com.br": 2,
-    "prochicleiloes.com.br": 1,
-    "purcenaleiloes.com.br": 1,
-    "pwleiloes.com.br": 4,
-    "rauppleiloes.com.br": 1,
-    "renovarleiloes.com.br": 1,
-    "ricoleiloes.com.br": 6,
-    "rogeriomenezes.com.br": 2,
-    "rossileiloes.com.br": 12,
-    "rpleiloes.com.br": 1,
-    "rz.leilao.br": 1,
-    "sandrasantosleiloes.com.br": 1,
-    "saulojulioleiloeiro.com.br": 1,
-    "sfleiloes.com.br": 1,
-    "sistemaleiloes.com.br": 1,
-    "sodresantoro.com.br": 7,
-    "sold.com.br": 45,
-    "sumareleiloes.com.br": 5,
+    "mercado.bomvalor.com.br": 6,
+    "mgl.com.br": 25,
+    "nsleiloes.leilao.br": 11,
+    "patiorochaleiloes.com.br": 4,
+    "pwleiloes.com.br": 6,
+    "renovarleiloes.com.br": 2,
+    "ricoleiloes.com.br": 4,
+    "sumareleiloes.com.br": 6,
     "szortykaleiloes.com.br": 1,
-    "topoleiloes.com.br": 1,
-    "tudoleilao.com.br": 6,
-    "vardanaleiloes.com.br": 1,
-    "vieiracolecionismo.com.br": 1,
-    "vipleiloes.com.br": 7,
-    "webleiloes.com.br": 1,
-    "winleiloes.com.br": 1,
-    "wleiloes.com.br": 1,
-    "wrleiloes.com.br": 2,
-    "www25.receita.fazenda.gov.br": 7
+    "winleiloes.com.br": 2,
+    "wleiloes.com.br": 2
   },
   "urls_que_falharam": [
     {
-      "url": "https://drive.google.com/file/d/1Kde3WtxIZQ8l-VewD0vOdc7acjOoVTLl/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.ccjleiloes.com.br/leilao/532/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.leiloesfreire.com.br/leilao/1130",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://eblonline.com.br/lotes/313?page=1&size=6&removerEncerrados=false",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-liberdade-mg/7143/#&Pagina=1&Index=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.bisleiloes.com.br/evento/excelente-leilao-municipio-de-entre-rios-do-sul-783354?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.pietosoleiloes.com.br/leilao/excepcional-leilao-extrajudicial-de-eucaliptos-da-prefeitura-de-caxias-do-sul-rs-22-06-2026-14-00-16/lotes/lista",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.leiloesbrasil.com.br/diversos/#5889/web_sys_snap/leilao/14-07-2026",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.purcenaleiloes.com.br/leilao/783/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.andreluizleiloes.com.br/evento/municipio-de-bituruna-783285?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-marema-sc-788908?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-marema-sc-788908?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-descanso-sc-782785?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-descanso-sc-782785?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.pietosoleiloes.com.br/leilao/leilao-extrajudicial-de-imoveis-da-prefeitura-de-alvorada-rs-20-05-2026-18-00-55/lotes/lista",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.e-leiloes.com.br/eventos/leilao/2202/veiculos-e-itens-da-icmbio-para-pa?page=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.e-leiloes.com.br/eventos/leilao/2202/veiculos-e-itens-da-icmbio-para-pa",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.freitasleiloeiro.com.br/Leiloes/Lotes?leilaoId=7923",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.copart.com.br/saleListResult/auctionId/10248?location=Leil%C3%A3o%20P%C3%A1tio%20Porto%20Seguro%20-%20SP&saleDate=1784034000000&liveAuction=false&from=&yardNum=3&auctioneer=Luciana%20de%20C%C3%A1ssia%20dos%20Santos%20do%20Carmo%20-%20Jucesp%201136",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.copart.com.br/saleListResult/auctionId/10249?location=Curitiba%20-%20PR&saleDate=1784035800000&liveAuction=false&from=&yardNum=53&auctioneer=Lucas%20Eduardo%20Dalcanale%20-%20Jucepar%2020%2F319L",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.copart.com.br/saleListResult/auctionId/10250?location=Curitiba%20-%20PR&saleDate=1784048400000&liveAuction=false&from=&yardNum=53&auctioneer=Luiz%20Rafael%20L%20de%20Lima%20-%20Jucepar%2020%2F315-L",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.copart.com.br/saleListResult/auctionId/10297?location=Osasco%20-%20SP&saleDate=1784062800000&liveAuction=false&from=&yardNum=1&auctioneer=Luiz%20Eduardo%20Gomes%20-%20Jucesp%20969",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jmleiloes.leilao.br/evento/corporativo-783011?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.claudiokussleiloes.com.br/relacao-foto/882",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.goldenlance.com.br/eventos/leilao/171/leilao-de-eletrodomesticos-e-materiais-diversos",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://static.suporteleiloes.com.br/goldenlancecombr/leiloes/171/documentos/sl-doc-171-6a5546d351a4e-6a5546d351f1b.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://leilaoonline.com.br/leilao/detalhe/4654",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.kwara.com.br/evento/leilao-de-moveis-eletrodomesticos-e-itens-de-decoracao-bens-de-apartamentos-decorados-cyrela-K-2798",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.hisaleiloes.com.br/leilao/2478",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.hisaleiloes.com.br/arquivos/arquivos_leilao/0564394001783012682.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.bolsadeleiloes.com.br/leilao/655",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.bolsadeleiloes.com.br/arquivos/arquivos_leilao/0321013001783018024.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.adrianoleiloeiro.com.br/evento/conjunto-de-maquinas-para-marcenaria-783613?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://leilo.com.br/leilao/?leilao.nome=SUPER%20TER%C3%87A%20-%2014.07.26",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sodresantoro.com.br/leilao/28787?sort=lot_number_asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sodresantoro.com.br/leilao/28787?sort=lot_number_asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://leilo.com.br/leilao/?leilao.nome=SUPER%20TER%C3%87A%20-%2014.07.26",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://loopleiloes.com.br/eventos",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://mercado.bomvalor.com.br/maquinas-e-equipamentos/guindaste/jib-de-guindaste-liebherr-ltm-1250-124535",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/cbmm-789361?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/cbmm-789361?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/petrobras-pea0303522-783410?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/petrobras-pea0303522-783410?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/petrobras-pea0360883-783687?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/petrobras-pea0360883-783687?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/schulz-1-789034?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/schulz-1-789034?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/iccr-rio-minas-789150?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/iccr-rio-minas-789150?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/deca-789334?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/deca-789334?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.rossileiloes.com.br/leilao/detalhe/4741/K-MAQUINAS",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.adrianoleiloeiro.com.br/evento/maquinas-e-caminhoes-789376?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-seritinga-mg/7200/#&Pagina=1&Index=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-mantena-mg/7152/#&Pagina=1&Index=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.vipleiloes.com.br/evento/detalhes/150726pinhaispr",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.alvaroantonioleiloes.com.br/eventos/leilao/140/prefeitura-de-ipiranga-do-norte",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/142njxCSR6I4Y0kClDGDyEReMqhAA0tWj/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://leiloesoliveira.com.br/eventos/leilao/2/prefeitura-de-cajobi-sp",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://static.suporteleiloes.com.br/leiloesoliveiracombr/leiloes/2/documentos/sl-doc-2-6a39642723da6-6a396427249e0.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.bbmnetleiloes.com.br/evento/alienacao-de-sucatas-municipio-itapecerica-serra-788969?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sumareleiloes.com.br/leiloes/5075",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-cunha-pora-sc-783332?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-cunha-pora-sc-783332?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-porto-amazonas-pr/7155/#&Pagina=1&Index=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-pedra-do-anta-mg/7146/#&Pagina=1&Index=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.euamoleilao.com.br/evento/prefeitura-do-municipio-de-rafard-data-retificada-781431?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1bRnN9nACjDWR9csK_AmKjJxjwVFYlKMF/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://lbleiloes.com.br/leilao/13/prefeitura-municipal-de-paragominas-pa",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.pwleiloes.com.br/leilao/prefeitura-municipal-de-rio-novo/569/#Pagina=1&Index=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1LAmBW-NNgNardlK3p8F-qH28htsP9-yV/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.ricoleiloes.com.br/leilao/2061/lotes?page=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.copart.com.br/saleListResult/auctionId/10253?location=Eus%C3%A9bio%20-%20CE&saleDate=1784120400000&liveAuction=false&from=&yardNum=103&auctioneer=Georgia%20de%20Souza%20Castelo%20-%20Jucec%2024%2F2016",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.copart.com.br/saleListResult/auctionId/10253?location=Eus%C3%A9bio%20-%20CE&saleDate=1784120400000&liveAuction=false&from=&yardNum=103&auctioneer=Georgia%20de%20Souza%20Castelo%20-%20Jucec%2024%2F2016",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.ajleiloes.com.br/leilao/1465",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.freitasleiloeiro.com.br/Leiloes/Lotes?leilaoId=7922",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://leilo.com.br/leilao/?leilao.nome=LEIL%C3%83O%20NORTE%20%2B%20NORDESTE%20%E2%80%93%2015.07.2026",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.favaretoleiloes.com.br/edital/1632/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.andreluizleiloes.com.br/evento/corporativo-783366?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jmleiloes.leilao.br/evento/corporativo-783663?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jmleiloes.leilao.br/evento/corporativo-783661?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.pestanaleiloes.com.br/agenda-de-leiloes/5990?lotePage=1&loteQty=12",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.ajleiloes.com.br/leilao/1465",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.hisaleiloes.com.br/leilao/2476",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.hisaleiloes.com.br/arquivos/arquivos_leilao/0401810001783095297.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.bolsadeleiloes.com.br/leilao/661",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.bolsadeleiloes.com.br/arquivos/arquivos_leilao/0846345001783453076.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.joaoemilio.com.br/leilao/6016/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.joaoemilio.com.br/leilao/6017/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.kwara.com.br/evento/leilao-de-moveis-eletrodomesticos-e-utensilios-galpao-kwara-K-2766",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.kwara.com.br/evento/leilao-de-inversores-para-paineis-solares-elgin-K-2781",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.kwara.com.br/evento/leilao-de-itens-de-informatica-vestuario-moda-e-beleza-prata-K-2811",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.rossileiloes.com.br/leilao/detalhe/4744/GDB",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/agis-construcao-783497?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/agis-construcao-783497?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/acelerati-783480?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/acelerati-783480?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sodresantoro.com.br/leilao/28794?sort=lot_number_asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.copart.com.br/saleListResult/auctionId/10254?location=Osasco%20-%20SP&saleDate=1784151000000&liveAuction=false&from=&yardNum=1&auctioneer=Luiz%20Eduardo%20Gomes%20-%20Jucesp%20969",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://mercado.bomvalor.com.br/ativos-industriais-e-equipamentos-pesados-36058",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sodresantoro.com.br/leilao/28794?sort=lot_number_asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/acelerati-783480?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/acelerati-783480?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/cremer-789333?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/cremer-789333?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.joaoemilio.com.br/leilao/6015/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/start-engenharia-783429?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/start-engenharia-783429?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/dasa-789381?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/dasa-789381?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/petrobras-pea0364697-783595?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/petrobras-pea0364697-783595?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/petrobras-pea0248492-789508?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/petrobras-pea0248492-789508?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/petrobras-pea0384180-783445?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/petrobras-pea0384180-783445?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/petrobras-pea0381985-789117?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/petrobras-pea0381985-789117?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/hm-engenharia-789191?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/hm-engenharia-789191?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/agis-construcao-783497?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/agis-construcao-783497?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/schulz-2-783323?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/schulz-2-783323?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/apsen-783662?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/apsen-783662?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.rossileiloes.com.br/leilao/detalhe/4743/2?categoria=&numeroLote=&pesquisaLotes=&ordenacao=&flow=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://leilaoonline.com.br/leilao/detalhe/4633",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://leilaoonline.com.br/leilao/detalhe/4653/3?categoria=&numeroLote=&pesquisaLotes=&ordenacao=&flow=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.gpleiloes.com.br/gp/#/leilao/3843",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.gpleiloes.com.br/gp/#/leilao/3841",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.casaleiloeira.com.br/evento/veiculo-usado-de-frota-783530?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8474",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.baldisseraleiloeiros.com.br/pregao/6a1dbd45648421587a17ffb0/6a1dbdb2648421587a18009e",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.leiloespb.com.br/eventos/leilao/1998/leilao-tokio-marine-seguradora",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-jenipapo-de-minas-mg/7159/#&Pagina=1&Index=3",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.cargneluttileiloes.com.br/leilao/4441/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1-5YwL4U1vSsZlt0xzrGLthYb5gmQYCSF/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1H_FEGXFPzgaln_6WOrg1UDqH_PGJiLK8/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1NqopdGhDDjNf4yR6Oi2xZL33-nqcvLSV/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.usercontent.google.com/download?id=1NqopdGhDDjNf4yR6Oi2xZL33-nqcvLSV&export=download",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-nova-erechim-sc-788963?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-nova-erechim-sc-788963?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.cargneluttileiloes.com.br/leilao/4441/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/717800/2/2026",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/100100/4/2026",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/100100/3/2026;pg=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/100100/4/2026;pg=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1PzW_tsWl-Pphv2JpahSWY5w01IebBDRN/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.ricoleiloes.com.br/leilao/2058/lotes?page=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.copart.com.br/saleListResult/auctionId/10259?location=Vit%C3%B3ria%20de%20Santo%20Ant%C3%A3o%20-%20PE&saleDate=1784201400000&liveAuction=false&from=&yardNum=92&auctioneer=Adriano%20Santos%20Venceslau%20da%20Silva%20-%20Jucepe%2032%2F99",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.copart.com.br/saleListResult/auctionId/10256?location=Itaquaquecetuba%20-%20SP&saleDate=1784221200000&liveAuction=false&from=&yardNum=46&auctioneer=Jose%20Carlos%20Chagas%20-%20Jucesp%20940",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.copart.com.br/saleListResult/auctionId/10256?location=Itaquaquecetuba%20-%20SP&saleDate=1784221200000&liveAuction=false&from=&yardNumv=46&auctioneer=Jose%20Carlos%20Chagas%20-%20Jucesp%20940",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.rogeriomenezes.com.br/leilao/1580?page=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.pestanaleiloes.com.br/agenda-de-leiloes/5849?lotePage=1&loteQty=12",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.guariglialeiloes.com.br/leilao/806/lotes?page=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.winleiloes.com.br/leilao/113/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.andreluizleiloes.com.br/evento/corporativo-789428?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.bolsadeleiloes.com.br/leilao/666",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.bolsadeleiloes.com.br/arquivos/arquivos_leilao/0254076001783541055.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.bolsadeleiloes.com.br/leilao/669",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.bolsadeleiloes.com.br/arquivos/arquivos_leilao/0775449001783694008.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.joaoemilio.com.br/leilao/6028/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://mercado.bomvalor.com.br/equipamentos-para-producao-alimenticia-camara-fria-tanques-industriais-mobiliario-e-materiais-diversos-36250",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.goldenlance.com.br/eventos/leilao/152/grande-leilao-de-pecas-de-caminhao-maquinas-e-carros-pecas-de-estoque-sem-uso",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.adrianoleiloeiro.com.br/evento/mandrilhadora-e-furadeira-789477?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.copart.com.br/saleListResult/auctionId/10255?location=Itaquaquecetuba%20-%20SP&saleDate=1784203200000&liveAuction=false&from=&yardNum=46&auctioneer=Wendell%20F%C3%A9lix%20-%20Jucesp%20759",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sodresantoro.com.br/leilao/28795?sort=lot_number_asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://loopleiloes.com.br/eventos",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.lottileiloes.com.br/leilao/737/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.vardanaleiloes.com.br/vardana/veiculos.php?lei=1076",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.leiloesfreire.com.br/leilao/1127",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.leiloesfreire.com.br/storage/leiloes/June2026/KAiCjQGczMFPkp2QZmoc.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.leiloesfreire.com.br/leilao/1126?page=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.leiloesfreire.com.br/storage/leiloes/June2026/GjT93XlZc3OPYA6KXfA2.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.gpleiloes.com.br/gp/#/leilao/3854",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/movmix-789578?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/movmix-789578?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/ciplan-783774?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/ciplan-783774?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/oferta/semirreboque-bau-facchini-srf-loed-2009-2010-placa-final-5-pr-4757009",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/oferta/semirreboque-bau-facchini-srf-loed-2009-2010-placa-final-5-pr-4757009",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/marcopolo-788956?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/marcopolo-788956?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/schulz-3-783319?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/schulz-3-783319?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/dhl-789242?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/dhl-789242?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/dp-vale-783701?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/dp-vale-783701?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/light-energia-789598?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/light-energia-789598?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.rossileiloes.com.br/leilao/detalhe/4742/SPesados",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.rossileiloes.com.br/leilao/detalhe/4732/ITUTRATORES",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/leilao-de-pesados-arrematacao-antecipada/4836/#&Pagina=1&Index=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/leilao-maquinas-arremate-agora/5410/#&Pagina=1&Index=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.casaleiloeira.com.br/evento/veiculo-sinistrado-recuperavel-783430?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.leiloesfreire.com.br/leilao/1126",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.leiloesfreire.com.br/storage/leiloes/June2026/GjT93XlZc3OPYA6KXfA2.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.andreluizleiloes.com.br/evento/corporativo-789428?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.kwara.com.br/evento/leilao-de-eletroportateis-itens-de-informatica-ferramentas-e-vestuario-armazem-7-K-2790",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.vipleiloes.com.br/evento/detalhes/160726bssc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "http://rogeriomenezes.com.br/leilao/1567?page=1",
+      "url": "https://eblonline.com.br/lotes/319?page=1&size=6&removerEncerrados=false",
       "status": "bloqueado_http_403",
       "http": 403
     },
     {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-espirito-santo-do-dourado-mg/7057/#&Pagina=1&Index=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.bbmnetleiloes.com.br/evento/alienacao-de-motos-veiculos-leves-e-pesados-783413?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.leiloesfreire.com.br/leilao/1131",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.vipleiloes.com.br/evento/detalhes/170726prefpilar",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/18JFnahoHl_occaxx3sOaqHvxITODqXHr/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.usercontent.google.com/download?id=18JFnahoHl_occaxx3sOaqHvxITODqXHr&export=download",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1E1xonWquGO6dnbbKaw1lss0qClzHJ7XM/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.usercontent.google.com/download?id=1E1xonWquGO6dnbbKaw1lss0qClzHJ7XM&export=download",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sumareleiloes.com.br/leiloes/5254",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1vfRktQeO1-mFgIHcsjkfCnogAUK8VcvN/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.bbmnetleiloes.com.br/evento/alienacao-de-motos-veiculos-leves-e-pesados-783413?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.elevaleiloes.com.br/leilao/leilao-da-prefeitura-municipal-de-sete-de-setembro-rs-18-06-2026-18-47-13/lotes/lista",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.elevaleiloes.com.br/uploads/media/documentos_leilao/0001/01/d6475868a66ab9fd231521847467200814bf2022.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-ouro-sc-783129?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-ouro-sc-783129?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.wrleiloes.com.br/leilao/762/leilao-departamento-estadual-de-transito-do-acre-detran-ac-rio-branco",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://leiloes.ac.gov.br/gplg/leiloes/lotes/89",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.ricoleiloes.com.br/leilao/2062/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://mercado.bomvalor.com.br/maquinas-e-equipamentos/compressor-parafuso/unidade-compressora-parafuso-ingersoll-rand-900-pcm-124533",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://mercado.bomvalor.com.br/maquinas-e-equipamentos/linha-de-producao/maquinas-e-equipamentos-para-processamento-de-poliuretano-123638",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.edgarcarvalholeiloeiro.com.br/oferta/leilao/eletros-eletronicos/eletrodomesticos/11447/id-14695/tv-philco-ph43e30dsgw-e-uma-smart-tv-led-de-43-polegadas-com-resolucao-full-hd-1920-1080-pixels",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://static.suporteleiloes.com.br/edgarcarvalholeiloeirocombr/leiloes/783/documentos/sl-doc-783-6a4bf015d6a5b-6a4bf015d749b.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/agrichem-789083?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/agrichem-789083?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.vipleiloes.com.br/evento/detalhes/170726tdpe",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.adrianoleiloeiro.com.br/evento/retroescavadeiras-case-789730?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/pepsico-789674?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/pepsico-789674?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/gomes-almeida-783284?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/gomes-almeida-783284?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/atlas-schindler-789391?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/atlas-schindler-789391?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/petrobras-pea0367943-783801?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/petrobras-pea0367943-783801?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/silcon-783784?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/silcon-783784?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/gm-789137?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/gm-789137?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/coelba-783803?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/coelba-783803?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/creluz-789143?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/creluz-789143?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/special-alloy-789207?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/special-alloy-789207?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/white-martins-789723?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/white-martins-789723?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/delga-789471?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/delga-789471?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/cencosud-783729?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/cencosud-783729?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/dexco-789285?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/dexco-789285?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/agrichem-789083?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/agrichem-789083?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://mercado.bomvalor.com.br/martinsleiloes/evandro-viegas-martins/veiculos/jipe/ford-jeep-1963-1963-124309",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://mercado.bomvalor.com.br/maquinas-pesadas-caminhoes-empilhadeiras-vale-36269",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.rossileiloes.com.br/leilao/detalhe/4746/MISC",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://leilaoonline.com.br/leilao/detalhe/4642",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.rossileiloes.com.br/leilao/detalhe/4747/HD",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.andreluizleiloes.com.br/evento/h-l-bastogi-eletronicos-ltda-789447?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.casaleiloeira.com.br/evento/veiculo-usado-789192?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.leiloesfreire.com.br/leilao/1127?page=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.leiloesfreire.com.br/storage/leiloes/June2026/KAiCjQGczMFPkp2QZmoc.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.casadeleiloes.com.br/leilao/leilao-de-veiculos-de-extrajudicial-ms/14647",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.freitasleiloeiro.com.br/Leiloes/Lotes?leilaoId=7926",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.andreluizleiloes.com.br/evento/h-l-bastogi-eletronicos-ltda-789447?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.andreluizleiloes.com.br/evento/h-l-bastogi-eletronicos-ltda-789447?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.kwara.com.br/evento/leilao-de-smart-tvs-aspiradores-e-eletrodomesticos-casas-bahia-K-2863",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.pestanaleiloes.com.br/agenda-de-leiloes/6001?lotePage=1&loteQty=12",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.pestanaleiloes.com.br/agenda-de-leiloes/6001?lotePage=1&loteQty=12",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.freitasleiloeiro.com.br/Leiloes/Lotes?leilaoId=7900",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.vipleiloes.com.br/evento/detalhes/170726prefpilar",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.vipleiloes.com.br/evento/detalhes/170726prefpilar",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.wrleiloes.com.br/leilao/756/leilao-venda-direta-hk-transportes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.vipleiloes.com.br/evento/detalhes/180726tmvg",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-itabirito-mg/7170/#&Pagina=1&Index=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://sistemaleiloes.com.br/macielchaves/index.php?pg=busca_rs&pagina_busca=0&leilao_busca=10&subs_busca=&fav_busca=&ml_busca=ml_busca&vd_busca=&uf_busca=&leilaoini_busca=s&busca_new=",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1pWpzKPMz2txwt0JdysY0EDA-M1ENxih-/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.kronberg.lel.br/evento/municipio-de-mariopolis-pr-783568?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.edgarcarvalholeiloeiro.com.br/leiloes/570",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://static.suporteleiloes.com.br/edgarcarvalholeiloeirocombr/leiloes/784/documentos/sl-doc-784-6a44306c65653-6a44306c68230.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.bisleiloes.com.br/evento/leilao-imovel-do-municipio-campina-das-missoes-rs-789154?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://mjleiloes.com.br/leiloes/66?slug=leilao-da-prefeitura-de-simoes-pi-bens-inserviveis-veiculos-moveis-e-outros",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-tangara-sc-783349?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-tangara-sc-783349?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1EKMOZYBzuriS_4Dxg5cS6BMw0bNoVr1L/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.usercontent.google.com/download?id=1EKMOZYBzuriS_4Dxg5cS6BMw0bNoVr1L&export=download",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.bbmnetleiloes.com.br/evento/alienacao-veiculos-leves-e-pesados-inserviveis-itu-783368?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/900100/8/2026",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://liderleiloes.com.br/eventos/leilao/181/veiculos-conservados-carros-motos-e-suvs-sessao-publica-de-20-07-2026-das-10h00-as-18h00?page=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1MFAlE4DHsrnVTz-ajZZAEtJ2tL5_KER_/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1nc_WDd-YMWT3FcZ3ymgC-4YbX61wiRkZ/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3388/2026",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.maisleilao.com.br/eventos/leilao/370/leilao-online-da-universidade-federal-de-goias",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1flfRITeR362b2lQNNmyzCctNchZciygx/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.usercontent.google.com/download?id=1flfRITeR362b2lQNNmyzCctNchZciygx&export=download",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://mercado.bomvalor.com.br/veiculos/picape-caminhonete/sucata-de-veiculos-sem-direito-a-documentacao-124777",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.tudoleilao.com.br/leilao/254/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.vieiracolecionismo.com.br/catalogo.asp?Num=61614",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.casaleiloeira.com.br/evento/leilao-de-veiculos-recuperavel-e-sucata-789346?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sodresantoro.com.br/leilao/28820?sort=lot_number_asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sodresantoro.com.br/leilao/28820?sort=lot_number_asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://mercado.bomvalor.com.br/veiculos/picape-caminhonete/sucata-de-veiculos-sem-direito-a-documentacao-124777",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/superfrio-789542?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/superfrio-789542?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sold.com.br/evento/armac-789607?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.sold.com.br/evento/armac-789607?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.tudoleilao.com.br/leilao/249/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.tudoleilao.com.br/leilao/250/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.tudoleilao.com.br/leilao/251/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.tudoleilao.com.br/leilao/253/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.tudoleilao.com.br/leilao/252/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://mercado.bomvalor.com.br/moveis-para-escritorio-36236",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/210726VE",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://armazviplprd.blob.core.windows.net/controle/geral/1/fed85751607d47419629da67914bac88.pdf",
+      "url": "https://www.sumareleiloes.com.br/leiloes/4795",
       "status": "erro",
       "http": 0
     },
@@ -1718,22 +95,12 @@
       "http": 0
     },
     {
-      "url": "https://www.monzonleiloes.com.br/evento/leilao-de-imoveis-do-municipio-de-novo-hamburgo-rs-782380?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.lancecertoleiloes.com.br/leilao/210726VE",
+      "status": "http_500",
+      "http": 500
     },
     {
-      "url": "https://www.andreluizleiloes.com.br/evento/municipio-de-guamiranga-783479?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1OAsQiZiKsJ2m-Yl5GkZhZcBYTU-QNfi5/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://marcusviniciusleiloes.com.br/leilao/706/prefeitura-municipal-de-serranopolis-de-minas-mg",
+      "url": "https://www.sumareleiloes.com.br/leiloes/5089",
       "status": "erro",
       "http": 0
     },
@@ -1744,438 +111,233 @@
     },
     {
       "url": "https://www.bidgo.com.br/leilao/terrenos-em-novo-hamburgo-19-05-2026-16-21-12/lotes/lista",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.peterlongoleiloes.com.br/eventos/leilao/leilao-de-imoveis-prefeitura-de-novo-hamburgo/lote/5548/area-de-terras-em-novo-hamburgo-com-40-168-06-m",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.monzonleiloes.com.br/evento/leilao-de-imoveis-do-municipio-de-novo-hamburgo-rs-782380?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1lLt-rJGlSDenKp7flj5D71s1D6b8m1RJ/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3422/2026",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1fbo9QfjhZBE0c6I9cfjEHdBBP1iHMdgb/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jmleiloes.leilao.br/evento/corporativo-783202?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jmleiloes.leilao.br/evento/corporativo-783877?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.prochicleiloes.com.br/leilao.asp?Num=63056",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://mercado.bomvalor.com.br/veiculos/semi-reboque/semirreboque-florestal-sucata-62-un-124753",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.adrianoleiloeiro.com.br/oferta/pecas-para-colhedoras-john-deere-4754726",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.rossileiloes.com.br/leilao/detalhe/4716",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.rossileiloes.com.br/leilao/detalhe/4716",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://mercado.bomvalor.com.br/veiculos/semi-reboque/semirreboque-florestal-sucata-62-un-124753",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.rossileiloes.com.br/leilao/detalhe/4734/JNJ",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.rossileiloes.com.br/leilao/detalhe/4734/JNJ",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://mercado.bomvalor.com.br/maquinas-industriais-36284",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://mercado.bomvalor.com.br/maquinas-industriais-36284",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://mercado.bomvalor.com.br/renovacao-da-frota-de-veiculos-36232",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://mercado.bomvalor.com.br/renovacao-da-frota-de-veiculos-36232",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://www.rossileiloes.com.br/leilao/detalhe/4748/EMPILHADEIRAS",
-      "status": "erro",
-      "http": 0
+      "url": "https://mercado.bomvalor.com.br/maquinas-industriais-36284",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://leilaoonline.com.br/leilao/detalhe/4656",
-      "status": "erro",
-      "http": 0
+      "url": "https://mercado.bomvalor.com.br/maquinas-industriais-36284",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://leilaoonline.com.br/leilao/detalhe/4657/leilao-caminhao",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.winleiloes.com.br/leilao/114/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://leilaoonline.com.br/leilao/detalhe/4656",
-      "status": "erro",
-      "http": 0
+      "url": "https://mercado.bomvalor.com.br/veiculos/semi-reboque/semirreboque-florestal-sucata-62-un-124753",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://leilaoonline.com.br/leilao/detalhe/4657/leilao-caminhao",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.marcotulioleiloes.com.br/leiloes/316",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.danielgarcialeiloes.com.br/leilao/7686/lotes",
-      "status": "erro",
-      "http": 0
+      "url": "https://mercado.bomvalor.com.br/veiculos/semi-reboque/semirreboque-florestal-sucata-62-un-124753",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-eldorado-ms/7184/#&Pagina=1&Index=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1maqRArixF5ge9XOrG8M_h78bBjwbYh42/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1XJ32eh5-NWkS3503ofz58PnPREyOOqKG/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.usercontent.google.com/download?id=1XJ32eh5-NWkS3503ofz58PnPREyOOqKG&export=download",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1_Lz7VtTe9IVjakCrdrOhdlOX6o_CpgaX/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.fernandaleiloes.lel.br/leilao/leilao-de-imoveis-da-prefeitura-de-novo-hamburgo-rs-27-02-2026-10-19-48/lotes/lista",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.ricoleiloes.com.br/leilao/2069/lotes",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.renovarleiloes.com.br/leilao/leilao-da-prefeitura-de-sapiranga-rs-20-05-2026-14-55-56/lotes/lista",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://www.galvanileiloes.com.br/leilao/index/leilao_id/96052",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.pwleiloes.com.br/leilao/pref-municipal-de-cana-verde/577/#Pagina=1&Index=1",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.ricoleiloes.com.br/leilao/2069/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.clicleiloes.com.br/leilao/1945/lotes",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7686/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.pwleiloes.com.br/leilao/pref-municipal-de-cana-verde/577/#Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7686/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-eldorado-ms/7184/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.fernandaleiloes.lel.br/leilao/leilao-de-imoveis-da-prefeitura-de-novo-hamburgo-rs-27-02-2026-10-19-48/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.ricoleiloes.com.br/leilao/2069/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.renovarleiloes.com.br/leilao/leilao-da-prefeitura-de-sapiranga-rs-20-05-2026-14-55-56/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.pwleiloes.com.br/leilao/pref-municipal-de-cana-verde/577/#Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.clicleiloes.com.br/leilao/1945/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.szortykaleiloes.com.br/leilao/leilao-de-imoveis-da-prefeitura-de-novo-hamburgo-19-05-2026-13-16-31/lotes/lista",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://liderleiloes.com.br/eventos/leilao/182/sucata-aproveitavel-carros-motos-e-utilitarios-sessao-publica-de-22-07-2026-das-10h00-as-18h00",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3299/2026",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.casadeleiloes.com.br/leilao/leilao-de-bens-moveis-de-extrajudicial-ms/14648",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.lottileiloes.com.br/leilao/734/lotes",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.patiorochaleiloes.com.br/leilao/1311/lotes",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.patiorochaleiloes.com.br/leilao/1309/lotes",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8473",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.lottileiloes.com.br/leilao/734/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://www.pestanaleiloes.com.br/agenda-de-leiloes/5999?lotePage=1&loteQty=12",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.lottileiloes.com.br/leilao/734/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://www.jmleiloes.leilao.br/evento/corporativo-788722?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.patiorochaleiloes.com.br/leilao/1311/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://www.rz.leilao.br/leilao/leilao-de-veiculos-maquinas-equipamentos-e-sucatas-da-prefeitura-de-machadinho-rs-29-06-2026-15-38-39/lotes/lista",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.rz.leilao.br/uploads/media/documentos_leilao/0001/09/a878fd09cdb7914c194a24a95356ae5f751e9ab8.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1JDAzDExtZ9DOVKQutzlsHXq-buIlTLNN/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.usercontent.google.com/download?id=1JDAzDExtZ9DOVKQutzlsHXq-buIlTLNN&export=download",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.danielgarcialeiloes.com.br/leilao/7688/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.danielgarcialeiloes.com.br/leilao/7689/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1JgSXIw6CKjHOPp0Q_kNk7fQAaazVARkn/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1eLIIa_mylZqQyl1wnakWKdicJfZpuOnE/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1LFV8nG65NYfzoafOG5ruvIcsluEHS1eN/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1nHHgK7Y-qVh1L9nQ9Iy8yAE57oQ0BR6m/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.usercontent.google.com/download?id=1nHHgK7Y-qVh1L9nQ9Iy8yAE57oQ0BR6m&export=download",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.patiorochaleiloes.com.br/leilao/1309/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.italoleiloes.com/leilao/3279/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1c1m0JSGU-6eJAUC0wcBA8uuNy1LUTMH3/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-maraba-pa/7091/#&Pagina=1&Index=2",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.google.com/file/d/1t6btMLKWYDhEoU4Crj__HRjpF2EABhAN/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1kVGR3VmeFW_I_vb9zFEePacfP9mFGVwQ/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.usercontent.google.com/download?id=1kVGR3VmeFW_I_vb9zFEePacfP9mFGVwQ&export=download",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.rauppleiloes.com.br/leilao/leilao-extrajudicial-maquinarios-veiculos-mobiliarios-entre-outros-24-06-2026-15-33-31/lotes/lista",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/230726SUC",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/230726VEIC",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.joaoemilio.com.br/leilao/6029/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://brunoleiloes.com.br/leilao/index/leilao_id/96105",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://brunoleiloes.com.br/leilao/index/leilao_id/96106",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7689/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-sao-joao-batista-do-gloria-mg/7218/#&Pagina=1&Index=2",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://www.mgl.com.br/leilao/bens-diversos/6697/#&Pagina=1&Index=2",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7688/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7689/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.italoleiloes.com/leilao/3279/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-maraba-pa/7091/#&Pagina=1&Index=2",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.mgl.com.br/leilao/fundaj-pe/7225/#&Pagina=1&Index=2",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.google.com/file/d/1mzg-FTUBLiRiWh0HQMufqG-8IB0Utm-S/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.guariglialeiloes.com.br/leilao/808/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.usercontent.google.com/download?id=1mzg-FTUBLiRiWh0HQMufqG-8IB0Utm-S&export=download",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.guariglialeiloes.com.br/leilao/808/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.google.com/file/d/1mzg-FTUBLiRiWh0HQMufqG-8IB0Utm-S/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.mgl.com.br/leilao/bens-diversos/6697/#&Pagina=1&Index=2",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.usercontent.google.com/download?id=1mzg-FTUBLiRiWh0HQMufqG-8IB0Utm-S&export=download",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.mgl.com.br/leilao/bens-diversos/6697/#&Pagina=1&Index=2",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://lbleiloes.com.br/leilao/22/prefeitura-municipal-de-ariranha-do-ivai-pr",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.joaoemilio.com.br/leilao/6029/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://cdn.leilotech.workers.dev/lbleiloes/documentos/leilao/22/EKB4sr6TI6daZh03O9IPvnDuQejKQgD6Fh5FH4xY570PQW0mtrahs8n5KbCk.pdf",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.joaoemilio.com.br/leilao/6029/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.mgl.com.br/leilao/fundaj-pe/7225/#&Pagina=1&Index=2",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-agua-boa-mg/7216/#&Pagina=1&Index=1",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://www.pagliarinileiloes.com.br/evento/municipio-de-nova-tebas-pr-783726?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1LOJ9eofbuhr36NAhA_lB3Olu3tlgvUgY/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.usercontent.google.com/download?id=1LOJ9eofbuhr36NAhA_lB3Olu3tlgvUgY&export=download",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/16onwdZ_k9apbtNvOKkwR-ynuRm_qwXaq/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/240726PBVE",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://armazviplprd.blob.core.windows.net/controle/geral/1/5da0b939a53a4ceda9c9950a32d41229.pdf",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-agua-boa-mg/7216/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.andreluizleiloes.com.br/evento/corporativo-783835?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
@@ -2183,124 +345,104 @@
       "http": 0
     },
     {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/240726SUC",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.winleiloes.com.br/leilao/110/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://www.danielgarcialeiloes.com.br/leilao/7718/lotes",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-morro-da-fumaca-sc/7185/#&Pagina=1&Index=3",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.danielgarcialeiloes.com.br/leilao/7719/lotes",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.google.com/file/d/1x8kCF1KdXu28EcM39JmqvjBT8_4lwGgS/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7718/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.google.com/file/d/1JgSXIw6CKjHOPp0Q_kNk7fQAaazVARkn/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-curitibanos-sc-789453?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-curitibanos-sc-789453?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/14nwuo0IUoQfycEwMWEpOWqFw_VioKx6a/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1fSpEecvyjbOBJ_Fuo5HxP7Mqh5VxEz-R/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.usercontent.google.com/download?id=1fSpEecvyjbOBJ_Fuo5HxP7Mqh5VxEz-R&export=download",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7718/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.italoleiloes.com/leilao/3282/lotes",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.google.com/file/d/15qSMHaFwZmNHPEOJXqfYsO7wfszptp2p/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7718/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.google.com/file/d/1Son_Ia-opV5WmDGHlLoShQmCp5RZ23eZ/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7719/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://www.leiloesmager.com.br/leilao/prefeitura-de-iacri-sp/52/#Pagina=1&Index=1",
+      "url": "https://www.italoleiloes.com/leilao/3282/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.sumareleiloes.com.br/leiloes/5067",
       "status": "erro",
       "http": 0
     },
     {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-castro-pr/7194/#&Pagina=1&Index=1",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.danielgarcialeiloes.com.br/leilao/7705/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1Z1mheZhRArfkGQGUE8ZdpqN-YIHJQQEs/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1ym-XtnCo_esrQIMNtuaKsc5-QvmnwdNE/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1RI_-Yp2tL_5wSXs6KXQfayVuLgYFMJLT/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.destakleiloes.com.br/leilao/leilao-prefeitura-de-senhora-dos-remedios-mg/5057/#Pagina=1&Index=1",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://www.bbmnetleiloes.com.br/evento/alienacao-de-sucatas-municipio-itapecerica-serra-788969?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-castro-pr/7194/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.google.com/file/d/1VO2tlPxzLK6uazH_Z4U2cnlWZDlF622y/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.leiloesmager.com.br/leilao/prefeitura-de-iacri-sp/52/#Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.google.com/file/d/1V3nNuJ-ccl4zCKsED09kBS-uPrtzAMwW/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7705/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.google.com/file/d/1ytCFEKGpPQcu9UoypiIGBXpWEXP1JOsv/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.clicleiloes.com.br/leilao/1946/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.leiloesmager.com.br/leilao/prefeitura-de-iacri-sp/52/#Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-castro-pr/7194/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7705/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.destakleiloes.com.br/leilao/leilao-prefeitura-de-senhora-dos-remedios-mg/5057/#Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.sumareleiloes.com.br/leiloes/5067",
@@ -2309,321 +451,325 @@
     },
     {
       "url": "https://www.clicleiloes.com.br/leilao/1946/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-lindoia-do-sul-sc-783254?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-lindoia-do-sul-sc-783254?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.rpleiloes.com.br/leilao/bens-patrimoniais-de-municipio-de-jardim-ms/12",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.ricoleiloes.com.br/leilao/2073/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1s78b8dzyDn_oGoBoR9CKbPQa-GBnwO10/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.ricoleiloes.com.br/leilao/2073/lotes",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://www.saulojulioleiloeiro.com.br/pregao/6a4dc5399fb5eeefc4d5df0c/6a4dc716a5e7c960fb4b3ccf",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.mgl.com.br/leilao/caixa-economica-federal/7257/#&Pagina=1&Index=2",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://eblonline.com.br/lotes/321?page=1&size=6&removerEncerrados=false",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.mgl.com.br/leilao/caixa-economica-federal/7257/#&Pagina=1&Index=2",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://eblonline.com.br/lotes/320?page=1&size=6&removerEncerrados=false",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1vLgdcZajbQIXzSlDzwY1tI0aSA9fg2Pm/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://sfleiloes.com.br/leilao/219/leilao-da-prefeitura-municipal-de-ipora-pr",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.mafraleiloes.com.br/evento/bens-inserviveis-municipio-sao-pedro-do-butia-rs-789421?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://sandrasantosleiloes.com.br/eventos/leilao/424/prefeitura-municipal-de-recreio-mg",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://static.suporteleiloes.com.br/sandraleiloeiracombr/leiloes/424/documentos/sl-doc-424-6a45550ca007e-6a45550ca41e0.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.andreluizleiloes.com.br/evento/municipio-de-terra-boa-789494?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1zSVZJVUPXszsEemote3--i7YBN9Y8J_z/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://wleiloes.com.br/leilao.php?idLeilao=461",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-uniao-do-oeste-sc-783142?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "api_superbid_erro",
-      "http": ""
-    },
-    {
-      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-uniao-do-oeste-sc-783142?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1Qsq7WwMj7JihZ5A7UvTgHyHINI6gY_lQ/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.grleiloes.com/leilao/1166/lotes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/18w1iYt99Kk4qSz3x3_L6jW-ZTcTjw79r/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.nsleiloes.leilao.br/leilao-detran/conservado-mrc-crd00268-07-06-2026-12-15-02/lotes/lista",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.nsleiloes.leilao.br/leilao-detran/conservado-auto-socorro-haas-crd00097-07-06-2026-12-14-11/lotes/lista",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.nsleiloes.leilao.br/leilao-detran/conservado-alvorada-remocoes-crd00090-07-06-2026-12-11-59/lotes/lista",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.nsleiloes.leilao.br/leilao-detran/sucatas-mrc-crd00268-07-06-2026-12-10-18/lotes/lista",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.nsleiloes.leilao.br/leilao-detran/sucatas-auto-socorro-haas-crd00097-07-06-2026-12-06-29/lotes/lista",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.nsleiloes.leilao.br/leilao-detran/sucatas-alvorada-remocoes-crd00090-07-06-2026-12-04-51/lotes/lista",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-liberdade-mg/7276/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.pwleiloes.com.br/leilao/prefeitura-municipal-de-muriae/585/#Pagina=1&Index=1",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.google.com/file/d/12vIHBr7EaXMRO85RsqJ-k8dkB26RwbF2/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.pwleiloes.com.br/leilao/prefeitura-municipal-de-muriae/585/#Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.usercontent.google.com/download?id=12vIHBr7EaXMRO85RsqJ-k8dkB26RwbF2&export=download",
-      "status": "erro",
-      "http": 0
+      "url": "https://eblonline.com.br/lotes/321?page=1&size=6&removerEncerrados=false",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://www.monzonleiloes.com.br/evento/leilao-veiculos-e-bens-moveis-sao-joao-do-caiua-pr-783948?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
+      "url": "https://eblonline.com.br/lotes/320?page=1&size=6&removerEncerrados=false",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.google.com/file/d/1RaU_NPcdNPIrp8SG-rvAlxu3IMWeCK6q/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
+      "url": "https://eblonline.com.br/lotes/321?page=1&size=6&removerEncerrados=false",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://www.marangonileiloes.com.br/evento/smur-araucaria-08-2026-783682?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "status": "erro",
-      "http": 0
+      "url": "https://eblonline.com.br/lotes/320?page=1&size=6&removerEncerrados=false",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://marcusviniciusleiloes.com.br/leilao/686/prefeitura-municipal-de-engenheiro-navarro-mg-veiculos-maquinas-e-outros",
-      "status": "erro",
-      "http": 0
+      "url": "https://wleiloes.com.br/leilao.php?idLeilao=461",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/800100/9/2026",
-      "status": "erro",
-      "http": 0
+      "url": "https://eblonline.com.br/lotes/321?page=1&size=6&removerEncerrados=false",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/800100/9/2026",
-      "status": "erro",
-      "http": 0
+      "url": "https://eblonline.com.br/lotes/320?page=1&size=6&removerEncerrados=false",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://www.e-leiloes.com.br/eventos/leilao/2202/veiculos-e-itens-da-icmbio-para-pa",
-      "status": "erro",
-      "http": 0
+      "url": "https://wleiloes.com.br/leilao.php?idLeilao=461",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.google.com/file/d/1WmxN2A2CdZfIeqnKIvwadb5NqFiCzDnq/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.joaoemilio.com.br/leilao/6023/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.usercontent.google.com/download?id=1WmxN2A2CdZfIeqnKIvwadb5NqFiCzDnq&export=download",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.mgl.com.br/leilao/bens-apreendidos-ministerio-da-justica-go-senad/7223/#&Pagina=1&Index=3",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.google.com/file/d/1WmxN2A2CdZfIeqnKIvwadb5NqFiCzDnq/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.grleiloes.com/leilao/1166/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.usercontent.google.com/download?id=1WmxN2A2CdZfIeqnKIvwadb5NqFiCzDnq&export=download",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.nsleiloes.leilao.br/leilao-detran/sucatas-alvorada-remocoes-crd00090-07-06-2026-12-04-51/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.nsleiloes.leilao.br/leilao-detran/sucatas-auto-socorro-haas-crd00097-07-06-2026-12-06-29/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.nsleiloes.leilao.br/leilao-detran/conservado-auto-socorro-haas-crd00097-07-06-2026-12-14-11/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.nsleiloes.leilao.br/leilao-detran/conservado-mrc-crd00268-07-06-2026-12-15-02/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.nsleiloes.leilao.br/leilao-detran/conservado-alvorada-remocoes-crd00090-07-06-2026-12-11-59/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.grleiloes.com/leilao/1166/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.nsleiloes.leilao.br/leilao-detran/conservado-mrc-crd00268-07-06-2026-12-15-02/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.nsleiloes.leilao.br/leilao-detran/conservado-auto-socorro-haas-crd00097-07-06-2026-12-14-11/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.nsleiloes.leilao.br/leilao-detran/conservado-alvorada-remocoes-crd00090-07-06-2026-12-11-59/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.nsleiloes.leilao.br/leilao-detran/sucatas-mrc-crd00268-07-06-2026-12-10-18/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.nsleiloes.leilao.br/leilao-detran/sucatas-auto-socorro-haas-crd00097-07-06-2026-12-06-29/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.nsleiloes.leilao.br/leilao-detran/sucatas-alvorada-remocoes-crd00090-07-06-2026-12-04-51/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.mgl.com.br/leilao/ferro/6033/#&Pagina=1&Index=3",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.bianchileiloes.com.br/leilao/leilao-de-prefeitura-ivoti-29-06-2026-09-27-28/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.lkleiloes.com.br/leilao/266/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.pwleiloes.com.br/leilao/prefeitura-municipal-de-ouro-fino/584/#Pagina=1&Index=1",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.bidgo.com.br/leilao/panambi-rs-lote-de-pneus-06-07-2026-14-57-19/lotes/lista",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://www.nordesteleiloes.com.br/leiloes/129-prefeitura-de-dom-cavati-mg",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.pwleiloes.com.br/leilao/prefeitura-municipal-de-ouro-fino/584/#Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://www.beedz.com.br/#",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.bidgo.com.br/leilao/panambi-rs-lote-de-pneus-06-07-2026-14-57-19/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.google.com/file/d/1DcPqBuID0iMySCX38jcBSrj6DITRjnMV/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.joaoemilio.com.br/leilao/6038/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.google.com/file/d/1Y1iYLjOHQ-DvSBuj6eyTWxU9Ok7iw4LI/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.usercontent.google.com/download?id=1Y1iYLjOHQ-DvSBuj6eyTWxU9Ok7iw4LI&export=download",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1qPyfn5qd7VNIQNhZe0yvFyeNWzVJTm9j/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.joaoemilio.com.br/leilao/6024/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-lajedinho-ba/7230/#&Pagina=1&Index=1",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://lbleiloes.com.br/leilao/20/prefeitura-municipal-de-itambe-pr",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-sao-martinho-rs/7265/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://cdn.leilotech.workers.dev/lbleiloes/editais/leilao/20/qKrPyhgY12o1hupNgvtZ1NjzkGgdcscHNxGYVHxJgh4jL1FE0sQRQ4sFi98M.pdf",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-balsas-ma/7233/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
-      "url": "https://drive.google.com/file/d/1NhhFGo9Zz7omXFRxyp6jCd7HT0pJpuWy/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jeremyleiloes.com.br/evento/municipio-de-ponta-grossa-pr-788195?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/10HPWJMDkxBL4oDbvKcCGnvmv2VZrhxon/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1T5Q8XsETGWFAi9wRUHzpBOP6u5EjHa8Q/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1GhZAjq3P_kk_W5zFYqOuAS6eR6bmq8fR/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.usercontent.google.com/download?id=1GhZAjq3P_kk_W5zFYqOuAS6eR6bmq8fR&export=download",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/1-QjYLwcYwK5E8O7U_h7-t1vIquRQge5l/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://drive.google.com/file/d/129NruY3DKmcUxu31wwF66n-ai3XEOy33/view?usp=drive_link",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-balsas-ma/7233/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.levyleiloes.com.br/leilao/44/lotes",
-      "status": "erro",
-      "http": 0
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.levyleiloes.com.br/leilao/44/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://diegoleiloes.com.br/leilao/1083/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-tangara-da-serra-mt/7188/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7709/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7714/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7714/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7709/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.joaoemilio.com.br/leilao/5930/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.joaoemilio.com.br/leilao/5930/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.apabrfleiloes.com.br/leilao/prefeitura-de-capitolio-terrenos/462/#Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.apabrfleiloes.com.br/leilao/prefeitura-de-capitolio-terrenos/462/#Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7692/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7692/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7692/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.alvesleiloes.com.br/leilao/251/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.alvesleiloes.com.br/leilao/251/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.bidgo.com.br/leilao/imoveis-em-joinville-sc-24-06-2026-16-40-27/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista",
+      "status": "http_404",
+      "http": 404
+    },
+    {
+      "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista",
+      "status": "http_404",
+      "http": 404
     }
   ],
-  "status": "falha_sem_portal_com_lotes",
-  "base_anterior_preservada": true,
-  "lotes_candidatos_apos_limpeza": 1064
+  "status": "ok",
+  "base_anterior_preservada": false
 }

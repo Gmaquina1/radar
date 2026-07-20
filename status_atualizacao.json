@@ -1,31 +1,91 @@
 {
   "status": "ok",
-  "verificado_em": "2026-07-14T11:42:22-03:00",
-  "atualizado_em_base_eventos": "2026-07-13T22:35:37-03:00",
-  "atualizado_em_base_lotes": "2026-07-13T22:44:53-03:00",
-  "eventos_futuros": 433,
+  "verificado_em": "2026-07-20T14:00:39-03:00",
+  "atualizado_em_base_eventos": "2026-07-20T13:54:57-03:00",
+  "atualizado_em_base_lotes": "2026-07-20T14:00:38-03:00",
+  "idade_base_eventos_horas": 0.1,
+  "idade_base_lotes_horas": 0.0,
+  "eventos_futuros": 449,
   "patios": 132,
-  "lotes": 3584,
-  "lotes_capturados_agora": 3473,
-  "lotes_preservados": 111,
-  "eventos_indexados_com_lotes": 151,
-  "mapa_id": "1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U",
+  "lotes": 3330,
+  "lotes_capturados_agora": 3344,
+  "lotes_preservados": 73,
+  "eventos_indexados_com_lotes": 123,
   "checks": {
     "arquivos_obrigatorios": true,
     "workflow_existe": true,
-    "workflow_diario_16h": true,
-    "workflow_gera_diagnostico": true,
-    "workflow_indexa_lotes": true,
-    "dados_do_mapa_preservados_sem_exibicao": true,
-    "base_embutida_no_site": true,
-    "carrosseis_fotos_reais_embutidos": true,
-    "resultados_sem_fotos_de_lote": true,
-    "google_analytics_configurado": true,
-    "site_informa_atualizacao_diaria": true,
-    "site_tem_aviso_independente": true,
+    "workflow_execucao_manual": true,
+    "workflow_agendado_6h": true,
+    "workflow_pode_salvar": true,
+    "workflow_executa_indexador": true,
     "eventos_csv_ok": true,
     "lotes_json_ok": true,
-    "lotes_csv_consistente": true
+    "lotes_csv_consistente": true,
+    "site_gerado": true,
+    "base_embutida_no_site": true,
+    "dominio_configurado": true,
+    "base_eventos_recente": true,
+    "base_lotes_recente": true
   },
-  "arquivos_faltando": []
+  "arquivos_faltando": [],
+  "ultima_execucao": "2026-07-20T14:00:39-03:00",
+  "mensagem": "Eventos, lotes e site atualizados com sucesso.",
+  "base_anterior_restaurada": false,
+  "lotes_antes": 3584,
+  "lotes_depois": 3330,
+  "lotes_novos_detectados": 1455,
+  "lotes_removidos_ou_encerrados": 1868,
+  "etapas": [
+    {
+      "nome": "Atualizar eventos pelo Google My Maps",
+      "comando": [
+        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "atualizar_radar_leiloes.py",
+        "--workers",
+        "24"
+      ],
+      "tentativas": 1,
+      "duracao_segundos": 81.31,
+      "status": "ok",
+      "codigo": 0
+    },
+    {
+      "nome": "Procurar novos lotes nos sites dos leiloeiros",
+      "comando": [
+        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "indexador_lotes.py",
+        "--delay",
+        "0.0",
+        "--workers",
+        "16"
+      ],
+      "tentativas": 1,
+      "duracao_segundos": 341.7,
+      "status": "ok",
+      "codigo": 0
+    },
+    {
+      "nome": "Gerar novamente o site",
+      "comando": [
+        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "gerar_site_github.py"
+      ],
+      "tentativas": 1,
+      "duracao_segundos": 0.14,
+      "status": "ok",
+      "codigo": 0
+    },
+    {
+      "nome": "Gerar diagnóstico final",
+      "comando": [
+        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "diagnostico_radar.py",
+        "--falhar-se-atencao"
+      ],
+      "tentativas": 1,
+      "duracao_segundos": 0.13,
+      "status": "ok",
+      "codigo": 0
+    }
+  ]
 }
