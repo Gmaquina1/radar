@@ -1,16 +1,16 @@
 {
-  "executado_em": "2026-07-21T00:52:22-03:00",
-  "lotes_antes": 4711,
-  "lotes_depois": 4696,
+  "executado_em": "2026-07-21T05:50:22-03:00",
+  "lotes_antes": 4696,
+  "lotes_depois": 4659,
   "lotes_realmente_novos": 5,
-  "lotes_removidos_ou_encerrados": 5,
+  "lotes_removidos_ou_encerrados": 17,
   "lotes_preservados": 54,
-  "lotes_capturados_agora": 4647,
-  "lotes_capturados_com_chave_nova": 10,
-  "eventos_analisados": 596,
-  "eventos_com_lotes": 174,
-  "eventos_com_erro": 159,
-  "eventos_bloqueados": 151,
+  "lotes_capturados_agora": 4605,
+  "lotes_capturados_com_chave_nova": 5,
+  "eventos_analisados": 570,
+  "eventos_com_lotes": 170,
+  "eventos_com_erro": 152,
+  "eventos_bloqueados": 148,
   "links_invalidos": 6,
   "quantidade_coletada_por_leiloeiro": {
     "bolsadeleiloes.com.br": 100,
@@ -24,10 +24,9 @@
     "lancecertoleiloes.com.br": 284,
     "lancevip.com.br": 20,
     "lbleiloes.com.br": 41,
-    "leilao.detran.mg.gov.br": 32,
+    "leilao.detran.mg.gov.br": 24,
     "leilao.sodresantoro.com.br": 19,
     "leilaoonline.com.br": 257,
-    "leiloes.ac.gov.br": 3,
     "leiloesalbino.com.br": 15,
     "leiloesfreire.com.br": 52,
     "leiloesoliveira.com.br": 36,
@@ -36,9 +35,8 @@
     "lilianportugal.com.br": 14,
     "lipinskileiloes.com.br": 25,
     "marcotulioleiloes.com.br": 147,
-    "marcusviniciusleiloes.com.br": 102,
+    "marcusviniciusleiloes.com.br": 80,
     "nordesteleiloes.com.br": 11,
-    "peterlongoleiloes.com.br": 9,
     "rauppleiloes.com.br": 52,
     "rogeriomenezes.com.br": 140,
     "rossileiloes.com.br": 881,
@@ -58,12 +56,12 @@
     "alvesleiloes.com.br": 2,
     "apabrfleiloes.com.br": 2,
     "bianchileiloes.com.br": 1,
-    "bidgo.com.br": 6,
+    "bidgo.com.br": 4,
     "clicleiloes.com.br": 4,
     "danielgarcialeiloes.com.br": 21,
     "destakleiloes.com.br": 2,
     "diegoleiloes.com.br": 1,
-    "eblonline.com.br": 7,
+    "eblonline.com.br": 6,
     "favaretoleiloes.com.br": 1,
     "fernandaleiloes.lel.br": 2,
     "freitasleiloeiro.com.br": 2,
@@ -84,52 +82,12 @@
     "pwleiloes.com.br": 7,
     "renovarleiloes.com.br": 2,
     "ricoleiloes.com.br": 5,
-    "sumareleiloes.com.br": 6,
+    "sumareleiloes.com.br": 2,
     "szortykaleiloes.com.br": 2,
     "winleiloes.com.br": 2,
     "wleiloes.com.br": 2
   },
   "urls_que_falharam": [
-    {
-      "url": "https://www.bidgo.com.br/leilao/terrenos-em-novo-hamburgo-19-05-2026-16-21-12/lotes/lista",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://eblonline.com.br/lotes/319?page=1&size=6&removerEncerrados=false",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.sumareleiloes.com.br/leiloes/4795",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sumareleiloes.com.br/leiloes/5089",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/210726VE",
-      "status": "http_500",
-      "http": 500
-    },
-    {
-      "url": "https://www.sumareleiloes.com.br/leiloes/5089",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.sumareleiloes.com.br/leiloes/4795",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.bidgo.com.br/leilao/terrenos-em-novo-hamburgo-19-05-2026-16-21-12/lotes/lista",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
     {
       "url": "https://mercado.bomvalor.com.br/renovacao-da-frota-de-veiculos-36232",
       "status": "bloqueado_http_403",
@@ -516,11 +474,6 @@
       "http": 403
     },
     {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/290726VE",
-      "status": "http_500",
-      "http": 500
-    },
-    {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-liberdade-mg/7276/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
@@ -711,11 +664,6 @@
       "http": 403
     },
     {
-      "url": "https://www.beedz.com.br/#",
-      "status": "http_503",
-      "http": 503
-    },
-    {
       "url": "https://www.bidgo.com.br/leilao/panambi-rs-lote-de-pneus-06-07-2026-14-57-19/lotes/lista",
       "status": "bloqueado_http_403",
       "http": 403
@@ -729,11 +677,6 @@
       "url": "https://www.bidgo.com.br/leilao/panambi-rs-lote-de-pneus-06-07-2026-14-57-19/lotes/lista",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www.beedz.com.br/#",
-      "status": "http_503",
-      "http": 503
     },
     {
       "url": "https://www.joaoemilio.com.br/leilao/6038/lotes",
@@ -774,11 +717,6 @@
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-balsas-ma/7233/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/040826ACARI",
-      "status": "http_500",
-      "http": 500
     },
     {
       "url": "https://www.levyleiloes.com.br/leilao/44/lotes",
