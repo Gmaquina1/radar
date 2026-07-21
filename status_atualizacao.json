@@ -1,15 +1,15 @@
 {
   "status": "ok",
-  "verificado_em": "2026-07-20T17:32:19-03:00",
-  "atualizado_em_base_eventos": "2026-07-20T17:24:40-03:00",
-  "atualizado_em_base_lotes": "2026-07-20T17:32:18-03:00",
-  "idade_base_eventos_horas": 0.13,
+  "verificado_em": "2026-07-21T00:52:23-03:00",
+  "atualizado_em_base_eventos": "2026-07-21T00:43:58-03:00",
+  "atualizado_em_base_lotes": "2026-07-21T00:52:22-03:00",
+  "idade_base_eventos_horas": 0.14,
   "idade_base_lotes_horas": 0.0,
   "eventos_futuros": 596,
   "patios": 132,
-  "lotes": 4711,
+  "lotes": 4696,
   "lotes_capturados_agora": 4647,
-  "lotes_preservados": 69,
+  "lotes_preservados": 54,
   "eventos_indexados_com_lotes": 174,
   "checks": {
     "arquivos_obrigatorios": true,
@@ -28,13 +28,13 @@
     "base_lotes_recente": true
   },
   "arquivos_faltando": [],
-  "ultima_execucao": "2026-07-20T17:32:19-03:00",
+  "ultima_execucao": "2026-07-21T00:52:23-03:00",
   "mensagem": "Eventos, lotes e site atualizados com sucesso.",
   "base_anterior_restaurada": false,
-  "lotes_antes": 3319,
-  "lotes_depois": 4711,
-  "lotes_novos_detectados": 822,
-  "lotes_removidos_ou_encerrados": 15,
+  "lotes_antes": 4711,
+  "lotes_depois": 4696,
+  "lotes_novos_detectados": 5,
+  "lotes_removidos_ou_encerrados": 5,
   "etapas": [
     {
       "nome": "Atualizar eventos pelo Google My Maps",
@@ -45,7 +45,7 @@
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 80.02,
+      "duracao_segundos": 80.37,
       "status": "ok",
       "codigo": 0
     },
@@ -60,7 +60,7 @@
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 458.42,
+      "duracao_segundos": 504.1,
       "status": "ok",
       "codigo": 0
     },

@@ -1,12 +1,12 @@
 {
-  "executado_em": "2026-07-20T17:32:18-03:00",
-  "lotes_antes": 3319,
-  "lotes_depois": 4711,
-  "lotes_realmente_novos": 855,
-  "lotes_removidos_ou_encerrados": 50,
-  "lotes_preservados": 69,
+  "executado_em": "2026-07-21T00:52:22-03:00",
+  "lotes_antes": 4711,
+  "lotes_depois": 4696,
+  "lotes_realmente_novos": 5,
+  "lotes_removidos_ou_encerrados": 5,
+  "lotes_preservados": 54,
   "lotes_capturados_agora": 4647,
-  "lotes_capturados_com_chave_nova": 860,
+  "lotes_capturados_com_chave_nova": 10,
   "eventos_analisados": 596,
   "eventos_com_lotes": 174,
   "eventos_com_erro": 159,
@@ -711,6 +711,11 @@
       "http": 403
     },
     {
+      "url": "https://www.beedz.com.br/#",
+      "status": "http_503",
+      "http": 503
+    },
+    {
       "url": "https://www.bidgo.com.br/leilao/panambi-rs-lote-de-pneus-06-07-2026-14-57-19/lotes/lista",
       "status": "bloqueado_http_403",
       "http": 403
@@ -724,6 +729,11 @@
       "url": "https://www.bidgo.com.br/leilao/panambi-rs-lote-de-pneus-06-07-2026-14-57-19/lotes/lista",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www.beedz.com.br/#",
+      "status": "http_503",
+      "http": 503
     },
     {
       "url": "https://www.joaoemilio.com.br/leilao/6038/lotes",
@@ -844,11 +854,6 @@
       "url": "https://www.joaoemilio.com.br/leilao/5930/lotes",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/050826PRFVE?pag=1",
-      "status": "http_500",
-      "http": 500
     },
     {
       "url": "https://www.pwleiloes.com.br/leilao/prefeitura-municipal-de-pedrinopolis/582/#Pagina=1&Index=1",
