@@ -1,16 +1,16 @@
 {
-  "executado_em": "2026-07-22T00:52:34-03:00",
-  "lotes_antes": 4065,
-  "lotes_depois": 4090,
-  "lotes_realmente_novos": 8,
-  "lotes_removidos_ou_encerrados": 3,
+  "executado_em": "2026-07-22T05:51:12-03:00",
+  "lotes_antes": 4090,
+  "lotes_depois": 3935,
+  "lotes_realmente_novos": 0,
+  "lotes_removidos_ou_encerrados": 52,
   "lotes_preservados": 54,
-  "lotes_capturados_agora": 4041,
-  "lotes_capturados_com_chave_nova": 13,
-  "eventos_analisados": 531,
-  "eventos_com_lotes": 154,
-  "eventos_com_erro": 145,
-  "eventos_bloqueados": 141,
+  "lotes_capturados_agora": 3886,
+  "lotes_capturados_com_chave_nova": 5,
+  "eventos_analisados": 502,
+  "eventos_com_lotes": 152,
+  "eventos_com_erro": 128,
+  "eventos_bloqueados": 124,
   "links_invalidos": 6,
   "quantidade_coletada_por_leiloeiro": {
     "bolsadeleiloes.com.br": 50,
@@ -23,7 +23,7 @@
     "lancecertoleiloes.com.br": 277,
     "lancevip.com.br": 20,
     "lbleiloes.com.br": 41,
-    "leilao.detran.mg.gov.br": 24,
+    "leilao.detran.mg.gov.br": 16,
     "leilao.sodresantoro.com.br": 19,
     "leilaoonline.com.br": 225,
     "leiloesalbino.com.br": 15,
@@ -33,7 +33,6 @@
     "liderleiloes.com.br": 57,
     "lilianportugal.com.br": 14,
     "lipinskileiloes.com.br": 25,
-    "marcotulioleiloes.com.br": 147,
     "marcusviniciusleiloes.com.br": 80,
     "nordesteleiloes.com.br": 11,
     "rauppleiloes.com.br": 52,
@@ -56,13 +55,12 @@
     "apabrfleiloes.com.br": 2,
     "bianchileiloes.com.br": 1,
     "bidgo.com.br": 4,
-    "clicleiloes.com.br": 4,
-    "danielgarcialeiloes.com.br": 21,
+    "clicleiloes.com.br": 2,
+    "danielgarcialeiloes.com.br": 19,
     "destakleiloes.com.br": 2,
     "diegoleiloes.com.br": 1,
     "eblonline.com.br": 6,
     "favaretoleiloes.com.br": 1,
-    "fernandaleiloes.lel.br": 2,
     "freitasleiloeiro.com.br": 2,
     "grleiloes.com": 2,
     "guariglialeiloes.com.br": 2,
@@ -75,103 +73,16 @@
     "lkleiloes.com.br": 1,
     "lottileiloes.com.br": 2,
     "mercado.bomvalor.com.br": 1,
-    "mgl.com.br": 32,
+    "mgl.com.br": 30,
     "nsleiloes.leilao.br": 11,
-    "patiorochaleiloes.com.br": 6,
-    "pwleiloes.com.br": 7,
-    "renovarleiloes.com.br": 2,
-    "ricoleiloes.com.br": 5,
+    "patiorochaleiloes.com.br": 5,
+    "pwleiloes.com.br": 5,
+    "ricoleiloes.com.br": 3,
     "sumareleiloes.com.br": 2,
-    "szortykaleiloes.com.br": 2,
     "winleiloes.com.br": 1,
     "wleiloes.com.br": 2
   },
   "urls_que_falharam": [
-    {
-      "url": "https://www.szortykaleiloes.com.br/leilao/leilao-de-imoveis-da-prefeitura-de-novo-hamburgo-19-05-2026-13-16-31/lotes/lista",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.fernandaleiloes.lel.br/leilao/leilao-de-imoveis-da-prefeitura-de-novo-hamburgo-rs-27-02-2026-10-19-48/lotes/lista",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-eldorado-ms/7184/#&Pagina=1&Index=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.renovarleiloes.com.br/leilao/leilao-da-prefeitura-de-sapiranga-rs-20-05-2026-14-55-56/lotes/lista",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.ricoleiloes.com.br/leilao/2069/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.clicleiloes.com.br/leilao/1945/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.danielgarcialeiloes.com.br/leilao/7686/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.pwleiloes.com.br/leilao/pref-municipal-de-cana-verde/577/#Pagina=1&Index=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.danielgarcialeiloes.com.br/leilao/7686/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-eldorado-ms/7184/#&Pagina=1&Index=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.fernandaleiloes.lel.br/leilao/leilao-de-imoveis-da-prefeitura-de-novo-hamburgo-rs-27-02-2026-10-19-48/lotes/lista",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.ricoleiloes.com.br/leilao/2069/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.renovarleiloes.com.br/leilao/leilao-da-prefeitura-de-sapiranga-rs-20-05-2026-14-55-56/lotes/lista",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.pwleiloes.com.br/leilao/pref-municipal-de-cana-verde/577/#Pagina=1&Index=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.clicleiloes.com.br/leilao/1945/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.szortykaleiloes.com.br/leilao/leilao-de-imoveis-da-prefeitura-de-novo-hamburgo-19-05-2026-13-16-31/lotes/lista",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.patiorochaleiloes.com.br/leilao/1311/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
     {
       "url": "https://www.freitasleiloeiro.com.br/Leiloes/Lotes?leilaoId=7938",
       "status": "erro",
@@ -438,11 +349,6 @@
       "http": 403
     },
     {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/290726VE",
-      "status": "http_500",
-      "http": 500
-    },
-    {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-liberdade-mg/7276/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
@@ -586,11 +492,6 @@
       "url": "https://www.mgl.com.br/leilao/ferro/6033/#&Pagina=1&Index=3",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/300726VE",
-      "status": "http_500",
-      "http": 500
     },
     {
       "url": "https://www.bianchileiloes.com.br/leilao/leilao-de-prefeitura-ivoti-29-06-2026-09-27-28/lotes/lista",
@@ -761,11 +662,6 @@
       "url": "https://www.joaoemilio.com.br/leilao/5930/lotes",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/050826PRFVE?pag=1",
-      "status": "http_500",
-      "http": 500
     },
     {
       "url": "https://www.pwleiloes.com.br/leilao/prefeitura-municipal-de-pedrinopolis/582/#Pagina=1&Index=1",

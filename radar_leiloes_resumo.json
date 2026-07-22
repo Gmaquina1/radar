@@ -1,29 +1,29 @@
 {
-  "atualizado_em": "2026-07-22T00:45:00-03:00",
+  "atualizado_em": "2026-07-22T05:44:30-03:00",
   "data_base": "2026-07-22",
   "total_registros": 729,
   "eventos_atualizacao": 597,
-  "eventos_futuros_ou_hoje": 531,
+  "eventos_futuros_ou_hoje": 502,
   "patios": 132,
-  "eventos_com_link": 527,
-  "eventos_com_data_hora_de_edital": 77,
+  "eventos_com_link": 498,
+  "eventos_com_data_hora_de_edital": 78,
   "eventos_com_data_hora_de_site": 28,
   "eventos_por_uf": [
     [
       "SP",
-      134
+      128
     ],
     [
       "MG",
-      90
+      86
     ],
     [
       "PR",
-      73
+      67
     ],
     [
       "RS",
-      55
+      49
     ],
     [
       "RJ",
@@ -31,7 +31,7 @@
     ],
     [
       "GO",
-      24
+      23
     ],
     [
       "SC",
@@ -43,23 +43,23 @@
     ],
     [
       "BA",
-      14
-    ],
-    [
-      "PB",
-      12
-    ],
-    [
-      "MS",
-      12
+      13
     ],
     [
       "RN",
       11
     ],
     [
+      "PB",
+      10
+    ],
+    [
+      "MS",
+      10
+    ],
+    [
       "PA",
-      8
+      7
     ],
     [
       "MA",
@@ -104,10 +104,6 @@
   ],
   "datas": [
     [
-      "2026-07-22",
-      80
-    ],
-    [
       "2026-07-23",
       67
     ],
@@ -118,6 +114,10 @@
     [
       "2026-07-29",
       54
+    ],
+    [
+      "2026-07-22",
+      51
     ],
     [
       "2026-07-24",
@@ -149,7 +149,7 @@
     ],
     [
       "2026-08-05",
-      14
+      13
     ],
     [
       "2026-08-10",
@@ -192,6 +192,10 @@
       3
     ],
     [
+      "2026-08-08",
+      2
+    ],
+    [
       "2026-08-14",
       2
     ],
@@ -204,20 +208,16 @@
       2
     ],
     [
-      "2026-08-08",
-      1
-    ],
-    [
       "2026-09-17",
       1
     ]
   ],
   "download_kml": {
-    "downloaded_at": "2026-07-22T00:43:40-03:00",
+    "downloaded_at": "2026-07-22T05:43:08-03:00",
     "http_status": 200,
     "final_url": "https://www.google.com/maps/d/kml?forcekml=1&mid=1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U",
     "downloaded_bytes": 989467,
-    "old_sha256": "f57c1eaf5697fd65caeedee1a56da021a5a18ddbb975bae395c1522454647beb",
+    "old_sha256": "11d18e8619e89ea625071c303ef16e27145a3a68ebe017724bed943b8ce5c664",
     "new_sha256": "11d18e8619e89ea625071c303ef16e27145a3a68ebe017724bed943b8ce5c664",
     "old_markers": 729,
     "new_markers": 729,
