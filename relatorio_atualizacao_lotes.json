@@ -1,50 +1,45 @@
 {
-  "executado_em": "2026-07-22T05:51:12-03:00",
-  "lotes_antes": 4090,
-  "lotes_depois": 3935,
-  "lotes_realmente_novos": 0,
-  "lotes_removidos_ou_encerrados": 52,
+  "executado_em": "2026-07-22T11:28:30-03:00",
+  "lotes_antes": 3935,
+  "lotes_depois": 3377,
+  "lotes_realmente_novos": 23,
+  "lotes_removidos_ou_encerrados": 532,
   "lotes_preservados": 54,
-  "lotes_capturados_agora": 3886,
-  "lotes_capturados_com_chave_nova": 5,
-  "eventos_analisados": 502,
-  "eventos_com_lotes": 152,
-  "eventos_com_erro": 128,
-  "eventos_bloqueados": 124,
+  "lotes_capturados_agora": 3328,
+  "lotes_capturados_com_chave_nova": 28,
+  "eventos_analisados": 457,
+  "eventos_com_lotes": 132,
+  "eventos_com_erro": 121,
+  "eventos_bloqueados": 118,
   "links_invalidos": 6,
   "quantidade_coletada_por_leiloeiro": {
-    "bolsadeleiloes.com.br": 50,
     "bsbleiloes.com.br": 104,
-    "casadeleiloes.com.br": 1,
     "colossoleiloes.com.br": 11,
-    "drive.google.com": 207,
+    "drive.google.com": 201,
     "eckertleiloes.com.br": 158,
-    "kwara.com.br": 96,
+    "kwara.com.br": 60,
     "lancecertoleiloes.com.br": 277,
     "lancevip.com.br": 20,
     "lbleiloes.com.br": 41,
     "leilao.detran.mg.gov.br": 16,
-    "leilao.sodresantoro.com.br": 19,
     "leilaoonline.com.br": 225,
-    "leiloesalbino.com.br": 15,
     "leiloesfreire.com.br": 52,
     "leiloesoliveira.com.br": 36,
-    "leiloespb.com.br": 121,
-    "liderleiloes.com.br": 57,
+    "liderleiloes.com.br": 7,
     "lilianportugal.com.br": 14,
     "lipinskileiloes.com.br": 25,
     "marcusviniciusleiloes.com.br": 80,
     "nordesteleiloes.com.br": 11,
     "rauppleiloes.com.br": 52,
-    "rogeriomenezes.com.br": 145,
-    "rossileiloes.com.br": 717,
+    "rogeriomenezes.com.br": 165,
+    "rossileiloes.com.br": 637,
     "rpleiloes.com.br": 29,
     "rz.leilao.br": 47,
     "sandrasantosleiloes.com.br": 10,
     "sandroleiloeiro.com.br": 193,
     "sfleiloes.com.br": 17,
     "sodresantoro.com.br": 94,
-    "sold.com.br": 893,
+    "sold.com.br": 693,
     "tesouroleiloes.com.br": 15,
     "topoleiloes.com.br": 24,
     "webleiloes.com.br": 3,
@@ -60,8 +55,7 @@
     "destakleiloes.com.br": 2,
     "diegoleiloes.com.br": 1,
     "eblonline.com.br": 6,
-    "favaretoleiloes.com.br": 1,
-    "freitasleiloeiro.com.br": 2,
+    "freitasleiloeiro.com.br": 1,
     "grleiloes.com": 2,
     "guariglialeiloes.com.br": 2,
     "gutembergaraujoleiloes.com.br": 1,
@@ -71,11 +65,10 @@
     "leiloesmager.com.br": 2,
     "levyleiloes.com.br": 2,
     "lkleiloes.com.br": 1,
-    "lottileiloes.com.br": 2,
     "mercado.bomvalor.com.br": 1,
     "mgl.com.br": 30,
     "nsleiloes.leilao.br": 11,
-    "patiorochaleiloes.com.br": 5,
+    "patiorochaleiloes.com.br": 2,
     "pwleiloes.com.br": 5,
     "ricoleiloes.com.br": 3,
     "sumareleiloes.com.br": 2,
@@ -83,41 +76,6 @@
     "wleiloes.com.br": 2
   },
   "urls_que_falharam": [
-    {
-      "url": "https://www.freitasleiloeiro.com.br/Leiloes/Lotes?leilaoId=7938",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.favaretoleiloes.com.br/edital/1633/",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.patiorochaleiloes.com.br/leilao/1309/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.lottileiloes.com.br/leilao/734/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.lottileiloes.com.br/leilao/734/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.patiorochaleiloes.com.br/leilao/1311/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.patiorochaleiloes.com.br/leilao/1309/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
     {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-sao-joao-batista-do-gloria-mg/7218/#&Pagina=1&Index=2",
       "status": "bloqueado_http_403",
@@ -349,6 +307,11 @@
       "http": 403
     },
     {
+      "url": "https://www.lancecertoleiloes.com.br/leilao/290726VE",
+      "status": "http_500",
+      "http": 500
+    },
+    {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-liberdade-mg/7276/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
@@ -492,6 +455,11 @@
       "url": "https://www.mgl.com.br/leilao/ferro/6033/#&Pagina=1&Index=3",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www.lancecertoleiloes.com.br/leilao/300726VE",
+      "status": "http_500",
+      "http": 500
     },
     {
       "url": "https://www.bianchileiloes.com.br/leilao/leilao-de-prefeitura-ivoti-29-06-2026-09-27-28/lotes/lista",

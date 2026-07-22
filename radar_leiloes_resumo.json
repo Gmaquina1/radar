@@ -1,25 +1,25 @@
 {
-  "atualizado_em": "2026-07-22T05:44:30-03:00",
+  "atualizado_em": "2026-07-22T11:22:00-03:00",
   "data_base": "2026-07-22",
   "total_registros": 729,
   "eventos_atualizacao": 597,
-  "eventos_futuros_ou_hoje": 502,
+  "eventos_futuros_ou_hoje": 457,
   "patios": 132,
-  "eventos_com_link": 498,
-  "eventos_com_data_hora_de_edital": 78,
-  "eventos_com_data_hora_de_site": 28,
+  "eventos_com_link": 453,
+  "eventos_com_data_hora_de_edital": 72,
+  "eventos_com_data_hora_de_site": 22,
   "eventos_por_uf": [
     [
       "SP",
-      128
+      108
     ],
     [
       "MG",
-      86
+      80
     ],
     [
       "PR",
-      67
+      64
     ],
     [
       "RS",
@@ -27,47 +27,43 @@
     ],
     [
       "RJ",
-      31
-    ],
-    [
-      "GO",
-      23
+      29
     ],
     [
       "SC",
       23
     ],
     [
-      "PE",
-      15
+      "GO",
+      20
     ],
     [
-      "BA",
-      13
+      "PE",
+      15
     ],
     [
       "RN",
       11
     ],
     [
-      "PB",
-      10
+      "BA",
+      9
     ],
     [
       "MS",
-      10
+      8
+    ],
+    [
+      "PB",
+      7
     ],
     [
       "PA",
-      7
+      6
     ],
     [
       "MA",
       6
-    ],
-    [
-      "CE",
-      4
     ],
     [
       "PI",
@@ -79,6 +75,10 @@
     ],
     [
       "DF",
+      3
+    ],
+    [
+      "CE",
       3
     ],
     [
@@ -105,7 +105,7 @@
   "datas": [
     [
       "2026-07-23",
-      67
+      66
     ],
     [
       "2026-07-28",
@@ -114,10 +114,6 @@
     [
       "2026-07-29",
       54
-    ],
-    [
-      "2026-07-22",
-      51
     ],
     [
       "2026-07-24",
@@ -158,6 +154,10 @@
     [
       "2026-08-07",
       9
+    ],
+    [
+      "2026-07-22",
+      7
     ],
     [
       "2026-08-11",
@@ -213,7 +213,7 @@
     ]
   ],
   "download_kml": {
-    "downloaded_at": "2026-07-22T05:43:08-03:00",
+    "downloaded_at": "2026-07-22T11:20:38-03:00",
     "http_status": 200,
     "final_url": "https://www.google.com/maps/d/kml?forcekml=1&mid=1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U",
     "downloaded_bytes": 989467,

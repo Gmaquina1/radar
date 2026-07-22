@@ -1,16 +1,16 @@
 {
   "status": "ok",
-  "verificado_em": "2026-07-22T05:51:13-03:00",
-  "atualizado_em_base_eventos": "2026-07-22T05:44:30-03:00",
-  "atualizado_em_base_lotes": "2026-07-22T05:51:12-03:00",
+  "verificado_em": "2026-07-22T11:28:31-03:00",
+  "atualizado_em_base_eventos": "2026-07-22T11:22:00-03:00",
+  "atualizado_em_base_lotes": "2026-07-22T11:28:30-03:00",
   "idade_base_eventos_horas": 0.11,
   "idade_base_lotes_horas": 0.0,
-  "eventos_futuros": 502,
+  "eventos_futuros": 457,
   "patios": 132,
-  "lotes": 3935,
-  "lotes_capturados_agora": 3886,
+  "lotes": 3377,
+  "lotes_capturados_agora": 3328,
   "lotes_preservados": 54,
-  "eventos_indexados_com_lotes": 152,
+  "eventos_indexados_com_lotes": 132,
   "checks": {
     "arquivos_obrigatorios": true,
     "workflow_existe": true,
@@ -28,13 +28,13 @@
     "base_lotes_recente": true
   },
   "arquivos_faltando": [],
-  "ultima_execucao": "2026-07-22T05:51:13-03:00",
+  "ultima_execucao": "2026-07-22T11:28:31-03:00",
   "mensagem": "Eventos, lotes e site atualizados com sucesso.",
   "base_anterior_restaurada": false,
-  "lotes_antes": 4090,
-  "lotes_depois": 3935,
-  "lotes_novos_detectados": 0,
-  "lotes_removidos_ou_encerrados": 52,
+  "lotes_antes": 3935,
+  "lotes_depois": 3377,
+  "lotes_novos_detectados": 23,
+  "lotes_removidos_ou_encerrados": 503,
   "etapas": [
     {
       "nome": "Atualizar eventos pelo Google My Maps",
@@ -45,7 +45,7 @@
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 82.26,
+      "duracao_segundos": 82.23,
       "status": "ok",
       "codigo": 0
     },
@@ -60,7 +60,7 @@
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 402.69,
+      "duracao_segundos": 390.26,
       "status": "ok",
       "codigo": 0
     },
@@ -71,7 +71,7 @@
         "gerar_site_github.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 0.15,
+      "duracao_segundos": 0.14,
       "status": "ok",
       "codigo": 0
     },
@@ -83,7 +83,7 @@
         "--falhar-se-atencao"
       ],
       "tentativas": 1,
-      "duracao_segundos": 0.14,
+      "duracao_segundos": 0.13,
       "status": "ok",
       "codigo": 0
     }
