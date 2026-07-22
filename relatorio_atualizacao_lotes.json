@@ -1,12 +1,12 @@
 {
-  "executado_em": "2026-07-21T16:59:19-03:00",
-  "lotes_antes": 4279,
-  "lotes_depois": 4065,
-  "lotes_realmente_novos": 27,
-  "lotes_removidos_ou_encerrados": 116,
+  "executado_em": "2026-07-22T00:52:34-03:00",
+  "lotes_antes": 4065,
+  "lotes_depois": 4090,
+  "lotes_realmente_novos": 8,
+  "lotes_removidos_ou_encerrados": 3,
   "lotes_preservados": 54,
-  "lotes_capturados_agora": 4016,
-  "lotes_capturados_com_chave_nova": 32,
+  "lotes_capturados_agora": 4041,
+  "lotes_capturados_com_chave_nova": 13,
   "eventos_analisados": 531,
   "eventos_com_lotes": 154,
   "eventos_com_erro": 145,
@@ -37,8 +37,8 @@
     "marcusviniciusleiloes.com.br": 80,
     "nordesteleiloes.com.br": 11,
     "rauppleiloes.com.br": 52,
-    "rogeriomenezes.com.br": 140,
-    "rossileiloes.com.br": 697,
+    "rogeriomenezes.com.br": 145,
+    "rossileiloes.com.br": 717,
     "rpleiloes.com.br": 29,
     "rz.leilao.br": 47,
     "sandrasantosleiloes.com.br": 10,
@@ -438,6 +438,11 @@
       "http": 403
     },
     {
+      "url": "https://www.lancecertoleiloes.com.br/leilao/290726VE",
+      "status": "http_500",
+      "http": 500
+    },
+    {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-liberdade-mg/7276/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
@@ -756,6 +761,11 @@
       "url": "https://www.joaoemilio.com.br/leilao/5930/lotes",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www.lancecertoleiloes.com.br/leilao/050826PRFVE?pag=1",
+      "status": "http_500",
+      "http": 500
     },
     {
       "url": "https://www.pwleiloes.com.br/leilao/prefeitura-municipal-de-pedrinopolis/582/#Pagina=1&Index=1",
