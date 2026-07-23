@@ -1,16 +1,16 @@
 {
   "status": "ok",
-  "verificado_em": "2026-07-22T17:01:08-03:00",
-  "atualizado_em_base_eventos": "2026-07-22T16:51:02-03:00",
-  "atualizado_em_base_lotes": "2026-07-22T17:01:07-03:00",
-  "idade_base_eventos_horas": 0.17,
+  "verificado_em": "2026-07-23T00:48:05-03:00",
+  "atualizado_em_base_eventos": "2026-07-23T00:43:33-03:00",
+  "atualizado_em_base_lotes": "2026-07-23T00:48:04-03:00",
+  "idade_base_eventos_horas": 0.08,
   "idade_base_lotes_horas": 0.0,
-  "eventos_futuros": 592,
+  "eventos_futuros": 593,
   "patios": 132,
-  "lotes": 4978,
-  "lotes_capturados_agora": 4849,
+  "lotes": 5034,
+  "lotes_capturados_agora": 4900,
   "lotes_preservados": 134,
-  "eventos_indexados_com_lotes": 199,
+  "eventos_indexados_com_lotes": 201,
   "checks": {
     "arquivos_obrigatorios": true,
     "workflow_existe": true,
@@ -28,13 +28,13 @@
     "base_lotes_recente": true
   },
   "arquivos_faltando": [],
-  "ultima_execucao": "2026-07-22T17:01:08-03:00",
+  "ultima_execucao": "2026-07-23T00:48:05-03:00",
   "mensagem": "Eventos, lotes e site atualizados com sucesso.",
   "base_anterior_restaurada": false,
-  "lotes_antes": 3377,
-  "lotes_depois": 4978,
-  "lotes_novos_detectados": 1129,
-  "lotes_removidos_ou_encerrados": 105,
+  "lotes_antes": 4978,
+  "lotes_depois": 5034,
+  "lotes_novos_detectados": 27,
+  "lotes_removidos_ou_encerrados": 1,
   "etapas": [
     {
       "nome": "Atualizar eventos pelo Google My Maps",
@@ -45,7 +45,7 @@
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 533.39,
+      "duracao_segundos": 68.96,
       "status": "ok",
       "codigo": 0
     },
@@ -60,7 +60,7 @@
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 604.87,
+      "duracao_segundos": 271.61,
       "status": "ok",
       "codigo": 0
     },
@@ -71,7 +71,7 @@
         "gerar_site_github.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 0.19,
+      "duracao_segundos": 0.12,
       "status": "ok",
       "codigo": 0
     },
@@ -83,7 +83,7 @@
         "--falhar-se-atencao"
       ],
       "tentativas": 1,
-      "duracao_segundos": 0.18,
+      "duracao_segundos": 0.1,
       "status": "ok",
       "codigo": 0
     }

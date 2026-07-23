@@ -1,14 +1,14 @@
 {
-  "executado_em": "2026-07-22T17:01:07-03:00",
-  "lotes_antes": 3377,
-  "lotes_depois": 4978,
-  "lotes_realmente_novos": 1152,
-  "lotes_removidos_ou_encerrados": 105,
+  "executado_em": "2026-07-23T00:48:04-03:00",
+  "lotes_antes": 4978,
+  "lotes_depois": 5034,
+  "lotes_realmente_novos": 27,
+  "lotes_removidos_ou_encerrados": 1,
   "lotes_preservados": 134,
-  "lotes_capturados_agora": 4849,
-  "lotes_capturados_com_chave_nova": 1157,
-  "eventos_analisados": 592,
-  "eventos_com_lotes": 199,
+  "lotes_capturados_agora": 4900,
+  "lotes_capturados_com_chave_nova": 27,
+  "eventos_analisados": 593,
+  "eventos_com_lotes": 201,
   "eventos_com_erro": 158,
   "eventos_bloqueados": 148,
   "links_invalidos": 8,
@@ -29,13 +29,13 @@
     "leilaoonline.com.br": 298,
     "leiloesfreire.com.br": 52,
     "leiloesoliveira.com.br": 36,
-    "liderleiloes.com.br": 8,
+    "liderleiloes.com.br": 23,
     "lilianportugal.com.br": 14,
     "lipinskileiloes.com.br": 25,
-    "mjleiloes.com.br": 87,
+    "mjleiloes.com.br": 119,
     "nordesteleiloes.com.br": 11,
     "rauppleiloes.com.br": 52,
-    "rogeriomenezes.com.br": 100,
+    "rogeriomenezes.com.br": 104,
     "rossileiloes.com.br": 931,
     "rpleiloes.com.br": 29,
     "rz.leilao.br": 47,
@@ -74,6 +74,7 @@
     "leiloesmager.com.br": 2,
     "levyleiloes.com.br": 2,
     "lkleiloes.com.br": 1,
+    "marcusviniciusleiloes.com.br": 4,
     "mercado.bomvalor.com.br": 4,
     "mgl.com.br": 44,
     "nsleiloes.leilao.br": 11,
@@ -83,8 +84,7 @@
     "sumareleiloes.com.br": 3,
     "tudoleilao.com.br": 2,
     "winleiloes.com.br": 1,
-    "wleiloes.com.br": 2,
-    "www25.receita.fazenda.gov.br": 4
+    "wleiloes.com.br": 2
   },
   "urls_que_falharam": [
     {
@@ -333,11 +333,6 @@
       "http": 403
     },
     {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/290726VE",
-      "status": "http_500",
-      "http": 500
-    },
-    {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-liberdade-mg/7276/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
@@ -488,22 +483,22 @@
       "http": 403
     },
     {
+      "url": "https://www.lancecertoleiloes.com.br/leilao/300726VE",
+      "status": "http_500",
+      "http": 500
+    },
+    {
       "url": "https://www.bianchileiloes.com.br/leilao/leilao-de-prefeitura-ivoti-29-06-2026-09-27-28/lotes/lista",
       "status": "bloqueado_http_403",
       "http": 403
     },
     {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/800100/9/2026",
+      "url": "https://marcusviniciusleiloes.com.br/leilao/686/prefeitura-municipal-de-engenheiro-navarro-mg-veiculos-maquinas-e-outros",
       "status": "erro",
       "http": 0
     },
     {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/800100/9/2026",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/800100/9/2026",
+      "url": "https://marcusviniciusleiloes.com.br/leilao/686/prefeitura-municipal-de-engenheiro-navarro-mg-veiculos-maquinas-e-outros",
       "status": "erro",
       "http": 0
     },
@@ -561,11 +556,6 @@
       "url": "https://www.bidgo.com.br/leilao/panambi-rs-lote-de-pneus-06-07-2026-14-57-19/lotes/lista",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/700100/9/2026;pg=2",
-      "status": "erro",
-      "http": 0
     },
     {
       "url": "https://www.joaoemilio.com.br/leilao/6038/lotes",
@@ -718,6 +708,16 @@
       "http": 403
     },
     {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/717/prefeitura-municipal-de-japonvar-mg-veiculos-caminhonete-onibus-van-microonibus-ambulancia-sucatas-diversas-e-outros",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/717/prefeitura-municipal-de-japonvar-mg-veiculos-caminhonete-onibus-van-microonibus-ambulancia-sucatas-diversas-e-outros",
+      "status": "erro",
+      "http": 0
+    },
+    {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-tangara-da-serra-mt/7188/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
@@ -776,6 +776,11 @@
       "url": "https://www.gustavomorettoleiloeiro.com.br/leiloes/5273",
       "status": "erro",
       "http": 0
+    },
+    {
+      "url": "https://www.lancecertoleiloes.com.br/leilao/050826PRFVE?pag=1",
+      "status": "http_500",
+      "http": 500
     },
     {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-cambui-mg/7291/#&Pagina=1&Index=1",
