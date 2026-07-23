@@ -1,17 +1,17 @@
 {
-  "atualizado_em": "2026-07-23T11:30:48-03:00",
+  "atualizado_em": "2026-07-23T16:46:21-03:00",
   "data_base": "2026-07-23",
   "total_registros": 727,
   "eventos_atualizacao": 595,
-  "eventos_futuros_ou_hoje": 524,
+  "eventos_futuros_ou_hoje": 520,
   "patios": 132,
-  "eventos_com_link": 519,
-  "eventos_com_data_hora_de_edital": 70,
-  "eventos_com_data_hora_de_site": 27,
+  "eventos_com_link": 515,
+  "eventos_com_data_hora_de_edital": 72,
+  "eventos_com_data_hora_de_site": 24,
   "eventos_por_uf": [
     [
       "SP",
-      146
+      144
     ],
     [
       "MG",
@@ -31,7 +31,7 @@
     ],
     [
       "RJ",
-      23
+      22
     ],
     [
       "GO",
@@ -46,10 +46,6 @@
       9
     ],
     [
-      "MT",
-      8
-    ],
-    [
       "MS",
       7
     ],
@@ -59,6 +55,10 @@
     ],
     [
       "RN",
+      7
+    ],
+    [
+      "MT",
       7
     ],
     [
@@ -149,7 +149,7 @@
     ],
     [
       "2026-08-05",
-      15
+      16
     ],
     [
       "2026-08-07",
@@ -172,10 +172,6 @@
       6
     ],
     [
-      "2026-07-23",
-      5
-    ],
-    [
       "2026-08-14",
       5
     ],
@@ -196,10 +192,6 @@
       3
     ],
     [
-      "2026-08-08",
-      2
-    ],
-    [
       "2026-08-18",
       2
     ],
@@ -216,6 +208,14 @@
       2
     ],
     [
+      "2026-07-23",
+      1
+    ],
+    [
+      "2026-08-08",
+      1
+    ],
+    [
       "2026-08-20",
       1
     ],
@@ -229,7 +229,7 @@
     ]
   ],
   "download_kml": {
-    "downloaded_at": "2026-07-23T11:29:27-03:00",
+    "downloaded_at": "2026-07-23T16:44:41-03:00",
     "http_status": 200,
     "final_url": "https://www.google.com/maps/d/kml?forcekml=1&mid=1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U",
     "downloaded_bytes": 1094435,
