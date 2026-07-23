@@ -1,29 +1,29 @@
 {
-  "atualizado_em": "2026-07-23T05:44:51-03:00",
+  "atualizado_em": "2026-07-23T11:30:48-03:00",
   "data_base": "2026-07-23",
   "total_registros": 727,
   "eventos_atualizacao": 595,
-  "eventos_futuros_ou_hoje": 565,
+  "eventos_futuros_ou_hoje": 524,
   "patios": 132,
-  "eventos_com_link": 559,
-  "eventos_com_data_hora_de_edital": 85,
-  "eventos_com_data_hora_de_site": 28,
+  "eventos_com_link": 519,
+  "eventos_com_data_hora_de_edital": 70,
+  "eventos_com_data_hora_de_site": 27,
   "eventos_por_uf": [
     [
       "SP",
-      159
+      146
     ],
     [
       "MG",
-      111
+      102
     ],
     [
       "PR",
-      71
+      64
     ],
     [
       "RS",
-      60
+      55
     ],
     [
       "SC",
@@ -31,7 +31,7 @@
     ],
     [
       "RJ",
-      26
+      23
     ],
     [
       "GO",
@@ -39,19 +39,19 @@
     ],
     [
       "BA",
-      12
+      11
     ],
     [
       "PE",
-      10
-    ],
-    [
-      "MS",
-      8
+      9
     ],
     [
       "MT",
       8
+    ],
+    [
+      "MS",
+      7
     ],
     [
       "PB",
@@ -67,7 +67,7 @@
     ],
     [
       "PA",
-      5
+      4
     ],
     [
       "PI",
@@ -124,10 +124,6 @@
       51
     ],
     [
-      "2026-07-23",
-      46
-    ],
-    [
       "2026-07-27",
       43
     ],
@@ -153,7 +149,7 @@
     ],
     [
       "2026-08-05",
-      16
+      15
     ],
     [
       "2026-08-07",
@@ -176,6 +172,10 @@
       6
     ],
     [
+      "2026-07-23",
+      5
+    ],
+    [
       "2026-08-14",
       5
     ],
@@ -196,6 +196,10 @@
       3
     ],
     [
+      "2026-08-08",
+      2
+    ],
+    [
       "2026-08-18",
       2
     ],
@@ -212,10 +216,6 @@
       2
     ],
     [
-      "2026-08-08",
-      1
-    ],
-    [
       "2026-08-20",
       1
     ],
@@ -229,7 +229,7 @@
     ]
   ],
   "download_kml": {
-    "downloaded_at": "2026-07-23T05:43:41-03:00",
+    "downloaded_at": "2026-07-23T11:29:27-03:00",
     "http_status": 200,
     "final_url": "https://www.google.com/maps/d/kml?forcekml=1&mid=1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U",
     "downloaded_bytes": 1094435,
