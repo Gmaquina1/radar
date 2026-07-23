@@ -1,30 +1,29 @@
 {
-  "executado_em": "2026-07-23T00:48:04-03:00",
-  "lotes_antes": 4978,
-  "lotes_depois": 5034,
-  "lotes_realmente_novos": 27,
-  "lotes_removidos_ou_encerrados": 1,
-  "lotes_preservados": 134,
-  "lotes_capturados_agora": 4900,
-  "lotes_capturados_com_chave_nova": 27,
-  "eventos_analisados": 593,
-  "eventos_com_lotes": 201,
-  "eventos_com_erro": 158,
-  "eventos_bloqueados": 148,
+  "executado_em": "2026-07-23T05:51:51-03:00",
+  "lotes_antes": 5034,
+  "lotes_depois": 4859,
+  "lotes_realmente_novos": 0,
+  "lotes_removidos_ou_encerrados": 120,
+  "lotes_preservados": 59,
+  "lotes_capturados_agora": 4810,
+  "lotes_capturados_com_chave_nova": 0,
+  "eventos_analisados": 565,
+  "eventos_com_lotes": 195,
+  "eventos_com_erro": 143,
+  "eventos_bloqueados": 137,
   "links_invalidos": 8,
   "quantidade_coletada_por_leiloeiro": {
-    "bolsadeleiloes.com.br": 50,
     "bsbleiloes.com.br": 104,
     "colossoleiloes.com.br": 11,
-    "drive.google.com": 249,
+    "drive.google.com": 197,
     "eckertleiloes.com.br": 184,
     "hisaleiloes.com.br": 168,
     "kwara.com.br": 168,
     "lance360.com.br": 50,
-    "lancecertoleiloes.com.br": 277,
+    "lancecertoleiloes.com.br": 217,
     "lancevip.com.br": 20,
     "lbleiloes.com.br": 60,
-    "leilao.detran.mg.gov.br": 48,
+    "leilao.detran.mg.gov.br": 40,
     "leilao.sodresantoro.com.br": 97,
     "leilaoonline.com.br": 298,
     "leiloesfreire.com.br": 52,
@@ -32,6 +31,7 @@
     "liderleiloes.com.br": 23,
     "lilianportugal.com.br": 14,
     "lipinskileiloes.com.br": 25,
+    "marcusviniciusleiloes.com.br": 80,
     "mjleiloes.com.br": 119,
     "nordesteleiloes.com.br": 11,
     "rauppleiloes.com.br": 52,
@@ -58,7 +58,7 @@
     "bianchileiloes.com.br": 1,
     "bidgo.com.br": 4,
     "clicleiloes.com.br": 2,
-    "danielgarcialeiloes.com.br": 24,
+    "danielgarcialeiloes.com.br": 21,
     "destakleiloes.com.br": 2,
     "diegoleiloes.com.br": 1,
     "eblonline.com.br": 7,
@@ -68,15 +68,14 @@
     "gustavomorettoleiloeiro.com.br": 2,
     "gutembergaraujoleiloes.com.br": 1,
     "hatoryleiloes.com.br": 4,
-    "italoleiloes.com": 4,
+    "italoleiloes.com": 2,
     "joaoemilio.com.br": 7,
     "juleiloes.com.br": 1,
     "leiloesmager.com.br": 2,
     "levyleiloes.com.br": 2,
     "lkleiloes.com.br": 1,
-    "marcusviniciusleiloes.com.br": 4,
     "mercado.bomvalor.com.br": 4,
-    "mgl.com.br": 44,
+    "mgl.com.br": 38,
     "nsleiloes.leilao.br": 11,
     "patiorochaleiloes.com.br": 4,
     "pwleiloes.com.br": 6,
@@ -87,61 +86,6 @@
     "wleiloes.com.br": 2
   },
   "urls_que_falharam": [
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-sao-joao-batista-do-gloria-mg/7218/#&Pagina=1&Index=2",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.italoleiloes.com/leilao/3279/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-maraba-pa/7091/#&Pagina=1&Index=2",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.danielgarcialeiloes.com.br/leilao/7689/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-sao-joao-batista-do-gloria-mg/7218/#&Pagina=1&Index=2",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.danielgarcialeiloes.com.br/leilao/7688/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.danielgarcialeiloes.com.br/leilao/7689/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.italoleiloes.com/leilao/3279/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-maraba-pa/7091/#&Pagina=1&Index=2",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/fundaj-pe/7225/#&Pagina=1&Index=2",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/fundaj-pe/7225/#&Pagina=1&Index=2",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
     {
       "url": "https://www.guariglialeiloes.com.br/leilao/808/lotes",
       "status": "bloqueado_http_403",
@@ -493,16 +437,6 @@
       "http": 403
     },
     {
-      "url": "https://marcusviniciusleiloes.com.br/leilao/686/prefeitura-municipal-de-engenheiro-navarro-mg-veiculos-maquinas-e-outros",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://marcusviniciusleiloes.com.br/leilao/686/prefeitura-municipal-de-engenheiro-navarro-mg-veiculos-maquinas-e-outros",
-      "status": "erro",
-      "http": 0
-    },
-    {
       "url": "https://www.mgl.com.br/leilao/bens-diversos/7255/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
@@ -708,16 +642,6 @@
       "http": 403
     },
     {
-      "url": "https://marcusviniciusleiloes.com.br/leilao/717/prefeitura-municipal-de-japonvar-mg-veiculos-caminhonete-onibus-van-microonibus-ambulancia-sucatas-diversas-e-outros",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://marcusviniciusleiloes.com.br/leilao/717/prefeitura-municipal-de-japonvar-mg-veiculos-caminhonete-onibus-van-microonibus-ambulancia-sucatas-diversas-e-outros",
-      "status": "erro",
-      "http": 0
-    },
-    {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-tangara-da-serra-mt/7188/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
@@ -776,11 +700,6 @@
       "url": "https://www.gustavomorettoleiloeiro.com.br/leiloes/5273",
       "status": "erro",
       "http": 0
-    },
-    {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/050826PRFVE?pag=1",
-      "status": "http_500",
-      "http": 500
     },
     {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-cambui-mg/7291/#&Pagina=1&Index=1",
