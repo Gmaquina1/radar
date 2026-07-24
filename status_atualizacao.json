@@ -1,16 +1,16 @@
 {
   "status": "ok",
-  "verificado_em": "2026-07-24T05:50:49-03:00",
-  "atualizado_em_base_eventos": "2026-07-24T05:42:19-03:00",
-  "atualizado_em_base_lotes": "2026-07-24T05:50:48-03:00",
-  "idade_base_eventos_horas": 0.14,
+  "verificado_em": "2026-07-24T11:20:33-03:00",
+  "atualizado_em_base_eventos": "2026-07-24T11:11:30-03:00",
+  "atualizado_em_base_lotes": "2026-07-24T11:20:32-03:00",
+  "idade_base_eventos_horas": 0.15,
   "idade_base_lotes_horas": 0.0,
-  "eventos_futuros": 598,
+  "eventos_futuros": 565,
   "patios": 132,
-  "lotes": 5429,
-  "lotes_capturados_agora": 5067,
-  "lotes_preservados": 362,
-  "eventos_indexados_com_lotes": 222,
+  "lotes": 5053,
+  "lotes_capturados_agora": 4932,
+  "lotes_preservados": 121,
+  "eventos_indexados_com_lotes": 208,
   "checks": {
     "arquivos_obrigatorios": true,
     "workflow_existe": true,
@@ -28,13 +28,13 @@
     "base_lotes_recente": true
   },
   "arquivos_faltando": [],
-  "ultima_execucao": "2026-07-24T05:50:49-03:00",
+  "ultima_execucao": "2026-07-24T11:20:33-03:00",
   "mensagem": "Eventos, lotes e site atualizados com sucesso.",
   "base_anterior_restaurada": false,
-  "lotes_antes": 5519,
-  "lotes_depois": 5429,
-  "lotes_novos_detectados": 0,
-  "lotes_removidos_ou_encerrados": 90,
+  "lotes_antes": 5429,
+  "lotes_depois": 5053,
+  "lotes_novos_detectados": 20,
+  "lotes_removidos_ou_encerrados": 433,
   "etapas": [
     {
       "nome": "Atualizar eventos pelo Google My Maps",
@@ -45,7 +45,7 @@
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 73.24,
+      "duracao_segundos": 79.23,
       "status": "ok",
       "codigo": 0
     },
@@ -60,7 +60,7 @@
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 509.47,
+      "duracao_segundos": 542.43,
       "status": "ok",
       "codigo": 0
     },
@@ -83,7 +83,7 @@
         "--falhar-se-atencao"
       ],
       "tentativas": 1,
-      "duracao_segundos": 0.19,
+      "duracao_segundos": 0.18,
       "status": "ok",
       "codigo": 0
     }

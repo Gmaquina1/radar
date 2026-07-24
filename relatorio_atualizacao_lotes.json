@@ -1,54 +1,57 @@
 {
-  "executado_em": "2026-07-24T05:50:48-03:00",
-  "lotes_antes": 5519,
-  "lotes_depois": 5429,
-  "lotes_realmente_novos": 0,
-  "lotes_removidos_ou_encerrados": 90,
-  "lotes_preservados": 362,
-  "lotes_capturados_agora": 5067,
-  "lotes_capturados_com_chave_nova": 0,
-  "eventos_analisados": 598,
-  "eventos_com_lotes": 222,
-  "eventos_com_erro": 149,
-  "eventos_bloqueados": 142,
-  "links_invalidos": 8,
+  "executado_em": "2026-07-24T11:20:32-03:00",
+  "lotes_antes": 5429,
+  "lotes_depois": 5053,
+  "lotes_realmente_novos": 20,
+  "lotes_removidos_ou_encerrados": 434,
+  "lotes_preservados": 121,
+  "lotes_capturados_agora": 4932,
+  "lotes_capturados_com_chave_nova": 20,
+  "eventos_analisados": 565,
+  "eventos_com_lotes": 208,
+  "eventos_com_erro": 146,
+  "eventos_bloqueados": 141,
+  "links_invalidos": 7,
   "quantidade_coletada_por_leiloeiro": {
     "bsbleiloes.com.br": 104,
     "colossoleiloes.com.br": 11,
-    "drive.google.com": 208,
+    "drive.google.com": 207,
     "eckertleiloes.com.br": 184,
     "goldenlance.com.br": 43,
-    "kwara.com.br": 156,
+    "hisaleiloes.com.br": 196,
+    "kwara.com.br": 108,
     "lancecertoleiloes.com.br": 177,
     "lancevip.com.br": 20,
-    "lbleiloes.com.br": 60,
+    "lbleiloes.com.br": 48,
     "leilao.detran.mg.gov.br": 40,
-    "leilao.sodresantoro.com.br": 19,
+    "leilao.sodresantoro.com.br": 21,
     "leilaoonline.com.br": 254,
     "leiloesfreire.com.br": 132,
     "leiloesoliveira.com.br": 36,
-    "liderleiloes.com.br": 23,
+    "liderleiloes.com.br": 22,
     "lilianportugal.com.br": 14,
     "lipinskileiloes.com.br": 25,
+    "marcusviniciusleiloes.com.br": 80,
     "mariafixerleiloes.com.br": 2,
     "mjleiloes.com.br": 135,
+    "nakakogueleiloes.com.br": 12,
     "nordesteleiloes.com.br": 11,
     "okleiloes.com.br": 18,
     "rofremleiloes.com.br": 7,
     "rogeriomenezes.com.br": 40,
-    "rossileiloes.com.br": 934,
+    "rossileiloes.com.br": 926,
     "rpleiloes.com.br": 29,
     "sandrasantosleiloes.com.br": 10,
     "sandroleiloeiro.com.br": 245,
     "satoleiloes.com.br": 1,
     "sfleiloes.com.br": 37,
     "sodresantoro.com.br": 94,
-    "sold.com.br": 1669,
+    "sold.com.br": 1311,
     "swleiloes.com.br": 46,
     "tesouroleiloes.com.br": 15,
     "topoleiloes.com.br": 74,
     "tulioleiloes.com.br": 38,
-    "vardanaleiloes.com.br": 103,
+    "vardanaleiloes.com.br": 106,
     "webleiloes.com.br": 3,
     "wrleiloes.com.br": 50
   },
@@ -58,13 +61,11 @@
     "apabrfleiloes.com.br": 2,
     "bianchileiloes.com.br": 1,
     "bidgo.com.br": 4,
-    "bidmax.com.br": 1,
     "clicleiloes.com.br": 2,
     "danielgarcialeiloes.com.br": 21,
     "destakleiloes.com.br": 2,
     "diegoleiloes.com.br": 1,
     "eblonline.com.br": 7,
-    "freitasleiloeiro.com.br": 1,
     "goldenbrazilleiloes.com.br": 1,
     "grleiloes.com": 2,
     "gustavomorettoleiloeiro.com.br": 2,
@@ -79,7 +80,6 @@
     "lottileiloes.com.br": 1,
     "mercado.bomvalor.com.br": 4,
     "mgl.com.br": 35,
-    "nakakogueleiloes.com.br": 1,
     "nsleiloes.leilao.br": 11,
     "patiorochaleiloes.com.br": 4,
     "plazaleiloes.com.br": 1,
@@ -93,16 +93,6 @@
     "wleiloes.com.br": 2
   },
   "urls_que_falharam": [
-    {
-      "url": "https://www.freitasleiloeiro.com.br/Leiloes/Lotes?leilaoId=7946",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.bidmax.com.br/leilao/1174/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
     {
       "url": "https://www.patiorochaleiloes.com.br/leilao/856/lotes?page=1",
       "status": "bloqueado_http_403",
@@ -252,11 +242,6 @@
       "url": "https://www.mgl.com.br/leilao/caixa-economica-federal/7257/#&Pagina=1&Index=2",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/290726VE",
-      "status": "http_500",
-      "http": 500
     },
     {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-liberdade-mg/7276/#&Pagina=1&Index=1",
@@ -709,6 +694,11 @@
       "http": 0
     },
     {
+      "url": "https://www.lancecertoleiloes.com.br/leilao/050826PRFVE?pag=1",
+      "status": "http_500",
+      "http": 500
+    },
+    {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-cambui-mg/7291/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
@@ -717,11 +707,6 @@
       "url": "https://victordortaleiloes.com.br/leilao/1420/lotes",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www.nakakogueleiloes.com.br/lotes/137532/",
-      "status": "erro",
-      "http": 0
     },
     {
       "url": "https://www.gustavomorettoleiloeiro.com.br/leiloes/5279",
