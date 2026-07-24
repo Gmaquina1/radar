@@ -1,16 +1,16 @@
 {
-  "executado_em": "2026-07-24T00:50:09-03:00",
-  "lotes_antes": 4389,
-  "lotes_depois": 5519,
-  "lotes_realmente_novos": 942,
-  "lotes_removidos_ou_encerrados": 13,
-  "lotes_preservados": 86,
-  "lotes_capturados_agora": 5433,
-  "lotes_capturados_com_chave_nova": 942,
-  "eventos_analisados": 615,
-  "eventos_com_lotes": 230,
-  "eventos_com_erro": 150,
-  "eventos_bloqueados": 144,
+  "executado_em": "2026-07-24T05:50:48-03:00",
+  "lotes_antes": 5519,
+  "lotes_depois": 5429,
+  "lotes_realmente_novos": 0,
+  "lotes_removidos_ou_encerrados": 90,
+  "lotes_preservados": 362,
+  "lotes_capturados_agora": 5067,
+  "lotes_capturados_com_chave_nova": 0,
+  "eventos_analisados": 598,
+  "eventos_com_lotes": 222,
+  "eventos_com_erro": 149,
+  "eventos_bloqueados": 142,
   "links_invalidos": 8,
   "quantidade_coletada_por_leiloeiro": {
     "bsbleiloes.com.br": 104,
@@ -18,10 +18,8 @@
     "drive.google.com": 208,
     "eckertleiloes.com.br": 184,
     "goldenlance.com.br": 43,
-    "hisaleiloes.com.br": 184,
     "kwara.com.br": 156,
-    "lance360.com.br": 50,
-    "lancecertoleiloes.com.br": 217,
+    "lancecertoleiloes.com.br": 177,
     "lancevip.com.br": 20,
     "lbleiloes.com.br": 60,
     "leilao.detran.mg.gov.br": 40,
@@ -32,10 +30,8 @@
     "liderleiloes.com.br": 23,
     "lilianportugal.com.br": 14,
     "lipinskileiloes.com.br": 25,
-    "marcusviniciusleiloes.com.br": 80,
     "mariafixerleiloes.com.br": 2,
     "mjleiloes.com.br": 135,
-    "nakakogueleiloes.com.br": 12,
     "nordesteleiloes.com.br": 11,
     "okleiloes.com.br": 18,
     "rofremleiloes.com.br": 7,
@@ -82,7 +78,8 @@
     "lkleiloes.com.br": 1,
     "lottileiloes.com.br": 1,
     "mercado.bomvalor.com.br": 4,
-    "mgl.com.br": 37,
+    "mgl.com.br": 35,
+    "nakakogueleiloes.com.br": 1,
     "nsleiloes.leilao.br": 11,
     "patiorochaleiloes.com.br": 4,
     "plazaleiloes.com.br": 1,
@@ -96,21 +93,6 @@
     "wleiloes.com.br": 2
   },
   "urls_que_falharam": [
-    {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/240726PBVE",
-      "status": "http_500",
-      "http": 500
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-agua-boa-mg/7216/#&Pagina=1&Index=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-agua-boa-mg/7216/#&Pagina=1&Index=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
     {
       "url": "https://www.freitasleiloeiro.com.br/Leiloes/Lotes?leilaoId=7946",
       "status": "erro",
@@ -270,6 +252,11 @@
       "url": "https://www.mgl.com.br/leilao/caixa-economica-federal/7257/#&Pagina=1&Index=2",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www.lancecertoleiloes.com.br/leilao/290726VE",
+      "status": "http_500",
+      "http": 500
     },
     {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-liberdade-mg/7276/#&Pagina=1&Index=1",
@@ -485,11 +472,6 @@
       "url": "https://www.bidgo.com.br/leilao/panambi-rs-lote-de-pneus-06-07-2026-14-57-19/lotes/lista",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/310726SEADSUC",
-      "status": "http_500",
-      "http": 500
     },
     {
       "url": "https://www.joaoemilio.com.br/leilao/6038/lotes",
@@ -727,11 +709,6 @@
       "http": 0
     },
     {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/050826PRFVE?pag=1",
-      "status": "http_500",
-      "http": 500
-    },
-    {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-cambui-mg/7291/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
@@ -740,6 +717,11 @@
       "url": "https://victordortaleiloes.com.br/leilao/1420/lotes",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www.nakakogueleiloes.com.br/lotes/137532/",
+      "status": "erro",
+      "http": 0
     },
     {
       "url": "https://www.gustavomorettoleiloeiro.com.br/leiloes/5279",
