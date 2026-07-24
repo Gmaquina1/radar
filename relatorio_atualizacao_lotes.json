@@ -1,21 +1,21 @@
 {
-  "executado_em": "2026-07-23T16:54:48-03:00",
-  "lotes_antes": 4542,
-  "lotes_depois": 4389,
-  "lotes_realmente_novos": 51,
-  "lotes_removidos_ou_encerrados": 95,
-  "lotes_preservados": 91,
-  "lotes_capturados_agora": 4308,
-  "lotes_capturados_com_chave_nova": 51,
-  "eventos_analisados": 520,
-  "eventos_com_lotes": 181,
-  "eventos_com_erro": 137,
-  "eventos_bloqueados": 131,
-  "links_invalidos": 7,
+  "executado_em": "2026-07-24T00:50:09-03:00",
+  "lotes_antes": 4389,
+  "lotes_depois": 5519,
+  "lotes_realmente_novos": 942,
+  "lotes_removidos_ou_encerrados": 13,
+  "lotes_preservados": 86,
+  "lotes_capturados_agora": 5433,
+  "lotes_capturados_com_chave_nova": 942,
+  "eventos_analisados": 615,
+  "eventos_com_lotes": 230,
+  "eventos_com_erro": 150,
+  "eventos_bloqueados": 144,
+  "links_invalidos": 8,
   "quantidade_coletada_por_leiloeiro": {
     "bsbleiloes.com.br": 104,
     "colossoleiloes.com.br": 11,
-    "drive.google.com": 197,
+    "drive.google.com": 208,
     "eckertleiloes.com.br": 184,
     "goldenlance.com.br": 43,
     "hisaleiloes.com.br": 184,
@@ -27,68 +27,75 @@
     "leilao.detran.mg.gov.br": 40,
     "leilao.sodresantoro.com.br": 19,
     "leilaoonline.com.br": 254,
-    "leiloesfreire.com.br": 52,
+    "leiloesfreire.com.br": 132,
     "leiloesoliveira.com.br": 36,
     "liderleiloes.com.br": 23,
     "lilianportugal.com.br": 14,
     "lipinskileiloes.com.br": 25,
     "marcusviniciusleiloes.com.br": 80,
-    "mjleiloes.com.br": 119,
+    "mariafixerleiloes.com.br": 2,
+    "mjleiloes.com.br": 135,
+    "nakakogueleiloes.com.br": 12,
     "nordesteleiloes.com.br": 11,
+    "okleiloes.com.br": 18,
+    "rofremleiloes.com.br": 7,
     "rogeriomenezes.com.br": 40,
-    "rossileiloes.com.br": 774,
+    "rossileiloes.com.br": 934,
     "rpleiloes.com.br": 29,
     "sandrasantosleiloes.com.br": 10,
-    "sandroleiloeiro.com.br": 227,
+    "sandroleiloeiro.com.br": 245,
     "satoleiloes.com.br": 1,
-    "sfleiloes.com.br": 17,
+    "sfleiloes.com.br": 37,
     "sodresantoro.com.br": 94,
-    "sold.com.br": 926,
+    "sold.com.br": 1669,
     "swleiloes.com.br": 46,
     "tesouroleiloes.com.br": 15,
     "topoleiloes.com.br": 74,
+    "tulioleiloes.com.br": 38,
     "vardanaleiloes.com.br": 103,
     "webleiloes.com.br": 3,
     "wrleiloes.com.br": 50
   },
   "erros_por_leiloeiro": {
     "alvesleiloes.com.br": 2,
+    "andradeleiloes.com.br": 1,
     "apabrfleiloes.com.br": 2,
     "bianchileiloes.com.br": 1,
     "bidgo.com.br": 4,
+    "bidmax.com.br": 1,
     "clicleiloes.com.br": 2,
     "danielgarcialeiloes.com.br": 21,
     "destakleiloes.com.br": 2,
     "diegoleiloes.com.br": 1,
     "eblonline.com.br": 7,
     "freitasleiloeiro.com.br": 1,
+    "goldenbrazilleiloes.com.br": 1,
     "grleiloes.com": 2,
     "gustavomorettoleiloeiro.com.br": 2,
     "gutembergaraujoleiloes.com.br": 1,
     "hatoryleiloes.com.br": 4,
     "italoleiloes.com": 2,
-    "joaoemilio.com.br": 5,
+    "joaoemilio.com.br": 8,
     "juleiloes.com.br": 1,
     "leiloesmager.com.br": 2,
     "levyleiloes.com.br": 2,
     "lkleiloes.com.br": 1,
+    "lottileiloes.com.br": 1,
     "mercado.bomvalor.com.br": 4,
-    "mgl.com.br": 36,
+    "mgl.com.br": 37,
     "nsleiloes.leilao.br": 11,
     "patiorochaleiloes.com.br": 4,
-    "pwleiloes.com.br": 6,
+    "plazaleiloes.com.br": 1,
+    "pwleiloes.com.br": 8,
     "ricoleiloes.com.br": 3,
+    "rjleiloes.com.br": 1,
     "sumareleiloes.com.br": 3,
     "tudoleilao.com.br": 2,
+    "victordortaleiloes.com.br": 1,
     "winleiloes.com.br": 1,
     "wleiloes.com.br": 2
   },
   "urls_que_falharam": [
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-agua-boa-mg/7216/#&Pagina=1&Index=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
     {
       "url": "https://www.lancecertoleiloes.com.br/leilao/240726PBVE",
       "status": "http_500",
@@ -100,14 +107,19 @@
       "http": 403
     },
     {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/240726SUC",
-      "status": "http_500",
-      "http": 500
+      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-agua-boa-mg/7216/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.freitasleiloeiro.com.br/Leiloes/Lotes?leilaoId=7946",
       "status": "erro",
       "http": 0
+    },
+    {
+      "url": "https://www.bidmax.com.br/leilao/1174/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.patiorochaleiloes.com.br/leilao/856/lotes?page=1",
@@ -236,6 +248,11 @@
     },
     {
       "url": "https://www.ricoleiloes.com.br/leilao/2073/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://plazaleiloes.com.br/leilao/1018/lotes",
       "status": "bloqueado_http_403",
       "http": 403
     },
@@ -403,6 +420,11 @@
       "url": "https://eblonline.com.br/lotes/320?page=1&size=6&removerEncerrados=false",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www.lancecertoleiloes.com.br/leilao/300726VE",
+      "status": "http_500",
+      "http": 500
     },
     {
       "url": "https://www.bianchileiloes.com.br/leilao/leilao-de-prefeitura-ivoti-29-06-2026-09-27-28/lotes/lista",
@@ -600,6 +622,16 @@
       "http": 403
     },
     {
+      "url": "https://www.joaoemilio.com.br/leilao/6013/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.lottileiloes.com.br/leilao/751/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
       "url": "https://www.gutembergaraujoleiloes.com.br/leilao/230/lotes",
       "status": "bloqueado_http_403",
       "http": 403
@@ -621,6 +653,21 @@
     },
     {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-tangara-da-serra-mt/7188/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.mgl.com.br/leilao/bens-diversos-alienacao-antecipada/7122/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.joaoemilio.com.br/leilao/6055/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.rjleiloes.com.br/leilao/4687/lotes",
       "status": "bloqueado_http_403",
       "http": 403
     },
@@ -680,7 +727,17 @@
       "http": 0
     },
     {
+      "url": "https://www.lancecertoleiloes.com.br/leilao/050826PRFVE?pag=1",
+      "status": "http_500",
+      "http": 500
+    },
+    {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-cambui-mg/7291/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://victordortaleiloes.com.br/leilao/1420/lotes",
       "status": "bloqueado_http_403",
       "http": 403
     },
@@ -706,6 +763,11 @@
     },
     {
       "url": "https://www.pwleiloes.com.br/leilao/prefeitura-municipal-de-pedrinopolis/582/#Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.pwleiloes.com.br/leilao/prefeitura-municipal-de-alagoa/591/#Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
     },
@@ -760,12 +822,32 @@
       "http": 403
     },
     {
+      "url": "https://www.joaoemilio.com.br/leilao/6052/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
       "url": "https://www.alvesleiloes.com.br/leilao/251/lotes",
       "status": "bloqueado_http_403",
       "http": 403
     },
     {
       "url": "https://www.alvesleiloes.com.br/leilao/251/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.goldenbrazilleiloes.com.br/leilao/leilao-prefeitura-de-rio-dos-cedros-sc-08-07-2026-17-17-39/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.pwleiloes.com.br/leilao/prefeitura-municipal-de-aracitaba/592/#Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.andradeleiloes.com.br/leilao/199/lotes",
       "status": "bloqueado_http_403",
       "http": 403
     },
