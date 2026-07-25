@@ -1,13 +1,13 @@
 {
-  "executado_em": "2026-07-25T11:21:37-03:00",
-  "lotes_antes": 5178,
-  "lotes_depois": 5094,
-  "lotes_realmente_novos": 5,
-  "lotes_removidos_ou_encerrados": 43,
-  "lotes_preservados": 133,
-  "lotes_capturados_agora": 4961,
-  "lotes_capturados_com_chave_nova": 5,
-  "eventos_analisados": 606,
+  "executado_em": "2026-07-25T16:52:49-03:00",
+  "lotes_antes": 5094,
+  "lotes_depois": 5088,
+  "lotes_realmente_novos": 0,
+  "lotes_removidos_ou_encerrados": 5,
+  "lotes_preservados": 138,
+  "lotes_capturados_agora": 4960,
+  "lotes_capturados_com_chave_nova": 0,
+  "eventos_analisados": 607,
   "eventos_com_lotes": 224,
   "eventos_com_erro": 167,
   "eventos_bloqueados": 149,
@@ -23,7 +23,7 @@
     "lancevip.com.br": 20,
     "lbleiloes.com.br": 48,
     "leilao.detran.mg.gov.br": 56,
-    "leilao.sodresantoro.com.br": 20,
+    "leilao.sodresantoro.com.br": 19,
     "leilaoonline.com.br": 254,
     "leiloesalbino.com.br": 15,
     "leiloesfreire.com.br": 132,
@@ -254,11 +254,6 @@
       "http": 403
     },
     {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/290726VE",
-      "status": "http_500",
-      "http": 500
-    },
-    {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-liberdade-mg/7276/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
@@ -394,6 +389,11 @@
       "http": 0
     },
     {
+      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8520",
+      "status": "http_502",
+      "http": 502
+    },
+    {
       "url": "https://www.patiorochaleiloes.com.br/leilao/1305/lotes",
       "status": "bloqueado_http_403",
       "http": 403
@@ -447,6 +447,11 @@
       "url": "https://www.guariglialeiloes.com.br/leilao/809/lotes?page=1",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8531",
+      "status": "http_502",
+      "http": 502
     },
     {
       "url": "https://www.mgl.com.br/leilao/bens-diversos/7255/#&Pagina=1&Index=1",
@@ -774,16 +779,6 @@
       "http": 0
     },
     {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/050826PRFVE?pag=1",
-      "status": "http_500",
-      "http": 500
-    },
-    {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/050826PRFVE?pag=1",
-      "status": "http_500",
-      "http": 500
-    },
-    {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-cambui-mg/7291/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
@@ -922,6 +917,16 @@
       "url": "https://www.goldenbrazilleiloes.com.br/leilao/leilao-prefeitura-de-rio-dos-cedros-sc-08-07-2026-17-17-39/lotes/lista",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8503",
+      "status": "http_502",
+      "http": 502
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8503",
+      "status": "http_502",
+      "http": 502
     },
     {
       "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/727600/2/2026",
