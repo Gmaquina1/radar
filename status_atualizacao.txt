@@ -1,17 +1,17 @@
 Status: ok
-Verificado em: 2026-07-24T16:54:23-03:00
-Base de eventos: 2026-07-24T16:46:18-03:00
-Base de lotes: 2026-07-24T16:54:22-03:00
-Idade da base de eventos: 0.13 horas
+Verificado em: 2026-07-25T00:40:49-03:00
+Base de eventos: 2026-07-25T00:36:06-03:00
+Base de lotes: 2026-07-25T00:40:49-03:00
+Idade da base de eventos: 0.08 horas
 Idade da base de lotes: 0.0 horas
-Eventos futuros: 562
-Lotes disponíveis: 4845
-Lotes capturados nesta execução: 4568
-Lotes preservados: 277
-Lotes antes: 5053
-Lotes depois: 4845
-Lotes novos detectados: 14
-Lotes removidos ou encerrados: 87
+Eventos futuros: 613
+Lotes disponíveis: 5183
+Lotes capturados nesta execução: 5014
+Lotes preservados: 169
+Lotes antes: 4845
+Lotes depois: 5183
+Lotes novos detectados: 192
+Lotes removidos ou encerrados: 4
 Pátios: 132
 Verificações com problema: nenhuma
 Mensagem: Eventos, lotes e site atualizados com sucesso.
