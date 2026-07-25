@@ -1,16 +1,16 @@
 {
-  "executado_em": "2026-07-25T00:40:49-03:00",
-  "lotes_antes": 4845,
-  "lotes_depois": 5183,
-  "lotes_realmente_novos": 207,
-  "lotes_removidos_ou_encerrados": 4,
-  "lotes_preservados": 169,
-  "lotes_capturados_agora": 5014,
-  "lotes_capturados_com_chave_nova": 207,
+  "executado_em": "2026-07-25T05:32:06-03:00",
+  "lotes_antes": 5183,
+  "lotes_depois": 5178,
+  "lotes_realmente_novos": 0,
+  "lotes_removidos_ou_encerrados": 5,
+  "lotes_preservados": 94,
+  "lotes_capturados_agora": 5094,
+  "lotes_capturados_com_chave_nova": 0,
   "eventos_analisados": 613,
-  "eventos_com_lotes": 225,
-  "eventos_com_erro": 163,
-  "eventos_bloqueados": 151,
+  "eventos_com_lotes": 227,
+  "eventos_com_erro": 158,
+  "eventos_bloqueados": 150,
   "links_invalidos": 4,
   "quantidade_coletada_por_leiloeiro": {
     "bsbleiloes.com.br": 104,
@@ -33,6 +33,7 @@
     "lilianportugal.com.br": 14,
     "lipinskileiloes.com.br": 25,
     "lumussaleiloes.com.br": 4,
+    "marcusviniciusleiloes.com.br": 80,
     "mariafixerleiloes.com.br": 2,
     "mjleiloes.com.br": 221,
     "nakakogueleiloes.com.br": 12,
@@ -82,11 +83,10 @@
     "levyleiloes.com.br": 2,
     "lkleiloes.com.br": 1,
     "lottileiloes.com.br": 1,
-    "marcusviniciusleiloes.com.br": 4,
     "mercado.bomvalor.com.br": 5,
     "mgl.com.br": 35,
     "nsleiloes.leilao.br": 11,
-    "patiorochaleiloes.com.br": 4,
+    "patiorochaleiloes.com.br": 3,
     "plazaleiloes.com.br": 1,
     "pwleiloes.com.br": 8,
     "rangelleiloes.com.br": 1,
@@ -99,11 +99,6 @@
     "wleiloes.com.br": 2
   },
   "urls_que_falharam": [
-    {
-      "url": "https://www.patiorochaleiloes.com.br/leilao/856/lotes?page=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
     {
       "url": "https://www.winleiloes.com.br/leilao/110/lotes",
       "status": "bloqueado_http_403",
@@ -425,24 +420,9 @@
       "http": 403
     },
     {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/300726VE",
-      "status": "http_500",
-      "http": 500
-    },
-    {
       "url": "https://www.bianchileiloes.com.br/leilao/leilao-de-prefeitura-ivoti-29-06-2026-09-27-28/lotes/lista",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://marcusviniciusleiloes.com.br/leilao/686/prefeitura-municipal-de-engenheiro-navarro-mg-veiculos-maquinas-e-outros",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://marcusviniciusleiloes.com.br/leilao/686/prefeitura-municipal-de-engenheiro-navarro-mg-veiculos-maquinas-e-outros",
-      "status": "erro",
-      "http": 0
     },
     {
       "url": "https://www.guariglialeiloes.com.br/leilao/809/lotes?tipo_bem_id=&modelo_id=&modelo_id=&address_uf=&lance_inicial_ini=&lance_inicial_fim=&search=candeias",
@@ -508,11 +488,6 @@
       "url": "https://www.bidgo.com.br/leilao/panambi-rs-lote-de-pneus-06-07-2026-14-57-19/lotes/lista",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/310726SEADSUC",
-      "status": "http_500",
-      "http": 500
     },
     {
       "url": "https://www.joaoemilio.com.br/leilao/6038/lotes",
@@ -688,16 +663,6 @@
       "url": "https://www.ricoleiloes.com.br/leilao/2078/lotes",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://marcusviniciusleiloes.com.br/leilao/717/prefeitura-municipal-de-japonvar-mg-veiculos-caminhonete-onibus-van-microonibus-ambulancia-sucatas-diversas-e-outros",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://marcusviniciusleiloes.com.br/leilao/717/prefeitura-municipal-de-japonvar-mg-veiculos-caminhonete-onibus-van-microonibus-ambulancia-sucatas-diversas-e-outros",
-      "status": "erro",
-      "http": 0
     },
     {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-tangara-da-serra-mt/7188/#&Pagina=1&Index=1",

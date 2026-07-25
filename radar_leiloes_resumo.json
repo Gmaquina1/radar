@@ -1,13 +1,13 @@
 {
-  "atualizado_em": "2026-07-25T00:36:06-03:00",
+  "atualizado_em": "2026-07-25T05:24:03-03:00",
   "data_base": "2026-07-25",
   "total_registros": 747,
   "eventos_atualizacao": 615,
   "eventos_futuros_ou_hoje": 613,
   "patios": 132,
   "eventos_com_link": 611,
-  "eventos_com_data_hora_de_edital": 70,
-  "eventos_com_data_hora_de_site": 29,
+  "eventos_com_data_hora_de_edital": 69,
+  "eventos_com_data_hora_de_site": 30,
   "eventos_por_uf": [
     [
       "SP",
@@ -43,7 +43,7 @@
     ],
     [
       "BA",
-      12
+      11
     ],
     [
       "MS",
@@ -83,7 +83,7 @@
     ],
     [
       "RN",
-      4
+      5
     ],
     [
       "DF",
@@ -241,13 +241,13 @@
     ]
   ],
   "download_kml": {
-    "downloaded_at": "2026-07-25T00:35:04-03:00",
+    "downloaded_at": "2026-07-25T05:22:49-03:00",
     "http_status": 200,
     "final_url": "https://www.google.com/maps/d/kml?forcekml=1&mid=1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U",
     "downloaded_bytes": 1024357,
-    "old_sha256": "635ea9b91039f66b2fc671eb79841255b4dad689378264d2e33090f9d07355e5",
+    "old_sha256": "a4ecbfc3a7d8f6e6e5b5c3a4d22b31f56503211e970827bb283f42b3bd76807e",
     "new_sha256": "a4ecbfc3a7d8f6e6e5b5c3a4d22b31f56503211e970827bb283f42b3bd76807e",
-    "old_markers": 749,
+    "old_markers": 747,
     "new_markers": 747,
     "source": "google_my_maps_live_kml"
   }
