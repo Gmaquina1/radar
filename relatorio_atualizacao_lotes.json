@@ -1,15 +1,15 @@
 {
-  "executado_em": "2026-07-26T01:01:30-03:00",
-  "lotes_antes": 5088,
-  "lotes_depois": 5137,
-  "lotes_realmente_novos": 17,
+  "executado_em": "2026-07-26T05:48:40-03:00",
+  "lotes_antes": 5137,
+  "lotes_depois": 5105,
+  "lotes_realmente_novos": 0,
   "lotes_removidos_ou_encerrados": 0,
-  "lotes_preservados": 121,
+  "lotes_preservados": 89,
   "lotes_capturados_agora": 5016,
-  "lotes_capturados_com_chave_nova": 17,
+  "lotes_capturados_com_chave_nova": 0,
   "eventos_analisados": 607,
   "eventos_com_lotes": 226,
-  "eventos_com_erro": 159,
+  "eventos_com_erro": 157,
   "eventos_bloqueados": 149,
   "links_invalidos": 4,
   "quantidade_coletada_por_leiloeiro": {
@@ -86,7 +86,6 @@
     "mgl.com.br": 35,
     "nsleiloes.leilao.br": 11,
     "patiorochaleiloes.com.br": 3,
-    "pestanaleiloes.com.br": 2,
     "plazaleiloes.com.br": 1,
     "pwleiloes.com.br": 8,
     "rangelleiloes.com.br": 1,
@@ -254,6 +253,11 @@
       "http": 403
     },
     {
+      "url": "https://www.lancecertoleiloes.com.br/leilao/290726VE",
+      "status": "http_500",
+      "http": 500
+    },
+    {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-liberdade-mg/7276/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
@@ -409,6 +413,11 @@
       "http": 403
     },
     {
+      "url": "https://www.lancecertoleiloes.com.br/leilao/300726VE",
+      "status": "http_500",
+      "http": 500
+    },
+    {
       "url": "https://www.bianchileiloes.com.br/leilao/leilao-de-prefeitura-ivoti-29-06-2026-09-27-28/lotes/lista",
       "status": "bloqueado_http_403",
       "http": 403
@@ -422,11 +431,6 @@
       "url": "https://www.guariglialeiloes.com.br/leilao/809/lotes?page=1",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www.pestanaleiloes.com.br/agenda-de-leiloes/5967?lotePage=1&loteQty=12",
-      "status": "erro",
-      "http": 0
     },
     {
       "url": "https://www.mgl.com.br/leilao/bens-diversos/7255/#&Pagina=1&Index=1",
@@ -492,11 +496,6 @@
       "url": "https://www.joaoemilio.com.br/leilao/6024/lotes",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www.pestanaleiloes.com.br/agenda-de-leiloes/6093?lotePage=1&loteQty=12",
-      "status": "erro",
-      "http": 0
     },
     {
       "url": "https://mercado.bomvalor.com.br/kcleiloes/katia-cerqueira-da-silva-casaes/veiculos/caminhao/caminhao-ford-f4000-trv-multi-2018-125328",
