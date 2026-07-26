@@ -1,15 +1,15 @@
 {
-  "executado_em": "2026-07-25T16:52:49-03:00",
-  "lotes_antes": 5094,
-  "lotes_depois": 5088,
-  "lotes_realmente_novos": 0,
-  "lotes_removidos_ou_encerrados": 5,
-  "lotes_preservados": 138,
-  "lotes_capturados_agora": 4960,
-  "lotes_capturados_com_chave_nova": 0,
+  "executado_em": "2026-07-26T01:01:30-03:00",
+  "lotes_antes": 5088,
+  "lotes_depois": 5137,
+  "lotes_realmente_novos": 17,
+  "lotes_removidos_ou_encerrados": 0,
+  "lotes_preservados": 121,
+  "lotes_capturados_agora": 5016,
+  "lotes_capturados_com_chave_nova": 17,
   "eventos_analisados": 607,
-  "eventos_com_lotes": 224,
-  "eventos_com_erro": 167,
+  "eventos_com_lotes": 226,
+  "eventos_com_erro": 159,
   "eventos_bloqueados": 149,
   "links_invalidos": 4,
   "quantidade_coletada_por_leiloeiro": {
@@ -34,7 +34,8 @@
     "lumussaleiloes.com.br": 4,
     "marcusviniciusleiloes.com.br": 80,
     "mariafixerleiloes.com.br": 2,
-    "mjleiloes.com.br": 221,
+    "mjleiloes.com.br": 265,
+    "nakakogueleiloes.com.br": 12,
     "nordesteleiloes.com.br": 11,
     "okleiloes.com.br": 18,
     "rofremleiloes.com.br": 7,
@@ -83,9 +84,9 @@
     "lottileiloes.com.br": 1,
     "mercado.bomvalor.com.br": 5,
     "mgl.com.br": 35,
-    "nakakogueleiloes.com.br": 1,
     "nsleiloes.leilao.br": 11,
     "patiorochaleiloes.com.br": 3,
+    "pestanaleiloes.com.br": 2,
     "plazaleiloes.com.br": 1,
     "pwleiloes.com.br": 8,
     "rangelleiloes.com.br": 1,
@@ -94,8 +95,7 @@
     "sumareleiloes.com.br": 4,
     "tudoleilao.com.br": 2,
     "victordortaleiloes.com.br": 1,
-    "wleiloes.com.br": 2,
-    "www25.receita.fazenda.gov.br": 9
+    "wleiloes.com.br": 2
   },
   "urls_que_falharam": [
     {
@@ -389,11 +389,6 @@
       "http": 0
     },
     {
-      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8520",
-      "status": "http_502",
-      "http": 502
-    },
-    {
       "url": "https://www.patiorochaleiloes.com.br/leilao/1305/lotes",
       "status": "bloqueado_http_403",
       "http": 403
@@ -414,29 +409,9 @@
       "http": 403
     },
     {
-      "url": "https://www.lancecertoleiloes.com.br/leilao/300726VE",
-      "status": "http_500",
-      "http": 500
-    },
-    {
       "url": "https://www.bianchileiloes.com.br/leilao/leilao-de-prefeitura-ivoti-29-06-2026-09-27-28/lotes/lista",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/800100/9/2026",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/800100/9/2026",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/800100/9/2026",
-      "status": "erro",
-      "http": 0
     },
     {
       "url": "https://www.guariglialeiloes.com.br/leilao/809/lotes?tipo_bem_id=&modelo_id=&modelo_id=&address_uf=&lance_inicial_ini=&lance_inicial_fim=&search=candeias",
@@ -449,9 +424,9 @@
       "http": 403
     },
     {
-      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8531",
-      "status": "http_502",
-      "http": 502
+      "url": "https://www.pestanaleiloes.com.br/agenda-de-leiloes/5967?lotePage=1&loteQty=12",
+      "status": "erro",
+      "http": 0
     },
     {
       "url": "https://www.mgl.com.br/leilao/bens-diversos/7255/#&Pagina=1&Index=1",
@@ -509,11 +484,6 @@
       "http": 403
     },
     {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/700100/9/2026;pg=2",
-      "status": "erro",
-      "http": 0
-    },
-    {
       "url": "https://www.joaoemilio.com.br/leilao/6038/lotes",
       "status": "bloqueado_http_403",
       "http": 403
@@ -522,6 +492,11 @@
       "url": "https://www.joaoemilio.com.br/leilao/6024/lotes",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www.pestanaleiloes.com.br/agenda-de-leiloes/6093?lotePage=1&loteQty=12",
+      "status": "erro",
+      "http": 0
     },
     {
       "url": "https://mercado.bomvalor.com.br/kcleiloes/katia-cerqueira-da-silva-casaes/veiculos/caminhao/caminhao-ford-f4000-trv-multi-2018-125328",
@@ -562,11 +537,6 @@
       "url": "https://www.lanceleiloes.com.br/leilao/868/lotes",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/717700/2/2026",
-      "status": "erro",
-      "http": 0
     },
     {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-itobi-sp/7232/#&Pagina=1&Index=1",
@@ -784,11 +754,6 @@
       "http": 403
     },
     {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/600100/3/2026",
-      "status": "erro",
-      "http": 0
-    },
-    {
       "url": "https://www.rangelleiloes.com.br/leilao/leilao-do-municipio-de-paverama-rs-20-07-2026-15-39-28/lotes/lista",
       "status": "bloqueado_http_403",
       "http": 403
@@ -797,11 +762,6 @@
       "url": "https://victordortaleiloes.com.br/leilao/1420/lotes",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www.nakakogueleiloes.com.br/lotes/137532/",
-      "status": "erro",
-      "http": 0
     },
     {
       "url": "https://www.gustavomorettoleiloeiro.com.br/leiloes/5279",
@@ -894,16 +854,6 @@
       "http": 0
     },
     {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/900100/9/2026",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/700100/10/2026",
-      "status": "erro",
-      "http": 0
-    },
-    {
       "url": "https://www.alvesleiloes.com.br/leilao/251/lotes",
       "status": "bloqueado_http_403",
       "http": 403
@@ -917,21 +867,6 @@
       "url": "https://www.goldenbrazilleiloes.com.br/leilao/leilao-prefeitura-de-rio-dos-cedros-sc-08-07-2026-17-17-39/lotes/lista",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8503",
-      "status": "http_502",
-      "http": 502
-    },
-    {
-      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8503",
-      "status": "http_502",
-      "http": 502
-    },
-    {
-      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/727600/2/2026",
-      "status": "erro",
-      "http": 0
     },
     {
       "url": "https://www.pwleiloes.com.br/leilao/prefeitura-municipal-de-aracitaba/592/#Pagina=1&Index=1",
