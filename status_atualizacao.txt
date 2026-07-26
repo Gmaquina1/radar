@@ -1,13 +1,13 @@
 Status: ok
-Verificado em: 2026-07-26T11:01:24-03:00
-Base de eventos: 2026-07-26T10:55:35-03:00
-Base de lotes: 2026-07-26T11:01:23-03:00
-Idade da base de eventos: 0.1 horas
+Verificado em: 2026-07-26T16:42:46-03:00
+Base de eventos: 2026-07-26T16:34:21-03:00
+Base de lotes: 2026-07-26T16:42:45-03:00
+Idade da base de eventos: 0.14 horas
 Idade da base de lotes: 0.0 horas
 Eventos futuros: 607
 Lotes disponíveis: 5105
-Lotes capturados nesta execução: 4936
-Lotes preservados: 169
+Lotes capturados nesta execução: 5016
+Lotes preservados: 89
 Lotes antes: 5105
 Lotes depois: 5105
 Lotes novos detectados: 0
