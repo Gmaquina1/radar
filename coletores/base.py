@@ -1,0 +1,9 @@
+from __future__ import annotations
+
+from typing import Protocol
+
+
+class Collector(Protocol):
+    def discover_events(self, url: str) -> list[dict]: ...
+    def discover_lots(self, event: dict) -> list[dict]: ...
+    def parse_lot(self, url: str) -> dict: ...

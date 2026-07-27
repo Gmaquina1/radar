@@ -51,6 +51,13 @@ FIELDS = [
     "fonte",
     "capturado_em",
     "status_captura",
+    "fonte_descoberta",
+    "dominio_origem",
+    "url_descoberta",
+    "descoberto_em",
+    "confianca_dados",
+    "status_evento",
+    "id_origem",
 ]
 
 IGNORE_ANCHORS = {

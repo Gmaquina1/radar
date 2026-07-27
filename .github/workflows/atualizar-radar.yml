@@ -26,6 +26,8 @@ jobs:
     env:
       TZ: America/Sao_Paulo
       PYTHONUNBUFFERED: "1"
+      WEB_SEARCH_PROVIDER: ${{ vars.WEB_SEARCH_PROVIDER }}
+      WEB_SEARCH_API_KEY: ${{ secrets.WEB_SEARCH_API_KEY }}
 
     steps:
       - name: Baixar o repositório
@@ -69,7 +71,32 @@ jobs:
         id: testes
         if: always()
         continue-on-error: true
-        run: python -m unittest -v test_radar.py
+        run: python -m unittest discover -v
+
+      - name: Resumo da cobertura nacional
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import csv, json
+          from pathlib import Path
+          def data(name):
+              try: return json.loads(Path(name).read_text())
+              except Exception: return {}
+          d, c = data('relatorio_descoberta_web.json'), data('relatorio_cobertura_radar.json')
+          try:
+              mapa = sum(1 for _ in csv.DictReader(open('radar_leiloes_eventos_futuros.csv', encoding='utf-8-sig')))
+          except OSError: mapa = 0
+          print('## Cobertura do Radar')
+          print(f"- Mapa: {mapa} eventos")
+          print(f"- Descoberta externa: {d.get('eventos_descobertos', 0)} eventos")
+          print(f"- Lotes totais: {c.get('total_lotes_ativos', 0)}")
+          print(f"- **Lotes fora do mapa: {c.get('LOTES_FORA_DO_MAPA', 0)}**")
+          print(f"- Domínios consultados: {d.get('dominios_visitados', 0)}")
+          print(f"- Novos domínios: {d.get('novos_dominios', 0)}")
+          print(f"- Bloqueados: {d.get('bloqueados', 0)}")
+          print(f"- Erros: {len(d.get('erros', []))}")
+          PY
 
       - name: Mostrar resultado
         if: always()
@@ -109,6 +136,8 @@ jobs:
             status_atualizacao.json
             status_atualizacao.txt
             relatorio_atualizacao_lotes.json
+            relatorio_descoberta_web.json
+            relatorio_cobertura_radar.json
           if-no-files-found: ignore
           retention-days: 14
 
