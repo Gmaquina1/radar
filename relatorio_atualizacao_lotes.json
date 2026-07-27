@@ -1,29 +1,28 @@
 {
-  "executado_em": "2026-07-27T07:17:10-03:00",
-  "lotes_antes": 5105,
-  "lotes_depois": 5006,
-  "lotes_realmente_novos": 0,
-  "lotes_removidos_ou_encerrados": 89,
-  "lotes_preservados": 94,
-  "lotes_capturados_agora": 4922,
-  "lotes_capturados_com_chave_nova": 0,
-  "eventos_analisados": 572,
-  "eventos_com_lotes": 214,
+  "executado_em": "2026-07-27T12:21:19-03:00",
+  "lotes_antes": 5006,
+  "lotes_depois": 4798,
+  "lotes_realmente_novos": 11,
+  "lotes_removidos_ou_encerrados": 122,
+  "lotes_preservados": 181,
+  "lotes_capturados_agora": 4622,
+  "lotes_capturados_com_chave_nova": 16,
+  "eventos_analisados": 557,
+  "eventos_com_lotes": 205,
   "eventos_com_erro": 150,
-  "eventos_bloqueados": 142,
+  "eventos_bloqueados": 141,
   "links_invalidos": 4,
   "quantidade_coletada_por_leiloeiro": {
     "colossoleiloes.com.br": 11,
     "drive.google.com": 200,
     "eckertleiloes.com.br": 176,
-    "goldenlance.com.br": 43,
-    "hisaleiloes.com.br": 100,
-    "kwara.com.br": 156,
+    "goldenlance.com.br": 47,
+    "kwara.com.br": 108,
     "lancecertoleiloes.com.br": 177,
     "lancevip.com.br": 20,
     "lbleiloes.com.br": 48,
     "leilao.detran.mg.gov.br": 48,
-    "leilao.sodresantoro.com.br": 19,
+    "leilao.sodresantoro.com.br": 20,
     "leilaoonline.com.br": 254,
     "leiloesalbino.com.br": 15,
     "leiloesfreire.com.br": 132,
@@ -32,15 +31,13 @@
     "lilianportugal.com.br": 14,
     "lipinskileiloes.com.br": 25,
     "lumussaleiloes.com.br": 4,
-    "marcusviniciusleiloes.com.br": 80,
     "mariafixerleiloes.com.br": 2,
     "mjleiloes.com.br": 265,
-    "nakakogueleiloes.com.br": 12,
     "nordesteleiloes.com.br": 11,
     "okleiloes.com.br": 18,
     "rofremleiloes.com.br": 7,
-    "rogeriomenezes.com.br": 130,
-    "rossileiloes.com.br": 854,
+    "rogeriomenezes.com.br": 139,
+    "rossileiloes.com.br": 774,
     "rpleiloes.com.br": 29,
     "sandrasantosleiloes.com.br": 10,
     "sandroleiloeiro.com.br": 245,
@@ -52,7 +49,7 @@
     "tesouroleiloes.com.br": 15,
     "topoleiloes.com.br": 49,
     "tulioleiloes.com.br": 38,
-    "vardanaleiloes.com.br": 113,
+    "vardanaleiloes.com.br": 119,
     "webleiloes.com.br": 3,
     "wrleiloes.com.br": 39
   },
@@ -84,6 +81,7 @@
     "lottileiloes.com.br": 1,
     "mercado.bomvalor.com.br": 5,
     "mgl.com.br": 34,
+    "nakakogueleiloes.com.br": 1,
     "nsleiloes.leilao.br": 11,
     "patiorochaleiloes.com.br": 3,
     "plazaleiloes.com.br": 1,
@@ -92,21 +90,11 @@
     "ricoleiloes.com.br": 3,
     "rjleiloes.com.br": 2,
     "sumareleiloes.com.br": 4,
-    "tudoleilao.com.br": 2,
+    "tudoleilao.com.br": 1,
     "victordortaleiloes.com.br": 1,
     "wleiloes.com.br": 2
   },
   "urls_que_falharam": [
-    {
-      "url": "https://www.tudoleilao.com.br/leilao/258/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.caiapoleiloes.com.br/",
-      "status": "http_500",
-      "http": 500
-    },
     {
       "url": "https://www.italoleiloes.com/leilao/3282/lotes",
       "status": "bloqueado_http_403",
@@ -378,6 +366,11 @@
       "http": 403
     },
     {
+      "url": "https://www.lancecertoleiloes.com.br/leilao/300726VE",
+      "status": "http_500",
+      "http": 500
+    },
+    {
       "url": "https://www.bianchileiloes.com.br/leilao/leilao-de-prefeitura-ivoti-29-06-2026-09-27-28/lotes/lista",
       "status": "bloqueado_http_403",
       "http": 403
@@ -536,6 +529,11 @@
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-balsas-ma/7233/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www.lancecertoleiloes.com.br/leilao/040826ACARI",
+      "status": "http_500",
+      "http": 500
     },
     {
       "url": "https://www.levyleiloes.com.br/leilao/44/lotes",
@@ -721,6 +719,11 @@
       "url": "https://victordortaleiloes.com.br/leilao/1420/lotes",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www.nakakogueleiloes.com.br/lotes/137532/",
+      "status": "erro",
+      "http": 0
     },
     {
       "url": "https://www.gustavomorettoleiloeiro.com.br/leiloes/5279",
