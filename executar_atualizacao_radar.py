@@ -317,6 +317,7 @@ def main() -> int:
     parser.add_argument("--workers-lotes", type=int, default=16)
     parser.add_argument("--delay-lotes", type=float, default=0)
     parser.add_argument("--sem-lotes", action="store_true")
+    parser.add_argument("--modo", choices=("rapido", "profundo"), default="rapido")
     args = parser.parse_args()
 
     previous_payload = read_json(ROOT / "lotes.json")
@@ -374,7 +375,7 @@ def main() -> int:
         if not args.sem_lotes:
             discovery_step = run_step(
                 "Descobrir leilões fora do mapa",
-                [sys.executable, "descobrir_leiloes_web.py"],
+                [sys.executable, "descobrir_leiloes_web.py"] + (["--deep-discovery"] if args.modo == "profundo" else []),
                 attempts=1,
             )
             results.append(discovery_step)
@@ -477,8 +478,13 @@ def main() -> int:
                 "lotes_novos_detectados": new_count,
                 "lotes_removidos_ou_encerrados": removed_count,
                 "status_mapa": event_step["status"],
+                "status_openai": discovery_report.get("openai_connection", "inativa" if args.modo == "rapido" else "erro"),
+                "status_descoberta": discovery_status,
                 "status_descoberta_web": discovery_status,
                 "status_lotes": lot_step["status"] if not args.sem_lotes else "nao_executado",
+                "status_site": "ok",
+                "openai_funcionou": discovery_report.get("openai_connection") == "OK",
+                "descoberta_funcionou": discovery_step["status"] == "ok" and discovery_status in {"ok", "parcial"},
                 "descoberta_web_funcionou": discovery_step["status"] == "ok" and discovery_status in {"ok", "parcial"},
                 "etapas": results,
             }

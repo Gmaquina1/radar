@@ -12,3 +12,6 @@ eventos_consolidados.csv
 eventos_descobertos_web.json
 relatorio_descoberta_web.json
 relatorio_cobertura_radar.json
+
+# Relatório efêmero de preflight (artefato do workflow)
+openai_preflight.json

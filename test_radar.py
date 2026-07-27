@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import unittest
+from unittest import mock
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
@@ -89,6 +90,14 @@ class RadarTests(unittest.TestCase):
             "pdf_ok",
         )
         self.assertEqual(rows[0]["link_edital"], "https://exemplo.com/edital.pdf")
+
+    def test_pdf_invalido_html_e_corrompido(self) -> None:
+        self.assertEqual(indexador.pdf_text(b"<html>nao pdf</html>"), "")
+        self.assertEqual(indexador.pdf_text(b"%PDF-corrompido"), "")
+
+    def test_pdf_enorme_e_ignorado(self) -> None:
+        with mock.patch.object(indexador, "PDF_MAX_BYTES", 8):
+            self.assertEqual(indexador.pdf_text(b"%PDF-123456789"), "")
 
     def test_remove_evento_de_hoje_com_horario_passado(self) -> None:
         now = datetime(2026, 7, 14, 16, 0, tzinfo=ZoneInfo("America/Sao_Paulo"))

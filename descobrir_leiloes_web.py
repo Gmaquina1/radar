@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import csv
 import email.utils
+import gzip
 import json
 import os
 import random
@@ -53,6 +54,17 @@ def host(url) -> str:
     if not canonical: return ""
     try: return (urllib.parse.urlsplit(canonical).hostname or "").removeprefix("www.").casefold()
     except (TypeError, ValueError): return ""
+
+
+def normalize_portal(entry: dict) -> dict:
+    """Migra entradas antigas preservando campos e adicionando estado incremental."""
+    value = dict(entry)
+    defaults = {"ativo": True, "origem": "catalogo", "url_exemplo": "", "pagina_eventos": "", "sitemap": "", "tipo_coleta": "generico", "possui_eventos": False, "possui_lotes": False, "ultima_verificacao": "", "ultimo_sucesso": "", "status_acesso": "pendente", "falhas_consecutivas": 0, "tempo_resposta": 0, "proxima_verificacao": "", "caminhos_conhecidos": [], "etag": "", "last_modified": "", "hash_conteudo": ""}
+    for key, default in defaults.items(): value.setdefault(key, default)
+    if not isinstance(value["caminhos_conhecidos"], list): value["caminhos_conhecidos"] = []
+    example = canonicalize_url(value.get("url_exemplo"))
+    if example and example not in value["caminhos_conhecidos"]: value["caminhos_conhecidos"].append(example)
+    return value
 
 
 def _urls(value):
@@ -135,8 +147,10 @@ def retry_seconds(value: str) -> float:
     except (TypeError, ValueError): return 0
 
 
-def sitemap_urls(xml: str, limit: int = 100) -> tuple[list[str], list[str]]:
-    try: root = ET.fromstring(xml)
+def sitemap_urls(xml: str | bytes, limit: int = 100) -> tuple[list[str], list[str]]:
+    try:
+        if isinstance(xml, bytes) and xml[:2] == b"\x1f\x8b": xml = gzip.decompress(xml)
+        root = ET.fromstring(xml)
     except ET.ParseError: return [], []
     locations = [node.text.strip() for node in root.iter() if node.tag.rsplit("}", 1)[-1] == "loc" and node.text]
     if root.tag.rsplit("}", 1)[-1] == "sitemapindex": return [], locations[:limit]
@@ -170,21 +184,26 @@ def consolidate(map_events: list[dict], web_events: list[dict], output: Path = C
 
 
 def run(deep: bool = False, client: HttpClient | None = None, search=search_web, map_path: Path | None = None) -> dict:
+    started = time.monotonic()
     client, collector = client or HttpClient(), GenericCollector()
     group, queries = query_group(deep=deep)
-    catalog = bootstrap_portais(sources=[map_path] if map_path else None); known = {entry["dominio"]: entry for entry in catalog if isinstance(entry, dict) and entry.get("dominio")}
+    catalog = [normalize_portal(entry) for entry in bootstrap_portais(sources=[map_path] if map_path else None) if isinstance(entry, dict) and entry.get("dominio")]; known = {entry["dominio"]: entry for entry in catalog}
     new_entries = read_json(NEW_CATALOG, []); candidates: list[tuple[str, str]] = []
     map_events = load_map_events(map_path or ROOT / "radar_leiloes_eventos_futuros.csv")
     errors, results = [], 0
     provider_name = os.getenv("WEB_SEARCH_PROVIDER", "openai").strip().casefold() or "openai"
     configured = provider_name == "openai" and bool(os.getenv("OPENAI_API_KEY", "").strip())
-    if configured:
+    search_enabled = configured and (deep or os.getenv("OPENAI_SEARCH_IN_QUICK", "0") == "1")
+    if search_enabled:
         for query in queries:
             try:
                 found = search(query, 1, CONFIG["MAX_RESULTS_PER_QUERY"]); results += len(found)
                 candidates.extend((item.url, query) for item in found)
             except Exception as exc: errors.append({"consulta": query, "erro": type(exc).__name__, "mensagem": str(exc)})
-    candidates.extend((entry.get("url_exemplo") or f"https://{entry['dominio']}/", "catalogo") for entry in catalog if entry.get("ativo", True))
+    for entry in catalog:
+        if entry.get("ativo", True):
+            learned = entry.get("caminhos_conhecidos") or [entry.get("pagina_eventos"), entry.get("url_exemplo")]
+            candidates.extend((url, "catalogo") for url in learned[:3] if url)
     candidates.extend(((entry.get("site_leiloeiro") or entry.get("link")), "mapa") for entry in map_events if entry.get("site_leiloeiro") or entry.get("link"))
     discovered, lots, diagnostics, visited, new_count = [], [], {}, set(), 0
     for seed, query in candidates:
@@ -235,13 +254,20 @@ def run(deep: bool = False, client: HttpClient | None = None, search=search_web,
             discovered.append({"nome": page_lots[0].get("titulo") if page_lots else f"Leilão em {domain}", "link": final, "site_leiloeiro": final, "fonte_descoberta": source, "dominio_origem": domain, "url_descoberta": seed, "descoberto_em": now(), "confianca_dados": "alta" if any(x.get("fonte_descoberta") == "json_ld" for x in page_lots) else "media", "status_evento": "desconhecido"})
             lots.extend(dict(lot, dominio_origem=domain, url_descoberta=seed, descoberto_em=now()) for lot in page_lots[:CONFIG["MAX_LOTS_PER_DOMAIN"]])
             diag.update({"eventos_encontrados": diag["eventos_encontrados"] + 1, "lotes_encontrados": diag["lotes_encontrados"] + len(page_lots), "ultimo_sucesso": now()})
+            paths = known[domain].setdefault("caminhos_conhecidos", [])
+            learned = canonicalize_url(final)
+            if learned and learned not in paths: paths.append(learned)
             if depth < CONFIG["MAX_DEPTH"]: queue.extend((link, depth + 1, "link_interno") for link in links[:CONFIG["MAX_URLS_PER_DOMAIN"]])
         known[domain]["ultima_verificacao"] = now(); known[domain]["possui_eventos"] = diagnostics.get(domain, {}).get("eventos_encontrados", 0) > 0; known[domain]["possui_lotes"] = diagnostics.get(domain, {}).get("lotes_encontrados", 0) > 0; known[domain]["status_acesso"] = diagnostics.get(domain, {}).get("status_acesso", "erro_temporario")
+        success = known[domain]["status_acesso"] == "ok"
+        known[domain]["falhas_consecutivas"] = 0 if success else int(known[domain].get("falhas_consecutivas", 0)) + 1
+        if success: known[domain]["ultimo_sucesso"] = diagnostics.get(domain, {}).get("ultimo_sucesso", now())
     for value in known.values(): value.pop("novo_nesta_execucao", None)
     write_json(CATALOG, sorted(known.values(), key=lambda x: x["dominio"])); write_json(NEW_CATALOG, new_entries)
     write_json(EVENTS, {"executado_em": now(), "eventos": discovered, "lotes": lots}); consolidate(map_events, discovered)
     sources = Counter(event["fonte_descoberta"] for event in discovered); domains = Counter(event["dominio_origem"] for event in discovered)
-    report = {"status": "ok" if not errors else "parcial" if diagnostics else "erro", "executado_em": now(), "grupo_consultas": group, "provider": "openai", "web_search_provider": provider_name, "openai_configurada": configured, "busca_web_configurada": configured, "modelo": os.getenv("OPENAI_SEARCH_MODEL", "").strip() or "gpt-5-mini", "consultas_executadas": len(queries) if configured else 0, "consultas": queries if configured else [], "resultados_web": results, "resultados_de_busca": results, "urls_descobertas": len({canonicalize_url(url) for url, _ in candidates if canonicalize_url(url)}), "dominios_encontrados": len(diagnostics), "novos_dominios": new_count, "dominios_visitados": len(diagnostics), "eventos_fora_do_mapa": len(discovered), "lotes_fora_do_mapa": len(lots), "eventos_descobertos": len(discovered), "lotes_descobertos": len(lots), "lotes_novos": len(lots), "duplicados": 0, "bloqueados": sum(x["status_acesso"] == "temporariamente_bloqueado" for x in diagnostics.values()), "requires_browser": sum(x["status_acesso"] == "requires_browser" for x in diagnostics.values()), "erros_openai": [e for e in errors if "consulta" in e], "erros": errors, "quantidade_por_fonte": dict(sources), "quantidade_por_dominio": dict(domains), "diagnostico_portais": list(diagnostics.values())}
+    openai_errors = [e for e in errors if "consulta" in e]
+    report = {"status": "ok" if not errors else "parcial" if diagnostics else "erro", "executado_em": now(), "grupo_consultas": group, "provider": "openai", "web_search_provider": provider_name, "openai_configurada": configured, "openai_connection": "OK" if search_enabled and not openai_errors else "ERRO" if search_enabled else "NAO_TESTADA", "busca_web_configurada": configured, "modelo": os.getenv("OPENAI_SEARCH_MODEL", "").strip() or "gpt-5-mini", "consultas_executadas": len(queries) if search_enabled else 0, "consultas": queries if search_enabled else [], "resultados_web": results, "resultados_de_busca": results, "urls_descobertas": len({canonicalize_url(url) for url, _ in candidates if canonicalize_url(url)}), "dominios_encontrados": len(diagnostics), "novos_dominios": new_count, "dominios_visitados": len(diagnostics), "eventos_fora_do_mapa": len(discovered), "lotes_fora_do_mapa": len(lots), "eventos_descobertos": len(discovered), "lotes_descobertos": len(lots), "lotes_novos": len(lots), "duplicados": 0, "bloqueados": sum(x["status_acesso"] == "temporariamente_bloqueado" for x in diagnostics.values()), "timeouts": sum(e.get("tipo_erro") in {"TimeoutError", "URLError"} for e in errors), "duracao": round(time.monotonic() - started, 2), "requires_browser": sum(x["status_acesso"] == "requires_browser" for x in diagnostics.values()), "erros_openai": openai_errors, "erros": errors, "quantidade_por_fonte": dict(sources), "quantidade_por_dominio": dict(domains), "diagnostico_portais": list(diagnostics.values())}
     write_json(REPORT, report)
     coverage = {"executado_em": now(), "total_eventos_ativos": len(map_events) + len(discovered), "total_lotes_ativos": len(lots), "total_dominios": len(known), "dominios_novos": report["novos_dominios"], "dominios_com_suporte_especifico": 0, "dominios_coletor_generico": len(known), "dominios_bloqueados": report["bloqueados"], "dominios_requires_browser": report["requires_browser"], "lotes_vindos_do_mapa": 0, "lotes_fora_do_mapa": len(lots), "LOTES_FORA_DO_MAPA": len(lots), "fontes_totais": len(known), "fontes_novas_na_execucao": report["novos_dominios"], "eventos_fora_do_mapa": len(discovered)}
     write_json(COVERAGE, coverage); return report

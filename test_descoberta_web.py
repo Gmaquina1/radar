@@ -13,6 +13,7 @@ from web_search.base import SearchResult
 from web_search.provider import search_web
 from web_search.openai_provider import OpenAIProvider, response_sources
 from auditar_cobertura import audit, matches
+from openai_preflight import check, classify_error
 
 
 JSONLD = '''<html><head><script type="application/ld+json">{"@type":"Product","name":"Lote 7 - Trator","description":"Trator agrícola","url":"/lote/7","image":"/7.jpg","offers":{"price":"90000"}}</script></head><body><a href="/evento/2">Evento</a></body></html>'''
@@ -38,7 +39,7 @@ class DiscoveryTests(unittest.TestCase):
         self.stack.start(); self.addCleanup(self.stack.stop); self.addCleanup(self.tmp.cleanup)
 
     def execute(self, client=None, deep=False):
-        with patch.dict(os.environ, {"WEB_SEARCH_PROVIDER": "openai", "OPENAI_API_KEY": "secret"}, clear=False):
+        with patch.dict(os.environ, {"WEB_SEARCH_PROVIDER": "openai", "OPENAI_API_KEY": "secret", "OPENAI_SEARCH_IN_QUICK": "1"}, clear=False):
             return discovery.run(deep, client or FakeClient(), lambda *args: [SearchResult("https://novo.test/leilao/1")], self.paths["map.csv"])
 
     def test_mapa_vazio_descobre_evento_e_lote(self):
@@ -75,6 +76,10 @@ class DiscoveryTests(unittest.TestCase):
         urls, indexes = discovery.sitemap_urls('<urlset><url><loc>https://x.test/lote/1</loc></url></urlset>'); self.assertEqual(urls, ["https://x.test/lote/1"]); self.assertFalse(indexes)
     def test_sitemap_index(self):
         urls, indexes = discovery.sitemap_urls('<sitemapindex><sitemap><loc>https://x.test/s.xml</loc></sitemap></sitemapindex>'); self.assertFalse(urls); self.assertEqual(len(indexes), 1)
+    def test_sitemap_gzip(self):
+        import gzip
+        raw = gzip.compress(b'<urlset><url><loc>https://x.test/lote/1</loc></url></urlset>')
+        self.assertEqual(discovery.sitemap_urls(raw)[0], ["https://x.test/lote/1"])
     def test_robots(self): self.assertEqual(discovery.robots_sitemaps("User-agent: *\nSitemap: https://x.test/s.xml"), ["https://x.test/s.xml"])
     def test_retry_after(self): self.assertEqual(discovery.retry_seconds("12"), 12)
     def test_canonical_remove_tracking(self): self.assertEqual(canonicalize_url("http://www.X.test/lote/1/?utm_source=a&id=7#foto"), "https://x.test/lote/1?id=7")
@@ -187,6 +192,26 @@ class OpenAIProviderTests(unittest.TestCase):
             client = Mock(); client.responses.create.side_effect = error
             with self.assertRaises(type(error)):
                 OpenAIProvider(client=client).search("x")
+
+
+    def test_preflight_sem_chave(self):
+        with patch.dict(os.environ, {}, clear=True):
+            result = check()
+        self.assertEqual((result.configurada, result.tipo_erro), (False, "CONFIG"))
+
+    def test_preflight_mock_funcionando(self):
+        client = Mock(); client.responses.create.return_value = self.response()
+        with patch.dict(os.environ, {"OPENAI_API_KEY": "segredo"}, clear=True):
+            result = check(client)
+        self.assertEqual((result.connection, result.web_search, result.fontes_teste), ("OK", "OK", 2))
+
+    def test_classificacao_erros_openai(self):
+        class Error(RuntimeError):
+            def __init__(self, status, message): super().__init__(message); self.status_code = status
+        self.assertEqual(classify_error(Error(401, "bad")), "AUTH")
+        self.assertEqual(classify_error(Error(429, "bad")), "RATE_LIMIT")
+        self.assertEqual(classify_error(Error(500, "server")), "API")
+        self.assertEqual(classify_error(TimeoutError("timeout")), "NETWORK")
 
 
 if __name__ == "__main__": unittest.main()

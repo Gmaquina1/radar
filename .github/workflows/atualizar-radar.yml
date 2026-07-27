@@ -21,14 +21,18 @@ jobs:
     # Impede que o commit automático provoque uma execução em loop.
     if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 90
 
     env:
       TZ: America/Sao_Paulo
       PYTHONUNBUFFERED: "1"
       WEB_SEARCH_PROVIDER: openai
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      OPENAI_SEARCH_MODEL: ${{ vars.OPENAI_SEARCH_MODEL }}
+      OPENAI_SEARCH_MODEL: ${{ vars.OPENAI_SEARCH_MODEL || 'gpt-5-mini' }}
+      MAX_PAGES_PER_DOMAIN: "3"
+      MAX_URLS_PER_DOMAIN: "15"
+      MAX_DEPTH: "1"
+      REQUEST_TIMEOUT: "10"
 
     steps:
       - name: Baixar o repositório
