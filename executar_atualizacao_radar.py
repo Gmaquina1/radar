@@ -37,6 +37,12 @@ GENERATED_FILES = [
     "status_atualizacao.json",
     "status_atualizacao.txt",
     "relatorio_atualizacao_lotes.json",
+    "eventos_descobertos_web.json",
+    "eventos_consolidados.csv",
+    "relatorio_descoberta_web.json",
+    "relatorio_cobertura_radar.json",
+    "portais_leiloes.json",
+    "novos_portais_descobertos.json",
 ]
 
 
@@ -366,11 +372,21 @@ def main() -> int:
             )
 
         if not args.sem_lotes:
+            discovery_step = run_step(
+                "Descobrir leilões fora do mapa",
+                [sys.executable, "descobrir_leiloes_web.py"],
+                attempts=1,
+            )
+            results.append(discovery_step)
+            # Complemento resiliente: falha externa não invalida a fonte mapa.
+            events_file = "eventos_consolidados.csv" if discovery_step["status"] == "ok" else "radar_leiloes_eventos_futuros.csv"
             lot_step = run_step(
                 "Procurar novos lotes nos sites dos leiloeiros",
                 [
                     sys.executable,
                     "indexador_lotes.py",
+                    "--eventos",
+                    events_file,
                     "--delay",
                     str(args.delay_lotes),
                     "--workers",
