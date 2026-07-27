@@ -1,14 +1,14 @@
 {
   "status": "ok",
-  "verificado_em": "2026-07-27T12:21:20-03:00",
-  "atualizado_em_base_eventos": "2026-07-27T12:13:09-03:00",
-  "atualizado_em_base_lotes": "2026-07-27T12:21:19-03:00",
-  "idade_base_eventos_horas": 0.14,
+  "verificado_em": "2026-07-27T14:36:10-03:00",
+  "atualizado_em_base_eventos": "2026-07-27T14:25:02-03:00",
+  "atualizado_em_base_lotes": "2026-07-27T14:36:10-03:00",
+  "idade_base_eventos_horas": 0.19,
   "idade_base_lotes_horas": 0.0,
   "eventos_futuros": 557,
   "patios": 132,
-  "lotes": 4798,
-  "lotes_capturados_agora": 4622,
+  "lotes": 4830,
+  "lotes_capturados_agora": 4649,
   "lotes_preservados": 181,
   "eventos_indexados_com_lotes": 205,
   "checks": {
@@ -28,13 +28,13 @@
     "base_lotes_recente": true
   },
   "arquivos_faltando": [],
-  "ultima_execucao": "2026-07-27T12:21:20-03:00",
+  "ultima_execucao": "2026-07-27T14:36:10-03:00",
   "mensagem": "Eventos, lotes e site atualizados com sucesso.",
   "base_anterior_restaurada": false,
-  "lotes_antes": 5006,
-  "lotes_depois": 4798,
-  "lotes_novos_detectados": 11,
-  "lotes_removidos_ou_encerrados": 122,
+  "lotes_antes": 4798,
+  "lotes_depois": 4830,
+  "lotes_novos_detectados": 41,
+  "lotes_removidos_ou_encerrados": 30,
   "etapas": [
     {
       "nome": "Atualizar eventos pelo Google My Maps",
@@ -45,22 +45,35 @@
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 82.17,
+      "duracao_segundos": 558.5,
       "status": "ok",
       "codigo": 0
+    },
+    {
+      "nome": "Descobrir leilões fora do mapa",
+      "comando": [
+        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "descobrir_leiloes_web.py"
+      ],
+      "tentativas": 1,
+      "duracao_segundos": 2.56,
+      "status": "erro",
+      "codigo": 1
     },
     {
       "nome": "Procurar novos lotes nos sites dos leiloeiros",
       "comando": [
         "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
         "indexador_lotes.py",
+        "--eventos",
+        "radar_leiloes_eventos_futuros.csv",
         "--delay",
         "0.0",
         "--workers",
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 490.17,
+      "duracao_segundos": 665.58,
       "status": "ok",
       "codigo": 0
     },
