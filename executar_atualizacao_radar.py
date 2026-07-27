@@ -380,6 +380,9 @@ def main() -> int:
             results.append(discovery_step)
             # Complemento resiliente: falha externa não invalida a fonte mapa.
             events_file = "eventos_consolidados.csv" if discovery_step["status"] == "ok" else "radar_leiloes_eventos_futuros.csv"
+            discovery_report = read_json(ROOT / "relatorio_descoberta_web.json")
+            discovery_status = discovery_report.get("status", discovery_step["status"])
+            print(f"INDEXADOR_EVENTOS: {events_file}", flush=True)
             lot_step = run_step(
                 "Procurar novos lotes nos sites dos leiloeiros",
                 [
@@ -473,6 +476,10 @@ def main() -> int:
                 "lotes_depois": final_total,
                 "lotes_novos_detectados": new_count,
                 "lotes_removidos_ou_encerrados": removed_count,
+                "status_mapa": event_step["status"],
+                "status_descoberta_web": discovery_status,
+                "status_lotes": lot_step["status"] if not args.sem_lotes else "nao_executado",
+                "descoberta_web_funcionou": discovery_step["status"] == "ok" and discovery_status in {"ok", "parcial"},
                 "etapas": results,
             }
         )

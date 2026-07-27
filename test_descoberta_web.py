@@ -11,6 +11,7 @@ import descobrir_leiloes_web as discovery
 from coletores.generico import GenericCollector, canonicalize_url
 from web_search.base import SearchResult
 from web_search.provider import search_web
+from auditar_cobertura import matches
 
 
 JSONLD = '''<html><head><script type="application/ld+json">{"@type":"Product","name":"Lote 7 - Trator","description":"Trator agrícola","url":"/lote/7","image":"/7.jpg","offers":{"price":"90000"}}</script></head><body><a href="/evento/2">Evento</a></body></html>'''
@@ -87,6 +88,50 @@ class DiscoveryTests(unittest.TestCase):
     def test_consolidacao_deduplica_url(self):
         rows = [{"nome":"A", "link":"https://x.test/lote?utm_source=a"}, {"nome":"B", "link":"https://x.test/lote"}]
         discovery.consolidate([], rows, self.paths["all.csv"]); self.assertEqual(len(self.paths["all.csv"].read_text().splitlines()), 2)
+
+    def test_urls_malformadas_sao_ignoradas(self):
+        for value in (None, "", "   ", "https://x.test:porta/lote", "/relativa", "não é url"):
+            self.assertEqual(canonicalize_url(value), "")
+        self.assertEqual(canonicalize_url("/lote#foto", "https://x.test/evento"), "https://x.test/lote")
+        self.assertEqual(canonicalize_url("https://x.test/a https://y.test/b"), "https://x.test/a")
+
+    def test_jsonld_formatos_permissivos(self):
+        page = '<script type="application/ld+json">{"@graph":[{"@type":["Thing","Product"],"name":"X","url":{"@id":"/x"},"image":[{"url":"/x.jpg"}],"offers":[{"price":3}]},{"@type":"Product","name":"Y","url":null,"image":null}]}</script>'
+        lots, _ = GenericCollector().parse_html("https://x.test/e", page)
+        self.assertEqual((lots[0]["link_lote"], lots[0]["foto_lote"], lots[0]["lance_atual"]), ("https://x.test/x", "https://x.test/x.jpg", 3))
+        self.assertEqual(lots[1]["link_lote"], "https://x.test/e")
+
+    def test_jsonld_e_html_invalidos(self):
+        lots, links = GenericCollector().parse_html("https://x.test", '<script type="application/ld+json">{ruim</script><a href="https://x.test:bad/lote">')
+        self.assertEqual((lots, links), ([], []))
+
+    def test_bootstrap_catalogo_vazio(self):
+        source = self.paths["map.csv"]
+        source.write_text("nome,site_leiloeiro\nA,https://portal.test/leilao/1\n", encoding="utf-8")
+        result = discovery.bootstrap_portais(self.paths["catalog.json"], [source])
+        self.assertEqual(result[0]["dominio"], "portal.test")
+
+    def test_timeout_isolado_e_segundo_dominio_continua(self):
+        self.paths["catalog.json"].write_text('[{"dominio":"ruim.test","ativo":true,"url_exemplo":"https://ruim.test/"},{"dominio":"novo.test","ativo":true,"url_exemplo":"https://novo.test/leilao"}]')
+        class Client(FakeClient):
+            def get(self, url):
+                if "ruim.test" in url: raise TimeoutError("demorou")
+                return super().get(url)
+        with patch.dict(os.environ, {}, clear=True): result = discovery.run(client=Client(), search=lambda *a: [], map_path=self.paths["map.csv"])
+        self.assertGreater(result["eventos_descobertos"], 0)
+        self.assertTrue(any(e["dominio"] == "ruim.test" and e["tipo_erro"] == "TimeoutError" for e in result["erros"]))
+
+    def test_http_429_registrado(self):
+        result = self.execute(FakeClient(status=429))
+        self.assertTrue(any(e["http_status"] == 429 for e in result["erros"]))
+
+    def test_sitemap_invalido(self):
+        self.assertEqual(discovery.sitemap_urls("<xml"), ([], []))
+
+    def test_busca_garra_florestal_plural_e_caixa(self):
+        rows = [{"titulo":"01 GARRA FLORESTAL"}, {"titulo":"02 GARRAS FLORESTAIS"}]
+        for term in ("garra florestal", "garra", "florestal", "garras florestais", "GARRA FLORESTAL"):
+            self.assertEqual(sum(matches(row, term) for row in rows), 2)
 
 
 if __name__ == "__main__": unittest.main()

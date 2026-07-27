@@ -88,15 +88,25 @@ jobs:
               mapa = sum(1 for _ in csv.DictReader(open('radar_leiloes_eventos_futuros.csv', encoding='utf-8-sig')))
           except OSError: mapa = 0
           print('## Cobertura do Radar')
-          print(f"- Mapa: {mapa} eventos")
-          print(f"- Descoberta externa: {d.get('eventos_descobertos', 0)} eventos")
-          print(f"- Lotes totais: {c.get('total_lotes_ativos', 0)}")
-          print(f"- **Lotes fora do mapa: {c.get('LOTES_FORA_DO_MAPA', 0)}**")
-          print(f"- Domínios consultados: {d.get('dominios_visitados', 0)}")
-          print(f"- Novos domínios: {d.get('novos_dominios', 0)}")
-          print(f"- Bloqueados: {d.get('bloqueados', 0)}")
-          print(f"- Erros: {len(d.get('erros', []))}")
+          print(f"MAPA_EVENTOS: {mapa}")
+          print(f"CATALOGO_PORTAIS: {c.get('total_dominios', 0)}")
+          print(f"BUSCA_WEB_CONFIGURADA: {str(d.get('busca_web_configurada', False)).lower()}")
+          print(f"CONSULTAS_WEB: {len(d.get('consultas_executadas', []))}")
+          print(f"DOMINIOS_VISITADOS: {d.get('dominios_visitados', 0)}")
+          print(f"EVENTOS_FORA_DO_MAPA: {c.get('eventos_fora_do_mapa', 0)}")
+          print(f"LOTES_FORA_DO_MAPA: {c.get('LOTES_FORA_DO_MAPA', 0)}")
+          print(f"BLOQUEADOS: {d.get('bloqueados', 0)}")
+          print(f"ERROS: {len(d.get('erros', []))}")
+          print(f"DESCOBERTA_WEB_STATUS: {d.get('status', 'erro')}")
           PY
+
+      - name: Auditar garra florestal
+        if: always()
+        shell: bash
+        run: |
+          python auditar_cobertura.py "garra florestal" | tee auditoria_garra.txt
+          echo "AUDITORIA: garra florestal" >> "$GITHUB_STEP_SUMMARY"
+          awk '/^NA_BASE:/ {print "RESULTADOS_NA_BASE: " $2}' auditoria_garra.txt >> "$GITHUB_STEP_SUMMARY"
 
       - name: Mostrar resultado
         if: always()

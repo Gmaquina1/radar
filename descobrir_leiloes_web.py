@@ -10,6 +10,7 @@ import os
 import random
 import re
 import time
+import traceback
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -47,7 +48,49 @@ def read_json(path: Path, default):
     try: return json.loads(path.read_text(encoding="utf-8"))
     except (OSError, ValueError): return default
 def write_json(path: Path, value) -> None: path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-def host(url: str) -> str: return (urllib.parse.urlsplit(url).hostname or "").removeprefix("www.").casefold()
+def host(url) -> str:
+    canonical = canonicalize_url(url)
+    if not canonical: return ""
+    try: return (urllib.parse.urlsplit(canonical).hostname or "").removeprefix("www.").casefold()
+    except (TypeError, ValueError): return ""
+
+
+def _urls(value):
+    if isinstance(value, dict):
+        for item in value.values(): yield from _urls(item)
+    elif isinstance(value, list):
+        for item in value: yield from _urls(item)
+    elif isinstance(value, str):
+        yield from re.findall(r"https?://[^\s<>'\"\]\)]+", value, re.I)
+
+
+def bootstrap_portais(catalog_path: Path | None = None, sources: list[Path] | None = None, minimum: int = 3) -> list[dict]:
+    """Seed a small/empty catalog strictly from Radar's persisted datasets."""
+    catalog_path = catalog_path or CATALOG
+    current = read_json(catalog_path, []); current = current if isinstance(current, list) else []
+    known = {x.get("dominio"): x for x in current if isinstance(x, dict) and x.get("dominio")}
+    if len(known) >= minimum: return sorted(known.values(), key=lambda x: x["dominio"])
+    sources = sources or [ROOT / name for name in ("radar_leiloes_eventos_futuros.csv", "radar_leiloes_eventos_todos.csv", "lotes.json", "relatorio_atualizacao_lotes.json")]
+    for path in sources:
+        try:
+            if path.suffix == ".csv":
+                with path.open(encoding="utf-8-sig", newline="") as handle:
+                    values = (value for row in csv.DictReader(handle) for value in row.values())
+                    urls = (url for value in values for url in _urls(value))
+                    for url in urls:
+                        domain = host(url)
+                        if domain: known.setdefault(domain, {"dominio": domain, "ativo": True, "origem": "bootstrap_base", "url_exemplo": canonicalize_url(url), "tipo_coleta": "generico"})
+            else:
+                for url in _urls(read_json(path, {})):
+                    domain = host(url)
+                    if domain: known.setdefault(domain, {"dominio": domain, "ativo": True, "origem": "bootstrap_base", "url_exemplo": canonicalize_url(url), "tipo_coleta": "generico"})
+        except (OSError, csv.Error, UnicodeError, ValueError):
+            continue
+    result = sorted(known.values(), key=lambda x: x["dominio"]); write_json(catalog_path, result); return result
+
+
+def error_record(domain, url, stage, exc=None, http_status=None):
+    return {"dominio": domain or "", "url": str(url or ""), "etapa": stage, "tipo_erro": type(exc).__name__ if exc else "HTTPError", "mensagem": str(exc) if exc else f"HTTP {http_status}", "http_status": http_status}
 
 
 def query_group(state_path: Path = STATE, deep: bool = False) -> tuple[str, list[str]]:
@@ -114,7 +157,8 @@ def consolidate(map_events: list[dict], web_events: list[dict], output: Path = C
     rows, seen = [], set()
     for row in map_events + web_events:
         url = row.get("site_leiloeiro") or row.get("link") or row.get("link_evento") or row.get("url_descoberta", "")
-        key = canonicalize_url(url) if url else "|".join((row.get("nome", ""), row.get("data", "")))
+        canonical = canonicalize_url(url)
+        key = canonical or "|".join((host(url), str(row.get("nome") or row.get("titulo") or "").casefold().strip(), str(row.get("data") or "").strip()))
         if not key or key in seen: continue
         seen.add(key); item = dict(row)
         item.setdefault("nome", item.get("titulo") or f"Leilão descoberto em {host(url)}")
@@ -128,7 +172,7 @@ def consolidate(map_events: list[dict], web_events: list[dict], output: Path = C
 def run(deep: bool = False, client: HttpClient | None = None, search=search_web, map_path: Path | None = None) -> dict:
     client, collector = client or HttpClient(), GenericCollector()
     group, queries = query_group(deep=deep)
-    catalog = read_json(CATALOG, []); known = {entry["dominio"]: entry for entry in catalog if isinstance(entry, dict) and entry.get("dominio")}
+    catalog = bootstrap_portais(sources=[map_path] if map_path else None); known = {entry["dominio"]: entry for entry in catalog if isinstance(entry, dict) and entry.get("dominio")}
     new_entries = read_json(NEW_CATALOG, []); candidates: list[tuple[str, str]] = []
     map_events = load_map_events(map_path or ROOT / "radar_leiloes_eventos_futuros.csv")
     errors, results = [], 0
@@ -144,7 +188,8 @@ def run(deep: bool = False, client: HttpClient | None = None, search=search_web,
     discovered, lots, diagnostics, visited, new_count = [], [], {}, set(), 0
     for seed, query in candidates:
         domain = host(seed)
-        if not domain: continue
+        if not domain:
+            errors.append(error_record("", seed, "validar_url", ValueError("URL inválida"))); continue
         is_new = domain not in known
         if is_new and sum(1 for d in known.values() if d.get("novo_nesta_execucao")) >= CONFIG["MAX_NEW_DOMAINS"]: continue
         timestamp = now()
@@ -154,14 +199,20 @@ def run(deep: bool = False, client: HttpClient | None = None, search=search_web,
             new_entries.append({"dominio": domain, "url_exemplo": seed, "descoberto_em": timestamp, "consulta_que_encontrou": query, "status": "pendente", "tipo_coleta": "generico", "ultima_verificacao": timestamp})
         queue = deque([(canonicalize_url(seed), 0, "busca_web" if query != "catalogo" else "portal_direto")])
         base = f"https://{domain}"
-        robot, _, _, _ = client.get(base + "/robots.txt")
+        try: robot, _, _, _ = client.get(base + "/robots.txt")
+        except Exception as exc:
+            errors.append(error_record(domain, base + "/robots.txt", "robots", exc)); robot = ""
         maps = robots_sitemaps(robot) + [base + "/sitemap.xml", base + "/sitemap_index.xml"]
         for sm in list(dict.fromkeys(maps))[: (8 if deep else 3)]:
-            xml, _, code, _ = client.get(sm)
+            try: xml, _, code, _ = client.get(sm)
+            except Exception as exc:
+                errors.append(error_record(domain, sm, "sitemap", exc)); continue
             if code != 200: continue
             urls, indexes = sitemap_urls(xml, CONFIG["MAX_URLS_PER_DOMAIN"])
             for child in indexes[: (5 if deep else 2)]:
-                child_xml, _, child_code, _ = client.get(child)
+                try: child_xml, _, child_code, _ = client.get(child)
+                except Exception as exc:
+                    errors.append(error_record(domain, child, "sitemap_filho", exc)); continue
                 if child_code == 200: urls.extend(sitemap_urls(child_xml, CONFIG["MAX_URLS_PER_DOMAIN"])[0])
             queue.extend((url, 0, "sitemap") for url in urls)
         pages = 0
@@ -169,12 +220,17 @@ def run(deep: bool = False, client: HttpClient | None = None, search=search_web,
             url, depth, source = queue.popleft()
             if url in visited or host(url) != domain: continue
             visited.add(url); pages += 1
-            body, final, code, headers = client.get(url)
+            try: body, final, code, headers = client.get(url)
+            except Exception as exc:
+                errors.append(error_record(domain, url, "pagina", exc)); continue
             diag = diagnostics.setdefault(domain, {"dominio": domain, "eventos_encontrados": 0, "lotes_encontrados": 0, "status_acesso": "ok", "metodo_funcional": source})
             if code != 200:
+                errors.append(error_record(domain, url, "http", http_status=code))
                 diag["ultima_falha"] = now(); diag["http_status"] = code; diag["status_acesso"] = "rate_limited" if code == 429 else "temporariamente_bloqueado" if code == 403 else "erro_temporario"
                 continue
-            page_lots, links = collector.parse_html(final, body)
+            try: page_lots, links = collector.parse_html(final, body)
+            except Exception as exc:
+                errors.append(error_record(domain, final, "parse_html", exc, code)); continue
             discovered.append({"nome": page_lots[0].get("titulo") if page_lots else f"Leilão em {domain}", "link": final, "site_leiloeiro": final, "fonte_descoberta": source, "dominio_origem": domain, "url_descoberta": seed, "descoberto_em": now(), "confianca_dados": "alta" if any(x.get("fonte_descoberta") == "json_ld" for x in page_lots) else "media", "status_evento": "desconhecido"})
             lots.extend(dict(lot, dominio_origem=domain, url_descoberta=seed, descoberto_em=now()) for lot in page_lots[:CONFIG["MAX_LOTS_PER_DOMAIN"]])
             diag.update({"eventos_encontrados": diag["eventos_encontrados"] + 1, "lotes_encontrados": diag["lotes_encontrados"] + len(page_lots), "ultimo_sucesso": now()})
@@ -184,15 +240,21 @@ def run(deep: bool = False, client: HttpClient | None = None, search=search_web,
     write_json(CATALOG, sorted(known.values(), key=lambda x: x["dominio"])); write_json(NEW_CATALOG, new_entries)
     write_json(EVENTS, {"executado_em": now(), "eventos": discovered, "lotes": lots}); consolidate(map_events, discovered)
     sources = Counter(event["fonte_descoberta"] for event in discovered); domains = Counter(event["dominio_origem"] for event in discovered)
-    report = {"executado_em": now(), "grupo_consultas": group, "busca_web_configurada": configured, "consultas_executadas": queries if configured else [], "resultados_de_busca": results, "dominios_encontrados": len(diagnostics), "novos_dominios": new_count, "dominios_visitados": len(diagnostics), "eventos_descobertos": len(discovered), "lotes_descobertos": len(lots), "lotes_novos": len(lots), "duplicados": 0, "bloqueados": sum(x["status_acesso"] == "temporariamente_bloqueado" for x in diagnostics.values()), "requires_browser": sum(x["status_acesso"] == "requires_browser" for x in diagnostics.values()), "erros": errors, "quantidade_por_fonte": dict(sources), "quantidade_por_dominio": dict(domains), "diagnostico_portais": list(diagnostics.values())}
+    report = {"status": "ok" if not errors else "parcial" if diagnostics else "erro", "executado_em": now(), "grupo_consultas": group, "busca_web_configurada": configured, "consultas_executadas": queries if configured else [], "resultados_de_busca": results, "dominios_encontrados": len(diagnostics), "novos_dominios": new_count, "dominios_visitados": len(diagnostics), "eventos_descobertos": len(discovered), "lotes_descobertos": len(lots), "lotes_novos": len(lots), "duplicados": 0, "bloqueados": sum(x["status_acesso"] == "temporariamente_bloqueado" for x in diagnostics.values()), "requires_browser": sum(x["status_acesso"] == "requires_browser" for x in diagnostics.values()), "erros": errors, "quantidade_por_fonte": dict(sources), "quantidade_por_dominio": dict(domains), "diagnostico_portais": list(diagnostics.values())}
     write_json(REPORT, report)
     coverage = {"executado_em": now(), "total_eventos_ativos": len(map_events) + len(discovered), "total_lotes_ativos": len(lots), "total_dominios": len(known), "dominios_novos": report["novos_dominios"], "dominios_com_suporte_especifico": 0, "dominios_coletor_generico": len(known), "dominios_bloqueados": report["bloqueados"], "dominios_requires_browser": report["requires_browser"], "lotes_vindos_do_mapa": 0, "lotes_fora_do_mapa": len(lots), "LOTES_FORA_DO_MAPA": len(lots), "fontes_totais": len(known), "fontes_novas_na_execucao": report["novos_dominios"], "eventos_fora_do_mapa": len(discovered)}
     write_json(COVERAGE, coverage); return report
 
 
-def main() -> None:
+def main() -> int:
     parser = argparse.ArgumentParser(); parser.add_argument("--deep-discovery", action="store_true"); args = parser.parse_args()
-    print(json.dumps(run(args.deep_discovery), ensure_ascii=False))
+    try:
+        print(json.dumps(run(args.deep_discovery), ensure_ascii=False)); return 0
+    except Exception as exc:
+        details = {"status": "erro", "causa": str(exc), "tipo_erro": type(exc).__name__, "traceback_resumido": traceback.format_exc(), "etapa": "fatal", "dominio": "", "url": "", "executado_em": now()}
+        write_json(REPORT, details)
+        traceback.print_exc()
+        return 1
 
 
-if __name__ == "__main__": main()
+if __name__ == "__main__": raise SystemExit(main())
