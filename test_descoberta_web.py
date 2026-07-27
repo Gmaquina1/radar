@@ -57,6 +57,14 @@ class DiscoveryTests(unittest.TestCase):
         with patch.dict(os.environ, {}, clear=True):
             result = discovery.run(client=FakeClient(), search=lambda *a: [], map_path=self.paths["map.csv"])
         self.assertFalse(result["busca_web_configurada"])
+        self.assertEqual(result["consultas_executadas"], 0)
+    def test_relatorio_registra_configuracao_e_metricas_da_busca(self):
+        result = self.execute()
+        self.assertTrue(result["busca_web_configurada"])
+        self.assertEqual(result["web_search_provider"], "mock")
+        self.assertGreater(result["consultas_executadas"], 0)
+        self.assertEqual(result["resultados_de_busca"], result["consultas_executadas"])
+        self.assertNotIn("WEB_SEARCH_API_KEY", result)
     def test_deep_discovery(self):
         result = self.execute(deep=True); self.assertIn(result["grupo_consultas"], "ABCD")
     def test_rotacao(self):

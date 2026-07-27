@@ -176,7 +176,8 @@ def run(deep: bool = False, client: HttpClient | None = None, search=search_web,
     new_entries = read_json(NEW_CATALOG, []); candidates: list[tuple[str, str]] = []
     map_events = load_map_events(map_path or ROOT / "radar_leiloes_eventos_futuros.csv")
     errors, results = [], 0
-    configured = bool(os.getenv("WEB_SEARCH_PROVIDER") and os.getenv("WEB_SEARCH_API_KEY"))
+    provider_name = os.getenv("WEB_SEARCH_PROVIDER", "").strip().casefold()
+    configured = bool(provider_name and os.getenv("WEB_SEARCH_API_KEY", "").strip())
     if configured:
         for query in queries:
             try:
@@ -240,7 +241,7 @@ def run(deep: bool = False, client: HttpClient | None = None, search=search_web,
     write_json(CATALOG, sorted(known.values(), key=lambda x: x["dominio"])); write_json(NEW_CATALOG, new_entries)
     write_json(EVENTS, {"executado_em": now(), "eventos": discovered, "lotes": lots}); consolidate(map_events, discovered)
     sources = Counter(event["fonte_descoberta"] for event in discovered); domains = Counter(event["dominio_origem"] for event in discovered)
-    report = {"status": "ok" if not errors else "parcial" if diagnostics else "erro", "executado_em": now(), "grupo_consultas": group, "busca_web_configurada": configured, "consultas_executadas": queries if configured else [], "resultados_de_busca": results, "dominios_encontrados": len(diagnostics), "novos_dominios": new_count, "dominios_visitados": len(diagnostics), "eventos_descobertos": len(discovered), "lotes_descobertos": len(lots), "lotes_novos": len(lots), "duplicados": 0, "bloqueados": sum(x["status_acesso"] == "temporariamente_bloqueado" for x in diagnostics.values()), "requires_browser": sum(x["status_acesso"] == "requires_browser" for x in diagnostics.values()), "erros": errors, "quantidade_por_fonte": dict(sources), "quantidade_por_dominio": dict(domains), "diagnostico_portais": list(diagnostics.values())}
+    report = {"status": "ok" if not errors else "parcial" if diagnostics else "erro", "executado_em": now(), "grupo_consultas": group, "busca_web_configurada": configured, "web_search_provider": provider_name, "consultas_executadas": len(queries) if configured else 0, "consultas": queries if configured else [], "resultados_de_busca": results, "dominios_encontrados": len(diagnostics), "novos_dominios": new_count, "dominios_visitados": len(diagnostics), "eventos_descobertos": len(discovered), "lotes_descobertos": len(lots), "lotes_novos": len(lots), "duplicados": 0, "bloqueados": sum(x["status_acesso"] == "temporariamente_bloqueado" for x in diagnostics.values()), "requires_browser": sum(x["status_acesso"] == "requires_browser" for x in diagnostics.values()), "erros": errors, "quantidade_por_fonte": dict(sources), "quantidade_por_dominio": dict(domains), "diagnostico_portais": list(diagnostics.values())}
     write_json(REPORT, report)
     coverage = {"executado_em": now(), "total_eventos_ativos": len(map_events) + len(discovered), "total_lotes_ativos": len(lots), "total_dominios": len(known), "dominios_novos": report["novos_dominios"], "dominios_com_suporte_especifico": 0, "dominios_coletor_generico": len(known), "dominios_bloqueados": report["bloqueados"], "dominios_requires_browser": report["requires_browser"], "lotes_vindos_do_mapa": 0, "lotes_fora_do_mapa": len(lots), "LOTES_FORA_DO_MAPA": len(lots), "fontes_totais": len(known), "fontes_novas_na_execucao": report["novos_dominios"], "eventos_fora_do_mapa": len(discovered)}
     write_json(COVERAGE, coverage); return report
