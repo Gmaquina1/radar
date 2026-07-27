@@ -17,3 +17,9 @@ Sem essas variáveis, mapa, catálogo persistido, sitemaps e links internos cont
 funcionando. Limites como `MAX_DEPTH`, `REQUEST_TIMEOUT`, `REQUEST_RETRIES`,
 `MAX_SEARCH_QUERIES` e `MAX_PAGES_PER_DOMAIN` também podem ser ajustados por ambiente.
 Nenhuma chave é armazenada no repositório ou enviada ao frontend.
+
+No GitHub Actions, `WEB_SEARCH_PROVIDER` deve ser uma **Variable** do repositório com
+valor `brave`, enquanto `WEB_SEARCH_API_KEY` deve existir exclusivamente como
+**Secret**. A etapa `Verificar busca web` informa apenas se o secret está configurado,
+sem imprimir seu conteúdo. O relatório registra o provider, o total de consultas e o
+total de resultados, mas nunca a chave.
