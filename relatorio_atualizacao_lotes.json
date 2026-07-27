@@ -1,5 +1,5 @@
 {
-  "executado_em": "2026-07-26T16:42:45-03:00",
+  "executado_em": "2026-07-27T01:11:06-03:00",
   "lotes_antes": 5105,
   "lotes_depois": 5105,
   "lotes_realmente_novos": 0,
@@ -251,6 +251,11 @@
       "url": "https://www.lanceleiloes.com.br/leilao/876/lotes",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www.lancecertoleiloes.com.br/leilao/290726VE",
+      "status": "http_500",
+      "http": 500
     },
     {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-liberdade-mg/7276/#&Pagina=1&Index=1",
