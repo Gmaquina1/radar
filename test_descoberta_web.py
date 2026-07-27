@@ -5,13 +5,14 @@ import os
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 import descobrir_leiloes_web as discovery
 from coletores.generico import GenericCollector, canonicalize_url
 from web_search.base import SearchResult
 from web_search.provider import search_web
-from auditar_cobertura import matches
+from web_search.openai_provider import OpenAIProvider, response_sources
+from auditar_cobertura import audit, matches
 
 
 JSONLD = '''<html><head><script type="application/ld+json">{"@type":"Product","name":"Lote 7 - Trator","description":"Trator agrícola","url":"/lote/7","image":"/7.jpg","offers":{"price":"90000"}}</script></head><body><a href="/evento/2">Evento</a></body></html>'''
@@ -37,7 +38,7 @@ class DiscoveryTests(unittest.TestCase):
         self.stack.start(); self.addCleanup(self.stack.stop); self.addCleanup(self.tmp.cleanup)
 
     def execute(self, client=None, deep=False):
-        with patch.dict(os.environ, {"WEB_SEARCH_PROVIDER": "mock", "WEB_SEARCH_API_KEY": "secret"}, clear=False):
+        with patch.dict(os.environ, {"WEB_SEARCH_PROVIDER": "openai", "OPENAI_API_KEY": "secret"}, clear=False):
             return discovery.run(deep, client or FakeClient(), lambda *args: [SearchResult("https://novo.test/leilao/1")], self.paths["map.csv"])
 
     def test_mapa_vazio_descobre_evento_e_lote(self):
@@ -61,7 +62,7 @@ class DiscoveryTests(unittest.TestCase):
     def test_relatorio_registra_configuracao_e_metricas_da_busca(self):
         result = self.execute()
         self.assertTrue(result["busca_web_configurada"])
-        self.assertEqual(result["web_search_provider"], "mock")
+        self.assertEqual(result["web_search_provider"], "openai")
         self.assertGreater(result["consultas_executadas"], 0)
         self.assertEqual(result["resultados_de_busca"], result["consultas_executadas"])
         self.assertNotIn("WEB_SEARCH_API_KEY", result)
@@ -140,6 +141,52 @@ class DiscoveryTests(unittest.TestCase):
         rows = [{"titulo":"01 GARRA FLORESTAL"}, {"titulo":"02 GARRAS FLORESTAIS"}]
         for term in ("garra florestal", "garra", "florestal", "garras florestais", "GARRA FLORESTAL"):
             self.assertEqual(sum(matches(row, term) for row in rows), 2)
+
+    def test_auditoria_web_faz_duas_consultas_sem_alterar_base(self):
+        base = self.paths["events.json"]
+        base.write_text('{"lotes":[{"titulo":"Garra florestal","link_lote":"https://base.test/1"}]}')
+        before = base.read_text()
+        calls = []
+        def search(query, page, limit):
+            calls.append(query); return [SearchResult("https://web.test/2")]
+        result = audit("garra florestal", base, search, web=True)
+        self.assertEqual(calls, ["garra florestal leilão", "garra florestal lote leilão"])
+        self.assertEqual((result["RESULTADOS_WEB"], result["RESULTADOS_NA_BASE"], result["POSSIVEIS_AUSENTES"]), (1, 1, 1))
+        self.assertEqual(base.read_text(), before)
+
+
+class OpenAIProviderTests(unittest.TestCase):
+    def response(self):
+        return {"output": [
+            {"type": "web_search_call", "action": {"sources": [
+                {"url": "https://a.test/leilao", "title": "A"},
+                {"url": "https://a.test/leilao", "title": "duplicado"},
+                {"url": "javascript:alert(1)", "title": "inválido"},
+            ]}},
+            {"type": "message", "content": [{"annotations": [
+                {"type": "url_citation", "url": "https://b.test/lote", "title": "B"}
+            ]}]},
+        ]}
+
+    def test_web_search_call_multiplas_fontes_deduplica_e_valida(self):
+        self.assertEqual([x["url"] for x in response_sources(self.response())], ["https://a.test/leilao", "https://b.test/lote"])
+
+    def test_resposta_sem_resultados(self):
+        self.assertEqual(response_sources({"output": []}), [])
+
+    def test_provider_configurado_chama_responses(self):
+        client = Mock(); client.responses.create.return_value = self.response()
+        results = OpenAIProvider(client=client, model="gpt-test").search("leilão", limit=1)
+        self.assertEqual(results[0].url, "https://a.test/leilao")
+        kwargs = client.responses.create.call_args.kwargs
+        self.assertEqual(kwargs["tools"], [{"type": "web_search"}])
+        self.assertEqual(kwargs["include"], ["web_search_call.action.sources"])
+
+    def test_erros_api_propagam_para_orquestrador(self):
+        for error in (TimeoutError("timeout"), RuntimeError("429"), RuntimeError("500")):
+            client = Mock(); client.responses.create.side_effect = error
+            with self.assertRaises(type(error)):
+                OpenAIProvider(client=client).search("x")
 
 
 if __name__ == "__main__": unittest.main()

@@ -3,8 +3,7 @@
 from __future__ import annotations
 
 import json
-import os
-import sys
+import argparse
 import unicodedata
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -25,23 +24,26 @@ def matches(row: dict, term: str) -> bool:
     return tokens(term) <= tokens(haystack)
 
 
-def audit(term: str, path: Path = ROOT / "lotes.json", search=search_web) -> dict:
+def audit(term: str, path: Path = ROOT / "lotes.json", search=search_web, web: bool = False) -> dict:
     try: payload = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, ValueError): payload = {}
     found = [row for row in payload.get("lotes", []) if isinstance(row, dict) and matches(row, term)]
     sources = sorted({str(row.get("fonte") or row.get("fonte_descoberta") or "") for row in found} - {""})
     domains = sorted({(urlsplit(str(row.get("link_lote") or row.get("link_evento") or "")).hostname or "").removeprefix("www.") for row in found} - {""})
-    result = {"TERMO": term, "NA_BASE": len(found), "FONTES": sources, "DOMINIOS": domains}
-    if os.getenv("WEB_SEARCH_PROVIDER") and os.getenv("WEB_SEARCH_API_KEY"):
-        web = search(term + " leilão", 1, 10)
-        result.update(WEB_ENCONTRADOS=len(web), BASE_ENCONTRADOS=len(found), POSSIVEIS_AUSENTES=max(0, len(web) - len(found)))
+    result = {"TERMO": term, "RESULTADOS_NA_BASE": len(found), "NA_BASE": len(found), "FONTES": sources, "DOMINIOS": domains}
+    if web:
+        results = []
+        for query in (term + " leilão", term + " lote leilão"):
+            results.extend(search(query, 1, 10))
+        urls = {item.url for item in results}
+        base_urls = {str(row.get("link_lote") or row.get("link_evento") or "") for row in found}
+        result.update(RESULTADOS_WEB=len(urls), POSSIVEIS_AUSENTES=len(urls - base_urls))
     return result
 
 
 def main() -> int:
-    if len(sys.argv) != 2:
-        print(f"Uso: {sys.argv[0]} TERMO", file=sys.stderr); return 2
-    for key, value in audit(sys.argv[1]).items(): print(f"{key}: {value}")
+    parser = argparse.ArgumentParser(); parser.add_argument("termo"); parser.add_argument("--web", action="store_true"); args = parser.parse_args()
+    for key, value in audit(args.termo, web=args.web).items(): print(f"{key}: {value}")
     return 0
 
 
