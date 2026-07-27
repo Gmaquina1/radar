@@ -5,10 +5,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://alvesleiloes.com.br/leilao/251/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:16:49+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "ammlicita.org.br",
@@ -16,10 +16,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://ammlicita.org.br/",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T18:15:17+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "andradeleiloes.com.br",
@@ -27,10 +27,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://andradeleiloes.com.br/leilao/199/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:18:43+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "andreluizleiloes.com.br",
@@ -38,10 +38,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://andreluizleiloes.com.br/evento/fornaia-servicos-de-mecanica-ltda-783899?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T20:15:48+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "apabrfleiloes.com.br",
@@ -49,10 +49,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://apabrfleiloes.com.br/leilao/prefeitura-de-capitolio-terrenos/462",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:14:38+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "argonetworkleiloes.com.br",
@@ -60,10 +60,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://argonetworkleiloes.com.br/evento/prefeitura-municipal-de-tatui-789565?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T20:18:54+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "armazviplprd.blob.core.windows.net",
@@ -71,10 +71,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://armazviplprd.blob.core.windows.net/controle/geral/1/d3ca3a3189004cd69d35b7f48801e90c.pdf",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
+    "ultima_verificacao": "2026-07-27T18:15:47+00:00",
+    "possui_eventos": true,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "ok"
   },
   {
     "dominio": "assets.okleiloes.com.br",
@@ -82,10 +82,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://assets.okleiloes.com.br/documentos/LEILAO_199/capa_199.pdf",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
+    "ultima_verificacao": "2026-07-27T18:15:48+00:00",
+    "possui_eventos": true,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "ok"
   },
   {
     "dominio": "bbmnetleiloes.com.br",
@@ -93,10 +93,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://bbmnetleiloes.com.br/evento/alienacao-de-sucatas-municipio-itapecerica-serra-788969?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T20:16:16+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "beedz.com.br",
@@ -104,10 +104,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://beedz.com.br/",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:17:41+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "bezerraleiloes.com.br",
@@ -115,10 +115,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://bezerraleiloes.com.br/evento/leilao-aeronave-senad-004-2026-policia-federal-783866?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T20:04:00+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "bianchileiloes.com.br",
@@ -126,10 +126,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://bianchileiloes.com.br/leilao/leilao-de-prefeitura-ivoti-29-06-2026-09-27-28/lotes/lista",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T19:05:40+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "bidgo.com.br",
@@ -137,10 +137,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://bidgo.com.br/leilao/panambi-rs-lote-de-pneus-06-07-2026-14-57-19/lotes/lista",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:18:45+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "bnc.org.br",
@@ -148,10 +148,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://bnc.org.br/",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T18:16:29+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "bnccompras.com",
@@ -159,10 +159,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://bnccompras.com/",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T18:16:31+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "bsbleiloes.com.br",
@@ -170,10 +170,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://bsbleiloes.com.br/leilao/1o-leilao-de-julho-2026-15-07-2026-16-51-27/lotes/card",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T18:16:45+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "caiapoleiloes.com.br",
@@ -181,10 +181,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://caiapoleiloes.com.br/",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T18:16:45+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "casaleiloeira.com.br",
@@ -192,7 +192,7 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://casaleiloeira.com.br/evento/veiculo-sinistrado-recuperavel-790020?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:13:13+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
     "status_acesso": "erro_temporario"
@@ -203,10 +203,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://casamacedo.com.br/leilao.asp?Num=63517",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:10:49+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "cdn.kwara.com.br",
@@ -214,10 +214,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://cdn.kwara.com.br/lot-images/f058156b-3cfc-45d4-a0fe-08285306ef35.thumbnail.jpg",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
+    "ultima_verificacao": "2026-07-27T18:17:12+00:00",
+    "possui_eventos": true,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "ok"
   },
   {
     "dominio": "cdn.leilotech.workers.dev",
@@ -225,10 +225,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://cdn.leilotech.workers.dev/lbleiloes/editais/leilao/20/qKrPyhgY12o1hupNgvtZ1NjzkGgdcscHNxGYVHxJgh4jL1FE0sQRQ4sFi98M.pdf",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
+    "ultima_verificacao": "2026-07-27T18:17:13+00:00",
+    "possui_eventos": true,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "ok"
   },
   {
     "dominio": "cdn.vipleiloes.com",
@@ -236,7 +236,7 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://cdn.vipleiloes.com/wac/lancecerto2/lote-retirado-fundotransparente.png",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T18:17:14+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
     "status_acesso": "erro_temporario"
@@ -247,7 +247,7 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://claudiokussleiloes.com.br/relacao-foto/884",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T18:41:59+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
     "status_acesso": "erro_temporario"
@@ -258,10 +258,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://clicleiloes.com.br/leilao/1946/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T18:38:00+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "colossoleiloes.com.br",
@@ -269,10 +269,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://colossoleiloes.com.br/eventos/leilao/87/leilao-dos-bens-moveis-inserviveis-da-prefeitura-de-santana-de-mangueira",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:47:07+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "comprasbr.com.br",
@@ -280,10 +280,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://comprasbr.com.br/",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T18:20:43+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "controle3.vipleiloes.com.br",
@@ -291,7 +291,7 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://controle3.vipleiloes.com.br/galeria/webFoto22/Thumbs/1254496.jpg",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T18:20:44+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
     "status_acesso": "erro_temporario"
@@ -302,10 +302,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://copart.com.br/saleListResult/auctionId/10281?location=Goi%C3%A2nia+-+GO&saleDate=1785164400000&liveAuction=false&from=&yardNum=56&auctioneer=Ygor+Ferreira+Brasil+-+Juceg+074%2F20",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T18:39:29+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "danielgarcialeiloes.com.br",
@@ -313,10 +313,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://danielgarcialeiloes.com.br/leilao/7719/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:15:37+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "destakleiloes.com.br",
@@ -324,10 +324,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://destakleiloes.com.br/leilao/leilao-prefeitura-de-senhora-dos-remedios-mg/5057",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T18:37:42+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "diegoleiloes.com.br",
@@ -335,10 +335,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://diegoleiloes.com.br/leilao/1083/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T19:53:34+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "drive.google.com",
@@ -346,10 +346,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://drive.google.com/file/d/1oJGIMI_TwzNMJQ3yQ2Ex70NSJH9hhy3L/view?usp=drive_link",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T20:18:51+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "drive.usercontent.google.com",
@@ -357,10 +357,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://drive.usercontent.google.com/download?id=1oJGIMI_TwzNMJQ3yQ2Ex70NSJH9hhy3L&export=download",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
+    "ultima_verificacao": "2026-07-27T18:20:55+00:00",
+    "possui_eventos": true,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "ok"
   },
   {
     "dominio": "e-leiloes.com.br",
@@ -368,10 +368,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://e-leiloes.com.br/eventos/leilao/2202/veiculos-e-itens-da-icmbio-para-pa",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:08:15+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "eblonline.com.br",
@@ -379,10 +379,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://eblonline.com.br/lotes/321?page=1&size=6&removerEncerrados=false",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T18:59:31+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "eckertleiloes.com.br",
@@ -390,10 +390,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://eckertleiloes.com.br/evento/municipio-de-curitibanos-sc-789453?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T20:16:49+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "fabiobarbosaleiloes.com.br",
@@ -401,9 +401,9 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://fabiobarbosaleiloes.com.br/leilao/index/leilao_id/97036",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-27T20:16:52+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
     "status_acesso": "erro_temporario"
   },
   {
@@ -412,10 +412,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://faroonline.com.br/leilao/sucatas-diversas-bens-inserviveis-de-informatica-linha-branca-e-veiculos",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T20:15:39+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "freitasleiloeiro.com.br",
@@ -423,7 +423,7 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://freitasleiloeiro.com.br/Leiloes/Lotes?leilaoId=7951",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T18:54:27+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
     "status_acesso": "erro_temporario"
@@ -434,10 +434,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://goldenbrazilleiloes.com.br/leilao/leilao-prefeitura-de-rio-dos-cedros-sc-08-07-2026-17-17-39/lotes/lista",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:16:52+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "goldenlance.com.br",
@@ -445,9 +445,9 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://goldenlance.com.br/eventos/leilao/172/leilao-de-eletrodomesticos-e-materiais-diversos",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-27T19:10:31+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
     "status_acesso": "erro_temporario"
   },
   {
@@ -456,10 +456,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://google-analytics.com/analytics.js",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
+    "ultima_verificacao": "2026-07-27T18:22:17+00:00",
+    "possui_eventos": true,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "ok"
   },
   {
     "dominio": "google.com",
@@ -467,10 +467,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://google.com/url?q=https%3A%2F%2Fwww.bbmnetleiloes.com.br%2Fevento%2Falienacao-de-sucatas-municipio-itapecerica-serra-788969%3FsearchType%3Dopened%26preOrderBy%3DorderByFirstOpenedOffers%26pageNumber%3D1%26pageSize%3D30%26orderBy%3DlotNumber%3Aasc%3BsubLotNumber%3Aasc&sa=D&source=calendar&usd=2&usg=AOvVaw02TDiVKhX5j3s7VHAo0R37",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:43:39+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "grleiloes.com",
@@ -478,10 +478,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://grleiloes.com/leilao/1166/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T18:54:09+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "guariglialeiloes.com.br",
@@ -489,10 +489,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://guariglialeiloes.com.br/leilao/821/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T19:08:18+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "gustavomorettoleiloeiro.com.br",
@@ -500,7 +500,7 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://gustavomorettoleiloeiro.com.br/leiloes/5273",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:13:53+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
     "status_acesso": "erro_temporario"
@@ -511,10 +511,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://gutembergaraujoleiloes.com.br/leilao/230/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T19:56:21+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "hastasp.com.br",
@@ -522,10 +522,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://hastasp.com.br/evento/quarta-hasta-leilao-02-2026-municipal-guarulhos-784037?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:16:34+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "hatoryleiloes.com.br",
@@ -533,10 +533,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://hatoryleiloes.com.br/externo/leilao/107",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:03:22+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "hisaleiloes.com.br",
@@ -544,9 +544,9 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://hisaleiloes.com.br/leilao/2485",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-27T18:23:13+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
     "status_acesso": "erro_temporario"
   },
   {
@@ -555,10 +555,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://img.youtube.com/vi/laPg5DZis9U/0.jpg",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
+    "ultima_verificacao": "2026-07-27T18:23:13+00:00",
+    "possui_eventos": true,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "ok"
   },
   {
     "dominio": "italoleiloes.com",
@@ -566,10 +566,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://italoleiloes.com/leilao/3282/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T18:36:53+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "jeremyleiloes.com.br",
@@ -577,7 +577,7 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://jeremyleiloes.com.br/evento/municipio-de-ponta-grossa-pr-788195?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T19:43:37+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
     "status_acesso": "erro_temporario"
@@ -588,10 +588,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://jmleiloes.leilao.br/evento/corporativo-789628?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:54:27+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "joaoemilio.com.br",
@@ -599,10 +599,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://joaoemilio.com.br/leilao/6023/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:15:40+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "jorgemarcoleiloes.com.br",
@@ -610,7 +610,7 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://jorgemarcoleiloes.com.br/evento/leilao-municipio-de-paulo-lopes-sc-790060?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:15:36+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
     "status_acesso": "erro_temporario"
@@ -621,10 +621,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://juleiloes.com.br/leilao/leilao-de-bens-do-municipio-de-guabiju-rs-16-07-2026-14-03-35/lotes/lista",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T19:56:21+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "kronleiloes.com.br",
@@ -632,10 +632,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://kronleiloes.com.br/evento/prefeitura-de-itatiaia-rj-783978?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T20:14:55+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "kwara.com.br",
@@ -643,10 +643,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://kwara.com.br/evento/leilao-de-moveis-eletrodomesticos-e-utensilios-galpao-kwara-K-2763",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:28:12+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "lancecertoleiloes.com.br",
@@ -654,7 +654,7 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://lancecertoleiloes.com.br/leilao/290726VE",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:12:28+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
     "status_acesso": "erro_temporario"
@@ -665,10 +665,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://lanceleiloes.com.br/leilao/876/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:03:23+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "lancevip.com.br",
@@ -676,10 +676,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://lancevip.com.br/eventos/leilao/2687/prefeitura-municipal-de-sulina-leilao-para-alienacao-de-bens-publicos-inserviveis",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:52:53+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "lbleiloes.com.br",
@@ -687,10 +687,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://lbleiloes.com.br/leilao/20/prefeitura-municipal-de-itambe-pr",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T20:14:28+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "leialeiloes.lel.br",
@@ -698,10 +698,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://leialeiloes.lel.br/pregao/6a4be8d9065ac14ddde8e407/6a4bea38dce6d4b702cd4b73",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
+    "ultima_verificacao": "2026-07-27T18:36:52+00:00",
+    "possui_eventos": true,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "ok"
   },
   {
     "dominio": "leilao.detran.mg.gov.br",
@@ -709,10 +709,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3294/2026",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:44:29+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "leilao.sodresantoro.com.br",
@@ -720,10 +720,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://leilao.sodresantoro.com.br/leilao/28776/lote/2781297",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T19:09:41+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "leilaoonline.com.br",
@@ -731,10 +731,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://leilaoonline.com.br/leilao/detalhe/4662/2?categoria=&numeroLote=&pesquisaLotes=&ordenacao=&flow=1",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:15:50+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "leilo.com.br",
@@ -742,10 +742,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://leilo.com.br/leilao?leilao.nome=LEIL%C3%83O+EXCLUSIVO+DE+MOTOS+-+25.07.26",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T18:54:32+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "leiloes.arthurnunes.leilao.br",
@@ -753,10 +753,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://leiloes.arthurnunes.leilao.br/lote/153-001-imovel-urbano-com-2362100m2-ituiutabamg",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:47:00+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "leiloesalbino.com.br",
@@ -764,7 +764,7 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://leiloesalbino.com.br/Leiloes?leilaoId=823",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T18:55:34+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
     "status_acesso": "erro_temporario"
@@ -775,9 +775,9 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://leiloesfreire.com.br/leilao/1140",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-27T20:17:56+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
     "status_acesso": "erro_temporario"
   },
   {
@@ -786,10 +786,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://leiloesmager.com.br/leilao/prefeitura-de-iacri-sp/52",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T18:37:41+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "leiloesoliveira.com.br",
@@ -797,10 +797,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://leiloesoliveira.com.br/eventos/leilao/5/prefeitura-de-tres-fronteiras-sp",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T20:12:45+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "levyleiloes.com.br",
@@ -808,10 +808,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://levyleiloes.com.br/leilao/44/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T19:53:21+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "licitardigital.1doc.com.b",
@@ -819,7 +819,7 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://licitardigital.1doc.com.b/",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T18:30:19+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
     "status_acesso": "erro_temporario"
@@ -830,10 +830,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://licitardigital.1doc.com.br/verificacao/226C-9914-02F8-C7C8",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T18:30:24+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "liderleiloes.com.br",
@@ -841,9 +841,9 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://liderleiloes.com.br/eventos/leilao/184/equipamentos-de-cozinha-industrial-e-equipamentos-de-academia",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-27T20:18:37+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
     "status_acesso": "erro_temporario"
   },
   {
@@ -852,10 +852,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://lilianportugal.com.br/eventos/leilao/203/prefeitura-de-sem-peixe",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T20:14:37+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "lipinskileiloes.com.br",
@@ -863,9 +863,9 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-27T20:18:49+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
     "status_acesso": "erro_temporario"
   },
   {
@@ -874,10 +874,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://lkleiloes.com.br/leilao/266/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T19:16:35+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "loopleiloes.com.br",
@@ -885,9 +885,9 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://loopleiloes.com.br/eventos/exclusivo-gm/2684?numero_veiculos=171",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-27T18:44:04+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
     "status_acesso": "erro_temporario"
   },
   {
@@ -896,10 +896,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://lottileiloes.com.br/leilao/751/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T19:56:08+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "lumussaleiloes.com.br",
@@ -907,10 +907,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://lumussaleiloes.com.br/eventos/leilao/142/leilao-de-semoventes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T18:53:50+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "mafraleiloes.com.br",
@@ -918,7 +918,7 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://mafraleiloes.com.br/evento/bens-inserviveis-municipio-sao-pedro-do-butia-rs-789421?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T18:53:13+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
     "status_acesso": "erro_temporario"
@@ -929,10 +929,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://marangonileiloes.com.br/evento/smur-araucaria-08-2026-783682?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:28:33+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "marcusviniciusleiloes.com.br",
@@ -940,10 +940,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://marcusviniciusleiloes.com.br/leilao/686/prefeitura-municipal-de-engenheiro-navarro-mg-veiculos-maquinas-e-outros",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:56:37+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "mariafixerleiloes.com.br",
@@ -951,9 +951,9 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://mariafixerleiloes.com.br/leilao/index/leilao_id/96903",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-27T20:14:59+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
     "status_acesso": "erro_temporario"
   },
   {
@@ -962,10 +962,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://mercado.bomvalor.com.br/caminhoes-fora-de-estrada-komatsu-36289",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T19:54:46+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "mgl.com.br",
@@ -973,10 +973,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://mgl.com.br/leilao/prefeitura-municipal-de-morro-da-fumaca-sc/7185",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:15:00+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "mgrleiloes.com.br",
@@ -984,10 +984,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://mgrleiloes.com.br/evento/prefeitura-de-ipora-go-789906?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:56:07+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "mjleiloes.com.br",
@@ -995,9 +995,9 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://mjleiloes.com.br/leiloes/102",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-27T20:16:12+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
     "status_acesso": "erro_temporario"
   },
   {
@@ -1006,10 +1006,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://montenegroleiloes.com.br/leiloes/2630",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:54:45+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "monzonleiloes.com.br",
@@ -1017,7 +1017,7 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://monzonleiloes.com.br/evento/leilao-veiculos-e-bens-moveis-sao-joao-do-caiua-pr-783948?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T19:07:18+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
     "status_acesso": "erro_temporario"
@@ -1028,10 +1028,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://ms.sbwebservices.net/photos/faa119a8-4581-40ad-bfd7-7c8b0df27bf9.jpg",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
+    "ultima_verificacao": "2026-07-27T18:32:42+00:00",
+    "possui_eventos": true,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "ok"
   },
   {
     "dominio": "nakakogueleiloes.com.br",
@@ -1039,9 +1039,9 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://nakakogueleiloes.com.br/lotes/137532",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-27T20:13:33+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
     "status_acesso": "erro_temporario"
   },
   {
@@ -1050,10 +1050,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://nordesteleiloes-files.s3.amazonaws.com/leiloes/edital/46bb213cf16359acf5ccf053a2dbf055.pdf",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
+    "ultima_verificacao": "2026-07-27T18:33:03+00:00",
+    "possui_eventos": true,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "ok"
   },
   {
     "dominio": "nordesteleiloes.com.br",
@@ -1061,10 +1061,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://nordesteleiloes.com.br/leiloes/129-prefeitura-de-dom-cavati-mg",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:17:40+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "nsleiloes.leilao.br",
@@ -1072,10 +1072,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://nsleiloes.leilao.br/leilao-detran/sucatas-alvorada-remocoes-crd00090-07-06-2026-12-04-51/lotes/lista",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T18:54:11+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "okleiloes.com.br",
@@ -1083,9 +1083,9 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://okleiloes.com.br/live-auctions/201",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-27T18:44:19+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
     "status_acesso": "erro_temporario"
   },
   {
@@ -1094,10 +1094,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://palaciodosleiloes.com.br/site?leilao_pesquisa=8520",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T20:18:30+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "patiorochaleiloes.com.br",
@@ -1105,10 +1105,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://patiorochaleiloes.com.br/leilao/856/lotes?page=1",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:18:43+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "pestanaleiloes.com.br",
@@ -1116,10 +1116,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://pestanaleiloes.com.br/agenda-de-leiloes/6000?lotePage=1&loteQty=12",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
+    "ultima_verificacao": "2026-07-27T19:27:44+00:00",
+    "possui_eventos": true,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "ok"
   },
   {
     "dominio": "plazaleiloes.com.br",
@@ -1127,10 +1127,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://plazaleiloes.com.br/leilao/1018/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T18:42:45+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "pwleiloes.com.br",
@@ -1138,10 +1138,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://pwleiloes.com.br/leilao/prefeitura-municipal-de-muriae/585",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:18:42+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "rangelleiloes.com.br",
@@ -1149,10 +1149,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://rangelleiloes.com.br/leilao/leilao-do-municipio-de-paverama-rs-20-07-2026-15-39-28/lotes/lista",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:13:26+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "ricoleiloes.com.br",
@@ -1160,10 +1160,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://ricoleiloes.com.br/leilao/2073/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T19:56:23+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "rjleiloes.com.br",
@@ -1171,10 +1171,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://rjleiloes.com.br/leilao/4768/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:03:19+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "rofremleiloes.com.br",
@@ -1182,10 +1182,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://rofremleiloes.com.br/eventos/leilao/185/secretaria-nacional-de-politicas-sobre-drogas-e-gestao-de-ativos-senad",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T20:13:23+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "rogeriomenezes.com.br",
@@ -1193,10 +1193,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://rogeriomenezes.com.br/leilao/1578?page=1",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:44:09+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "rossileiloes.com.br",
@@ -1204,9 +1204,9 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://rossileiloes.com.br/leilao/detalhe/4765/MCS",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-27T19:42:15+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
     "status_acesso": "erro_temporario"
   },
   {
@@ -1215,9 +1215,9 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://rpleiloes.com.br/leilao/bens-patrimoniais-de-municipio-de-jardim-ms/12",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-27T18:38:23+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
     "status_acesso": "erro_temporario"
   },
   {
@@ -1226,10 +1226,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://s3-sa-east-1.amazonaws.com/906de634c48fb7d34136160b4c353ae4/core/aviso_cookies.pdf",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
+    "ultima_verificacao": "2026-07-27T18:34:24+00:00",
+    "possui_eventos": true,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "ok"
   },
   {
     "dominio": "sandrasantosleiloes.com.br",
@@ -1237,10 +1237,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://sandrasantosleiloes.com.br/eventos/leilao/424/prefeitura-municipal-de-recreio-mg",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T18:53:14+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "sandroleiloeiro.com.br",
@@ -1248,10 +1248,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://sandroleiloeiro.com.br/leilao/prefeitura-municipal-de-cassia-mg-imoveis-15-07-2026-12-20-49/lotes/lista",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T20:16:17+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "satoleiloes.com.br",
@@ -1259,10 +1259,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://satoleiloes.com.br/leiloes/5076",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:44:06+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "saulojulioleiloeiro.com.br",
@@ -1270,10 +1270,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://saulojulioleiloeiro.com.br/pregao/6a4dc5399fb5eeefc4d5df0c/6a4dc716a5e7c960fb4b3ccf",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
+    "ultima_verificacao": "2026-07-27T18:52:58+00:00",
+    "possui_eventos": true,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "ok"
   },
   {
     "dominio": "schema.org",
@@ -1281,10 +1281,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://schema.org/",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T18:34:41+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "sfleiloes.com.br",
@@ -1292,10 +1292,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://sfleiloes.com.br/leilao/219/leilao-da-prefeitura-municipal-de-ipora-pr",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T20:13:30+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "sl.cidade360.cloud",
@@ -1303,10 +1303,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://sl.cidade360.cloud/jsgjm",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T18:34:46+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "sodresantoro.com.br",
@@ -1314,10 +1314,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://sodresantoro.com.br/leilao/28840?sort=lot_number_asc",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T19:46:51+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "sold.com.br",
@@ -1325,7 +1325,7 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://sold.com.br/evento/petroreconcavo-784025?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T19:46:46+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
     "status_acesso": "erro_temporario"
@@ -1336,10 +1336,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://static.liderleiloes.com.br/liderleiloescombr/leiloes/184/documentos/sl-doc-184-6a46b59de2ef1-6a46b59de4ae6.pdf",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
+    "ultima_verificacao": "2026-07-27T18:35:16+00:00",
+    "possui_eventos": true,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "ok"
   },
   {
     "dominio": "static.suporteleiloes.com.br",
@@ -1347,10 +1347,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://static.suporteleiloes.com.br/sandraleiloeiracombr/leiloes/424/documentos/sl-doc-424-6a45550ca007e-6a45550ca41e0.pdf",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
+    "ultima_verificacao": "2026-07-27T18:35:17+00:00",
+    "possui_eventos": true,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "ok"
   },
   {
     "dominio": "sumareleiloes.com.br",
@@ -1358,7 +1358,7 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://sumareleiloes.com.br/leiloes/5067",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:16:09+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
     "status_acesso": "erro_temporario"
@@ -1369,9 +1369,9 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://swleiloes.com.br/leilao/leilao-da-prefeitura-municipal-de-igrejinha-rs-16-07-2026-10-20-05/lotes/lista",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-27T20:13:54+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
     "status_acesso": "erro_temporario"
   },
   {
@@ -1380,10 +1380,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://tesouroleiloes.com.br/leilao/8/prefeitura-municipal-de-juripirangapb",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:43:13+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "topoleiloes.com.br",
@@ -1391,10 +1391,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://topoleiloes.com.br/leilao/3254/semsep-sorriso-veiculos-aptos-a-circulacao",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T19:53:34+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "tudoleilao.com.br",
@@ -1402,10 +1402,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://tudoleilao.com.br/leilao/258/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T18:43:35+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "tulioleiloes.com.br",
@@ -1413,10 +1413,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://tulioleiloes.com.br/leilao/135/leilao-da-conab-ms",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T20:13:26+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "vardanaleiloes.com.br",
@@ -1424,9 +1424,9 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://vardanaleiloes.com.br/vardana/veiculos.php?lei=1077",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-27T19:16:03+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
     "status_acesso": "erro_temporario"
   },
   {
@@ -1435,10 +1435,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://victordortaleiloes.com.br/leilao/1420/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
+    "ultima_verificacao": "2026-07-27T20:13:27+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "vipleiloes.com.br",
@@ -1446,9 +1446,9 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://vipleiloes.com.br/evento/detalhes/270726tdpif",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-27T18:54:30+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
     "status_acesso": "erro_temporario"
   },
   {
@@ -1457,10 +1457,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://webleiloes.com.br/leiloes/393",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T20:14:30+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "wellingtonsilvaleiloeiro.com.br",
@@ -1468,10 +1468,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://wellingtonsilvaleiloeiro.com.br/leilao/prefeitura-municipal-de-araxa/594",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T20:17:29+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   },
   {
     "dominio": "winleiloes.com.br",
@@ -1479,10 +1479,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://winleiloes.com.br/leilao/110/lotes",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T18:36:28+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "wleiloes.com.br",
@@ -1490,10 +1490,10 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://wleiloes.com.br/leilao.php?idLeilao=461",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:45+00:00",
+    "ultima_verificacao": "2026-07-27T18:53:37+00:00",
     "possui_eventos": false,
     "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "status_acesso": "temporariamente_bloqueado"
   },
   {
     "dominio": "wrleiloes.com.br",
@@ -1501,9 +1501,9 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://wrleiloes.com.br/leilao/779/leilao-secretaria-nacional-de-politicas-sobre-drogas-senad-estado-do-amapa-pc",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-27T20:03:37+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
     "status_acesso": "erro_temporario"
   },
   {
@@ -1512,9 +1512,9 @@
     "origem": "bootstrap_base",
     "url_exemplo": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/800100/9/2026",
     "tipo_coleta": "generico",
-    "ultima_verificacao": "2026-07-27T18:05:46+00:00",
-    "possui_eventos": false,
-    "possui_lotes": false,
-    "status_acesso": "erro_temporario"
+    "ultima_verificacao": "2026-07-27T20:18:42+00:00",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "status_acesso": "ok"
   }
 ]

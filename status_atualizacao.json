@@ -1,16 +1,16 @@
 {
   "status": "ok",
-  "verificado_em": "2026-07-27T14:36:10-03:00",
-  "atualizado_em_base_eventos": "2026-07-27T14:25:02-03:00",
-  "atualizado_em_base_lotes": "2026-07-27T14:36:10-03:00",
-  "idade_base_eventos_horas": 0.19,
+  "verificado_em": "2026-07-27T17:32:41-03:00",
+  "atualizado_em_base_eventos": "2026-07-27T15:15:10-03:00",
+  "atualizado_em_base_lotes": "2026-07-27T17:32:40-03:00",
+  "idade_base_eventos_horas": 2.29,
   "idade_base_lotes_horas": 0.0,
   "eventos_futuros": 557,
   "patios": 132,
-  "lotes": 4830,
-  "lotes_capturados_agora": 4649,
-  "lotes_preservados": 181,
-  "eventos_indexados_com_lotes": 205,
+  "lotes": 4735,
+  "lotes_capturados_agora": 11426,
+  "lotes_preservados": 0,
+  "eventos_indexados_com_lotes": 740,
   "checks": {
     "arquivos_obrigatorios": true,
     "workflow_existe": true,
@@ -28,13 +28,17 @@
     "base_lotes_recente": true
   },
   "arquivos_faltando": [],
-  "ultima_execucao": "2026-07-27T14:36:10-03:00",
+  "ultima_execucao": "2026-07-27T17:32:41-03:00",
   "mensagem": "Eventos, lotes e site atualizados com sucesso.",
   "base_anterior_restaurada": false,
-  "lotes_antes": 4798,
-  "lotes_depois": 4830,
-  "lotes_novos_detectados": 41,
-  "lotes_removidos_ou_encerrados": 30,
+  "lotes_antes": 4830,
+  "lotes_depois": 4735,
+  "lotes_novos_detectados": 32,
+  "lotes_removidos_ou_encerrados": 35,
+  "status_mapa": "ok",
+  "status_descoberta_web": "parcial",
+  "status_lotes": "ok",
+  "descoberta_web_funcionou": true,
   "etapas": [
     {
       "nome": "Atualizar eventos pelo Google My Maps",
@@ -45,7 +49,7 @@
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 558.5,
+      "duracao_segundos": 77.25,
       "status": "ok",
       "codigo": 0
     },
@@ -56,9 +60,9 @@
         "descobrir_leiloes_web.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 2.56,
-      "status": "erro",
-      "codigo": 1
+      "duracao_segundos": 7423.93,
+      "status": "ok",
+      "codigo": 0
     },
     {
       "nome": "Procurar novos lotes nos sites dos leiloeiros",
@@ -66,14 +70,14 @@
         "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
         "indexador_lotes.py",
         "--eventos",
-        "radar_leiloes_eventos_futuros.csv",
+        "eventos_consolidados.csv",
         "--delay",
         "0.0",
         "--workers",
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 665.58,
+      "duracao_segundos": 826.47,
       "status": "ok",
       "codigo": 0
     },
@@ -84,7 +88,7 @@
         "gerar_site_github.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 0.17,
+      "duracao_segundos": 0.18,
       "status": "ok",
       "codigo": 0
     },
@@ -96,7 +100,7 @@
         "--falhar-se-atencao"
       ],
       "tentativas": 1,
-      "duracao_segundos": 0.16,
+      "duracao_segundos": 0.18,
       "status": "ok",
       "codigo": 0
     }
