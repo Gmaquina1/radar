@@ -26,8 +26,9 @@ jobs:
     env:
       TZ: America/Sao_Paulo
       PYTHONUNBUFFERED: "1"
-      WEB_SEARCH_PROVIDER: ${{ vars.WEB_SEARCH_PROVIDER }}
-      WEB_SEARCH_API_KEY: ${{ secrets.WEB_SEARCH_API_KEY }}
+      WEB_SEARCH_PROVIDER: openai
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_SEARCH_MODEL: ${{ vars.OPENAI_SEARCH_MODEL }}
 
     steps:
       - name: Baixar o repositório
@@ -59,24 +60,21 @@ jobs:
           test -f diagnostico_radar.py
           test -f .github/workflows/atualizar-radar.yml
 
-      - name: Verificar busca web
+      - name: Verificar OpenAI Web Search
         shell: bash
         run: |
-          provider="${WEB_SEARCH_PROVIDER:-}"
-          if [ -n "${WEB_SEARCH_API_KEY:-}" ]; then
+          model="${OPENAI_SEARCH_MODEL:-gpt-5-mini}"
+          if [ -n "${OPENAI_API_KEY:-}" ]; then
             key_configurada=true
             key_texto=sim
           else
             key_configurada=false
             key_texto=não
           fi
-          echo "Busca web:"
-          echo "Provider: ${provider:-não configurado}"
-          echo "API key configurada: $key_texto"
-          echo "WEB_SEARCH_PROVIDER: ${provider:-não configurado}"
-          echo "WEB_SEARCH_API_KEY_CONFIGURADA: $key_configurada"
-          if [ -n "$provider" ] && [ "$key_configurada" = false ]; then
-            echo "BUSCA_WEB_DESATIVADA: API KEY AUSENTE"
+          echo "OPENAI_API_KEY_CONFIGURADA: $key_configurada"
+          echo "OPENAI_SEARCH_MODEL: $model"
+          if [ "$key_configurada" = false ]; then
+            echo "OPENAI_WEB_SEARCH_DESATIVADA: API KEY AUSENTE"
           fi
 
       - name: Procurar novos leilões e novos lotes
@@ -113,16 +111,16 @@ jobs:
           ativa = bool(d.get('busca_web_configurada', False))
           consultas = d.get('consultas_executadas', 0)
           if isinstance(consultas, list): consultas = len(consultas)
-          print(f"BUSCA WEB: {'ATIVA' if ativa else 'INATIVA'}")
-          print(f"PROVIDER: {d.get('web_search_provider') or 'não configurado'}")
-          print(f"CONSULTAS EXECUTADAS: {consultas}")
-          print(f"RESULTADOS DA BUSCA: {d.get('resultados_de_busca', 0)}")
-          print(f"DOMÍNIOS NOVOS: {d.get('novos_dominios', 0)}")
+          print(f"BUSCA WEB OPENAI: {'ATIVA' if ativa else 'INATIVA'}")
+          print(f"MODELO: {d.get('modelo', 'gpt-5-mini')}")
+          print(f"CONSULTAS OPENAI: {consultas}")
+          print(f"RESULTADOS ENCONTRADOS: {d.get('resultados_web', 0)}")
+          print(f"NOVOS DOMÍNIOS: {d.get('novos_dominios', 0)}")
           print(f"DOMINIOS_VISITADOS: {d.get('dominios_visitados', 0)}")
           print(f"EVENTOS FORA DO MAPA: {c.get('eventos_fora_do_mapa', 0)}")
           print(f"LOTES FORA DO MAPA: {c.get('LOTES_FORA_DO_MAPA', 0)}")
-          if not ativa and d.get('web_search_provider'):
-              print('BUSCA_WEB_DESATIVADA: API KEY AUSENTE')
+          if not ativa:
+              print('OPENAI_WEB_SEARCH_DESATIVADA: API KEY AUSENTE')
           print(f"BLOQUEADOS: {d.get('bloqueados', 0)}")
           print(f"ERROS: {len(d.get('erros', []))}")
           print(f"DESCOBERTA_WEB_STATUS: {d.get('status', 'erro')}")

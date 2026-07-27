@@ -40,7 +40,7 @@ def env_int(name: str, default: int) -> int:
     except ValueError: return default
 
 
-CONFIG = {"MAX_SEARCH_QUERIES": env_int("MAX_SEARCH_QUERIES", 8), "MAX_RESULTS_PER_QUERY": env_int("MAX_RESULTS_PER_QUERY", 10), "MAX_NEW_DOMAINS": env_int("MAX_NEW_DOMAINS", 10), "MAX_PAGES_PER_DOMAIN": env_int("MAX_PAGES_PER_DOMAIN", 12), "MAX_URLS_PER_DOMAIN": env_int("MAX_URLS_PER_DOMAIN", 50), "MAX_DEPTH": env_int("MAX_DEPTH", 2), "MAX_LOTS_PER_DOMAIN": env_int("MAX_LOTS_PER_DOMAIN", 250), "REQUEST_TIMEOUT": env_int("REQUEST_TIMEOUT", 15), "REQUEST_RETRIES": env_int("REQUEST_RETRIES", 2), "GLOBAL_WORKERS": env_int("GLOBAL_WORKERS", 6), "PER_DOMAIN_WORKERS": env_int("PER_DOMAIN_WORKERS", 1), "CACHE_TTL": env_int("CACHE_TTL", 21600)}
+CONFIG = {"MAX_SEARCH_QUERIES": env_int("OPENAI_MAX_SEARCH_QUERIES", 8), "MAX_RESULTS_PER_QUERY": env_int("MAX_RESULTS_PER_QUERY", 10), "MAX_NEW_DOMAINS": env_int("MAX_NEW_DOMAINS", 10), "MAX_PAGES_PER_DOMAIN": env_int("MAX_PAGES_PER_DOMAIN", 12), "MAX_URLS_PER_DOMAIN": env_int("MAX_URLS_PER_DOMAIN", 50), "MAX_DEPTH": env_int("MAX_DEPTH", 2), "MAX_LOTS_PER_DOMAIN": env_int("MAX_LOTS_PER_DOMAIN", 250), "REQUEST_TIMEOUT": env_int("REQUEST_TIMEOUT", 15), "REQUEST_RETRIES": env_int("REQUEST_RETRIES", 2), "GLOBAL_WORKERS": env_int("GLOBAL_WORKERS", 6), "PER_DOMAIN_WORKERS": env_int("PER_DOMAIN_WORKERS", 1), "CACHE_TTL": env_int("CACHE_TTL", 21600)}
 
 
 def now() -> str: return datetime.now(timezone.utc).isoformat(timespec="seconds")
@@ -98,8 +98,8 @@ def query_group(state_path: Path = STATE, deep: bool = False) -> tuple[str, list
     index = int(state.get("next_group", 0)) % 4
     groups = [UFS[i::4] for i in range(4)]
     queries = [f"leilão {TERMS[(index + n) % len(TERMS)]} {uf}" for n, uf in enumerate(groups[index])]
-    queries += ["leilões online abertos", "edital de leilão público"]
-    limit = CONFIG["MAX_SEARCH_QUERIES"] * (3 if deep else 1)
+    queries += ["leilões online abertos hoje", "edital de leilão público", "site de leilões online Brasil", "leiloeiro oficial leilões online", "próximos leilões máquinas", "próximos leilões veículos"]
+    limit = max(CONFIG["MAX_SEARCH_QUERIES"], 30) if deep else CONFIG["MAX_SEARCH_QUERIES"]
     write_json(state_path, {"last_group": chr(65 + index), "next_group": (index + 1) % 4, "executado_em": now()})
     return chr(65 + index), queries[:limit]
 
@@ -176,14 +176,14 @@ def run(deep: bool = False, client: HttpClient | None = None, search=search_web,
     new_entries = read_json(NEW_CATALOG, []); candidates: list[tuple[str, str]] = []
     map_events = load_map_events(map_path or ROOT / "radar_leiloes_eventos_futuros.csv")
     errors, results = [], 0
-    provider_name = os.getenv("WEB_SEARCH_PROVIDER", "").strip().casefold()
-    configured = bool(provider_name and os.getenv("WEB_SEARCH_API_KEY", "").strip())
+    provider_name = os.getenv("WEB_SEARCH_PROVIDER", "openai").strip().casefold() or "openai"
+    configured = provider_name == "openai" and bool(os.getenv("OPENAI_API_KEY", "").strip())
     if configured:
         for query in queries:
             try:
                 found = search(query, 1, CONFIG["MAX_RESULTS_PER_QUERY"]); results += len(found)
                 candidates.extend((item.url, query) for item in found)
-            except Exception as exc: errors.append({"consulta": query, "erro": type(exc).__name__})
+            except Exception as exc: errors.append({"consulta": query, "erro": type(exc).__name__, "mensagem": str(exc)})
     candidates.extend((entry.get("url_exemplo") or f"https://{entry['dominio']}/", "catalogo") for entry in catalog if entry.get("ativo", True))
     candidates.extend(((entry.get("site_leiloeiro") or entry.get("link")), "mapa") for entry in map_events if entry.get("site_leiloeiro") or entry.get("link"))
     discovered, lots, diagnostics, visited, new_count = [], [], {}, set(), 0
@@ -196,7 +196,7 @@ def run(deep: bool = False, client: HttpClient | None = None, search=search_web,
         timestamp = now()
         if is_new:
             new_count += 1
-            known[domain] = {"dominio": domain, "ativo": True, "origem": "busca_web", "descoberto_em": timestamp, "possui_eventos": False, "possui_lotes": False, "tipo_coleta": "generico", "requires_browser": False, "status_acesso": "ok", "url_exemplo": seed, "novo_nesta_execucao": True}
+            known[domain] = {"dominio": domain, "ativo": True, "origem": "openai_web_search", "descoberto_em": timestamp, "ultima_verificacao": timestamp, "possui_eventos": False, "possui_lotes": False, "tipo_coleta": "generico", "requires_browser": False, "status_acesso": "pendente", "url_exemplo": seed, "novo_nesta_execucao": True}
             new_entries.append({"dominio": domain, "url_exemplo": seed, "descoberto_em": timestamp, "consulta_que_encontrou": query, "status": "pendente", "tipo_coleta": "generico", "ultima_verificacao": timestamp})
         queue = deque([(canonicalize_url(seed), 0, "busca_web" if query != "catalogo" else "portal_direto")])
         base = f"https://{domain}"
@@ -241,7 +241,7 @@ def run(deep: bool = False, client: HttpClient | None = None, search=search_web,
     write_json(CATALOG, sorted(known.values(), key=lambda x: x["dominio"])); write_json(NEW_CATALOG, new_entries)
     write_json(EVENTS, {"executado_em": now(), "eventos": discovered, "lotes": lots}); consolidate(map_events, discovered)
     sources = Counter(event["fonte_descoberta"] for event in discovered); domains = Counter(event["dominio_origem"] for event in discovered)
-    report = {"status": "ok" if not errors else "parcial" if diagnostics else "erro", "executado_em": now(), "grupo_consultas": group, "busca_web_configurada": configured, "web_search_provider": provider_name, "consultas_executadas": len(queries) if configured else 0, "consultas": queries if configured else [], "resultados_de_busca": results, "dominios_encontrados": len(diagnostics), "novos_dominios": new_count, "dominios_visitados": len(diagnostics), "eventos_descobertos": len(discovered), "lotes_descobertos": len(lots), "lotes_novos": len(lots), "duplicados": 0, "bloqueados": sum(x["status_acesso"] == "temporariamente_bloqueado" for x in diagnostics.values()), "requires_browser": sum(x["status_acesso"] == "requires_browser" for x in diagnostics.values()), "erros": errors, "quantidade_por_fonte": dict(sources), "quantidade_por_dominio": dict(domains), "diagnostico_portais": list(diagnostics.values())}
+    report = {"status": "ok" if not errors else "parcial" if diagnostics else "erro", "executado_em": now(), "grupo_consultas": group, "provider": "openai", "web_search_provider": provider_name, "openai_configurada": configured, "busca_web_configurada": configured, "modelo": os.getenv("OPENAI_SEARCH_MODEL", "").strip() or "gpt-5-mini", "consultas_executadas": len(queries) if configured else 0, "consultas": queries if configured else [], "resultados_web": results, "resultados_de_busca": results, "urls_descobertas": len({canonicalize_url(url) for url, _ in candidates if canonicalize_url(url)}), "dominios_encontrados": len(diagnostics), "novos_dominios": new_count, "dominios_visitados": len(diagnostics), "eventos_fora_do_mapa": len(discovered), "lotes_fora_do_mapa": len(lots), "eventos_descobertos": len(discovered), "lotes_descobertos": len(lots), "lotes_novos": len(lots), "duplicados": 0, "bloqueados": sum(x["status_acesso"] == "temporariamente_bloqueado" for x in diagnostics.values()), "requires_browser": sum(x["status_acesso"] == "requires_browser" for x in diagnostics.values()), "erros_openai": [e for e in errors if "consulta" in e], "erros": errors, "quantidade_por_fonte": dict(sources), "quantidade_por_dominio": dict(domains), "diagnostico_portais": list(diagnostics.values())}
     write_json(REPORT, report)
     coverage = {"executado_em": now(), "total_eventos_ativos": len(map_events) + len(discovered), "total_lotes_ativos": len(lots), "total_dominios": len(known), "dominios_novos": report["novos_dominios"], "dominios_com_suporte_especifico": 0, "dominios_coletor_generico": len(known), "dominios_bloqueados": report["bloqueados"], "dominios_requires_browser": report["requires_browser"], "lotes_vindos_do_mapa": 0, "lotes_fora_do_mapa": len(lots), "LOTES_FORA_DO_MAPA": len(lots), "fontes_totais": len(known), "fontes_novas_na_execucao": report["novos_dominios"], "eventos_fora_do_mapa": len(discovered)}
     write_json(COVERAGE, coverage); return report
