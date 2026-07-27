@@ -11,18 +11,49 @@ TRACKING = {"utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term
 WORDS = ("leilao", "leilão", "leiloes", "leilões", "auction", "evento", "lote", "oferta", "item", "catalogo", "catálogo")
 
 
-def canonicalize_url(url: str) -> str:
-    parts = urllib.parse.urlsplit(html.unescape(url.strip()))
-    host = parts.hostname.casefold() if parts.hostname else ""
+def _scalar_url(value) -> str:
+    """Return the first usable URL from permissive schema.org values."""
+    if isinstance(value, dict):
+        for key in ("url", "@id", "contentUrl", "href"):
+            found = _scalar_url(value.get(key))
+            if found:
+                return found
+        return ""
+    if isinstance(value, (list, tuple)):
+        return next((found for item in value if (found := _scalar_url(item))), "")
+    if not isinstance(value, str):
+        return ""
+    value = html.unescape(value).strip()
+    # Bad feeds sometimes concatenate URLs with whitespace.
+    match = re.search(r"https?://[^\s<>\"']+", value, re.I)
+    return match.group(0).rstrip(".,;)") if match else value
+
+
+def canonicalize_url(url, base: str = "") -> str:
+    raw = _scalar_url(url)
+    if not raw or any(ch in raw for ch in "\r\n\t"):
+        return ""
+    try:
+        absolute = urllib.parse.urljoin(base, raw) if base else raw
+        parts = urllib.parse.urlsplit(absolute)
+        host = (parts.hostname or "").casefold()
+        port = parts.port  # validates malformed ports
+    except (TypeError, ValueError, UnicodeError):
+        return ""
+    if parts.scheme.casefold() not in {"http", "https"} or not host:
+        return ""
     if host.startswith("www."):
         host = host[4:]
-    if parts.port:
-        host += f":{parts.port}"
+    if port:
+        host += f":{port}"
     query = urllib.parse.urlencode([(k, v) for k, v in urllib.parse.parse_qsl(parts.query, keep_blank_values=True) if k.casefold() not in TRACKING])
     path = re.sub(r"/{2,}", "/", parts.path or "/")
     if path != "/":
         path = path.rstrip("/")
-    return urllib.parse.urlunsplit(("https" if parts.scheme in {"http", "https"} else parts.scheme, host, path, query, ""))
+    try:
+        return urllib.parse.urlunsplit(("https", host, urllib.parse.quote(urllib.parse.unquote(path), safe="/%:@!$&'()*+,;=-._~"), query, ""))
+    except (TypeError, ValueError, UnicodeError):
+        return ""
 
 
 class PageParser(HTMLParser):
@@ -73,7 +104,7 @@ def _nodes(value):
             yield from _nodes(value["@graph"])
         if "itemListElement" in value:
             yield from _nodes(value["itemListElement"])
-        if "item" in value and isinstance(value["item"], dict):
+        if "item" in value:
             yield from _nodes(value["item"])
 
 
@@ -83,19 +114,20 @@ class GenericCollector:
         lots = []
         for root in parser.jsonld:
             for node in _nodes(root):
-                kind = str(node.get("@type", "")).casefold()
-                if kind not in {"product", "offer", "event"}:
+                kinds = node.get("@type", "")
+                kinds = kinds if isinstance(kinds, list) else [kinds]
+                if not any(str(kind).casefold() in {"product", "offer", "event"} for kind in kinds):
                     continue
-                offer = node.get("offers", {}) if isinstance(node.get("offers"), dict) else {}
-                image = node.get("image", "")
-                if isinstance(image, list): image = image[0] if image else ""
-                if isinstance(image, dict): image = image.get("url", "")
-                lots.append({"titulo": node.get("name", ""), "descricao": node.get("description", ""), "lance_atual": offer.get("price", node.get("price", "")), "data": node.get("startDate", ""), "link_lote": urllib.parse.urljoin(url, node.get("url", "")) or url, "foto_lote": urllib.parse.urljoin(url, str(image)) if image else "", "status_evento": node.get("eventStatus", "desconhecido"), "fonte_descoberta": "json_ld", "confianca_dados": "alta"})
+                offers = node.get("offers")
+                offer = next(_nodes(offers), {})
+                image = _scalar_url(node.get("image"))
+                link = canonicalize_url(node.get("url") or node.get("@id"), url) or canonicalize_url(url)
+                lots.append({"titulo": str(node.get("name") or ""), "descricao": str(node.get("description") or ""), "lance_atual": offer.get("price", node.get("price", "")), "data": node.get("startDate", ""), "link_lote": link, "foto_lote": canonicalize_url(image, url) if image else "", "status_evento": node.get("eventStatus", "desconhecido"), "fonte_descoberta": "json_ld", "confianca_dados": "alta"})
         if not lots and (parser.meta.get("og:title") or parser.title):
             lots.append({"titulo": parser.meta.get("og:title", parser.title), "descricao": parser.meta.get("og:description", ""), "link_lote": urllib.parse.urljoin(url, parser.meta.get("og:url", url)), "foto_lote": urllib.parse.urljoin(url, parser.meta.get("og:image", "")) if parser.meta.get("og:image") else "", "status_evento": "desconhecido", "fonte_descoberta": "link_interno", "confianca_dados": "media"})
         links = []
         for link in parser.links:
-            absolute = canonicalize_url(urllib.parse.urljoin(url, link))
+            absolute = canonicalize_url(link, url)
             if any(word in urllib.parse.unquote(absolute).casefold() for word in WORDS):
                 links.append(absolute)
         return lots, list(dict.fromkeys(links))
