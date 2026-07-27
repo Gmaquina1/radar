@@ -6,6 +6,8 @@ import csv
 import html
 import io
 import json
+import multiprocessing
+import os
 import re
 import time
 import unicodedata
@@ -30,6 +32,10 @@ LOTES_JSON = ROOT / "lotes.json"
 LOTES_CSV = ROOT / "lotes.csv"
 RELATORIO_JSON = ROOT / "relatorio_atualizacao_lotes.json"
 TIMEZONE = ZoneInfo("America/Sao_Paulo")
+PDF_MAX_BYTES = max(1, int(os.getenv("PDF_MAX_BYTES", "15000000")))
+PDF_MAX_PAGES = max(1, int(os.getenv("PDF_MAX_PAGES", "120")))
+PDF_PARSE_TIMEOUT = max(1, int(os.getenv("PDF_PARSE_TIMEOUT", "20")))
+REQUEST_TIMEOUT = max(1, int(os.getenv("REQUEST_TIMEOUT", "12")))
 
 FIELDS = [
     "titulo",
@@ -287,7 +293,7 @@ def read_events(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
-def fetch_bytes(url: str, timeout: int = 12, max_bytes: int = 20_000_000) -> tuple[int, bytes, str, str]:
+def fetch_bytes(url: str, timeout: int = REQUEST_TIMEOUT, max_bytes: int = PDF_MAX_BYTES) -> tuple[int, bytes, str, str]:
     if "drive.google.com" in domain(url):
         parsed = urllib.parse.urlparse(url)
         match = re.search(r"/file/d/([^/]+)", parsed.path)
@@ -670,15 +676,25 @@ def event_base(event: dict[str, str], link_evento: str, source_url: str, status:
     }
 
 
-def pdf_text(raw: bytes) -> str:
-    if not raw or PdfReader is None:
-        return ""
+def _pdf_worker(raw: bytes, output) -> None:
     try:
         reader = PdfReader(io.BytesIO(raw))
-        pages = [(page.extract_text() or "") for page in reader.pages[:120]]
-        return "\n".join(pages)
+        output.put("\n".join((page.extract_text() or "") for page in reader.pages[:PDF_MAX_PAGES]))
     except Exception:
+        output.put("")
+
+
+def pdf_text(raw: bytes) -> str:
+    """Valida e isola o parser em processo com timeout duro."""
+    if not raw or PdfReader is None or len(raw) > PDF_MAX_BYTES or not raw.startswith(b"%PDF-"):
         return ""
+    output = multiprocessing.Queue(1)
+    process = multiprocessing.Process(target=_pdf_worker, args=(raw, output), daemon=True)
+    process.start(); process.join(PDF_PARSE_TIMEOUT)
+    if process.is_alive():
+        process.terminate(); process.join(2)
+        return ""
+    return output.get_nowait() if not output.empty() else ""
 
 
 def lot_rows_from_text(
@@ -852,8 +868,8 @@ def extract_one_event(index: int, event: dict[str, str], delay: float) -> tuple[
 
         status_code, raw, content_type, fetched_url = fetch_bytes(source_url)
         final_url = fetched_url or source_url
-        raw_is_pdf = raw[:4] == b"%PDF"
-        is_pdf = bool(PDF_RE.search(final_url) or "pdf" in content_type.casefold() or raw_is_pdf)
+        raw_is_pdf = raw.startswith(b"%PDF-")
+        is_pdf = bool("pdf" in content_type.casefold() or raw_is_pdf)
         if is_pdf and status_code == 200:
             pdf_lots = extract_lots_from_pdf(event, source_url, final_url, raw)
             pdf_status = "pdf_ok" if pdf_lots else "pdf_sem_lotes"
@@ -892,7 +908,7 @@ def extract_one_event(index: int, event: dict[str, str], delay: float) -> tuple[
 
         for pdf_url in pdf_candidates[:2]:
             pdf_code, pdf_raw, pdf_type, pdf_final = fetch_bytes(pdf_url)
-            if pdf_code != 200 or not (pdf_raw[:4] == b"%PDF" or "pdf" in pdf_type.casefold()):
+            if pdf_code != 200 or not pdf_raw.startswith(b"%PDF-") or len(pdf_raw) > PDF_MAX_BYTES:
                 continue
             pdf_lots = extract_lots_from_pdf(event, source_url, pdf_final or pdf_url, pdf_raw)
             attempts.append({"url": pdf_url, "status": "pdf_link_ok" if pdf_lots else "pdf_link_sem_lotes", "http": pdf_code, "lotes": len(pdf_lots)})

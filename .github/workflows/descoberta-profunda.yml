@@ -1,0 +1,76 @@
+name: Descoberta profunda incremental
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "43 2 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: descoberta-profunda-radar
+  cancel-in-progress: false
+
+jobs:
+  descobrir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 210
+    env:
+      TZ: America/Sao_Paulo
+      PYTHONUNBUFFERED: "1"
+      WEB_SEARCH_PROVIDER: openai
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_SEARCH_MODEL: ${{ vars.OPENAI_SEARCH_MODEL || 'gpt-5-mini' }}
+      OPENAI_MAX_SEARCH_QUERIES: "30"
+      MAX_PAGES_PER_DOMAIN: "12"
+      MAX_URLS_PER_DOMAIN: "50"
+      MAX_DEPTH: "2"
+      REQUEST_TIMEOUT: "15"
+      PDF_MAX_BYTES: "15000000"
+      PDF_MAX_PAGES: "120"
+      PDF_PARSE_TIMEOUT: "20"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Instalar dependências
+        run: pip install -r requirements.txt
+      - name: Preflight obrigatório da OpenAI Web Search
+        run: python openai_preflight.py --require
+      - name: Executar pipeline profundo
+        run: python executar_atualizacao_radar.py --modo profundo --workers-mapa 24 --workers-lotes 16
+      - name: Testar e auditar cobertura
+        run: |
+          python -m unittest discover -v
+          python auditar_cobertura.py "garra florestal" | tee auditoria_garra.txt
+          python auditar_cobertura.py "garra florestal" --web | tee auditoria_garra_web.txt
+      - name: Resumo Radar de Leilões
+        if: always()
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          from pathlib import Path
+          def load(name):
+              try: return json.loads(Path(name).read_text())
+              except Exception: return {}
+          d, c, l, s, p = (load(x) for x in ('relatorio_descoberta_web.json','relatorio_cobertura_radar.json','relatorio_atualizacao_lotes.json','status_atualizacao.json','openai_preflight.json'))
+          print('# RADAR DE LEILÕES\n\nMODO: PROFUNDO')
+          print(f"\n## OPENAI\nATIVA: {p.get('configurada', False)}  \nMODELO: {p.get('modelo', 'gpt-5-mini')}  \nCONEXÃO: {p.get('connection', 'NÃO TESTADA')}  \nCONSULTAS: {d.get('consultas_executadas', 0)}  \nRESULTADOS: {d.get('resultados_web', 0)}  \nNOVOS DOMÍNIOS: {d.get('novos_dominios', 0)}")
+          print(f"\n## CATÁLOGO\nPORTAIS: {c.get('total_dominios', 0)}  \nNOVOS: {c.get('dominios_novos', 0)}  \nBLOQUEADOS: {d.get('bloqueados', 0)}")
+          print(f"\n## LOTES\nANTES: {l.get('lotes_antes', 0)}  \nDEPOIS: {l.get('lotes_depois', 0)}  \nNOVOS: {l.get('lotes_realmente_novos', 0)}  \nENCERRADOS: {l.get('lotes_removidos_ou_encerrados', 0)}  \nFORA DO MAPA: {d.get('lotes_fora_do_mapa', 0)}")
+          print(f"\nSTATUS FINAL: {s.get('status', 'erro')}")
+          PY
+      - name: Salvar alterações incrementais
+        run: |
+          git config user.name "Radar G MÁQUINA"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m "Atualização profunda incremental do Radar - $(date '+%d/%m/%Y %H:%M')"
+          git pull --rebase origin main
+          git push origin HEAD:main
