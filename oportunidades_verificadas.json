@@ -37,6 +37,42 @@
       "fonte": "oportunidade_verificada",
       "status_captura": "verificado_na_fonte_publica",
       "fonte_confirmacao": "https://www.superbid.net/oferta/trator-florestal-com-garra-hidraulica-id-3569482-4853918"
+    },
+    {
+      "evento": "Prefeitura de Couto de Magalhães de Minas",
+      "data": "2026-08-11",
+      "data_original": "11/08/2026",
+      "hora": "10:00",
+      "hora_marcador": "10:00",
+      "uf": "MG",
+      "local": "Couto de Magalhães de Minas - MG",
+      "leiloeiro": "Sumaré Leilões",
+      "lote": "Diversos",
+      "titulo": "Leilão de veículos, máquinas, equipamentos e sucatas",
+      "descricao": "Catálogo completo da Prefeitura de Couto de Magalhães de Minas disponível na Sumaré Leilões.",
+      "link_lote": "https://www.sumareleiloes.com.br/leiloes/5279",
+      "link_evento": "https://www.sumareleiloes.com.br/leiloes/5279",
+      "fonte": "oportunidade_verificada",
+      "status_captura": "verificado_na_fonte_publica",
+      "fonte_confirmacao": "https://www.sumareleiloes.com.br/leiloes/5279"
+    },
+    {
+      "evento": "Prefeitura de Cândido Mota",
+      "data": "2026-08-17",
+      "data_original": "17/08/2026",
+      "hora": "10:00",
+      "hora_marcador": "10:00",
+      "uf": "SP",
+      "local": "Cândido Mota - SP",
+      "leiloeiro": "Sumaré Leilões",
+      "lote": "Diversos",
+      "titulo": "Leilão de ônibus, veículos, máquinas, equipamentos e sucatas",
+      "descricao": "Catálogo completo da Prefeitura de Cândido Mota disponível na Sumaré Leilões.",
+      "link_lote": "https://www.sumareleiloes.com.br/leiloes/5362",
+      "link_evento": "https://www.sumareleiloes.com.br/leiloes/5362",
+      "fonte": "oportunidade_verificada",
+      "status_captura": "verificado_na_fonte_publica",
+      "fonte_confirmacao": "https://www.sumareleiloes.com.br/leiloes/5362"
     }
   ]
 }

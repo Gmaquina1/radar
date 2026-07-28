@@ -125,6 +125,15 @@ class DiscoveryTests(unittest.TestCase):
     def test_deep_busca_garra_florestal(self):
         _, queries = discovery.query_group(self.paths["state.json"], deep=True)
         self.assertIn("garra florestal leilão", queries)
+    def test_deep_busca_sumare_leiloes(self):
+        _, queries = discovery.query_group(self.paths["state.json"], deep=True)
+        self.assertIn("Sumaré Leilões próximos leilões lotes", queries)
+    def test_normaliza_portal_sumare_com_paginas_atuais(self):
+        portal = discovery.normalize_portal(
+            {"dominio": "sumareleiloes.com.br", "url_exemplo": "https://sumareleiloes.com.br/leiloes/antigo"}
+        )
+        self.assertIn("todos-leiloes", portal["pagina_eventos"])
+        self.assertIn("todos-lotes", " ".join(portal["caminhos_conhecidos"]))
     def test_deep_busca_todos_os_estados(self):
         _, queries = discovery.query_group(self.paths["state.json"], deep=True)
         for uf in discovery.UFS:
