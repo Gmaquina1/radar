@@ -1,4 +1,5 @@
 TERMO: garra florestal
+RESULTADOS_NA_BASE: 0
 NA_BASE: 0
 FONTES: []
 DOMINIOS: []
