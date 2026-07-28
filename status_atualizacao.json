@@ -1,16 +1,16 @@
 {
   "status": "ok",
-  "verificado_em": "2026-07-28T09:30:40-03:00",
-  "atualizado_em_base_eventos": "2026-07-28T09:13:41-03:00",
-  "atualizado_em_base_lotes": "2026-07-28T09:30:39-03:00",
-  "idade_base_eventos_horas": 0.28,
+  "verificado_em": "2026-07-28T11:38:53-03:00",
+  "atualizado_em_base_eventos": "2026-07-28T11:35:17-03:00",
+  "atualizado_em_base_lotes": "2026-07-28T11:38:52-03:00",
+  "idade_base_eventos_horas": 0.06,
   "idade_base_lotes_horas": 0.0,
-  "eventos_futuros": 488,
+  "eventos_futuros": 484,
   "patios": 132,
-  "lotes": 4468,
-  "lotes_capturados_agora": 6508,
-  "lotes_preservados": 136,
-  "eventos_indexados_com_lotes": 353,
+  "lotes": 4357,
+  "lotes_capturados_agora": 6074,
+  "lotes_preservados": 228,
+  "eventos_indexados_com_lotes": 344,
   "checks": {
     "arquivos_obrigatorios": true,
     "workflow_existe": true,
@@ -28,17 +28,17 @@
     "base_lotes_recente": true
   },
   "arquivos_faltando": [],
-  "modo": "profundo",
-  "duracao_segundos": 1068.49,
-  "ultima_execucao": "2026-07-28T09:30:40-03:00",
+  "modo": "rapido",
+  "duracao_segundos": 267.98,
+  "ultima_execucao": "2026-07-28T11:38:53-03:00",
   "mensagem": "Eventos, lotes e site atualizados com sucesso.",
   "base_anterior_restaurada": false,
-  "lotes_antes": 4467,
-  "lotes_depois": 4468,
-  "lotes_novos_detectados": 0,
-  "lotes_removidos_ou_encerrados": 0,
+  "lotes_antes": 4468,
+  "lotes_depois": 4357,
+  "lotes_novos_detectados": 8,
+  "lotes_removidos_ou_encerrados": 65,
   "status_mapa": "ok",
-  "status_openai": "ERRO",
+  "status_openai": "NAO_TESTADA",
   "status_descoberta": "parcial",
   "status_descoberta_web": "parcial",
   "status_lotes": "ok",
@@ -56,23 +56,23 @@
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 49.18,
+      "duracao_segundos": 51.62,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 600
     },
     {
-      "nome": "Descoberta profunda fora do mapa",
+      "nome": "Atualizar lote incremental de portais conhecidos",
       "comando": [
         "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
         "descobrir_leiloes_web.py",
-        "--deep-discovery"
+        "--quick-refresh"
       ],
       "tentativas": 1,
-      "duracao_segundos": 825.04,
+      "duracao_segundos": 23.08,
       "status": "ok",
       "codigo": 0,
-      "timeout_segundos": 7800
+      "timeout_segundos": 900
     },
     {
       "nome": "Procurar novos lotes nos sites dos leiloeiros",
@@ -87,7 +87,7 @@
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 193.72,
+      "duracao_segundos": 192.72,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 3600

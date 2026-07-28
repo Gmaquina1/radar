@@ -1,15 +1,15 @@
 {
-  "executado_em": "2026-07-28T09:30:39-03:00",
-  "lotes_antes": 4467,
-  "lotes_depois": 4468,
-  "lotes_realmente_novos": 0,
-  "lotes_removidos_ou_encerrados": 0,
-  "lotes_preservados": 136,
-  "lotes_capturados_agora": 6508,
-  "lotes_capturados_com_chave_nova": 1046,
-  "eventos_analisados": 952,
-  "eventos_com_lotes": 353,
-  "eventos_com_erro": 101,
+  "executado_em": "2026-07-28T11:38:52-03:00",
+  "lotes_antes": 4468,
+  "lotes_depois": 4357,
+  "lotes_realmente_novos": 8,
+  "lotes_removidos_ou_encerrados": 65,
+  "lotes_preservados": 228,
+  "lotes_capturados_agora": 6074,
+  "lotes_capturados_com_chave_nova": 950,
+  "eventos_analisados": 951,
+  "eventos_com_lotes": 344,
+  "eventos_com_erro": 102,
   "eventos_bloqueados": 96,
   "links_invalidos": 3,
   "quantidade_coletada_por_leiloeiro": {
@@ -20,7 +20,6 @@
     "eckertleiloes.com.br": 145,
     "goias.gov.br": 2,
     "goldenlance.com.br": 134,
-    "hisaleiloes.com.br": 100,
     "jmleiloes.leilao.br": 6,
     "kleiloes.com.br": 82,
     "kronleiloes.com.br": 2,
@@ -30,7 +29,7 @@
     "lbleiloes.com.br": 57,
     "leilao.detran.mg.gov.br": 100,
     "leilao.sodresantoro.com.br": 23,
-    "leilaoonline.com.br": 262,
+    "leilaoonline.com.br": 263,
     "leiloai.com": 12,
     "leiloesalbino.com.br": 15,
     "leiloesfreire.com.br": 132,
@@ -39,16 +38,14 @@
     "lilianportugal.com.br": 91,
     "lipinskileiloes.com.br": 73,
     "lumussaleiloes.com.br": 27,
-    "marcusviniciusleiloes.com.br": 265,
     "mariafixerleiloes.com.br": 2,
-    "mjleiloes.com.br": 265,
-    "nakakogueleiloes.com.br": 12,
-    "nordesteleiloes.com.br": 32,
+    "mjleiloes.com.br": 241,
+    "nordesteleiloes.com.br": 33,
     "okleiloes.com.br": 19,
     "portalzuk.com.br": 65,
     "rofremleiloes.com.br": 24,
-    "rogeriomenezes.com.br": 535,
-    "rossileiloes.com.br": 834,
+    "rogeriomenezes.com.br": 532,
+    "rossileiloes.com.br": 794,
     "rpleiloes.com.br": 29,
     "sandrasantosleiloes.com.br": 55,
     "sandroleiloeiro.com.br": 357,
@@ -60,9 +57,9 @@
     "tesouroleiloes.com.br": 26,
     "topoleiloes.com.br": 57,
     "tulioleiloes.com.br": 48,
-    "vardanaleiloes.com.br": 125,
+    "vardanaleiloes.com.br": 129,
     "webleiloes.com.br": 361,
-    "wrleiloes.com.br": 49
+    "wrleiloes.com.br": 53
   },
   "erros_por_leiloeiro": {
     "alvesleiloes.com.br": 1,
@@ -89,6 +86,7 @@
     "lottileiloes.com.br": 1,
     "mercado.bomvalor.com.br": 5,
     "mgl.com.br": 27,
+    "nakakogueleiloes.com.br": 1,
     "nsleiloes.leilao.br": 6,
     "patiorochaleiloes.com.br": 3,
     "pwleiloes.com.br": 6,
@@ -496,6 +494,11 @@
       "http": 403
     },
     {
+      "url": "https://www.nakakogueleiloes.com.br/lotes/137532/",
+      "status": "erro",
+      "http": 0
+    },
+    {
       "url": "https://www.gustavomorettoleiloeiro.com.br/leiloes/5279",
       "status": "erro",
       "http": 0
@@ -604,6 +607,21 @@
       "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista",
       "status": "http_404",
       "http": 404
+    },
+    {
+      "url": "https://leilo.com.br/login/?redirect=%2Fleilao%2F%3Fleilao.nome%3Devisa.immigration.gov.n",
+      "status": "http_502",
+      "http": 502
+    },
+    {
+      "url": "https://leilo.com.br/login/?redirect=%2Fleilao%2F%3Fleilao.nome%3DLEIL%25C3%2583O%2520EXCLUSIVO%2520DE%2520MOTOS%2520-%252025.07.26",
+      "status": "http_502",
+      "http": 502
+    },
+    {
+      "url": "https://leilo.com.br/cadastro?redirect=%2Fcadastro%3Fredirect%3D%252Fleilao%252F%253Fleilao.nome%253Devisa.immigration.gov.n",
+      "status": "http_502",
+      "http": 502
     },
     {
       "url": "https://licitardigital.1doc.com.br/verificacao/226C-9914-02F8-C7C8",

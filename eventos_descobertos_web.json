@@ -1,6 +1,6 @@
 {
-  "executado_em": "2026-07-28T12:27:26+00:00",
-  "modo": "profundo",
+  "executado_em": "2026-07-28T14:35:40+00:00",
+  "modo": "rapido",
   "eventos": [
     {
       "nome": "Leilão em assets.okleiloes.com.br",
@@ -9,7 +9,7 @@
       "fonte_descoberta": "portal_direto",
       "dominio_origem": "assets.okleiloes.com.br",
       "url_descoberta": "https://assets.okleiloes.com.br/documentos/LEILAO_199/capa_199.pdf",
-      "descoberto_em": "2026-07-28T12:23:48+00:00",
+      "descoberto_em": "2026-07-28T14:35:17+00:00",
       "confianca_dados": "media",
       "status_evento": "desconhecido"
     },
@@ -20,7 +20,7 @@
       "fonte_descoberta": "portal_direto",
       "dominio_origem": "armazviplprd.blob.core.windows.net",
       "url_descoberta": "https://armazviplprd.blob.core.windows.net/controle/geral/1/d3ca3a3189004cd69d35b7f48801e90c.pdf",
-      "descoberto_em": "2026-07-28T12:23:48+00:00",
+      "descoberto_em": "2026-07-28T14:35:18+00:00",
       "confianca_dados": "media",
       "status_evento": "desconhecido"
     },
@@ -28,54 +28,10 @@
       "nome": "Leilão em agencia.ac.gov.br",
       "link": "https://agencia.ac.gov.br/wp-content/uploads/2026/02/DO17703820843384-1-57-70.pdf",
       "site_leiloeiro": "https://agencia.ac.gov.br/wp-content/uploads/2026/02/DO17703820843384-1-57-70.pdf",
-      "fonte_descoberta": "busca_web",
+      "fonte_descoberta": "portal_direto",
       "dominio_origem": "agencia.ac.gov.br",
       "url_descoberta": "https://agencia.ac.gov.br/wp-content/uploads/2026/02/DO17703820843384-1-57-70.pdf",
-      "descoberto_em": "2026-07-28T12:23:49+00:00",
-      "confianca_dados": "media",
-      "status_evento": "desconhecido"
-    },
-    {
-      "nome": "Beedz",
-      "link": "https://beedz.com.br/",
-      "site_leiloeiro": "https://beedz.com.br/",
-      "fonte_descoberta": "portal_direto",
-      "dominio_origem": "beedz.com.br",
-      "url_descoberta": "https://beedz.com.br/",
-      "descoberto_em": "2026-07-28T12:23:50+00:00",
-      "confianca_dados": "media",
-      "status_evento": "desconhecido"
-    },
-    {
-      "nome": "Phillipe Santos Iniguez Omella",
-      "link": "https://www.argonetworkleiloes.com.br/?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
-      "site_leiloeiro": "https://www.argonetworkleiloes.com.br/?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
-      "fonte_descoberta": "portal_direto",
-      "dominio_origem": "argonetworkleiloes.com.br",
-      "url_descoberta": "https://argonetworkleiloes.com.br/evento/prefeitura-municipal-de-tatui-789565?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
-      "descoberto_em": "2026-07-28T12:23:50+00:00",
-      "confianca_dados": "media",
-      "status_evento": "desconhecido"
-    },
-    {
-      "nome": "Bolsa Brasileira de Mercadorias",
-      "link": "https://www.bbmnetleiloes.com.br/?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
-      "site_leiloeiro": "https://www.bbmnetleiloes.com.br/?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
-      "fonte_descoberta": "portal_direto",
-      "dominio_origem": "bbmnetleiloes.com.br",
-      "url_descoberta": "https://bbmnetleiloes.com.br/evento/alienacao-de-sucatas-municipio-itapecerica-serra-788969?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
-      "descoberto_em": "2026-07-28T12:23:51+00:00",
-      "confianca_dados": "media",
-      "status_evento": "desconhecido"
-    },
-    {
-      "nome": "Acesso ao usuário - BNC",
-      "link": "https://bnccompras.com/Home/Login",
-      "site_leiloeiro": "https://bnccompras.com/Home/Login",
-      "fonte_descoberta": "portal_direto",
-      "dominio_origem": "bnccompras.com",
-      "url_descoberta": "https://bnccompras.com/",
-      "descoberto_em": "2026-07-28T12:23:55+00:00",
+      "descoberto_em": "2026-07-28T14:35:18+00:00",
       "confianca_dados": "media",
       "status_evento": "desconhecido"
     },
@@ -86,29 +42,73 @@
       "fonte_descoberta": "portal_direto",
       "dominio_origem": "ammlicita.org.br",
       "url_descoberta": "https://ammlicita.org.br/",
-      "descoberto_em": "2026-07-28T12:23:49+00:00",
+      "descoberto_em": "2026-07-28T14:35:18+00:00",
       "confianca_dados": "media",
       "status_evento": "desconhecido"
     },
     {
-      "nome": "Bolsa Nacional de Compras - Plataforma de Licitações Eletrônicas",
-      "link": "https://bnc.org.br/",
-      "site_leiloeiro": "https://bnc.org.br/",
+      "nome": "Beedz",
+      "link": "https://beedz.com.br/",
+      "site_leiloeiro": "https://beedz.com.br/",
       "fonte_descoberta": "portal_direto",
-      "dominio_origem": "bnc.org.br",
-      "url_descoberta": "https://bnc.org.br/",
-      "descoberto_em": "2026-07-28T12:23:55+00:00",
+      "dominio_origem": "beedz.com.br",
+      "url_descoberta": "https://beedz.com.br/",
+      "descoberto_em": "2026-07-28T14:35:18+00:00",
       "confianca_dados": "media",
       "status_evento": "desconhecido"
     },
     {
-      "nome": "Análise de Edital de Licitação: Pontos Essenciais",
-      "link": "https://bnc.org.br/blog/analise-de-edital-de-licitacao-pontos-essenciais/",
-      "site_leiloeiro": "https://bnc.org.br/blog/analise-de-edital-de-licitacao-pontos-essenciais/",
-      "fonte_descoberta": "sitemap",
-      "dominio_origem": "bnc.org.br",
-      "url_descoberta": "https://bnc.org.br/",
-      "descoberto_em": "2026-07-28T12:24:06+00:00",
+      "nome": "Acesso ao usuário - BNC",
+      "link": "https://bnccompras.com/Home/Login",
+      "site_leiloeiro": "https://bnccompras.com/Home/Login",
+      "fonte_descoberta": "portal_direto",
+      "dominio_origem": "bnccompras.com",
+      "url_descoberta": "https://bnccompras.com/",
+      "descoberto_em": "2026-07-28T14:35:19+00:00",
+      "confianca_dados": "media",
+      "status_evento": "desconhecido"
+    },
+    {
+      "nome": "Leilão em cdn.kwara.com.br",
+      "link": "https://cdn.kwara.com.br/lot-images/f058156b-3cfc-45d4-a0fe-08285306ef35.thumbnail.jpg",
+      "site_leiloeiro": "https://cdn.kwara.com.br/lot-images/f058156b-3cfc-45d4-a0fe-08285306ef35.thumbnail.jpg",
+      "fonte_descoberta": "portal_direto",
+      "dominio_origem": "cdn.kwara.com.br",
+      "url_descoberta": "https://cdn.kwara.com.br/lot-images/f058156b-3cfc-45d4-a0fe-08285306ef35.thumbnail.jpg",
+      "descoberto_em": "2026-07-28T14:35:19+00:00",
+      "confianca_dados": "media",
+      "status_evento": "desconhecido"
+    },
+    {
+      "nome": "Leilão em cdn.leilotech.workers.dev",
+      "link": "https://cdn.leilotech.workers.dev/lbleiloes/editais/leilao/20/qKrPyhgY12o1hupNgvtZ1NjzkGgdcscHNxGYVHxJgh4jL1FE0sQRQ4sFi98M.pdf",
+      "site_leiloeiro": "https://cdn.leilotech.workers.dev/lbleiloes/editais/leilao/20/qKrPyhgY12o1hupNgvtZ1NjzkGgdcscHNxGYVHxJgh4jL1FE0sQRQ4sFi98M.pdf",
+      "fonte_descoberta": "portal_direto",
+      "dominio_origem": "cdn.leilotech.workers.dev",
+      "url_descoberta": "https://cdn.leilotech.workers.dev/lbleiloes/editais/leilao/20/qKrPyhgY12o1hupNgvtZ1NjzkGgdcscHNxGYVHxJgh4jL1FE0sQRQ4sFi98M.pdf",
+      "descoberto_em": "2026-07-28T14:35:20+00:00",
+      "confianca_dados": "media",
+      "status_evento": "desconhecido"
+    },
+    {
+      "nome": "Phillipe Santos Iniguez Omella",
+      "link": "https://www.argonetworkleiloes.com.br/?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
+      "site_leiloeiro": "https://www.argonetworkleiloes.com.br/?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
+      "fonte_descoberta": "portal_direto",
+      "dominio_origem": "argonetworkleiloes.com.br",
+      "url_descoberta": "https://argonetworkleiloes.com.br/evento/prefeitura-municipal-de-tatui-789565?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
+      "descoberto_em": "2026-07-28T14:35:19+00:00",
+      "confianca_dados": "media",
+      "status_evento": "desconhecido"
+    },
+    {
+      "nome": "Bolsa Brasileira de Mercadorias",
+      "link": "https://www.bbmnetleiloes.com.br/?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
+      "site_leiloeiro": "https://www.bbmnetleiloes.com.br/?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
+      "fonte_descoberta": "portal_direto",
+      "dominio_origem": "bbmnetleiloes.com.br",
+      "url_descoberta": "https://bbmnetleiloes.com.br/evento/alienacao-de-sucatas-municipio-itapecerica-serra-788969?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
+      "descoberto_em": "2026-07-28T14:35:19+00:00",
       "confianca_dados": "media",
       "status_evento": "desconhecido"
     },
@@ -119,7 +119,7 @@
       "fonte_descoberta": "portal_direto",
       "dominio_origem": "andreluizleiloes.com.br",
       "url_descoberta": "https://andreluizleiloes.com.br/evento/fornaia-servicos-de-mecanica-ltda-783899?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
-      "descoberto_em": "2026-07-28T12:23:50+00:00",
+      "descoberto_em": "2026-07-28T14:35:19+00:00",
       "confianca_dados": "alta",
       "status_evento": "desconhecido"
     },
@@ -127,11 +127,55 @@
       "nome": "Município de Terra Boa",
       "link": "https://www.andreluizleiloes.com.br/evento/municipio-de-terra-boa-789494?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
       "site_leiloeiro": "https://www.andreluizleiloes.com.br/evento/municipio-de-terra-boa-789494?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
-      "fonte_descoberta": "mapa",
+      "fonte_descoberta": "portal_direto",
       "dominio_origem": "andreluizleiloes.com.br",
       "url_descoberta": "https://andreluizleiloes.com.br/evento/fornaia-servicos-de-mecanica-ltda-783899?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
-      "descoberto_em": "2026-07-28T12:23:51+00:00",
+      "descoberto_em": "2026-07-28T14:35:20+00:00",
       "confianca_dados": "alta",
+      "status_evento": "desconhecido"
+    },
+    {
+      "nome": "Loader",
+      "link": "https://bnc.org.br/",
+      "site_leiloeiro": "https://bnc.org.br/",
+      "fonte_descoberta": "portal_direto",
+      "dominio_origem": "bnc.org.br",
+      "url_descoberta": "https://bnc.org.br/",
+      "descoberto_em": "2026-07-28T14:35:19+00:00",
+      "confianca_dados": "media",
+      "status_evento": "desconhecido"
+    },
+    {
+      "nome": "Loader",
+      "link": "https://bnc.org.br/blog/analise-de-edital-de-licitacao-pontos-essenciais",
+      "site_leiloeiro": "https://bnc.org.br/blog/analise-de-edital-de-licitacao-pontos-essenciais",
+      "fonte_descoberta": "portal_direto",
+      "dominio_origem": "bnc.org.br",
+      "url_descoberta": "https://bnc.org.br/",
+      "descoberto_em": "2026-07-28T14:35:20+00:00",
+      "confianca_dados": "media",
+      "status_evento": "desconhecido"
+    },
+    {
+      "nome": "1º LEILÃO DE JULHO 2026 - BSB Leilões",
+      "link": "https://www.bsbleiloes.com.br/leilao/1o-leilao-de-julho-2026-15-07-2026-16-51-27/lotes/card",
+      "site_leiloeiro": "https://www.bsbleiloes.com.br/leilao/1o-leilao-de-julho-2026-15-07-2026-16-51-27/lotes/card",
+      "fonte_descoberta": "portal_direto",
+      "dominio_origem": "bsbleiloes.com.br",
+      "url_descoberta": "https://bsbleiloes.com.br/leilao/1o-leilao-de-julho-2026-15-07-2026-16-51-27/lotes/card",
+      "descoberto_em": "2026-07-28T14:35:21+00:00",
+      "confianca_dados": "media",
+      "status_evento": "desconhecido"
+    },
+    {
+      "nome": "BSB Leilões",
+      "link": "https://www.bsbleiloes.com.br/arrematante/login",
+      "site_leiloeiro": "https://www.bsbleiloes.com.br/arrematante/login",
+      "fonte_descoberta": "portal_direto",
+      "dominio_origem": "bsbleiloes.com.br",
+      "url_descoberta": "https://bsbleiloes.com.br/leilao/1o-leilao-de-julho-2026-15-07-2026-16-51-27/lotes/card",
+      "descoberto_em": "2026-07-28T14:35:23+00:00",
+      "confianca_dados": "media",
       "status_evento": "desconhecido"
     },
     {
@@ -242,28 +286,6 @@
       "url_descoberta": "https://andreluizleiloes.com.br/evento/fornaia-servicos-de-mecanica-ltda-783899?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
       "descoberto_em": "2026-07-28T12:24:12+00:00",
       "confianca_dados": "alta",
-      "status_evento": "desconhecido"
-    },
-    {
-      "nome": "Leilão em cdn.kwara.com.br",
-      "link": "https://cdn.kwara.com.br/lot-images/f058156b-3cfc-45d4-a0fe-08285306ef35.thumbnail.jpg",
-      "site_leiloeiro": "https://cdn.kwara.com.br/lot-images/f058156b-3cfc-45d4-a0fe-08285306ef35.thumbnail.jpg",
-      "fonte_descoberta": "portal_direto",
-      "dominio_origem": "cdn.kwara.com.br",
-      "url_descoberta": "https://cdn.kwara.com.br/lot-images/f058156b-3cfc-45d4-a0fe-08285306ef35.thumbnail.jpg",
-      "descoberto_em": "2026-07-28T12:24:12+00:00",
-      "confianca_dados": "media",
-      "status_evento": "desconhecido"
-    },
-    {
-      "nome": "Leilão em cdn.leilotech.workers.dev",
-      "link": "https://cdn.leilotech.workers.dev/lbleiloes/editais/leilao/20/qKrPyhgY12o1hupNgvtZ1NjzkGgdcscHNxGYVHxJgh4jL1FE0sQRQ4sFi98M.pdf",
-      "site_leiloeiro": "https://cdn.leilotech.workers.dev/lbleiloes/editais/leilao/20/qKrPyhgY12o1hupNgvtZ1NjzkGgdcscHNxGYVHxJgh4jL1FE0sQRQ4sFi98M.pdf",
-      "fonte_descoberta": "portal_direto",
-      "dominio_origem": "cdn.leilotech.workers.dev",
-      "url_descoberta": "https://cdn.leilotech.workers.dev/lbleiloes/editais/leilao/20/qKrPyhgY12o1hupNgvtZ1NjzkGgdcscHNxGYVHxJgh4jL1FE0sQRQ4sFi98M.pdf",
-      "descoberto_em": "2026-07-28T12:24:13+00:00",
-      "confianca_dados": "media",
       "status_evento": "desconhecido"
     },
     {
@@ -7426,31 +7448,21 @@
       "descoberto_em": "2026-07-28T11:52:38+00:00",
       "confianca_dados": "media",
       "status_evento": "desconhecido"
-    },
-    {
-      "nome": "1º LEILÃO DE JULHO 2026 - BSB Leilões",
-      "link": "https://www.bsbleiloes.com.br/leilao/1o-leilao-de-julho-2026-15-07-2026-16-51-27/lotes/card",
-      "site_leiloeiro": "https://www.bsbleiloes.com.br/leilao/1o-leilao-de-julho-2026-15-07-2026-16-51-27/lotes/card",
-      "fonte_descoberta": "portal_direto",
-      "dominio_origem": "bsbleiloes.com.br",
-      "url_descoberta": "https://bsbleiloes.com.br/leilao/1o-leilao-de-julho-2026-15-07-2026-16-51-27/lotes/card",
-      "descoberto_em": "2026-07-28T11:52:38+00:00",
-      "confianca_dados": "media",
-      "status_evento": "desconhecido"
-    },
-    {
-      "nome": "BSB Leilões",
-      "link": "https://www.bsbleiloes.com.br/arrematante/login",
-      "site_leiloeiro": "https://www.bsbleiloes.com.br/arrematante/login",
-      "fonte_descoberta": "link_interno",
-      "dominio_origem": "bsbleiloes.com.br",
-      "url_descoberta": "https://bsbleiloes.com.br/leilao/1o-leilao-de-julho-2026-15-07-2026-16-51-27/lotes/card",
-      "descoberto_em": "2026-07-28T11:52:40+00:00",
-      "confianca_dados": "media",
-      "status_evento": "desconhecido"
     }
   ],
   "lotes": [
+    {
+      "titulo": "AMM Licita – Plataforma para Licitações da Associação Mineira de Municípios",
+      "descricao": "",
+      "link_lote": "https://ammlicita.org.br/",
+      "foto_lote": "",
+      "status_evento": "desconhecido",
+      "fonte_descoberta": "link_interno",
+      "confianca_dados": "media",
+      "dominio_origem": "ammlicita.org.br",
+      "url_descoberta": "https://ammlicita.org.br/",
+      "descoberto_em": "2026-07-28T14:35:18+00:00"
+    },
     {
       "titulo": "Beedz",
       "descricao": "",
@@ -7461,31 +7473,7 @@
       "confianca_dados": "media",
       "dominio_origem": "beedz.com.br",
       "url_descoberta": "https://beedz.com.br/",
-      "descoberto_em": "2026-07-28T12:23:50+00:00"
-    },
-    {
-      "titulo": "Phillipe Santos Iniguez Omella",
-      "descricao": "Argo Network Leilões - Leilão Judicial e Extrajudicial Online de Veículos, Imóveis, Máquinas, Equipamentos, Bens Móveis e Bens Diversos. Argo Network Leilões, sua melhor solução!",
-      "link_lote": "https://www.argonetworkleiloes.com.br/?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
-      "foto_lote": "https://static.s4bdigital.net/logos_empresas/argo_network_Logo.png",
-      "status_evento": "desconhecido",
-      "fonte_descoberta": "link_interno",
-      "confianca_dados": "media",
-      "dominio_origem": "argonetworkleiloes.com.br",
-      "url_descoberta": "https://argonetworkleiloes.com.br/evento/prefeitura-municipal-de-tatui-789565?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
-      "descoberto_em": "2026-07-28T12:23:50+00:00"
-    },
-    {
-      "titulo": "Bolsa Brasileira de Mercadorias",
-      "descricao": "BBM Net - Leilão Judicial e Extrajudicial Online de Veículos, Imóveis, Máquinas, Equipamentos, Bens Móveis e Bens Diversos. BBM Net, sua melhor solução!",
-      "link_lote": "https://www.bbmnetleiloes.com.br/?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
-      "foto_lote": "https://static.s4bdigital.net/logos_empresas/bbmnetleiloes.png",
-      "status_evento": "desconhecido",
-      "fonte_descoberta": "link_interno",
-      "confianca_dados": "media",
-      "dominio_origem": "bbmnetleiloes.com.br",
-      "url_descoberta": "https://bbmnetleiloes.com.br/evento/alienacao-de-sucatas-municipio-itapecerica-serra-788969?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
-      "descoberto_em": "2026-07-28T12:23:51+00:00"
+      "descoberto_em": "2026-07-28T14:35:18+00:00"
     },
     {
       "titulo": "Acesso ao usuário - BNC",
@@ -7497,43 +7485,31 @@
       "confianca_dados": "media",
       "dominio_origem": "bnccompras.com",
       "url_descoberta": "https://bnccompras.com/",
-      "descoberto_em": "2026-07-28T12:23:55+00:00"
+      "descoberto_em": "2026-07-28T14:35:19+00:00"
     },
     {
-      "titulo": "AMM Licita – Plataforma para Licitações da Associação Mineira de Municípios",
-      "descricao": "",
-      "link_lote": "https://ammlicita.org.br/",
-      "foto_lote": "",
+      "titulo": "Phillipe Santos Iniguez Omella",
+      "descricao": "Argo Network Leilões - Leilão Judicial e Extrajudicial Online de Veículos, Imóveis, Máquinas, Equipamentos, Bens Móveis e Bens Diversos. Argo Network Leilões, sua melhor solução!",
+      "link_lote": "https://www.argonetworkleiloes.com.br/?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
+      "foto_lote": "https://static.s4bdigital.net/logos_empresas/argo_network_Logo.png",
       "status_evento": "desconhecido",
       "fonte_descoberta": "link_interno",
       "confianca_dados": "media",
-      "dominio_origem": "ammlicita.org.br",
-      "url_descoberta": "https://ammlicita.org.br/",
-      "descoberto_em": "2026-07-28T12:23:49+00:00"
+      "dominio_origem": "argonetworkleiloes.com.br",
+      "url_descoberta": "https://argonetworkleiloes.com.br/evento/prefeitura-municipal-de-tatui-789565?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
+      "descoberto_em": "2026-07-28T14:35:19+00:00"
     },
     {
-      "titulo": "Bolsa Nacional de Compras - Plataforma de Licitações Eletrônicas",
-      "descricao": "A plataforma de licitações eletrônicas que une agilidade, transparência e tecnologia para facilitar pregões e compras públicas online.",
-      "link_lote": "https://bnc.org.br/",
-      "foto_lote": "",
+      "titulo": "Bolsa Brasileira de Mercadorias",
+      "descricao": "BBM Net - Leilão Judicial e Extrajudicial Online de Veículos, Imóveis, Máquinas, Equipamentos, Bens Móveis e Bens Diversos. BBM Net, sua melhor solução!",
+      "link_lote": "https://www.bbmnetleiloes.com.br/?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
+      "foto_lote": "https://static.s4bdigital.net/logos_empresas/bbmnetleiloes.png",
       "status_evento": "desconhecido",
       "fonte_descoberta": "link_interno",
       "confianca_dados": "media",
-      "dominio_origem": "bnc.org.br",
-      "url_descoberta": "https://bnc.org.br/",
-      "descoberto_em": "2026-07-28T12:23:55+00:00"
-    },
-    {
-      "titulo": "Análise de Edital de Licitação: Pontos Essenciais",
-      "descricao": "Saiba como realizar uma análise de edital de licitação de forma efetiva, evitando desclassificações e aumentando suas chances de sucesso.",
-      "link_lote": "https://bnc.org.br/blog/analise-de-edital-de-licitacao-pontos-essenciais/",
-      "foto_lote": "https://bnc.org.br/wp-content/uploads/2026/03/POST-2-_-S3-MAR_-ARTIGO-LEANDRO.png",
-      "status_evento": "desconhecido",
-      "fonte_descoberta": "link_interno",
-      "confianca_dados": "media",
-      "dominio_origem": "bnc.org.br",
-      "url_descoberta": "https://bnc.org.br/",
-      "descoberto_em": "2026-07-28T12:24:06+00:00"
+      "dominio_origem": "bbmnetleiloes.com.br",
+      "url_descoberta": "https://bbmnetleiloes.com.br/evento/alienacao-de-sucatas-municipio-itapecerica-serra-788969?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
+      "descoberto_em": "2026-07-28T14:35:19+00:00"
     },
     {
       "titulo": "Fornaia Serviços de Mecânica Ltda",
@@ -7547,7 +7523,7 @@
       "confianca_dados": "alta",
       "dominio_origem": "andreluizleiloes.com.br",
       "url_descoberta": "https://andreluizleiloes.com.br/evento/fornaia-servicos-de-mecanica-ltda-783899?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
-      "descoberto_em": "2026-07-28T12:23:50+00:00"
+      "descoberto_em": "2026-07-28T14:35:19+00:00"
     },
     {
       "titulo": "Município de Terra Boa",
@@ -7561,7 +7537,55 @@
       "confianca_dados": "alta",
       "dominio_origem": "andreluizleiloes.com.br",
       "url_descoberta": "https://andreluizleiloes.com.br/evento/fornaia-servicos-de-mecanica-ltda-783899?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
-      "descoberto_em": "2026-07-28T12:23:51+00:00"
+      "descoberto_em": "2026-07-28T14:35:20+00:00"
+    },
+    {
+      "titulo": "Loader",
+      "descricao": "",
+      "link_lote": "https://bnc.org.br/",
+      "foto_lote": "",
+      "status_evento": "desconhecido",
+      "fonte_descoberta": "link_interno",
+      "confianca_dados": "media",
+      "dominio_origem": "bnc.org.br",
+      "url_descoberta": "https://bnc.org.br/",
+      "descoberto_em": "2026-07-28T14:35:19+00:00"
+    },
+    {
+      "titulo": "Loader",
+      "descricao": "",
+      "link_lote": "https://bnc.org.br/blog/analise-de-edital-de-licitacao-pontos-essenciais",
+      "foto_lote": "",
+      "status_evento": "desconhecido",
+      "fonte_descoberta": "link_interno",
+      "confianca_dados": "media",
+      "dominio_origem": "bnc.org.br",
+      "url_descoberta": "https://bnc.org.br/",
+      "descoberto_em": "2026-07-28T14:35:20+00:00"
+    },
+    {
+      "titulo": "1º LEILÃO DE JULHO 2026 - BSB Leilões",
+      "descricao": "OS BENS PODER&Atilde;O SER VISTORIADOS NO PER&Iacute;ODO DE 16/07 A 24/07 DE 2026.\nDIAS &Uacute;TEIS (DE 08H30 &Agrave;S 12H20 E 14H00 &Agrave;S 17H20).&nbsp;\n(FECHADO PARA ALMO&Ccedil;O DAS 12H20 &Agrave;S 14H00)",
+      "link_lote": "https://www.bsbleiloes.com.br/leilao/1o-leilao-de-julho-2026-15-07-2026-16-51-27/lotes/card",
+      "foto_lote": "https://www.bsbleiloes.com.br/uploads/media/default/0004/74/b55b527013fabb9ddd2f660e0593d7e96b35cef3.jpg",
+      "status_evento": "desconhecido",
+      "fonte_descoberta": "link_interno",
+      "confianca_dados": "media",
+      "dominio_origem": "bsbleiloes.com.br",
+      "url_descoberta": "https://bsbleiloes.com.br/leilao/1o-leilao-de-julho-2026-15-07-2026-16-51-27/lotes/card",
+      "descoberto_em": "2026-07-28T14:35:21+00:00"
+    },
+    {
+      "titulo": "BSB Leilões",
+      "descricao": "",
+      "link_lote": "https://www.bsbleiloes.com.br",
+      "foto_lote": "https://www.bsbleiloes.com.br/build/images/logo_face.png",
+      "status_evento": "desconhecido",
+      "fonte_descoberta": "link_interno",
+      "confianca_dados": "media",
+      "dominio_origem": "bsbleiloes.com.br",
+      "url_descoberta": "https://bsbleiloes.com.br/leilao/1o-leilao-de-julho-2026-15-07-2026-16-51-27/lotes/card",
+      "descoberto_em": "2026-07-28T14:35:23+00:00"
     },
     {
       "titulo": "Município de Ivaiporã",
@@ -18744,34 +18768,10 @@
       "dominio_origem": "licitardigital.1doc.com.br",
       "url_descoberta": "https://licitardigital.1doc.com.br/verificacao/226C-9914-02F8-C7C8",
       "descoberto_em": "2026-07-28T11:52:38+00:00"
-    },
-    {
-      "titulo": "1º LEILÃO DE JULHO 2026 - BSB Leilões",
-      "descricao": "OS BENS PODER&Atilde;O SER VISTORIADOS NO PER&Iacute;ODO DE 16/07 A 24/07 DE 2026.\nDIAS &Uacute;TEIS (DE 08H30 &Agrave;S 12H20 E 14H00 &Agrave;S 17H20).&nbsp;\n(FECHADO PARA ALMO&Ccedil;O DAS 12H20 &Agrave;S 14H00)",
-      "link_lote": "https://www.bsbleiloes.com.br/leilao/1o-leilao-de-julho-2026-15-07-2026-16-51-27/lotes/card",
-      "foto_lote": "https://www.bsbleiloes.com.br/uploads/media/default/0004/74/b55b527013fabb9ddd2f660e0593d7e96b35cef3.jpg",
-      "status_evento": "desconhecido",
-      "fonte_descoberta": "link_interno",
-      "confianca_dados": "media",
-      "dominio_origem": "bsbleiloes.com.br",
-      "url_descoberta": "https://bsbleiloes.com.br/leilao/1o-leilao-de-julho-2026-15-07-2026-16-51-27/lotes/card",
-      "descoberto_em": "2026-07-28T11:52:38+00:00"
-    },
-    {
-      "titulo": "BSB Leilões",
-      "descricao": "",
-      "link_lote": "https://www.bsbleiloes.com.br",
-      "foto_lote": "https://www.bsbleiloes.com.br/build/images/logo_face.png",
-      "status_evento": "desconhecido",
-      "fonte_descoberta": "link_interno",
-      "confianca_dados": "media",
-      "dominio_origem": "bsbleiloes.com.br",
-      "url_descoberta": "https://bsbleiloes.com.br/leilao/1o-leilao-de-julho-2026-15-07-2026-16-51-27/lotes/card",
-      "descoberto_em": "2026-07-28T11:52:40+00:00"
     }
   ],
-  "eventos_atualizados": 682,
-  "eventos_preservados": 3,
-  "lotes_atualizados": 904,
-  "lotes_preservados": 4
+  "eventos_atualizados": 20,
+  "eventos_preservados": 661,
+  "lotes_atualizados": 15,
+  "lotes_preservados": 862
 }
