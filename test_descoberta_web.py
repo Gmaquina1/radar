@@ -122,6 +122,9 @@ class DiscoveryTests(unittest.TestCase):
         result = self.execute(deep=True); self.assertIn(result["grupo_consultas"], "ABCD")
     def test_rotacao(self):
         a, _ = discovery.query_group(self.paths["state.json"]); b, _ = discovery.query_group(self.paths["state.json"]); self.assertEqual((a, b), ("A", "B"))
+    def test_deep_busca_garra_florestal(self):
+        _, queries = discovery.query_group(self.paths["state.json"], deep=True)
+        self.assertIn("garra florestal leilão", queries)
     def test_todas_ufs_distribuidas(self): self.assertEqual(len(discovery.UFS), 27)
     def test_sitemap(self):
         urls, indexes = discovery.sitemap_urls('<urlset><url><loc>https://x.test/lote/1</loc></url></urlset>'); self.assertEqual(urls, ["https://x.test/lote/1"]); self.assertFalse(indexes)

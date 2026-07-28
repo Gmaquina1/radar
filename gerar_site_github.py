@@ -12,6 +12,7 @@ from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent
 TEMPLATE = ROOT / "site_template.html"
+VERIFIED_LOTS = ROOT / "oportunidades_verificadas.json"
 MAP_EMBED_URL = "https://www.google.com/maps/d/u/0/embed?mid=1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U&ehbc=2E312F"
 TIMEZONE = ZoneInfo("America/Sao_Paulo")
 VALID_UFS = {
@@ -28,8 +29,7 @@ def read_csv(name: str) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
-def read_lotes() -> list[dict[str, str]]:
-    path = ROOT / "lotes.json"
+def read_lot_file(path: Path) -> list[dict[str, str]]:
     if not path.exists():
         return []
     try:
@@ -38,6 +38,14 @@ def read_lotes() -> list[dict[str, str]]:
         return []
     rows = data.get("lotes", []) if isinstance(data, dict) else data
     return [row for row in rows if isinstance(row, dict)] if isinstance(rows, list) else []
+
+
+def read_lotes() -> list[dict[str, str]]:
+    return read_lot_file(ROOT / "lotes.json")
+
+
+def read_verified_lots() -> list[dict[str, str]]:
+    return read_lot_file(VERIFIED_LOTS)
 
 
 def parse_hour(value: str) -> tuple[int, int] | None:
@@ -141,7 +149,7 @@ def main() -> None:
     for event in events:
         if event.get("uf") not in VALID_UFS:
             event["uf"] = ""
-    lots = enrich_and_dedupe_lots(read_lotes(), events, now)
+    lots = enrich_and_dedupe_lots(read_lotes() + read_verified_lots(), events, now)
     patios = read_csv("radar_leiloes_patios.csv")
     app_version = os.environ.get("RADAR_VERSION") or now.strftime("v%Y.%m.%d.%H%M")
     edital_events = sum(1 for row in events if row.get("link_edital"))
