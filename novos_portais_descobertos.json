@@ -88,5 +88,14 @@
     "status": "pendente",
     "tipo_coleta": "generico",
     "ultima_verificacao": "2026-07-28T12:23:48+00:00"
+  },
+  {
+    "dominio": "sulina.cidade360.cloud",
+    "url_exemplo": "https://sulina.cidade360.cloud/portal-servicos/servico/autenticidade-documento/executar.html?identificador=61g9.hHl5.sfya",
+    "descoberto_em": "2026-07-28T17:08:35+00:00",
+    "consulta_que_encontrou": "portal_direto",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-07-28T17:08:35+00:00"
   }
 ]

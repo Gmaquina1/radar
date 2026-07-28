@@ -1,14 +1,14 @@
 {
   "status": "ok",
-  "verificado_em": "2026-07-28T13:54:35-03:00",
-  "atualizado_em_base_eventos": "2026-07-28T13:50:59-03:00",
-  "atualizado_em_base_lotes": "2026-07-28T13:54:34-03:00",
+  "verificado_em": "2026-07-28T14:11:54-03:00",
+  "atualizado_em_base_eventos": "2026-07-28T14:08:35-03:00",
+  "atualizado_em_base_lotes": "2026-07-28T14:11:53-03:00",
   "idade_base_eventos_horas": 0.06,
   "idade_base_lotes_horas": 0.0,
-  "eventos_futuros": 481,
+  "eventos_futuros": 482,
   "patios": 132,
-  "lotes": 4217,
-  "lotes_capturados_agora": 6446,
+  "lotes": 4212,
+  "lotes_capturados_agora": 6406,
   "lotes_preservados": 136,
   "eventos_indexados_com_lotes": 353,
   "checks": {
@@ -29,14 +29,14 @@
   },
   "arquivos_faltando": [],
   "modo": "rapido",
-  "duracao_segundos": 266.76,
-  "ultima_execucao": "2026-07-28T13:54:35-03:00",
+  "duracao_segundos": 245.39,
+  "ultima_execucao": "2026-07-28T14:11:54-03:00",
   "mensagem": "Eventos, lotes e site atualizados com sucesso.",
   "base_anterior_restaurada": false,
-  "lotes_antes": 4212,
-  "lotes_depois": 4217,
-  "lotes_novos_detectados": 5,
-  "lotes_removidos_ou_encerrados": 0,
+  "lotes_antes": 4217,
+  "lotes_depois": 4212,
+  "lotes_novos_detectados": 0,
+  "lotes_removidos_ou_encerrados": 5,
   "status_mapa": "ok",
   "status_openai": "NAO_TESTADA",
   "status_descoberta": "parcial",
@@ -56,7 +56,7 @@
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 50.25,
+      "duracao_segundos": 46.37,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 600
@@ -69,7 +69,7 @@
         "--quick-refresh"
       ],
       "tentativas": 1,
-      "duracao_segundos": 20.32,
+      "duracao_segundos": 13.8,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 900
@@ -87,7 +87,7 @@
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 195.57,
+      "duracao_segundos": 184.63,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 3600
