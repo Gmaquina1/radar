@@ -369,7 +369,10 @@ def main() -> int:
                 str(args.workers_mapa),
             ],
             attempts=3,
-            timeout_seconds=600,
+            # A importação inclui centenas de eventos, páginas e editais.
+            # Em execuções nacionais ela pode ultrapassar dez minutos sem
+            # estar travada; o limite maior ainda cabe no job rápido.
+            timeout_seconds=900,
         )
         results.append(event_step)
 
