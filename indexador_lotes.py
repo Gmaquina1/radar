@@ -686,15 +686,26 @@ def _pdf_worker(raw: bytes, output) -> None:
 
 def pdf_text(raw: bytes) -> str:
     """Valida e isola o parser em processo com timeout duro."""
-    if not raw or PdfReader is None or len(raw) > PDF_MAX_BYTES or not raw.startswith(b"%PDF-"):
+    if not raw or PdfReader is None:
+        print("[PDF] ignorado: vazio ou parser indisponível", flush=True)
+        return ""
+    if len(raw) > PDF_MAX_BYTES:
+        print(f"[PDF] ignorado: tamanho>{PDF_MAX_BYTES}", flush=True)
+        return ""
+    if not raw.startswith(b"%PDF-"):
+        print("[PDF] ignorado: assinatura inválida", flush=True)
         return ""
     output = multiprocessing.Queue(1)
     process = multiprocessing.Process(target=_pdf_worker, args=(raw, output), daemon=True)
     process.start(); process.join(PDF_PARSE_TIMEOUT)
     if process.is_alive():
         process.terminate(); process.join(2)
+        print(f"[PDF] ignorado: timeout>{PDF_PARSE_TIMEOUT}s", flush=True)
         return ""
-    return output.get_nowait() if not output.empty() else ""
+    parsed = output.get_nowait() if not output.empty() else ""
+    if not parsed:
+        print("[PDF] ignorado: inválido ou corrompido", flush=True)
+    return parsed
 
 
 def lot_rows_from_text(

@@ -15,7 +15,7 @@ concurrency:
 jobs:
   descobrir:
     runs-on: ubuntu-latest
-    timeout-minutes: 210
+    timeout-minutes: 180
     env:
       TZ: America/Sao_Paulo
       PYTHONUNBUFFERED: "1"
@@ -27,6 +27,12 @@ jobs:
       MAX_URLS_PER_DOMAIN: "50"
       MAX_DEPTH: "2"
       REQUEST_TIMEOUT: "15"
+      REQUEST_RETRIES: "2"
+      GLOBAL_WORKERS: "6"
+      DOMAIN_TIME_BUDGET: "45"
+      DISCOVERY_TIME_BUDGET: "7200"
+      FAILURE_BACKOFF_BASE: "3600"
+      FAILURE_BACKOFF_MAX: "86400"
       PDF_MAX_BYTES: "15000000"
       PDF_MAX_PAGES: "120"
       PDF_PARSE_TIMEOUT: "20"
@@ -43,10 +49,20 @@ jobs:
       - name: Preflight obrigatório da OpenAI Web Search
         run: python openai_preflight.py --require
       - name: Executar pipeline profundo
-        run: python executar_atualizacao_radar.py --modo profundo --workers-mapa 24 --workers-lotes 16
+        shell: bash
+        run: |
+          set -o pipefail
+          python executar_atualizacao_radar.py \
+            --modo profundo \
+            --workers-mapa 24 \
+            --workers-lotes 16 \
+            --delay-lotes 0 \
+            2>&1 | tee descoberta_profunda.log
       - name: Testar e auditar cobertura
         run: |
           python -m unittest discover -v
+          python -m compileall -q .
+          git diff --check
           python auditar_cobertura.py "garra florestal" | tee auditoria_garra.txt
           python auditar_cobertura.py "garra florestal" --web | tee auditoria_garra_web.txt
       - name: Resumo Radar de Leilões
@@ -59,12 +75,53 @@ jobs:
               try: return json.loads(Path(name).read_text())
               except Exception: return {}
           d, c, l, s, p = (load(x) for x in ('relatorio_descoberta_web.json','relatorio_cobertura_radar.json','relatorio_atualizacao_lotes.json','status_atualizacao.json','openai_preflight.json'))
-          print('# RADAR DE LEILÕES\n\nMODO: PROFUNDO')
-          print(f"\n## OPENAI\nATIVA: {p.get('configurada', False)}  \nMODELO: {p.get('modelo', 'gpt-5-mini')}  \nCONEXÃO: {p.get('connection', 'NÃO TESTADA')}  \nCONSULTAS: {d.get('consultas_executadas', 0)}  \nRESULTADOS: {d.get('resultados_web', 0)}  \nNOVOS DOMÍNIOS: {d.get('novos_dominios', 0)}")
-          print(f"\n## CATÁLOGO\nPORTAIS: {c.get('total_dominios', 0)}  \nNOVOS: {c.get('dominios_novos', 0)}  \nBLOQUEADOS: {d.get('bloqueados', 0)}")
-          print(f"\n## LOTES\nANTES: {l.get('lotes_antes', 0)}  \nDEPOIS: {l.get('lotes_depois', 0)}  \nNOVOS: {l.get('lotes_realmente_novos', 0)}  \nENCERRADOS: {l.get('lotes_removidos_ou_encerrados', 0)}  \nFORA DO MAPA: {d.get('lotes_fora_do_mapa', 0)}")
-          print(f"\nSTATUS FINAL: {s.get('status', 'erro')}")
+          import csv
+          try:
+              mapa = sum(1 for _ in csv.DictReader(open('radar_leiloes_eventos_futuros.csv', encoding='utf-8-sig')))
+          except OSError:
+              mapa = 0
+          print('# Radar de Leilões')
+          print('MODO: PROFUNDO  ')
+          print(f"DURAÇÃO: {s.get('duracao_segundos', d.get('duracao', 0))}s  ")
+          print(f"OPENAI_CONFIGURADA: {p.get('configurada', False)}  ")
+          print(f"OPENAI_CONNECTION: {p.get('connection', 'NAO_TESTADA')}  ")
+          print(f"OPENAI_WEB_SEARCH: {p.get('web_search', 'NAO_TESTADA')}  ")
+          print(f"OPENAI_MODEL: {p.get('modelo', 'gpt-5-mini')}  ")
+          print(f"OPENAI_QUERIES: {d.get('consultas_executadas', 0)}  ")
+          print(f"OPENAI_RESULTS: {d.get('resultados_web', 0)}  ")
+          print(f"OPENAI_NEW_DOMAINS: {d.get('novos_dominios', 0)}  ")
+          print(f"PORTAIS_TOTAL: {c.get('total_dominios', 0)}  ")
+          print(f"PORTAIS_VISITADOS: {d.get('dominios_visitados', 0)}  ")
+          print(f"PORTAIS_OK: {d.get('portais_ok', 0)}  ")
+          print(f"PORTAIS_BLOQUEADOS: {d.get('bloqueados', 0)}  ")
+          print(f"PORTAIS_TIMEOUT: {d.get('timeouts', 0)}  ")
+          print(f"EVENTOS_MAPA: {mapa}  ")
+          print(f"EVENTOS_FORA_MAPA: {c.get('eventos_fora_do_mapa', 0)}  ")
+          print(f"EVENTOS_TOTAL: {c.get('total_eventos_ativos', mapa)}  ")
+          print(f"LOTES_ANTES: {l.get('lotes_antes', 0)}  ")
+          print(f"LOTES_DEPOIS: {l.get('lotes_depois', 0)}  ")
+          print(f"LOTES_NOVOS: {l.get('lotes_realmente_novos', 0)}  ")
+          print(f"LOTES_PRESERVADOS: {l.get('lotes_preservados', 0)}  ")
+          print(f"LOTES_FORA_MAPA: {c.get('LOTES_FORA_DO_MAPA', 0)}  ")
+          print(f"STATUS_FINAL: {s.get('status', 'erro')}")
           PY
+      - name: Guardar relatório profundo
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-descoberta-profunda
+          path: |
+            descoberta_profunda.log
+            openai_preflight.json
+            status_atualizacao.json
+            status_atualizacao.txt
+            relatorio_atualizacao_lotes.json
+            relatorio_descoberta_web.json
+            relatorio_cobertura_radar.json
+            auditoria_garra.txt
+            auditoria_garra_web.txt
+          if-no-files-found: ignore
+          retention-days: 14
       - name: Salvar alterações incrementais
         run: |
           git config user.name "Radar G MÁQUINA"

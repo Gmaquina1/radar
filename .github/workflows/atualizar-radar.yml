@@ -33,6 +33,14 @@ jobs:
       MAX_URLS_PER_DOMAIN: "15"
       MAX_DEPTH: "1"
       REQUEST_TIMEOUT: "10"
+      REQUEST_RETRIES: "1"
+      FAST_MAX_PORTALS: "30"
+      GLOBAL_WORKERS: "6"
+      DOMAIN_TIME_BUDGET: "20"
+      DISCOVERY_TIME_BUDGET: "600"
+      PDF_MAX_BYTES: "15000000"
+      PDF_MAX_PAGES: "120"
+      PDF_PARSE_TIMEOUT: "20"
 
     steps:
       - name: Baixar o repositório
@@ -64,7 +72,7 @@ jobs:
           test -f diagnostico_radar.py
           test -f .github/workflows/atualizar-radar.yml
 
-      - name: Verificar OpenAI Web Search
+      - name: Registrar configuração OpenAI do modo rápido
         shell: bash
         run: |
           model="${OPENAI_SEARCH_MODEL:-gpt-5-mini}"
@@ -77,6 +85,8 @@ jobs:
           fi
           echo "OPENAI_API_KEY_CONFIGURADA: $key_configurada"
           echo "OPENAI_SEARCH_MODEL: $model"
+          echo "OPENAI_CONNECTION: NAO_TESTADA_MODO_RAPIDO"
+          echo "OPENAI_WEB_SEARCH: NAO_EXECUTADA_MODO_RAPIDO"
           if [ "$key_configurada" = false ]; then
             echo "OPENAI_WEB_SEARCH_DESATIVADA: API KEY AUSENTE"
           fi
@@ -87,13 +97,22 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          python executar_atualizacao_radar.py             --workers-mapa 24             --workers-lotes 16             --delay-lotes 0             2>&1 | tee atualizacao.log
+          python executar_atualizacao_radar.py \
+            --modo rapido \
+            --workers-mapa 24 \
+            --workers-lotes 16 \
+            --delay-lotes 0 \
+            2>&1 | tee atualizacao.log
 
       - name: Executar testes de segurança
         id: testes
         if: always()
         continue-on-error: true
-        run: python -m unittest discover -v
+        shell: bash
+        run: |
+          python -m unittest discover -v
+          python -m compileall -q .
+          git diff --check
 
       - name: Resumo da cobertura nacional
         if: always()
@@ -109,25 +128,36 @@ jobs:
           try:
               mapa = sum(1 for _ in csv.DictReader(open('radar_leiloes_eventos_futuros.csv', encoding='utf-8-sig')))
           except OSError: mapa = 0
-          print('## Cobertura do Radar')
-          print(f"MAPA_EVENTOS: {mapa}")
-          print(f"CATALOGO_PORTAIS: {c.get('total_dominios', 0)}")
+          l, s = data('relatorio_atualizacao_lotes.json'), data('status_atualizacao.json')
+          print('## Radar de Leilões')
+          print(f"MODO: RÁPIDO  ")
+          print(f"DURAÇÃO: {s.get('duracao_segundos', 0)}s  ")
+          print(f"OPENAI_CONFIGURADA: {d.get('openai_configurada', False)}  ")
+          print("OPENAI_CONNECTION: NAO_TESTADA_MODO_RAPIDO  ")
+          print("OPENAI_WEB_SEARCH: NAO_EXECUTADA_MODO_RAPIDO  ")
+          print(f"OPENAI_MODEL: {d.get('modelo', 'gpt-5-mini')}  ")
+          print(f"OPENAI_QUERIES: {d.get('consultas_executadas', 0)}  ")
+          print(f"OPENAI_RESULTS: {d.get('resultados_web', 0)}  ")
+          print(f"OPENAI_NEW_DOMAINS: {d.get('novos_dominios', 0)}  ")
+          print(f"PORTAIS_TOTAL: {c.get('total_dominios', 0)}  ")
+          print(f"PORTAIS_VISITADOS: {d.get('dominios_visitados', 0)}  ")
+          print(f"PORTAIS_OK: {d.get('portais_ok', 0)}  ")
+          print(f"PORTAIS_BLOQUEADOS: {d.get('bloqueados', 0)}  ")
+          print(f"PORTAIS_TIMEOUT: {d.get('timeouts', 0)}  ")
+          print(f"EVENTOS_MAPA: {mapa}  ")
+          print(f"EVENTOS_FORA_MAPA: {c.get('eventos_fora_do_mapa', 0)}  ")
+          print(f"EVENTOS_TOTAL: {c.get('total_eventos_ativos', mapa)}  ")
+          print(f"LOTES_ANTES: {l.get('lotes_antes', 0)}  ")
+          print(f"LOTES_DEPOIS: {l.get('lotes_depois', 0)}  ")
+          print(f"LOTES_NOVOS: {l.get('lotes_realmente_novos', 0)}  ")
+          print(f"LOTES_PRESERVADOS: {l.get('lotes_preservados', 0)}  ")
+          print(f"LOTES_FORA_MAPA: {c.get('LOTES_FORA_DO_MAPA', 0)}  ")
+          print(f"STATUS_FINAL: {s.get('status', 'erro')}")
           ativa = bool(d.get('busca_web_configurada', False))
           consultas = d.get('consultas_executadas', 0)
           if isinstance(consultas, list): consultas = len(consultas)
-          print(f"BUSCA WEB OPENAI: {'ATIVA' if ativa else 'INATIVA'}")
-          print(f"MODELO: {d.get('modelo', 'gpt-5-mini')}")
-          print(f"CONSULTAS OPENAI: {consultas}")
-          print(f"RESULTADOS ENCONTRADOS: {d.get('resultados_web', 0)}")
-          print(f"NOVOS DOMÍNIOS: {d.get('novos_dominios', 0)}")
-          print(f"DOMINIOS_VISITADOS: {d.get('dominios_visitados', 0)}")
-          print(f"EVENTOS FORA DO MAPA: {c.get('eventos_fora_do_mapa', 0)}")
-          print(f"LOTES FORA DO MAPA: {c.get('LOTES_FORA_DO_MAPA', 0)}")
           if not ativa:
-              print('OPENAI_WEB_SEARCH_DESATIVADA: API KEY AUSENTE')
-          print(f"BLOQUEADOS: {d.get('bloqueados', 0)}")
-          print(f"ERROS: {len(d.get('erros', []))}")
-          print(f"DESCOBERTA_WEB_STATUS: {d.get('status', 'erro')}")
+            print('OPENAI_WEB_SEARCH_DESATIVADA: API KEY AUSENTE')
           PY
 
       - name: Auditar garra florestal
