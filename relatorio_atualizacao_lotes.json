@@ -1,15 +1,15 @@
 {
-  "executado_em": "2026-07-28T11:38:52-03:00",
-  "lotes_antes": 4468,
-  "lotes_depois": 4357,
-  "lotes_realmente_novos": 8,
-  "lotes_removidos_ou_encerrados": 65,
-  "lotes_preservados": 228,
-  "lotes_capturados_agora": 6074,
-  "lotes_capturados_com_chave_nova": 950,
+  "executado_em": "2026-07-28T13:18:40-03:00",
+  "lotes_antes": 4357,
+  "lotes_depois": 4217,
+  "lotes_realmente_novos": 2,
+  "lotes_removidos_ou_encerrados": 51,
+  "lotes_preservados": 136,
+  "lotes_capturados_agora": 6446,
+  "lotes_capturados_com_chave_nova": 1130,
   "eventos_analisados": 951,
-  "eventos_com_lotes": 344,
-  "eventos_com_erro": 102,
+  "eventos_com_lotes": 353,
+  "eventos_com_erro": 101,
   "eventos_bloqueados": 96,
   "links_invalidos": 3,
   "quantidade_coletada_por_leiloeiro": {
@@ -20,6 +20,7 @@
     "eckertleiloes.com.br": 145,
     "goias.gov.br": 2,
     "goldenlance.com.br": 134,
+    "hisaleiloes.com.br": 100,
     "jmleiloes.leilao.br": 6,
     "kleiloes.com.br": 82,
     "kronleiloes.com.br": 2,
@@ -28,8 +29,8 @@
     "lancevip.com.br": 97,
     "lbleiloes.com.br": 57,
     "leilao.detran.mg.gov.br": 100,
-    "leilao.sodresantoro.com.br": 23,
-    "leilaoonline.com.br": 263,
+    "leilao.sodresantoro.com.br": 22,
+    "leilaoonline.com.br": 257,
     "leiloai.com": 12,
     "leiloesalbino.com.br": 15,
     "leiloesfreire.com.br": 132,
@@ -38,11 +39,13 @@
     "lilianportugal.com.br": 91,
     "lipinskileiloes.com.br": 73,
     "lumussaleiloes.com.br": 27,
+    "marcusviniciusleiloes.com.br": 265,
     "mariafixerleiloes.com.br": 2,
     "mjleiloes.com.br": 241,
-    "nordesteleiloes.com.br": 33,
+    "nakakogueleiloes.com.br": 12,
+    "nordesteleiloes.com.br": 32,
     "okleiloes.com.br": 19,
-    "portalzuk.com.br": 65,
+    "portalzuk.com.br": 66,
     "rofremleiloes.com.br": 24,
     "rogeriomenezes.com.br": 532,
     "rossileiloes.com.br": 794,
@@ -52,7 +55,7 @@
     "satoleiloes.com.br": 1,
     "sfleiloes.com.br": 37,
     "sodresantoro.com.br": 94,
-    "sold.com.br": 1192,
+    "sold.com.br": 1194,
     "swleiloes.com.br": 98,
     "tesouroleiloes.com.br": 26,
     "topoleiloes.com.br": 57,
@@ -86,7 +89,6 @@
     "lottileiloes.com.br": 1,
     "mercado.bomvalor.com.br": 5,
     "mgl.com.br": 27,
-    "nakakogueleiloes.com.br": 1,
     "nsleiloes.leilao.br": 6,
     "patiorochaleiloes.com.br": 3,
     "pwleiloes.com.br": 6,
@@ -494,11 +496,6 @@
       "http": 403
     },
     {
-      "url": "https://www.nakakogueleiloes.com.br/lotes/137532/",
-      "status": "erro",
-      "http": 0
-    },
-    {
       "url": "https://www.gustavomorettoleiloeiro.com.br/leiloes/5279",
       "status": "erro",
       "http": 0
@@ -609,12 +606,7 @@
       "http": 404
     },
     {
-      "url": "https://leilo.com.br/login/?redirect=%2Fleilao%2F%3Fleilao.nome%3Devisa.immigration.gov.n",
-      "status": "http_502",
-      "http": 502
-    },
-    {
-      "url": "https://leilo.com.br/login/?redirect=%2Fleilao%2F%3Fleilao.nome%3DLEIL%25C3%2583O%2520EXCLUSIVO%2520DE%2520MOTOS%2520-%252025.07.26",
+      "url": "https://leilo.com.br/cadastro?redirect=%2Fleilao%2F%3Fleilao.nome%3Devisa.immigration.gov.n",
       "status": "http_502",
       "http": 502
     },
