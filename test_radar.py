@@ -11,6 +11,7 @@ import indexador_lotes as indexador
 import atualizar_radar_leiloes as atualizador
 import executar_atualizacao_radar as pipeline
 import gerar_site_github as site
+from personalizar_site import apply_date_highlights
 
 
 class RadarTests(unittest.TestCase):
@@ -159,6 +160,15 @@ class RadarTests(unittest.TestCase):
             with mock.patch.object(site, "VERIFIED_LOTS", path):
                 rows = site.read_verified_lots()
         self.assertEqual(rows[0]["titulo"], "Garra Florestal")
+
+    def test_site_oferece_hoje_amanha_e_data_especifica(self) -> None:
+        personalized = apply_date_highlights(site.TEMPLATE.read_text(encoding="utf-8"))
+        self.assertIn('data-date-shortcut="today"', personalized)
+        self.assertIn('data-date-shortcut="tomorrow"', personalized)
+        self.assertIn('id="exact-date-filter"', personalized)
+        self.assertIn("exactDate:''", personalized)
+        self.assertIn("row.data!==state.exactDate", personalized)
+        self.assertIn("state.exactDate===value&&source!=='calendar'", personalized)
 
     def test_relatorio_compara_chaves_estaveis(self) -> None:
         anterior = [{"link_lote": "https://exemplo.com/lote/1", "titulo": "Lote 1"}]

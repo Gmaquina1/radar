@@ -9,6 +9,8 @@ import re
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from personalizar_site import apply_date_highlights
+
 
 ROOT = Path(__file__).resolve().parent
 TEMPLATE = ROOT / "site_template.html"
@@ -167,7 +169,7 @@ def main() -> None:
         "lotes_com_edital": edital_lots,
     }
     data = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    template = TEMPLATE.read_text(encoding="utf-8")
+    template = apply_date_highlights(TEMPLATE.read_text(encoding="utf-8"))
     if "__RADAR_DATA__" not in template:
         raise SystemExit("O marcador __RADAR_DATA__ nao existe no template.")
     html = template.replace("__RADAR_DATA__", data)
