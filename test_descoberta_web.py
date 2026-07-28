@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 import tempfile
+import types
 import unittest
 from pathlib import Path
 from unittest.mock import Mock, patch
@@ -287,6 +289,25 @@ class OpenAIProviderTests(unittest.TestCase):
         kwargs = client.responses.create.call_args.kwargs
         self.assertEqual(kwargs["tools"], [{"type": "web_search"}])
         self.assertEqual(kwargs["include"], ["web_search_call.action.sources"])
+
+    def test_openai_usa_timeout_exclusivo(self):
+        fake_openai = types.ModuleType("openai")
+        factory = Mock()
+        fake_openai.OpenAI = factory
+        with patch.dict(
+            os.environ,
+            {
+                "OPENAI_REQUEST_TIMEOUT": "60",
+                "REQUEST_TIMEOUT": "15",
+            },
+            clear=True,
+        ), patch.dict(sys.modules, {"openai": fake_openai}):
+            OpenAIProvider(api_key="secret")
+        factory.assert_called_once_with(
+            api_key="secret",
+            timeout=60.0,
+            max_retries=1,
+        )
 
     def test_erros_api_propagam_para_orquestrador(self):
         for error in (TimeoutError("timeout"), RuntimeError("429"), RuntimeError("500")):
