@@ -26,6 +26,7 @@ from web_search import search_web
 
 ROOT = Path(__file__).resolve().parent
 CATALOG = ROOT / "portais_leiloes.json"
+PLANILHA_SOURCES = ROOT / "fontes_planilha.json"
 NEW_CATALOG = ROOT / "novos_portais_descobertos.json"
 STATE = ROOT / ".discovery_state.json"
 EVENTS = ROOT / "eventos_descobertos_web.json"
@@ -114,29 +115,94 @@ def _urls(value):
         yield from re.findall(r"https?://[^\s<>'\"\]\)]+", value, re.I)
 
 
-def bootstrap_portais(catalog_path: Path | None = None, sources: list[Path] | None = None, minimum: int = 3) -> list[dict]:
+def load_planilha_portals(path: Path | None = None) -> list[dict]:
+    """Carrega e agrupa as fontes da planilha que realmente publicam lotes."""
+    payload = read_json(path or PLANILHA_SOURCES, {})
+    items = payload.get("fontes", []) if isinstance(payload, dict) else []
+    grouped: dict[str, dict] = {}
+    for item in items:
+        if not isinstance(item, dict) or not item.get("coletar_lotes"):
+            continue
+        url = canonicalize_url(item.get("url"))
+        domain = host(url)
+        if not domain:
+            continue
+        portal = grouped.setdefault(
+            domain,
+            normalize_portal(
+                {
+                    "dominio": domain,
+                    "nome": str(item.get("nome") or domain),
+                    "ativo": True,
+                    "origem": "planilha_portais_2026_07_28",
+                    "url_exemplo": url,
+                    "tipo_coleta": "generico",
+                    "prioridade_radar": str(item.get("prioridade") or ""),
+                    "grupo_fonte": str(item.get("grupo") or "portal"),
+                    "caminhos_conhecidos": [],
+                }
+            ),
+        )
+        paths = portal.setdefault("caminhos_conhecidos", [])
+        if url not in paths:
+            paths.append(url)
+    return sorted(grouped.values(), key=lambda entry: entry["dominio"])
+
+
+def merge_planilha_portals(catalog: list[dict], path: Path | None = None) -> list[dict]:
+    """Mescla os seeds da planilha sem apagar o histórico aprendido do portal."""
+    known = {
+        entry.get("dominio"): entry
+        for entry in catalog
+        if isinstance(entry, dict) and entry.get("dominio")
+    }
+    for seed in load_planilha_portals(path):
+        domain = seed["dominio"]
+        if domain not in known:
+            known[domain] = seed
+            continue
+        current = normalize_portal(known[domain])
+        paths = current.setdefault("caminhos_conhecidos", [])
+        for url in seed.get("caminhos_conhecidos", []):
+            if url not in paths:
+                paths.append(url)
+        current.setdefault("nome", seed.get("nome", domain))
+        current.setdefault("prioridade_radar", seed.get("prioridade_radar", ""))
+        current.setdefault("grupo_fonte", seed.get("grupo_fonte", "portal"))
+        known[domain] = current
+    return sorted(known.values(), key=lambda entry: entry["dominio"])
+
+
+def bootstrap_portais(
+    catalog_path: Path | None = None,
+    sources: list[Path] | None = None,
+    minimum: int = 3,
+    planilha_path: Path | None = None,
+) -> list[dict]:
     """Seed a small/empty catalog strictly from Radar's persisted datasets."""
     catalog_path = catalog_path or CATALOG
     current = read_json(catalog_path, []); current = current if isinstance(current, list) else []
     known = {x.get("dominio"): x for x in current if isinstance(x, dict) and x.get("dominio")}
-    if len(known) >= minimum: return sorted(known.values(), key=lambda x: x["dominio"])
-    sources = sources or [ROOT / name for name in ("radar_leiloes_eventos_futuros.csv", "radar_leiloes_eventos_todos.csv", "lotes.json", "relatorio_atualizacao_lotes.json")]
-    for path in sources:
-        try:
-            if path.suffix == ".csv":
-                with path.open(encoding="utf-8-sig", newline="") as handle:
-                    values = (value for row in csv.DictReader(handle) for value in row.values())
-                    urls = (url for value in values for url in _urls(value))
-                    for url in urls:
+    if len(known) < minimum:
+        sources = sources or [ROOT / name for name in ("radar_leiloes_eventos_futuros.csv", "radar_leiloes_eventos_todos.csv", "lotes.json", "relatorio_atualizacao_lotes.json")]
+        for path in sources:
+            try:
+                if path.suffix == ".csv":
+                    with path.open(encoding="utf-8-sig", newline="") as handle:
+                        values = (value for row in csv.DictReader(handle) for value in row.values())
+                        urls = (url for value in values for url in _urls(value))
+                        for url in urls:
+                            domain = host(url)
+                            if domain: known.setdefault(domain, {"dominio": domain, "ativo": True, "origem": "bootstrap_base", "url_exemplo": canonicalize_url(url), "tipo_coleta": "generico"})
+                else:
+                    for url in _urls(read_json(path, {})):
                         domain = host(url)
                         if domain: known.setdefault(domain, {"dominio": domain, "ativo": True, "origem": "bootstrap_base", "url_exemplo": canonicalize_url(url), "tipo_coleta": "generico"})
-            else:
-                for url in _urls(read_json(path, {})):
-                    domain = host(url)
-                    if domain: known.setdefault(domain, {"dominio": domain, "ativo": True, "origem": "bootstrap_base", "url_exemplo": canonicalize_url(url), "tipo_coleta": "generico"})
-        except (OSError, csv.Error, UnicodeError, ValueError):
-            continue
-    result = sorted(known.values(), key=lambda x: x["dominio"]); write_json(catalog_path, result); return result
+            except (OSError, csv.Error, UnicodeError, ValueError):
+                continue
+    result = merge_planilha_portals(list(known.values()), planilha_path)
+    write_json(catalog_path, result)
+    return result
 
 
 def error_record(domain, url, stage, exc=None, http_status=None):
@@ -299,7 +365,11 @@ def _portal_due(entry: dict, current: datetime | None = None) -> bool:
 
 
 def select_portals(catalog: list[dict], deep: bool) -> list[dict]:
-    active = [entry for entry in catalog if entry.get("ativo", True) and _portal_due(entry)]
+    active = [
+        entry
+        for entry in catalog
+        if entry.get("ativo", True) and (deep or _portal_due(entry))
+    ]
     active.sort(
         key=lambda entry: (
             _parsed_timestamp(entry.get("ultima_verificacao"))
