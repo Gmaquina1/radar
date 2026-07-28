@@ -1,5 +1,31 @@
 [
   {
+    "dominio": "adrianoleiloeiro.com.br",
+    "nome": "Adriano Leiloeiro",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://adrianoleiloeiro.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://adrianoleiloeiro.com.br/"
+    ],
+    "pagina_eventos": "https://adrianoleiloeiro.com.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:02+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:02+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 1.4,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "agencia.ac.gov.br",
     "ativo": true,
     "origem": "openai_web_search",
@@ -24,6 +50,62 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "alfaleiloes.com",
+    "nome": "Alfa Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://alfaleiloes.com/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://alfaleiloes.com/",
+      "https://alfaleiloes.com/cadastro_fisico",
+      "https://alfaleiloes.com/cadastro_juridico"
+    ],
+    "pagina_eventos": "https://alfaleiloes.com/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:02+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:02+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 1.68,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "alleiloes.com.br",
+    "nome": "AL Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://alleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://alleiloes.com.br/",
+      "https://alleiloes.com.br/agenda",
+      "https://alleiloes.com.br/venda-direta"
+    ],
+    "pagina_eventos": "https://alleiloes.com.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:01+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:01+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0.57,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "alvesleiloes.com.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -42,6 +124,60 @@
     "caminhos_conhecidos": [
       "https://alvesleiloes.com.br/leilao/251/lotes"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "amazonasleiloes.com.br",
+    "nome": "Amazonas Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://amazonasleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://amazonasleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-28T17:43:01+00:00",
+    "ultimo_sucesso": "",
+    "status_acesso": "temporariamente_bloqueado",
+    "falhas_consecutivas": 1,
+    "tempo_resposta": 0.25,
+    "proxima_verificacao": "2026-07-28T18:43:01+00:00",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "amleiloeiro.com.br",
+    "nome": "AM Leiloeiro",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://amleiloeiro.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://amleiloeiro.com.br/",
+      "https://amleiloeiro.com.br/leilao/332/leilao-vara-da-fazenda-publica-de-terra-boa",
+      "https://amleiloeiro.com.br/lote/22887/sofas"
+    ],
+    "pagina_eventos": "https://amleiloeiro.com.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:01+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:01+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0.51,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -150,6 +286,32 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "aragaoleiloes.com.br",
+    "nome": "Aragão Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://aragaoleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://aragaoleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-28T17:43:01+00:00",
+    "ultimo_sucesso": "",
+    "status_acesso": "temporariamente_bloqueado",
+    "falhas_consecutivas": 1,
+    "tempo_resposta": 0.24,
+    "proxima_verificacao": "2026-07-28T18:43:01+00:00",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "argonetworkleiloes.com.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -192,6 +354,32 @@
     "caminhos_conhecidos": [
       "https://armazviplprd.blob.core.windows.net/controle/geral/1/d3ca3a3189004cd69d35b7f48801e90c.pdf"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "arthurnunes.leilao.br",
+    "nome": "Arthur Nunes Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://arthurnunes.leilao.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://arthurnunes.leilao.br/"
+    ],
+    "pagina_eventos": "https://arthurnunes.leilao.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:01+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:01+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0.43,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -495,6 +683,37 @@
     ],
     "etag": "",
     "last_modified": "",
+    "hash_conteudo": "",
+    "nome": "CAIXA — bens móveis",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "fonte_oficial"
+  },
+  {
+    "dominio": "casadeleiloes.com.br",
+    "nome": "Casa de Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://casadeleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://casadeleiloes.com.br/",
+      "https://casadeleiloes.com.br/login.aspx?tipo=portal",
+      "https://casadeleiloes.com.br/login.aspx"
+    ],
+    "pagina_eventos": "https://casadeleiloes.com.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:02+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:02+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 1.58,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
     "hash_conteudo": ""
   },
   {
@@ -614,6 +833,88 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "celsocunhaleiloes.com.br",
+    "nome": "Celso Cunha Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://celsocunhaleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://celsocunhaleiloes.com.br/",
+      "https://celsocunhaleiloes.com.br/esqueci-senha",
+      "https://celsocunhaleiloes.com.br/cadastro"
+    ],
+    "pagina_eventos": "https://celsocunhaleiloes.com.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:03+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:03+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 1.7,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "centralsuldeleiloes.com.br",
+    "nome": "Central Sul de Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://centralsuldeleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://centralsuldeleiloes.com.br/"
+    ],
+    "pagina_eventos": "https://centralsuldeleiloes.com.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:02+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:02+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 1.5,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "cidafixerleiloes.com.br",
+    "nome": "Cida Fixer Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://cidafixerleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://cidafixerleiloes.com.br/",
+      "https://cidafixerleiloes.com.br/index/politica-privacidade",
+      "https://cidafixerleiloes.com.br/index/login"
+    ],
+    "pagina_eventos": "https://cidafixerleiloes.com.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:02+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:02+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0.83,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "claudiokussleiloes.com.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -653,11 +954,15 @@
     "tempo_resposta": 0.24,
     "proxima_verificacao": "2026-07-28T16:35:20+00:00",
     "caminhos_conhecidos": [
-      "https://clicleiloes.com.br/leilao/1946/lotes"
+      "https://clicleiloes.com.br/leilao/1946/lotes",
+      "https://clicleiloes.com.br/"
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "Clic Leilões",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal"
   },
   {
     "dominio": "colossoleiloes.com.br",
@@ -720,6 +1025,32 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "construbemleiloes.com.br",
+    "nome": "Construbem Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://construbemleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://construbemleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-28T17:43:02+00:00",
+    "ultimo_sucesso": "",
+    "status_acesso": "temporariamente_bloqueado",
+    "falhas_consecutivas": 1,
+    "tempo_resposta": 0.19,
+    "proxima_verificacao": "2026-07-28T18:43:02+00:00",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "controle3.vipleiloes.com.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -770,11 +1101,15 @@
       "https://copart.com.br/saleListResult/auctionId/driverseat/mylots",
       "https://copart.com.br/saleListResult/auctionId/vehicleFinder",
       "https://copart.com.br/saleListResult/auctionId/salesListResult",
-      "https://copart.com.br/saleListResult/auctionId/public/watchList"
+      "https://copart.com.br/saleListResult/auctionId/public/watchList",
+      "https://copart.com.br/"
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "Copart Brasil",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
   },
   {
     "dominio": "danielgarcialeiloes.com.br",
@@ -793,8 +1128,40 @@
     "tempo_resposta": 0.04,
     "proxima_verificacao": "2026-07-28T18:15:25+00:00",
     "caminhos_conhecidos": [
-      "https://danielgarcialeiloes.com.br/leilao/7719/lotes"
+      "https://danielgarcialeiloes.com.br/leilao/7719/lotes",
+      "https://danielgarcialeiloes.com.br/"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": "",
+    "nome": "Daniel Garcia Leilões",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
+  },
+  {
+    "dominio": "deonizialeiloes.com.br",
+    "nome": "Deonizia Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://deonizialeiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://deonizialeiloes.com.br/",
+      "https://deonizialeiloes.com.br/index/politica-privacidade",
+      "https://deonizialeiloes.com.br/index/login"
+    ],
+    "pagina_eventos": "https://deonizialeiloes.com.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:03+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:03+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0.82,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -841,6 +1208,33 @@
     "caminhos_conhecidos": [
       "https://diegoleiloes.com.br/leilao/1083/lotes"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "donizetteleiloes.com.br",
+    "nome": "Donizette Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://donizetteleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://donizetteleiloes.com.br/",
+      "https://donizetteleiloes.leilao.br/"
+    ],
+    "pagina_eventos": "https://donizetteleiloes.com.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:04+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:04+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 1.89,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -927,7 +1321,10 @@
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "E-Leilões",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
   },
   {
     "dominio": "eblonline.com.br",
@@ -1043,6 +1440,60 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "fernandoleiloeiro.com.br",
+    "nome": "Fernando Leiloeiro",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://fernandoleiloeiro.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://fernandoleiloeiro.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-28T17:43:02+00:00",
+    "ultimo_sucesso": "",
+    "status_acesso": "temporariamente_bloqueado",
+    "falhas_consecutivas": 1,
+    "tempo_resposta": 0.21,
+    "proxima_verificacao": "2026-07-28T18:43:02+00:00",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "franciscofreitasleiloes.com.br",
+    "nome": "Francisco Freitas Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://franciscofreitasleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://franciscofreitasleiloes.com.br/",
+      "https://franciscofreitasleiloes.com.br/index/politica-privacidade",
+      "https://franciscofreitasleiloes.com.br/index/quem-somos"
+    ],
+    "pagina_eventos": "https://franciscofreitasleiloes.com.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:03+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:03+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0.58,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "freitasleiloeiro.com.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -1059,8 +1510,96 @@
     "tempo_resposta": 3.0,
     "proxima_verificacao": "2026-07-28T20:15:31+00:00",
     "caminhos_conhecidos": [
-      "https://freitasleiloeiro.com.br/Leiloes/Lotes?leilaoId=7951"
+      "https://freitasleiloeiro.com.br/Leiloes/Lotes?leilaoId=7951",
+      "https://freitasleiloeiro.com.br/"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": "",
+    "nome": "Freitas Leiloeiro",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
+  },
+  {
+    "dominio": "ggleiloes.com.br",
+    "nome": "GG Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://ggleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://ggleiloes.com.br/",
+      "https://ggleiloes.com.br/login",
+      "https://ggleiloes.com.br/buscador"
+    ],
+    "pagina_eventos": "https://ggleiloes.com.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:04+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:04+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 1.59,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "gilsonleiloes.com.br",
+    "nome": "Gilson Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://gilsonleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://gilsonleiloes.com.br/",
+      "https://gilsonleiloes.com.br/index/politica-privacidade",
+      "https://gilsonleiloes.com.br/index/login"
+    ],
+    "pagina_eventos": "https://gilsonleiloes.com.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:03+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:03+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0.82,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "giordanoleiloes.com.br",
+    "nome": "Giordano Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://giordanoleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://giordanoleiloes.com.br/",
+      "https://giordanoleiloes.com.br/index/politica-privacidade",
+      "https://giordanoleiloes.com.br/index/quem-somos"
+    ],
+    "pagina_eventos": "https://giordanoleiloes.com.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:03+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:03+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0.84,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -1226,8 +1765,66 @@
       "https://gov.br/receitafederal/pt-br/assuntos/leilao/perguntas-e-respostas-leilao-eletronico-fevereiro-2024.pdf",
       "https://gov.br/receitafederal/pt-br/assuntos/leilao/manual-leilao/manual-do-licitante.pdf",
       "https://gov.br/receitafederal/pt-br/assuntos/leilao/legislacao-sobre-leilao",
-      "https://gov.br/receitafederal/pt-br/assuntos/leilao/arrecadacao"
+      "https://gov.br/receitafederal/pt-br/assuntos/leilao/arrecadacao",
+      "https://gov.br/compras/pt-br",
+      "https://gov.br/prf/pt-br/assuntos/leiloes-prf",
+      "https://gov.br/pgfn/pt-br/servicos/orgaos-publicos-e-parceiros/comprei"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": "",
+    "nome": "Compras.gov.br",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "fonte_oficial"
+  },
+  {
+    "dominio": "gpleiloes.com.br",
+    "nome": "GP Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://gpleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://gpleiloes.com.br/"
+    ],
+    "pagina_eventos": "https://gpleiloes.com.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:03+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:03+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0.24,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "gracamedeirosleiloes.com.br",
+    "nome": "Graça Medeiros Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://gracamedeirosleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://gracamedeirosleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-28T17:43:29+00:00",
+    "ultimo_sucesso": "",
+    "status_acesso": "timeout",
+    "falhas_consecutivas": 1,
+    "tempo_resposta": 26.47,
+    "proxima_verificacao": "2026-07-28T18:43:29+00:00",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -1256,6 +1853,34 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "grupolance.com.br",
+    "nome": "Grupo Lance",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://grupolance.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://grupolance.com.br/",
+      "https://grupolance.com.br/imoveis/terrenos-e-lotes",
+      "https://grupolance.com.br/leiloes/judiciais"
+    ],
+    "pagina_eventos": "https://grupolance.com.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:07+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:07+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 3.91,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "guariglialeiloes.com.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -1272,11 +1897,15 @@
     "tempo_resposta": 0.15,
     "proxima_verificacao": "2026-07-28T20:15:29+00:00",
     "caminhos_conhecidos": [
-      "https://guariglialeiloes.com.br/leilao/821/lotes"
+      "https://guariglialeiloes.com.br/leilao/821/lotes",
+      "https://guariglialeiloes.com.br/"
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "Guariglia Leilões",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
   },
   {
     "dominio": "gustavomorettoleiloeiro.com.br",
@@ -1320,6 +1949,34 @@
     "caminhos_conhecidos": [
       "https://gutembergaraujoleiloes.com.br/leilao/230/lotes"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "hastapublica.com.br",
+    "nome": "Hasta Pública",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://hastapublica.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://hastapublica.com.br/",
+      "https://hastapublica.com.br/leilao/17730/ver-leilao",
+      "https://hastapublica.com.br/leilao/18157/ver-leilao"
+    ],
+    "pagina_eventos": "https://hastapublica.com.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:07+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:07+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 3.41,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -1415,6 +2072,32 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "hoppeleiloes.com.br",
+    "nome": "Hoppe Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://hoppeleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://hoppeleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-28T17:43:07+00:00",
+    "ultimo_sucesso": "",
+    "status_acesso": "timeout",
+    "falhas_consecutivas": 1,
+    "tempo_resposta": 3.3,
+    "proxima_verificacao": "2026-07-28T18:43:07+00:00",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "img.youtube.com",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -1433,6 +2116,32 @@
     "caminhos_conhecidos": [
       "https://img.youtube.com/vi/laPg5DZis9U/0.jpg"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "infinityleiloes.com.br",
+    "nome": "Infinity Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://infinityleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://infinityleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-28T17:43:04+00:00",
+    "ultimo_sucesso": "",
+    "status_acesso": "temporariamente_bloqueado",
+    "falhas_consecutivas": 1,
+    "tempo_resposta": 0.19,
+    "proxima_verificacao": "2026-07-28T18:43:04+00:00",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -1461,6 +2170,33 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "jeleiloes.com.br",
+    "nome": "JE Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://jeleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://jeleiloes.com.br/",
+      "https://jeleiloes.com.br/client/arquivos/curriculo-je_2025.pdf"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:05+00:00",
+    "ultimo_sucesso": "",
+    "status_acesso": "erro_temporario",
+    "falhas_consecutivas": 1,
+    "tempo_resposta": 1.08,
+    "proxima_verificacao": "2026-07-28T18:43:05+00:00",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "jeremyleiloes.com.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -1479,6 +2215,32 @@
     "caminhos_conhecidos": [
       "https://jeremyleiloes.com.br/evento/municipio-de-ponta-grossa-pr-788195?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "jmfleiloes.com.br",
+    "nome": "JMF Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://jmfleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://jmfleiloes.com.br/"
+    ],
+    "pagina_eventos": "https://jmfleiloes.com.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:05+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:05+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 1.25,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -1564,6 +2326,34 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "jrleiloes.com.br",
+    "nome": "JR Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://jrleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://jrleiloes.com.br/",
+      "https://jrleiloes.com.br/index/politica-privacidade",
+      "https://jrleiloes.com.br/index/quem-somos"
+    ],
+    "pagina_eventos": "https://jrleiloes.com.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:06+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:06+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0.68,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "juleiloes.com.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -1582,6 +2372,32 @@
     "caminhos_conhecidos": [
       "https://juleiloes.com.br/leilao/leilao-de-bens-do-municipio-de-guabiju-rs-16-07-2026-14-03-35/lotes/lista"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "kildareleiloes.com.br",
+    "nome": "Kildare Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://kildareleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://kildareleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "2026-07-28T17:43:05+00:00",
+    "ultimo_sucesso": "",
+    "status_acesso": "temporariamente_bloqueado",
+    "falhas_consecutivas": 1,
+    "tempo_resposta": 0.17,
+    "proxima_verificacao": "2026-07-28T18:43:05+00:00",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -1619,7 +2435,10 @@
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "K Leilões",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal"
   },
   {
     "dominio": "kronleiloes.com.br",
@@ -1730,8 +2549,40 @@
     "tempo_resposta": 20.02,
     "proxima_verificacao": "2026-07-28T18:51:19+00:00",
     "caminhos_conhecidos": [
-      "https://lancecertoleiloes.com.br/leilao/290726VE"
+      "https://lancecertoleiloes.com.br/leilao/290726VE",
+      "https://lancecertoleiloes.com.br/"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": "",
+    "nome": "Lance Certo Leilões",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
+  },
+  {
+    "dominio": "lancejusto.com.br",
+    "nome": "Lance Justo",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://lancejusto.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://lancejusto.com.br/",
+      "https://lancejusto.com.br/leilao/97/oportunidade-em-curitiba",
+      "https://lancejusto.com.br/lote/425/condominio-theodoro-de-bona-50-da-avaliacao-casa-com-piscina-e-instalacoes-de-alto-padrao"
+    ],
+    "pagina_eventos": "https://lancejusto.com.br/",
+    "sitemap": "",
+    "possui_eventos": true,
+    "possui_lotes": true,
+    "ultima_verificacao": "2026-07-28T17:43:06+00:00",
+    "ultimo_sucesso": "2026-07-28T17:43:06+00:00",
+    "status_acesso": "ok",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0.51,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -1787,11 +2638,15 @@
       "https://lancevip.com.br/eventos/leilao/prefeitura-municipal-de-sulina-leilao-para-alienacao-de-bens-publicos-inserviveis/lote/35157/mercedez-benz-l-1620",
       "https://lancevip.com.br/eventos/leilao/prefeitura-municipal-de-sulina-leilao-para-alienacao-de-bens-publicos-inserviveis/lote/35156/ford-f14000-hd",
       "https://lancevip.com.br/eventos/leilao/prefeitura-municipal-de-sulina-leilao-para-alienacao-de-bens-publicos-inserviveis/lote/35155/retroescavadeira-4x4-turbo-diesel",
-      "https://lancevip.com.br/eventos/leilao/prefeitura-municipal-de-sulina-leilao-para-alienacao-de-bens-publicos-inserviveis/lote/35158/retroescavadeira-modelo-3cx"
+      "https://lancevip.com.br/eventos/leilao/prefeitura-municipal-de-sulina-leilao-para-alienacao-de-bens-publicos-inserviveis/lote/35158/retroescavadeira-modelo-3cx",
+      "https://lancevip.com.br/"
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "Lance VIP Leilões",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal"
   },
   {
     "dominio": "lbleiloes.com.br",
@@ -1882,7 +2737,10 @@
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "DETRAN-MG — Leilões",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "fonte_oficial"
   },
   {
     "dominio": "leilao.sodresantoro.com.br",
@@ -1904,6 +2762,84 @@
       "https://leilao.sodresantoro.com.br/leilao/28776/lote/2781297",
       "https://leilao.sodresantoro.com.br/sem_sessao"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "leilaobrasil.com.br",
+    "nome": "Leilão Brasil",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://leilaobrasil.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://leilaobrasil.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "leilaoeletronico.com.br",
+    "nome": "Leilão Eletrônico",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://leilaoeletronico.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://leilaoeletronico.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "leilaoimovel.com.br",
+    "nome": "Leilão Imóvel",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://leilaoimovel.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://leilaoimovel.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -1943,6 +2879,32 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "leilaovip.com.br",
+    "nome": "Leilão VIP",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://leilaovip.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://leilaovip.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "leilo.com.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -1971,11 +2933,15 @@
       "https://leilo.com.br/leilao/leiloshop",
       "https://leilo.com.br/cadastro?redirect=%2Fcadastro%3Fredirect%3D%252Fleilao%252F%253Fleilao.nome%253Devisa.immigration.gov.n",
       "https://leilo.com.br/login?redirect=%2Fcadastro%3Fredirect%3D%252Fleilao%252F%253Fleilao.nome%253Devisa.immigration.gov.n",
-      "https://leilo.com.br/cadastro?redirect=%2Fleilao%2F%3Fsrsltid%3DAfmBOorlr9z96NVBmwbM59lyzmNckLx8QBXJkPGg1W0KwMjCn0kq1v5V"
+      "https://leilo.com.br/cadastro?redirect=%2Fleilao%2F%3Fsrsltid%3DAfmBOorlr9z96NVBmwbM59lyzmNckLx8QBXJkPGg1W0KwMjCn0kq1v5V",
+      "https://leilo.com.br/"
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "Leilo",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
   },
   {
     "dominio": "leiloai.com",
@@ -2008,6 +2974,32 @@
       "https://leiloai.com/leiloes/imovel/al",
       "https://leiloai.com/leiloes/imovel/am"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "leiloeiropublico.com.br",
+    "nome": "Leiloeiro Público",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://leiloeiropublico.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://leiloeiropublico.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -2054,6 +3046,58 @@
     "caminhos_conhecidos": [
       "https://leiloesalbino.com.br/Leiloes?leilaoId=823"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "leiloesbr.com.br",
+    "nome": "LeilõesBR",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://leiloesbr.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Baixa",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://leiloesbr.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "leiloesbrasil.com.br",
+    "nome": "Leilões Brasil",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://leiloesbrasil.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://leiloesbrasil.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -2117,6 +3161,58 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "leiloesjudiciais.com.br",
+    "nome": "Leilões Judiciais",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://leiloesjudiciais.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://leiloesjudiciais.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "leiloesjudiciaisbahia.com.br",
+    "nome": "Leilões Judiciais Bahia",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://leiloesjudiciaisbahia.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://leiloesjudiciaisbahia.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "leiloesmager.com.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -2169,6 +3265,84 @@
       "https://leiloesoliveira.com.br/buscador?subcategoria=8",
       "https://leiloesoliveira.com.br/buscador?subcategoria=14"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "leiloespb.com.br",
+    "nome": "Leilões PB",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://leiloespb.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://leiloespb.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "leiloessantosmoraes.com.br",
+    "nome": "Leilões Santos Moraes",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://leiloessantosmoraes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://leiloessantosmoraes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "leje.com.br",
+    "nome": "LEJE",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://leje.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://leje.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -2274,7 +3448,10 @@
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "Líder Leilões",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
   },
   {
     "dominio": "lilianportugal.com.br",
@@ -2400,6 +3577,32 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "lopesleiloes.net.br",
+    "nome": "Lopes Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://lopesleiloes.net.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://lopesleiloes.net.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "lottileiloes.com.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -2418,6 +3621,32 @@
     "caminhos_conhecidos": [
       "https://lottileiloes.com.br/leilao/751/lotes"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "lucasleiloeiro.com.br",
+    "nome": "Lucas Leiloeiro",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://lucasleiloeiro.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://lucasleiloeiro.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -2457,6 +3686,32 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "machadoleiloeiro.com.br",
+    "nome": "Machado Leiloeiro",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://machadoleiloeiro.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://machadoleiloeiro.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "mafraleiloes.com.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -2475,6 +3730,32 @@
     "caminhos_conhecidos": [
       "https://mafraleiloes.com.br/evento/bens-inserviveis-municipio-sao-pedro-do-butia-rs-789421?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "maleiloesro.com.br",
+    "nome": "MA Leilões RO",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://maleiloesro.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://maleiloesro.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -2514,6 +3795,32 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "maraurzedoleilao.com.br",
+    "nome": "Mara Urzedo Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://maraurzedoleilao.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://maraurzedoleilao.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "marcusviniciusleiloes.com.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -2541,11 +3848,15 @@
       "https://marcusviniciusleiloes.com.br/upload/files/2026/6/edital-de-leilao-da-prefeitura-de-engenheiro-navar24151656.pdf",
       "https://marcusviniciusleiloes.com.br/leilao/686/item/3594/lote-01/um-veiculo-van-fiat-ducato-minibus-15-lugares-cor-branca-ano-2012-2013-placa-opf-8701-chassi-93w244m24d2100074-renavam-507008278",
       "https://marcusviniciusleiloes.com.br/leilao/686/item/3595/lote-02/um-veiculo-vw-up-move-ma-cor-branca-ano-2014-2015-placa-puc-6155-chassi-9bwag4129ft529127-renavam-01010666875",
-      "https://marcusviniciusleiloes.com.br/leilao/686/item/3596/lote-03/um-veiculo-fiat-palio-fire-cor-branca-ano-2015-2016-placa-pxk-4730-chassi-9bd17122zg7570154-renavam-01079538264"
+      "https://marcusviniciusleiloes.com.br/leilao/686/item/3596/lote-03/um-veiculo-fiat-palio-fire-cor-branca-ano-2015-2016-placa-pxk-4730-chassi-9bd17122zg7570154-renavam-01079538264",
+      "https://marcusviniciusleiloes.com.br/"
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "Marcus Vinícius Leilões",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
   },
   {
     "dominio": "mariafixerleiloes.com.br",
@@ -2576,6 +3887,61 @@
       "https://mariafixerleiloes.com.br/leilao/index/semoventes",
       "https://mariafixerleiloes.com.br/leilao/index/judicial"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": "",
+    "nome": "Maria Fixer Leilões",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal"
+  },
+  {
+    "dominio": "marquesleiloes.com.br",
+    "nome": "Marques Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://marquesleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://marquesleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "megaleiloes.com.br",
+    "nome": "Mega Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://megaleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://megaleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -2620,11 +3986,15 @@
     "tempo_resposta": 0.18,
     "proxima_verificacao": "2026-07-28T18:51:04+00:00",
     "caminhos_conhecidos": [
-      "https://mgl.com.br/leilao/prefeitura-municipal-de-morro-da-fumaca-sc/7185"
+      "https://mgl.com.br/leilao/prefeitura-municipal-de-morro-da-fumaca-sc/7185",
+      "https://mgl.com.br/"
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "MGL Leilões",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
   },
   {
     "dominio": "mgrleiloes.com.br",
@@ -2661,6 +4031,32 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "milanleiloes.com.br",
+    "nome": "Milan Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://milanleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://milanleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "mjleiloes.com.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -2692,7 +4088,10 @@
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "MJ Leilões",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal"
   },
   {
     "dominio": "montenegroleiloes.com.br",
@@ -2726,7 +4125,10 @@
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "Montenegro Leilões",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
   },
   {
     "dominio": "monzonleiloes.com.br",
@@ -2747,6 +4149,32 @@
     "caminhos_conhecidos": [
       "https://monzonleiloes.com.br/evento/leilao-veiculos-e-bens-moveis-sao-joao-do-caiua-pr-783948?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "moraesleiloes.com.br",
+    "nome": "Moraes Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://moraesleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://moraesleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -2793,6 +4221,58 @@
     "caminhos_conhecidos": [
       "https://nakakogueleiloes.com.br/lotes/137532"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "nasarleiloes.com.br",
+    "nome": "Nasar Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://nasarleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://nasarleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "nogarileiloes.com.br",
+    "nome": "Nogari Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://nogarileiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://nogarileiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -2855,6 +4335,84 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "norteleiloes.com.br",
+    "nome": "Norte Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://norteleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://norteleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "nortenordesteleiloes.com.br",
+    "nome": "Norte Nordeste Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://nortenordesteleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://nortenordesteleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "nossoleilao.com.br",
+    "nome": "Nosso Leilão",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://nossoleilao.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://nossoleilao.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "nsleiloes.leilao.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -2909,6 +4467,32 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "pactoleiloes.com.br",
+    "nome": "Pacto Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://pactoleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://pactoleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "palaciodosleiloes.com.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -2936,8 +4520,38 @@
       "https://palaciodosleiloes.com.br/site/publicacoes.php",
       "https://palaciodosleiloes.com.br/site/evento.php",
       "https://palaciodosleiloes.com.br/site/trabalhe_conosco.php",
-      "https://palaciodosleiloes.com.br/site/produtos.php"
+      "https://palaciodosleiloes.com.br/site/produtos.php",
+      "https://palaciodosleiloes.com.br/"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": "",
+    "nome": "Palácio dos Leilões",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
+  },
+  {
+    "dominio": "parquedosleiloes.com.br",
+    "nome": "Parque dos Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://parquedosleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://parquedosleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -2959,8 +4573,64 @@
     "tempo_resposta": 0.2,
     "proxima_verificacao": "2026-07-28T18:51:07+00:00",
     "caminhos_conhecidos": [
-      "https://patiorochaleiloes.com.br/leilao/856/lotes?page=1"
+      "https://patiorochaleiloes.com.br/leilao/856/lotes?page=1",
+      "https://patiorochaleiloes.com.br/"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": "",
+    "nome": "Pátio Rocha Leilões",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
+  },
+  {
+    "dominio": "peracchileiloes.com.br",
+    "nome": "Peracchi Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://peracchileiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://peracchileiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "pereiraleiloesce.com.br",
+    "nome": "Pereira Leilões CE",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://pereiraleiloesce.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://pereiraleiloesce.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -2987,6 +4657,61 @@
     ],
     "etag": "",
     "last_modified": "",
+    "hash_conteudo": "",
+    "nome": "Pestana Leilões",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
+  },
+  {
+    "dominio": "peterlongoleiloes.com.br",
+    "nome": "Peterlongo Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://peterlongoleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://peterlongoleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "pimentelleiloes.com.br",
+    "nome": "Pimentel Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://pimentelleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://pimentelleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
     "hash_conteudo": ""
   },
   {
@@ -3008,6 +4733,58 @@
     "caminhos_conhecidos": [
       "https://plazaleiloes.com.br/leilao/1018/lotes"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "pncp.gov.br",
+    "nome": "PNCP — Editais",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://pncp.gov.br/app/editais",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Essencial",
+    "grupo_fonte": "fonte_oficial",
+    "caminhos_conhecidos": [
+      "https://pncp.gov.br/app/editais"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "portaldoleiloeiro.com.br",
+    "nome": "Portal do Leiloeiro",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://portaldoleiloeiro.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://portaldoleiloeiro.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -3041,8 +4818,38 @@
       "https://portalzuk.com.br/leilao-de-imoveis/tl/todos-imoveis/recebendo-proposta?order=lancamento",
       "https://portalzuk.com.br/leilao-de-imoveis/tl/proximos-leiloes",
       "https://portalzuk.com.br/agenda/leiloes",
-      "https://portalzuk.com.br/leilao-de-cotas-de-consorcio"
+      "https://portalzuk.com.br/leilao-de-cotas-de-consorcio",
+      "https://portalzuk.com.br/"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": "",
+    "nome": "Portal Zuk",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal"
+  },
+  {
+    "dominio": "psnleiloes.com.br",
+    "nome": "PSN Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://psnleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://psnleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -3064,11 +4871,15 @@
     "tempo_resposta": 0.22,
     "proxima_verificacao": "2026-07-28T18:51:07+00:00",
     "caminhos_conhecidos": [
-      "https://pwleiloes.com.br/leilao/prefeitura-municipal-de-muriae/585"
+      "https://pwleiloes.com.br/leilao/prefeitura-municipal-de-muriae/585",
+      "https://pwleiloes.com.br/"
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "PW Leilões",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
   },
   {
     "dominio": "rangelleiloes.com.br",
@@ -3089,6 +4900,32 @@
     "caminhos_conhecidos": [
       "https://rangelleiloes.com.br/leilao/leilao-do-municipio-de-paverama-rs-20-07-2026-15-39-28/lotes/lista"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "ricardogomesleiloes.com.br",
+    "nome": "Ricardo Gomes Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://ricardogomesleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://ricardogomesleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -3117,6 +4954,58 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "rigolonleiloes.com.br",
+    "nome": "Rigolon Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://rigolonleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://rigolonleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "rioleiloes.com.br",
+    "nome": "Rio Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://rioleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://rioleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "rjleiloes.com.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -3133,8 +5022,38 @@
     "tempo_resposta": 0.21,
     "proxima_verificacao": "2026-07-28T18:51:08+00:00",
     "caminhos_conhecidos": [
-      "https://rjleiloes.com.br/leilao/4768/lotes"
+      "https://rjleiloes.com.br/leilao/4768/lotes",
+      "https://rjleiloes.com.br/"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": "",
+    "nome": "RJ Leilões",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
+  },
+  {
+    "dominio": "rochaleiloes.com.br",
+    "nome": "Rocha Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://rochaleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://rochaleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -3203,6 +5122,32 @@
       "https://rogeriomenezes.com.br/leilao/1578?page=8",
       "https://rogeriomenezes.com.br/lote/139448/vw-volkswagen-polo-cl-ad-2021-2021-flex"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "rosioliveiraleiloes.com.br",
+    "nome": "Rosi Oliveira Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://rosioliveiraleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://rosioliveiraleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -3297,6 +5242,32 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "sabbagleiloes.com.br",
+    "nome": "Sabbag Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://sabbagleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://sabbagleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "sandrasantosleiloes.com.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -3360,6 +5331,58 @@
       "https://sandroleiloeiro.com.br/leilao/lotes/equipamentos",
       "https://sandroleiloeiro.com.br/leilao/lotes/maquinas"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "santosmoraesleiloes.com.br",
+    "nome": "Santos Moraes Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://santosmoraesleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://santosmoraesleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "saraivaleiloes.com.br",
+    "nome": "Saraiva Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://saraivaleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://saraivaleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -3430,6 +5453,58 @@
     "caminhos_conhecidos": [
       "https://schema.org/"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "schererleiloes.com.br",
+    "nome": "Scherer Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://schererleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://schererleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "schulmannleiloes.com.br",
+    "nome": "Schulmann Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://schulmannleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://schulmannleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -3509,11 +5584,15 @@
     "tempo_resposta": 2.85,
     "proxima_verificacao": "2026-07-28T19:08:42+00:00",
     "caminhos_conhecidos": [
-      "https://sodresantoro.com.br/leilao/28840?sort=lot_number_asc"
+      "https://sodresantoro.com.br/leilao/28840?sort=lot_number_asc",
+      "https://sodresantoro.com.br/"
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "Sodré Santoro",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
   },
   {
     "dominio": "sold.com.br",
@@ -3532,8 +5611,38 @@
     "tempo_resposta": 9.34,
     "proxima_verificacao": "2026-07-28T19:08:48+00:00",
     "caminhos_conhecidos": [
-      "https://sold.com.br/evento/petroreconcavo-784025?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc"
+      "https://sold.com.br/evento/petroreconcavo-784025?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
+      "https://sold.com.br/"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": "",
+    "nome": "SOLD",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
+  },
+  {
+    "dominio": "spencerleiloes.com.br",
+    "nome": "Spencer Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://spencerleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://spencerleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -3580,6 +5689,32 @@
     "caminhos_conhecidos": [
       "https://static.suporteleiloes.com.br/sandraleiloeiracombr/leiloes/424/documentos/sl-doc-424-6a45550ca007e-6a45550ca41e0.pdf"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "suedpeterleiloes.com.br",
+    "nome": "Sued Peter Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://suedpeterleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://suedpeterleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -3632,8 +5767,38 @@
       "https://www.sumareleiloes.com.br/leiloes/5279",
       "https://www.sumareleiloes.com.br/leiloes/5362",
       "https://sumareleiloes.com.br/leiloes/5067",
-      "https://sumareleiloes.com.br/todos-leiloes?itemsList=list"
+      "https://sumareleiloes.com.br/todos-leiloes?itemsList=list",
+      "https://sumareleiloes.com.br/"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": "",
+    "nome": "Sumaré Leilões",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
+  },
+  {
+    "dominio": "superbid.net",
+    "nome": "Superbid Exchange",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://superbid.net/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://superbid.net/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -3706,6 +5871,32 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "tjsp.jus.br",
+    "nome": "TJSP — Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://tjsp.jus.br/Leiloes",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "fonte_oficial",
+    "caminhos_conhecidos": [
+      "https://tjsp.jus.br/Leiloes"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "topoleiloes.com.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -3733,8 +5924,38 @@
       "https://topoleiloes.com.br/lote/37601/sucata-gmcelta-ano-2001-modelo-2001-cor-preta",
       "https://topoleiloes.com.br/lote/37602/sucata-gmkadett-gl-ano-1994-modelo-1995-cor-cinza",
       "https://topoleiloes.com.br/lote/37603/sucata-gmvectra-gls-ano-1996-modelo-1997-cor-branca",
-      "https://topoleiloes.com.br/lote/37604/sucata-gmvectra-gls-ano-1998-modelo-1998-cor-azul"
+      "https://topoleiloes.com.br/lote/37604/sucata-gmvectra-gls-ano-1998-modelo-1998-cor-azul",
+      "https://topoleiloes.com.br/"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": "",
+    "nome": "Topo Leilões",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal"
+  },
+  {
+    "dominio": "trt4.jus.br",
+    "nome": "TRT4 — Alienações Judiciais",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://trt4.jus.br/portais/trt4/alienacoes-judiciais",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "fonte_oficial",
+    "caminhos_conhecidos": [
+      "https://trt4.jus.br/portais/trt4/alienacoes-judiciais"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -3830,6 +6051,110 @@
     "hash_conteudo": ""
   },
   {
+    "dominio": "vargasepintoleiloes.com.br",
+    "nome": "Vargas e Pinto Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://vargasepintoleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://vargasepintoleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "venda-imoveis.caixa.gov.br",
+    "nome": "CAIXA — imóveis à venda",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://venda-imoveis.caixa.gov.br/sistema/busca-imovel.asp?sltTipoBusca=imoveis",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "fonte_oficial",
+    "caminhos_conhecidos": [
+      "https://venda-imoveis.caixa.gov.br/sistema/busca-imovel.asp?sltTipoBusca=imoveis"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "verrileiloes.com.br",
+    "nome": "Verri Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://verrileiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://verrileiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "vialeiloes.com.br",
+    "nome": "Via Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://vialeiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://vialeiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
     "dominio": "victordortaleiloes.com.br",
     "ativo": true,
     "origem": "bootstrap_base",
@@ -3846,11 +6171,15 @@
     "tempo_resposta": 0.09,
     "proxima_verificacao": "2026-07-28T19:08:43+00:00",
     "caminhos_conhecidos": [
-      "https://victordortaleiloes.com.br/leilao/1420/lotes"
+      "https://victordortaleiloes.com.br/leilao/1420/lotes",
+      "https://victordortaleiloes.com.br/"
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "Victor Dorta Leilões",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal"
   },
   {
     "dominio": "vipleiloes.com.br",
@@ -3870,11 +6199,15 @@
     "proxima_verificacao": "2026-07-28T21:08:45+00:00",
     "caminhos_conhecidos": [
       "https://vipleiloes.com.br/evento/detalhes/270726tdpif",
-      "https://vipleiloes.com.br/Conta/Entrar"
+      "https://vipleiloes.com.br/Conta/Entrar",
+      "https://vipleiloes.com.br/"
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "VIP Leilões",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
   },
   {
     "dominio": "webleiloes.com.br",
@@ -3908,7 +6241,10 @@
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "Web Leilões",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal"
   },
   {
     "dominio": "wellingtonsilvaleiloeiro.com.br",
@@ -3930,6 +6266,32 @@
       "https://wellingtonsilvaleiloeiro.com.br/leilao/prefeitura-municipal-de-araxa/594",
       "https://wellingtonsilvaleiloeiro.com.br/previewleilao/594/15695965-161d-4c6b-874c-d4ff201add46.pdf"
     ],
+    "etag": "",
+    "last_modified": "",
+    "hash_conteudo": ""
+  },
+  {
+    "dominio": "willianleiloes.com.br",
+    "nome": "William Leilões",
+    "ativo": true,
+    "origem": "planilha_portais_2026_07_28",
+    "url_exemplo": "https://willianleiloes.com.br/",
+    "tipo_coleta": "generico",
+    "prioridade_radar": "Média",
+    "grupo_fonte": "portal",
+    "caminhos_conhecidos": [
+      "https://willianleiloes.com.br/"
+    ],
+    "pagina_eventos": "",
+    "sitemap": "",
+    "possui_eventos": false,
+    "possui_lotes": false,
+    "ultima_verificacao": "",
+    "ultimo_sucesso": "",
+    "status_acesso": "pendente",
+    "falhas_consecutivas": 0,
+    "tempo_resposta": 0,
+    "proxima_verificacao": "",
     "etag": "",
     "last_modified": "",
     "hash_conteudo": ""
@@ -4012,7 +6374,10 @@
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "WR Leilões",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "portal"
   },
   {
     "dominio": "www25.receita.fazenda.gov.br",
@@ -4038,6 +6403,9 @@
     ],
     "etag": "",
     "last_modified": "",
-    "hash_conteudo": ""
+    "hash_conteudo": "",
+    "nome": "Receita Federal — Sistema de Leilão Eletrônico",
+    "prioridade_radar": "Alta",
+    "grupo_fonte": "fonte_oficial"
   }
 ]
