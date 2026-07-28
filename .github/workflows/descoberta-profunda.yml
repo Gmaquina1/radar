@@ -58,6 +58,11 @@ jobs:
         run: pip install -r requirements.txt
       - name: Preflight obrigatório da OpenAI Web Search
         run: python openai_preflight.py --require
+      - name: Acessar todas as fontes da planilha nacional
+        env:
+          AUDIT_WORKERS: "24"
+          AUDIT_TIMEOUT: "12"
+        run: python auditar_fontes_planilha.py
       - name: Executar pipeline profundo
         shell: bash
         run: |
@@ -84,7 +89,7 @@ jobs:
           def load(name):
               try: return json.loads(Path(name).read_text())
               except Exception: return {}
-          d, c, l, s, p = (load(x) for x in ('relatorio_descoberta_web.json','relatorio_cobertura_radar.json','relatorio_atualizacao_lotes.json','status_atualizacao.json','openai_preflight.json'))
+          d, c, l, s, p, a = (load(x) for x in ('relatorio_descoberta_web.json','relatorio_cobertura_radar.json','relatorio_atualizacao_lotes.json','status_atualizacao.json','openai_preflight.json','auditoria_fontes_planilha.json'))
           import csv
           try:
               mapa = sum(1 for _ in csv.DictReader(open('radar_leiloes_eventos_futuros.csv', encoding='utf-8-sig')))
@@ -105,6 +110,10 @@ jobs:
           print(f"PORTAIS_OK: {d.get('portais_ok', 0)}  ")
           print(f"PORTAIS_BLOQUEADOS: {d.get('bloqueados', 0)}  ")
           print(f"PORTAIS_TIMEOUT: {d.get('timeouts', 0)}  ")
+          print(f"FONTES_PLANILHA: {a.get('fontes_total', 0)}  ")
+          print(f"FONTES_PLANILHA_ACESSIVEIS: {a.get('fontes_acessiveis', 0)}  ")
+          print(f"FONTES_DE_LOTES: {a.get('fontes_de_lotes', 0)}  ")
+          print(f"FONTES_DE_LOTES_ACESSIVEIS: {a.get('fontes_de_lotes_acessiveis', 0)}  ")
           print(f"EVENTOS_MAPA: {mapa}  ")
           print(f"EVENTOS_FORA_MAPA: {c.get('eventos_fora_do_mapa', 0)}  ")
           print(f"EVENTOS_TOTAL: {c.get('total_eventos_ativos', mapa)}  ")
@@ -130,6 +139,7 @@ jobs:
             relatorio_cobertura_radar.json
             auditoria_garra.txt
             auditoria_garra_web.txt
+            auditoria_fontes_planilha.json
           if-no-files-found: ignore
           retention-days: 14
       - name: Salvar alterações incrementais

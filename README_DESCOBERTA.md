@@ -4,6 +4,12 @@
 sitemaps, `robots.txt`, JSON-LD, OpenGraph e links internos. O arquivo consolidado é
 entregue ao indexador existente; falhas ficam isoladas por domínio.
 
+`fontes_planilha.json` mantém o catálogo nacional fornecido ao Radar. A cada execução,
+as fontes marcadas com `coletar_lotes` são mescladas ao catálogo incremental sem
+apagar caminhos ou estados aprendidos anteriormente. A descoberta profunda também
+executa `auditar_fontes_planilha.py`, que testa todos os portais, fontes oficiais e
+Juntas Comerciais e registra bloqueios, timeouts e endereços acessíveis.
+
 A busca é opcional. Para usar a API Brave Search, configure apenas no ambiente:
 
 ```bash

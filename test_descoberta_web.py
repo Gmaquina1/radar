@@ -35,9 +35,10 @@ class FakeClient:
 class DiscoveryTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory(); root = Path(self.tmp.name)
-        self.paths = {name: root / name for name in ("catalog.json", "new.json", "state.json", "events.json", "all.csv", "report.json", "coverage.json", "map.csv")}
+        self.paths = {name: root / name for name in ("catalog.json", "new.json", "state.json", "events.json", "all.csv", "report.json", "coverage.json", "map.csv", "sources.json")}
         self.paths["map.csv"].write_text("nome,link\n", encoding="utf-8")
-        self.stack = patch.multiple(discovery, CATALOG=self.paths["catalog.json"], NEW_CATALOG=self.paths["new.json"], STATE=self.paths["state.json"], EVENTS=self.paths["events.json"], CONSOLIDATED=self.paths["all.csv"], REPORT=self.paths["report.json"], COVERAGE=self.paths["coverage.json"])
+        self.paths["sources.json"].write_text('{"fontes":[]}', encoding="utf-8")
+        self.stack = patch.multiple(discovery, CATALOG=self.paths["catalog.json"], PLANILHA_SOURCES=self.paths["sources.json"], NEW_CATALOG=self.paths["new.json"], STATE=self.paths["state.json"], EVENTS=self.paths["events.json"], CONSOLIDATED=self.paths["all.csv"], REPORT=self.paths["report.json"], COVERAGE=self.paths["coverage.json"])
         self.stack.start(); self.addCleanup(self.stack.stop); self.addCleanup(self.tmp.cleanup)
 
     def execute(self, client=None, deep=False):
@@ -104,6 +105,20 @@ class DiscoveryTests(unittest.TestCase):
         self.assertEqual(result["modo"], "profundo")
         self.assertEqual(result["consultas_executadas"], 1)
         self.assertGreaterEqual(result["dominios_visitados"], 2)
+    def test_modo_profundo_ignora_backoff(self):
+        future = "2999-01-01T00:00:00+00:00"
+        catalog = [
+            {
+                "dominio": "portal.test",
+                "ativo": True,
+                "proxima_verificacao": future,
+            }
+        ]
+        self.assertEqual(discovery.select_portals(catalog, deep=False), [])
+        self.assertEqual(
+            [item["dominio"] for item in discovery.select_portals(catalog, deep=True)],
+            ["portal.test"],
+        )
     def test_erro_de_um_dominio_nao_interrompe(self):
         result = self.execute(FakeClient(status=403)); self.assertEqual(result["bloqueados"], 1)
     def test_relatorio_indica_api_ausente(self):
@@ -204,6 +219,43 @@ class DiscoveryTests(unittest.TestCase):
         source.write_text("nome,site_leiloeiro\nA,https://portal.test/leilao/1\n", encoding="utf-8")
         result = discovery.bootstrap_portais(self.paths["catalog.json"], [source])
         self.assertEqual(result[0]["dominio"], "portal.test")
+
+    def test_planilha_incorpora_fontes_de_lotes_e_agrupa_caminhos(self):
+        self.paths["sources.json"].write_text(json.dumps({
+            "fontes": [
+                {
+                    "nome": "Portal A",
+                    "url": "https://portal.test/leiloes",
+                    "dominio": "portal.test",
+                    "grupo": "portal",
+                    "coletar_lotes": True,
+                },
+                {
+                    "nome": "Portal A - lotes",
+                    "url": "https://portal.test/lotes",
+                    "dominio": "portal.test",
+                    "grupo": "fonte_oficial",
+                    "coletar_lotes": True,
+                },
+                {
+                    "nome": "Junta",
+                    "url": "https://junta.test/",
+                    "dominio": "junta.test",
+                    "grupo": "junta_comercial",
+                    "coletar_lotes": False,
+                },
+            ]
+        }), encoding="utf-8")
+        result = discovery.bootstrap_portais(
+            self.paths["catalog.json"],
+            sources=[self.paths["map.csv"]],
+            planilha_path=self.paths["sources.json"],
+        )
+        self.assertEqual([item["dominio"] for item in result], ["portal.test"])
+        self.assertEqual(
+            result[0]["caminhos_conhecidos"],
+            ["https://portal.test/leiloes", "https://portal.test/lotes"],
+        )
 
     def test_timeout_isolado_e_segundo_dominio_continua(self):
         self.paths["catalog.json"].write_text('[{"dominio":"ruim.test","ativo":true,"url_exemplo":"https://ruim.test/"},{"dominio":"novo.test","ativo":true,"url_exemplo":"https://novo.test/leilao"}]')
