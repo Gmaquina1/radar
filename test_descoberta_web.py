@@ -119,12 +119,16 @@ class DiscoveryTests(unittest.TestCase):
         self.assertEqual(result["resultados_de_busca"], result["consultas_executadas"])
         self.assertNotIn("WEB_SEARCH_API_KEY", result)
     def test_deep_discovery(self):
-        result = self.execute(deep=True); self.assertIn(result["grupo_consultas"], "ABCD")
+        result = self.execute(deep=True); self.assertEqual(result["grupo_consultas"], "BR")
     def test_rotacao(self):
         a, _ = discovery.query_group(self.paths["state.json"]); b, _ = discovery.query_group(self.paths["state.json"]); self.assertEqual((a, b), ("A", "B"))
     def test_deep_busca_garra_florestal(self):
         _, queries = discovery.query_group(self.paths["state.json"], deep=True)
         self.assertIn("garra florestal leilão", queries)
+    def test_deep_busca_todos_os_estados(self):
+        _, queries = discovery.query_group(self.paths["state.json"], deep=True)
+        for uf in discovery.UFS:
+            self.assertTrue(any(f" {uf} " in f" {query} " for query in queries), uf)
     def test_todas_ufs_distribuidas(self): self.assertEqual(len(discovery.UFS), 27)
     def test_sitemap(self):
         urls, indexes = discovery.sitemap_urls('<urlset><url><loc>https://x.test/lote/1</loc></url></urlset>'); self.assertEqual(urls, ["https://x.test/lote/1"]); self.assertFalse(indexes)
@@ -140,6 +144,11 @@ class DiscoveryTests(unittest.TestCase):
     def test_canonical_preserva_paginacao(self): self.assertIn("page=2", canonicalize_url("https://x.test/lotes?page=2"))
     def test_json_ld(self):
         lots, _ = GenericCollector().parse_html("https://x.test/evento", JSONLD); self.assertEqual(lots[0]["titulo"], "Lote 7 - Trator"); self.assertEqual(lots[0]["confianca_dados"], "alta")
+    def test_json_ld_usa_encerramento_do_meta(self):
+        page = '''<meta property="og:description" content="Encerramento: 28/07/2026, 17:03:00">
+        <script type="application/ld+json">{"@type":"Product","name":"Trator florestal","offers":{"price":"35000","priceValidUntil":"2026-07-28"}}</script>'''
+        lots, _ = GenericCollector().parse_html("https://x.test/oferta/1", page)
+        self.assertEqual((lots[0]["data"], lots[0]["hora"]), ("2026-07-28", "17:03"))
     def test_json_ld_foto(self): self.assertEqual(GenericCollector().parse_html("https://x.test/evento", JSONLD)[0][0]["foto_lote"], "https://x.test/7.jpg")
     def test_open_graph(self):
         lots, _ = GenericCollector().parse_html("https://x.test", OG); self.assertEqual(lots[0]["titulo"], "Leilão Público")

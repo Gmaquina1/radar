@@ -1,6 +1,7 @@
 """Coletor genérico conservador para páginas públicas de leilões."""
 from __future__ import annotations
 
+import datetime as dt
 import html
 import json
 import re
@@ -9,6 +10,27 @@ from html.parser import HTMLParser
 
 TRACKING = {"utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid", "gclid"}
 WORDS = ("leilao", "leilão", "leiloes", "leilões", "auction", "evento", "lote", "oferta", "item", "catalogo", "catálogo")
+
+
+def public_date_time(value: object) -> tuple[str, str]:
+    """Extrai encerramento/data pública em formatos brasileiros ou ISO."""
+    text = html.unescape(str(value or ""))
+    date_match = re.search(r"\b(\d{2})/(\d{2})/(\d{4})\b", text)
+    if date_match:
+        day, month, year = map(int, date_match.groups())
+    else:
+        date_match = re.search(r"\b(\d{4})-(\d{2})-(\d{2})\b", text)
+        if not date_match:
+            return "", ""
+        year, month, day = map(int, date_match.groups())
+    try:
+        parsed_date = dt.date(year, month, day).isoformat()
+    except ValueError:
+        return "", ""
+    tail = text[date_match.end():]
+    hour_match = re.search(r"\b([01]?\d|2[0-3]):([0-5]\d)(?::[0-5]\d)?\b", tail)
+    hour = f"{int(hour_match.group(1)):02d}:{hour_match.group(2)}" if hour_match else ""
+    return parsed_date, hour
 
 
 def _scalar_url(value) -> str:
@@ -111,6 +133,8 @@ def _nodes(value):
 class GenericCollector:
     def parse_html(self, url: str, content: str) -> tuple[list[dict], list[str]]:
         parser = PageParser(); parser.feed(content)
+        meta_description = parser.meta.get("og:description", "") or parser.meta.get("description", "")
+        meta_date, meta_hour = public_date_time(meta_description)
         lots = []
         for root in parser.jsonld:
             for node in _nodes(root):
@@ -122,9 +146,15 @@ class GenericCollector:
                 offer = next(_nodes(offers), {})
                 image = _scalar_url(node.get("image"))
                 link = canonicalize_url(node.get("url") or node.get("@id"), url) or canonicalize_url(url)
-                lots.append({"titulo": str(node.get("name") or ""), "descricao": str(node.get("description") or ""), "lance_atual": offer.get("price", node.get("price", "")), "data": node.get("startDate", ""), "link_lote": link, "foto_lote": canonicalize_url(image, url) if image else "", "status_evento": node.get("eventStatus", "desconhecido"), "fonte_descoberta": "json_ld", "confianca_dados": "alta"})
+                structured_date, structured_hour = public_date_time(
+                    node.get("endDate")
+                    or offer.get("priceValidUntil")
+                    or node.get("startDate")
+                    or ""
+                )
+                lots.append({"titulo": str(node.get("name") or ""), "descricao": str(node.get("description") or meta_description or ""), "lance_atual": offer.get("price", node.get("price", "")), "data": structured_date or meta_date, "hora": structured_hour or meta_hour, "link_lote": link, "foto_lote": canonicalize_url(image, url) if image else "", "status_evento": node.get("eventStatus", "desconhecido"), "fonte_descoberta": "json_ld", "confianca_dados": "alta"})
         if not lots and (parser.meta.get("og:title") or parser.title):
-            lots.append({"titulo": parser.meta.get("og:title", parser.title), "descricao": parser.meta.get("og:description", ""), "link_lote": urllib.parse.urljoin(url, parser.meta.get("og:url", url)), "foto_lote": urllib.parse.urljoin(url, parser.meta.get("og:image", "")) if parser.meta.get("og:image") else "", "status_evento": "desconhecido", "fonte_descoberta": "link_interno", "confianca_dados": "media"})
+            lots.append({"titulo": parser.meta.get("og:title", parser.title), "descricao": meta_description, "data": meta_date, "hora": meta_hour, "link_lote": urllib.parse.urljoin(url, parser.meta.get("og:url", url)), "foto_lote": urllib.parse.urljoin(url, parser.meta.get("og:image", "")) if parser.meta.get("og:image") else "", "status_evento": "desconhecido", "fonte_descoberta": "link_interno", "confianca_dados": "media"})
         links = []
         for link in parser.links:
             absolute = canonicalize_url(link, url)
