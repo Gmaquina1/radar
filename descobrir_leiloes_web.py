@@ -133,7 +133,15 @@ def query_group(state_path: Path | None = None, deep: bool = False) -> tuple[str
     index = int(state.get("next_group", 0)) % 4
     groups = [UFS[i::4] for i in range(4)]
     queries = [f"leilão {TERMS[(index + n) % len(TERMS)]} {uf}" for n, uf in enumerate(groups[index])]
-    queries += ["leilões online abertos hoje", "edital de leilão público", "site de leilões online Brasil", "leiloeiro oficial leilões online", "próximos leilões máquinas", "próximos leilões veículos"]
+    queries += [
+        "leilões online abertos hoje",
+        "edital de leilão público",
+        "site de leilões online Brasil",
+        "leiloeiro oficial leilões online",
+        "próximos leilões máquinas",
+        "próximos leilões veículos",
+        "garra florestal leilão",
+    ]
     limit = max(CONFIG["MAX_SEARCH_QUERIES"], 30) if deep else CONFIG["MAX_SEARCH_QUERIES"]
     write_json(state_path, {"last_group": chr(65 + index), "next_group": (index + 1) % 4, "executado_em": now()})
     return chr(65 + index), queries[:limit]

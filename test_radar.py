@@ -149,6 +149,17 @@ class RadarTests(unittest.TestCase):
         result = site.enrich_and_dedupe_lots([lot, dict(lot)], [], now)
         self.assertEqual(len(result), 1)
 
+    def test_site_carrega_oportunidade_verificada(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "oportunidades.json"
+            path.write_text(
+                '{"lotes":[{"data":"2026-08-04","titulo":"Garra Florestal"}]}',
+                encoding="utf-8",
+            )
+            with mock.patch.object(site, "VERIFIED_LOTS", path):
+                rows = site.read_verified_lots()
+        self.assertEqual(rows[0]["titulo"], "Garra Florestal")
+
     def test_relatorio_compara_chaves_estaveis(self) -> None:
         anterior = [{"link_lote": "https://exemplo.com/lote/1", "titulo": "Lote 1"}]
         atual = [{"link_lote": "https://exemplo.com/lote/2", "titulo": "Lote 2"}]
