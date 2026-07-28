@@ -10,6 +10,7 @@ from zoneinfo import ZoneInfo
 import indexador_lotes as indexador
 import atualizar_radar_leiloes as atualizador
 import executar_atualizacao_radar as pipeline
+import gerar_site_github as site
 
 
 class RadarTests(unittest.TestCase):
@@ -113,6 +114,40 @@ class RadarTests(unittest.TestCase):
         now = datetime(2026, 7, 14, 16, 0, tzinfo=ZoneInfo("America/Sao_Paulo"))
         self.assertFalse(indexador.upcoming_lot({"data": "2026-07-13", "hora": "18:00"}, now))
         self.assertTrue(indexador.upcoming_lot({"data": "2026-07-15", "hora": "08:00"}, now))
+
+    def test_site_preserva_lotes_distintos_com_link_compartilhado(self) -> None:
+        now = datetime(2026, 7, 14, 16, 0, tzinfo=ZoneInfo("America/Sao_Paulo"))
+        shared = "https://exemplo.com/leilao/1"
+        lots = [
+            {
+                "evento": "Leilão teste",
+                "data": "2026-12-31",
+                "lote": "01",
+                "titulo": "Lote 01 - Escavadeira",
+                "link_lote": shared,
+            },
+            {
+                "evento": "Leilão teste",
+                "data": "2026-12-31",
+                "lote": "02",
+                "titulo": "Lote 02 - Caminhão",
+                "link_lote": shared,
+            },
+        ]
+        result = site.enrich_and_dedupe_lots(lots, [], now)
+        self.assertEqual([row["lote"] for row in result], ["01", "02"])
+
+    def test_site_remove_repeticao_do_mesmo_lote(self) -> None:
+        now = datetime(2026, 7, 14, 16, 0, tzinfo=ZoneInfo("America/Sao_Paulo"))
+        lot = {
+            "evento": "Leilão teste",
+            "data": "2026-12-31",
+            "lote": "01",
+            "titulo": "Lote 01 - Escavadeira",
+            "link_lote": "https://exemplo.com/leilao/1",
+        }
+        result = site.enrich_and_dedupe_lots([lot, dict(lot)], [], now)
+        self.assertEqual(len(result), 1)
 
     def test_relatorio_compara_chaves_estaveis(self) -> None:
         anterior = [{"link_lote": "https://exemplo.com/lote/1", "titulo": "Lote 1"}]
