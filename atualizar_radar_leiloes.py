@@ -4,6 +4,8 @@ import csv
 import hashlib
 import io
 import json
+import multiprocessing
+import os
 import re
 import sys
 import time
@@ -29,6 +31,10 @@ except Exception:  # pragma: no cover - GitHub Actions installs this normally.
 MAP_ID = "1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U"
 KML_URL = f"https://www.google.com/maps/d/kml?forcekml=1&mid={MAP_ID}"
 TIMEZONE = ZoneInfo("America/Sao_Paulo")
+PDF_MAX_BYTES = max(1, int(os.getenv("PDF_MAX_BYTES", "15000000")))
+PDF_MAX_PAGES = max(1, int(os.getenv("PDF_MAX_PAGES", "120")))
+PDF_PARSE_TIMEOUT = max(1, int(os.getenv("PDF_PARSE_TIMEOUT", "20")))
+REQUEST_TIMEOUT = max(1, int(os.getenv("REQUEST_TIMEOUT", "10")))
 FIELDS = [
     "nome",
     "camada",
@@ -340,17 +346,44 @@ def parse_datetime_from_text(text):
     return "", "", "", ""
 
 
-def extract_pdf_text(data):
-    if not data or PdfReader is None:
-        return ""
+def _pdf_worker(data, output):
     try:
         reader = PdfReader(io.BytesIO(data))
         pages = []
-        for page in reader.pages[:6]:
+        for page in reader.pages[:min(PDF_MAX_PAGES, 6)]:
             pages.append(page.extract_text() or "")
-        return clean_text(" ".join(pages))
+        output.put(clean_text(" ".join(pages)))
     except Exception:
+        output.put("")
+
+
+def extract_pdf_text(data):
+    if not data or PdfReader is None:
+        print("[PDF] ignorado: vazio ou parser indisponível", flush=True)
         return ""
+    if len(data) > PDF_MAX_BYTES:
+        print(f"[PDF] ignorado: tamanho>{PDF_MAX_BYTES}", flush=True)
+        return ""
+    if not data.startswith(b"%PDF"):
+        print("[PDF] ignorado: assinatura inválida", flush=True)
+        return ""
+    output = multiprocessing.Queue(1)
+    process = multiprocessing.Process(
+        target=_pdf_worker,
+        args=(data, output),
+        daemon=True,
+    )
+    process.start()
+    process.join(PDF_PARSE_TIMEOUT)
+    if process.is_alive():
+        process.terminate()
+        process.join(2)
+        print(f"[PDF] ignorado: timeout>{PDF_PARSE_TIMEOUT}s", flush=True)
+        return ""
+    parsed = output.get_nowait() if not output.empty() else ""
+    if not parsed:
+        print("[PDF] ignorado: inválido ou corrompido", flush=True)
+    return parsed
 
 
 def extract_pdf_links(html, base_url):
@@ -369,11 +402,21 @@ def extract_pdf_links(html, base_url):
 
 
 def inspect_document_url(url):
-    status, data, content_type, final_url = fetch_bytes(url)
+    status, data, content_type, final_url = fetch_bytes(
+        url,
+        timeout=REQUEST_TIMEOUT,
+        max_bytes=PDF_MAX_BYTES,
+    )
     if not data or status not in {200, 201, 202}:
         return {}
     is_pdf = PDF_RE.search(final_url) or "pdf" in content_type.lower() or data[:4] == b"%PDF"
     if is_pdf:
+        if not data.startswith(b"%PDF"):
+            print(
+                f"[PDF] ignorado: Content-Type/URL de PDF com assinatura inválida {final_url}",
+                flush=True,
+            )
+            return {}
         doc_text = extract_pdf_text(data)
         data_iso, data_original, hour, snippet = parse_datetime_from_text(doc_text)
         return {

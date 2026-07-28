@@ -17,6 +17,8 @@ class PreflightResult:
     connection: str = "NAO_TESTADA"
     web_search: str = "NAO_TESTADA"
     fontes_teste: int = 0
+    consulta_teste: str = "leilões de máquinas Brasil"
+    http_status: int | None = None
     tipo_erro: str = ""
     mensagem: str = ""
 
@@ -55,6 +57,7 @@ def check(client=None) -> PreflightResult:
             result.tipo_erro, result.mensagem = "SEM_FONTES", "A chamada funcionou, mas não retornou fontes atribuídas"
     except Exception as exc:
         result.connection = result.web_search = "ERRO"
+        result.http_status = getattr(exc, "status_code", None)
         result.tipo_erro = classify_error(exc)
         result.mensagem = str(exc).replace(key, "***")[:500]
     return result
@@ -69,9 +72,15 @@ def main() -> int:
     print(f"OPENAI_SEARCH_MODEL: {result.modelo}")
     print(f"OPENAI_CONNECTION: {result.connection}")
     print(f"OPENAI_WEB_SEARCH: {result.web_search}")
-    print(f"FONTES_TESTE: {result.fontes_teste}")
+    print(
+        "OPENAI_TEST_RESULTS: "
+        f"consulta={result.consulta_teste!r}; "
+        f"fontes_validas={result.fontes_teste}"
+    )
+    print(f"OPENAI_ERROR_TYPE: {result.tipo_erro or 'NONE'}")
+    if result.http_status is not None:
+        print(f"OPENAI_HTTP_STATUS: {result.http_status}")
     if result.tipo_erro:
-        print(f"OPENAI_ERROR_TYPE: {result.tipo_erro}")
         print(f"OPENAI_ERROR: {result.mensagem}")
     with open("openai_preflight.json", "w", encoding="utf-8") as handle:
         json.dump(asdict(result), handle, ensure_ascii=False, indent=2)

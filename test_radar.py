@@ -1,12 +1,15 @@
 from __future__ import annotations
 
+import tempfile
 import unittest
+from pathlib import Path
 from unittest import mock
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
 import indexador_lotes as indexador
 import atualizar_radar_leiloes as atualizador
+import executar_atualizacao_radar as pipeline
 
 
 class RadarTests(unittest.TestCase):
@@ -134,6 +137,26 @@ class RadarTests(unittest.TestCase):
         self.assertEqual(report["eventos_com_erro"], 1)
         self.assertEqual(report["erros_por_leiloeiro"], {"bloqueado.com": 1})
         self.assertEqual(report["urls_que_falharam"][0]["http"], 403)
+
+    def test_preservacao_restaura_base_anterior(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            backup = root / "backup"
+            backup.mkdir()
+            base = root / "lotes.json"
+            base.write_text('{"total_lotes": 10}', encoding="utf-8")
+            with mock.patch.object(pipeline, "ROOT", root), mock.patch.object(
+                pipeline,
+                "GENERATED_FILES",
+                ["lotes.json"],
+            ):
+                pipeline.backup_generated_files(backup)
+                base.write_text('{"total_lotes": 0}', encoding="utf-8")
+                pipeline.restore_generated_files(backup)
+            self.assertEqual(
+                base.read_text(encoding="utf-8"),
+                '{"total_lotes": 10}',
+            )
 
 
 if __name__ == "__main__":

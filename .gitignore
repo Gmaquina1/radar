@@ -7,11 +7,9 @@ __pycache__/
 *.pyc
 atualizacao.log
 *.log
-.discovery_state.json
-eventos_consolidados.csv
-eventos_descobertos_web.json
 relatorio_descoberta_web.json
 relatorio_cobertura_radar.json
+auditoria_garra_web.txt
 
 # Relatório efêmero de preflight (artefato do workflow)
 openai_preflight.json

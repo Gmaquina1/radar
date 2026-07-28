@@ -157,7 +157,12 @@ def restore_generated_files(folder: Path) -> None:
             shutil.copy2(backup, target)
 
 
-def run_step(name: str, command: list[str], attempts: int = 1) -> dict:
+def run_step(
+    name: str,
+    command: list[str],
+    attempts: int = 1,
+    timeout_seconds: int | None = None,
+) -> dict:
     started = time.time()
     last_code = 1
 
@@ -166,16 +171,25 @@ def run_step(name: str, command: list[str], attempts: int = 1) -> dict:
             f"::group::{name} - tentativa {attempt}/{attempts}",
             flush=True,
         )
-        result = subprocess.run(
-            command,
-            cwd=ROOT,
-            text=True,
-            check=False,
-        )
+        try:
+            result = subprocess.run(
+                command,
+                cwd=ROOT,
+                text=True,
+                check=False,
+                timeout=timeout_seconds,
+            )
+            return_code = result.returncode
+        except subprocess.TimeoutExpired:
+            return_code = 124
+            print(
+                f"[TIMEOUT] {name} excedeu {timeout_seconds}s.",
+                flush=True,
+            )
         print("::endgroup::", flush=True)
-        last_code = result.returncode
+        last_code = return_code
 
-        if result.returncode == 0:
+        if return_code == 0:
             return {
                 "nome": name,
                 "comando": command,
@@ -183,8 +197,11 @@ def run_step(name: str, command: list[str], attempts: int = 1) -> dict:
                 "duracao_segundos": round(time.time() - started, 2),
                 "status": "ok",
                 "codigo": 0,
+                "timeout_segundos": timeout_seconds,
             }
 
+        if return_code == 124:
+            break
         if attempt < attempts:
             time.sleep(15 * attempt)
 
@@ -193,8 +210,9 @@ def run_step(name: str, command: list[str], attempts: int = 1) -> dict:
         "comando": command,
         "tentativas": attempts,
         "duracao_segundos": round(time.time() - started, 2),
-        "status": "erro",
+        "status": "timeout" if last_code == 124 else "erro",
         "codigo": last_code,
+        "timeout_segundos": timeout_seconds,
     }
 
 
@@ -307,6 +325,7 @@ def fail_and_restore(
 
 
 def main() -> int:
+    pipeline_started = time.time()
     parser = argparse.ArgumentParser(
         description=(
             "Atualiza eventos, lotes e site com proteção "
@@ -330,6 +349,10 @@ def main() -> int:
     previous_keys = lot_keys(previous_payload)
 
     results: list[dict] = []
+    discovery_report: dict = {}
+    discovery_status = "nao_executado"
+    discovery_step = {"status": "nao_executado"}
+    lot_step = {"status": "nao_executado"}
 
     with tempfile.TemporaryDirectory(
         prefix="backup_radar_"
@@ -346,6 +369,7 @@ def main() -> int:
                 str(args.workers_mapa),
             ],
             attempts=3,
+            timeout_seconds=600,
         )
         results.append(event_step)
 
@@ -374,9 +398,22 @@ def main() -> int:
 
         if not args.sem_lotes:
             discovery_step = run_step(
-                "Descobrir leilões fora do mapa",
-                [sys.executable, "descobrir_leiloes_web.py"] + (["--deep-discovery"] if args.modo == "profundo" else []),
+                (
+                    "Descoberta profunda fora do mapa"
+                    if args.modo == "profundo"
+                    else "Atualizar lote incremental de portais conhecidos"
+                ),
+                [
+                    sys.executable,
+                    "descobrir_leiloes_web.py",
+                    (
+                        "--deep-discovery"
+                        if args.modo == "profundo"
+                        else "--quick-refresh"
+                    ),
+                ],
                 attempts=1,
+                timeout_seconds=7800 if args.modo == "profundo" else 900,
             )
             results.append(discovery_step)
             # Complemento resiliente: falha externa não invalida a fonte mapa.
@@ -397,6 +434,7 @@ def main() -> int:
                     str(args.workers_lotes),
                 ],
                 attempts=2,
+                timeout_seconds=3600,
             )
             results.append(lot_step)
 
@@ -450,7 +488,7 @@ def main() -> int:
                 1,
             ),
         ]:
-            result = run_step(name, command, attempts)
+            result = run_step(name, command, attempts, timeout_seconds=300)
             results.append(result)
 
             if result["status"] != "ok":
@@ -468,6 +506,8 @@ def main() -> int:
         status = build_status(
             {
                 "status": "ok",
+                "modo": args.modo,
+                "duracao_segundos": round(time.time() - pipeline_started, 2),
                 "ultima_execucao": iso_now(),
                 "mensagem": (
                     "Eventos, lotes e site atualizados com sucesso."

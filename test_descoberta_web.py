@@ -53,6 +53,55 @@ class DiscoveryTests(unittest.TestCase):
         with patch.dict(os.environ, {}, clear=True):
             result = discovery.run(client=FakeClient(), search=lambda *a: [], map_path=self.paths["map.csv"])
         self.assertGreater(result["eventos_descobertos"], 0)
+
+    def test_modo_rapido_limita_portais_e_nao_faz_busca_openai(self):
+        self.paths["catalog.json"].write_text(json.dumps([
+            {"dominio":"a.test","ativo":True,"url_exemplo":"https://a.test/leilao"},
+            {"dominio":"b.test","ativo":True,"url_exemplo":"https://b.test/leilao"},
+        ]))
+        calls = []
+        with patch.dict(os.environ, {}, clear=True), patch.dict(
+            discovery.CONFIG,
+            {"FAST_MAX_PORTALS": 1},
+            clear=False,
+        ):
+            result = discovery.run(
+                deep=False,
+                client=FakeClient(),
+                search=lambda *args: calls.append(args),
+                map_path=self.paths["map.csv"],
+            )
+        self.assertEqual(result["modo"], "rapido")
+        self.assertEqual(result["portais_planejados"], 1)
+        self.assertEqual(result["consultas_executadas"], 0)
+        self.assertEqual(calls, [])
+
+    def test_modo_profundo_usa_busca_e_catalogo(self):
+        self.paths["catalog.json"].write_text(
+            '[{"dominio":"catalogo.test","ativo":true,'
+            '"url_exemplo":"https://catalogo.test/leilao"}]'
+        )
+        with patch.dict(
+            os.environ,
+            {
+                "WEB_SEARCH_PROVIDER": "openai",
+                "OPENAI_API_KEY": "secret",
+            },
+            clear=True,
+        ), patch.object(
+            discovery,
+            "query_group",
+            return_value=("A", ["consulta teste"]),
+        ):
+            result = discovery.run(
+                deep=True,
+                client=FakeClient(),
+                search=lambda *args: [SearchResult("https://novo.test/leilao")],
+                map_path=self.paths["map.csv"],
+            )
+        self.assertEqual(result["modo"], "profundo")
+        self.assertEqual(result["consultas_executadas"], 1)
+        self.assertGreaterEqual(result["dominios_visitados"], 2)
     def test_erro_de_um_dominio_nao_interrompe(self):
         result = self.execute(FakeClient(status=403)); self.assertEqual(result["bloqueados"], 1)
     def test_relatorio_indica_api_ausente(self):
@@ -135,6 +184,58 @@ class DiscoveryTests(unittest.TestCase):
         self.assertGreater(result["eventos_descobertos"], 0)
         self.assertTrue(any(e["dominio"] == "ruim.test" and e["tipo_erro"] == "TimeoutError" for e in result["erros"]))
 
+    def test_orcamento_por_dominio_interrompe_portal_lento(self):
+        self.paths["catalog.json"].write_text(
+            '[{"dominio":"lento.test","ativo":true,'
+            '"url_exemplo":"https://lento.test/leilao"},'
+            '{"dominio":"novo.test","ativo":true,'
+            '"url_exemplo":"https://novo.test/leilao"}]'
+        )
+
+        class Client(FakeClient):
+            def get(self, url):
+                if "lento.test" in url:
+                    raise discovery.DomainBudgetExceeded("limite")
+                return super().get(url)
+
+        with patch.dict(os.environ, {}, clear=True):
+            result = discovery.run(
+                client=Client(),
+                search=lambda *args: [],
+                map_path=self.paths["map.csv"],
+            )
+        self.assertEqual(result["timeouts"], 1)
+        self.assertGreater(result["eventos_descobertos"], 0)
+
+    def test_execucao_parcial_preserva_eventos_anteriores(self):
+        self.paths["events.json"].write_text(json.dumps({
+            "eventos": [{
+                "nome": "Evento anterior",
+                "link": "https://antigo.test/leilao/1",
+                "site_leiloeiro": "https://antigo.test/leilao/1",
+                "dominio_origem": "antigo.test",
+            }],
+            "lotes": [],
+        }))
+        self.paths["catalog.json"].write_text(
+            '[{"dominio":"novo.test","ativo":true,'
+            '"url_exemplo":"https://novo.test/leilao"}]'
+        )
+        with patch.dict(os.environ, {}, clear=True):
+            result = discovery.run(
+                client=FakeClient(),
+                search=lambda *args: [],
+                map_path=self.paths["map.csv"],
+            )
+        saved = json.loads(self.paths["events.json"].read_text())
+        self.assertEqual(result["eventos_preservados"], 1)
+        self.assertTrue(
+            any(
+                row.get("site_leiloeiro") == "https://antigo.test/leilao/1"
+                for row in saved["eventos"]
+            )
+        )
+
     def test_http_429_registrado(self):
         result = self.execute(FakeClient(status=429))
         self.assertTrue(any(e["http_status"] == 429 for e in result["erros"]))
@@ -211,6 +312,29 @@ class OpenAIProviderTests(unittest.TestCase):
         self.assertEqual(classify_error(Error(401, "bad")), "AUTH")
         self.assertEqual(classify_error(Error(429, "bad")), "RATE_LIMIT")
         self.assertEqual(classify_error(Error(500, "server")), "API")
+        self.assertEqual(classify_error(TimeoutError("timeout")), "NETWORK")
+
+    def test_openai_401(self):
+        class Error(RuntimeError):
+            status_code = 401
+        self.assertEqual(classify_error(Error("unauthorized")), "AUTH")
+
+    def test_openai_403(self):
+        class Error(RuntimeError):
+            status_code = 403
+        self.assertEqual(classify_error(Error("forbidden")), "AUTH")
+
+    def test_openai_429(self):
+        class Error(RuntimeError):
+            status_code = 429
+        self.assertEqual(classify_error(Error("rate limit")), "RATE_LIMIT")
+
+    def test_openai_500(self):
+        class Error(RuntimeError):
+            status_code = 500
+        self.assertEqual(classify_error(Error("server")), "API")
+
+    def test_openai_timeout(self):
         self.assertEqual(classify_error(TimeoutError("timeout")), "NETWORK")
 
 
