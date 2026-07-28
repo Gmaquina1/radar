@@ -17,6 +17,26 @@
       "fonte": "oportunidade_verificada",
       "status_captura": "verificado_na_fonte_publica",
       "fonte_confirmacao": "https://www.kcleiloes.com.br/"
+    },
+    {
+      "evento": "24º Leilão Força Máxima",
+      "data": "2026-07-28",
+      "data_original": "28/07/2026",
+      "hora": "17:03",
+      "hora_marcador": "17:03",
+      "uf": "SP",
+      "local": "Barretos - SP",
+      "leiloeiro": "AZ Leilões / Superbid",
+      "lote": "2201",
+      "titulo": "Trator Florestal com Garra Hidráulica — ID 3569482",
+      "descricao": "Trator florestal tipo skidder, operacional, tração 4x2 e combustível diesel.",
+      "lance_atual": "R$ 35.000,00",
+      "link_lote": "https://www.superbid.net/oferta/trator-florestal-com-garra-hidraulica-id-3569482-4853918",
+      "link_evento": "https://exchange.superbid.net/evento/24-leilao-forca-maxima-790176",
+      "foto_lote": "https://ms.sbwebservices.net/photos/500ecdc5-ca2c-4756-9c10-34d3b32e85b1.jpg",
+      "fonte": "oportunidade_verificada",
+      "status_captura": "verificado_na_fonte_publica",
+      "fonte_confirmacao": "https://www.superbid.net/oferta/trator-florestal-com-garra-hidraulica-id-3569482-4853918"
     }
   ]
 }

@@ -50,6 +50,7 @@ CONFIG = {
     "MAX_URLS_PER_DOMAIN": env_int("MAX_URLS_PER_DOMAIN", 50),
     "MAX_DEPTH": env_int("MAX_DEPTH", 2),
     "MAX_LOTS_PER_DOMAIN": env_int("MAX_LOTS_PER_DOMAIN", 250),
+    "DEEP_MAX_SEEDS_PER_DOMAIN": env_int("DEEP_MAX_SEEDS_PER_DOMAIN", 20),
     "REQUEST_TIMEOUT": env_int("REQUEST_TIMEOUT", 15),
     "REQUEST_RETRIES": env_int("REQUEST_RETRIES", 2),
     "GLOBAL_WORKERS": env_int("GLOBAL_WORKERS", 6),
@@ -132,7 +133,13 @@ def query_group(state_path: Path | None = None, deep: bool = False) -> tuple[str
     state = read_json(state_path, {})
     index = int(state.get("next_group", 0)) % 4
     groups = [UFS[i::4] for i in range(4)]
-    queries = [f"leilão {TERMS[(index + n) % len(TERMS)]} {uf}" for n, uf in enumerate(groups[index])]
+    if deep:
+        queries = [
+            f"leilões abertos {uf} máquinas veículos imóveis equipamentos"
+            for uf in UFS
+        ]
+    else:
+        queries = [f"leilão {TERMS[(index + n) % len(TERMS)]} {uf}" for n, uf in enumerate(groups[index])]
     queries += [
         "leilões online abertos hoje",
         "edital de leilão público",
@@ -141,10 +148,24 @@ def query_group(state_path: Path | None = None, deep: bool = False) -> tuple[str
         "próximos leilões máquinas",
         "próximos leilões veículos",
         "garra florestal leilão",
+        "leilão máquinas pesadas agrícolas Brasil",
+        "leilão máquinas florestais tratores florestais Brasil",
+        "leilão caminhões ônibus implementos Brasil",
+        "leilão equipamentos industriais Brasil",
+        "leilão bens públicos prefeituras Brasil",
+        "leilão judicial extrajudicial Brasil",
+        "leilão sucatas veículos recuperáveis Brasil",
     ]
-    limit = max(CONFIG["MAX_SEARCH_QUERIES"], 30) if deep else CONFIG["MAX_SEARCH_QUERIES"]
-    write_json(state_path, {"last_group": chr(65 + index), "next_group": (index + 1) % 4, "executado_em": now()})
-    return chr(65 + index), queries[:limit]
+    limit = max(CONFIG["MAX_SEARCH_QUERIES"], 50) if deep else CONFIG["MAX_SEARCH_QUERIES"]
+    write_json(
+        state_path,
+        {
+            "last_group": "BR" if deep else chr(65 + index),
+            "next_group": index if deep else (index + 1) % 4,
+            "executado_em": now(),
+        },
+    )
+    return ("BR" if deep else chr(65 + index)), queries[:limit]
 
 
 class HttpClient:
@@ -333,7 +354,7 @@ def _crawl_domain(
     paths: list[str] = []
     visited: set[str] = set()
     queue: deque[tuple[str, int, str]] = deque()
-    max_seed_urls = 5 if deep else 2
+    max_seed_urls = CONFIG["DEEP_MAX_SEEDS_PER_DOMAIN"] if deep else 2
     for seed, source in seeds[:max_seed_urls]:
         canonical = canonicalize_url(seed)
         if canonical and canonical not in visited:
@@ -395,6 +416,7 @@ def _crawl_domain(
             learned = canonicalize_url(final)
             if learned and learned not in paths:
                 paths.append(learned)
+            first_lot = page_lots[0] if page_lots else {}
             discovered.append(
                 {
                     "nome": (
@@ -417,6 +439,10 @@ def _crawl_domain(
                         else "media"
                     ),
                     "status_evento": "desconhecido",
+                    "data": first_lot.get("data", ""),
+                    "data_original": first_lot.get("data", ""),
+                    "hora_marcador": first_lot.get("hora", ""),
+                    "descricao": first_lot.get("descricao", ""),
                 }
             )
             lots.extend(
