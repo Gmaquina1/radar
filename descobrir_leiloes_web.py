@@ -85,6 +85,21 @@ def normalize_portal(entry: dict) -> dict:
     defaults = {"ativo": True, "origem": "catalogo", "url_exemplo": "", "pagina_eventos": "", "sitemap": "", "tipo_coleta": "generico", "possui_eventos": False, "possui_lotes": False, "ultima_verificacao": "", "ultimo_sucesso": "", "status_acesso": "pendente", "falhas_consecutivas": 0, "tempo_resposta": 0, "proxima_verificacao": "", "caminhos_conhecidos": [], "etag": "", "last_modified": "", "hash_conteudo": ""}
     for key, default in defaults.items(): value.setdefault(key, default)
     if not isinstance(value["caminhos_conhecidos"], list): value["caminhos_conhecidos"] = []
+    if value.get("dominio") == "sumareleiloes.com.br":
+        landing = "https://www.sumareleiloes.com.br/todos-leiloes?itemsList=list"
+        value["url_exemplo"] = landing
+        value["pagina_eventos"] = landing
+        value["caminhos_conhecidos"] = list(
+            dict.fromkeys(
+                [
+                    landing,
+                    "https://www.sumareleiloes.com.br/todos-lotes",
+                    "https://www.sumareleiloes.com.br/leiloes/5279",
+                    "https://www.sumareleiloes.com.br/leiloes/5362",
+                    *value["caminhos_conhecidos"],
+                ]
+            )
+        )
     example = canonicalize_url(value.get("url_exemplo"))
     if example and example not in value["caminhos_conhecidos"]: value["caminhos_conhecidos"].append(example)
     return value
@@ -155,6 +170,7 @@ def query_group(state_path: Path | None = None, deep: bool = False) -> tuple[str
         "leilão bens públicos prefeituras Brasil",
         "leilão judicial extrajudicial Brasil",
         "leilão sucatas veículos recuperáveis Brasil",
+        "Sumaré Leilões próximos leilões lotes",
     ]
     limit = max(CONFIG["MAX_SEARCH_QUERIES"], 50) if deep else CONFIG["MAX_SEARCH_QUERIES"]
     write_json(
