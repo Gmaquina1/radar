@@ -63,7 +63,12 @@ def response_sources(response) -> list[dict]:
 class OpenAIProvider:
     def __init__(self, api_key: str | None = None, client=None, model: str | None = None, timeout: float | None = None):
         self.model = model or os.getenv("OPENAI_SEARCH_MODEL", "").strip() or DEFAULT_MODEL
-        timeout = timeout or float(os.getenv("REQUEST_TIMEOUT", "15"))
+        timeout = timeout or float(
+            os.getenv(
+                "OPENAI_REQUEST_TIMEOUT",
+                os.getenv("REQUEST_TIMEOUT", "15"),
+            )
+        )
         if client is None:
             from openai import OpenAI
             client = OpenAI(api_key=api_key, timeout=timeout, max_retries=1)

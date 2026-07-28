@@ -4,6 +4,11 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "43 2 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/deep-discovery-trigger"
 
 permissions:
   contents: write
@@ -22,6 +27,7 @@ jobs:
       WEB_SEARCH_PROVIDER: openai
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       OPENAI_SEARCH_MODEL: ${{ vars.OPENAI_SEARCH_MODEL || 'gpt-5-mini' }}
+      OPENAI_REQUEST_TIMEOUT: "60"
       OPENAI_MAX_SEARCH_QUERIES: "30"
       MAX_PAGES_PER_DOMAIN: "12"
       MAX_URLS_PER_DOMAIN: "50"
