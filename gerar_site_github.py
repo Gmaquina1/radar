@@ -86,6 +86,19 @@ def canonical_link(row: dict[str, str]) -> str:
     return re.sub(r"#.*$", "", link).strip()
 
 
+def lot_key(row: dict[str, str]) -> str:
+    link = canonical_link(row)
+    event = re.sub(r"\s+", " ", row.get("evento", "").strip()).casefold()
+    lot_number = re.sub(r"\s+", " ", row.get("lote", "").strip()).casefold()
+    title = re.sub(r"\s+", " ", row.get("titulo", "").strip()).casefold()
+    base = link or event
+    if lot_number:
+        return f"{base}|lote:{lot_number}"
+    if title:
+        return f"{base}|titulo:{title}"
+    return base
+
+
 def enrich_and_dedupe_lots(
     lots: list[dict[str, str]],
     events: list[dict[str, str]],
@@ -103,9 +116,7 @@ def enrich_and_dedupe_lots(
         row["link_edital"] = row.get("link_edital") or event.get("link_edital", "")
         row["resumo_edital"] = row.get("resumo_edital") or event.get("resumo_edital", "")
         row["link_evento"] = row.get("link_evento") or event.get("link", "")
-        key = canonical_link(row) or "|".join(
-            (row.get("evento", ""), row.get("lote", ""), row.get("titulo", ""))
-        ).casefold()
+        key = lot_key(row)
         current = selected.get(key)
         if not current:
             selected[key] = row
