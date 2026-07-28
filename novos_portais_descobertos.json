@@ -1,1 +1,92 @@
-[]
+[
+  {
+    "dominio": "gov.br",
+    "url_exemplo": "https://gov.br/receitafederal/pt-br/assuntos/leilao",
+    "descoberto_em": "2026-07-28T12:23:48+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-07-28T12:23:48+00:00"
+  },
+  {
+    "dominio": "lailo.com.br",
+    "url_exemplo": "https://lailo.com.br/",
+    "descoberto_em": "2026-07-28T12:23:48+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-07-28T12:23:48+00:00"
+  },
+  {
+    "dominio": "leiloai.com",
+    "url_exemplo": "https://leiloai.com/",
+    "descoberto_em": "2026-07-28T12:23:48+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-07-28T12:23:48+00:00"
+  },
+  {
+    "dominio": "leiloesceruli.com.br",
+    "url_exemplo": "https://leiloesceruli.com.br/item/27088/detalhes?page=1",
+    "descoberto_em": "2026-07-28T12:23:48+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-07-28T12:23:48+00:00"
+  },
+  {
+    "dominio": "agencia.ac.gov.br",
+    "url_exemplo": "https://agencia.ac.gov.br/wp-content/uploads/2026/02/DO17703820843384-1-57-70.pdf",
+    "descoberto_em": "2026-07-28T12:23:48+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-07-28T12:23:48+00:00"
+  },
+  {
+    "dominio": "kleiloes.com.br",
+    "url_exemplo": "https://kleiloes.com.br/oferta/leilao/diversos/bens-diversos/5010/id-50608/aparelho-de-ar-condicionado-18-mil-btu-s",
+    "descoberto_em": "2026-07-28T12:23:48+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-07-28T12:23:48+00:00"
+  },
+  {
+    "dominio": "ba.gov.br",
+    "url_exemplo": "https://ba.gov.br/detran/editais",
+    "descoberto_em": "2026-07-28T12:23:48+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-07-28T12:23:48+00:00"
+  },
+  {
+    "dominio": "caixa.gov.br",
+    "url_exemplo": "https://caixa.gov.br/leilao-bens-moveis/Paginas/default.aspx",
+    "descoberto_em": "2026-07-28T12:23:48+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-07-28T12:23:48+00:00"
+  },
+  {
+    "dominio": "portalzuk.com.br",
+    "url_exemplo": "https://portalzuk.com.br/leilao-de-imoveis/u/todos-imoveis/go",
+    "descoberto_em": "2026-07-28T12:23:48+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-07-28T12:23:48+00:00"
+  },
+  {
+    "dominio": "goias.gov.br",
+    "url_exemplo": "https://goias.gov.br/administracao/2023-2",
+    "descoberto_em": "2026-07-28T12:23:48+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-07-28T12:23:48+00:00"
+  }
+]

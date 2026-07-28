@@ -1,16 +1,16 @@
 {
   "status": "ok",
-  "verificado_em": "2026-07-28T09:10:16-03:00",
-  "atualizado_em_base_eventos": "2026-07-28T09:08:12-03:00",
-  "atualizado_em_base_lotes": "2026-07-28T09:10:15-03:00",
-  "idade_base_eventos_horas": 0.03,
+  "verificado_em": "2026-07-28T09:30:40-03:00",
+  "atualizado_em_base_eventos": "2026-07-28T09:13:41-03:00",
+  "atualizado_em_base_lotes": "2026-07-28T09:30:39-03:00",
+  "idade_base_eventos_horas": 0.28,
   "idade_base_lotes_horas": 0.0,
-  "eventos_futuros": 487,
+  "eventos_futuros": 488,
   "patios": 132,
-  "lotes": 4467,
-  "lotes_capturados_agora": 4633,
+  "lotes": 4468,
+  "lotes_capturados_agora": 6508,
   "lotes_preservados": 136,
-  "eventos_indexados_com_lotes": 189,
+  "eventos_indexados_com_lotes": 353,
   "checks": {
     "arquivos_obrigatorios": true,
     "workflow_existe": true,
@@ -28,17 +28,17 @@
     "base_lotes_recente": true
   },
   "arquivos_faltando": [],
-  "modo": "rapido",
-  "duracao_segundos": 169.07,
-  "ultima_execucao": "2026-07-28T09:10:16-03:00",
+  "modo": "profundo",
+  "duracao_segundos": 1068.49,
+  "ultima_execucao": "2026-07-28T09:30:40-03:00",
   "mensagem": "Eventos, lotes e site atualizados com sucesso.",
   "base_anterior_restaurada": false,
-  "lotes_antes": 4502,
-  "lotes_depois": 4467,
-  "lotes_novos_detectados": 51,
-  "lotes_removidos_ou_encerrados": 89,
+  "lotes_antes": 4467,
+  "lotes_depois": 4468,
+  "lotes_novos_detectados": 0,
+  "lotes_removidos_ou_encerrados": 0,
   "status_mapa": "ok",
-  "status_openai": "NAO_TESTADA",
+  "status_openai": "ERRO",
   "status_descoberta": "parcial",
   "status_descoberta_web": "parcial",
   "status_lotes": "ok",
@@ -56,23 +56,23 @@
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 44.82,
+      "duracao_segundos": 49.18,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 600
     },
     {
-      "nome": "Atualizar lote incremental de portais conhecidos",
+      "nome": "Descoberta profunda fora do mapa",
       "comando": [
         "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
         "descobrir_leiloes_web.py",
-        "--quick-refresh"
+        "--deep-discovery"
       ],
       "tentativas": 1,
-      "duracao_segundos": 20.33,
+      "duracao_segundos": 825.04,
       "status": "ok",
       "codigo": 0,
-      "timeout_segundos": 900
+      "timeout_segundos": 7800
     },
     {
       "nome": "Procurar novos lotes nos sites dos leiloeiros",
@@ -87,7 +87,7 @@
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 103.21,
+      "duracao_segundos": 193.72,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 3600
@@ -99,7 +99,7 @@
         "gerar_site_github.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 0.21,
+      "duracao_segundos": 0.16,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300
@@ -112,7 +112,7 @@
         "--falhar-se-atencao"
       ],
       "tentativas": 1,
-      "duracao_segundos": 0.21,
+      "duracao_segundos": 0.16,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300
