@@ -154,6 +154,14 @@ class DiscoveryTests(unittest.TestCase):
         rows = [{"nome":"A", "link":"https://x.test/lote?utm_source=a"}, {"nome":"B", "link":"https://x.test/lote"}]
         discovery.consolidate([], rows, self.paths["all.csv"]); self.assertEqual(len(self.paths["all.csv"].read_text().splitlines()), 2)
 
+    def test_consolidacao_grava_lf_sem_crlf(self):
+        discovery.consolidate(
+            [],
+            [{"nome": "A", "link": "https://x.test/lote"}],
+            self.paths["all.csv"],
+        )
+        self.assertNotIn(b"\r\n", self.paths["all.csv"].read_bytes())
+
     def test_urls_malformadas_sao_ignoradas(self):
         for value in (None, "", "   ", "https://x.test:porta/lote", "/relativa", "não é url"):
             self.assertEqual(canonicalize_url(value), "")

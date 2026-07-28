@@ -220,7 +220,14 @@ def consolidate(map_events: list[dict], web_events: list[dict], output: Path | N
         rows.append(item)
     fields = list(dict.fromkeys([key for row in rows for key in row] or ["nome", "link", "fonte_descoberta"]))
     with output.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore"); writer.writeheader(); writer.writerows(rows)
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=fields,
+            extrasaction="ignore",
+            lineterminator="\n",
+        )
+        writer.writeheader()
+        writer.writerows(rows)
 
 
 def _client_get(client, url: str, deadline: float):
