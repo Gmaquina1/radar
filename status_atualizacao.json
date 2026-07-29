@@ -1,16 +1,16 @@
 {
   "status": "ok",
-  "verificado_em": "2026-07-28T16:55:13-03:00",
-  "atualizado_em_base_eventos": "2026-07-28T16:51:59-03:00",
-  "atualizado_em_base_lotes": "2026-07-28T16:55:12-03:00",
-  "idade_base_eventos_horas": 0.05,
+  "verificado_em": "2026-07-29T00:56:15-03:00",
+  "atualizado_em_base_eventos": "2026-07-29T00:47:37-03:00",
+  "atualizado_em_base_lotes": "2026-07-29T00:56:14-03:00",
+  "idade_base_eventos_horas": 0.14,
   "idade_base_lotes_horas": 0.0,
-  "eventos_futuros": 480,
+  "eventos_futuros": 482,
   "patios": 132,
-  "lotes": 4282,
-  "lotes_capturados_agora": 7580,
-  "lotes_preservados": 136,
-  "eventos_indexados_com_lotes": 397,
+  "lotes": 4297,
+  "lotes_capturados_agora": 7590,
+  "lotes_preservados": 148,
+  "eventos_indexados_com_lotes": 395,
   "checks": {
     "arquivos_obrigatorios": true,
     "workflow_existe": true,
@@ -29,14 +29,14 @@
   },
   "arquivos_faltando": [],
   "modo": "rapido",
-  "duracao_segundos": 240.98,
-  "ultima_execucao": "2026-07-28T16:55:13-03:00",
+  "duracao_segundos": 1175.5,
+  "ultima_execucao": "2026-07-29T00:56:15-03:00",
   "mensagem": "Eventos, lotes e site atualizados com sucesso.",
   "base_anterior_restaurada": false,
-  "lotes_antes": 4272,
-  "lotes_depois": 4282,
-  "lotes_novos_detectados": 151,
-  "lotes_removidos_ou_encerrados": 80,
+  "lotes_antes": 4282,
+  "lotes_depois": 4297,
+  "lotes_novos_detectados": 26,
+  "lotes_removidos_ou_encerrados": 11,
   "status_mapa": "ok",
   "status_openai": "NAO_TESTADA",
   "status_descoberta": "parcial",
@@ -56,7 +56,7 @@
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 46.74,
+      "duracao_segundos": 657.83,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 900
@@ -69,7 +69,7 @@
         "--quick-refresh"
       ],
       "tentativas": 1,
-      "duracao_segundos": 8.19,
+      "duracao_segundos": 24.15,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 900
@@ -87,7 +87,7 @@
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 185.31,
+      "duracao_segundos": 492.83,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 3600
@@ -112,7 +112,7 @@
         "--falhar-se-atencao"
       ],
       "tentativas": 1,
-      "duracao_segundos": 0.21,
+      "duracao_segundos": 0.16,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300

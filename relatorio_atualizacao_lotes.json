@@ -1,15 +1,15 @@
 {
-  "executado_em": "2026-07-28T16:55:12-03:00",
-  "lotes_antes": 4272,
-  "lotes_depois": 4282,
-  "lotes_realmente_novos": 151,
-  "lotes_removidos_ou_encerrados": 80,
-  "lotes_preservados": 136,
-  "lotes_capturados_agora": 7580,
-  "lotes_capturados_com_chave_nova": 1971,
-  "eventos_analisados": 1092,
-  "eventos_com_lotes": 397,
-  "eventos_com_erro": 102,
+  "executado_em": "2026-07-29T00:56:14-03:00",
+  "lotes_antes": 4282,
+  "lotes_depois": 4297,
+  "lotes_realmente_novos": 26,
+  "lotes_removidos_ou_encerrados": 11,
+  "lotes_preservados": 148,
+  "lotes_capturados_agora": 7590,
+  "lotes_capturados_com_chave_nova": 1851,
+  "eventos_analisados": 1093,
+  "eventos_com_lotes": 395,
+  "eventos_com_erro": 122,
   "eventos_bloqueados": 95,
   "links_invalidos": 3,
   "quantidade_coletada_por_leiloeiro": {
@@ -24,19 +24,19 @@
     "eckertleiloes.com.br": 145,
     "goias.gov.br": 2,
     "goldenlance.com.br": 188,
-    "grupolance.com.br": 102,
-    "hastapublica.com.br": 22,
+    "grupolance.com.br": 103,
+    "hastapublica.com.br": 23,
     "hisaleiloes.com.br": 100,
     "jmleiloes.leilao.br": 6,
     "jrleiloes.com.br": 2,
-    "kleiloes.com.br": 82,
+    "kleiloes.com.br": 81,
     "kronleiloes.com.br": 2,
     "kwara.com.br": 84,
     "lancecertoleiloes.com.br": 177,
     "lancejusto.com.br": 2,
     "lancevip.com.br": 97,
     "lbleiloes.com.br": 57,
-    "leilao.detran.mg.gov.br": 100,
+    "leilao.detran.mg.gov.br": 98,
     "leilao.sodresantoro.com.br": 22,
     "leilaobrasil.com.br": 544,
     "leilaoonline.com.br": 258,
@@ -44,7 +44,7 @@
     "leiloeiropublico.com.br": 3,
     "leiloesalbino.com.br": 15,
     "leiloesfreire.com.br": 132,
-    "leiloesjudiciais.com.br": 47,
+    "leiloesjudiciais.com.br": 46,
     "leiloesoliveira.com.br": 29,
     "leiloespb.com.br": 14,
     "leje.com.br": 46,
@@ -54,15 +54,13 @@
     "lumussaleiloes.com.br": 27,
     "marcusviniciusleiloes.com.br": 265,
     "mariafixerleiloes.com.br": 2,
-    "marquesleiloes.com.br": 3,
+    "marquesleiloes.com.br": 2,
     "megaleiloes.com.br": 8,
     "mjleiloes.com.br": 241,
-    "nakakogueleiloes.com.br": 12,
-    "nordesteleiloes.com.br": 29,
+    "nordesteleiloes.com.br": 33,
     "okleiloes.com.br": 19,
-    "pactoleiloes.com.br": 1,
-    "peterlongoleiloes.com.br": 75,
-    "portaldoleiloeiro.com.br": 27,
+    "peterlongoleiloes.com.br": 73,
+    "portaldoleiloeiro.com.br": 28,
     "portalzuk.com.br": 67,
     "ricardogomesleiloes.com.br": 1,
     "rofremleiloes.com.br": 24,
@@ -70,15 +68,15 @@
     "rossileiloes.com.br": 774,
     "rpleiloes.com.br": 29,
     "sabbagleiloes.com.br": 9,
-    "sandrasantosleiloes.com.br": 55,
+    "sandrasantosleiloes.com.br": 56,
     "sandroleiloeiro.com.br": 357,
     "saraivaleiloes.com.br": 24,
     "satoleiloes.com.br": 1,
     "sfleiloes.com.br": 37,
     "sodresantoro.com.br": 94,
-    "sold.com.br": 1202,
+    "sold.com.br": 1222,
     "spencerleiloes.com.br": 4,
-    "suedpeterleiloes.com.br": 32,
+    "suedpeterleiloes.com.br": 34,
     "superbid.net": 83,
     "swleiloes.com.br": 98,
     "tesouroleiloes.com.br": 26,
@@ -92,7 +90,6 @@
     "alvesleiloes.com.br": 1,
     "andradeleiloes.com.br": 1,
     "apabrfleiloes.com.br": 1,
-    "ba.gov.br": 1,
     "bianchileiloes.com.br": 1,
     "bidgo.com.br": 2,
     "danielgarcialeiloes.com.br": 10,
@@ -100,6 +97,7 @@
     "eblonline.com.br": 2,
     "freitasleiloeiro.com.br": 1,
     "goldenbrazilleiloes.com.br": 1,
+    "gov.br": 11,
     "grleiloes.com": 1,
     "guariglialeiloes.com.br": 2,
     "gustavomorettoleiloeiro.com.br": 2,
@@ -113,16 +111,18 @@
     "lottileiloes.com.br": 1,
     "mercado.bomvalor.com.br": 5,
     "mgl.com.br": 27,
+    "nakakogueleiloes.com.br": 1,
     "nsleiloes.leilao.br": 6,
-    "palaciodosleiloes.com.br": 1,
     "patiorochaleiloes.com.br": 3,
+    "pncp.gov.br": 1,
     "pwleiloes.com.br": 6,
     "rangelleiloes.com.br": 1,
     "ricoleiloes.com.br": 1,
     "rjleiloes.com.br": 2,
     "sumareleiloes.com.br": 2,
     "victordortaleiloes.com.br": 1,
-    "wleiloes.com.br": 1
+    "wleiloes.com.br": 1,
+    "www25.receita.fazenda.gov.br": 9
   },
   "urls_que_falharam": [
     {
@@ -221,6 +221,11 @@
       "http": 403
     },
     {
+      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/800100/9/2026",
+      "status": "erro",
+      "http": 0
+    },
+    {
       "url": "https://www.guariglialeiloes.com.br/leilao/809/lotes?tipo_bem_id=&modelo_id=&modelo_id=&address_uf=&lance_inicial_ini=&lance_inicial_fim=&search=candeias",
       "status": "bloqueado_http_403",
       "http": 403
@@ -276,6 +281,11 @@
       "http": 403
     },
     {
+      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/700100/9/2026;pg=2",
+      "status": "erro",
+      "http": 0
+    },
+    {
       "url": "https://www.joaoemilio.com.br/leilao/6038/lotes",
       "status": "bloqueado_http_403",
       "http": 403
@@ -324,6 +334,11 @@
       "url": "https://www.lanceleiloes.com.br/leilao/868/lotes",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/717700/2/2026",
+      "status": "erro",
+      "http": 0
     },
     {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-itobi-sp/7232/#&Pagina=1&Index=1",
@@ -511,6 +526,11 @@
       "http": 403
     },
     {
+      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/600100/3/2026",
+      "status": "erro",
+      "http": 0
+    },
+    {
       "url": "https://www.rangelleiloes.com.br/leilao/leilao-do-municipio-de-paverama-rs-20-07-2026-15-39-28/lotes/lista",
       "status": "bloqueado_http_403",
       "http": 403
@@ -519,6 +539,11 @@
       "url": "https://victordortaleiloes.com.br/leilao/1420/lotes",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www.nakakogueleiloes.com.br/lotes/137532/",
+      "status": "erro",
+      "http": 0
     },
     {
       "url": "https://www.gustavomorettoleiloeiro.com.br/leiloes/5279",
@@ -596,6 +621,16 @@
       "http": 0
     },
     {
+      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/900100/9/2026",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/700100/10/2026",
+      "status": "erro",
+      "http": 0
+    },
+    {
       "url": "https://www.alvesleiloes.com.br/leilao/251/lotes",
       "status": "bloqueado_http_403",
       "http": 403
@@ -606,7 +641,7 @@
       "http": 403
     },
     {
-      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8503",
+      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/727600/2/2026",
       "status": "erro",
       "http": 0
     },
@@ -636,7 +671,72 @@
       "http": 404
     },
     {
-      "url": "https://www.ba.gov.br/detran/editais/7692/edital-de-leilao-no-152026-veiculos-conservados-e-sucatas-aproveitaveis",
+      "url": "https://pncp.gov.br/app/editais",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.gov.br/receitafederal/pt-br/assuntos/leilao",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.gov.br/receitafederal/pt-br/assuntos/leilao/manual-leilao",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/licitacoes-e-contratos/avisos-de-edital-de-leilao",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.gov.br/receitafederal/acl_users/credentials_cookie_auth/require_login?came_from=https%3A//www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/manuais/manual-de-participacao-em-leilao-da-receita-federal/manual-sle.pdf",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.gov.br/cultura/acl_users/credentials_cookie_auth/require_login?came_from=https%3A//www.gov.br/cultura/pt-br/assuntos/politica-nacional-aldir-blanc/modelos-de-editais/modelos-de-editais",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.gov.br/receitafederal/pt-br/assuntos/leilao/leiloes-doacao-da-receita-federal",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.gov.br/pt-br/sitemap",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.gov.br/receitafederal/pt-br/assuntos/leilao/perguntas-e-respostas-leilao-eletronico-fevereiro-2024.pdf",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.gov.br/receitafederal/pt-br/assuntos/leilao/manual-leilao/manual-do-licitante.pdf",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.gov.br/receitafederal/pt-br/assuntos/leilao/legislacao-sobre-leilao",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.gov.br/receitafederal/pt-br/assuntos/leilao/arrecadacao",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www25.receita.fazenda.gov.br/sle-sociedade/portal/edital/900100/5/2026/lote/213",
       "status": "erro",
       "http": 0
     }
