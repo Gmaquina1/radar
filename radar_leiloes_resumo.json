@@ -1,57 +1,57 @@
 {
-  "atualizado_em": "2026-07-29T00:47:37-03:00",
+  "atualizado_em": "2026-07-29T06:08:05-03:00",
   "data_base": "2026-07-29",
   "total_registros": 747,
   "eventos_atualizacao": 615,
-  "eventos_futuros_ou_hoje": 482,
+  "eventos_futuros_ou_hoje": 435,
   "patios": 132,
-  "eventos_com_link": 480,
-  "eventos_com_data_hora_de_edital": 74,
-  "eventos_com_data_hora_de_site": 24,
+  "eventos_com_link": 433,
+  "eventos_com_data_hora_de_edital": 76,
+  "eventos_com_data_hora_de_site": 23,
   "eventos_por_uf": [
     [
       "SP",
-      121
+      117
     ],
     [
       "MG",
-      91
-    ],
-    [
-      "RS",
-      59
+      85
     ],
     [
       "PR",
-      56
+      52
+    ],
+    [
+      "RS",
+      43
     ],
     [
       "RJ",
-      32
+      24
     ],
     [
       "SC",
-      25
-    ],
-    [
-      "MT",
-      12
+      23
     ],
     [
       "BA",
       11
     ],
     [
-      "GO",
+      "MT",
       10
     ],
     [
-      "MA",
+      "GO",
       9
     ],
     [
       "PE",
       8
+    ],
+    [
+      "MA",
+      7
     ],
     [
       "CE",
@@ -74,11 +74,11 @@
       5
     ],
     [
-      "RN",
-      5
+      "PI",
+      3
     ],
     [
-      "PI",
+      "RN",
       3
     ],
     [
@@ -112,20 +112,20 @@
       85
     ],
     [
-      "2026-07-29",
-      79
-    ],
-    [
       "2026-07-30",
       63
     ],
     [
       "2026-08-04",
-      41
+      40
     ],
     [
       "2026-08-03",
       40
+    ],
+    [
+      "2026-07-29",
+      33
     ],
     [
       "2026-08-10",
@@ -225,11 +225,11 @@
     ]
   ],
   "download_kml": {
-    "downloaded_at": "2026-07-29T00:36:40-03:00",
+    "downloaded_at": "2026-07-29T06:07:14-03:00",
     "http_status": 200,
     "final_url": "https://www.google.com/maps/d/kml?forcekml=1&mid=1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U",
     "downloaded_bytes": 1024357,
-    "old_sha256": "a2fd417c6cb5430c3d2030449c165c24abc13c672ecc07056ff65b280b843cab",
+    "old_sha256": "41ecd848270878e504b12cd0ab03884a0b66b75a9ea2b026f4392fce6636cc40",
     "new_sha256": "41ecd848270878e504b12cd0ab03884a0b66b75a9ea2b026f4392fce6636cc40",
     "old_markers": 747,
     "new_markers": 747,

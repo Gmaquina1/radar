@@ -1,16 +1,16 @@
 {
   "status": "ok",
-  "verificado_em": "2026-07-29T00:56:15-03:00",
-  "atualizado_em_base_eventos": "2026-07-29T00:47:37-03:00",
-  "atualizado_em_base_lotes": "2026-07-29T00:56:14-03:00",
-  "idade_base_eventos_horas": 0.14,
+  "verificado_em": "2026-07-29T06:12:00-03:00",
+  "atualizado_em_base_eventos": "2026-07-29T06:08:05-03:00",
+  "atualizado_em_base_lotes": "2026-07-29T06:11:59-03:00",
+  "idade_base_eventos_horas": 0.07,
   "idade_base_lotes_horas": 0.0,
-  "eventos_futuros": 482,
+  "eventos_futuros": 435,
   "patios": 132,
-  "lotes": 4297,
-  "lotes_capturados_agora": 7590,
-  "lotes_preservados": 148,
-  "eventos_indexados_com_lotes": 395,
+  "lotes": 4242,
+  "lotes_capturados_agora": 7600,
+  "lotes_preservados": 135,
+  "eventos_indexados_com_lotes": 396,
   "checks": {
     "arquivos_obrigatorios": true,
     "workflow_existe": true,
@@ -29,14 +29,14 @@
   },
   "arquivos_faltando": [],
   "modo": "rapido",
-  "duracao_segundos": 1175.5,
-  "ultima_execucao": "2026-07-29T00:56:15-03:00",
+  "duracao_segundos": 286.85,
+  "ultima_execucao": "2026-07-29T06:12:00-03:00",
   "mensagem": "Eventos, lotes e site atualizados com sucesso.",
   "base_anterior_restaurada": false,
-  "lotes_antes": 4282,
-  "lotes_depois": 4297,
-  "lotes_novos_detectados": 26,
-  "lotes_removidos_ou_encerrados": 11,
+  "lotes_antes": 4297,
+  "lotes_depois": 4242,
+  "lotes_novos_detectados": 0,
+  "lotes_removidos_ou_encerrados": 42,
   "status_mapa": "ok",
   "status_openai": "NAO_TESTADA",
   "status_descoberta": "parcial",
@@ -56,7 +56,7 @@
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 657.83,
+      "duracao_segundos": 51.82,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 900
@@ -69,7 +69,7 @@
         "--quick-refresh"
       ],
       "tentativas": 1,
-      "duracao_segundos": 24.15,
+      "duracao_segundos": 24.94,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 900
@@ -87,7 +87,7 @@
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 492.83,
+      "duracao_segundos": 209.49,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 3600
@@ -99,7 +99,7 @@
         "gerar_site_github.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 0.26,
+      "duracao_segundos": 0.21,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300
