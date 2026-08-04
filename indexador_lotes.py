@@ -20,6 +20,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from normalizar_texto import corrigir_dados, corrigir_texto
+
 try:
     from pypdf import PdfReader
 except Exception:  # pragma: no cover - instalado pelo GitHub Actions
@@ -201,7 +203,7 @@ def clean_text(value: str | None) -> str:
     value = html.unescape(value)
     value = re.sub(r"<[^>]+>", " ", value)
     value = re.sub(r"\s+", " ", value)
-    return value.strip()
+    return corrigir_texto(value.strip())
 
 
 def strip_accents(value: str) -> str:
@@ -1051,7 +1053,7 @@ def clean_existing_outputs(json_path: Path, csv_path: Path) -> int:
         raise SystemExit(f"Nao foi possivel limpar {json_path}: {exc}")
     if not isinstance(payload, dict):
         raise SystemExit(f"Formato invalido em {json_path}")
-    rows = [row for row in payload.get("lotes", []) if isinstance(row, dict) and valid_lot(row)]
+    rows = [corrigir_dados(row) for row in payload.get("lotes", []) if isinstance(row, dict) and valid_lot(row)]
     payload["lotes"] = rows
     payload["total_lotes"] = len(rows)
     payload["total_lotes_preservados"] = sum(
@@ -1175,7 +1177,7 @@ def write_csv(path: Path, rows: list[dict[str, str]]) -> None:
         writer = csv.DictWriter(handle, fieldnames=FIELDS, lineterminator="\n")
         writer.writeheader()
         for row in rows:
-            writer.writerow({field: row.get(field, "") for field in FIELDS})
+            writer.writerow({field: corrigir_texto(row.get(field, "")) for field in FIELDS})
 
 
 def main() -> None:
@@ -1251,7 +1253,7 @@ def main() -> None:
         "lotes": lots,
         "logs": logs,
     }
-    output_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    output_path.write_text(json.dumps(corrigir_dados(payload), ensure_ascii=False, indent=2), encoding="utf-8")
     write_csv(Path(args.csv), lots)
     print(
         json.dumps(

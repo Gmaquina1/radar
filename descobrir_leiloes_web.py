@@ -22,6 +22,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from coletores.generico import GenericCollector, canonicalize_url
+from normalizar_texto import corrigir_dados, corrigir_texto
 from web_search import search_web
 
 ROOT = Path(__file__).resolve().parent
@@ -68,7 +69,7 @@ def now() -> str: return datetime.now(timezone.utc).isoformat(timespec="seconds"
 def read_json(path: Path, default):
     try: return json.loads(path.read_text(encoding="utf-8"))
     except (OSError, ValueError): return default
-def write_json(path: Path, value) -> None: path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+def write_json(path: Path, value) -> None: path.write_text(json.dumps(corrigir_dados(value), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 def host(url) -> str:
     canonical = canonicalize_url(url)
     if not canonical: return ""
@@ -321,7 +322,7 @@ def normalize_csv_value(value):
     """Remove whitespace that makes generated CSV diffs fail validation."""
     if not isinstance(value, str):
         return value
-    normalized = value.replace("\r\n", "\n").replace("\r", "\n")
+    normalized = corrigir_texto(value).replace("\r\n", "\n").replace("\r", "\n")
     return "\n".join(line.rstrip() for line in normalized.split("\n"))
 
 
