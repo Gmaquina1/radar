@@ -39,8 +39,7 @@ PROXIMITY_HTML = """    <section class="nearby-panel" aria-labelledby="nearby-ti
 
 
 PROXIMITY_FUNCTIONS = """  const municipalities=(BASE.municipios||[]).map(row=>({name:row[0],uf:row[1],lat:Number(row[2]),lon:Number(row[3]),label:`${row[0]} - ${row[1]}`}));
-  let municipalityOptionsLoaded=false;
-  function loadMunicipalityOptions(){if(municipalityOptionsLoaded)return;municipalityOptionsLoaded=true;$('municipality-list').innerHTML=municipalities.map(city=>`<option value="${esc(city.label)}"></option>`).join('')}
+  function loadMunicipalityOptions(value=''){const query=norm(value).replace(/\\s+/g,' ').trim();const matches=query.length<2?[]:municipalities.filter(city=>norm(city.label).includes(query)||norm(city.name).includes(query)).slice(0,20);$('municipality-list').innerHTML=matches.map(city=>`<option value="${esc(city.label)}"></option>`).join('')}
   function municipalityFromInput(value){const key=norm(value).replace(/\\s+/g,' ').trim();if(!key)return null;const exact=municipalities.find(city=>norm(city.label)===key);if(exact)return exact;const matches=municipalities.filter(city=>norm(city.name)===key);return matches.length===1?matches[0]:null}
   function distanceKm(row){if(!state.locationActive)return null;const lat=Number(row.latitude),lon=Number(row.longitude);if(!Number.isFinite(lat)||!Number.isFinite(lon))return null;const rad=value=>value*Math.PI/180;const dLat=rad(lat-state.userLat),dLon=rad(lon-state.userLon);const a=Math.min(1,Math.sin(dLat/2)**2+Math.cos(rad(state.userLat))*Math.cos(rad(lat))*Math.sin(dLon/2)**2);return 6371*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a))}
   function saveLocation(){try{localStorage.setItem(LOCATION_STORE,JSON.stringify({lat:state.userLat,lon:state.userLon,radius:state.radius,label:state.locationLabel}))}catch{}}
@@ -152,7 +151,7 @@ def apply_date_highlights(template: str) -> str:
         """  document.querySelectorAll('[data-date-shortcut]').forEach(btn=>btn.addEventListener('click',()=>applyExactDate(dateKey(btn.dataset.dateShortcut==='tomorrow'?1:0),btn.dataset.dateShortcut)));
   $('exact-date-filter').addEventListener('change',event=>{if(event.target.value)applyExactDate(event.target.value,'calendar');else{state.exactDate='';resetVisible()}});
   $('date-filter').addEventListener('change',event=>{state.days=event.target.value;state.exactDate='';$('exact-date-filter').value='';state.savedOnly=false;resetVisible();track('filter_date',{days:state.days,result_count:current.length})});
-  $('location-input').addEventListener('focus',loadMunicipalityOptions,{once:true});
+  $('location-input').addEventListener('input',event=>loadMunicipalityOptions(event.target.value));
   $('location-input').addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();applyTypedLocation()}});
   $('apply-location').addEventListener('click',applyTypedLocation);
   $('use-location').addEventListener('click',useCurrentLocation);
