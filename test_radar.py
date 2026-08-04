@@ -190,6 +190,15 @@ class RadarTests(unittest.TestCase):
         self.assertIn("function distanceKm(row)", personalized)
         self.assertIn("distance>state.radius", personalized)
 
+    def test_site_mostra_leilao_antes_dos_lotes(self) -> None:
+        personalized = apply_date_highlights(site.TEMPLATE.read_text(encoding="utf-8"))
+        self.assertIn("function groupAuctions(rows)", personalized)
+        self.assertIn('class="auction-group"', personalized)
+        self.assertIn('data-toggle-auction=', personalized)
+        self.assertIn("expandedAuctions", personalized)
+        self.assertIn("MOSTRAR MAIS LOTES", personalized)
+        self.assertIn("leilões · ${formatNumber(current.length)} lotes", personalized)
+
     def test_relatorio_compara_chaves_estaveis(self) -> None:
         anterior = [{"link_lote": "https://exemplo.com/lote/1", "titulo": "Lote 1"}]
         atual = [{"link_lote": "https://exemplo.com/lote/2", "titulo": "Lote 2"}]
