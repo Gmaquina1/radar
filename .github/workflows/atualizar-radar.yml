@@ -112,6 +112,7 @@ jobs:
         continue-on-error: true
         shell: bash
         run: |
+          python sanitizar_conteudo_externo.py
           python -m unittest discover -v
           python -m compileall -q .
           git diff --check
