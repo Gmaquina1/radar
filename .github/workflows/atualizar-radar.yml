@@ -99,12 +99,18 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          python executar_atualizacao_radar.py \
-            --modo rapido \
-            --workers-mapa 24 \
-            --workers-lotes 16 \
-            --delay-lotes 0 \
-            2>&1 | tee atualizacao.log
+          if [ "${GITHUB_EVENT_NAME}" = "push" ]; then
+            echo "Publicação rápida: reutilizando os dados atuais do Radar."
+            python sanitizar_conteudo_externo.py
+            python gerar_site_github.py 2>&1 | tee atualizacao.log
+          else
+            python executar_atualizacao_radar.py \
+              --modo rapido \
+              --workers-mapa 24 \
+              --workers-lotes 16 \
+              --delay-lotes 0 \
+              2>&1 | tee atualizacao.log
+          fi
 
       - name: Executar testes de segurança
         id: testes
