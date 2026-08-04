@@ -11,6 +11,7 @@ import indexador_lotes as indexador
 import atualizar_radar_leiloes as atualizador
 import executar_atualizacao_radar as pipeline
 import gerar_site_github as site
+import sanitizar_conteudo_externo as sanitizer
 from personalizar_site import apply_date_highlights
 
 
@@ -198,6 +199,13 @@ class RadarTests(unittest.TestCase):
         self.assertIn("expandedAuctions", personalized)
         self.assertIn("MOSTRAR MAIS LOTES", personalized)
         self.assertIn("leilões · ${formatNumber(current.length)} lotes", personalized)
+
+    def test_mascara_chave_aws_encontrada_em_conteudo_externo(self) -> None:
+        fake_key = "AKIA" + "A" * 16
+        sanitized, replacements = sanitizer.sanitize_text(f"Lote {fake_key}")
+        self.assertEqual(replacements, 1)
+        self.assertNotIn(fake_key, sanitized)
+        self.assertIn(sanitizer.REPLACEMENT, sanitized)
 
     def test_relatorio_compara_chaves_estaveis(self) -> None:
         anterior = [{"link_lote": "https://exemplo.com/lote/1", "titulo": "Lote 1"}]
