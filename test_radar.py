@@ -9,6 +9,7 @@ from zoneinfo import ZoneInfo
 
 import indexador_lotes as indexador
 import atualizar_radar_leiloes as atualizador
+import atualizar_licitacoes as licitacoes
 import executar_atualizacao_radar as pipeline
 import gerar_site_github as site
 import sanitizar_conteudo_externo as sanitizer
@@ -202,6 +203,60 @@ class RadarTests(unittest.TestCase):
         self.assertIn("expandedAuctions", personalized)
         self.assertIn("MOSTRAR MAIS LOTES", personalized)
         self.assertIn("leilões · ${formatNumber(current.length)} lotes", personalized)
+
+    def test_site_oferece_escolha_entre_leiloes_e_licitacoes(self) -> None:
+        portal = site.PORTAL_TEMPLATE.read_text(encoding="utf-8")
+        self.assertIn('href="./leiloes.html"', portal)
+        self.assertIn('href="./licitacoes.html"', portal)
+        self.assertIn("Radar de Oportunidades", portal)
+
+    def test_site_remove_marca_anterior_e_oferece_contato(self) -> None:
+        templates = "\n".join(
+            path.read_text(encoding="utf-8")
+            for path in (site.TEMPLATE, site.PORTAL_TEMPLATE, site.LICITACOES_TEMPLATE)
+        )
+        self.assertNotRegex(templates.casefold(), r"g[ -]?m[aá]quina")
+        self.assertIn("mailto:contato@empaez.com", templates)
+        self.assertIn("Falar pelo WhatsApp", templates)
+        self.assertNotIn("5538998465955", templates)
+
+    def test_licitacao_mapeia_dados_oficiais_e_link_do_pncp(self) -> None:
+        row = licitacoes.map_contract(
+            {
+                "numeroControlePNCP": "00394502000144-1-000180/2026",
+                "numeroCompra": "18/2026",
+                "processo": "123/2026",
+                "objetoCompra": "Aquisição de máquinas",
+                "modalidadeId": 6,
+                "modalidadeNome": "Pregão - Eletrônico",
+                "dataEncerramentoProposta": "2026-08-10T10:00:00",
+                "valorTotalEstimado": 100000,
+                "orgaoEntidade": {"razaoSocial": "Órgão de Teste"},
+                "unidadeOrgao": {"nomeUnidade": "Unidade Central", "ufSigla": "MG", "municipioNome": "Taiobeiras"},
+            }
+        )
+        self.assertEqual(row["uf"], "MG")
+        self.assertEqual(row["cidade"], "Taiobeiras")
+        self.assertEqual(row["orgao"], "Órgão de Teste")
+        self.assertEqual(row["link"], "https://pncp.gov.br/app/editais/00394502000144/2026/180")
+
+    def test_coletor_de_licitacoes_percorre_modalidades_sem_leiloes(self) -> None:
+        calls = []
+
+        def fake_request(modality: int, final_date: str, page: int) -> dict:
+            calls.append((modality, page))
+            return {"data": [], "totalPaginas": 0}
+
+        with mock.patch.object(licitacoes, "request_page", side_effect=fake_request):
+            rows, errors, truncated = licitacoes.collect(
+                datetime(2026, 8, 4, 12, 0, tzinfo=ZoneInfo("America/Sao_Paulo"))
+            )
+        self.assertEqual(rows, [])
+        self.assertEqual(errors, [])
+        self.assertFalse(truncated)
+        self.assertEqual({value for value, _ in calls}, set(range(2, 13)))
+        self.assertNotIn(1, {value for value, _ in calls})
+        self.assertNotIn(13, {value for value, _ in calls})
 
     def test_corrige_acentos_corrompidos_do_mapa(self) -> None:
         original = "[ﾃ迭Gﾃグ Pﾃ咤LICO] - Veﾃｭculos, ﾃ馬ibus e Mﾃ｡quinas - Sﾃ｣o Paulo"

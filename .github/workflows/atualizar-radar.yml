@@ -70,6 +70,9 @@ jobs:
           test -f atualizar_radar_leiloes.py
           test -f indexador_lotes.py
           test -f gerar_site_github.py
+          test -f atualizar_licitacoes.py
+          test -f portal_template.html
+          test -f licitacoes_template.html
           test -f executar_atualizacao_radar.py
           test -f diagnostico_radar.py
           test -f .github/workflows/atualizar-radar.yml
@@ -102,6 +105,7 @@ jobs:
           if [ "${GITHUB_EVENT_NAME}" = "push" ]; then
             echo "Publicação rápida: reutilizando os dados atuais do Radar."
             python sanitizar_conteudo_externo.py
+            python atualizar_licitacoes.py || echo "PNCP indisponível: mantendo a base de licitações existente."
             python gerar_site_github.py 2>&1 | tee atualizacao.log
           else
             python executar_atualizacao_radar.py \
@@ -110,6 +114,8 @@ jobs:
               --workers-lotes 16 \
               --delay-lotes 0 \
               2>&1 | tee atualizacao.log
+            python atualizar_licitacoes.py || echo "PNCP indisponível: mantendo a base de licitações existente."
+            python gerar_site_github.py
           fi
 
       - name: Executar testes de segurança
@@ -191,7 +197,7 @@ jobs:
         if: steps.atualizar.outcome == 'success' && steps.testes.outcome == 'success'
         shell: bash
         run: |
-          git config user.name "Radar G MÁQUINA"
+          git config user.name "Radar de Oportunidades"
           git config user.email "actions@users.noreply.github.com"
 
           git add -A
@@ -217,6 +223,7 @@ jobs:
             relatorio_atualizacao_lotes.json
             relatorio_descoberta_web.json
             relatorio_cobertura_radar.json
+            status_licitacoes.json
           if-no-files-found: ignore
           retention-days: 14
 

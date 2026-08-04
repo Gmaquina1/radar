@@ -16,6 +16,9 @@ from personalizar_site import apply_date_highlights
 
 ROOT = Path(__file__).resolve().parent
 TEMPLATE = ROOT / "site_template.html"
+PORTAL_TEMPLATE = ROOT / "portal_template.html"
+LICITACOES_TEMPLATE = ROOT / "licitacoes_template.html"
+LICITACOES_DATA = ROOT / "licitacoes.json"
 VERIFIED_LOTS = ROOT / "oportunidades_verificadas.json"
 MUNICIPALITIES = ROOT / "municipios_coordenadas.json"
 MAP_EMBED_URL = "https://www.google.com/maps/d/u/0/embed?mid=1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U&ehbc=2E312F"
@@ -213,8 +216,10 @@ def enrich_and_dedupe_lots(
 
 
 def main() -> None:
-    if not TEMPLATE.exists():
-        raise SystemExit(f"Template nao encontrado: {TEMPLATE}")
+    required_templates = (TEMPLATE, PORTAL_TEMPLATE, LICITACOES_TEMPLATE)
+    missing = [str(path) for path in required_templates if not path.exists()]
+    if missing:
+        raise SystemExit(f"Template nao encontrado: {', '.join(missing)}")
 
     now = dt.datetime.now(TIMEZONE)
     events = [row for row in read_csv("radar_leiloes_eventos_futuros.csv") if is_upcoming(row, now)]
@@ -246,12 +251,34 @@ def main() -> None:
     if "__RADAR_DATA__" not in template:
         raise SystemExit("O marcador __RADAR_DATA__ nao existe no template.")
     html = template.replace("__RADAR_DATA__", data)
-    (ROOT / "index.html").write_text(html, encoding="utf-8")
+    (ROOT / "leiloes.html").write_text(html, encoding="utf-8")
+    portal = PORTAL_TEMPLATE.read_text(encoding="utf-8")
+    (ROOT / "index.html").write_text(portal, encoding="utf-8")
+
+    try:
+        licitacoes_payload = json.loads(LICITACOES_DATA.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        licitacoes_payload = {
+            "atualizado_em": now.isoformat(timespec="seconds"),
+            "fonte": "Portal Nacional de Contratações Públicas (PNCP)",
+            "total": 0,
+            "licitacoes": [],
+        }
+    licitacoes_data = json.dumps(
+        corrigir_dados(licitacoes_payload), ensure_ascii=False, separators=(",", ":")
+    ).replace("</", "<\\/")
+    licitacoes_template = LICITACOES_TEMPLATE.read_text(encoding="utf-8")
+    if "__LICITACOES_DATA__" not in licitacoes_template:
+        raise SystemExit("O marcador __LICITACOES_DATA__ nao existe no template de licitacoes.")
+    (ROOT / "licitacoes.html").write_text(
+        licitacoes_template.replace("__LICITACOES_DATA__", licitacoes_data),
+        encoding="utf-8",
+    )
     (ROOT / "radar-leiloes.html").write_text(
         "<!doctype html><html lang=\"pt-BR\"><meta charset=\"utf-8\">"
-        "<meta http-equiv=\"refresh\" content=\"0;url=./\">"
-        "<title>Radar de Leilões G MAQUINA</title>"
-        "<p>Abrindo o <a href=\"./\">Radar de Leilões</a>...</p></html>\n",
+        "<meta http-equiv=\"refresh\" content=\"0;url=./leiloes.html\">"
+        "<title>Radar de Leilões</title>"
+        "<p>Abrindo o <a href=\"./leiloes.html\">Radar de Leilões</a>...</p></html>\n",
         encoding="utf-8",
     )
     print(
@@ -261,6 +288,7 @@ def main() -> None:
                 "eventos_futuros": len(events),
                 "lotes_futuros": len(lots),
                 "lotes_com_edital": edital_lots,
+                "licitacoes": len(licitacoes_payload.get("licitacoes", [])),
                 "versao": app_version,
             },
             ensure_ascii=False,
