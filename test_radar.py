@@ -170,6 +170,26 @@ class RadarTests(unittest.TestCase):
         self.assertIn("row.data!==state.exactDate", personalized)
         self.assertIn("state.exactDate===value&&source!=='calendar'", personalized)
 
+    def test_site_identifica_municipio_e_adiciona_coordenadas(self) -> None:
+        row = {"uf": "MG", "local": "Taiobeiras - MG"}
+        municipalities = site.municipality_index(
+            [["Taiobeiras", "MG", -15.8106, -42.2259]]
+        )
+        site.add_municipality_coordinates(row, {}, municipalities)
+        self.assertEqual(row["cidade"], "Taiobeiras")
+        self.assertEqual((row["latitude"], row["longitude"]), (-15.8106, -42.2259))
+
+    def test_site_recupera_uf_a_partir_do_local_do_lote(self) -> None:
+        self.assertEqual(site.infer_uf("Quirinópolis - GO, Goiás"), "GO")
+
+    def test_site_oferece_filtro_por_cidade_e_raio(self) -> None:
+        personalized = apply_date_highlights(site.TEMPLATE.read_text(encoding="utf-8"))
+        self.assertIn('id="location-input"', personalized)
+        self.assertIn('id="radius-filter"', personalized)
+        self.assertIn('id="use-location"', personalized)
+        self.assertIn("function distanceKm(row)", personalized)
+        self.assertIn("distance>state.radius", personalized)
+
     def test_relatorio_compara_chaves_estaveis(self) -> None:
         anterior = [{"link_lote": "https://exemplo.com/lote/1", "titulo": "Lote 1"}]
         atual = [{"link_lote": "https://exemplo.com/lote/2", "titulo": "Lote 2"}]
