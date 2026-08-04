@@ -1,13 +1,13 @@
 {
-  "atualizado_em": "2026-08-03T22:48:32-03:00",
-  "data_base": "2026-08-03",
+  "atualizado_em": "2026-08-04T00:36:11-03:00",
+  "data_base": "2026-08-04",
   "total_registros": 1510,
   "eventos_atualizacao": 1378,
-  "eventos_futuros_ou_hoje": 1152,
+  "eventos_futuros_ou_hoje": 1151,
   "patios": 132,
-  "eventos_com_link": 1139,
-  "eventos_com_data_hora_de_edital": 136,
-  "eventos_com_data_hora_de_site": 61,
+  "eventos_com_link": 1138,
+  "eventos_com_data_hora_de_edital": 149,
+  "eventos_com_data_hora_de_site": 62,
   "eventos_por_uf": [
     [
       "SP",
@@ -91,7 +91,7 @@
     ],
     [
       "RN",
-      6
+      5
     ],
     [
       "RR",
@@ -109,7 +109,7 @@
   "datas": [
     [
       "2026-08-04",
-      134
+      135
     ],
     [
       "2026-08-06",
@@ -117,7 +117,7 @@
     ],
     [
       "2026-08-05",
-      107
+      108
     ],
     [
       "2026-08-07",
@@ -129,7 +129,7 @@
     ],
     [
       "2026-08-10",
-      85
+      83
     ],
     [
       "2026-08-13",
@@ -153,7 +153,7 @@
     ],
     [
       "2026-08-18",
-      39
+      41
     ],
     [
       "2026-08-20",
@@ -180,12 +180,12 @@
       12
     ],
     [
-      "2026-08-08",
+      "2026-08-31",
       9
     ],
     [
-      "2026-08-31",
-      9
+      "2026-08-08",
+      8
     ],
     [
       "2027-07-26",
@@ -198,10 +198,6 @@
     [
       "2026-08-15",
       5
-    ],
-    [
-      "2026-08-03",
-      2
     ],
     [
       "2026-08-09",
@@ -249,13 +245,13 @@
     ]
   ],
   "download_kml": {
-    "downloaded_at": "2026-08-03T22:46:51-03:00",
+    "downloaded_at": "2026-08-04T00:34:30-03:00",
     "http_status": 200,
     "final_url": "https://www.google.com/maps/d/kml?forcekml=1&mid=1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U",
     "downloaded_bytes": 2130639,
-    "old_sha256": "41ecd848270878e504b12cd0ab03884a0b66b75a9ea2b026f4392fce6636cc40",
+    "old_sha256": "1c91c012daa3b341b8cabd9fb411d94159af10afffe041e2abb765761516391c",
     "new_sha256": "1c91c012daa3b341b8cabd9fb411d94159af10afffe041e2abb765761516391c",
-    "old_markers": 747,
+    "old_markers": 1510,
     "new_markers": 1510,
     "source": "google_my_maps_live_kml"
   }

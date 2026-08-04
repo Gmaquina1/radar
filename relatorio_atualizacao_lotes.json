@@ -1,15 +1,15 @@
 {
-  "executado_em": "2026-08-03T22:52:42-03:00",
-  "lotes_antes": 4242,
-  "lotes_depois": 4354,
-  "lotes_realmente_novos": 2332,
-  "lotes_removidos_ou_encerrados": 2125,
-  "lotes_preservados": 12,
-  "lotes_capturados_agora": 7908,
-  "lotes_capturados_com_chave_nova": 4142,
+  "executado_em": "2026-08-04T00:40:23-03:00",
+  "lotes_antes": 4354,
+  "lotes_depois": 4606,
+  "lotes_realmente_novos": 208,
+  "lotes_removidos_ou_encerrados": 0,
+  "lotes_preservados": 0,
+  "lotes_capturados_agora": 8268,
+  "lotes_capturados_com_chave_nova": 2306,
   "eventos_analisados": 1299,
-  "eventos_com_lotes": 400,
-  "eventos_com_erro": 172,
+  "eventos_com_lotes": 414,
+  "eventos_com_erro": 154,
   "eventos_bloqueados": 144,
   "links_invalidos": 11,
   "quantidade_coletada_por_leiloeiro": {
@@ -18,6 +18,7 @@
     "allianceleiloes.com.br": 26,
     "alvaroantonioleiloes.com.br": 48,
     "amleiloeiro.com.br": 8,
+    "bolsadeleiloes.com.br": 50,
     "bsbleiloes.com.br": 104,
     "colossoleiloes.com.br": 21,
     "donizetteleiloes.leilao.br": 56,
@@ -29,13 +30,15 @@
     "esleiloes.com.br": 6,
     "goias.gov.br": 2,
     "goldenlance.com.br": 295,
-    "grupolance.com.br": 110,
-    "hastapublica.com.br": 22,
+    "grupolance.com.br": 96,
+    "hastapublica.com.br": 25,
+    "hisaleiloes.com.br": 152,
     "jmleiloes.leilao.br": 6,
     "jrleiloes.com.br": 2,
-    "kleiloes.com.br": 81,
+    "kleiloes.com.br": 80,
     "kronleiloes.com.br": 2,
     "kwara.com.br": 165,
+    "lance360.com.br": 102,
     "lancecertoleiloes.com.br": 225,
     "lancejusto.com.br": 2,
     "lancevip.com.br": 97,
@@ -45,8 +48,8 @@
     "leilao.sodresantoro.com.br": 3,
     "leilaobrasil.com.br": 518,
     "leilaoonline.com.br": 332,
+    "leiloai.com": 12,
     "leiloeiropublico.com.br": 3,
-    "leiloesbr.com.br": 4,
     "leiloesfreire.com.br": 176,
     "leiloesjudiciais.com.br": 37,
     "leiloesoliveira.com.br": 29,
@@ -57,13 +60,16 @@
     "lipinskileiloes.com.br": 73,
     "lumussaleiloes.com.br": 27,
     "marcotulioleiloes.com.br": 150,
+    "marcusviniciusleiloes.com.br": 36,
     "mariafixerleiloes.com.br": 2,
-    "marquesleiloes.com.br": 3,
+    "marquesleiloes.com.br": 4,
     "megaleiloes.com.br": 13,
     "mjleiloes.com.br": 273,
-    "nordesteleiloes.com.br": 34,
+    "nakakogueleiloes.com.br": 12,
+    "nordesteleiloes.com.br": 26,
     "okleiloes.com.br": 19,
     "peterlongoleiloes.com.br": 92,
+    "portaldoleiloeiro.com.br": 32,
     "portalzuk.com.br": 30,
     "rauppleiloes.com.br": 105,
     "ricardogomesleiloes.com.br": 58,
@@ -74,9 +80,10 @@
     "rpleiloes.com.br": 29,
     "sabbagleiloes.com.br": 9,
     "sandrasantosleiloes.com.br": 55,
-    "sandroleiloeiro.com.br": 430,
+    "sandroleiloeiro.com.br": 416,
     "saraivaleiloes.com.br": 26,
     "satoleiloes.com.br": 1,
+    "schulmannleiloes.com.br": 1,
     "sfleiloes.com.br": 37,
     "shopleiloes.leilao.br": 6,
     "sodresantoro.com.br": 94,
@@ -99,7 +106,6 @@
     "amaralleiloes.com.br": 1,
     "andradeleiloes.com.br": 1,
     "apabrfleiloes.com.br": 3,
-    "ba.gov.br": 9,
     "backleiloes.com.br": 1,
     "benozzati.com.br": 1,
     "bidgo.com.br": 1,
@@ -116,7 +122,6 @@
     "fidalgoleiloes.com.br": 1,
     "freitasleiloeiro.com.br": 1,
     "goldenbrazilleiloes.com.br": 1,
-    "gov.br": 2,
     "gspleiloes.com.br": 2,
     "guariglialeiloes.com.br": 3,
     "gustavomorettoleiloeiro.com.br": 3,
@@ -134,18 +139,15 @@
     "machadoleiloeiro.com.br": 1,
     "mercado.bomvalor.com.br": 10,
     "mgl.com.br": 26,
-    "nakakogueleiloes.com.br": 1,
     "nossoleilao.com.br": 2,
     "nsleiloes.leilao.br": 1,
     "patiorochaleiloes.com.br": 1,
     "pereiraleiloesce.com.br": 1,
-    "portaldoleiloeiro.com.br": 3,
     "pwleiloes.com.br": 10,
     "rangelleiloes.com.br": 1,
     "renovarleiloes.com.br": 1,
     "ricoleiloes.com.br": 1,
     "rjleiloes.com.br": 7,
-    "schulmannleiloes.com.br": 3,
     "sumareleiloes.com.br": 5,
     "universodosleiloes.com.br": 1,
     "victordortaleiloes.com.br": 1
@@ -460,11 +462,6 @@
       "url": "https://victordortaleiloes.com.br/leilao/1420/lotes",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://www.nakakogueleiloes.com.br/lotes/137532/",
-      "status": "erro",
-      "http": 0
     },
     {
       "url": "https://www.gustavomorettoleiloeiro.com.br/leiloes/5279",
@@ -932,104 +929,14 @@
       "http": 403
     },
     {
-      "url": "https://youtu.be/9vmt3PI4aw0",
-      "status": "bloqueado_http_429",
-      "http": 429
-    },
-    {
       "url": "https://instagram.com/ricardo.leiloeiro?igshid=MTk0NTkyODZkYg==",
       "status": "bloqueado_http_429",
       "http": 429
     },
     {
-      "url": "https://www.ba.gov.br/detran/editais",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.ba.gov.br/detran/informativo-leiloeiros",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.ba.gov.br/todoCatalogo",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://portaldoleiloeiro.com.br/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://portaldoleiloeiro.com.br/?pg=proximos-leiloes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://portaldoleiloeiro.com.br/?pg=leiloes-finalizados",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://schulmannleiloes.com.br/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://schulmannleiloes.com.br/thumbs.php?tipo=leiloes-judiciais",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://schulmannleiloes.com.br/thumbs.php?tipo=leiloes-extrajudiciais",
-      "status": "erro",
-      "http": 0
-    },
-    {
       "url": "https://topoleiloes.com.br/leilao/3255/semsep-sorriso-sucatas-aproveitaveis-com-motor-inservivel",
       "status": "http_404",
       "http": 404
-    },
-    {
-      "url": "https://www.ba.gov.br/detran/comissao-de-leilao",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.ba.gov.br/detran/editais/7693/edital-de-leilao-no-162026",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.ba.gov.br/detran/editais/7692/edital-de-leilao-no-152026-veiculos-conservados-e-sucatas-aproveitaveis",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.ba.gov.br/detran/editais/7691/edital-de-leilao-no-142026-veiculos-conservados-e-sucatas-aproveitaveis",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.ba.gov.br/detran/editais/7690/edital-de-leilao-no-132026-veiculos-conservados-e-sucatas-aproveitaveis",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.ba.gov.br/detran/editais/7687/edital-de-leilao-no-122026",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.gov.br/receitafederal/acl_users/credentials_cookie_auth/require_login?came_from=https%3A//www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/manuais/manual-de-participacao-em-leilao-da-receita-federal/manual-sle.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.gov.br/cultura/acl_users/credentials_cookie_auth/require_login?came_from=https%3A//www.gov.br/cultura/pt-br/assuntos/politica-nacional-aldir-blanc/modelos-de-editais/modelos-de-editais",
-      "status": "erro",
-      "http": 0
     },
     {
       "url": "https://vardanaleiloes.com.br/vardana/img_leiloes/EDITAL_1077_5.pdf",
