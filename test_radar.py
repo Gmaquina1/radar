@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
@@ -10,6 +12,7 @@ from zoneinfo import ZoneInfo
 import indexador_lotes as indexador
 import atualizar_radar_leiloes as atualizador
 import atualizar_licitacoes as licitacoes
+import descobrir_licitacoes_openai as licitacoes_openai
 import executar_atualizacao_radar as pipeline
 import gerar_site_github as site
 import sanitizar_conteudo_externo as sanitizer
@@ -257,6 +260,86 @@ class RadarTests(unittest.TestCase):
         self.assertEqual({value for value, _ in calls}, set(range(2, 13)))
         self.assertNotIn(1, {value for value, _ in calls})
         self.assertNotIn(13, {value for value, _ in calls})
+
+    def test_openai_aceita_somente_licitacao_com_fonte_e_prazo_futuro(self) -> None:
+        sources = [{"url": "https://prefeitura.gov.br/licitacoes/123", "title": "Edital 123"}]
+        raw = [{
+            "id": None,
+            "numero": "123/2026",
+            "processo": None,
+            "orgao": "Prefeitura de Teste",
+            "unidade": None,
+            "objeto": "Locação de máquinas pesadas para manutenção de estradas",
+            "modalidade": "Pregão eletrônico",
+            "data_publicacao": "2026-08-01",
+            "data_abertura": None,
+            "data_encerramento": "2026-08-20T10:00:00",
+            "valor_estimado": 250000,
+            "uf": "MG",
+            "cidade": "Taiobeiras",
+            "link": "https://prefeitura.gov.br/licitacoes/123",
+        }]
+        rows, rejected = licitacoes_openai.validate_rows(raw, sources, datetime(2026, 8, 4).date())
+        self.assertEqual((len(rows), rejected), (1, 0))
+        self.assertTrue(rows[0]["origem_validada"])
+        self.assertEqual(rows[0]["fonte"], "OpenAI Web Search")
+
+    def test_openai_rejeita_link_nao_consultado_e_prazo_encerrado(self) -> None:
+        base = {
+            "id": None, "numero": None, "processo": None, "orgao": "Órgão de Teste",
+            "unidade": None, "objeto": "Aquisição de equipamentos diversos", "modalidade": None,
+            "data_publicacao": None, "data_abertura": None, "valor_estimado": None,
+            "uf": "MG", "cidade": None,
+        }
+        raw = [
+            {**base, "data_encerramento": "2026-08-20", "link": "https://inventado.test/1"},
+            {**base, "data_encerramento": "2026-08-01", "link": "https://fonte.gov.br/1"},
+        ]
+        rows, rejected = licitacoes_openai.validate_rows(
+            raw, [{"url": "https://fonte.gov.br/1", "title": "Edital"}], datetime(2026, 8, 4).date()
+        )
+        self.assertEqual(rows, [])
+        self.assertEqual(rejected, 2)
+
+    def test_busca_openai_usa_web_search_obrigatoria_e_schema_estrito(self) -> None:
+        response = {
+            "output_text": json.dumps({"licitacoes": []}),
+            "output": [{"type": "web_search_call", "action": {"sources": []}}],
+        }
+        client = mock.Mock()
+        client.responses.create.return_value = response
+        with mock.patch.object(licitacoes_openai, "national_queries", return_value=[("MG", "consulta")]), mock.patch.dict(
+            os.environ, {"OPENAI_API_KEY": "segredo", "OPENAI_SEARCH_MODEL": "gpt-test"}, clear=True
+        ):
+            rows, report = licitacoes_openai.collect_openai(
+                datetime(2026, 8, 4, 12, 0, tzinfo=ZoneInfo("America/Sao_Paulo")), client=client
+            )
+        self.assertEqual(rows, [])
+        self.assertEqual(report["consultas_executadas"], 1)
+        kwargs = client.responses.create.call_args.kwargs
+        self.assertEqual(kwargs["tools"], [{"type": "web_search"}])
+        self.assertEqual(kwargs["tool_choice"], "required")
+        self.assertTrue(kwargs["text"]["format"]["strict"])
+        self.assertFalse(kwargs["store"])
+
+    def test_licitacoes_mesclam_base_anterior_openai_e_pncp(self) -> None:
+        previous = {"id": "1", "objeto": "Antigo", "data_encerramento": "2026-08-20", "fonte": "Anterior"}
+        openai = {**previous, "objeto": "Objeto corrigido", "fonte": "OpenAI Web Search"}
+        pncp = {**openai, "orgao": "Órgão oficial", "fonte": "PNCP"}
+        rows = licitacoes.merge_rows([previous], [openai], [pncp])
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["fonte"], "PNCP")
+        self.assertEqual(rows[0]["orgao"], "Órgão oficial")
+
+    def test_licitacoes_deduplicam_fontes_pelo_mesmo_link(self) -> None:
+        openai = {
+            "id": "", "link": "https://pncp.gov.br/app/editais/123/2026/1", "orgao": "Órgão",
+            "objeto": "Compra de máquina", "data_encerramento": "2026-08-20", "fonte": "OpenAI Web Search",
+        }
+        pncp = {**openai, "id": "123-1-000001/2026", "fonte": "PNCP"}
+        rows = licitacoes.merge_rows([openai], [pncp])
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["fonte"], "PNCP")
 
     def test_corrige_acentos_corrompidos_do_mapa(self) -> None:
         original = "[ﾃ迭Gﾃグ Pﾃ咤LICO] - Veﾃｭculos, ﾃ馬ibus e Mﾃ｡quinas - Sﾃ｣o Paulo"

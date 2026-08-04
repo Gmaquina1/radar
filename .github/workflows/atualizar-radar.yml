@@ -31,6 +31,11 @@ jobs:
       WEB_SEARCH_PROVIDER: openai
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       OPENAI_SEARCH_MODEL: ${{ vars.OPENAI_SEARCH_MODEL || 'gpt-5-mini' }}
+      OPENAI_LICITACOES_MODEL: ${{ vars.OPENAI_LICITACOES_MODEL || vars.OPENAI_SEARCH_MODEL || 'gpt-5-mini' }}
+      OPENAI_LICITACOES_CONSULTAS: "30"
+      OPENAI_LICITACOES_RESULTADOS: "25"
+      OPENAI_LICITACOES_TEMPO_MAXIMO: "1200"
+      OPENAI_LICITACOES_TIMEOUT: "120"
       MAX_PAGES_PER_DOMAIN: "3"
       MAX_URLS_PER_DOMAIN: "15"
       MAX_DEPTH: "1"
@@ -71,6 +76,7 @@ jobs:
           test -f indexador_lotes.py
           test -f gerar_site_github.py
           test -f atualizar_licitacoes.py
+          test -f descobrir_licitacoes_openai.py
           test -f portal_template.html
           test -f licitacoes_template.html
           test -f executar_atualizacao_radar.py
@@ -105,7 +111,7 @@ jobs:
           if [ "${GITHUB_EVENT_NAME}" = "push" ]; then
             echo "Publicação rápida: reutilizando os dados atuais do Radar."
             python sanitizar_conteudo_externo.py
-            python atualizar_licitacoes.py || echo "PNCP indisponível: mantendo a base de licitações existente."
+            python atualizar_licitacoes.py || echo "Coleta de licitações indisponível: mantendo a base existente."
             python gerar_site_github.py 2>&1 | tee atualizacao.log
           else
             python executar_atualizacao_radar.py \
@@ -114,7 +120,7 @@ jobs:
               --workers-lotes 16 \
               --delay-lotes 0 \
               2>&1 | tee atualizacao.log
-            python atualizar_licitacoes.py || echo "PNCP indisponível: mantendo a base de licitações existente."
+            python atualizar_licitacoes.py || echo "Coleta de licitações indisponível: mantendo a base existente."
             python gerar_site_github.py
           fi
 
@@ -144,6 +150,7 @@ jobs:
               mapa = sum(1 for _ in csv.DictReader(open('radar_leiloes_eventos_futuros.csv', encoding='utf-8-sig')))
           except OSError: mapa = 0
           l, s = data('relatorio_atualizacao_lotes.json'), data('status_atualizacao.json')
+          lic, lic_ai = data('status_licitacoes.json'), data('relatorio_licitacoes_openai.json')
           print('## Radar de Leilões')
           print(f"MODO: RÁPIDO  ")
           print(f"DURAÇÃO: {s.get('duracao_segundos', 0)}s  ")
@@ -168,6 +175,12 @@ jobs:
           print(f"LOTES_PRESERVADOS: {l.get('lotes_preservados', 0)}  ")
           print(f"LOTES_FORA_MAPA: {c.get('LOTES_FORA_DO_MAPA', 0)}  ")
           print(f"STATUS_FINAL: {s.get('status', 'erro')}")
+          print('## Radar de Licitações')
+          print(f"LICITACOES_TOTAL: {lic.get('total', 0)}  ")
+          print(f"LICITACOES_PNCP: {lic.get('fontes', {}).get('pncp', 0)}  ")
+          print(f"LICITACOES_OPENAI: {lic.get('fontes', {}).get('openai_web_search', 0)}  ")
+          print(f"OPENAI_CONSULTAS_LICITACOES: {lic_ai.get('consultas_executadas', 0)}  ")
+          print(f"OPENAI_UFS_CONSULTADAS: {len(lic_ai.get('ufs_consultadas', []))}  ")
           ativa = bool(d.get('busca_web_configurada', False))
           consultas = d.get('consultas_executadas', 0)
           if isinstance(consultas, list): consultas = len(consultas)
@@ -224,6 +237,7 @@ jobs:
             relatorio_descoberta_web.json
             relatorio_cobertura_radar.json
             status_licitacoes.json
+            relatorio_licitacoes_openai.json
           if-no-files-found: ignore
           retention-days: 14
 

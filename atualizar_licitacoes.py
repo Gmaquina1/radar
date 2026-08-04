@@ -14,6 +14,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from normalizar_texto import corrigir_dados
+from descobrir_licitacoes_openai import comparable_url, collect_openai, normalize_text, parse_date, write_report
 
 
 ROOT = Path(__file__).resolve().parent
@@ -166,38 +167,103 @@ def previous_payload() -> dict:
     return payload if isinstance(payload, dict) else {}
 
 
+def open_rows(rows: object, today: dt.date) -> list[dict]:
+    if not isinstance(rows, list):
+        return []
+    result = []
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        deadline = parse_date(row.get("data_encerramento"))
+        if deadline is not None and deadline >= today:
+            result.append(row)
+    return result
+
+
+def merge_rows(*groups: list[dict]) -> list[dict]:
+    """Mescla fontes preservando dados antigos e priorizando OpenAI e depois PNCP."""
+    selected: list[dict] = []
+    aliases: dict[str, int] = {}
+    for rows in groups:
+        for row in rows:
+            identities = []
+            if row.get("id"):
+                identities.append(f"id:{normalize_text(row['id'])}")
+            if comparable_url(row.get("link", "")):
+                identities.append(f"url:{comparable_url(row['link'])}")
+            fingerprint = "|".join(
+                normalize_text(row.get(field)) for field in ("orgao", "objeto", "data_encerramento")
+            )
+            if fingerprint.replace("|", ""):
+                identities.append(f"dados:{fingerprint}")
+            index = next((aliases[key] for key in identities if key in aliases), None)
+            if index is None:
+                index = len(selected)
+                selected.append(dict(row))
+            current = selected[index]
+            merged = {**current, **row}
+            for field in current:
+                if merged.get(field) in (None, ""):
+                    merged[field] = current[field]
+            selected[index] = merged
+            for identity in identities:
+                aliases[identity] = index
+    return sorted(
+        selected,
+        key=lambda row: (row.get("data_encerramento") or "9999", row.get("uf") or "", row.get("orgao") or ""),
+    )
+
+
 def main() -> None:
     now = dt.datetime.now(TIMEZONE)
-    rows, errors, truncated = collect(now)
     previous = previous_payload()
-    if not rows and previous.get("licitacoes"):
-        status = {
-            "status": "base_anterior_preservada",
-            "atualizado_em": now.isoformat(timespec="seconds"),
-            "total_preservado": len(previous.get("licitacoes", [])),
-            "erros": errors or ["A API do PNCP não devolveu registros."],
-        }
-        STATUS.write_text(json.dumps(status, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        print(json.dumps(status, ensure_ascii=False))
-        return
-    if not rows:
-        raise SystemExit("A API do PNCP não devolveu licitações e não existe base anterior válida.")
+    pncp_rows, pncp_errors, truncated = collect(now)
+    openai_rows, openai_report = collect_openai(now)
+    write_report(openai_report)
+    previous_rows = open_rows(previous.get("licitacoes", []), now.date())
+    rows = merge_rows(previous_rows, openai_rows, pncp_rows)
+    sources = {
+        "pncp": len(pncp_rows),
+        "openai_web_search": len(openai_rows),
+        "preservadas": max(0, len(rows) - len(pncp_rows) - len(openai_rows)),
+    }
+    openai_incomplete = (
+        openai_report.get("configurada")
+        and (
+            openai_report.get("consultas_executadas", 0) < openai_report.get("consultas_planejadas", 0)
+            or len(openai_report.get("ufs_consultadas", [])) < len(VALID_UFS)
+            or bool(openai_report.get("erros"))
+        )
+    )
+    partial = truncated or bool(pncp_errors) or not pncp_rows or bool(openai_incomplete)
     payload = {
         "atualizado_em": now.isoformat(timespec="seconds"),
-        "fonte": SOURCE_NAME,
+        "fonte": f"{SOURCE_NAME} + OpenAI Web Search com fontes validadas",
         "fonte_url": "https://pncp.gov.br/app/editais",
         "criterio": "Contratações com recebimento de propostas aberto e encerramento em até 365 dias",
         "total": len(rows),
-        "parcial": truncated or bool(errors),
+        "parcial": partial,
+        "indisponivel": not rows,
+        "fontes": sources,
+        "cobertura": {
+            "ufs_planejadas": len(VALID_UFS),
+            "ufs_consultadas_openai": len(openai_report.get("ufs_consultadas", [])),
+            "ufs_com_oportunidades": len({row.get("uf") for row in rows if row.get("uf")}),
+        },
         "licitacoes": rows,
     }
     OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     status = {
-        "status": "ok_parcial" if payload["parcial"] else "ok",
+        "status": "sem_dados" if not rows else ("ok_parcial" if payload["parcial"] else "ok"),
         "atualizado_em": payload["atualizado_em"],
         "total": payload["total"],
+        "fontes": sources,
         "truncado": truncated,
-        "erros": errors,
+        "erros_pncp": pncp_errors,
+        "erros_openai": openai_report.get("erros", []),
+        "openai_configurada": openai_report.get("configurada", False),
+        "consultas_openai": openai_report.get("consultas_executadas", 0),
+        "ufs_consultadas_openai": openai_report.get("ufs_consultadas", []),
     }
     STATUS.write_text(json.dumps(status, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(status, ensure_ascii=False))
