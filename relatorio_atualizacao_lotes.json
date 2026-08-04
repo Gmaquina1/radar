@@ -1,260 +1,163 @@
 {
-  "executado_em": "2026-07-29T06:11:59-03:00",
-  "lotes_antes": 4297,
-  "lotes_depois": 4242,
-  "lotes_realmente_novos": 0,
-  "lotes_removidos_ou_encerrados": 44,
-  "lotes_preservados": 135,
-  "lotes_capturados_agora": 7600,
-  "lotes_capturados_com_chave_nova": 1830,
-  "eventos_analisados": 1078,
-  "eventos_com_lotes": 396,
-  "eventos_com_erro": 92,
-  "eventos_bloqueados": 83,
-  "links_invalidos": 3,
+  "executado_em": "2026-08-03T22:52:42-03:00",
+  "lotes_antes": 4242,
+  "lotes_depois": 4354,
+  "lotes_realmente_novos": 2332,
+  "lotes_removidos_ou_encerrados": 2125,
+  "lotes_preservados": 12,
+  "lotes_capturados_agora": 7908,
+  "lotes_capturados_com_chave_nova": 4142,
+  "eventos_analisados": 1299,
+  "eventos_com_lotes": 400,
+  "eventos_com_erro": 172,
+  "eventos_bloqueados": 144,
+  "links_invalidos": 11,
   "quantidade_coletada_por_leiloeiro": {
-    "alfaleiloes.com": 15,
+    "alfaleiloes.com": 21,
     "alleiloes.com.br": 13,
-    "amleiloeiro.com.br": 7,
+    "allianceleiloes.com.br": 26,
+    "alvaroantonioleiloes.com.br": 48,
+    "amleiloeiro.com.br": 8,
     "bsbleiloes.com.br": 104,
-    "colossoleiloes.com.br": 17,
+    "colossoleiloes.com.br": 21,
     "donizetteleiloes.leilao.br": 56,
-    "drive.google.com": 62,
+    "drive.google.com": 89,
     "drive.usercontent.google.com": 18,
-    "e-leiloes.com.br": 10,
-    "eckertleiloes.com.br": 145,
+    "e-leiloes.com.br": 11,
+    "eckertleiloes.com.br": 140,
+    "edgarcarvalholeiloeiro.com.br": 1,
+    "esleiloes.com.br": 6,
     "goias.gov.br": 2,
-    "goldenlance.com.br": 188,
-    "grupolance.com.br": 108,
-    "hastapublica.com.br": 23,
-    "hisaleiloes.com.br": 100,
+    "goldenlance.com.br": 295,
+    "grupolance.com.br": 110,
+    "hastapublica.com.br": 22,
     "jmleiloes.leilao.br": 6,
     "jrleiloes.com.br": 2,
     "kleiloes.com.br": 81,
     "kronleiloes.com.br": 2,
-    "kwara.com.br": 84,
-    "lancecertoleiloes.com.br": 172,
+    "kwara.com.br": 165,
+    "lancecertoleiloes.com.br": 225,
     "lancejusto.com.br": 2,
     "lancevip.com.br": 97,
-    "lbleiloes.com.br": 57,
-    "leilao.detran.mg.gov.br": 98,
-    "leilao.sodresantoro.com.br": 22,
-    "leilaobrasil.com.br": 544,
-    "leilaoonline.com.br": 258,
-    "leiloai.com": 12,
+    "lbleiloes.com.br": 80,
+    "leffaleiloes.com.br": 59,
+    "leilao.detran.mg.gov.br": 195,
+    "leilao.sodresantoro.com.br": 3,
+    "leilaobrasil.com.br": 518,
+    "leilaoonline.com.br": 332,
     "leiloeiropublico.com.br": 3,
-    "leiloesalbino.com.br": 15,
-    "leiloesfreire.com.br": 132,
-    "leiloesjudiciais.com.br": 46,
+    "leiloesbr.com.br": 4,
+    "leiloesfreire.com.br": 176,
+    "leiloesjudiciais.com.br": 37,
     "leiloesoliveira.com.br": 29,
-    "leiloespb.com.br": 14,
-    "leje.com.br": 46,
-    "liderleiloes.com.br": 65,
-    "lilianportugal.com.br": 91,
+    "leiloespb.com.br": 6,
+    "leje.com.br": 44,
+    "liderleiloes.com.br": 66,
+    "lilianportugal.com.br": 102,
     "lipinskileiloes.com.br": 73,
-    "lumussaleiloes.com.br": 25,
-    "marcusviniciusleiloes.com.br": 265,
+    "lumussaleiloes.com.br": 27,
+    "marcotulioleiloes.com.br": 150,
     "mariafixerleiloes.com.br": 2,
-    "marquesleiloes.com.br": 2,
-    "megaleiloes.com.br": 8,
-    "mjleiloes.com.br": 241,
-    "nakakogueleiloes.com.br": 12,
-    "nordesteleiloes.com.br": 33,
+    "marquesleiloes.com.br": 3,
+    "megaleiloes.com.br": 13,
+    "mjleiloes.com.br": 273,
+    "nordesteleiloes.com.br": 34,
     "okleiloes.com.br": 19,
-    "peterlongoleiloes.com.br": 73,
-    "portaldoleiloeiro.com.br": 28,
-    "portalzuk.com.br": 67,
-    "ricardogomesleiloes.com.br": 1,
-    "rofremleiloes.com.br": 24,
-    "rogeriomenezes.com.br": 532,
-    "rossileiloes.com.br": 774,
+    "peterlongoleiloes.com.br": 92,
+    "portalzuk.com.br": 30,
+    "rauppleiloes.com.br": 105,
+    "ricardogomesleiloes.com.br": 58,
+    "rochaleiloes.com.br": 2,
+    "rofremleiloes.com.br": 27,
+    "rogeriomenezes.com.br": 1,
+    "rossileiloes.com.br": 875,
     "rpleiloes.com.br": 29,
     "sabbagleiloes.com.br": 9,
-    "sandrasantosleiloes.com.br": 56,
-    "sandroleiloeiro.com.br": 357,
-    "saraivaleiloes.com.br": 24,
+    "sandrasantosleiloes.com.br": 55,
+    "sandroleiloeiro.com.br": 430,
+    "saraivaleiloes.com.br": 26,
     "satoleiloes.com.br": 1,
     "sfleiloes.com.br": 37,
+    "shopleiloes.leilao.br": 6,
     "sodresantoro.com.br": 94,
-    "sold.com.br": 1222,
-    "spencerleiloes.com.br": 4,
-    "suedpeterleiloes.com.br": 34,
-    "superbid.net": 83,
+    "sold.com.br": 1380,
+    "spencerleiloes.com.br": 7,
+    "suedpeterleiloes.com.br": 40,
+    "superbid.net": 111,
     "swleiloes.com.br": 98,
     "tesouroleiloes.com.br": 26,
-    "topoleiloes.com.br": 57,
+    "topoleiloes.com.br": 52,
     "tulioleiloes.com.br": 48,
-    "vardanaleiloes.com.br": 129,
-    "webleiloes.com.br": 314,
-    "wrleiloes.com.br": 53
+    "vardanaleiloes.com.br": 42,
+    "webleiloes.com.br": 320,
+    "wrleiloes.com.br": 72,
+    "youtu.be": 16
   },
   "erros_por_leiloeiro": {
+    "alemaoleiloeiro.com.br": 1,
     "alvesleiloes.com.br": 1,
+    "amaralleiloes.com.br": 1,
     "andradeleiloes.com.br": 1,
-    "apabrfleiloes.com.br": 1,
-    "bianchileiloes.com.br": 1,
-    "bidgo.com.br": 2,
-    "danielgarcialeiloes.com.br": 10,
+    "apabrfleiloes.com.br": 3,
+    "ba.gov.br": 9,
+    "backleiloes.com.br": 1,
+    "benozzati.com.br": 1,
+    "bidgo.com.br": 1,
+    "brunoniewinskileiloes.com.br": 1,
+    "cargneluttileiloes.com.br": 2,
+    "ccjleiloes.com.br": 1,
+    "cravoleiloes.com.br": 4,
+    "danielgarcialeiloes.com.br": 18,
     "diegoleiloes.com.br": 1,
-    "drive.google.com": 1,
-    "eblonline.com.br": 1,
+    "eblonline.com.br": 5,
+    "eduardosorgileiloeiro.com.br": 1,
+    "favaretoleiloes.com.br": 2,
+    "fernandaleiloes.lel.br": 1,
+    "fidalgoleiloes.com.br": 1,
     "freitasleiloeiro.com.br": 1,
     "goldenbrazilleiloes.com.br": 1,
-    "guariglialeiloes.com.br": 2,
-    "gustavomorettoleiloeiro.com.br": 2,
+    "gov.br": 2,
+    "gspleiloes.com.br": 2,
+    "guariglialeiloes.com.br": 3,
+    "gustavomorettoleiloeiro.com.br": 3,
     "gutembergaraujoleiloes.com.br": 1,
     "hatoryleiloes.com.br": 4,
-    "joaoemilio.com.br": 6,
+    "joaoemilio.com.br": 5,
     "juleiloes.com.br": 1,
-    "lanceleiloes.com.br": 3,
-    "levyleiloes.com.br": 1,
-    "licitardigital.1doc.com.br": 1,
+    "jvleiloes.lel.br": 1,
+    "kildareleiloes.com.br": 2,
+    "lanceleiloes.com.br": 4,
+    "leilaoprime.com.br": 5,
+    "levyleiloes.com.br": 2,
     "lkleiloes.com.br": 1,
-    "lottileiloes.com.br": 1,
-    "mercado.bomvalor.com.br": 5,
-    "mgl.com.br": 25,
-    "patiorochaleiloes.com.br": 3,
-    "pwleiloes.com.br": 5,
+    "lottileiloes.com.br": 2,
+    "machadoleiloeiro.com.br": 1,
+    "mercado.bomvalor.com.br": 10,
+    "mgl.com.br": 26,
+    "nakakogueleiloes.com.br": 1,
+    "nossoleilao.com.br": 2,
+    "nsleiloes.leilao.br": 1,
+    "patiorochaleiloes.com.br": 1,
+    "pereiraleiloesce.com.br": 1,
+    "portaldoleiloeiro.com.br": 3,
+    "pwleiloes.com.br": 10,
     "rangelleiloes.com.br": 1,
+    "renovarleiloes.com.br": 1,
     "ricoleiloes.com.br": 1,
-    "rjleiloes.com.br": 2,
+    "rjleiloes.com.br": 7,
     "schulmannleiloes.com.br": 3,
-    "sumareleiloes.com.br": 2,
+    "sumareleiloes.com.br": 5,
+    "universodosleiloes.com.br": 1,
     "victordortaleiloes.com.br": 1
   },
   "urls_que_falharam": [
     {
-      "url": "https://www.freitasleiloeiro.com.br/Leiloes/Lotes?leilaoId=7948",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.patiorochaleiloes.com.br/leilao/1305/lotes",
+      "url": "https://diegoleiloes.com.br/leilao/1083/lotes",
       "status": "bloqueado_http_403",
       "http": 403
     },
     {
-      "url": "https://www.patiorochaleiloes.com.br/leilao/1304/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/ferro/6033/#&Pagina=1&Index=3",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://eblonline.com.br/lotes/320?page=1&size=6&removerEncerrados=false",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.bianchileiloes.com.br/leilao/leilao-de-prefeitura-ivoti-29-06-2026-09-27-28/lotes/lista",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.guariglialeiloes.com.br/leilao/809/lotes?tipo_bem_id=&modelo_id=&modelo_id=&address_uf=&lance_inicial_ini=&lance_inicial_fim=&search=candeias",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.guariglialeiloes.com.br/leilao/809/lotes?page=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/bens-diversos/7255/#&Pagina=1&Index=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/bens-diversos/6718/#&Pagina=1&Index=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/leilao-de-ativos-caminhoes-maquinas-e-equipamentos-pesado/7160/#&Pagina=1&Index=3",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://mercado.bomvalor.com.br/caminhoes-fora-de-estrada-komatsu-36289",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-espirito-santo-do-dourado-mg/7317/#&Pagina=1&Index=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-lajedinho-ba/7230/#&Pagina=1&Index=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.lkleiloes.com.br/leilao/266/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.pwleiloes.com.br/leilao/prefeitura-municipal-de-ouro-fino/584/#Pagina=1&Index=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.bidgo.com.br/leilao/panambi-rs-lote-de-pneus-06-07-2026-14-57-19/lotes/lista",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.joaoemilio.com.br/leilao/6038/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.joaoemilio.com.br/leilao/6024/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://mercado.bomvalor.com.br/kcleiloes/katia-cerqueira-da-silva-casaes/veiculos/caminhao/caminhao-ford-f4000-trv-multi-2018-125328",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/leilao-de-maquinarios-arrematacao-antecipada/4837/#&Pagina=1&Index=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://mercado.bomvalor.com.br/maquinas-pesadas-caminhoes-empilhadeiras-vale-36292",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-catas-altas-da-noruega-mg/7249/#&Pagina=1&Index=2",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-pedra-do-anta-mg/7146/#&Pagina=1&Index=3",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-carmesia-mg/7253/#&Pagina=1&Index=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-sao-martinho-rs/7265/#&Pagina=1&Index=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.lanceleiloes.com.br/leilao/868/lotes",
+      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-balsas-ma/7233/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
     },
@@ -289,17 +192,7 @@
       "http": 403
     },
     {
-      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-balsas-ma/7233/#&Pagina=1&Index=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
       "url": "https://www.levyleiloes.com.br/leilao/44/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://diegoleiloes.com.br/leilao/1083/lotes",
       "status": "bloqueado_http_403",
       "http": 403
     },
@@ -319,12 +212,32 @@
       "http": 403
     },
     {
+      "url": "https://www.apabrfleiloes.com.br/leilao/leilao-sesc-mg-5-caminhoes/464/#Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://mercado.bomvalor.com.br/kcleiloes/katia-cerqueira-da-silva-casaes/maquinas-e-equipamentos/pa-carregadeira/pa-carregadeira-sobre-rodas-volvo-l180f-com-garra-florestal-125241",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.mgl.com.br/leilao/leilao-de-veiculos-batidos-recuperados-e-sucatas/7367/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
       "url": "https://mercado.bomvalor.com.br/maquinas-e-equipamentos/pa-carregadeira/pa-carregadeira-sobre-rodas-volvo-l180f-com-garra-florestal-125241",
       "status": "bloqueado_http_403",
       "http": 403
     },
     {
       "url": "https://www.mgl.com.br/leilao/epagri-sc/7254/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.levyleiloes.com.br/leilao/55/lotes",
       "status": "bloqueado_http_403",
       "http": 403
     },
@@ -344,12 +257,22 @@
       "http": 403
     },
     {
+      "url": "https://www.favaretoleiloes.com.br/edital/1638/",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
       "url": "https://www.joaoemilio.com.br/leilao/6013/lotes",
       "status": "bloqueado_http_403",
       "http": 403
     },
     {
       "url": "https://www.lottileiloes.com.br/leilao/751/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://mercado.bomvalor.com.br/sucatas-pesados-em-geral-36303",
       "status": "bloqueado_http_403",
       "http": 403
     },
@@ -374,7 +297,52 @@
       "http": 403
     },
     {
+      "url": "https://danielgarcialeiloes.com.br/leilao/7698/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://danielgarcialeiloes.com.br/leilao/7744/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://danielgarcialeiloes.com.br/leilao/7691/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.guariglialeiloes.com.br/leilao/811/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.gspleiloes.com.br/leilao/126/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
       "url": "https://www.mgl.com.br/leilao/bens-diversos-alienacao-antecipada/7122/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.gspleiloes.com.br/leilao/6/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://mercado.bomvalor.com.br/apabrfleiloes/mega-leilao-agro-36330",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://mercado.bomvalor.com.br/mega-leilao-agro-36330",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://eblonline.com.br/lotes/322?page=1&size=6&removerEncerrados=false",
       "status": "bloqueado_http_403",
       "http": 403
     },
@@ -434,12 +402,52 @@
       "http": 403
     },
     {
+      "url": "https://ccjleiloes.com.br/leilao/534/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
       "url": "https://www.gustavomorettoleiloeiro.com.br/leiloes/5273",
       "status": "erro",
       "http": 0
     },
     {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-cambui-mg/7291/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.eduardosorgileiloeiro.com.br/leiloes/3463",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.lanceleiloes.com.br/leilao/862/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://mercado.bomvalor.com.br/leilao-votorantim-cimentos-sucatas-pesados-em-geral-36405",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://mercado.bomvalor.com.br/partes-e-pecas-de-mro-vale-36390",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.kildareleiloes.com.br/leilao/4765/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://eblonline.com.br/lotes/327?page=1&size=6&removerEncerrados=false",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://eblonline.com.br/lotes/326?page=1&size=6&removerEncerrados=false",
       "status": "bloqueado_http_403",
       "http": 403
     },
@@ -452,6 +460,11 @@
       "url": "https://victordortaleiloes.com.br/leilao/1420/lotes",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www.nakakogueleiloes.com.br/lotes/137532/",
+      "status": "erro",
+      "http": 0
     },
     {
       "url": "https://www.gustavomorettoleiloeiro.com.br/leiloes/5279",
@@ -479,6 +492,21 @@
       "http": 403
     },
     {
+      "url": "https://eblonline.com.br/lotes/326?page=16&size=6&removerEncerrados=false",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://mercado.bomvalor.com.br/maquinas-e-equipamentos/impressoras/impressora-digital-de-grande-formato-durst-rho-p10-200-p-125237",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-liberdade-mg/7377/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
       "url": "https://www.pwleiloes.com.br/leilao/prefeitura-municipal-de-alagoa/591/#Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
@@ -499,12 +527,87 @@
       "http": 403
     },
     {
+      "url": "https://www.mgl.com.br/leilao/cismisel-sete-lagoas-mg/7302/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.mgl.com.br/leilao/bens-apreendidos-ministerio-da-justica-senad-mg/7326/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.favaretoleiloes.com.br/edital/1639/",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://mercado.bomvalor.com.br/veiculos/caminhao/caminhao-iveco-daily-70c17-hdcd-2013-2014-125338",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.lanceleiloes.com.br/leilao/872/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.brunoniewinskileiloes.com.br/leilao/430/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.sumareleiloes.com.br/leiloes/5445",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sumareleiloes.com.br/leiloes/5444",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sumareleiloes.com.br/leiloes/5105",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.jvleiloes.lel.br/leilao/45/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-itapeva-mg/7303/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
     },
     {
       "url": "https://www.danielgarcialeiloes.com.br/leilao/7692/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.guariglialeiloes.com.br/leilao/800/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-capistrano-ce/7356/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.rjleiloes.com.br/leilao/4769/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.cargneluttileiloes.com.br/leilao/4469/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.pwleiloes.com.br/leilao/prefeitura-municipal-de-pompeu/583/#Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
     },
@@ -524,9 +627,49 @@
       "http": 403
     },
     {
+      "url": "https://www.nsleiloes.leilao.br/leilao/leilao-da-prefeitura-de-arvorezinha-rs-24-07-2026-16-29-49/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-catuti-mg/7358/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.fernandaleiloes.lel.br/leilao/leilao-de-bens-inserviveis-da-prefeitura-municipal-de-muliterno-rs-20-07-2026-14-20-05/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.mgl.com.br/leilao/prefeitura-municipl-de-belem-pb/7342/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
       "url": "https://www.sumareleiloes.com.br/leiloes/5362",
       "status": "erro",
       "http": 0
+    },
+    {
+      "url": "https://danielgarcialeiloes.com.br/leilao/7759/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://danielgarcialeiloes.com.br/leilao/7758/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.kildareleiloes.com.br/leilao/4752/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.renovarleiloes.com.br/leilao/leilao-da-prefeitura-de-andre-da-rocha-rs-14-07-2026-17-17-27/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
     },
     {
       "url": "https://www.alvesleiloes.com.br/leilao/251/lotes",
@@ -534,7 +677,72 @@
       "http": 403
     },
     {
+      "url": "https://www.lkleiloes.com.br/leilao/267/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-coronel-xavier-chaves-mg/7370/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.alemaoleiloeiro.com.br/leilao/2638/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.fidalgoleiloes.com.br/leilao.php?idLeilao=3642",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://eblonline.com.br/lotes/325?page=1&size=6&removerEncerrados=false",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-santa-rita-do-itueto-mg/7364/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
       "url": "https://www.goldenbrazilleiloes.com.br/leilao/leilao-prefeitura-de-rio-dos-cedros-sc-08-07-2026-17-17-39/lotes/lista",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.lottileiloes.com.br/leilao/739/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7779/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://universodosleiloes.com.br/leilao/150/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.benozzati.com.br/leilao/218/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.joaoemilio.com.br/leilao/6058/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.machadoleiloeiro.com.br/leilao/1796/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.apabrfleiloes.com.br/leilao/retroescavadeiras-caminhoes-onibus-e-carros/479/#Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
     },
@@ -559,12 +767,207 @@
       "http": 403
     },
     {
+      "url": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
       "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista",
       "status": "http_404",
       "http": 404
     },
     {
-      "url": "https://drive.google.com/file/d/1oJGIMI_TwzNMJQ3yQ2Ex70NSJH9hhy3L/view?usp=drive_link",
+      "url": "https://www.freitasleiloeiro.com.br/Leiloes/Lotes?leilaoId=7966",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.rjleiloes.com.br/leilao/4767/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.leilaoprime.com.br/leilao/56/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.leilaoprime.com.br/leilao/54/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.leilaoprime.com.br/leilao/53/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.pwleiloes.com.br/lote/leilao-de-equipamentos-para-producao-de-argamassa/8700/",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.pwleiloes.com.br/lote/leilao-caminhonete-s10/8801/",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.pwleiloes.com.br/leilao/leilao-de-motos-e-carros/581/#Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.cravoleiloes.com.br/leilao/1244/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.mgl.com.br/leilao/bens-diversos/7104/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.leilaoprime.com.br/leilao/50/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.pereiraleiloesce.com.br/leilao/327/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.rjleiloes.com.br/leilao/4772/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.rjleiloes.com.br/leilao/4771/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.nossoleilao.com.br/leilao/827/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.mgl.com.br/leilao/pecas-automotivas/7281/#&Pagina=1&Index=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.pwleiloes.com.br/leilao/prefeitura-municipal-de-imbe-de-minas/586/#Pagina=1&Index=2",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.mgl.com.br/leilao/ministerio-publico-do-estado-do-espirito-santo-mpes/7344/#&Pagina=1&Index=2",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.leilaoprime.com.br/leilao/51/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.rjleiloes.com.br/leilao/4773/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.pwleiloes.com.br/leilao/prefeitura-municipal-de-alto-caparao/597/#Pagina=1&Index=2",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://danielgarcialeiloes.com.br/leilao/7775/lotes?page=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://gustavomorettoleiloeiro.com.br/leiloes/5280?_gl=1*19u80yh*_gcl_au*MTYxNTM3MDAxOC4xNzg0NjUxNjY1",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://danielgarcialeiloes.com.br/leilao/7780/lotes?page=1",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.guariglialeiloes.com.br/leilao/815/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.backleiloes.com.br/leilao/1342/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.cravoleiloes.com.br/leilao/1249/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.cravoleiloes.com.br/leilao/1250/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.cravoleiloes.com.br/leilao/1251/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.nossoleilao.com.br/leilao/830/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.amaralleiloes.com.br/leilao/1544/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://youtu.be/9vmt3PI4aw0",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://instagram.com/ricardo.leiloeiro?igshid=MTk0NTkyODZkYg==",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://www.ba.gov.br/detran/editais",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.ba.gov.br/detran/informativo-leiloeiros",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.ba.gov.br/todoCatalogo",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://portaldoleiloeiro.com.br/",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://portaldoleiloeiro.com.br/?pg=proximos-leiloes",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://portaldoleiloeiro.com.br/?pg=leiloes-finalizados",
       "status": "erro",
       "http": 0
     },
@@ -584,9 +987,54 @@
       "http": 0
     },
     {
-      "url": "https://licitardigital.1doc.com.br/verificacao/226C-9914-02F8-C7C8",
-      "status": "bloqueado_http_403",
-      "http": 403
+      "url": "https://topoleiloes.com.br/leilao/3255/semsep-sorriso-sucatas-aproveitaveis-com-motor-inservivel",
+      "status": "http_404",
+      "http": 404
+    },
+    {
+      "url": "https://www.ba.gov.br/detran/comissao-de-leilao",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.ba.gov.br/detran/editais/7693/edital-de-leilao-no-162026",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.ba.gov.br/detran/editais/7692/edital-de-leilao-no-152026-veiculos-conservados-e-sucatas-aproveitaveis",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.ba.gov.br/detran/editais/7691/edital-de-leilao-no-142026-veiculos-conservados-e-sucatas-aproveitaveis",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.ba.gov.br/detran/editais/7690/edital-de-leilao-no-132026-veiculos-conservados-e-sucatas-aproveitaveis",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.ba.gov.br/detran/editais/7687/edital-de-leilao-no-122026",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.gov.br/receitafederal/acl_users/credentials_cookie_auth/require_login?came_from=https%3A//www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/manuais/manual-de-participacao-em-leilao-da-receita-federal/manual-sle.pdf",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.gov.br/cultura/acl_users/credentials_cookie_auth/require_login?came_from=https%3A//www.gov.br/cultura/pt-br/assuntos/politica-nacional-aldir-blanc/modelos-de-editais/modelos-de-editais",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://vardanaleiloes.com.br/vardana/img_leiloes/EDITAL_1077_5.pdf",
+      "status": "http_404",
+      "http": 404
     }
   ],
   "status": "ok",
