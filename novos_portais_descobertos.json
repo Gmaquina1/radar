@@ -466,5 +466,14 @@
     "status": "pendente",
     "tipo_coleta": "generico",
     "ultima_verificacao": "2026-08-04T14:39:42+00:00"
+  },
+  {
+    "dominio": "br-se1.magaluobjects.com",
+    "url_exemplo": "https://br-se1.magaluobjects.com/grupolance-prod/catalogs/1/2026/07/cat_6a4d36d7064a5.pdf",
+    "descoberto_em": "2026-08-04T15:10:53+00:00",
+    "consulta_que_encontrou": "portal_direto",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T15:10:53+00:00"
   }
 ]

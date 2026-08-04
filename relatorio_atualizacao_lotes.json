@@ -1,24 +1,24 @@
 {
-  "executado_em": "2026-08-04T11:50:37-03:00",
-  "lotes_antes": 4910,
-  "lotes_depois": 5023,
-  "lotes_realmente_novos": 205,
-  "lotes_removidos_ou_encerrados": 178,
-  "lotes_preservados": 0,
-  "lotes_capturados_agora": 17384,
-  "lotes_capturados_com_chave_nova": 7391,
+  "executado_em": "2026-08-04T12:24:00-03:00",
+  "lotes_antes": 5023,
+  "lotes_depois": 5016,
+  "lotes_realmente_novos": 0,
+  "lotes_removidos_ou_encerrados": 7,
+  "lotes_preservados": 242,
+  "lotes_capturados_agora": 16891,
+  "lotes_capturados_com_chave_nova": 6939,
   "eventos_analisados": 3493,
-  "eventos_com_lotes": 1225,
-  "eventos_com_erro": 155,
-  "eventos_bloqueados": 135,
+  "eventos_com_lotes": 1201,
+  "eventos_com_erro": 197,
+  "eventos_bloqueados": 133,
   "links_invalidos": 9,
   "quantidade_coletada_por_leiloeiro": {
     "alfaleiloes.com": 21,
-    "alleiloes.com.br": 45,
+    "alleiloes.com.br": 43,
     "allianceleiloes.com.br": 26,
     "alvaroantonioleiloes.com.br": 48,
-    "amleiloeiro.com.br": 31,
-    "belt.al.ce.gov.br": 57,
+    "amleiloeiro.com.br": 23,
+    "belt.al.ce.gov.br": 60,
     "bolsadeleiloes.com.br": 50,
     "bsbleiloes.com.br": 876,
     "casadeleiloes.com.br": 109,
@@ -41,8 +41,8 @@
     "goias.gov.br": 12,
     "goldenlance.com.br": 423,
     "gov.br": 44,
-    "grupolance.com.br": 344,
-    "hastapublica.com.br": 51,
+    "grupolance.com.br": 343,
+    "hastapublica.com.br": 50,
     "hisaleiloes.com.br": 307,
     "hml-webv2.sodresantoro.com.br": 98,
     "jeleiloes.com.br": 662,
@@ -56,7 +56,7 @@
     "lancecertoleiloes.com.br": 220,
     "lancejusto.com.br": 2,
     "lancevip.com.br": 215,
-    "lbleiloes.com.br": 97,
+    "lbleiloes.com.br": 94,
     "leffaleiloes.com.br": 59,
     "leilao.detran.mg.gov.br": 300,
     "leilao.sodresantoro.com.br": 3,
@@ -66,15 +66,15 @@
     "leilo.com.br": 2,
     "leiloai.com": 46,
     "leiloeiropublico.com.br": 13,
-    "leiloesbr.com.br": 1,
+    "leiloesbr.com.br": 2,
     "leiloesfreire.com.br": 213,
     "leiloesjudiciais.com.br": 543,
     "leiloesoliveira.com.br": 141,
     "leiloespb.com.br": 99,
     "leje.com.br": 117,
-    "liderleiloes.com.br": 98,
+    "liderleiloes.com.br": 109,
     "lilianportugal.com.br": 236,
-    "lipinskileiloes.com.br": 140,
+    "lipinskileiloes.com.br": 141,
     "lumussaleiloes.com.br": 76,
     "mapadoleilao.com.br": 168,
     "marcotulioleiloes.com.br": 150,
@@ -84,45 +84,43 @@
     "megaleiloes.com.br": 56,
     "mjleiloes.com.br": 341,
     "nakakogueleiloes.com.br": 12,
-    "nordesteleiloes.com.br": 32,
+    "nordesteleiloes.com.br": 34,
     "okleiloes.com.br": 32,
     "pactoleiloes.com.br": 2,
     "parquedosleiloes.com.br": 176,
     "peterlongoleiloes.com.br": 191,
     "pontodocolecionadorleiloes.com.br": 36,
     "portaldoleiloeiro.com.br": 82,
-    "portalzuk.com.br": 41,
-    "proleilao.com.br": 694,
+    "portalzuk.com.br": 44,
+    "proleilao.com.br": 732,
     "rauppleiloes.com.br": 105,
     "ricardogomesleiloes.com.br": 159,
     "rochaleiloes.com.br": 2,
     "rofremleiloes.com.br": 62,
     "rogeriomenezes.com.br": 131,
-    "rossileiloes.com.br": 1037,
+    "rossileiloes.com.br": 877,
     "rpleiloes.com.br": 57,
-    "sabbagleiloes.com.br": 819,
+    "sabbagleiloes.com.br": 496,
     "sandrasantosleiloes.com.br": 129,
-    "sandroleiloeiro.com.br": 540,
+    "sandroleiloeiro.com.br": 515,
     "saraivaleiloes.com.br": 126,
-    "satoleiloes.com.br": 1,
     "schulmannleiloes.com.br": 2,
-    "sescamapa.com.br": 63,
+    "sescamapa.com.br": 61,
     "sfleiloes.com.br": 70,
-    "shopleiloes.leilao.br": 6,
     "sodresantoro.com.br": 94,
     "sodressantoro.com.br": 10,
     "sold.com.br": 1245,
-    "spencerleiloes.com.br": 105,
+    "spencerleiloes.com.br": 100,
     "spyleiloes.com.br": 166,
     "static.suporteleiloes.com.br": 1,
     "suedpeterleiloes.com.br": 82,
-    "superbid.net": 544,
-    "swleiloes.com.br": 199,
-    "tesouroleiloes.com.br": 30,
+    "superbid.net": 537,
+    "swleiloes.com.br": 196,
+    "tesouroleiloes.com.br": 29,
     "tjmt.jus.br": 1,
-    "topoleiloes.com.br": 80,
+    "topoleiloes.com.br": 79,
     "trt16.jus.br": 10,
-    "tulioleiloes.com.br": 66,
+    "tulioleiloes.com.br": 63,
     "vardanaleiloes.com.br": 42,
     "vargasepintoleiloes.com.br": 20,
     "vialeiloes.com.br": 197,
@@ -133,8 +131,10 @@
   },
   "erros_por_leiloeiro": {
     "alemaoleiloeiro.com.br": 2,
+    "alleiloes.com.br": 6,
     "alvesleiloes.com.br": 1,
     "amaralleiloes.com.br": 1,
+    "amleiloeiro.com.br": 11,
     "andradeleiloes.com.br": 1,
     "apabrfleiloes.com.br": 2,
     "backleiloes.com.br": 1,
@@ -142,7 +142,6 @@
     "bidgo.com.br": 1,
     "bidmax.com.br": 1,
     "brunoniewinskileiloes.com.br": 1,
-    "canezinleiloes.com.br": 2,
     "cargneluttileiloes.com.br": 2,
     "ccjleiloes.com.br": 1,
     "cravoleiloes.com.br": 4,
@@ -152,6 +151,7 @@
     "favaretoleiloes.com.br": 2,
     "fernandaleiloes.lel.br": 1,
     "fidalgoleiloes.com.br": 1,
+    "franciscofreitasleiloes.com.br": 6,
     "freitasleiloeiro.com.br": 2,
     "goldenbrazilleiloes.com.br": 1,
     "gspleiloes.com.br": 2,
@@ -159,8 +159,9 @@
     "gustavomorettoleiloeiro.com.br": 3,
     "gutembergaraujoleiloes.com.br": 1,
     "hatoryleiloes.com.br": 2,
-    "jfal.jus.br": 3,
+    "jfal.jus.br": 2,
     "joaoemilio.com.br": 5,
+    "jrleiloes.com.br": 6,
     "juleiloes.com.br": 1,
     "jvleiloes.lel.br": 1,
     "kildareleiloes.com.br": 2,
@@ -168,7 +169,6 @@
     "leilaoprime.com.br": 5,
     "levyleiloes.com.br": 1,
     "lkleiloes.com.br": 1,
-    "loopleiloes.com.br": 3,
     "lottileiloes.com.br": 2,
     "machadoleiloeiro.com.br": 1,
     "mercado.bomvalor.com.br": 9,
@@ -182,12 +182,23 @@
     "renovarleiloes.com.br": 1,
     "ricoleiloes.com.br": 2,
     "rjleiloes.com.br": 7,
+    "rossileiloes.com.br": 3,
+    "sabbagleiloes.com.br": 3,
+    "sandroleiloeiro.com.br": 1,
+    "satoleiloes.com.br": 2,
+    "savoyleiloes.com.br": 1,
     "sescamapa.com.br": 1,
+    "sfleiloes.com.br": 1,
+    "shopleiloes.leilao.br": 1,
+    "spencerleiloes.com.br": 2,
     "sumareleiloes.com.br": 6,
+    "swleiloes.com.br": 1,
+    "tesouroleiloes.com.br": 1,
+    "topoleiloes.com.br": 1,
     "tudoleilao.com.br": 1,
+    "tulioleiloes.com.br": 3,
     "universodosleiloes.com.br": 1,
-    "victordortaleiloes.com.br": 1,
-    "www10.goiania.go.gov.br": 1
+    "victordortaleiloes.com.br": 1
   },
   "urls_que_falharam": [
     {
@@ -234,6 +245,11 @@
       "url": "https://www.gutembergaraujoleiloes.com.br/leilao/230/lotes",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www.rossileiloes.com.br/leilao/detalhe/4768/INDUSMAQ",
+      "status": "erro",
+      "http": 0
     },
     {
       "url": "https://www.juleiloes.com.br/leilao/leilao-de-bens-do-municipio-de-guabiju-rs-16-07-2026-14-03-35/lotes/lista",
@@ -309,6 +325,11 @@
       "url": "https://mercado.bomvalor.com.br/apabrfleiloes/mega-leilao-agro-36330",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www.rossileiloes.com.br/leilao/detalhe/4774/K-MAQUINAS",
+      "status": "erro",
+      "http": 0
     },
     {
       "url": "https://mercado.bomvalor.com.br/mega-leilao-agro-36330",
@@ -389,6 +410,11 @@
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-cambui-mg/7291/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://lbleiloes.com.br/leilao/25/prefeitura-municipal-de-paranacity-pr",
+      "status": "erro",
+      "http": 0
     },
     {
       "url": "https://www.pwleiloes.com.br/lote/leilao-de-equipamentos-para-producao-de-argamassa/8700/",
@@ -606,6 +632,11 @@
       "http": 403
     },
     {
+      "url": "https://shopleiloes.leilao.br/leilao/42/leilao-de-bens-moveis-prefeitura-municipal-de-grandes-rios",
+      "status": "erro",
+      "http": 0
+    },
+    {
       "url": "https://www.cargneluttileiloes.com.br/leilao/4469/lotes",
       "status": "bloqueado_http_403",
       "http": 403
@@ -677,6 +708,11 @@
     },
     {
       "url": "https://www.sumareleiloes.com.br/leiloes/5362",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sandroleiloeiro.com.br/leilao/prefeitura-municipal-de-sao-lourenco-mg-15-07-2026-08-43-43/lotes/lista",
       "status": "erro",
       "http": 0
     },
@@ -856,6 +892,11 @@
       "http": 403
     },
     {
+      "url": "https://www.savoyleiloes.com.br/leilao/leilao-da-gna-transportes",
+      "status": "erro",
+      "http": 0
+    },
+    {
       "url": "https://www.bidgo.com.br/leilao/imoveis-em-joinville-sc-24-06-2026-16-40-27/lotes/lista",
       "status": "bloqueado_http_403",
       "http": 403
@@ -921,17 +962,102 @@
       "http": 403
     },
     {
-      "url": "https://www.canezinleiloes.com.br/sobre-nos",
-      "status": "bloqueado_http_429",
-      "http": 429
+      "url": "https://franciscofreitasleiloes.com.br/index/politica-privacidade",
+      "status": "erro",
+      "http": 0
     },
     {
-      "url": "https://www.canezinleiloes.com.br/",
-      "status": "bloqueado_http_429",
-      "http": 429
+      "url": "https://franciscofreitasleiloes.com.br/index/quem-somos",
+      "status": "erro",
+      "http": 0
     },
     {
-      "url": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/itemlist/tag/ATUA%C3%87%C3%83O%20DA%20AG%C3%8ANCIA%20REGULADORA%20DE%20SERVI%C3%87OS%20P%C3%9ABLICOS%20DELEGADOS%20DO%20ESTADO%20DO%20CEAR%C3%81%20%E2%80%93%20ARCE",
+      "url": "https://alleiloes.com.br/agenda",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22887/sofas",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22912/parte-ideal",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://amleiloeiro.com.br/leilao/333/leilao-vara-civel-e-da-fazenda-publica-guaratuba",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22888/terreno",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22895/renaultkwid-intense-10-mt-20172018",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://amleiloeiro.com.br/leilao/335/leilao-2a-vara-civel-de-toledo",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22892/hondac-100-biz-es-20032003",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://amleiloeiro.com.br/leilao/341/leilao-de-sucatas-inserviveis-das-varas-criminais",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22899/gmbrasinca-andaluz-19891989",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22897/hondacg-125-titan-ks-20032003",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22915/fiatpremio-s-inservivel",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://alleiloes.com.br/encerrados",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://alleiloes.com.br/leilao/395/imoveis-industriais-em-jataizinho-pr",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://alleiloes.com.br/lote/4397/imovel-com-275m2-em-ponta-grossa-pr",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://alleiloes.com.br/leilao/403/leilao-de-imoveis-em-ponta-grossa-pr",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://alleiloes.com.br/lote/1812/leilao-simulacao-teste-o-seu-lance",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/itemlist/tag/LIENA%C3%87%C3%83O%20DE%20BENS%20IM%C3%93VEIS%20DE%20DOM%C3%8DNIO%20DO%20ESTADO%20DO%20CEAR%C3%81?format=feed&start=0",
       "status": "http_503",
       "http": 503
     },
@@ -941,7 +1067,57 @@
       "http": 503
     },
     {
-      "url": "https://www.jfal.jus.br/calendarios/leil%C3%B5es/",
+      "url": "https://franciscofreitasleiloes.com.br/index/como-participar",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://franciscofreitasleiloes.com.br/usuario",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://franciscofreitasleiloes.com.br/leilao/index/veiculos",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://franciscofreitasleiloes.com.br/index/duvidas",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://jrleiloes.com.br/",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://jrleiloes.com.br/index/politica-privacidade",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://jrleiloes.com.br/index/indique-nos",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://jrleiloes.com.br/index/como-participar",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://jrleiloes.com.br/index/login",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://jrleiloes.com.br/index/regulamento",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2026/1-leilao-unificado-2-praca/",
       "status": "erro",
       "http": 0
     },
@@ -951,32 +1127,82 @@
       "http": 0
     },
     {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2025/calendar/",
+      "url": "https://www.sabbagleiloes.com.br/venda-direta",
       "status": "erro",
       "http": 0
     },
     {
-      "url": "https://loopleiloes.com.br/noticias/nova-funcionalidade-no-site-simulador-de-frete-no-lote",
+      "url": "https://www.sabbagleiloes.com.br/leilao/lotes/sucatas",
       "status": "erro",
       "http": 0
     },
     {
-      "url": "https://loopleiloes.com.br/noticias/como-participar-do-leilao",
+      "url": "https://www.sabbagleiloes.com.br/leilao/3o-leilao-de-arte-antiguidades-tapetes-e-itens-de-colecao-03-06-2026-10-59-47/lotes/lista",
       "status": "erro",
       "http": 0
     },
     {
-      "url": "https://loopleiloes.com.br/noticias/a-lei-dos-leiloes-no-brasil",
+      "url": "https://satoleiloes.com.br/leiloes/5076",
       "status": "erro",
       "http": 0
     },
     {
-      "url": "https://sescamapa.com.br/licitacao/leilao/leilao-publico-para-alienacao-de-veiculos-integrantes-do-patrimonio-do-sesc-dr-ap-2026",
+      "url": "https://satoleiloes.com.br/leiloes/4948",
       "status": "erro",
       "http": 0
     },
     {
-      "url": "https://www10.goiania.go.gov.br/transweb/Licitacoes.aspx",
+      "url": "https://sfleiloes.com.br/leilao/206/canga-de-esmeralda-do-tipo-c-com-642kg",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://rossileiloes.com.br/leilao/LeilaoPorCategoria/4/implementos-agricolas",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://spencerleiloes.com.br/lote/34320/data-de-terras-no-31-p-c-subdivisao-da-data-no-31-p-a",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://spencerleiloes.com.br/leilao/791/2a-vara-criminal-de-maringa",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://tesouroleiloes.com.br/lote/30/fiatfiorino-modificar",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.swleiloes.com.br/leilao/lotes/maquinas",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/37602/sucata-gmkadett-gl-ano-1994-modelo-1995-cor-cinza",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1984/moveis-e-utensilios-de-escritorio-informatica-laboratorio-armazem-e-equipamentos-diversos",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1992/empilhadeiras-horizontal-inclinada",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1993/veiculo-mmcl200-4x4-gl-ano-20072008-placa-hsh1c74",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://sescamapa.com.br/licitacao/leilao/leilao-publico-de-veiculos-do-sesc-dr-ap",
       "status": "erro",
       "http": 0
     },
