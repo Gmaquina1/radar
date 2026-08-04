@@ -12,6 +12,7 @@ import atualizar_radar_leiloes as atualizador
 import executar_atualizacao_radar as pipeline
 import gerar_site_github as site
 import sanitizar_conteudo_externo as sanitizer
+from normalizar_texto import corrigir_dados, corrigir_texto, tem_codificacao_corrompida
 from personalizar_site import apply_date_highlights
 
 
@@ -201,6 +202,30 @@ class RadarTests(unittest.TestCase):
         self.assertIn("expandedAuctions", personalized)
         self.assertIn("MOSTRAR MAIS LOTES", personalized)
         self.assertIn("leilões · ${formatNumber(current.length)} lotes", personalized)
+
+    def test_corrige_acentos_corrompidos_do_mapa(self) -> None:
+        original = "[ﾃ迭Gﾃグ Pﾃ咤LICO] - Veﾃｭculos, ﾃ馬ibus e Mﾃ｡quinas - Sﾃ｣o Paulo"
+        self.assertEqual(
+            corrigir_texto(original),
+            "[ÓRGÃO PÚBLICO] - Veículos, Ônibus e Máquinas - São Paulo",
+        )
+
+    def test_corrige_campos_do_mapa_com_caractere_perdido(self) -> None:
+        payload = {
+            "DESCRIﾃ�ﾃグ": "Leilﾃ｣o de CAﾃ�AMBAS",
+            "LOCALIZAﾃ�ﾃグ": "Capﾃ｣o do Leﾃ｣o - RS",
+        }
+        corrected = corrigir_dados(payload)
+        self.assertEqual(corrected["DESCRIÇÃO"], "Leilão de CAÇAMBAS")
+        self.assertEqual(corrected["LOCALIZAÇÃO"], "Capão do Leão - RS")
+        self.assertFalse(tem_codificacao_corrompida(str(corrected)))
+
+    def test_preserva_portugues_ja_correto(self) -> None:
+        text = "Leilão de máquinas em Águas de Santa Bárbara — São Paulo"
+        self.assertEqual(corrigir_texto(text), text)
+
+    def test_corrige_unidade_de_volume_com_caractere_perdido(self) -> None:
+        self.assertEqual(corrigir_texto("Compactador com caixa de 19m�"), "Compactador com caixa de 19m³")
 
     def test_mascara_chave_aws_encontrada_em_conteudo_externo(self) -> None:
         fake_key = "AKIA" + "A" * 16

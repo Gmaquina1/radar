@@ -10,6 +10,7 @@ import unicodedata
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from normalizar_texto import corrigir_dados
 from personalizar_site import apply_date_highlights
 
 
@@ -30,7 +31,7 @@ def read_csv(name: str) -> list[dict[str, str]]:
     if not path.exists():
         return []
     with path.open(newline="", encoding="utf-8") as handle:
-        return list(csv.DictReader(handle))
+        return corrigir_dados(list(csv.DictReader(handle)))
 
 
 def read_lot_file(path: Path) -> list[dict[str, str]]:
@@ -41,7 +42,7 @@ def read_lot_file(path: Path) -> list[dict[str, str]]:
     except (json.JSONDecodeError, OSError):
         return []
     rows = data.get("lotes", []) if isinstance(data, dict) else data
-    return [row for row in rows if isinstance(row, dict)] if isinstance(rows, list) else []
+    return corrigir_dados([row for row in rows if isinstance(row, dict)]) if isinstance(rows, list) else []
 
 
 def read_lotes() -> list[dict[str, str]]:

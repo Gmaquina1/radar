@@ -22,6 +22,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from normalizar_texto import corrigir_dados, corrigir_texto
+
 try:
     from pypdf import PdfReader
 except Exception:  # pragma: no cover - GitHub Actions installs this normally.
@@ -83,7 +85,7 @@ KEYWORDS_RE = re.compile(
 
 def text(el, path, ns):
     node = el.find(path, ns)
-    return (node.text or "").strip() if node is not None else ""
+    return corrigir_texto((node.text or "").strip()) if node is not None else ""
 
 
 def clean_html(value):
@@ -92,7 +94,7 @@ def clean_html(value):
     value = unescape(value)
     value = re.sub(r"<br\s*/?>", " | ", value, flags=re.I)
     value = TAG_RE.sub(" ", value)
-    return SPACE_RE.sub(" ", unescape(value)).strip()
+    return corrigir_texto(SPACE_RE.sub(" ", unescape(value)).strip())
 
 
 def clean_text(value):
@@ -100,7 +102,7 @@ def clean_text(value):
         return ""
     value = unescape(value)
     value = TAG_RE.sub(" ", value)
-    return SPACE_RE.sub(" ", value).strip()
+    return corrigir_texto(SPACE_RE.sub(" ", value).strip())
 
 
 def absolute_url(base, url):
@@ -247,7 +249,7 @@ def folder_for(pm, parents, ns):
 def data_dict(pm, ns):
     out = {}
     for item in pm.findall(".//kml:Data", ns):
-        name = (item.attrib.get("name") or "").strip()
+        name = corrigir_texto((item.attrib.get("name") or "").strip())
         out[name] = text(item, "kml:value", ns)
     return out
 
@@ -590,7 +592,7 @@ def write_csv(path, rows):
     with path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=FIELDS, lineterminator="\n")
         writer.writeheader()
-        writer.writerows(rows)
+        writer.writerows(corrigir_dados(rows))
 
 
 def main():
