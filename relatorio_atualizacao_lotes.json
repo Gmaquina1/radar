@@ -1,15 +1,15 @@
 {
-  "executado_em": "2026-08-04T13:51:00-03:00",
-  "lotes_antes": 5016,
-  "lotes_depois": 5014,
-  "lotes_realmente_novos": 1,
-  "lotes_removidos_ou_encerrados": 3,
-  "lotes_preservados": 36,
-  "lotes_capturados_agora": 17436,
-  "lotes_capturados_com_chave_nova": 7294,
-  "eventos_analisados": 3494,
-  "eventos_com_lotes": 1225,
-  "eventos_com_erro": 177,
+  "executado_em": "2026-08-04T17:08:46-03:00",
+  "lotes_antes": 5014,
+  "lotes_depois": 5061,
+  "lotes_realmente_novos": 72,
+  "lotes_removidos_ou_encerrados": 23,
+  "lotes_preservados": 3,
+  "lotes_capturados_agora": 17319,
+  "lotes_capturados_com_chave_nova": 7211,
+  "eventos_analisados": 3496,
+  "eventos_com_lotes": 1205,
+  "eventos_com_erro": 202,
   "eventos_bloqueados": 133,
   "links_invalidos": 9,
   "quantidade_coletada_por_leiloeiro": {
@@ -19,7 +19,7 @@
     "alvaroantonioleiloes.com.br": 48,
     "amleiloeiro.com.br": 31,
     "belt.al.ce.gov.br": 63,
-    "bolsadeleiloes.com.br": 50,
+    "bolsadeleiloes.com.br": 100,
     "bsbleiloes.com.br": 876,
     "casadeleiloes.com.br": 109,
     "celsocunhaleiloes.com.br": 1,
@@ -28,10 +28,10 @@
     "compraremleilao.com.br": 7,
     "compras.es.gov.br": 2,
     "detran.es.gov.br": 88,
-    "donizetteleiloes.leilao.br": 68,
+    "donizetteleiloes.leilao.br": 72,
     "drive.google.com": 107,
     "e-leiloes.com.br": 151,
-    "eckertleiloes.com.br": 140,
+    "eckertleiloes.com.br": 137,
     "economia.df.gov.br": 1,
     "edgarcarvalholeiloeiro.com.br": 1,
     "emporiodesalomao.com.br": 36,
@@ -40,32 +40,32 @@
     "goias.gov.br": 12,
     "goldenlance.com.br": 423,
     "gov.br": 44,
-    "grupolance.com.br": 348,
-    "hastapublica.com.br": 50,
+    "grupolance.com.br": 331,
+    "hastapublica.com.br": 49,
     "hisaleiloes.com.br": 307,
     "hml-web.sodresantoro.com.br": 5,
     "hml-webv2.sodresantoro.com.br": 98,
-    "jeleiloes.com.br": 662,
+    "jeleiloes.com.br": 661,
     "jmleiloes.leilao.br": 6,
     "jrleiloes.com.br": 2,
     "kleiloes.com.br": 81,
     "kronleiloes.com.br": 5,
     "kwara.com.br": 213,
-    "lance360.com.br": 102,
+    "lance360.com.br": 138,
     "lancecertoleiloes.com.br": 220,
     "lancejusto.com.br": 2,
     "lancevip.com.br": 215,
     "lbleiloes.com.br": 97,
     "leffaleiloes.com.br": 59,
-    "leilao.detran.mg.gov.br": 300,
+    "leilao.detran.mg.gov.br": 262,
     "leilao.sodresantoro.com.br": 3,
-    "leilaobrasil.com.br": 621,
+    "leilaobrasil.com.br": 631,
     "leilaoimovelcaixa.com.br": 193,
     "leilaoonline.com.br": 498,
-    "leiloai.com": 46,
     "leiloeiropublico.com.br": 13,
+    "leiloesbr.com.br": 1,
     "leiloesfreire.com.br": 213,
-    "leiloesjudiciais.com.br": 544,
+    "leiloesjudiciais.com.br": 557,
     "leiloesoliveira.com.br": 141,
     "leiloespb.com.br": 110,
     "leje.com.br": 117,
@@ -78,18 +78,17 @@
     "marcusviniciusleiloes.com.br": 88,
     "mariafixerleiloes.com.br": 2,
     "marquesleiloes.com.br": 12,
-    "megaleiloes.com.br": 56,
+    "megaleiloes.com.br": 58,
     "mjleiloes.com.br": 341,
     "nakakogueleiloes.com.br": 12,
-    "nordesteleiloes.com.br": 33,
+    "nordesteleiloes.com.br": 32,
     "okleiloes.com.br": 32,
-    "pactoleiloes.com.br": 2,
     "parquedosleiloes.com.br": 176,
     "peterlongoleiloes.com.br": 191,
     "pontodocolecionadorleiloes.com.br": 36,
     "portaldoleiloeiro.com.br": 81,
-    "portalzuk.com.br": 44,
-    "proleilao.com.br": 805,
+    "portalzuk.com.br": 46,
+    "proleilao.com.br": 649,
     "rauppleiloes.com.br": 105,
     "ricardogomesleiloes.com.br": 159,
     "rochaleiloes.com.br": 2,
@@ -100,31 +99,31 @@
     "sabbagleiloes.com.br": 819,
     "sandrasantosleiloes.com.br": 129,
     "sandroleiloeiro.com.br": 540,
-    "saraivaleiloes.com.br": 126,
+    "saraivaleiloes.com.br": 119,
     "satoleiloes.com.br": 1,
     "schulmannleiloes.com.br": 2,
     "sescamapa.com.br": 63,
-    "sfleiloes.com.br": 70,
+    "sfleiloes.com.br": 71,
     "shopleiloes.leilao.br": 6,
     "sodresantoro.com.br": 94,
     "sodressantoro.com.br": 10,
-    "sold.com.br": 1245,
+    "sold.com.br": 1249,
     "spencerleiloes.com.br": 105,
     "spyleiloes.com.br": 166,
     "static.suporteleiloes.com.br": 1,
     "suedpeterleiloes.com.br": 82,
-    "superbid.net": 535,
+    "superbid.net": 568,
     "swleiloes.com.br": 199,
     "tesouroleiloes.com.br": 30,
     "tjmt.jus.br": 1,
-    "topoleiloes.com.br": 80,
+    "topoleiloes.com.br": 81,
     "trt16.jus.br": 10,
     "tulioleiloes.com.br": 66,
-    "vardanaleiloes.com.br": 42,
+    "vardanaleiloes.com.br": 46,
     "vargasepintoleiloes.com.br": 20,
     "vialeiloes.com.br": 197,
-    "webleiloes.com.br": 412,
-    "wrleiloes.com.br": 62,
+    "webleiloes.com.br": 409,
+    "wrleiloes.com.br": 59,
     "www7.tjba.jus.br": 4,
     "youtu.be": 16
   },
@@ -163,16 +162,19 @@
     "kildareleiloes.com.br": 2,
     "lanceleiloes.com.br": 4,
     "leilaoprime.com.br": 5,
+    "leiloai.com": 22,
     "levyleiloes.com.br": 1,
     "lkleiloes.com.br": 1,
     "lottileiloes.com.br": 2,
     "machadoleiloeiro.com.br": 1,
     "mercado.bomvalor.com.br": 9,
     "mgl.com.br": 20,
+    "nordesteleiloes.com.br": 2,
     "nossoleilao.com.br": 2,
     "nsleiloes.leilao.br": 1,
     "patiorochaleiloes.com.br": 1,
     "pereiraleiloesce.com.br": 1,
+    "portalsei.joinville.sc.gov.br": 1,
     "pwleiloes.com.br": 10,
     "rangelleiloes.com.br": 1,
     "renovarleiloes.com.br": 1,
@@ -885,11 +887,6 @@
       "http": 403
     },
     {
-      "url": "https://www.lance360.com.br/leilao/724",
-      "status": "erro",
-      "http": 0
-    },
-    {
       "url": "https://mercado.bomvalor.com.br/pecas-de-reposicao-em-geral-36434",
       "status": "bloqueado_http_403",
       "http": 403
@@ -1080,9 +1077,139 @@
       "http": 0
     },
     {
-      "url": "https://instagram.com/ricardo.leiloeiro?igshid=MTk0NTkyODZkYg==",
-      "status": "bloqueado_http_429",
-      "http": 429
+      "url": "https://leiloai.com/leiloes",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/guias/plataforma-superbid",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/guias/plataforma-sodre-santoro",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/guia-definitivo-de-leilao",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leiloes/imovel",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leiloes/imovel/ac",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leiloes/imovel/al",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leiloes/imovel/am",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leilao/0cbd1af8-83f7-4729-ac9a-80fefb04727c",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leilao/e44655f6-72dd-4163-bfd4-b7f8055eaf6c",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leilao/0d462e76-2fb0-435d-b8b2-9c2e5963109a",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leilao/dbe35e7f-e5b7-4392-8f33-1758771b90df",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leilao/cb3419f7-4fcd-4b44-953e-4b0351977790",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leilao/04127e8f-2957-4180-b0d9-5298420bca74",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leilao/eeb1de22-3e19-4a82-8258-de3a37597f38",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leilao/219f9ca7-b661-4abd-b5cd-64a4375880c7",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leilao/6cb8ea7a-ac7c-4d40-96b1-ee2b3e6e54aa",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leilao/5328a97f-740e-4485-b352-9a1d98515083",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leilao/2e02150f-5194-4ce4-962c-92bc9ae6b709",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leilao/6bb865f4-eb8b-4b8e-9d8b-7b3b4957ff40",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leilao/62893a8b-5cb8-4f0c-807d-38276f9f7d27",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leilao/07c1de2a-0dbf-486b-8114-dc78b50ca94a",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leilao/d5a59180-5b88-420d-a43f-aaab49206521",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leiloai.com/leilao/3065e7a7-be42-4f53-b63b-3b11e08a5724",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://nordesteleiloes.com.br/login",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://nordesteleiloes.com.br/comitentes/048e8cc1-03c2-4c1e-88ca-6598721961e7",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://venda-imoveis.caixa.gov.br/sistema/detalhe-imovel.asp?hdnOrigem=index&hdnimovel=8444426437234",
+      "status": "http_504",
+      "http": 504
     },
     {
       "url": "https://topoleiloes.com.br/leilao/3255/semsep-sorriso-sucatas-aproveitaveis-com-motor-inservivel",
