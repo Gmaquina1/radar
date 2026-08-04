@@ -457,5 +457,14 @@
     "status": "pendente",
     "tipo_coleta": "generico",
     "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "donizetteleiloes.leilao.br",
+    "url_exemplo": "https://donizetteleiloes.leilao.br/",
+    "descoberto_em": "2026-08-04T14:39:42+00:00",
+    "consulta_que_encontrou": "portal_direto",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T14:39:42+00:00"
   }
 ]
