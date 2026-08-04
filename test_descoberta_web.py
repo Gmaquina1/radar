@@ -198,6 +198,16 @@ class DiscoveryTests(unittest.TestCase):
         )
         self.assertNotIn(b"\r\n", self.paths["all.csv"].read_bytes())
 
+    def test_consolidacao_remove_espacos_no_fim_de_cada_linha(self):
+        discovery.consolidate(
+            [],
+            [{"nome": "Linha 1  \r\nLinha 2 \rLinha 3   ", "link": "https://x.test/lote"}],
+            self.paths["all.csv"],
+        )
+        content = self.paths["all.csv"].read_bytes()
+        self.assertNotIn(b"\r", content)
+        self.assertFalse(any(line.endswith((b" ", b"\t")) for line in content.splitlines()))
+
     def test_urls_malformadas_sao_ignoradas(self):
         for value in (None, "", "   ", "https://x.test:porta/lote", "/relativa", "não é url"):
             self.assertEqual(canonicalize_url(value), "")

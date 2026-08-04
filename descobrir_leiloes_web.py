@@ -317,6 +317,14 @@ def load_map_events(path: Path) -> list[dict]:
     except OSError: return []
 
 
+def normalize_csv_value(value):
+    """Remove whitespace that makes generated CSV diffs fail validation."""
+    if not isinstance(value, str):
+        return value
+    normalized = value.replace("\r\n", "\n").replace("\r", "\n")
+    return "\n".join(line.rstrip() for line in normalized.split("\n"))
+
+
 def consolidate(map_events: list[dict], web_events: list[dict], output: Path | None = None) -> None:
     output = output or CONSOLIDATED
     rows, seen = [], set()
@@ -328,6 +336,7 @@ def consolidate(map_events: list[dict], web_events: list[dict], output: Path | N
         seen.add(key); item = dict(row)
         item.setdefault("nome", item.get("titulo") or f"Leilão descoberto em {host(url)}")
         item.setdefault("link", url); item.setdefault("site_leiloeiro", url)
+        item = {field: normalize_csv_value(value) for field, value in item.items()}
         rows.append(item)
     fields = list(dict.fromkeys([key for row in rows for key in row] or ["nome", "link", "fonte_descoberta"]))
     with output.open("w", encoding="utf-8", newline="") as handle:
