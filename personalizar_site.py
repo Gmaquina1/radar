@@ -111,21 +111,21 @@ def apply_date_highlights(template: str) -> str:
     )
     result = _replace_once(
         result,
-        "$('results-title').textContent=state.savedOnly?'Seus lotes salvos':'Oportunidades encontradas';",
-        "$('results-title').textContent=state.savedOnly?'Seus lotes salvos':state.exactDate?(state.locationActive?`${selectedDateTitle(state.exactDate)} perto de ${state.locationLabel}`:selectedDateTitle(state.exactDate)):state.locationActive?`Oportunidades perto de ${state.locationLabel}`:'Oportunidades encontradas';",
+        "$('results-title').textContent=state.savedOnly?'Seus lotes salvos':'Leilões encontrados';",
+        "$('results-title').textContent=state.savedOnly?'Seus lotes salvos':state.exactDate?(state.locationActive?`${selectedDateTitle(state.exactDate)} perto de ${state.locationLabel}`:selectedDateTitle(state.exactDate)):state.locationActive?`Leilões perto de ${state.locationLabel}`:'Leilões encontrados';",
         "título dos resultados",
     )
     result = _replace_once(
         result,
-        "$('results-status').textContent=`${formatNumber(current.length)} lotes futuros correspondem aos filtros atuais.`;",
-        "$('results-status').textContent=state.locationActive?`${formatNumber(current.length)} lotes encontrados em um raio de ${state.radius} km.`:`${formatNumber(current.length)} lotes futuros correspondem aos filtros atuais.`;$('nearby-status').textContent=state.locationActive?`${formatNumber(current.length)} oportunidades até ${state.radius} km de ${state.locationLabel}. Mais próximas primeiro.`:'Informe sua região para ordenar os leilões mais próximos.';",
+        "$('results-status').textContent=`${formatNumber(currentGroups.length)} leilões · ${formatNumber(current.length)} lotes correspondem aos filtros atuais.`;",
+        "$('results-status').textContent=state.locationActive?`${formatNumber(currentGroups.length)} leilões · ${formatNumber(current.length)} lotes em um raio de ${state.radius} km.`:`${formatNumber(currentGroups.length)} leilões · ${formatNumber(current.length)} lotes correspondem aos filtros atuais.`;$('nearby-status').textContent=state.locationActive?`${formatNumber(current.length)} oportunidades até ${state.radius} km de ${state.locationLabel}. Mais próximas primeiro.`:'Informe sua região para ordenar os leilões mais próximos.';",
         "resumo da proximidade",
     )
     result = _replace_once(
         result,
-        "    grid.querySelectorAll('[data-save-index]').forEach(btn=>btn.addEventListener('click',()=>toggleSaved(current[Number(btn.dataset.saveIndex)])));",
-        "    if(state.locationActive)grid.querySelectorAll('.result-card').forEach((card,index)=>{const distance=distanceKm(current[index]);if(distance!==null)card.querySelector('.result-badges').insertAdjacentHTML('beforeend',`<span class=\"distance-badge\">A ${Math.round(distance)} KM</span>`)});\n    grid.querySelectorAll('[data-save-index]').forEach(btn=>btn.addEventListener('click',()=>toggleSaved(current[Number(btn.dataset.saveIndex)])));",
-        "distância nos cartões",
+        "  const lotDistanceBadge=row=>'';\n  const groupDistanceBadge=group=>'';",
+        "  const lotDistanceBadge=row=>{const distance=distanceKm(row);return distance===null?'':`<span class=\"distance-badge\">A ${Math.round(distance)} KM</span>`};\n  const groupDistanceBadge=group=>{if(!state.locationActive)return '';const distances=group.items.map(entry=>distanceKm(entry.row)).filter(value=>value!==null);return distances.length?`<span class=\"distance-badge\">MAIS PRÓXIMO A ${Math.round(Math.min(...distances))} KM</span>`:''};",
+        "distância nos leilões e lotes",
     )
     result = _replace_once(
         result,
