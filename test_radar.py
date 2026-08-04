@@ -190,6 +190,8 @@ class RadarTests(unittest.TestCase):
         self.assertIn('id="use-location"', personalized)
         self.assertIn("function distanceKm(row)", personalized)
         self.assertIn("distance>state.radius", personalized)
+        self.assertIn(".slice(0,20)", personalized)
+        self.assertNotIn("municipalityOptionsLoaded", personalized)
 
     def test_site_mostra_leilao_antes_dos_lotes(self) -> None:
         personalized = apply_date_highlights(site.TEMPLATE.read_text(encoding="utf-8"))
