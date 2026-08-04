@@ -1,29 +1,29 @@
 {
-  "atualizado_em": "2026-08-04T02:36:57-03:00",
+  "atualizado_em": "2026-08-04T05:54:06-03:00",
   "data_base": "2026-08-04",
   "total_registros": 1510,
   "eventos_atualizacao": 1378,
-  "eventos_futuros_ou_hoje": 1150,
+  "eventos_futuros_ou_hoje": 1080,
   "patios": 132,
-  "eventos_com_link": 1137,
-  "eventos_com_data_hora_de_edital": 147,
-  "eventos_com_data_hora_de_site": 62,
+  "eventos_com_link": 1067,
+  "eventos_com_data_hora_de_edital": 148,
+  "eventos_com_data_hora_de_site": 60,
   "eventos_por_uf": [
     [
       "SP",
-      312
+      299
     ],
     [
       "MG",
-      234
+      220
     ],
     [
       "PR",
-      132
+      126
     ],
     [
       "RS",
-      112
+      102
     ],
     [
       "RJ",
@@ -31,23 +31,19 @@
     ],
     [
       "SC",
-      52
+      48
     ],
     [
       "BA",
-      41
+      37
     ],
     [
       "PE",
-      25
+      26
     ],
     [
       "GO",
-      23
-    ],
-    [
-      "MA",
-      18
+      21
     ],
     [
       "CE",
@@ -82,24 +78,28 @@
       8
     ],
     [
+      "MA",
+      8
+    ],
+    [
       "SE",
       8
     ],
     [
+      "PI",
+      4
+    ],
+    [
       "MS",
-      7
+      3
     ],
     [
       "RN",
-      5
+      3
     ],
     [
       "RR",
-      4
-    ],
-    [
-      "PI",
-      4
+      2
     ],
     [
       "DF",
@@ -107,10 +107,6 @@
     ]
   ],
   "datas": [
-    [
-      "2026-08-04",
-      135
-    ],
     [
       "2026-08-06",
       117
@@ -138,6 +134,10 @@
     [
       "2026-08-12",
       71
+    ],
+    [
+      "2026-08-04",
+      64
     ],
     [
       "2026-08-17",
@@ -180,12 +180,12 @@
       12
     ],
     [
-      "2026-08-31",
+      "2026-08-08",
       9
     ],
     [
-      "2026-08-08",
-      8
+      "2026-08-31",
+      9
     ],
     [
       "2027-07-26",
@@ -245,7 +245,7 @@
     ]
   ],
   "download_kml": {
-    "downloaded_at": "2026-08-04T02:35:22-03:00",
+    "downloaded_at": "2026-08-04T05:52:21-03:00",
     "http_status": 200,
     "final_url": "https://www.google.com/maps/d/kml?forcekml=1&mid=1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U",
     "downloaded_bytes": 2130639,
