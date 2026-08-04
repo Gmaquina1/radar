@@ -6,6 +6,7 @@ import datetime as dt
 import json
 import os
 import re
+import unicodedata
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -15,6 +16,7 @@ from personalizar_site import apply_date_highlights
 ROOT = Path(__file__).resolve().parent
 TEMPLATE = ROOT / "site_template.html"
 VERIFIED_LOTS = ROOT / "oportunidades_verificadas.json"
+MUNICIPALITIES = ROOT / "municipios_coordenadas.json"
 MAP_EMBED_URL = "https://www.google.com/maps/d/u/0/embed?mid=1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U&ehbc=2E312F"
 TIMEZONE = ZoneInfo("America/Sao_Paulo")
 VALID_UFS = {
@@ -48,6 +50,66 @@ def read_lotes() -> list[dict[str, str]]:
 
 def read_verified_lots() -> list[dict[str, str]]:
     return read_lot_file(VERIFIED_LOTS)
+
+
+def read_municipalities() -> list[list]:
+    try:
+        data = json.loads(MUNICIPALITIES.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return []
+    rows = data.get("municipios", []) if isinstance(data, dict) else []
+    return [row for row in rows if isinstance(row, list) and len(row) == 4]
+
+
+def normalize_place(value: str) -> str:
+    text = unicodedata.normalize("NFD", str(value or ""))
+    text = "".join(char for char in text if unicodedata.category(char) != "Mn")
+    return re.sub(r"\s+", " ", text).casefold().strip()
+
+
+def municipality_index(rows: list[list]) -> dict[str, list[tuple[str, str, float, float]]]:
+    by_uf: dict[str, list[tuple[str, str, float, float]]] = {}
+    for name, uf, latitude, longitude in rows:
+        by_uf.setdefault(str(uf), []).append(
+            (normalize_place(name), str(name), float(latitude), float(longitude))
+        )
+    for values in by_uf.values():
+        values.sort(key=lambda item: len(item[0]), reverse=True)
+    return by_uf
+
+
+def add_municipality_coordinates(
+    row: dict[str, str],
+    event: dict[str, str],
+    municipalities: dict[str, list[tuple[str, str, float, float]]],
+) -> None:
+    uf = row.get("uf") or event.get("uf") or ""
+    if uf not in municipalities:
+        return
+    location = " | ".join(
+        str(value or "")
+        for value in (
+            row.get("cidade"),
+            row.get("local"),
+            event.get("endereco_ou_localizacao"),
+            row.get("evento"),
+        )
+    )
+    normalized = normalize_place(location)
+    for city_key, city, latitude, longitude in municipalities[uf]:
+        if re.search(rf"(?<!\w){re.escape(city_key)}(?!\w)", normalized):
+            row["cidade"] = city
+            row["latitude"] = latitude
+            row["longitude"] = longitude
+            if not row.get("local"):
+                row["local"] = f"{city} - {uf}"
+            return
+
+
+def infer_uf(*values: str) -> str:
+    text = " | ".join(str(value or "") for value in values)
+    matches = re.findall(r"(?:-|/)\s*([A-Z]{2})(?=\b|,)", text.upper())
+    return next((uf for uf in reversed(matches) if uf in VALID_UFS), "")
 
 
 def parse_hour(value: str) -> tuple[int, int] | None:
@@ -115,6 +177,7 @@ def enrich_and_dedupe_lots(
     now: dt.datetime,
 ) -> list[dict[str, str]]:
     event_lookup = {event_key(row.get("nome", ""), row.get("data", "")): row for row in events}
+    municipalities = municipality_index(read_municipalities())
     selected: dict[str, dict[str, str]] = {}
     for raw in lots:
         row = dict(raw)
@@ -123,9 +186,15 @@ def enrich_and_dedupe_lots(
         if row.get("uf") not in VALID_UFS:
             row["uf"] = ""
         event = event_lookup.get(event_key(row.get("evento", ""), row.get("data", "")), {})
+        row["uf"] = row.get("uf") or event.get("uf") or infer_uf(
+            row.get("local", ""),
+            event.get("endereco_ou_localizacao", ""),
+            row.get("evento", ""),
+        )
         row["link_edital"] = row.get("link_edital") or event.get("link_edital", "")
         row["resumo_edital"] = row.get("resumo_edital") or event.get("resumo_edital", "")
         row["link_evento"] = row.get("link_evento") or event.get("link", "")
+        add_municipality_coordinates(row, event, municipalities)
         key = lot_key(row)
         current = selected.get(key)
         if not current:
@@ -153,6 +222,7 @@ def main() -> None:
             event["uf"] = ""
     lots = enrich_and_dedupe_lots(read_lotes() + read_verified_lots(), events, now)
     patios = read_csv("radar_leiloes_patios.csv")
+    municipalities = read_municipalities()
     app_version = os.environ.get("RADAR_VERSION") or now.strftime("v%Y.%m.%d.%H%M")
     edital_events = sum(1 for row in events if row.get("link_edital"))
     edital_lots = sum(1 for row in lots if row.get("link_edital"))
@@ -161,6 +231,8 @@ def main() -> None:
         "eventos": events,
         "patios": patios,
         "lotes": lots,
+        "municipios": municipalities,
+        "geodados": {"fonte": "municipios-br 3.2.1", "licenca": "CC0-1.0"},
         "gerado_em": now.isoformat(timespec="seconds"),
         "proxima_atualizacao": "Atualização diária",
         "mapa": MAP_EMBED_URL,
