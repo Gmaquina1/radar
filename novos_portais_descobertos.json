@@ -97,5 +97,365 @@
     "status": "pendente",
     "tipo_coleta": "generico",
     "ultima_verificacao": "2026-07-28T17:08:35+00:00"
+  },
+  {
+    "dominio": "downloads.jfal.jus.br",
+    "url_exemplo": "https://downloads.jfal.jus.br/documentos/servicos/leiloes/2025/EDITAL%20LEIL%C3%83O%2001.2025%20-%201%C2%AA%20PUBLICA%C3%87%C3%83O.pdf",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "leilaoimovelcaixa.com.br",
+    "url_exemplo": "https://leilaoimovelcaixa.com.br/caixa/leilao-sfi-caixa-casas-em-maceio-al",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "concursos.tjal.jus.br",
+    "url_exemplo": "https://concursos.tjal.jus.br/concursos/18/visualizar",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "cgj.tjal.jus.br",
+    "url_exemplo": "https://cgj.tjal.jus.br/index_130.php?not=41147&pag=verNoticia",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "proleilao.com.br",
+    "url_exemplo": "https://proleilao.com.br/leilao-de-imoveis/banco/caixa-economica-federal/al?tipo=todos",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "casal.al.gov.br",
+    "url_exemplo": "https://casal.al.gov.br/licitacao/leilao-casal-no-01-2025-bens-moveis-e-imoveis",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "jfal.jus.br",
+    "url_exemplo": "https://jfal.jus.br/noticias/6767",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "tjam.jus.br",
+    "url_exemplo": "https://tjam.jus.br/index.php/menu/sala-de-imprensa/7215-tribunal-de-justica-do-amazonas-disponibiliza-plataforma-de-leilao-eletronico",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "mapadoleilao.com.br",
+    "url_exemplo": "https://mapadoleilao.com.br/estado/amapa",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "sescamapa.com.br",
+    "url_exemplo": "https://sescamapa.com.br/licitacao/leilao/leilao-publico-para-alienacao-de-veiculos-integrantes-do-patrimonio-do-sesc-dr-ap-2026",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "spyleiloes.com.br",
+    "url_exemplo": "https://spyleiloes.com.br/imoveis-leilao/ap/modalidade/judicial",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "diofe.portal.ap.gov.br",
+    "url_exemplo": "https://diofe.portal.ap.gov.br/apifront/portal/edicoes/imprimir_materia/92685/2339",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "canezinleiloes.com.br",
+    "url_exemplo": "https://canezinleiloes.com.br/sobre-nos",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "scheid.leilao.br",
+    "url_exemplo": "https://scheid.leilao.br/leilao/lotes/maquinas-e-equipamentos",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "www7.tjba.jus.br",
+    "url_exemplo": "https://www7.tjba.jus.br/secao/lerPublicacao.wsp?tmp.id=41212&tmp.mostrarDiv=sim&tmp.secao=1",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "tre-ba.jus.br",
+    "url_exemplo": "https://tre-ba.jus.br/servicos-judiciais/leiloes-judiciais/leiloes-judiciais",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "ce.gov.br",
+    "url_exemplo": "https://ce.gov.br/2026/06/24/seplag-ce-realiza-novo-leilao-de-bens-e-veiculos-com-346-lotes-disponiveis",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "portal.ifce.edu.br",
+    "url_exemplo": "https://portal.ifce.edu.br/noticias/ifce-realiza-leilao-on-line-com-31-lotes-de-veiculos-e-materiais-na-sexta-3",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "belt.al.ce.gov.br",
+    "url_exemplo": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/item/6961-lei-n-17-065-18-10-19-d-o-18-10-19",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "policiacivil.ce.gov.br",
+    "url_exemplo": "https://policiacivil.ce.gov.br/leiloes",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "al.ce.gov.br",
+    "url_exemplo": "https://al.ce.gov.br/editais-de-licitacoes",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "portal.pm.df.gov.br",
+    "url_exemplo": "https://portal.pm.df.gov.br/?p=29688&post_type=noticias-institucion",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "economia.df.gov.br",
+    "url_exemplo": "https://economia.df.gov.br/web/guest/w/popula%C3%A7%C3%A3o-pode-participar-de-leil%C3%A3o-de-bens-do-df",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "mobile.receita.fazenda.df.gov.br",
+    "url_exemplo": "https://mobile.receita.fazenda.df.gov.br/aplicacoes/UltimasNormasPublicadas/TelaSaidaDocumento.cfm?txtAno=2026&txtNumero=1&txtParte=IPVA+2026&txtTipo=453",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "es.gov.br",
+    "url_exemplo": "https://es.gov.br/Noticia/policia-civil-do-espirito-santo-publica-edital-para-o-1o-leilao-de-viaturas-de-2026",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "esleiloes.com.br",
+    "url_exemplo": "https://esleiloes.com.br/",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "detran.es.gov.br",
+    "url_exemplo": "https://detran.es.gov.br/edital-de-leilao-eletronico",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "sesp.es.gov.br",
+    "url_exemplo": "https://sesp.es.gov.br/Noticia/policia-militar-realiza-leilao-online-de-125-veiculos",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "compras.es.gov.br",
+    "url_exemplo": "https://compras.es.gov.br/credenciamentoleiloeirosmoveis2024",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "goiania.go.gov.br",
+    "url_exemplo": "https://goiania.go.gov.br/html/gabinete_civil/sileg/dados/legis/2026/dc_20260424_000000059.html",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "www10.goiania.go.gov.br",
+    "url_exemplo": "https://www10.goiania.go.gov.br/transweb/Licitacoes.aspx",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "trt16.jus.br",
+    "url_exemplo": "https://trt16.jus.br/servicos/publicacoes/leilao-judicial",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "tjma.jus.br",
+    "url_exemplo": "https://tjma.jus.br/site/cgj/item/5486/0/leiloeiros-credenciados",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "cac.superbid.net",
+    "url_exemplo": "https://cac.superbid.net/br/institucional/quem-somos",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "sodressantoro.com.br",
+    "url_exemplo": "https://sodressantoro.com.br/quem-somos",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "hml-web.sodresantoro.com.br",
+    "url_exemplo": "https://hml-web.sodresantoro.com.br/",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "compraremleilao.com.br",
+    "url_exemplo": "https://compraremleilao.com.br/leilao/reginaaudeleiloes/leilao-de-veiculos-maquinario-bens-moveis-e-sucatas/1714",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "crea-mt.org.br",
+    "url_exemplo": "https://crea-mt.org.br/portal/crea-mt-realiza-leilao-de-veiculos-no-001-2026-confira-o-edital",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "tjmt.jus.br",
+    "url_exemplo": "https://tjmt.jus.br/noticias/2026/6/leilao-sucatas-arrecada-r-673-mil-apos-articulacao-entre-instituicoes-justica",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
+  },
+  {
+    "dominio": "hml-webv2.sodresantoro.com.br",
+    "url_exemplo": "https://hml-webv2.sodresantoro.com.br/judiciais",
+    "descoberto_em": "2026-08-04T05:57:57+00:00",
+    "consulta_que_encontrou": "busca_web",
+    "status": "pendente",
+    "tipo_coleta": "generico",
+    "ultima_verificacao": "2026-08-04T05:57:57+00:00"
   }
 ]

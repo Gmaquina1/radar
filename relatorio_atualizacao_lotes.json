@@ -1,103 +1,130 @@
 {
-  "executado_em": "2026-08-04T00:40:23-03:00",
-  "lotes_antes": 4354,
-  "lotes_depois": 4606,
-  "lotes_realmente_novos": 208,
+  "executado_em": "2026-08-04T03:16:07-03:00",
+  "lotes_antes": 4606,
+  "lotes_depois": 5048,
+  "lotes_realmente_novos": 442,
   "lotes_removidos_ou_encerrados": 0,
   "lotes_preservados": 0,
-  "lotes_capturados_agora": 8268,
-  "lotes_capturados_com_chave_nova": 2306,
-  "eventos_analisados": 1299,
-  "eventos_com_lotes": 414,
-  "eventos_com_erro": 154,
-  "eventos_bloqueados": 144,
+  "lotes_capturados_agora": 17575,
+  "lotes_capturados_com_chave_nova": 7779,
+  "eventos_analisados": 3497,
+  "eventos_com_lotes": 1237,
+  "eventos_com_erro": 183,
+  "eventos_bloqueados": 166,
   "links_invalidos": 11,
   "quantidade_coletada_por_leiloeiro": {
     "alfaleiloes.com": 21,
-    "alleiloes.com.br": 13,
+    "alleiloes.com.br": 45,
     "allianceleiloes.com.br": 26,
     "alvaroantonioleiloes.com.br": 48,
-    "amleiloeiro.com.br": 8,
+    "amleiloeiro.com.br": 31,
+    "belt.al.ce.gov.br": 60,
     "bolsadeleiloes.com.br": 50,
-    "bsbleiloes.com.br": 104,
-    "colossoleiloes.com.br": 21,
+    "bsbleiloes.com.br": 871,
+    "casadeleiloes.com.br": 109,
+    "celsocunhaleiloes.com.br": 1,
+    "centralsuldeleiloes.com.br": 120,
+    "colossoleiloes.com.br": 56,
+    "compraremleilao.com.br": 7,
+    "compras.es.gov.br": 2,
+    "detran.es.gov.br": 88,
     "donizetteleiloes.leilao.br": 56,
+    "downloads.jfal.jus.br": 16,
     "drive.google.com": 89,
     "drive.usercontent.google.com": 18,
-    "e-leiloes.com.br": 11,
+    "e-leiloes.com.br": 151,
     "eckertleiloes.com.br": 140,
+    "economia.df.gov.br": 1,
     "edgarcarvalholeiloeiro.com.br": 1,
-    "esleiloes.com.br": 6,
-    "goias.gov.br": 2,
-    "goldenlance.com.br": 295,
-    "grupolance.com.br": 96,
-    "hastapublica.com.br": 25,
-    "hisaleiloes.com.br": 152,
+    "esleiloes.com.br": 130,
+    "goias.gov.br": 12,
+    "goldenlance.com.br": 423,
+    "gov.br": 44,
+    "grupolance.com.br": 348,
+    "hastapublica.com.br": 51,
+    "hisaleiloes.com.br": 307,
+    "hml-webv2.sodresantoro.com.br": 98,
+    "jeleiloes.com.br": 662,
+    "jfal.jus.br": 22,
     "jmleiloes.leilao.br": 6,
     "jrleiloes.com.br": 2,
-    "kleiloes.com.br": 80,
-    "kronleiloes.com.br": 2,
-    "kwara.com.br": 165,
+    "kleiloes.com.br": 86,
+    "kronleiloes.com.br": 5,
+    "kwara.com.br": 213,
     "lance360.com.br": 102,
     "lancecertoleiloes.com.br": 225,
     "lancejusto.com.br": 2,
-    "lancevip.com.br": 97,
-    "lbleiloes.com.br": 80,
+    "lancevip.com.br": 218,
+    "lbleiloes.com.br": 97,
     "leffaleiloes.com.br": 59,
-    "leilao.detran.mg.gov.br": 195,
+    "leilao.detran.mg.gov.br": 274,
     "leilao.sodresantoro.com.br": 3,
-    "leilaobrasil.com.br": 518,
-    "leilaoonline.com.br": 332,
-    "leiloai.com": 12,
-    "leiloeiropublico.com.br": 3,
-    "leiloesfreire.com.br": 176,
-    "leiloesjudiciais.com.br": 37,
-    "leiloesoliveira.com.br": 29,
-    "leiloespb.com.br": 6,
-    "leje.com.br": 44,
-    "liderleiloes.com.br": 66,
-    "lilianportugal.com.br": 102,
-    "lipinskileiloes.com.br": 73,
-    "lumussaleiloes.com.br": 27,
+    "leilaobrasil.com.br": 621,
+    "leilaoimovelcaixa.com.br": 192,
+    "leilaoonline.com.br": 494,
+    "leiloai.com": 56,
+    "leiloeiropublico.com.br": 13,
+    "leiloesbr.com.br": 2,
+    "leiloesfreire.com.br": 213,
+    "leiloesjudiciais.com.br": 541,
+    "leiloesoliveira.com.br": 141,
+    "leiloespb.com.br": 99,
+    "leje.com.br": 117,
+    "liderleiloes.com.br": 98,
+    "lilianportugal.com.br": 236,
+    "lipinskileiloes.com.br": 141,
+    "lumussaleiloes.com.br": 76,
+    "mapadoleilao.com.br": 168,
     "marcotulioleiloes.com.br": 150,
-    "marcusviniciusleiloes.com.br": 36,
+    "marcusviniciusleiloes.com.br": 88,
     "mariafixerleiloes.com.br": 2,
-    "marquesleiloes.com.br": 4,
-    "megaleiloes.com.br": 13,
-    "mjleiloes.com.br": 273,
+    "marquesleiloes.com.br": 12,
+    "megaleiloes.com.br": 56,
+    "mjleiloes.com.br": 363,
     "nakakogueleiloes.com.br": 12,
-    "nordesteleiloes.com.br": 26,
-    "okleiloes.com.br": 19,
-    "peterlongoleiloes.com.br": 92,
-    "portaldoleiloeiro.com.br": 32,
-    "portalzuk.com.br": 30,
+    "nordesteleiloes.com.br": 34,
+    "okleiloes.com.br": 32,
+    "parquedosleiloes.com.br": 176,
+    "peterlongoleiloes.com.br": 191,
+    "portaldoleiloeiro.com.br": 82,
+    "portalzuk.com.br": 37,
+    "proleilao.com.br": 838,
     "rauppleiloes.com.br": 105,
-    "ricardogomesleiloes.com.br": 58,
+    "ricardogomesleiloes.com.br": 159,
     "rochaleiloes.com.br": 2,
-    "rofremleiloes.com.br": 27,
-    "rogeriomenezes.com.br": 1,
-    "rossileiloes.com.br": 875,
-    "rpleiloes.com.br": 29,
-    "sabbagleiloes.com.br": 9,
-    "sandrasantosleiloes.com.br": 55,
-    "sandroleiloeiro.com.br": 416,
-    "saraivaleiloes.com.br": 26,
+    "rofremleiloes.com.br": 62,
+    "rogeriomenezes.com.br": 111,
+    "rossileiloes.com.br": 1038,
+    "rpleiloes.com.br": 57,
+    "sabbagleiloes.com.br": 819,
+    "sandrasantosleiloes.com.br": 129,
+    "sandroleiloeiro.com.br": 539,
+    "saraivaleiloes.com.br": 126,
     "satoleiloes.com.br": 1,
-    "schulmannleiloes.com.br": 1,
-    "sfleiloes.com.br": 37,
+    "schulmannleiloes.com.br": 2,
+    "sescamapa.com.br": 63,
+    "sfleiloes.com.br": 70,
     "shopleiloes.leilao.br": 6,
     "sodresantoro.com.br": 94,
+    "sodressantoro.com.br": 10,
     "sold.com.br": 1380,
-    "spencerleiloes.com.br": 7,
-    "suedpeterleiloes.com.br": 40,
-    "superbid.net": 111,
-    "swleiloes.com.br": 98,
-    "tesouroleiloes.com.br": 26,
-    "topoleiloes.com.br": 52,
-    "tulioleiloes.com.br": 48,
+    "spencerleiloes.com.br": 105,
+    "spyleiloes.com.br": 166,
+    "static.suporteleiloes.com.br": 1,
+    "suedpeterleiloes.com.br": 84,
+    "superbid.net": 552,
+    "swleiloes.com.br": 199,
+    "tesouroleiloes.com.br": 30,
+    "tjmt.jus.br": 1,
+    "topoleiloes.com.br": 80,
+    "trt16.jus.br": 10,
+    "tulioleiloes.com.br": 66,
     "vardanaleiloes.com.br": 42,
-    "webleiloes.com.br": 320,
-    "wrleiloes.com.br": 72,
+    "vargasepintoleiloes.com.br": 20,
+    "vialeiloes.com.br": 197,
+    "webleiloes.com.br": 412,
+    "wrleiloes.com.br": 140,
+    "www7.tjba.jus.br": 4,
     "youtu.be": 16
   },
   "erros_por_leiloeiro": {
@@ -110,6 +137,7 @@
     "benozzati.com.br": 1,
     "bidgo.com.br": 1,
     "brunoniewinskileiloes.com.br": 1,
+    "canezinleiloes.com.br": 2,
     "cargneluttileiloes.com.br": 2,
     "ccjleiloes.com.br": 1,
     "cravoleiloes.com.br": 4,
@@ -127,6 +155,7 @@
     "gustavomorettoleiloeiro.com.br": 3,
     "gutembergaraujoleiloes.com.br": 1,
     "hatoryleiloes.com.br": 4,
+    "jfal.jus.br": 7,
     "joaoemilio.com.br": 5,
     "juleiloes.com.br": 1,
     "jvleiloes.lel.br": 1,
@@ -141,6 +170,7 @@
     "mgl.com.br": 26,
     "nossoleilao.com.br": 2,
     "nsleiloes.leilao.br": 1,
+    "palaciodosleiloes.com.br": 20,
     "patiorochaleiloes.com.br": 1,
     "pereiraleiloesce.com.br": 1,
     "pwleiloes.com.br": 10,
@@ -204,6 +234,11 @@
       "http": 403
     },
     {
+      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8543",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
       "url": "https://www.mgl.com.br/leilao/bens-diversos/7103/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
@@ -252,6 +287,21 @@
       "url": "https://www.mgl.com.br/leilao/prefeitura-municipal-de-bom-jesus-do-galho-mg/7256/#&Pagina=1&Index=1",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8542",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8541",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8538",
+      "status": "bloqueado_http_429",
+      "http": 429
     },
     {
       "url": "https://www.lanceleiloes.com.br/leilao/869/lotes",
@@ -312,6 +362,11 @@
       "url": "https://danielgarcialeiloes.com.br/leilao/7691/lotes",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8539",
+      "status": "bloqueado_http_429",
+      "http": 429
     },
     {
       "url": "https://www.guariglialeiloes.com.br/leilao/811/lotes",
@@ -734,6 +789,16 @@
       "http": 403
     },
     {
+      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8503",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8544",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
       "url": "https://www.machadoleiloeiro.com.br/leilao/1796/lotes",
       "status": "bloqueado_http_403",
       "http": 403
@@ -929,7 +994,122 @@
       "http": 403
     },
     {
+      "url": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/itemlist/tag/ADQUIRIR%20E%20DISTRIBUIR%20G%C3%81S%20EM%20BOTIJ%C3%83O%20%C3%80S%20FAMIL%C3%8DAS%20EM%20SITUA%C3%87%C3%83O%20DE%20MAIOR%20VULNERABILIDADE%20SOCIAL",
+      "status": "http_503",
+      "http": 503
+    },
+    {
+      "url": "https://www.canezinleiloes.com.br/sobre-nos",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://www.canezinleiloes.com.br/",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://jfal.jus.br/concursos/eventos-e-cursos/",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.jfal.jus.br/calendarios/leil%C3%B5es/",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2026/1-leilao-unificado-1-praca/",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2025/2-leilao-unificado-1-praca/",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2025/1-leilao-unificado-2-praca/",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2025/calendar/",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2023/3-leilao-unificado-1-praca/",
+      "status": "erro",
+      "http": 0
+    },
+    {
       "url": "https://instagram.com/ricardo.leiloeiro?igshid=MTk0NTkyODZkYg==",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8520",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8531",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/index.php",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/login.php",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/cadastro_arrematante.php",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/embreve.php",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/editais.php",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/publicacoes.php",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/evento.php",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/trabalhe_conosco.php",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/produtos.php",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://www.palaciodosleiloes.com.br/site/meusindicados.php",
       "status": "bloqueado_http_429",
       "http": 429
     },

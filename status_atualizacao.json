@@ -1,16 +1,16 @@
 {
   "status": "ok",
-  "verificado_em": "2026-08-04T00:40:24-03:00",
-  "atualizado_em_base_eventos": "2026-08-04T00:36:11-03:00",
-  "atualizado_em_base_lotes": "2026-08-04T00:40:23-03:00",
-  "idade_base_eventos_horas": 0.07,
+  "verificado_em": "2026-08-04T03:16:08-03:00",
+  "atualizado_em_base_eventos": "2026-08-04T02:36:57-03:00",
+  "atualizado_em_base_lotes": "2026-08-04T03:16:07-03:00",
+  "idade_base_eventos_horas": 0.65,
   "idade_base_lotes_horas": 0.0,
-  "eventos_futuros": 1151,
+  "eventos_futuros": 1150,
   "patios": 132,
-  "lotes": 4606,
-  "lotes_capturados_agora": 8268,
+  "lotes": 5048,
+  "lotes_capturados_agora": 17575,
   "lotes_preservados": 0,
-  "eventos_indexados_com_lotes": 414,
+  "eventos_indexados_com_lotes": 1237,
   "checks": {
     "arquivos_obrigatorios": true,
     "workflow_existe": true,
@@ -28,22 +28,22 @@
     "base_lotes_recente": true
   },
   "arquivos_faltando": [],
-  "modo": "rapido",
-  "duracao_segundos": 353.94,
-  "ultima_execucao": "2026-08-04T00:40:23-03:00",
+  "modo": "profundo",
+  "duracao_segundos": 2447.24,
+  "ultima_execucao": "2026-08-04T03:16:08-03:00",
   "mensagem": "Eventos, lotes e site atualizados com sucesso.",
   "base_anterior_restaurada": false,
-  "lotes_antes": 4354,
-  "lotes_depois": 4606,
-  "lotes_novos_detectados": 208,
+  "lotes_antes": 4606,
+  "lotes_depois": 5048,
+  "lotes_novos_detectados": 442,
   "lotes_removidos_ou_encerrados": 0,
   "status_mapa": "ok",
-  "status_openai": "NAO_TESTADA",
+  "status_openai": "OK",
   "status_descoberta": "parcial",
   "status_descoberta_web": "parcial",
   "status_lotes": "ok",
   "status_site": "ok",
-  "openai_funcionou": false,
+  "openai_funcionou": true,
   "descoberta_funcionou": true,
   "descoberta_web_funcionou": true,
   "etapas": [
@@ -56,23 +56,23 @@
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 101.39,
+      "duracao_segundos": 96.01,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 900
     },
     {
-      "nome": "Atualizar lote incremental de portais conhecidos",
+      "nome": "Descoberta profunda fora do mapa",
       "comando": [
         "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
         "descobrir_leiloes_web.py",
-        "--quick-refresh"
+        "--deep-discovery"
       ],
       "tentativas": 1,
-      "duracao_segundos": 20.36,
+      "duracao_segundos": 1722.67,
       "status": "ok",
       "codigo": 0,
-      "timeout_segundos": 900
+      "timeout_segundos": 7800
     },
     {
       "nome": "Procurar novos lotes nos sites dos leiloeiros",
@@ -87,7 +87,7 @@
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 231.5,
+      "duracao_segundos": 627.7,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 3600
@@ -99,7 +99,7 @@
         "gerar_site_github.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 0.26,
+      "duracao_segundos": 0.31,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300
@@ -112,7 +112,7 @@
         "--falhar-se-atencao"
       ],
       "tentativas": 1,
-      "duracao_segundos": 0.16,
+      "duracao_segundos": 0.21,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300
