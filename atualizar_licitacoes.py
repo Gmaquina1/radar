@@ -186,13 +186,16 @@ def collect(now: dt.datetime | None = None) -> tuple[list[dict], list[str], bool
         errors.append(f"{exc}; usando consulta por data de publicação.")
         first = None
     if first is None:
-        start = now.date() - dt.timedelta(days=PUBLICATION_LOOKBACK_DAYS)
+        oldest = now.date() - dt.timedelta(days=PUBLICATION_LOOKBACK_DAYS)
+        end = now.date()
         windows: list[tuple[int, str, str]] = []
-        while start <= now.date():
-            end = min(start + dt.timedelta(days=PUBLICATION_WINDOW_DAYS - 1), now.date())
+        # Prioriza as publicações mais recentes. Se o PNCP atingir o limite de
+        # tempo, a base ainda recebe primeiro os editais com maior chance de abertura.
+        while end >= oldest:
+            start = max(oldest, end - dt.timedelta(days=PUBLICATION_WINDOW_DAYS - 1))
             for modality in PUBLICATION_MODALITIES:
                 windows.append((modality, start.strftime("%Y%m%d"), end.strftime("%Y%m%d")))
-            start = end + dt.timedelta(days=1)
+            end = start - dt.timedelta(days=1)
 
         def fetch_window(modality: int, initial: str, final: str) -> tuple[list[dict], list[str], bool]:
             found: list[dict] = []
