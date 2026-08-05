@@ -1,21 +1,23 @@
 {
-  "configurada": true,
-  "modelo": "gpt-5-mini",
-  "consultas_planejadas": 30,
-  "consultas_agendadas": 30,
-  "consultas_executadas": 5,
-  "fontes_consultadas": 355,
-  "registros_aceitos": 0,
-  "registros_rejeitados": 0,
-  "ufs_consultadas": [
-    "DF",
-    "ES",
-    "PB",
-    "RJ",
-    "TO"
+  "status": "sem_dados",
+  "atualizado_em": "2026-08-04T21:06:03-03:00",
+  "total": 0,
+  "fontes": {
+    "pncp": 0,
+    "openai_web_search": 0,
+    "preservadas": 0
+  },
+  "truncado": true,
+  "erros_pncp": [
+    "Falha no PNCP para modalidade 2, página 1: The read operation timed out",
+    "Falha no PNCP para modalidade 3, página 1: The read operation timed out",
+    "Falha no PNCP para modalidade 4, página 1: The read operation timed out",
+    "Falha no PNCP para modalidade 5, página 1: The read operation timed out",
+    "Falha no PNCP para modalidade 6, página 1: The read operation timed out",
+    "Falha no PNCP para modalidade 7, página 1: The read operation timed out",
+    "Tempo máximo de coleta do PNCP atingido; nova tentativa será feita na próxima atualização."
   ],
-  "ufs_com_resultados": [],
-  "erros": [
+  "erros_openai": [
     "AL: APITimeoutError: Request timed out.",
     "AC: APITimeoutError: Request timed out.",
     "BA: APITimeoutError: Request timed out.",
@@ -41,5 +43,14 @@
     "BR-FEDERAL: APITimeoutError: Request timed out.",
     "BR-MAQUINAS: APITimeoutError: Request timed out.",
     "BR-OBRAS: APITimeoutError: Request timed out."
+  ],
+  "openai_configurada": true,
+  "consultas_openai": 5,
+  "ufs_consultadas_openai": [
+    "DF",
+    "ES",
+    "PB",
+    "RJ",
+    "TO"
   ]
 }
