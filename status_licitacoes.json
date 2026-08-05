@@ -1,11 +1,11 @@
 {
   "status": "ok_parcial",
-  "atualizado_em": "2026-08-04T21:24:38-03:00",
-  "total": 8,
+  "atualizado_em": "2026-08-04T21:36:18-03:00",
+  "total": 10,
   "fontes": {
     "pncp": 0,
-    "openai_web_search": 8,
-    "preservadas": 0
+    "openai_web_search": 4,
+    "preservadas": 6
   },
   "truncado": false,
   "erros_pncp": [
@@ -22,36 +22,36 @@
     "Falha no PNCP para modalidade 12, página 1: The read operation timed out"
   ],
   "erros_openai": [
+    "AM: APITimeoutError: Request timed out.",
+    "CE: APITimeoutError: Request timed out.",
+    "BA: APITimeoutError: Request timed out.",
+    "AL: APITimeoutError: Request timed out.",
+    "ES: APITimeoutError: Request timed out.",
     "MA: APITimeoutError: Request timed out.",
-    "GO: APITimeoutError: Request timed out.",
+    "AC: APITimeoutError: Request timed out.",
     "MT: APITimeoutError: Request timed out.",
     "MS: APITimeoutError: Request timed out.",
     "MG: APITimeoutError: Request timed out.",
+    "PA: APITimeoutError: Request timed out.",
     "PB: APITimeoutError: Request timed out.",
-    "PR: APITimeoutError: Request timed out.",
+    "RN: APITimeoutError: Request timed out.",
     "PI: APITimeoutError: Request timed out.",
+    "RJ: APITimeoutError: Request timed out.",
+    "RS: APITimeoutError: Request timed out.",
+    "SC: APITimeoutError: Request timed out.",
     "SE: APITimeoutError: Request timed out.",
     "TO: APITimeoutError: Request timed out."
   ],
   "openai_configurada": true,
-  "consultas_openai": 20,
+  "consultas_openai": 11,
   "ufs_consultadas_openai": [
-    "AC",
-    "AL",
-    "AM",
     "AP",
-    "BA",
-    "CE",
     "DF",
-    "ES",
-    "PA",
+    "GO",
     "PE",
-    "RJ",
-    "RN",
+    "PR",
     "RO",
     "RR",
-    "RS",
-    "SC",
     "SP"
   ]
 }
