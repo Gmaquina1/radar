@@ -103,6 +103,8 @@ jobs:
           assert len(rows) > 0, 'A coleta não retornou licitações'
           assert status.get('paginas_pncp_informadas', 0) <= 1000, 'Limite de páginas insuficiente'
           assert not status.get('truncado'), 'A coleta ainda ficou truncada'
+          assert not status.get('erros_pncp'), 'Uma ou mais páginas do PNCP ficaram sem resposta'
+          assert status.get('status') == 'ok', 'A coleta do PNCP não foi integral'
           assert Path('licitacoes.html').stat().st_size > 1000, 'Página de licitações não foi gerada'
 
           print(f"Licitações captadas: {len(rows)}")
