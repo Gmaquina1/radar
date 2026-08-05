@@ -10,6 +10,10 @@ on:
       - main
     paths:
       - ".github/workflows/atualizar-licitacoes-completo.yml"
+      - "atualizar_licitacoes_completo.py"
+      - "atualizar_licitacoes.py"
+      - "licitacoes_template.html"
+      - "gerar_site_github.py"
 
 permissions:
   contents: write
@@ -22,27 +26,25 @@ jobs:
   coletar:
     if: github.actor != 'github-actions[bot]' || github.event_name != 'push'
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
 
     env:
       TZ: America/Sao_Paulo
       PYTHONUNBUFFERED: "1"
-      # O PNCP aceita até 500 registros por página. Uma única requisição por vez
-      # evita o bloqueio 429 que ocorria com 16 chamadas simultâneas.
-      PNCP_TEMPO_MAXIMO: "3600"
+      # Coleta sequencial e com espera progressiva para evitar HTTP 429/WAF.
       PNCP_TIMEOUT: "60"
-      PNCP_TENTATIVAS: "6"
+      PNCP_TENTATIVAS: "8"
       PNCP_TAMANHO_PAGINA: "500"
-      PNCP_MAX_PAGINAS: "200"
+      PNCP_MAX_PAGINAS: "1000"
       PNCP_MAX_REGISTROS: "60000"
+      PNCP_INTERVALO: "0.8"
+      PNCP_ESPERA_429: "30"
+      PNCP_ESPERA_MAXIMA: "180"
       PNCP_WORKERS: "1"
-      PNCP_PUBLICACAO_DIAS: "365"
-      PNCP_PUBLICACAO_JANELA: "7"
-      PNCP_PUBLICACAO_MAX_PAGINAS: "200"
       COMPRAS_GOV_DIAS: "365"
       COMPRAS_GOV_TAMANHO_PAGINA: "500"
-      COMPRAS_GOV_MAX_PAGINAS: "200"
-      COMPRAS_GOV_WORKERS: "2"
+      COMPRAS_GOV_MAX_PAGINAS: "1000"
+      COMPRAS_GOV_WORKERS: "1"
 
     steps:
       - name: Baixar repositório
@@ -64,27 +66,48 @@ jobs:
           pip install -r requirements.txt
           pip install tzdata
 
+      - name: Registrar base anterior
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          try:
+              data = json.loads(Path('licitacoes.json').read_text(encoding='utf-8'))
+              print(f"Base anterior: {data.get('total', 0)} licitações")
+          except Exception:
+              print('Base anterior indisponível')
+          PY
+
       - name: Captar licitações abertas
         shell: bash
         run: |
-          python atualizar_licitacoes.py
+          python atualizar_licitacoes_completo.py
           python gerar_site_github.py
 
       - name: Validar arquivos gerados
         shell: bash
         run: |
-          python -m compileall -q atualizar_licitacoes.py gerar_site_github.py
+          python -m compileall -q atualizar_licitacoes_completo.py atualizar_licitacoes.py gerar_site_github.py
           python - <<'PY'
           import json
           from pathlib import Path
 
           payload = json.loads(Path('licitacoes.json').read_text(encoding='utf-8'))
+          status = json.loads(Path('status_licitacoes.json').read_text(encoding='utf-8'))
           rows = payload.get('licitacoes', [])
+
           assert isinstance(rows, list), 'Lista de licitações inválida'
           assert payload.get('total') == len(rows), 'Total divergente'
           assert len(rows) > 0, 'A coleta não retornou licitações'
+          assert status.get('paginas_pncp_informadas', 0) <= 1000, 'Limite de páginas insuficiente'
+          assert not status.get('truncado'), 'A coleta ainda ficou truncada'
           assert Path('licitacoes.html').stat().st_size > 1000, 'Página de licitações não foi gerada'
+
           print(f"Licitações captadas: {len(rows)}")
+          print(f"Páginas PNCP: {status.get('paginas_pncp_informadas', 0)}")
+          print(f"Tamanho de página: {status.get('tamanho_pagina_pncp', 0)}")
+          print(f"Status: {status.get('status')}")
           PY
           git diff --check
 
@@ -93,7 +116,7 @@ jobs:
         run: |
           git config user.name "Radar de Oportunidades"
           git config user.email "actions@users.noreply.github.com"
-          git add licitacoes.json licitacoes.html status_licitacoes.json relatorio_licitacoes_openai.json
+          git add licitacoes.json licitacoes.html status_licitacoes.json
 
           if git diff --cached --quiet; then
             echo "Nenhuma alteração na base de licitações."
@@ -109,3 +132,14 @@ jobs:
         shell: bash
         run: |
           cat status_licitacoes.json 2>/dev/null || true
+
+      - name: Guardar diagnóstico
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnostico-licitacoes-completo
+          path: |
+            status_licitacoes.json
+            licitacoes.json
+          if-no-files-found: ignore
+          retention-days: 7
