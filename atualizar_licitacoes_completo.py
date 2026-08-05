@@ -219,13 +219,9 @@ def main() -> None:
         "compras_gov": len(compras_rows),
         "preservadas": max(0, len(rows) - len(pncp_rows) - len(compras_rows)),
     }
-    partial = (
-        not pncp_rows
-        or pncp_truncated
-        or compras_truncated
-        or bool(pncp_errors)
-        or bool(compras_errors)
-    )
+    # O PNCP é a fonte nacional principal. Compras.gov.br é complementar e
+    # não deve impedir a publicação quando todas as páginas do PNCP fecharam.
+    partial = not pncp_rows or pncp_truncated or bool(pncp_errors)
 
     payload = {
         "atualizado_em": now.isoformat(timespec="seconds"),
