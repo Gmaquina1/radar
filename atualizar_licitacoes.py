@@ -14,7 +14,14 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from normalizar_texto import corrigir_dados
-from descobrir_licitacoes_openai import comparable_url, collect_openai, normalize_text, parse_date, write_report
+from descobrir_licitacoes_openai import (
+    UFS as VALID_UFS,
+    comparable_url,
+    collect_openai,
+    normalize_text,
+    parse_date,
+    write_report,
+)
 
 
 ROOT = Path(__file__).resolve().parent
