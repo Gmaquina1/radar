@@ -10,6 +10,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -31,9 +32,9 @@ STATUS = ROOT / "status_licitacoes.json"
 TIMEZONE = ZoneInfo("America/Sao_Paulo")
 BASE_URL = "https://pncp.gov.br/api/consulta/v1/contratacoes/proposta"
 SOURCE_NAME = "Portal Nacional de Contratações Públicas (PNCP)"
-MODALIDADES = tuple(range(2, 13))  # Exclui apenas as modalidades de leilão.
-PAGE_SIZE = 500
-MAX_PAGES_PER_MODALITY = int(os.environ.get("PNCP_MAX_PAGINAS_MODALIDADE", "80"))
+PAGE_SIZE = int(os.environ.get("PNCP_TAMANHO_PAGINA", "50"))
+MAX_PAGES = int(os.environ.get("PNCP_MAX_PAGINAS", "400"))
+PNCP_WORKERS = max(1, int(os.environ.get("PNCP_WORKERS", "16")))
 MAX_RECORDS = int(os.environ.get("PNCP_MAX_REGISTROS", "60000"))
 REQUEST_TIMEOUT = int(os.environ.get("PNCP_TIMEOUT", "35"))
 REQUEST_ATTEMPTS = max(1, int(os.environ.get("PNCP_TENTATIVAS", "3")))
@@ -89,11 +90,10 @@ def map_contract(row: dict) -> dict:
     return corrigir_dados(mapped)
 
 
-def request_page(modality: int, final_date: str, page: int) -> dict:
+def request_page(final_date: str, page: int) -> dict:
     query = urllib.parse.urlencode(
         {
             "dataFinal": final_date,
-            "codigoModalidadeContratacao": modality,
             "pagina": page,
             "tamanhoPagina": PAGE_SIZE,
         }
@@ -111,7 +111,7 @@ def request_page(modality: int, final_date: str, page: int) -> dict:
             last_error = exc
             if attempt + 1 < REQUEST_ATTEMPTS:
                 time.sleep(2**attempt)
-    raise RuntimeError(f"Falha no PNCP para modalidade {modality}, página {page}: {last_error}")
+    raise RuntimeError(f"Falha no PNCP para página {page}: {last_error}")
 
 
 def rows_from_response(payload: dict) -> list[dict]:
@@ -137,30 +137,50 @@ def collect(now: dt.datetime | None = None) -> tuple[list[dict], list[str], bool
     errors: list[str] = []
     truncated = False
     deadline = time.monotonic() + TIME_BUDGET_SECONDS
-    for modality in MODALIDADES:
-        for page in range(1, MAX_PAGES_PER_MODALITY + 1):
-            if time.monotonic() >= deadline:
-                errors.append("Tempo máximo de coleta do PNCP atingido; nova tentativa será feita na próxima atualização.")
+    def absorb(payload: dict) -> None:
+        nonlocal truncated
+        for raw in rows_from_response(payload):
+            row = map_contract(raw)
+            if is_auction(row):
+                continue
+            closing = parse_date(row.get("data_encerramento"))
+            if closing is not None and closing < now.date():
+                continue
+            key = row.get("id") or f"{row.get('orgao')}|{row.get('numero')}|{row.get('data_encerramento')}"
+            selected[str(key)] = row
+            if len(selected) >= MAX_RECORDS:
                 truncated = True
-                break
+                return
+
+    try:
+        first = request_page(final_date, 1)
+    except RuntimeError as exc:
+        return [], [str(exc)], False
+    absorb(first)
+    total_pages = first.get("totalPaginas") if isinstance(first, dict) else None
+    if not isinstance(total_pages, int):
+        total_pages = 2 if has_more(first, 1, len(rows_from_response(first))) else 1
+    if total_pages > MAX_PAGES:
+        truncated = True
+        errors.append(f"PNCP informou {total_pages} páginas; limite desta execução: {MAX_PAGES}.")
+    last_page = min(max(1, total_pages), MAX_PAGES)
+
+    executor = ThreadPoolExecutor(max_workers=min(PNCP_WORKERS, max(1, last_page - 1)))
+    futures = {executor.submit(request_page, final_date, page): page for page in range(2, last_page + 1)}
+    try:
+        for future in as_completed(futures, timeout=max(1, deadline - time.monotonic())):
+            page = futures[future]
             try:
-                payload = request_page(modality, final_date, page)
+                absorb(future.result())
             except RuntimeError as exc:
                 errors.append(str(exc))
+            if truncated and len(selected) >= MAX_RECORDS:
                 break
-            raw_rows = rows_from_response(payload)
-            for raw in raw_rows:
-                row = map_contract(raw)
-                key = row.get("id") or f"{row.get('orgao')}|{row.get('numero')}|{row.get('data_encerramento')}"
-                selected[str(key)] = row
-                if len(selected) >= MAX_RECORDS:
-                    truncated = True
-                    break
-            if truncated or not has_more(payload, page, len(raw_rows)):
-                break
-            time.sleep(0.15)
-        if truncated:
-            break
+    except TimeoutError:
+        truncated = True
+        errors.append("Tempo máximo de coleta do PNCP atingido; páginas restantes serão retomadas na próxima atualização.")
+    finally:
+        executor.shutdown(wait=False, cancel_futures=True)
     rows = sorted(
         selected.values(),
         key=lambda row: (row.get("data_encerramento") or "9999", row.get("uf") or "", row.get("orgao") or ""),
