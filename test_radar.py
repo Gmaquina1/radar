@@ -243,12 +243,12 @@ class RadarTests(unittest.TestCase):
         self.assertEqual(row["orgao"], "Órgão de Teste")
         self.assertEqual(row["link"], "https://pncp.gov.br/app/editais/00394502000144/2026/180")
 
-    def test_coletor_de_licitacoes_percorre_modalidades_sem_leiloes(self) -> None:
+    def test_coletor_de_licitacoes_pagina_todas_as_modalidades(self) -> None:
         calls = []
 
-        def fake_request(modality: int, final_date: str, page: int) -> dict:
-            calls.append((modality, page))
-            return {"data": [], "totalPaginas": 0}
+        def fake_request(final_date: str, page: int) -> dict:
+            calls.append(page)
+            return {"data": [], "totalPaginas": 3}
 
         with mock.patch.object(licitacoes, "request_page", side_effect=fake_request):
             rows, errors, truncated = licitacoes.collect(
@@ -257,9 +257,7 @@ class RadarTests(unittest.TestCase):
         self.assertEqual(rows, [])
         self.assertEqual(errors, [])
         self.assertFalse(truncated)
-        self.assertEqual({value for value, _ in calls}, set(range(2, 13)))
-        self.assertNotIn(1, {value for value, _ in calls})
-        self.assertNotIn(13, {value for value, _ in calls})
+        self.assertEqual(set(calls), {1, 2, 3})
 
     def test_openai_aceita_somente_licitacao_com_fonte_e_prazo_futuro(self) -> None:
         sources = [{"url": "https://prefeitura.gov.br/licitacoes/123", "title": "Edital 123"}]
