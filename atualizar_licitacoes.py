@@ -35,6 +35,7 @@ PAGE_SIZE = 500
 MAX_PAGES_PER_MODALITY = int(os.environ.get("PNCP_MAX_PAGINAS_MODALIDADE", "80"))
 MAX_RECORDS = int(os.environ.get("PNCP_MAX_REGISTROS", "60000"))
 REQUEST_TIMEOUT = int(os.environ.get("PNCP_TIMEOUT", "35"))
+REQUEST_ATTEMPTS = max(1, int(os.environ.get("PNCP_TENTATIVAS", "3")))
 TIME_BUDGET_SECONDS = int(os.environ.get("PNCP_TEMPO_MAXIMO", "600"))
 
 
@@ -101,13 +102,13 @@ def request_page(modality: int, final_date: str, page: int) -> dict:
         headers={"Accept": "application/json", "User-Agent": "Radar-de-Oportunidades/1.0"},
     )
     last_error: Exception | None = None
-    for attempt in range(3):
+    for attempt in range(REQUEST_ATTEMPTS):
         try:
             with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT) as response:
                 return json.load(response)
         except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, json.JSONDecodeError) as exc:
             last_error = exc
-            if attempt < 2:
+            if attempt + 1 < REQUEST_ATTEMPTS:
                 time.sleep(2**attempt)
     raise RuntimeError(f"Falha no PNCP para modalidade {modality}, página {page}: {last_error}")
 
