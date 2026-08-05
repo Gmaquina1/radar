@@ -8,6 +8,7 @@ import os
 import re
 import time
 import unicodedata
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
 
@@ -33,6 +34,7 @@ UF_NAMES = {
 MAX_RESULTS_PER_QUERY = int(os.environ.get("OPENAI_LICITACOES_RESULTADOS", "25"))
 MAX_QUERIES = int(os.environ.get("OPENAI_LICITACOES_CONSULTAS", "30"))
 TIME_BUDGET = int(os.environ.get("OPENAI_LICITACOES_TEMPO_MAXIMO", "1200"))
+MAX_WORKERS = max(1, int(os.environ.get("OPENAI_LICITACOES_WORKERS", "6")))
 
 
 LICITACOES_SCHEMA = {
@@ -209,6 +211,7 @@ def collect_openai(now: dt.datetime, client=None) -> tuple[list[dict], dict]:
         "configurada": bool(api_key or client),
         "modelo": model,
         "consultas_planejadas": 0,
+        "consultas_agendadas": 0,
         "consultas_executadas": 0,
         "fontes_consultadas": 0,
         "registros_aceitos": 0,
@@ -223,15 +226,13 @@ def collect_openai(now: dt.datetime, client=None) -> tuple[list[dict], dict]:
         from openai import OpenAI
 
         timeout = float(os.getenv("OPENAI_LICITACOES_TIMEOUT", "120"))
-        client = OpenAI(api_key=api_key, timeout=timeout, max_retries=1)
+        client = OpenAI(api_key=api_key, timeout=timeout, max_retries=0)
     queries = national_queries(now.date())
     report["consultas_planejadas"] = len(queries)
     deadline = time.monotonic() + TIME_BUDGET
     selected: dict[str, dict] = {}
-    for scope, query in queries:
-        if time.monotonic() >= deadline:
-            report["erros"].append("Tempo máximo da busca OpenAI atingido.")
-            break
+
+    def execute(scope: str, query: str):
         try:
             response = client.responses.create(
                 model=model,
@@ -255,20 +256,39 @@ def collect_openai(now: dt.datetime, client=None) -> tuple[list[dict], dict]:
                 store=False,
             )
         except Exception as exc:  # O relatório preserva falhas isoladas sem perder as demais UFs.
-            report["erros"].append(f"{scope}: {type(exc).__name__}: {exc}")
-            continue
-        report["consultas_executadas"] += 1
-        if scope in UFS:
-            report["ufs_consultadas"].append(scope)
-        sources = response_sources(response)
-        report["fontes_consultadas"] += len(sources)
-        payload = response_payload(response)
-        rows, rejected = validate_rows(payload.get("licitacoes"), sources, now.date())
-        report["registros_rejeitados"] += rejected
-        if rows and scope in UFS:
-            report["ufs_com_resultados"].append(scope)
-        for row in rows:
-            selected[row_key(row)] = row
+            return scope, None, f"{scope}: {type(exc).__name__}: {exc}"
+        return scope, response, ""
+
+    # As consultas são independentes. O paralelismo permite cobrir as 27 UFs
+    # dentro da janela do workflow sem reduzir a validação de cada resultado.
+    executor = ThreadPoolExecutor(max_workers=min(MAX_WORKERS, len(queries) or 1))
+    futures = {executor.submit(execute, scope, query): scope for scope, query in queries}
+    report["consultas_agendadas"] = len(futures)
+    try:
+        for future in as_completed(futures, timeout=max(1, TIME_BUDGET)):
+            scope, response, error = future.result()
+            if error:
+                report["erros"].append(error)
+                continue
+            report["consultas_executadas"] += 1
+            if scope in UFS:
+                report["ufs_consultadas"].append(scope)
+            sources = response_sources(response)
+            report["fontes_consultadas"] += len(sources)
+            payload = response_payload(response)
+            rows, rejected = validate_rows(payload.get("licitacoes"), sources, now.date())
+            report["registros_rejeitados"] += rejected
+            if rows and scope in UFS:
+                report["ufs_com_resultados"].append(scope)
+            for row in rows:
+                selected[row_key(row)] = row
+            if time.monotonic() >= deadline:
+                report["erros"].append("Tempo máximo da busca OpenAI atingido.")
+                break
+    except TimeoutError:
+        report["erros"].append("Tempo máximo da busca OpenAI atingido.")
+    finally:
+        executor.shutdown(wait=False, cancel_futures=True)
     result = sorted(
         selected.values(),
         key=lambda row: (row.get("data_encerramento") or "9999", row.get("uf") or "", row.get("orgao") or ""),
