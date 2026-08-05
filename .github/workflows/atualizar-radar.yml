@@ -10,6 +10,12 @@ on:
       - main
     paths-ignore:
       - ".github/deep-discovery-trigger"
+      - ".github/workflows/atualizar-licitacoes-completo.yml"
+      - "atualizar_licitacoes_completo.py"
+      - "licitacoes.json"
+      - "licitacoes.html"
+      - "status_licitacoes.json"
+      - "relatorio_licitacoes_openai.json"
 
 permissions:
   contents: write
@@ -31,25 +37,6 @@ jobs:
       WEB_SEARCH_PROVIDER: openai
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       OPENAI_SEARCH_MODEL: ${{ vars.OPENAI_SEARCH_MODEL || 'gpt-5-mini' }}
-      OPENAI_LICITACOES_MODEL: ${{ vars.OPENAI_LICITACOES_MODEL || vars.OPENAI_SEARCH_MODEL || 'gpt-5-mini' }}
-      OPENAI_LICITACOES_CONSULTAS: "30"
-      OPENAI_LICITACOES_RESULTADOS: "10"
-      OPENAI_LICITACOES_TEMPO_MAXIMO: "600"
-      OPENAI_LICITACOES_TIMEOUT: "120"
-      OPENAI_LICITACOES_WORKERS: "10"
-      PNCP_TEMPO_MAXIMO: "600"
-      PNCP_TIMEOUT: "25"
-      PNCP_TENTATIVAS: "2"
-      PNCP_TAMANHO_PAGINA: "50"
-      PNCP_MAX_PAGINAS: "400"
-      PNCP_WORKERS: "16"
-      PNCP_PUBLICACAO_DIAS: "365"
-      PNCP_PUBLICACAO_JANELA: "7"
-      PNCP_PUBLICACAO_MAX_PAGINAS: "80"
-      COMPRAS_GOV_DIAS: "90"
-      COMPRAS_GOV_TAMANHO_PAGINA: "500"
-      COMPRAS_GOV_MAX_PAGINAS: "120"
-      COMPRAS_GOV_WORKERS: "16"
       MAX_PAGES_PER_DOMAIN: "3"
       MAX_URLS_PER_DOMAIN: "15"
       MAX_DEPTH: "1"
@@ -90,12 +77,14 @@ jobs:
           test -f indexador_lotes.py
           test -f gerar_site_github.py
           test -f atualizar_licitacoes.py
+          test -f atualizar_licitacoes_completo.py
           test -f descobrir_licitacoes_openai.py
           test -f portal_template.html
           test -f licitacoes_template.html
           test -f executar_atualizacao_radar.py
           test -f diagnostico_radar.py
           test -f .github/workflows/atualizar-radar.yml
+          test -f .github/workflows/atualizar-licitacoes-completo.yml
 
       - name: Registrar configuração OpenAI do modo rápido
         shell: bash
@@ -103,10 +92,8 @@ jobs:
           model="${OPENAI_SEARCH_MODEL:-gpt-5-mini}"
           if [ -n "${OPENAI_API_KEY:-}" ]; then
             key_configurada=true
-            key_texto=sim
           else
             key_configurada=false
-            key_texto=não
           fi
           echo "OPENAI_API_KEY_CONFIGURADA: $key_configurada"
           echo "OPENAI_SEARCH_MODEL: $model"
@@ -125,7 +112,6 @@ jobs:
           if [ "${GITHUB_EVENT_NAME}" = "push" ]; then
             echo "Publicação rápida: reutilizando os dados atuais do Radar."
             python sanitizar_conteudo_externo.py
-            python atualizar_licitacoes.py || echo "Coleta de licitações indisponível: mantendo a base existente."
             python gerar_site_github.py 2>&1 | tee atualizacao.log
           else
             python executar_atualizacao_radar.py \
@@ -134,7 +120,6 @@ jobs:
               --workers-lotes 16 \
               --delay-lotes 0 \
               2>&1 | tee atualizacao.log
-            python atualizar_licitacoes.py || echo "Coleta de licitações indisponível: mantendo a base existente."
             python gerar_site_github.py
           fi
 
@@ -164,7 +149,7 @@ jobs:
               mapa = sum(1 for _ in csv.DictReader(open('radar_leiloes_eventos_futuros.csv', encoding='utf-8-sig')))
           except OSError: mapa = 0
           l, s = data('relatorio_atualizacao_lotes.json'), data('status_atualizacao.json')
-          lic, lic_ai = data('status_licitacoes.json'), data('relatorio_licitacoes_openai.json')
+          lic = data('status_licitacoes.json')
           print('## Radar de Leilões')
           print(f"MODO: RÁPIDO  ")
           print(f"DURAÇÃO: {s.get('duracao_segundos', 0)}s  ")
@@ -190,17 +175,10 @@ jobs:
           print(f"LOTES_FORA_MAPA: {c.get('LOTES_FORA_DO_MAPA', 0)}  ")
           print(f"STATUS_FINAL: {s.get('status', 'erro')}")
           print('## Radar de Licitações')
+          print('COLETA: fluxo separado e resiliente  ')
           print(f"LICITACOES_TOTAL: {lic.get('total', 0)}  ")
           print(f"LICITACOES_PNCP: {lic.get('fontes', {}).get('pncp', 0)}  ")
           print(f"LICITACOES_COMPRAS_GOV: {lic.get('fontes', {}).get('compras_gov', 0)}  ")
-          print(f"LICITACOES_OPENAI: {lic.get('fontes', {}).get('openai_web_search', 0)}  ")
-          print(f"OPENAI_CONSULTAS_LICITACOES: {lic_ai.get('consultas_executadas', 0)}  ")
-          print(f"OPENAI_UFS_CONSULTADAS: {len(lic_ai.get('ufs_consultadas', []))}  ")
-          ativa = bool(d.get('busca_web_configurada', False))
-          consultas = d.get('consultas_executadas', 0)
-          if isinstance(consultas, list): consultas = len(consultas)
-          if not ativa:
-            print('OPENAI_WEB_SEARCH_DESATIVADA: API KEY AUSENTE')
           PY
 
       - name: Auditar garra florestal
@@ -252,7 +230,6 @@ jobs:
             relatorio_descoberta_web.json
             relatorio_cobertura_radar.json
             status_licitacoes.json
-            relatorio_licitacoes_openai.json
           if-no-files-found: ignore
           retention-days: 14
 
