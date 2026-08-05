@@ -31,10 +31,15 @@ OUTPUT = ROOT / "licitacoes.json"
 STATUS = ROOT / "status_licitacoes.json"
 TIMEZONE = ZoneInfo("America/Sao_Paulo")
 BASE_URL = "https://pncp.gov.br/api/consulta/v1/contratacoes/proposta"
+PUBLICATION_URL = "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao"
 SOURCE_NAME = "Portal Nacional de Contratações Públicas (PNCP)"
+PUBLICATION_MODALITIES = tuple(range(2, 13))
 PAGE_SIZE = int(os.environ.get("PNCP_TAMANHO_PAGINA", "50"))
 MAX_PAGES = int(os.environ.get("PNCP_MAX_PAGINAS", "400"))
 PNCP_WORKERS = max(1, int(os.environ.get("PNCP_WORKERS", "16")))
+PUBLICATION_LOOKBACK_DAYS = int(os.environ.get("PNCP_PUBLICACAO_DIAS", "365"))
+PUBLICATION_WINDOW_DAYS = max(1, int(os.environ.get("PNCP_PUBLICACAO_JANELA", "7")))
+PUBLICATION_MAX_PAGES = int(os.environ.get("PNCP_PUBLICACAO_MAX_PAGINAS", "80"))
 MAX_RECORDS = int(os.environ.get("PNCP_MAX_REGISTROS", "60000"))
 REQUEST_TIMEOUT = int(os.environ.get("PNCP_TIMEOUT", "35"))
 REQUEST_ATTEMPTS = max(1, int(os.environ.get("PNCP_TENTATIVAS", "3")))
@@ -114,6 +119,29 @@ def request_page(final_date: str, page: int) -> dict:
     raise RuntimeError(f"Falha no PNCP para página {page}: {last_error}")
 
 
+def request_publication_page(modality: int, initial_date: str, final_date: str, page: int) -> dict:
+    query = urllib.parse.urlencode(
+        {
+            "dataInicial": initial_date,
+            "dataFinal": final_date,
+            "codigoModalidadeContratacao": modality,
+            "pagina": page,
+            "tamanhoPagina": PAGE_SIZE,
+        }
+    )
+    request = urllib.request.Request(
+        f"{PUBLICATION_URL}?{query}",
+        headers={"Accept": "application/json", "User-Agent": "Radar-de-Oportunidades/1.0"},
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT) as response:
+            return json.load(response)
+    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, json.JSONDecodeError) as exc:
+        raise RuntimeError(
+            f"Falha no PNCP/publicação modalidade {modality}, período {initial_date}-{final_date}, página {page}: {exc}"
+        ) from exc
+
+
 def rows_from_response(payload: dict) -> list[dict]:
     rows = payload.get("data", []) if isinstance(payload, dict) else []
     return [row for row in rows if isinstance(row, dict)] if isinstance(rows, list) else []
@@ -155,7 +183,60 @@ def collect(now: dt.datetime | None = None) -> tuple[list[dict], list[str], bool
     try:
         first = request_page(final_date, 1)
     except RuntimeError as exc:
-        return [], [str(exc)], False
+        errors.append(f"{exc}; usando consulta por data de publicação.")
+        first = None
+    if first is None:
+        start = now.date() - dt.timedelta(days=PUBLICATION_LOOKBACK_DAYS)
+        windows: list[tuple[int, str, str]] = []
+        while start <= now.date():
+            end = min(start + dt.timedelta(days=PUBLICATION_WINDOW_DAYS - 1), now.date())
+            for modality in PUBLICATION_MODALITIES:
+                windows.append((modality, start.strftime("%Y%m%d"), end.strftime("%Y%m%d")))
+            start = end + dt.timedelta(days=1)
+
+        def fetch_window(modality: int, initial: str, final: str) -> tuple[list[dict], list[str], bool]:
+            found: list[dict] = []
+            local_errors: list[str] = []
+            local_truncated = False
+            for page in range(1, PUBLICATION_MAX_PAGES + 1):
+                if time.monotonic() >= deadline:
+                    local_truncated = True
+                    break
+                try:
+                    payload = request_publication_page(modality, initial, final, page)
+                except RuntimeError as window_error:
+                    local_errors.append(str(window_error))
+                    break
+                page_rows = rows_from_response(payload)
+                found.extend(page_rows)
+                if not has_more(payload, page, len(page_rows)):
+                    break
+                if page == PUBLICATION_MAX_PAGES:
+                    local_truncated = True
+            return found, local_errors, local_truncated
+
+        executor = ThreadPoolExecutor(max_workers=min(PNCP_WORKERS, len(windows) or 1))
+        futures = {executor.submit(fetch_window, *window): window for window in windows}
+        try:
+            for future in as_completed(futures, timeout=max(1, deadline - time.monotonic())):
+                raw_rows, window_errors, window_truncated = future.result()
+                absorb({"data": raw_rows})
+                if len(errors) < 50:
+                    errors.extend(window_errors[: 50 - len(errors)])
+                truncated = truncated or window_truncated
+                if truncated and len(selected) >= MAX_RECORDS:
+                    break
+        except TimeoutError:
+            truncated = True
+            errors.append("Tempo máximo da coleta PNCP/publicação atingido; janelas restantes serão retomadas.")
+        finally:
+            executor.shutdown(wait=False, cancel_futures=True)
+        rows = sorted(
+            selected.values(),
+            key=lambda row: (row.get("data_encerramento") or "9999", row.get("uf") or "", row.get("orgao") or ""),
+        )
+        return rows, errors, truncated
+
     absorb(first)
     total_pages = first.get("totalPaginas") if isinstance(first, dict) else None
     if not isinstance(total_pages, int):
