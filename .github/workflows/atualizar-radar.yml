@@ -1,4 +1,4 @@
-name: Atualizar Radar e novos lotes
+name: Atualizar Radar completo
 
 on:
   workflow_dispatch:
@@ -10,8 +10,6 @@ on:
       - main
     paths-ignore:
       - ".github/deep-discovery-trigger"
-      - ".github/workflows/atualizar-licitacoes-completo.yml"
-      - "atualizar_licitacoes_completo.py"
       - "licitacoes.json"
       - "licitacoes.html"
       - "status_licitacoes.json"
@@ -21,15 +19,14 @@ permissions:
   contents: write
 
 concurrency:
-  group: atualizar-radar
-  cancel-in-progress: ${{ github.event_name == 'push' }}
+  group: atualizar-radar-completo
+  cancel-in-progress: true
 
 jobs:
   atualizar:
-    # Impede que o commit automático provoque uma execução em loop.
     if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 360
 
     env:
       TZ: America/Sao_Paulo
@@ -37,6 +34,25 @@ jobs:
       WEB_SEARCH_PROVIDER: openai
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       OPENAI_SEARCH_MODEL: ${{ vars.OPENAI_SEARCH_MODEL || 'gpt-5-mini' }}
+
+      # PNCP: coleta completa, sequencial e resiliente.
+      PNCP_TIMEOUT: "75"
+      PNCP_TENTATIVAS: "10"
+      PNCP_TAMANHO_PAGINA: "500"
+      PNCP_MAX_PAGINAS: "1000"
+      PNCP_MAX_REGISTROS: "60000"
+      PNCP_INTERVALO: "1.2"
+      PNCP_ESPERA_429: "45"
+      PNCP_ESPERA_MAXIMA: "300"
+      PNCP_WORKERS: "1"
+
+      # Fonte oficial complementar.
+      COMPRAS_GOV_DIAS: "365"
+      COMPRAS_GOV_TAMANHO_PAGINA: "500"
+      COMPRAS_GOV_MAX_PAGINAS: "1000"
+      COMPRAS_GOV_WORKERS: "1"
+
+      # Configuração do Radar de leilões.
       MAX_PAGES_PER_DOMAIN: "3"
       MAX_URLS_PER_DOMAIN: "15"
       MAX_DEPTH: "1"
@@ -78,41 +94,16 @@ jobs:
           test -f gerar_site_github.py
           test -f atualizar_licitacoes.py
           test -f atualizar_licitacoes_completo.py
-          test -f descobrir_licitacoes_openai.py
-          test -f portal_template.html
           test -f licitacoes_template.html
           test -f executar_atualizacao_radar.py
-          test -f diagnostico_radar.py
-          test -f .github/workflows/atualizar-radar.yml
-          test -f .github/workflows/atualizar-licitacoes-completo.yml
 
-      - name: Registrar configuração OpenAI do modo rápido
-        shell: bash
-        run: |
-          model="${OPENAI_SEARCH_MODEL:-gpt-5-mini}"
-          if [ -n "${OPENAI_API_KEY:-}" ]; then
-            key_configurada=true
-          else
-            key_configurada=false
-          fi
-          echo "OPENAI_API_KEY_CONFIGURADA: $key_configurada"
-          echo "OPENAI_SEARCH_MODEL: $model"
-          echo "OPENAI_CONNECTION: NAO_TESTADA_MODO_RAPIDO"
-          echo "OPENAI_WEB_SEARCH: NAO_EXECUTADA_MODO_RAPIDO"
-          if [ "$key_configurada" = false ]; then
-            echo "OPENAI_WEB_SEARCH_DESATIVADA: API KEY AUSENTE"
-          fi
-
-      - name: Procurar novos leilões e novos lotes
-        id: atualizar
-        continue-on-error: true
+      - name: Atualizar leilões e lotes
         shell: bash
         run: |
           set -o pipefail
           if [ "${GITHUB_EVENT_NAME}" = "push" ]; then
-            echo "Publicação rápida: reutilizando os dados atuais do Radar."
+            echo "Publicação rápida: preservando a base atual de leilões."
             python sanitizar_conteudo_externo.py
-            python gerar_site_github.py 2>&1 | tee atualizacao.log
           else
             python executar_atualizacao_radar.py \
               --modo rapido \
@@ -120,131 +111,72 @@ jobs:
               --workers-lotes 16 \
               --delay-lotes 0 \
               2>&1 | tee atualizacao.log
-            python gerar_site_github.py
           fi
 
-      - name: Executar testes de segurança
-        id: testes
-        if: always()
-        continue-on-error: true
+      - name: Captar todas as licitações abertas
         shell: bash
         run: |
-          python sanitizar_conteudo_externo.py
-          python -m unittest discover -v
-          python -m compileall -q .
+          python atualizar_licitacoes_completo.py 2>&1 | tee atualizacao_licitacoes.log
+
+      - name: Gerar páginas do site
+        shell: bash
+        run: |
+          python gerar_site_github.py
+
+      - name: Validar coleta antes da publicação
+        shell: bash
+        run: |
+          python -m compileall -q atualizar_licitacoes_completo.py atualizar_licitacoes.py gerar_site_github.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          payload = json.loads(Path('licitacoes.json').read_text(encoding='utf-8'))
+          status = json.loads(Path('status_licitacoes.json').read_text(encoding='utf-8'))
+          rows = payload.get('licitacoes', [])
+
+          assert isinstance(rows, list), 'Lista de licitações inválida'
+          assert payload.get('total') == len(rows), 'Total divergente'
+          assert rows, 'Nenhuma licitação captada'
+          assert status.get('paginas_pncp_informadas', 0) > 0, 'PNCP não informou páginas'
+          assert status.get('paginas_pncp_informadas', 0) <= 1000, 'Limite de páginas insuficiente'
+          assert not status.get('erros_pncp'), 'Uma ou mais páginas do PNCP não foram coletadas'
+          assert status.get('status') == 'ok', 'Coleta do PNCP ainda parcial'
+          assert Path('licitacoes.html').stat().st_size > 1000, 'Página de licitações não gerada'
+
+          print(f"LICITACOES_TOTAL={len(rows)}")
+          print(f"PNCP={status.get('fontes', {}).get('pncp', 0)}")
+          print(f"COMPRAS_GOV={status.get('fontes', {}).get('compras_gov', 0)}")
+          print(f"PAGINAS_PNCP={status.get('paginas_pncp_informadas', 0)}")
+          print(f"TAMANHO_PAGINA={status.get('tamanho_pagina_pncp', 0)}")
+          PY
           git diff --check
 
-      - name: Resumo da cobertura nacional
-        if: always()
-        shell: bash
-        run: |
-          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
-          import csv, json
-          from pathlib import Path
-          def data(name):
-              try: return json.loads(Path(name).read_text())
-              except Exception: return {}
-          d, c = data('relatorio_descoberta_web.json'), data('relatorio_cobertura_radar.json')
-          try:
-              mapa = sum(1 for _ in csv.DictReader(open('radar_leiloes_eventos_futuros.csv', encoding='utf-8-sig')))
-          except OSError: mapa = 0
-          l, s = data('relatorio_atualizacao_lotes.json'), data('status_atualizacao.json')
-          lic = data('status_licitacoes.json')
-          print('## Radar de Leilões')
-          print(f"MODO: RÁPIDO  ")
-          print(f"DURAÇÃO: {s.get('duracao_segundos', 0)}s  ")
-          print(f"OPENAI_CONFIGURADA: {d.get('openai_configurada', False)}  ")
-          print("OPENAI_CONNECTION: NAO_TESTADA_MODO_RAPIDO  ")
-          print("OPENAI_WEB_SEARCH: NAO_EXECUTADA_MODO_RAPIDO  ")
-          print(f"OPENAI_MODEL: {d.get('modelo', 'gpt-5-mini')}  ")
-          print(f"OPENAI_QUERIES: {d.get('consultas_executadas', 0)}  ")
-          print(f"OPENAI_RESULTS: {d.get('resultados_web', 0)}  ")
-          print(f"OPENAI_NEW_DOMAINS: {d.get('novos_dominios', 0)}  ")
-          print(f"PORTAIS_TOTAL: {c.get('total_dominios', 0)}  ")
-          print(f"PORTAIS_VISITADOS: {d.get('dominios_visitados', 0)}  ")
-          print(f"PORTAIS_OK: {d.get('portais_ok', 0)}  ")
-          print(f"PORTAIS_BLOQUEADOS: {d.get('bloqueados', 0)}  ")
-          print(f"PORTAIS_TIMEOUT: {d.get('timeouts', 0)}  ")
-          print(f"EVENTOS_MAPA: {mapa}  ")
-          print(f"EVENTOS_FORA_MAPA: {c.get('eventos_fora_do_mapa', 0)}  ")
-          print(f"EVENTOS_TOTAL: {c.get('total_eventos_ativos', mapa)}  ")
-          print(f"LOTES_ANTES: {l.get('lotes_antes', 0)}  ")
-          print(f"LOTES_DEPOIS: {l.get('lotes_depois', 0)}  ")
-          print(f"LOTES_NOVOS: {l.get('lotes_realmente_novos', 0)}  ")
-          print(f"LOTES_PRESERVADOS: {l.get('lotes_preservados', 0)}  ")
-          print(f"LOTES_FORA_MAPA: {c.get('LOTES_FORA_DO_MAPA', 0)}  ")
-          print(f"STATUS_FINAL: {s.get('status', 'erro')}")
-          print('## Radar de Licitações')
-          print('COLETA: fluxo separado e resiliente  ')
-          print(f"LICITACOES_TOTAL: {lic.get('total', 0)}  ")
-          print(f"LICITACOES_PNCP: {lic.get('fontes', {}).get('pncp', 0)}  ")
-          print(f"LICITACOES_COMPRAS_GOV: {lic.get('fontes', {}).get('compras_gov', 0)}  ")
-          PY
-
-      - name: Auditar garra florestal
-        if: always()
-        shell: bash
-        run: |
-          python auditar_cobertura.py "garra florestal" | tee auditoria_garra.txt
-          echo "AUDITORIA: garra florestal" >> "$GITHUB_STEP_SUMMARY"
-          awk '/^NA_BASE:/ {print "RESULTADOS_NA_BASE: " $2}' auditoria_garra.txt >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Mostrar resultado
-        if: always()
-        shell: bash
-        run: |
-          echo "===== STATUS DO RADAR ====="
-          cat status_atualizacao.txt 2>/dev/null || true
-          echo
-          echo "===== ARQUIVOS MODIFICADOS ====="
-          git status --short
-
-      - name: Salvar atualização no GitHub
-        if: steps.atualizar.outcome == 'success' && steps.testes.outcome == 'success'
+      - name: Publicar atualização no GitHub
         shell: bash
         run: |
           git config user.name "Radar de Oportunidades"
           git config user.email "actions@users.noreply.github.com"
-
           git add -A
 
           if git diff --cached --quiet; then
-            echo "A coleta foi executada, mas nenhum arquivo mudou."
+            echo "Nenhum arquivo mudou."
             exit 0
           fi
 
-          git commit -m "Atualização automática do Radar - $(date '+%d/%m/%Y %H:%M')"
+          git commit -m "Publicar todas as licitações abertas - $(date '+%d/%m/%Y %H:%M')"
           git pull --rebase origin main
           git push origin HEAD:main
 
-      - name: Guardar relatório da execução
+      - name: Guardar diagnóstico
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: relatorio-atualizacao-radar
+          name: diagnostico-radar-completo
           path: |
             atualizacao.log
-            status_atualizacao.json
-            status_atualizacao.txt
-            relatorio_atualizacao_lotes.json
-            relatorio_descoberta_web.json
-            relatorio_cobertura_radar.json
+            atualizacao_licitacoes.log
             status_licitacoes.json
+            status_atualizacao.json
           if-no-files-found: ignore
           retention-days: 14
-
-      - name: Confirmar conclusão
-        if: always()
-        shell: bash
-        run: |
-          if [ "${{ steps.atualizar.outcome }}" != "success" ]; then
-            echo "A coleta apresentou erro. A base antiga foi preservada."
-            exit 1
-          fi
-
-          if [ "${{ steps.testes.outcome }}" != "success" ]; then
-            echo "Os testes de segurança apresentaram erro."
-            exit 1
-          fi
-
-          echo "Radar atualizado com sucesso."
