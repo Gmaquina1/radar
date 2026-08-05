@@ -1,5 +1,6 @@
 name: Atualizar Licitações - Coleta Completa
 
+# Fluxo exclusivo para licitações; não disputa requisições com o Radar de leilões.
 on:
   workflow_dispatch:
   schedule:
