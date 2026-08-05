@@ -1,0 +1,27 @@
+{
+  "configurada": true,
+  "modelo": "gpt-5-mini",
+  "consultas_planejadas": 30,
+  "consultas_executadas": 6,
+  "fontes_consultadas": 393,
+  "registros_aceitos": 13,
+  "registros_rejeitados": 10,
+  "ufs_consultadas": [
+    "AC",
+    "AM",
+    "AP",
+    "BA",
+    "CE",
+    "DF"
+  ],
+  "ufs_com_resultados": [
+    "AM",
+    "BA",
+    "CE"
+  ],
+  "erros": [
+    "AL: APITimeoutError: Request timed out.",
+    "ES: APITimeoutError: Request timed out.",
+    "Tempo máximo da busca OpenAI atingido."
+  ]
+}
