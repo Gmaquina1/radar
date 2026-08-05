@@ -18,6 +18,7 @@ from descobrir_licitacoes_openai import (
     UFS as VALID_UFS,
     comparable_url,
     collect_openai,
+    is_auction,
     normalize_text,
     parse_date,
     write_report,
@@ -181,6 +182,8 @@ def open_rows(rows: object, today: dt.date) -> list[dict]:
     result = []
     for row in rows:
         if not isinstance(row, dict):
+            continue
+        if is_auction(row):
             continue
         deadline = parse_date(row.get("data_encerramento"))
         if deadline is not None and deadline >= today:

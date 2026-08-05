@@ -5,8 +5,8 @@
   "consultas_agendadas": 30,
   "consultas_executadas": 20,
   "fontes_consultadas": 1334,
-  "registros_aceitos": 11,
-  "registros_rejeitados": 6,
+  "registros_aceitos": 8,
+  "registros_rejeitados": 9,
   "ufs_consultadas": [
     "AC",
     "AL",

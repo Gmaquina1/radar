@@ -1,10 +1,10 @@
 {
   "status": "ok_parcial",
   "atualizado_em": "2026-08-04T21:24:38-03:00",
-  "total": 11,
+  "total": 8,
   "fontes": {
     "pncp": 0,
-    "openai_web_search": 11,
+    "openai_web_search": 8,
     "preservadas": 0
   },
   "truncado": false,

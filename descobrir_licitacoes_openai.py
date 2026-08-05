@@ -109,6 +109,14 @@ def normalize_text(value: object) -> str:
     return "".join(char for char in text if unicodedata.category(char) != "Mn").casefold().strip()
 
 
+def is_auction(row: dict) -> bool:
+    """Mantém leilões fora do Radar de Licitações."""
+    haystack = " ".join(
+        normalize_text(row.get(field)) for field in ("modalidade", "objeto", "situacao")
+    )
+    return bool(re.search(r"\bleil(?:ao|oes)\b", haystack))
+
+
 def row_key(row: dict) -> str:
     if row.get("id"):
         return f"id:{normalize_text(row['id'])}"
@@ -165,6 +173,8 @@ def validate_rows(raw_rows: object, sources: list[dict], today: dt.date) -> tupl
         deadline = parse_date(raw.get("data_encerramento"))
         uf = str(raw.get("uf") or "").upper()
         if (
+            is_auction(raw)
+            or
             not link_key
             or link_key not in source_by_url
             or deadline is None
