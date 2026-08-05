@@ -259,6 +259,29 @@ class RadarTests(unittest.TestCase):
         self.assertFalse(truncated)
         self.assertEqual(set(calls), {1, 2, 3})
 
+    def test_coletor_usa_publicacoes_quando_propostas_falha(self) -> None:
+        raw = {
+            "numeroControlePNCP": "00394502000144-1-000180/2026",
+            "objetoCompra": "Aquisição de máquinas e equipamentos",
+            "modalidadeId": 6,
+            "modalidadeNome": "Pregão - Eletrônico",
+            "dataEncerramentoProposta": "2026-08-20T10:00:00",
+            "orgaoEntidade": {"razaoSocial": "Órgão de Teste"},
+            "unidadeOrgao": {"ufSigla": "MG", "municipioNome": "Taiobeiras"},
+        }
+        with mock.patch.object(licitacoes, "request_page", side_effect=RuntimeError("indisponível")), mock.patch.object(
+            licitacoes, "request_publication_page", return_value={"data": [raw], "totalPaginas": 1}
+        ), mock.patch.object(licitacoes, "PUBLICATION_LOOKBACK_DAYS", 0), mock.patch.object(
+            licitacoes, "PUBLICATION_MODALITIES", (6,)
+        ):
+            rows, errors, truncated = licitacoes.collect(
+                datetime(2026, 8, 4, 12, 0, tzinfo=ZoneInfo("America/Sao_Paulo"))
+            )
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["fonte"], "PNCP")
+        self.assertTrue(errors)
+        self.assertFalse(truncated)
+
     def test_openai_aceita_somente_licitacao_com_fonte_e_prazo_futuro(self) -> None:
         sources = [{"url": "https://prefeitura.gov.br/licitacoes/123", "title": "Edital 123"}]
         raw = [{
