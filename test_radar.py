@@ -301,6 +301,20 @@ class RadarTests(unittest.TestCase):
         self.assertEqual(rows, [])
         self.assertEqual(rejected, 2)
 
+    def test_licitacoes_rejeitam_e_nao_preservam_leiloes(self) -> None:
+        row = {
+            "id": "1", "numero": None, "processo": None, "orgao": "Órgão de Teste",
+            "unidade": None, "objeto": "Leilão de veículos conservados", "modalidade": "Leilão",
+            "data_publicacao": None, "data_abertura": None, "data_encerramento": "2026-08-20",
+            "valor_estimado": None, "uf": "BA", "cidade": None,
+            "link": "https://fonte.gov.br/leilao/1",
+        }
+        accepted, rejected = licitacoes_openai.validate_rows(
+            [row], [{"url": row["link"], "title": "Edital"}], datetime(2026, 8, 4).date()
+        )
+        self.assertEqual((accepted, rejected), ([], 1))
+        self.assertEqual(licitacoes.open_rows([row], datetime(2026, 8, 4).date()), [])
+
     def test_busca_openai_usa_web_search_obrigatoria_e_schema_estrito(self) -> None:
         response = {
             "output_text": json.dumps({"licitacoes": []}),
