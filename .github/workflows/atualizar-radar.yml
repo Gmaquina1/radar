@@ -46,6 +46,10 @@ jobs:
       PNCP_PUBLICACAO_DIAS: "365"
       PNCP_PUBLICACAO_JANELA: "7"
       PNCP_PUBLICACAO_MAX_PAGINAS: "80"
+      COMPRAS_GOV_DIAS: "90"
+      COMPRAS_GOV_TAMANHO_PAGINA: "500"
+      COMPRAS_GOV_MAX_PAGINAS: "120"
+      COMPRAS_GOV_WORKERS: "16"
       MAX_PAGES_PER_DOMAIN: "3"
       MAX_URLS_PER_DOMAIN: "15"
       MAX_DEPTH: "1"
@@ -188,6 +192,7 @@ jobs:
           print('## Radar de Licitações')
           print(f"LICITACOES_TOTAL: {lic.get('total', 0)}  ")
           print(f"LICITACOES_PNCP: {lic.get('fontes', {}).get('pncp', 0)}  ")
+          print(f"LICITACOES_COMPRAS_GOV: {lic.get('fontes', {}).get('compras_gov', 0)}  ")
           print(f"LICITACOES_OPENAI: {lic.get('fontes', {}).get('openai_web_search', 0)}  ")
           print(f"OPENAI_CONSULTAS_LICITACOES: {lic_ai.get('consultas_executadas', 0)}  ")
           print(f"OPENAI_UFS_CONSULTADAS: {len(lic_ai.get('ufs_consultadas', []))}  ")

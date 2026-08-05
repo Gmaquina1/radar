@@ -32,6 +32,7 @@ STATUS = ROOT / "status_licitacoes.json"
 TIMEZONE = ZoneInfo("America/Sao_Paulo")
 BASE_URL = "https://pncp.gov.br/api/consulta/v1/contratacoes/proposta"
 PUBLICATION_URL = "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao"
+COMPRAS_GOV_URL = "https://dadosabertos.compras.gov.br/modulo-contratacoes/1_consultarContratacoes_PNCP_14133"
 SOURCE_NAME = "Portal Nacional de Contratações Públicas (PNCP)"
 PUBLICATION_MODALITIES = tuple(range(2, 13))
 PAGE_SIZE = int(os.environ.get("PNCP_TAMANHO_PAGINA", "50"))
@@ -44,6 +45,11 @@ MAX_RECORDS = int(os.environ.get("PNCP_MAX_REGISTROS", "60000"))
 REQUEST_TIMEOUT = int(os.environ.get("PNCP_TIMEOUT", "35"))
 REQUEST_ATTEMPTS = max(1, int(os.environ.get("PNCP_TENTATIVAS", "3")))
 TIME_BUDGET_SECONDS = int(os.environ.get("PNCP_TEMPO_MAXIMO", "600"))
+COMPRAS_GOV_LOOKBACK_DAYS = int(os.environ.get("COMPRAS_GOV_DIAS", "90"))
+COMPRAS_GOV_PAGE_SIZE = int(os.environ.get("COMPRAS_GOV_TAMANHO_PAGINA", "500"))
+COMPRAS_GOV_MAX_PAGES = int(os.environ.get("COMPRAS_GOV_MAX_PAGINAS", "120"))
+COMPRAS_GOV_WORKERS = max(1, int(os.environ.get("COMPRAS_GOV_WORKERS", "16")))
+COMPRAS_GOV_MODALITIES = tuple(range(1, 14))
 
 
 def nested(row: dict, parent: str, key: str) -> str:
@@ -93,6 +99,127 @@ def map_contract(row: dict) -> dict:
         "fonte": "PNCP",
     }
     return corrigir_dados(mapped)
+
+
+def map_compras_gov(row: dict) -> dict:
+    """Converte o formato plano do Compras.gov.br para o formato do Radar."""
+    numero = str(row.get("numeroControlePNCP") or "").strip()
+    mapped = {
+        "id": numero,
+        "numero": str(row.get("numeroCompra") or "").strip(),
+        "processo": str(row.get("processo") or "").strip(),
+        "orgao": str(row.get("orgaoEntidadeRazaoSocial") or "").strip(),
+        "unidade": str(row.get("unidadeOrgaoNomeUnidade") or "").strip(),
+        "objeto": str(row.get("objetoCompra") or "").strip(),
+        "informacao_complementar": str(row.get("informacaoComplementar") or "").strip(),
+        "modalidade": str(row.get("modalidadeNome") or "").strip(),
+        "modalidade_id": row.get("modalidadeIdPncp"),
+        "modo_disputa": str(row.get("modoDisputaNomePncp") or "").strip(),
+        "situacao": str(row.get("situacaoCompraNomePncp") or "").strip(),
+        "data_publicacao": normalize_datetime(row.get("dataPublicacaoPncp")),
+        "data_abertura": normalize_datetime(row.get("dataAberturaPropostaPncp")),
+        "data_encerramento": normalize_datetime(row.get("dataEncerramentoPropostaPncp")),
+        "valor_estimado": row.get("valorTotalEstimado"),
+        "uf": str(row.get("unidadeOrgaoUfSigla") or "").strip().upper(),
+        "cidade": str(row.get("unidadeOrgaoMunicipioNome") or "").strip(),
+        "link": pncp_link(numero),
+        "link_origem": pncp_link(numero),
+        "fonte": "Compras.gov.br",
+    }
+    return corrigir_dados(mapped)
+
+
+def request_compras_gov_page(modality: int, initial_date: str, final_date: str, page: int) -> dict:
+    query = urllib.parse.urlencode(
+        {
+            "dataPublicacaoPncpInicial": initial_date,
+            "dataPublicacaoPncpFinal": final_date,
+            "codigoModalidade": modality,
+            "pagina": page,
+            "tamanhoPagina": COMPRAS_GOV_PAGE_SIZE,
+        }
+    )
+    request = urllib.request.Request(
+        f"{COMPRAS_GOV_URL}?{query}",
+        headers={"Accept": "application/json", "User-Agent": "Radar-de-Oportunidades/1.0"},
+    )
+    last_error: Exception | None = None
+    for attempt in range(REQUEST_ATTEMPTS):
+        try:
+            with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT) as response:
+                return json.load(response)
+        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, json.JSONDecodeError) as exc:
+            last_error = exc
+            if attempt + 1 < REQUEST_ATTEMPTS:
+                time.sleep(2**attempt)
+    raise RuntimeError(f"Falha no Compras.gov.br modalidade {modality}, página {page}: {last_error}")
+
+
+def collect_compras_gov(now: dt.datetime | None = None) -> tuple[list[dict], list[str], bool]:
+    """Coleta em lote a segunda fonte oficial e mantém somente prazos abertos."""
+    now = now or dt.datetime.now(TIMEZONE)
+    initial = (now.date() - dt.timedelta(days=COMPRAS_GOV_LOOKBACK_DAYS)).isoformat()
+    final = now.date().isoformat()
+    selected: dict[str, dict] = {}
+    errors: list[str] = []
+    truncated = False
+
+    def absorb(payload: dict) -> None:
+        raw_rows = payload.get("resultado", []) if isinstance(payload, dict) else []
+        for raw in raw_rows if isinstance(raw_rows, list) else []:
+            if not isinstance(raw, dict) or raw.get("contratacaoExcluida") is True:
+                continue
+            row = map_compras_gov(raw)
+            deadline = parse_date(row.get("data_encerramento"))
+            if deadline is None or deadline < now.date() or is_auction(row):
+                continue
+            key = row.get("id") or f"{row.get('orgao')}|{row.get('numero')}|{row.get('data_encerramento')}"
+            selected[str(key)] = row
+
+    first_pages: dict[int, dict] = {}
+    with ThreadPoolExecutor(max_workers=min(COMPRAS_GOV_WORKERS, len(COMPRAS_GOV_MODALITIES))) as executor:
+        futures = {
+            executor.submit(request_compras_gov_page, modality, initial, final, 1): modality
+            for modality in COMPRAS_GOV_MODALITIES
+        }
+        for future in as_completed(futures):
+            modality = futures[future]
+            try:
+                payload = future.result()
+                first_pages[modality] = payload
+                absorb(payload)
+            except RuntimeError as exc:
+                errors.append(str(exc))
+
+    remaining: list[tuple[int, int]] = []
+    for modality, payload in first_pages.items():
+        total_pages = payload.get("totalPaginas", 0)
+        total_pages = total_pages if isinstance(total_pages, int) else 0
+        if total_pages > COMPRAS_GOV_MAX_PAGES:
+            truncated = True
+            errors.append(
+                f"Compras.gov.br informou {total_pages} páginas na modalidade {modality}; "
+                f"limite: {COMPRAS_GOV_MAX_PAGES}."
+            )
+        remaining.extend((modality, page) for page in range(2, min(total_pages, COMPRAS_GOV_MAX_PAGES) + 1))
+
+    with ThreadPoolExecutor(max_workers=COMPRAS_GOV_WORKERS) as executor:
+        futures = {
+            executor.submit(request_compras_gov_page, modality, initial, final, page): (modality, page)
+            for modality, page in remaining
+        }
+        for future in as_completed(futures):
+            try:
+                absorb(future.result())
+            except RuntimeError as exc:
+                if len(errors) < 50:
+                    errors.append(str(exc))
+
+    rows = sorted(
+        selected.values(),
+        key=lambda row: (row.get("data_encerramento") or "9999", row.get("uf") or "", row.get("orgao") or ""),
+    )
+    return rows, errors, truncated
 
 
 def request_page(final_date: str, page: int) -> dict:
@@ -296,7 +423,7 @@ def open_rows(rows: object, today: dt.date) -> list[dict]:
 
 
 def merge_rows(*groups: list[dict]) -> list[dict]:
-    """Mescla fontes preservando dados antigos e priorizando OpenAI e depois PNCP."""
+    """Mescla fontes; grupos posteriores têm prioridade sobre os anteriores."""
     selected: list[dict] = []
     aliases: dict[str, int] = {}
     for rows in groups:
@@ -333,14 +460,16 @@ def main() -> None:
     now = dt.datetime.now(TIMEZONE)
     previous = previous_payload()
     pncp_rows, pncp_errors, truncated = collect(now)
+    compras_rows, compras_errors, compras_truncated = collect_compras_gov(now)
     openai_rows, openai_report = collect_openai(now)
     write_report(openai_report)
     previous_rows = open_rows(previous.get("licitacoes", []), now.date())
-    rows = merge_rows(previous_rows, openai_rows, pncp_rows)
+    rows = merge_rows(previous_rows, openai_rows, compras_rows, pncp_rows)
     sources = {
         "pncp": len(pncp_rows),
+        "compras_gov": len(compras_rows),
         "openai_web_search": len(openai_rows),
-        "preservadas": max(0, len(rows) - len(pncp_rows) - len(openai_rows)),
+        "preservadas": max(0, len(rows) - len(pncp_rows) - len(compras_rows) - len(openai_rows)),
     }
     openai_incomplete = (
         openai_report.get("configurada")
@@ -350,10 +479,10 @@ def main() -> None:
             or bool(openai_report.get("erros"))
         )
     )
-    partial = truncated or bool(pncp_errors) or not pncp_rows or bool(openai_incomplete)
+    partial = truncated or compras_truncated or bool(pncp_errors) or bool(compras_errors) or bool(openai_incomplete)
     payload = {
         "atualizado_em": now.isoformat(timespec="seconds"),
-        "fonte": f"{SOURCE_NAME} + OpenAI Web Search com fontes validadas",
+        "fonte": f"{SOURCE_NAME} + Compras.gov.br + OpenAI Web Search com fontes validadas",
         "fonte_url": "https://pncp.gov.br/app/editais",
         "criterio": "Contratações com recebimento de propostas aberto e encerramento em até 365 dias",
         "total": len(rows),
@@ -375,6 +504,7 @@ def main() -> None:
         "fontes": sources,
         "truncado": truncated,
         "erros_pncp": pncp_errors,
+        "erros_compras_gov": compras_errors,
         "erros_openai": openai_report.get("erros", []),
         "openai_configurada": openai_report.get("configurada", False),
         "consultas_openai": openai_report.get("consultas_executadas", 0),

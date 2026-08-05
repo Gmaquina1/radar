@@ -282,6 +282,30 @@ class RadarTests(unittest.TestCase):
         self.assertTrue(errors)
         self.assertFalse(truncated)
 
+    def test_compras_gov_mapeia_formato_plano_e_filtra_prazo(self) -> None:
+        raw = {
+            "numeroControlePNCP": "00394502000144-1-000180/2026",
+            "numeroCompra": "18/2026",
+            "orgaoEntidadeRazaoSocial": "Órgão de Teste",
+            "unidadeOrgaoNomeUnidade": "Unidade Central",
+            "unidadeOrgaoUfSigla": "MG",
+            "unidadeOrgaoMunicipioNome": "Taiobeiras",
+            "objetoCompra": "Aquisição de máquinas",
+            "modalidadeNome": "Pregão - Eletrônico",
+            "dataEncerramentoPropostaPncp": "2026-08-20T10:00:00",
+        }
+        with mock.patch.object(
+            licitacoes,
+            "request_compras_gov_page",
+            return_value={"resultado": [raw], "totalPaginas": 1},
+        ), mock.patch.object(licitacoes, "COMPRAS_GOV_MODALITIES", (5,)):
+            rows, errors, truncated = licitacoes.collect_compras_gov(
+                datetime(2026, 8, 4, 12, 0, tzinfo=ZoneInfo("America/Sao_Paulo"))
+            )
+        self.assertEqual((len(rows), errors, truncated), (1, [], False))
+        self.assertEqual(rows[0]["fonte"], "Compras.gov.br")
+        self.assertEqual(rows[0]["cidade"], "Taiobeiras")
+
     def test_openai_aceita_somente_licitacao_com_fonte_e_prazo_futuro(self) -> None:
         sources = [{"url": "https://prefeitura.gov.br/licitacoes/123", "title": "Edital 123"}]
         raw = [{
