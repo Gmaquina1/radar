@@ -1,0 +1,65 @@
+name: Publicar coleta pronta de licitações
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/publicar-coleta-pronta.yml"
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  publicar:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Baixar coleta validada
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          mkdir -p coleta-pronta
+          gh run download 31471173901 \
+            --name diagnostico-licitacoes-completo \
+            --dir coleta-pronta
+          cp coleta-pronta/licitacoes.json licitacoes.json
+          cp coleta-pronta/status_licitacoes.json status_licitacoes.json
+          python gerar_site_github.py
+
+      - name: Validar e publicar
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          payload = json.loads(Path("licitacoes.json").read_text(encoding="utf-8"))
+          assert payload.get("total") == 34355
+          assert len(payload.get("licitacoes", [])) == 34355
+          assert Path("licitacoes.html").stat().st_size > 1000
+          print("Coleta validada: 34.355 licitações")
+          PY
+
+          git config user.name "Radar de Oportunidades"
+          git config user.email "actions@users.noreply.github.com"
+          git add licitacoes.json licitacoes.html status_licitacoes.json
+          git commit -m "Publicar 34.355 licitações abertas"
+          git stash push --include-untracked --message "arquivos auxiliares da publicação" || true
+          git pull --rebase origin main
+          git push origin HEAD:main
