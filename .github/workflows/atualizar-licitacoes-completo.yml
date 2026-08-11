@@ -127,6 +127,9 @@ jobs:
           fi
 
           git commit -m "Atualizar base completa de licitações"
+          # O gerador também altera arquivos auxiliares que não pertencem a este
+          # commit. Guardá-los evita que bloqueiem o rebase e a publicação.
+          git stash push --include-untracked --message "arquivos auxiliares da coleta" || true
           git pull --rebase origin main
           git push origin HEAD:main
 
