@@ -101,17 +101,12 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          if [ "${GITHUB_EVENT_NAME}" = "push" ]; then
-            echo "Publicação rápida: preservando a base atual de leilões."
-            python sanitizar_conteudo_externo.py
-          else
-            python executar_atualizacao_radar.py \
-              --modo rapido \
-              --workers-mapa 24 \
-              --workers-lotes 16 \
-              --delay-lotes 0 \
-              2>&1 | tee atualizacao.log
-          fi
+          python executar_atualizacao_radar.py \
+            --modo rapido \
+            --workers-mapa 24 \
+            --workers-lotes 16 \
+            --delay-lotes 0 \
+            2>&1 | tee atualizacao.log
 
       - name: Captar todas as licitações abertas
         shell: bash
@@ -143,6 +138,8 @@ jobs:
           assert not status.get('erros_pncp'), 'Uma ou mais páginas do PNCP não foram coletadas'
           assert status.get('status') == 'ok', 'Coleta do PNCP ainda parcial'
           assert Path('licitacoes.html').stat().st_size > 1000, 'Página de licitações não gerada'
+          assert Path('leiloes.html').stat().st_size > 100000, 'Página de leilões não gerada'
+          assert 'id="radar-data"' in Path('leiloes.html').read_text(encoding='utf-8', errors='replace'), 'Base de leilões não embutida'
 
           print(f"LICITACOES_TOTAL={len(rows)}")
           print(f"PNCP={status.get('fontes', {}).get('pncp', 0)}")
@@ -164,7 +161,7 @@ jobs:
             exit 0
           fi
 
-          git commit -m "Publicar todas as licitações abertas - $(date '+%d/%m/%Y %H:%M')"
+          git commit -m "Atualizar leilões e licitações - $(date '+%d/%m/%Y %H:%M')"
           git pull --rebase origin main
           git push origin HEAD:main
 
