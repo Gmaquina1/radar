@@ -1,13 +1,13 @@
 {
   "status": "ok",
-  "atualizado_em": "2026-08-18T04:25:33-03:00",
-  "total": 34743,
+  "atualizado_em": "2026-08-18T10:20:11-03:00",
+  "total": 35485,
   "fontes": {
-    "pncp": 35168,
-    "compras_gov": 381,
-    "preservadas": 0
+    "pncp": 33529,
+    "compras_gov": 367,
+    "preservadas": 1589
   },
-  "paginas_pncp_informadas": 713,
+  "paginas_pncp_informadas": 680,
   "tamanho_pagina_pncp": 50,
   "truncado": false,
   "erros_pncp": [],
