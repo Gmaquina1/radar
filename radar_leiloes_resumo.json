@@ -1,56 +1,56 @@
 {
-  "atualizado_em": "2026-08-18T15:57:16-03:00",
-  "data_base": "2026-08-18",
+  "atualizado_em": "2026-08-20T04:05:54-03:00",
+  "data_base": "2026-08-20",
   "total_registros": 1277,
   "eventos_atualizacao": 684,
-  "eventos_futuros_ou_hoje": 119,
+  "eventos_futuros_ou_hoje": 92,
   "patios": 132,
-  "eventos_com_link": 119,
-  "eventos_com_data_hora_de_edital": 20,
-  "eventos_com_data_hora_de_site": 8,
+  "eventos_com_link": 92,
+  "eventos_com_data_hora_de_edital": 14,
+  "eventos_com_data_hora_de_site": 11,
   "eventos_por_uf": [
     [
       "SP",
-      25
-    ],
-    [
-      "MG",
-      21
-    ],
-    [
-      "RS",
       19
     ],
     [
-      "PR",
+      "RS",
       17
     ],
     [
+      "MG",
+      14
+    ],
+    [
+      "PR",
+      11
+    ],
+    [
       "SC",
-      12
+      8
     ],
     [
       "BA",
       5
     ],
     [
-      "GO",
-      4
-    ],
-    [
       "AL",
       4
     ],
     [
-      "RJ",
-      3
+      "RR",
+      2
     ],
     [
-      "MT",
+      "AM",
       2
     ],
     [
       "RN",
+      2
+    ],
+    [
+      "GO",
       2
     ],
     [
@@ -62,11 +62,15 @@
       1
     ],
     [
-      "AM",
+      "MT",
       1
     ],
     [
       "ES",
+      1
+    ],
+    [
+      "RJ",
       1
     ],
     [
@@ -76,32 +80,24 @@
   ],
   "datas": [
     [
-      "2026-08-19",
-      25
+      "2026-08-21",
+      17
     ],
     [
       "2026-08-20",
-      20
+      14
     ],
     [
-      "2026-08-21",
-      16
+      "2026-08-25",
+      11
     ],
     [
       "2026-08-24",
       11
     ],
     [
-      "2026-08-25",
-      10
-    ],
-    [
       "2026-08-27",
-      7
-    ],
-    [
-      "2027-07-26",
-      6
+      10
     ],
     [
       "2026-08-31",
@@ -110,6 +106,10 @@
     [
       "2026-09-03",
       6
+    ],
+    [
+      "2027-07-26",
+      5
     ],
     [
       "2026-08-22",
@@ -153,7 +153,7 @@
     ]
   ],
   "download_kml": {
-    "downloaded_at": "2026-08-18T15:56:01-03:00",
+    "downloaded_at": "2026-08-20T04:04:22-03:00",
     "http_status": 200,
     "final_url": "https://www.google.com/maps/d/kml?forcekml=1&mid=1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U",
     "downloaded_bytes": 1511716,
