@@ -35,23 +35,6 @@ jobs:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       OPENAI_SEARCH_MODEL: ${{ vars.OPENAI_SEARCH_MODEL || 'gpt-5-mini' }}
 
-      # PNCP: coleta completa, sequencial e resiliente.
-      PNCP_TIMEOUT: "75"
-      PNCP_TENTATIVAS: "10"
-      PNCP_TAMANHO_PAGINA: "500"
-      PNCP_MAX_PAGINAS: "1000"
-      PNCP_MAX_REGISTROS: "60000"
-      PNCP_INTERVALO: "1.2"
-      PNCP_ESPERA_429: "45"
-      PNCP_ESPERA_MAXIMA: "300"
-      PNCP_WORKERS: "1"
-
-      # Fonte oficial complementar.
-      COMPRAS_GOV_DIAS: "365"
-      COMPRAS_GOV_TAMANHO_PAGINA: "500"
-      COMPRAS_GOV_MAX_PAGINAS: "1000"
-      COMPRAS_GOV_WORKERS: "1"
-
       # Configuração do Radar de leilões.
       MAX_PAGES_PER_DOMAIN: "3"
       MAX_URLS_PER_DOMAIN: "15"
@@ -108,11 +91,6 @@ jobs:
             --delay-lotes 0 \
             2>&1 | tee atualizacao.log
 
-      - name: Captar todas as licitações abertas
-        shell: bash
-        run: |
-          python atualizar_licitacoes_completo.py 2>&1 | tee atualizacao_licitacoes.log
-
       - name: Gerar páginas do site
         shell: bash
         run: |
@@ -123,37 +101,29 @@ jobs:
         run: |
           python -m compileall -q atualizar_licitacoes_completo.py atualizar_licitacoes.py gerar_site_github.py
           python - <<'PY'
-          import json
           from pathlib import Path
 
-          payload = json.loads(Path('licitacoes.json').read_text(encoding='utf-8'))
-          status = json.loads(Path('status_licitacoes.json').read_text(encoding='utf-8'))
-          rows = payload.get('licitacoes', [])
-
-          assert isinstance(rows, list), 'Lista de licitações inválida'
-          assert payload.get('total') == len(rows), 'Total divergente'
-          assert rows, 'Nenhuma licitação captada'
-          assert status.get('paginas_pncp_informadas', 0) > 0, 'PNCP não informou páginas'
-          assert status.get('paginas_pncp_informadas', 0) <= 1000, 'Limite de páginas insuficiente'
-          assert not status.get('erros_pncp'), 'Uma ou mais páginas do PNCP não foram coletadas'
-          assert status.get('status') == 'ok', 'Coleta do PNCP ainda parcial'
-          assert Path('licitacoes.html').stat().st_size > 1000, 'Página de licitações não gerada'
           assert Path('leiloes.html').stat().st_size > 100000, 'Página de leilões não gerada'
           assert 'id="radar-data"' in Path('leiloes.html').read_text(encoding='utf-8', errors='replace'), 'Base de leilões não embutida'
 
-          print(f"LICITACOES_TOTAL={len(rows)}")
-          print(f"PNCP={status.get('fontes', {}).get('pncp', 0)}")
-          print(f"COMPRAS_GOV={status.get('fontes', {}).get('compras_gov', 0)}")
-          print(f"PAGINAS_PNCP={status.get('paginas_pncp_informadas', 0)}")
-          print(f"TAMANHO_PAGINA={status.get('tamanho_pagina_pncp', 0)}")
+          print('RADAR_LEILOES_VALIDADO=1')
           PY
           git diff --check
 
       - name: Publicar atualização no GitHub
         shell: bash
         run: |
-          git config user.name "Radar de Oportunidades"
+          git config user.name "Radar de Leilões"
           git config user.email "actions@users.noreply.github.com"
+
+          # As licitações possuem workflow próprio. Restaurá-las aqui impede
+          # conflitos quando os dois coletores terminam em horários próximos.
+          git restore --source=HEAD --worktree -- \
+            licitacoes.json \
+            licitacoes.html \
+            status_licitacoes.json \
+            relatorio_licitacoes_openai.json
+
           git add -A
 
           if git diff --cached --quiet; then
@@ -161,7 +131,7 @@ jobs:
             exit 0
           fi
 
-          git commit -m "Atualizar leilões e licitações - $(date '+%d/%m/%Y %H:%M')"
+          git commit -m "Atualizar Radar de Leilões - $(date '+%d/%m/%Y %H:%M')"
           git pull --rebase origin main
           git push origin HEAD:main
 
@@ -172,7 +142,6 @@ jobs:
           name: diagnostico-radar-completo
           path: |
             atualizacao.log
-            atualizacao_licitacoes.log
             status_licitacoes.json
             status_atualizacao.json
           if-no-files-found: ignore
