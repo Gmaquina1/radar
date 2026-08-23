@@ -1,3 +1,4 @@
 Este arquivo força um novo commit e uma nova execução do GitHub Actions.
 Pacote revisado em: 2026-07-20T13:20:01-03:00
 Publicação do filtro de proximidade solicitada em: 2026-08-04T12:08:31-03:00
+Atualização manual solicitada em: 2026-08-23T13:59:36-03:00
