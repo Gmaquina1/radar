@@ -1,15 +1,15 @@
 {
-  "executado_em": "2026-08-23T14:12:07-03:00",
+  "executado_em": "2026-08-23T15:58:20-03:00",
   "lotes_antes": 288,
   "lotes_depois": 288,
   "lotes_realmente_novos": 0,
   "lotes_removidos_ou_encerrados": 0,
   "lotes_preservados": 0,
-  "lotes_capturados_agora": 14243,
-  "lotes_capturados_com_chave_nova": 8106,
+  "lotes_capturados_agora": 14464,
+  "lotes_capturados_com_chave_nova": 8225,
   "eventos_analisados": 3181,
-  "eventos_com_lotes": 1056,
-  "eventos_com_erro": 57,
+  "eventos_com_lotes": 1053,
+  "eventos_com_erro": 62,
   "eventos_bloqueados": 16,
   "links_invalidos": 45,
   "quantidade_coletada_por_leiloeiro": {
@@ -18,17 +18,20 @@
     "allianceleiloes.com.br": 26,
     "amleiloeiro.com.br": 34,
     "api.whatsapp.com": 60,
-    "belt.al.ce.gov.br": 63,
+    "belt.al.ce.gov.br": 60,
     "bsbleiloes.com.br": 869,
     "casadeleiloes.com.br": 123,
     "celsocunhaleiloes.com.br": 1,
+    "centralsuldeleiloes.com.br": 169,
     "claudiokussleiloes.com.br": 1,
     "colossoleiloes.com.br": 78,
     "compraremleilao.com.br": 7,
     "compras.es.gov.br": 2,
     "detran.es.gov.br": 88,
     "donizetteleiloes.leilao.br": 82,
-    "drive.google.com": 29,
+    "downloads.jfal.jus.br": 16,
+    "drive.google.com": 11,
+    "drive.usercontent.google.com": 18,
     "e-leiloes.com.br": 229,
     "eckertleiloes.com.br": 24,
     "economia.df.gov.br": 1,
@@ -36,11 +39,12 @@
     "goias.gov.br": 12,
     "goldenlance.com.br": 423,
     "gov.br": 44,
-    "grupolance.com.br": 301,
+    "grupolance.com.br": 300,
     "hastapublica.com.br": 47,
     "hisaleiloes.com.br": 307,
     "hml-webv2.sodresantoro.com.br": 98,
     "jeleiloes.com.br": 668,
+    "jfal.jus.br": 36,
     "jmleiloes.leilao.br": 6,
     "jrleiloes.com.br": 2,
     "kleiloes.com.br": 179,
@@ -56,11 +60,11 @@
     "leilaobrasil.com.br": 737,
     "leilaoimovelcaixa.com.br": 212,
     "leilaoonline.com.br": 347,
-    "leiloai.com": 40,
+    "leiloai.com": 14,
     "leiloeiropublico.com.br": 12,
-    "leiloesbr.com.br": 3,
+    "leiloesbr.com.br": 7,
     "leiloesfreire.com.br": 221,
-    "leiloesjudiciais.com.br": 556,
+    "leiloesjudiciais.com.br": 555,
     "leiloesoliveira.com.br": 150,
     "leiloespb.com.br": 112,
     "leje.com.br": 114,
@@ -69,7 +73,6 @@
     "lipinskileiloes.com.br": 141,
     "lumussaleiloes.com.br": 84,
     "mapadoleilao.com.br": 168,
-    "marcusviniciusleiloes.com.br": 40,
     "mariafixerleiloes.com.br": 2,
     "marquesleiloes.com.br": 12,
     "megaleiloes.com.br": 52,
@@ -81,7 +84,7 @@
     "peterlongoleiloes.com.br": 188,
     "portaldoleiloeiro.com.br": 49,
     "portalzuk.com.br": 49,
-    "proleilao.com.br": 577,
+    "proleilao.com.br": 644,
     "ricardogomesleiloes.com.br": 159,
     "rochaleiloes.com.br": 2,
     "rofremleiloes.com.br": 72,
@@ -119,15 +122,15 @@
     "apabrfleiloes.com.br": 1,
     "bidgo.com.br": 1,
     "cargneluttileiloes.com.br": 1,
-    "downloads.jfal.jus.br": 2,
-    "jfal.jus.br": 30,
+    "jfal.jus.br": 7,
     "leilaoimovelcaixa.com.br": 4,
+    "leilo.com.br": 1,
     "machadoleiloeiro.com.br": 1,
+    "marcusviniciusleiloes.com.br": 30,
     "patiorochaleiloes.com.br": 1,
     "pwleiloes.com.br": 1,
     "sodressantoro.com.br": 8,
-    "tre-ba.jus.br": 4,
-    "www10.goiania.go.gov.br": 1
+    "tre-ba.jus.br": 4
   },
   "urls_que_falharam": [
     {
@@ -176,14 +179,9 @@
       "http": 404
     },
     {
-      "url": "https://www10.goiania.go.gov.br/transweb/Licitacoes.aspx",
+      "url": "https://marcusviniciusleiloes.com.br/",
       "status": "erro",
       "http": 0
-    },
-    {
-      "url": "https://instagram.com/ricardo.leiloeiro?igshid=MTk0NTkyODZkYg==",
-      "status": "bloqueado_http_429",
-      "http": 429
     },
     {
       "url": "https://hml-web.sodresantoro.com.br/",
@@ -191,14 +189,9 @@
       "http": 503
     },
     {
-      "url": "https://downloads.jfal.jus.br/documentos/servicos/leiloes/2025/EDITAL%20LEIL%C3%83O%2001.2025%20-%201%C2%AA%20PUBLICA%C3%87%C3%83O.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://downloads.jfal.jus.br/documentos/servicos/leiloes/2024/EDITAL%20LEILOEIRO%20-%20LEIL%C3%83O%2001-2024%20-%202%C2%AA%20PUBLICA%C3%87%C3%83O.pdf",
-      "status": "erro",
-      "http": 0
+      "url": "https://www.casal.al.gov.br/licitacao/leilao-casal-no-01-2025-bens-moveis-e-imoveis/",
+      "status": "http_503",
+      "http": 503
     },
     {
       "url": "https://alleiloes.com.br/leilao/392/leilao-de-veiculos-em-santa-catarina",
@@ -241,24 +234,19 @@
       "http": 404
     },
     {
-      "url": "https://www.centralsuldeleiloes.com.br/api/newsletter",
-      "status": "http_500",
-      "http": 500
+      "url": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/itemlist/tag/ADQUIRIR%20E%20DISTRIBUIR%20G%C3%81S%20EM%20BOTIJ%C3%83O%20%C3%80S%20FAMIL%C3%8DAS%20EM%20SITUA%C3%87%C3%83O%20DE%20MAIOR%20VULNERABILIDADE%20SOCIAL",
+      "status": "http_503",
+      "http": 503
+    },
+    {
+      "url": "https://www.casal.al.gov.br/",
+      "status": "http_503",
+      "http": 503
     },
     {
       "url": "https://www.grupolance.com.br/imoveis/terrenos-e-lotes/sp/sao-paulo/terreno-at-3236m2-vila-independencia-sao-paulo-sp-28463",
       "status": "http_404",
       "http": 404
-    },
-    {
-      "url": "https://jfal.jus.br/noticias/6767/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://jfal.jus.br/concursos/eventos-e-cursos/",
-      "status": "erro",
-      "http": 0
     },
     {
       "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2026/2-leilao-unificado-2-praca/",
@@ -281,27 +269,7 @@
       "http": 0
     },
     {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2026/1-leilao-unificado-2-praca/",
-      "status": "erro",
-      "http": 0
-    },
-    {
       "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2025/2-leilao-unificado-2-praca/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2026/1-leilao-unificado-1-praca/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2025/2-leilao-unificado-1-praca/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jfal.jus.br/tags/leil%C3%A3o/",
       "status": "erro",
       "http": 0
     },
@@ -311,92 +279,7 @@
       "http": 0
     },
     {
-      "url": "https://www.jfal.jus.br/tags/edital-de-chamamento/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jfal.jus.br/tags/edital/",
-      "status": "erro",
-      "http": 0
-    },
-    {
       "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2025/1-leilao-unificado-2-praca/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2025/1-leilao-unificado-1-praca/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2025/calendar/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2024/3-leilao-unificado-2-praca/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2024/3-leilao-unificado-1-praca/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2024/2-leilao-unificado-2-praca/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2024/2-leilao-unificado-1-praca/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2024/leil%C3%A3o-8a-vara/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2024/1-leilao-unificado-2-praca/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2024/1-leilao-unificado-1-praca/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2023/4-leilao-unificado-2-praca/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2023/4-leilao-unificado-1-praca/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2023/3-leilao-unificado-2-praca/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2023/3-leilao-unificado-1-praca/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2023/2-leilao-unificado-2-praca/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2023/2-leilao-unificado-1-praca/",
       "status": "erro",
       "http": 0
     },
@@ -419,6 +302,11 @@
       "url": "https://www.leilaoimovelcaixa.com.br/imovel-caixa/al/maceio/casa-em-leilao-em-maceio-al-imovel-caixa-economica-federal-cef-2893061-8787704729265",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://leilo.com.br/cadastro?redirect=%2Fcadastro%3Fredirect%3D%252Fcadastro%253Fredirect%253D%25252Fleilao%25252F%25253Fleilao.nome%25253Devisa.immigration.gov.n",
+      "status": "erro",
+      "http": 0
     },
     {
       "url": "https://leiloai.com/leilao/0cbd1af8-83f7-4729-ac9a-80fefb04727c",
@@ -514,6 +402,116 @@
       "url": "https://mjleiloes.com.br/leiloes/99?slug=leilao-da-prefeitura-de-cabreuva-sp-veiculos-tratores-e-outros",
       "status": "http_404",
       "http": 404
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/717/prefeitura-municipal-de-japonvar-mg-veiculos-caminhonete-onibus-van-microonibus-ambulancia-sucatas-diversas-e-outros",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/686/cadastro",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/686/entrar",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/upload/files/2026/7/edital-de-leilao-prefeitura-de-engenheiro-navarr9155023.pdf",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/upload/files/2026/6/edital-de-leilao-da-prefeitura-de-engenheiro-navar24151656.pdf",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/cadastro",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/entrar",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leiloeiro",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/contato",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/722",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/724",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/699/1a-vara-civel-da-comarca-de-montes-claros-mg-processo-5002078-11-2017-8-13-0433-veiculo-mitsubishi-l200-4x4-diesel-ano-1994-1995",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/710/1a-vara-civel-da-comarca-de-montes-claros-mg-processo-0458360-31-2013-8-13-0433-50-de-imovel-urbano-av-itamar-caldeira-brant-35-vila-clarindo-lopes-montes-claros-mg",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/705/1a-vara-civel-da-comarca-de-montes-claros-mg-processo-5007967-72-2019-8-13-0433-imovel-2-137-20-m2-condominio-fechado-estancia-real-saida-para-juramento-montes-claros-mg",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/726/1a-vara-do-trabalho-de-montes-claros-mg-processo-0012097-16-2023-5-03-0067-1-000-tijolos-oito-furos-medindo-9-cm-x-19-cm-x-24-cm",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/729/1a-vara-do-trabalho-de-montes-claros-mg-processo-0012194-79-2024-5-03-0067-200-m2-piso-ceramico-classe-a-81x81cm-polido-retificado-70-m2-piso-ceramico-classe-a-80-5x80-5-cm-retificado",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/691/1a-vara-do-trabalho-de-montes-claros-mg-processo-0011952-86-2025-5-03-0067-varios-freezers-horizontal-marca-fricon-e-freezer-vertical-electrolux",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/727/1a-vara-do-trabalho-de-montes-claros-mg-processo-0010398-19-2025-5-03-0067-maquina-atadora-de-fios-industrial-eletrica-e-com-display-digital",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/730/1a-vara-do-trabalho-de-montes-claros-mg-processo-0011834-81-2023-5-03-0067-televisor-lg-poltronas-cadeiras-sofa-mesa-de-centro-maquina-costura-overlock-vestidos-para-festa",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/720/1a-vara-do-trabalho-de-montes-claros-mg-processo-0010476-13-2025-5-03-0067-tear-industrial-para-tecelagem-marca-picanol-delta-2-p",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/716/1a-vara-do-trabalho-de-montes-claros-mg-processo-0011517-20-2022-5-03-0067-veiculo-onibus-passageiro-m-benz-marcopolo-viaggio-ano-2007",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/703/1a-vara-do-trabalho-de-montes-claros-mg-processo-0012371-43-2024-5-03-0067-congelador-tipo-ilha-balcao-expositor-de-carnes-refrigerado",
+      "status": "erro",
+      "http": 0
     },
     {
       "url": "https://sodressantoro.com.br/quem-somos",
@@ -651,9 +649,44 @@
       "http": 403
     },
     {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/686/prefeitura-municipal-de-engenheiro-navarro-mg-veiculos-maquinas-e-outros",
+      "status": "erro",
+      "http": 0
+    },
+    {
       "url": "https://topoleiloes.com.br/leilao/3255/semsep-sorriso-sucatas-aproveitaveis-com-motor-inservivel",
       "status": "http_404",
       "http": 404
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/686",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/686/leiloeiro",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/686/contato",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/686/item/3594/lote-01/um-veiculo-van-fiat-ducato-minibus-15-lugares-cor-branca-ano-2012-2013-placa-opf-8701-chassi-93w244m24d2100074-renavam-507008278",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/686/item/3595/lote-02/um-veiculo-vw-up-move-ma-cor-branca-ano-2014-2015-placa-puc-6155-chassi-9bwag4129ft529127-renavam-01010666875",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://marcusviniciusleiloes.com.br/leilao/686/item/3596/lote-03/um-veiculo-fiat-palio-fire-cor-branca-ano-2015-2016-placa-pxk-4730-chassi-9bd17122zg7570154-renavam-01079538264",
+      "status": "erro",
+      "http": 0
     },
     {
       "url": "https://vardanaleiloes.com.br/vardana/img_leiloes/EDITAL_1077_5.pdf",
