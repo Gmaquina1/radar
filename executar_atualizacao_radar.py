@@ -482,6 +482,11 @@ def main() -> int:
                 2,
             ),
             (
+                "Sanitizar conteúdo externo",
+                [sys.executable, "sanitizar_conteudo_externo.py"],
+                1,
+            ),
+            (
                 "Gerar diagnóstico final",
                 [
                     sys.executable,
