@@ -1,16 +1,16 @@
 {
   "status": "ok",
-  "verificado_em": "2026-08-20T04:17:47-03:00",
-  "atualizado_em_base_eventos": "2026-08-20T04:05:54-03:00",
-  "atualizado_em_base_lotes": "2026-08-20T04:17:35-03:00",
-  "idade_base_eventos_horas": 0.2,
+  "verificado_em": "2026-08-23T11:59:20-03:00",
+  "atualizado_em_base_eventos": "2026-08-23T11:48:59-03:00",
+  "atualizado_em_base_lotes": "2026-08-23T11:59:12-03:00",
+  "idade_base_eventos_horas": 0.17,
   "idade_base_lotes_horas": 0.0,
-  "eventos_futuros": 92,
+  "eventos_futuros": 59,
   "patios": 132,
-  "lotes": 698,
-  "lotes_capturados_agora": 14558,
-  "lotes_preservados": 35,
-  "eventos_indexados_com_lotes": 1053,
+  "lotes": 288,
+  "lotes_capturados_agora": 14428,
+  "lotes_preservados": 0,
+  "eventos_indexados_com_lotes": 1060,
   "checks": {
     "arquivos_obrigatorios": true,
     "workflow_existe": true,
@@ -29,14 +29,14 @@
   },
   "arquivos_faltando": [],
   "modo": "rapido",
-  "duracao_segundos": 804.95,
-  "ultima_execucao": "2026-08-20T04:17:47-03:00",
+  "duracao_segundos": 675.13,
+  "ultima_execucao": "2026-08-23T11:59:20-03:00",
   "mensagem": "Eventos, lotes e site atualizados com sucesso.",
   "base_anterior_restaurada": false,
-  "lotes_antes": 735,
-  "lotes_depois": 698,
-  "lotes_novos_detectados": 19,
-  "lotes_removidos_ou_encerrados": 56,
+  "lotes_antes": 698,
+  "lotes_depois": 288,
+  "lotes_novos_detectados": 1,
+  "lotes_removidos_ou_encerrados": 227,
   "status_mapa": "ok",
   "status_openai": "NAO_TESTADA",
   "status_descoberta": "parcial",
@@ -50,13 +50,13 @@
     {
       "nome": "Atualizar eventos pelo Google My Maps",
       "comando": [
-        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
         "atualizar_radar_leiloes.py",
         "--workers",
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 92.28,
+      "duracao_segundos": 53.96,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 900
@@ -64,12 +64,12 @@
     {
       "nome": "Atualizar lote incremental de portais conhecidos",
       "comando": [
-        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
         "descobrir_leiloes_web.py",
         "--quick-refresh"
       ],
       "tentativas": 1,
-      "duracao_segundos": 24.47,
+      "duracao_segundos": 26.04,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 900
@@ -77,7 +77,7 @@
     {
       "nome": "Procurar novos lotes nos sites dos leiloeiros",
       "comando": [
-        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
         "indexador_lotes.py",
         "--eventos",
         "eventos_consolidados.csv",
@@ -87,7 +87,7 @@
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 677.14,
+      "duracao_segundos": 587.37,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 3600
@@ -95,11 +95,23 @@
     {
       "nome": "Gerar novamente o site",
       "comando": [
-        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
         "gerar_site_github.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 10.84,
+      "duracao_segundos": 5.88,
+      "status": "ok",
+      "codigo": 0,
+      "timeout_segundos": 300
+    },
+    {
+      "nome": "Sanitizar conteúdo externo",
+      "comando": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "sanitizar_conteudo_externo.py"
+      ],
+      "tentativas": 1,
+      "duracao_segundos": 1.67,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300
@@ -107,7 +119,7 @@
     {
       "nome": "Gerar diagnóstico final",
       "comando": [
-        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
         "diagnostico_radar.py",
         "--falhar-se-atencao"
       ],
