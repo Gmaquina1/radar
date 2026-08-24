@@ -1,16 +1,16 @@
 {
   "status": "ok",
-  "verificado_em": "2026-08-23T15:58:29-03:00",
-  "atualizado_em_base_eventos": "2026-08-23T15:48:10-03:00",
-  "atualizado_em_base_lotes": "2026-08-23T15:58:20-03:00",
-  "idade_base_eventos_horas": 0.17,
+  "verificado_em": "2026-08-23T23:09:09-03:00",
+  "atualizado_em_base_eventos": "2026-08-23T22:57:18-03:00",
+  "atualizado_em_base_lotes": "2026-08-23T23:09:00-03:00",
+  "idade_base_eventos_horas": 0.2,
   "idade_base_lotes_horas": 0.0,
   "eventos_futuros": 58,
   "patios": 132,
   "lotes": 288,
-  "lotes_capturados_agora": 14464,
+  "lotes_capturados_agora": 13984,
   "lotes_preservados": 0,
-  "eventos_indexados_com_lotes": 1053,
+  "eventos_indexados_com_lotes": 1048,
   "checks": {
     "arquivos_obrigatorios": true,
     "workflow_existe": true,
@@ -29,8 +29,8 @@
   },
   "arquivos_faltando": [],
   "modo": "rapido",
-  "duracao_segundos": 673.92,
-  "ultima_execucao": "2026-08-23T15:58:29-03:00",
+  "duracao_segundos": 769.49,
+  "ultima_execucao": "2026-08-23T23:09:09-03:00",
   "mensagem": "Eventos, lotes e site atualizados com sucesso.",
   "base_anterior_restaurada": false,
   "lotes_antes": 288,
@@ -56,7 +56,7 @@
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 55.23,
+      "duracao_segundos": 58.28,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 900
@@ -69,7 +69,7 @@
         "--quick-refresh"
       ],
       "tentativas": 1,
-      "duracao_segundos": 17.01,
+      "duracao_segundos": 21.76,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 900
@@ -87,7 +87,7 @@
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 593.83,
+      "duracao_segundos": 681.2,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 3600
@@ -99,7 +99,7 @@
         "gerar_site_github.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 5.98,
+      "duracao_segundos": 6.28,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300
@@ -111,7 +111,7 @@
         "sanitizar_conteudo_externo.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 1.67,
+      "duracao_segundos": 1.77,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300
