@@ -1,9 +1,9 @@
 Status: ok
-Verificado em: 2026-08-24T04:31:28-03:00
-Base de eventos: 2026-08-24T04:19:58-03:00
-Base de lotes: 2026-08-24T04:31:20-03:00
-Eventos futuros: 51
-Lotes disponíveis: 263
+Verificado em: 2026-08-24T10:23:44-03:00
+Base de eventos: 2026-08-24T10:12:23-03:00
+Base de lotes: 2026-08-24T10:23:36-03:00
+Eventos futuros: 47
+Lotes disponíveis: 259
 Pátios: 132
 Verificações com problema: nenhuma
 Mensagem: Eventos, lotes e site atualizados com sucesso.
