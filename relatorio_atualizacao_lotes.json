@@ -1,20 +1,20 @@
 {
-  "executado_em": "2026-08-24T16:09:04-03:00",
+  "executado_em": "2026-08-24T23:01:42-03:00",
   "lotes_antes": 259,
   "lotes_depois": 259,
-  "lotes_realmente_novos": 1,
-  "lotes_removidos_ou_encerrados": 1,
+  "lotes_realmente_novos": 0,
+  "lotes_removidos_ou_encerrados": 0,
   "lotes_preservados": 0,
-  "lotes_capturados_agora": 14580,
-  "lotes_capturados_com_chave_nova": 8362,
+  "lotes_capturados_agora": 14472,
+  "lotes_capturados_com_chave_nova": 8341,
   "eventos_analisados": 3183,
-  "eventos_com_lotes": 1069,
-  "eventos_com_erro": 29,
-  "eventos_bloqueados": 15,
-  "links_invalidos": 45,
+  "eventos_com_lotes": 1055,
+  "eventos_com_erro": 68,
+  "eventos_bloqueados": 16,
+  "links_invalidos": 46,
   "quantidade_coletada_por_leiloeiro": {
     "alfaleiloes.com": 21,
-    "alleiloes.com.br": 37,
+    "alleiloes.com.br": 36,
     "allianceleiloes.com.br": 26,
     "amleiloeiro.com.br": 35,
     "api.whatsapp.com": 60,
@@ -22,7 +22,7 @@
     "bsbleiloes.com.br": 869,
     "casadeleiloes.com.br": 123,
     "celsocunhaleiloes.com.br": 1,
-    "centralsuldeleiloes.com.br": 171,
+    "centralsuldeleiloes.com.br": 170,
     "claudiokussleiloes.com.br": 1,
     "colossoleiloes.com.br": 78,
     "compraremleilao.com.br": 7,
@@ -39,10 +39,9 @@
     "goias.gov.br": 12,
     "goldenlance.com.br": 423,
     "gov.br": 44,
-    "grupolance.com.br": 301,
-    "hastapublica.com.br": 48,
+    "grupolance.com.br": 294,
+    "hastapublica.com.br": 50,
     "hisaleiloes.com.br": 307,
-    "hml-web.sodresantoro.com.br": 5,
     "hml-webv2.sodresantoro.com.br": 98,
     "jeleiloes.com.br": 668,
     "jfal.jus.br": 36,
@@ -56,38 +55,38 @@
     "lancevip.com.br": 227,
     "lbleiloes.com.br": 97,
     "leffaleiloes.com.br": 59,
-    "leilao.detran.mg.gov.br": 130,
+    "leilao.detran.mg.gov.br": 129,
     "leilao.sodresantoro.com.br": 3,
-    "leilaobrasil.com.br": 747,
+    "leilaobrasil.com.br": 737,
     "leilaoimovelcaixa.com.br": 221,
     "leilaoonline.com.br": 347,
     "leiloai.com": 69,
     "leiloeiropublico.com.br": 13,
     "leiloesbr.com.br": 2,
     "leiloesfreire.com.br": 221,
-    "leiloesjudiciais.com.br": 574,
+    "leiloesjudiciais.com.br": 553,
     "leiloesoliveira.com.br": 150,
     "leiloespb.com.br": 111,
     "leje.com.br": 114,
     "liderleiloes.com.br": 115,
     "lilianportugal.com.br": 236,
     "lipinskileiloes.com.br": 141,
-    "lumussaleiloes.com.br": 58,
+    "lumussaleiloes.com.br": 57,
     "mapadoleilao.com.br": 168,
     "marcusviniciusleiloes.com.br": 40,
     "mariafixerleiloes.com.br": 2,
-    "marquesleiloes.com.br": 12,
-    "megaleiloes.com.br": 64,
+    "marquesleiloes.com.br": 13,
+    "megaleiloes.com.br": 63,
     "mjleiloes.com.br": 201,
     "nakakogueleiloes.com.br": 11,
-    "nordesteleiloes.com.br": 33,
+    "nordesteleiloes.com.br": 34,
     "okleiloes.com.br": 32,
     "parquedosleiloes.com.br": 176,
     "peterlongo.leilao.br": 82,
-    "peterlongoleiloes.com.br": 121,
+    "peterlongoleiloes.com.br": 120,
     "portaldoleiloeiro.com.br": 48,
-    "portalzuk.com.br": 50,
-    "proleilao.com.br": 667,
+    "portalzuk.com.br": 51,
+    "proleilao.com.br": 725,
     "ricardogomesleiloes.com.br": 159,
     "rochaleiloes.com.br": 2,
     "rofremleiloes.com.br": 71,
@@ -95,21 +94,19 @@
     "rossileiloes.com.br": 714,
     "rpleiloes.com.br": 57,
     "sabbagleiloes.com.br": 819,
-    "sandrasantosleiloes.com.br": 116,
+    "sandrasantosleiloes.com.br": 119,
     "sandroleiloeiro.com.br": 496,
     "saraivaleiloes.com.br": 127,
     "satoleiloes.com.br": 1,
     "schulmannleiloes.com.br": 1,
-    "sescamapa.com.br": 63,
     "sfleiloes.com.br": 72,
     "spencerleiloes.com.br": 105,
-    "spyleiloes.com.br": 142,
+    "spyleiloes.com.br": 146,
     "static.suporteleiloes.com.br": 1,
     "suedpeterleiloes.com.br": 87,
-    "superbid.net": 591,
+    "superbid.net": 537,
     "swleiloes.com.br": 199,
-    "topoleiloes.com.br": 83,
-    "trt16.jus.br": 11,
+    "topoleiloes.com.br": 82,
     "tulioleiloes.com.br": 66,
     "vardanaleiloes.com.br": 104,
     "vargasepintoleiloes.com.br": 20,
@@ -126,12 +123,16 @@
     "bidgo.com.br": 1,
     "cargneluttileiloes.com.br": 1,
     "jfal.jus.br": 3,
-    "leilao.detran.mg.gov.br": 3,
+    "leilao.detran.mg.gov.br": 2,
     "leilaoimovelcaixa.com.br": 4,
+    "licitardigital.1doc.com.br": 1,
+    "mapadoleilao.com.br": 2,
     "patiorochaleiloes.com.br": 1,
     "pwleiloes.com.br": 1,
+    "sescamapa.com.br": 26,
     "sodressantoro.com.br": 8,
-    "tre-ba.jus.br": 4
+    "tre-ba.jus.br": 4,
+    "trt16.jus.br": 11
   },
   "urls_que_falharam": [
     {
@@ -175,6 +176,26 @@
       "http": 404
     },
     {
+      "url": "https://licitardigital.1doc.com.br/verificacao/226C-9914-02F8-C7C8",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://trt16.jus.br/servicos/publicacoes/leilao-judicial",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://trt16.jus.br/sites/portal/files/roles/leilao_unificado/Edital%201%C2%BA%20Leil%C3%A3o%202026.pdf",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://hml-web.sodresantoro.com.br/",
+      "status": "http_503",
+      "http": 503
+    },
+    {
       "url": "https://alleiloes.com.br/leilao/392/leilao-de-veiculos-em-santa-catarina",
       "status": "http_404",
       "http": 404
@@ -215,22 +236,27 @@
       "http": 404
     },
     {
+      "url": "https://alleiloes.com.br/lote/4406/imovel-com-30000m2-em-ponta-grossa-pr",
+      "status": "http_404",
+      "http": 404
+    },
+    {
       "url": "https://www.grupolance.com.br/imoveis/terrenos-e-lotes/sp/sao-paulo/terreno-at-3236m2-vila-independencia-sao-paulo-sp-28463",
       "status": "http_404",
       "http": 404
     },
     {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2026/2-leilao-unificado-1-praca/",
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2024/3-leilao-unificado-1-praca/",
       "status": "erro",
       "http": 0
     },
     {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2025/2-leilao-unificado-1-praca/",
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2024/1-leilao-unificado-1-praca/",
       "status": "erro",
       "http": 0
     },
     {
-      "url": "https://www.jfal.jus.br/tags/edital-de-chamamento/",
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2023/4-leilao-unificado-2-praca/",
       "status": "erro",
       "http": 0
     },
@@ -345,17 +371,12 @@
       "http": 404
     },
     {
-      "url": "https://leilao.detran.mg.gov.br/",
+      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/2780/2025",
       "status": "erro",
       "http": 0
     },
     {
-      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3445/2026",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3294/2026?page=3",
+      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3468/2026",
       "status": "erro",
       "http": 0
     },
@@ -363,6 +384,16 @@
       "url": "https://mjleiloes.com.br/leiloes/99?slug=leilao-da-prefeitura-de-cabreuva-sp-veiculos-tratores-e-outros",
       "status": "http_404",
       "http": 404
+    },
+    {
+      "url": "https://mapadoleilao.com.br/planos",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://mapadoleilao.com.br/blog",
+      "status": "erro",
+      "http": 0
     },
     {
       "url": "https://sodressantoro.com.br/quem-somos",
@@ -480,6 +511,11 @@
       "http": 404
     },
     {
+      "url": "https://www.superbid.net/evento/789627",
+      "status": "http_400",
+      "http": 400
+    },
+    {
       "url": "https://www.tre-ba.jus.br/servicos-judiciais/leiloes-judiciais/leiloes-judiciais",
       "status": "bloqueado_http_403",
       "http": 403
@@ -498,6 +534,181 @@
       "url": "https://www.tre-ba.jus.br/servicos-judiciais/leiloes-judiciais",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://trt16.jus.br/sites/portal/files/roles/leilao_unificado/EDITAL-DE-LEILAO-n-01-2025.pdf",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://trt16.jus.br/sites/portal/files/roles/leilao_unificado/EDITAL_DE_LEILAO_n_02.2024.pdf",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://trt16.jus.br/sites/portal/files/roles/leilao_unificado/EDITAL_DE_LEILAO_%20n_01.2023_assinado.pdf",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://trt16.jus.br/sites/portal/files/roles/leilao_unificado/NPP%20-%20Edital%20Leil%C3%A3o%2002.2022.pdf",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://trt16.jus.br/site/conteudo/publicacoes/leilaojudicial/EDITAL_LEILAO_2022_e_ANEXO-ASSINADO.pdf",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://trt16.jus.br/site/conteudo/publicacoes/leilaojudicial/EDITAL_DE_LEILAO_JUDICIAL_COM__ANEXO_2019_001.pdf",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://trt16.jus.br/site/conteudo/publicacoes/leilaojudicial/EDITAL_DE_LEILAO_JUDICIAL_COM__ANEXO_2018_002.pdf",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://trt16.jus.br/site/conteudo/publicacoes/leilaojudicial/EDITAL_DE_LEILAO_JUDICIAL_E_INTIMACAO_COM_ANEXO-002.pdf",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://trt16.jus.br/site/conteudo/publicacoes/leilaojudicial/EDITAL_DE_LEILAO_JUDICIAL_E_INTIMACAO.pdf",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://sescamapa.com.br/licitacao/leilao/leilao-publico-para-alienacao-de-veiculos-integrantes-do-patrimonio-do-sesc-dr-ap-2026",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://sescamapa.com.br/licitacoes/leilao",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://sescamapa.com.br/licitacao/leilao/leilao-publico-de-bens-inserviveis-integrantes-do-patrimonio-do-sesc-dr-ap",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://sescamapa.com.br/licitacao/leilao/leilao-publico-para-alienacao-de-veiculos-integrantes-do-patrimonio-do-sesc-dr-ap",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://sescamapa.com.br/licitacao/leilao/leilao-publico-de-bens-inserviveis-do-patrimonio-do-sesc-dr-ap-21-001",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://sescamapa.com.br/licitacao/leilao/leilao-publico-de-bens-inserviveis-integ-do-patrimonio-do-sesc-dr-ap",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://sescamapa.com.br/licitacao/leilao/leilao-publico-de-veiculos-do-sesc-dr-ap",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://sescamapa.com.br/licitacao/leilao/leilao-publico-de-equipamentos-veiculos-e-materiais-permanentes-do-sesc-dr-ap",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sescamapa.com.br/artigo/sesc-amapa-realiza-evento-voltado-para-jogos-de-rpg-dia-28-de-fevereiro-sabado",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sescamapa.com.br/artigo/sesc-amapa-lanca-edital-do-programa-de-comprometimento-e-gratuidade-2026",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sescamapa.com.br/artigo/sesc-amapa-lanca-edital-de-atividades-gratuitas-pelo-programa-de-comprometimento-e-gratuidade-2025",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sescamapa.com.br/artigo/sesc-amapa-e-ifap-assinam-cooperacao-tecnica-para-oferta-de-atividades-educacionais",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sescamapa.com.br/artigo/semana-da-mulher-no-sesc-amapa-tem-oferta-gratuita-de-exame-pccu",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sescamapa.com.br/artigo/festival-internacional-sesc-de-musica-oferta-bolsas-para-cursos-de-instrumentos-canto-lirico-e-choro-em-pelotas-no-rio-grande-do-sul",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sescamapa.com.br/artigo/sesc-amapa-retoma-eventos-literarios-no-projeto-sextou-com-poesia-trazendo-artistas-do-coletivo-juremas-na-primeira-edicao",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sescamapa.com.br/artigo/artista-amapaense-leva-discussao-sobre-praticas-de-arte-educacao-no-estado-para-evento-nacional",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sescamapa.com.br/artigo/edital-programa-de-comprometimento-e-gratuidade-2021",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sescamapa.com.br/artigo/edital-de-doacao-de-bens-moveis",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sescamapa.com.br/artigo/sesc-amapa-divulga-resultado-do-edital-de-chamamento-publico-para-fins-de-credenciamento-de-propostas-de-apresentacoes-artisticas-de-musica",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sescamapa.com.br/artigo/sesc-amapa-inicia-as-inscricoes-para-o-edital-de-chamamento-publico-para-credenciamento-de-propostas-de-apresentacoes-artisticas-de-musica",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sescamapa.com.br/artigo/edital-de-pauta-para-galeria-de-artes-antonio-munhoz-lopez",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sescamapa.com.br/artigo/juizado-da-infancia-de-macapa-edita-portaria-que-regulamenta-participacao-de-criancas-e-adolescentes-em-eventos-carnavalescos",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sescamapa.com.br/artigo/convocacao-edital-n-19-0004",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sescamapa.com.br/artigo/aviso-de-leilao",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sescamapa.com.br/artigo/aviso-de-edital-de-leilao-publico-n-19-001",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.sescamapa.com.br/artigo/sesc-amapa-realiza-evento-de-vivencia-literaria-com-a-apresentacao-mare-literaria",
+      "status": "erro",
+      "http": 0
     },
     {
       "url": "https://topoleiloes.com.br/leilao/3255/semsep-sorriso-sucatas-aproveitaveis-com-motor-inservivel",
