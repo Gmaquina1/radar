@@ -1,16 +1,16 @@
 {
-  "executado_em": "2026-08-24T23:01:42-03:00",
+  "executado_em": "2026-08-25T04:19:50-03:00",
   "lotes_antes": 259,
-  "lotes_depois": 259,
-  "lotes_realmente_novos": 0,
+  "lotes_depois": 439,
+  "lotes_realmente_novos": 180,
   "lotes_removidos_ou_encerrados": 0,
   "lotes_preservados": 0,
-  "lotes_capturados_agora": 14472,
-  "lotes_capturados_com_chave_nova": 8341,
-  "eventos_analisados": 3183,
-  "eventos_com_lotes": 1055,
-  "eventos_com_erro": 68,
-  "eventos_bloqueados": 16,
+  "lotes_capturados_agora": 14373,
+  "lotes_capturados_com_chave_nova": 8288,
+  "eventos_analisados": 3179,
+  "eventos_com_lotes": 1051,
+  "eventos_com_erro": 59,
+  "eventos_bloqueados": 12,
   "links_invalidos": 46,
   "quantidade_coletada_por_leiloeiro": {
     "alfaleiloes.com": 21,
@@ -39,18 +39,17 @@
     "goias.gov.br": 12,
     "goldenlance.com.br": 423,
     "gov.br": 44,
-    "grupolance.com.br": 294,
-    "hastapublica.com.br": 50,
+    "grupolance.com.br": 292,
+    "hastapublica.com.br": 47,
     "hisaleiloes.com.br": 307,
     "hml-webv2.sodresantoro.com.br": 98,
     "jeleiloes.com.br": 668,
     "jfal.jus.br": 36,
-    "jmleiloes.leilao.br": 6,
+    "jmleiloes.leilao.br": 5,
     "jrleiloes.com.br": 2,
     "kleiloes.com.br": 180,
     "kronleiloes.com.br": 5,
     "kwara.com.br": 201,
-    "lancecertoleiloes.com.br": 1,
     "lancejusto.com.br": 2,
     "lancevip.com.br": 227,
     "lbleiloes.com.br": 97,
@@ -60,11 +59,11 @@
     "leilaobrasil.com.br": 737,
     "leilaoimovelcaixa.com.br": 221,
     "leilaoonline.com.br": 347,
-    "leiloai.com": 69,
+    "leiloai.com": 67,
     "leiloeiropublico.com.br": 13,
-    "leiloesbr.com.br": 2,
+    "leiloesbr.com.br": 5,
     "leiloesfreire.com.br": 221,
-    "leiloesjudiciais.com.br": 553,
+    "leiloesjudiciais.com.br": 550,
     "leiloesoliveira.com.br": 150,
     "leiloespb.com.br": 111,
     "leje.com.br": 114,
@@ -86,8 +85,8 @@
     "peterlongoleiloes.com.br": 120,
     "portaldoleiloeiro.com.br": 48,
     "portalzuk.com.br": 51,
-    "proleilao.com.br": 725,
-    "ricardogomesleiloes.com.br": 159,
+    "proleilao.com.br": 435,
+    "ricardogomesleiloes.com.br": 127,
     "rochaleiloes.com.br": 2,
     "rofremleiloes.com.br": 71,
     "rogeriomenezes.com.br": 5,
@@ -95,18 +94,19 @@
     "rpleiloes.com.br": 57,
     "sabbagleiloes.com.br": 819,
     "sandrasantosleiloes.com.br": 119,
-    "sandroleiloeiro.com.br": 496,
+    "sandroleiloeiro.com.br": 484,
     "saraivaleiloes.com.br": 127,
     "satoleiloes.com.br": 1,
     "schulmannleiloes.com.br": 1,
     "sfleiloes.com.br": 72,
     "spencerleiloes.com.br": 105,
-    "spyleiloes.com.br": 146,
+    "spyleiloes.com.br": 145,
     "static.suporteleiloes.com.br": 1,
     "suedpeterleiloes.com.br": 87,
-    "superbid.net": 537,
+    "superbid.net": 771,
     "swleiloes.com.br": 199,
     "topoleiloes.com.br": 82,
+    "trt16.jus.br": 11,
     "tulioleiloes.com.br": 66,
     "vardanaleiloes.com.br": 104,
     "vargasepintoleiloes.com.br": 20,
@@ -118,43 +118,19 @@
   },
   "erros_por_leiloeiro": {
     "amaralleiloes.com.br": 1,
-    "andradeleiloes.com.br": 1,
-    "apabrfleiloes.com.br": 1,
     "bidgo.com.br": 1,
     "cargneluttileiloes.com.br": 1,
     "jfal.jus.br": 3,
-    "leilao.detran.mg.gov.br": 2,
+    "jmleiloes.leilao.br": 2,
+    "lancecertoleiloes.com.br": 1,
+    "leilao.detran.mg.gov.br": 7,
     "leilaoimovelcaixa.com.br": 4,
     "licitardigital.1doc.com.br": 1,
-    "mapadoleilao.com.br": 2,
-    "patiorochaleiloes.com.br": 1,
-    "pwleiloes.com.br": 1,
     "sescamapa.com.br": 26,
     "sodressantoro.com.br": 8,
-    "tre-ba.jus.br": 4,
-    "trt16.jus.br": 11
+    "tre-ba.jus.br": 4
   },
   "urls_que_falharam": [
-    {
-      "url": "https://www.apabrfleiloes.com.br/leilao/retroescavadeiras-caminhoes-onibus-e-carros/479/#Pagina=1&Index=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.pwleiloes.com.br/leilao/prefeitura-municipal-de-aracitaba/592/#Pagina=1&Index=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.andradeleiloes.com.br/leilao/199/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.patiorochaleiloes.com.br/leilao/856/lotes?page=1",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
     {
       "url": "https://www.bidgo.com.br/leilao/imoveis-em-joinville-sc-24-06-2026-16-40-27/lotes/lista",
       "status": "bloqueado_http_403",
@@ -176,19 +152,19 @@
       "http": 404
     },
     {
+      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3409/2026",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://youtu.be/9vmt3PI4aw0",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
       "url": "https://licitardigital.1doc.com.br/verificacao/226C-9914-02F8-C7C8",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://trt16.jus.br/servicos/publicacoes/leilao-judicial",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://trt16.jus.br/sites/portal/files/roles/leilao_unificado/Edital%201%C2%BA%20Leil%C3%A3o%202026.pdf",
-      "status": "erro",
-      "http": 0
     },
     {
       "url": "https://hml-web.sodresantoro.com.br/",
@@ -241,22 +217,37 @@
       "http": 404
     },
     {
+      "url": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/itemlist/tag/LIENA%C3%87%C3%83O%20DE%20BENS%20IM%C3%93VEIS%20DE%20DOM%C3%8DNIO%20DO%20ESTADO%20DO%20CEAR%C3%81?format=feed&start=0",
+      "status": "http_503",
+      "http": 503
+    },
+    {
       "url": "https://www.grupolance.com.br/imoveis/terrenos-e-lotes/sp/sao-paulo/terreno-at-3236m2-vila-independencia-sao-paulo-sp-28463",
       "status": "http_404",
       "http": 404
     },
     {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2024/3-leilao-unificado-1-praca/",
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2026/2-leilao-unificado-2-praca/",
       "status": "erro",
       "http": 0
     },
     {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2024/1-leilao-unificado-1-praca/",
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2026/1-leilao-unificado-2-praca/",
       "status": "erro",
       "http": 0
     },
     {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2023/4-leilao-unificado-2-praca/",
+      "url": "https://www.jfal.jus.br/tags/edital-de-chamamento/",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.jmleiloes.leilao.br/oferta/4778495",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.jmleiloes.leilao.br/evento/corporativo-789981?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
       "status": "erro",
       "http": 0
     },
@@ -279,6 +270,11 @@
       "url": "https://www.leilaoimovelcaixa.com.br/imovel-caixa/al/maceio/casa-em-leilao-em-maceio-al-imovel-caixa-economica-federal-cef-2893061-8787704729265",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://youtu.be/9vmt3PI4aw0",
+      "status": "bloqueado_http_429",
+      "http": 429
     },
     {
       "url": "https://leiloai.com/leilao/0cbd1af8-83f7-4729-ac9a-80fefb04727c",
@@ -371,7 +367,17 @@
       "http": 404
     },
     {
-      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/2780/2025",
+      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3314/2026",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3419/2026",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3492/2026",
       "status": "erro",
       "http": 0
     },
@@ -381,19 +387,24 @@
       "http": 0
     },
     {
+      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3390/2026",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3288/2026",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.lancecertoleiloes.com.br/home",
+      "status": "erro",
+      "http": 0
+    },
+    {
       "url": "https://mjleiloes.com.br/leiloes/99?slug=leilao-da-prefeitura-de-cabreuva-sp-veiculos-tratores-e-outros",
       "status": "http_404",
       "http": 404
-    },
-    {
-      "url": "https://mapadoleilao.com.br/planos",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://mapadoleilao.com.br/blog",
-      "status": "erro",
-      "http": 0
     },
     {
       "url": "https://sodressantoro.com.br/quem-somos",
@@ -511,11 +522,6 @@
       "http": 404
     },
     {
-      "url": "https://www.superbid.net/evento/789627",
-      "status": "http_400",
-      "http": 400
-    },
-    {
       "url": "https://www.tre-ba.jus.br/servicos-judiciais/leiloes-judiciais/leiloes-judiciais",
       "status": "bloqueado_http_403",
       "http": 403
@@ -534,51 +540,6 @@
       "url": "https://www.tre-ba.jus.br/servicos-judiciais/leiloes-judiciais",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://trt16.jus.br/sites/portal/files/roles/leilao_unificado/EDITAL-DE-LEILAO-n-01-2025.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://trt16.jus.br/sites/portal/files/roles/leilao_unificado/EDITAL_DE_LEILAO_n_02.2024.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://trt16.jus.br/sites/portal/files/roles/leilao_unificado/EDITAL_DE_LEILAO_%20n_01.2023_assinado.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://trt16.jus.br/sites/portal/files/roles/leilao_unificado/NPP%20-%20Edital%20Leil%C3%A3o%2002.2022.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://trt16.jus.br/site/conteudo/publicacoes/leilaojudicial/EDITAL_LEILAO_2022_e_ANEXO-ASSINADO.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://trt16.jus.br/site/conteudo/publicacoes/leilaojudicial/EDITAL_DE_LEILAO_JUDICIAL_COM__ANEXO_2019_001.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://trt16.jus.br/site/conteudo/publicacoes/leilaojudicial/EDITAL_DE_LEILAO_JUDICIAL_COM__ANEXO_2018_002.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://trt16.jus.br/site/conteudo/publicacoes/leilaojudicial/EDITAL_DE_LEILAO_JUDICIAL_E_INTIMACAO_COM_ANEXO-002.pdf",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://trt16.jus.br/site/conteudo/publicacoes/leilaojudicial/EDITAL_DE_LEILAO_JUDICIAL_E_INTIMACAO.pdf",
-      "status": "erro",
-      "http": 0
     },
     {
       "url": "https://sescamapa.com.br/licitacao/leilao/leilao-publico-para-alienacao-de-veiculos-integrantes-do-patrimonio-do-sesc-dr-ap-2026",
