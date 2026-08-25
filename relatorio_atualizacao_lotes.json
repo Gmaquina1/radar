@@ -1,15 +1,15 @@
 {
-  "executado_em": "2026-08-25T04:19:50-03:00",
-  "lotes_antes": 259,
-  "lotes_depois": 439,
-  "lotes_realmente_novos": 180,
-  "lotes_removidos_ou_encerrados": 0,
+  "executado_em": "2026-08-25T10:21:26-03:00",
+  "lotes_antes": 439,
+  "lotes_depois": 359,
+  "lotes_realmente_novos": 22,
+  "lotes_removidos_ou_encerrados": 64,
   "lotes_preservados": 0,
-  "lotes_capturados_agora": 14373,
-  "lotes_capturados_com_chave_nova": 8288,
-  "eventos_analisados": 3179,
-  "eventos_com_lotes": 1051,
-  "eventos_com_erro": 59,
+  "lotes_capturados_agora": 14489,
+  "lotes_capturados_com_chave_nova": 8312,
+  "eventos_analisados": 3177,
+  "eventos_com_lotes": 1061,
+  "eventos_com_erro": 83,
   "eventos_bloqueados": 12,
   "links_invalidos": 46,
   "quantidade_coletada_por_leiloeiro": {
@@ -18,12 +18,11 @@
     "allianceleiloes.com.br": 26,
     "amleiloeiro.com.br": 35,
     "api.whatsapp.com": 60,
-    "belt.al.ce.gov.br": 63,
-    "bsbleiloes.com.br": 869,
+    "belt.al.ce.gov.br": 60,
+    "bsbleiloes.com.br": 868,
     "casadeleiloes.com.br": 123,
     "celsocunhaleiloes.com.br": 1,
     "centralsuldeleiloes.com.br": 170,
-    "claudiokussleiloes.com.br": 1,
     "colossoleiloes.com.br": 78,
     "compraremleilao.com.br": 7,
     "compras.es.gov.br": 2,
@@ -39,17 +38,19 @@
     "goias.gov.br": 12,
     "goldenlance.com.br": 423,
     "gov.br": 44,
-    "grupolance.com.br": 292,
-    "hastapublica.com.br": 47,
+    "grupolance.com.br": 302,
+    "hastapublica.com.br": 49,
     "hisaleiloes.com.br": 307,
+    "hml-web.sodresantoro.com.br": 5,
     "hml-webv2.sodresantoro.com.br": 98,
-    "jeleiloes.com.br": 668,
-    "jfal.jus.br": 36,
-    "jmleiloes.leilao.br": 5,
+    "jeleiloes.com.br": 666,
+    "jfal.jus.br": 14,
+    "jmleiloes.leilao.br": 6,
     "jrleiloes.com.br": 2,
     "kleiloes.com.br": 180,
     "kronleiloes.com.br": 5,
     "kwara.com.br": 201,
+    "lancecertoleiloes.com.br": 1,
     "lancejusto.com.br": 2,
     "lancevip.com.br": 227,
     "lbleiloes.com.br": 97,
@@ -57,15 +58,16 @@
     "leilao.detran.mg.gov.br": 129,
     "leilao.sodresantoro.com.br": 3,
     "leilaobrasil.com.br": 737,
-    "leilaoimovelcaixa.com.br": 221,
+    "leilaoimovelcaixa.com.br": 217,
     "leilaoonline.com.br": 347,
-    "leiloai.com": 67,
+    "leilo.com.br": 2,
+    "leiloai.com": 69,
     "leiloeiropublico.com.br": 13,
-    "leiloesbr.com.br": 5,
+    "leiloesbr.com.br": 3,
     "leiloesfreire.com.br": 221,
-    "leiloesjudiciais.com.br": 550,
+    "leiloesjudiciais.com.br": 556,
     "leiloesoliveira.com.br": 150,
-    "leiloespb.com.br": 111,
+    "leiloespb.com.br": 112,
     "leje.com.br": 114,
     "liderleiloes.com.br": 115,
     "lilianportugal.com.br": 236,
@@ -78,15 +80,16 @@
     "megaleiloes.com.br": 63,
     "mjleiloes.com.br": 201,
     "nakakogueleiloes.com.br": 11,
-    "nordesteleiloes.com.br": 34,
+    "nordesteleiloes.com.br": 32,
     "okleiloes.com.br": 32,
+    "pactoleiloes.com.br": 2,
     "parquedosleiloes.com.br": 176,
     "peterlongo.leilao.br": 82,
     "peterlongoleiloes.com.br": 120,
     "portaldoleiloeiro.com.br": 48,
-    "portalzuk.com.br": 51,
-    "proleilao.com.br": 435,
-    "ricardogomesleiloes.com.br": 127,
+    "portalzuk.com.br": 53,
+    "proleilao.com.br": 620,
+    "ricardogomesleiloes.com.br": 62,
     "rochaleiloes.com.br": 2,
     "rofremleiloes.com.br": 71,
     "rogeriomenezes.com.br": 5,
@@ -97,7 +100,6 @@
     "sandroleiloeiro.com.br": 484,
     "saraivaleiloes.com.br": 127,
     "satoleiloes.com.br": 1,
-    "schulmannleiloes.com.br": 1,
     "sfleiloes.com.br": 72,
     "spencerleiloes.com.br": 105,
     "spyleiloes.com.br": 145,
@@ -120,15 +122,17 @@
     "amaralleiloes.com.br": 1,
     "bidgo.com.br": 1,
     "cargneluttileiloes.com.br": 1,
-    "jfal.jus.br": 3,
-    "jmleiloes.leilao.br": 2,
-    "lancecertoleiloes.com.br": 1,
-    "leilao.detran.mg.gov.br": 7,
+    "goias.gov.br": 1,
+    "hastapublica.com.br": 1,
+    "jfal.jus.br": 9,
+    "leilao.detran.mg.gov.br": 4,
     "leilaoimovelcaixa.com.br": 4,
     "licitardigital.1doc.com.br": 1,
+    "schulmannleiloes.com.br": 21,
     "sescamapa.com.br": 26,
     "sodressantoro.com.br": 8,
-    "tre-ba.jus.br": 4
+    "tre-ba.jus.br": 4,
+    "www10.goiania.go.gov.br": 1
   },
   "urls_que_falharam": [
     {
@@ -157,19 +161,19 @@
       "http": 0
     },
     {
-      "url": "https://youtu.be/9vmt3PI4aw0",
-      "status": "bloqueado_http_429",
-      "http": 429
-    },
-    {
       "url": "https://licitardigital.1doc.com.br/verificacao/226C-9914-02F8-C7C8",
       "status": "bloqueado_http_403",
       "http": 403
     },
     {
-      "url": "https://hml-web.sodresantoro.com.br/",
-      "status": "http_503",
-      "http": 503
+      "url": "https://www10.goiania.go.gov.br/transweb/Licitacoes.aspx",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://hastapublica.com.br/leilao/18157/ver-leilao",
+      "status": "erro",
+      "http": 0
     },
     {
       "url": "https://alleiloes.com.br/leilao/392/leilao-de-veiculos-em-santa-catarina",
@@ -217,7 +221,7 @@
       "http": 404
     },
     {
-      "url": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/itemlist/tag/LIENA%C3%87%C3%83O%20DE%20BENS%20IM%C3%93VEIS%20DE%20DOM%C3%8DNIO%20DO%20ESTADO%20DO%20CEAR%C3%81?format=feed&start=0",
+      "url": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/itemlist/tag/ATUA%C3%87%C3%83O%20DA%20AG%C3%8ANCIA%20REGULADORA%20DE%20SERVI%C3%87OS%20P%C3%9ABLICOS%20DELEGADOS%20DO%20ESTADO%20DO%20CEAR%C3%81%20%E2%80%93%20ARCE",
       "status": "http_503",
       "http": 503
     },
@@ -232,7 +236,17 @@
       "http": 0
     },
     {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2026/1-leilao-unificado-2-praca/",
+      "url": "https://www.jfal.jus.br/tags/evento/",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2025/2-leilao-unificado-2-praca/",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2026/1-leilao-unificado-1-praca/",
       "status": "erro",
       "http": 0
     },
@@ -242,12 +256,27 @@
       "http": 0
     },
     {
-      "url": "https://www.jmleiloes.leilao.br/oferta/4778495",
+      "url": "https://www.jfal.jus.br/tags/edital/",
       "status": "erro",
       "http": 0
     },
     {
-      "url": "https://www.jmleiloes.leilao.br/evento/corporativo-789981?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc",
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2025/1-leilao-unificado-1-praca/",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2024/1-leilao-unificado-2-praca/",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2023/2-leilao-unificado-2-praca/",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://goias.gov.br/administracao/leiloes-2022/",
       "status": "erro",
       "http": 0
     },
@@ -270,11 +299,6 @@
       "url": "https://www.leilaoimovelcaixa.com.br/imovel-caixa/al/maceio/casa-em-leilao-em-maceio-al-imovel-caixa-economica-federal-cef-2893061-8787704729265",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://youtu.be/9vmt3PI4aw0",
-      "status": "bloqueado_http_429",
-      "http": 429
     },
     {
       "url": "https://leiloai.com/leilao/0cbd1af8-83f7-4729-ac9a-80fefb04727c",
@@ -367,17 +391,7 @@
       "http": 404
     },
     {
-      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3314/2026",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3419/2026",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3492/2026",
+      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/2780/2025",
       "status": "erro",
       "http": 0
     },
@@ -387,17 +401,7 @@
       "http": 0
     },
     {
-      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3390/2026",
-      "status": "erro",
-      "http": 0
-    },
-    {
       "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3288/2026",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.lancecertoleiloes.com.br/home",
       "status": "erro",
       "http": 0
     },
@@ -443,6 +447,111 @@
     },
     {
       "url": "https://sodressantoro.com.br/leilao/3",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=7008&imovel=IM%C3%93VEL-EM-MANGUINHOS",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=5668&imovel=SOBRELOJA-NO-CENTRO",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=5186&imovel=MACA%C3%89",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=5187&imovel=MACA%C3%89",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=5195&imovel=ILHA-DO-GOVERNADOR",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=6481&imovel=IM%C3%93VEL-NO-CENTRO",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=5757&imovel=17-SALAS-NO-CENTRO",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=3967&imovel=ANGRA-DOS-REIS",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=6569&imovel=IMOVEL-EM-VOLTA-REDONDA-2",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=6603&imovel=IM%C3%93VEL-EM-VIGARIO-GERAL",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=6864&imovel=IM%C3%93VEL-EM-IRAJ%C3%81",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=6622&imovel=GLEBA-EM-RESENDE",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=6631&imovel=IMOVEL-EM-INHAUMA",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=5357&imovel=ENGENHO-NOVO",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=5103&imovel=CENTRO",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=4087&imovel=CAMPOS-DOS-GOYTACAZES",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=6869&imovel=CAMPOS-DOS-GOYTACAZES",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=6870&imovel=CAMPOS-DOS-GOYTACAZES",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=5272&imovel=S%C3%83O-CRIST%C3%93V%C3%83O",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=6797&imovel=IM%C3%93VEL-NA-BARRA",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://schulmannleiloes.com.br/detalhe.php?id=6461&imovel=%C3%81rea-de-terras-em-Campos",
       "status": "erro",
       "http": 0
     },
