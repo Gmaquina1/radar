@@ -9,7 +9,6 @@ on:
     branches:
       - main
     paths-ignore:
-      - ".github/deep-discovery-trigger"
       - "licitacoes.json"
       - "licitacoes.html"
       - "status_licitacoes.json"
@@ -31,20 +30,7 @@ jobs:
     env:
       TZ: America/Sao_Paulo
       PYTHONUNBUFFERED: "1"
-      WEB_SEARCH_PROVIDER: openai
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      OPENAI_SEARCH_MODEL: ${{ vars.OPENAI_SEARCH_MODEL || 'gpt-5-mini' }}
-
-      # Configuração do Radar de leilões.
-      MAX_PAGES_PER_DOMAIN: "3"
-      MAX_URLS_PER_DOMAIN: "15"
-      MAX_DEPTH: "1"
       REQUEST_TIMEOUT: "10"
-      REQUEST_RETRIES: "1"
-      FAST_MAX_PORTALS: "30"
-      GLOBAL_WORKERS: "6"
-      DOMAIN_TIME_BUDGET: "20"
-      DISCOVERY_TIME_BUDGET: "600"
       PDF_MAX_BYTES: "15000000"
       PDF_MAX_PAGES: "120"
       PDF_PARSE_TIMEOUT: "20"
@@ -80,12 +66,11 @@ jobs:
           test -f licitacoes_template.html
           test -f executar_atualizacao_radar.py
 
-      - name: Atualizar leilões e lotes
+      - name: Atualizar somente os eventos do mapa e seus lotes
         shell: bash
         run: |
           set -o pipefail
           python executar_atualizacao_radar.py \
-            --modo rapido \
             --workers-mapa 24 \
             --workers-lotes 16 \
             --delay-lotes 0 \

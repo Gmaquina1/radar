@@ -20,6 +20,8 @@ from diagnostico_radar import build_status, write_status
 
 ROOT = Path(__file__).resolve().parent
 TIMEZONE = ZoneInfo("America/Sao_Paulo")
+MAP_EVENTS_FILE = "radar_leiloes_eventos_futuros.csv"
+EVENT_SOURCE = "google_my_maps"
 
 GENERATED_FILES = [
     "index.html",
@@ -37,12 +39,6 @@ GENERATED_FILES = [
     "status_atualizacao.json",
     "status_atualizacao.txt",
     "relatorio_atualizacao_lotes.json",
-    "eventos_descobertos_web.json",
-    "eventos_consolidados.csv",
-    "relatorio_descoberta_web.json",
-    "relatorio_cobertura_radar.json",
-    "portais_leiloes.json",
-    "novos_portais_descobertos.json",
 ]
 
 
@@ -336,7 +332,6 @@ def main() -> int:
     parser.add_argument("--workers-lotes", type=int, default=16)
     parser.add_argument("--delay-lotes", type=float, default=0)
     parser.add_argument("--sem-lotes", action="store_true")
-    parser.add_argument("--modo", choices=("rapido", "profundo"), default="rapido")
     args = parser.parse_args()
 
     previous_payload = read_json(ROOT / "lotes.json")
@@ -349,9 +344,6 @@ def main() -> int:
     previous_keys = lot_keys(previous_payload)
 
     results: list[dict] = []
-    discovery_report: dict = {}
-    discovery_status = "nao_executado"
-    discovery_step = {"status": "nao_executado"}
     lot_step = {"status": "nao_executado"}
 
     with tempfile.TemporaryDirectory(
@@ -400,37 +392,17 @@ def main() -> int:
             )
 
         if not args.sem_lotes:
-            discovery_step = run_step(
-                (
-                    "Descoberta profunda fora do mapa"
-                    if args.modo == "profundo"
-                    else "Atualizar lote incremental de portais conhecidos"
-                ),
-                [
-                    sys.executable,
-                    "descobrir_leiloes_web.py",
-                    (
-                        "--deep-discovery"
-                        if args.modo == "profundo"
-                        else "--quick-refresh"
-                    ),
-                ],
-                attempts=1,
-                timeout_seconds=7800 if args.modo == "profundo" else 900,
-            )
-            results.append(discovery_step)
-            # Complemento resiliente: falha externa não invalida a fonte mapa.
-            events_file = "eventos_consolidados.csv" if discovery_step["status"] == "ok" else "radar_leiloes_eventos_futuros.csv"
-            discovery_report = read_json(ROOT / "relatorio_descoberta_web.json")
-            discovery_status = discovery_report.get("status", discovery_step["status"])
-            print(f"INDEXADOR_EVENTOS: {events_file}", flush=True)
+            # Regra permanente do Radar: somente eventos cadastrados no
+            # Google My Maps podem alimentar a busca e a publicação de lotes.
+            print(f"FONTE_EVENTOS: {EVENT_SOURCE}", flush=True)
+            print(f"INDEXADOR_EVENTOS: {MAP_EVENTS_FILE}", flush=True)
             lot_step = run_step(
-                "Procurar novos lotes nos sites dos leiloeiros",
+                "Capturar lotes dos eventos cadastrados no Google My Maps",
                 [
                     sys.executable,
                     "indexador_lotes.py",
                     "--eventos",
-                    events_file,
+                    MAP_EVENTS_FILE,
                     "--delay",
                     str(args.delay_lotes),
                     "--workers",
@@ -514,11 +486,14 @@ def main() -> int:
         status = build_status(
             {
                 "status": "ok",
-                "modo": args.modo,
+                "modo": "somente_mapa",
+                "fonte_eventos": EVENT_SOURCE,
+                "somente_eventos_do_mapa": True,
                 "duracao_segundos": round(time.time() - pipeline_started, 2),
                 "ultima_execucao": iso_now(),
                 "mensagem": (
-                    "Eventos, lotes e site atualizados com sucesso."
+                    "Eventos do Google My Maps, seus lotes e o site "
+                    "foram atualizados com sucesso."
                 ),
                 "base_anterior_restaurada": False,
                 "lotes_antes": previous_total,
@@ -526,14 +501,14 @@ def main() -> int:
                 "lotes_novos_detectados": new_count,
                 "lotes_removidos_ou_encerrados": removed_count,
                 "status_mapa": event_step["status"],
-                "status_openai": discovery_report.get("openai_connection", "inativa" if args.modo == "rapido" else "erro"),
-                "status_descoberta": discovery_status,
-                "status_descoberta_web": discovery_status,
+                "status_openai": "desativada_para_leiloes",
+                "status_descoberta": "desativada_somente_mapa",
+                "status_descoberta_web": "desativada_somente_mapa",
                 "status_lotes": lot_step["status"] if not args.sem_lotes else "nao_executado",
                 "status_site": "ok",
-                "openai_funcionou": discovery_report.get("openai_connection") == "OK",
-                "descoberta_funcionou": discovery_step["status"] == "ok" and discovery_status in {"ok", "parcial"},
-                "descoberta_web_funcionou": discovery_step["status"] == "ok" and discovery_status in {"ok", "parcial"},
+                "openai_funcionou": False,
+                "descoberta_funcionou": False,
+                "descoberta_web_funcionou": False,
                 "etapas": results,
             }
         )

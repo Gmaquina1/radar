@@ -15,23 +15,26 @@ https://gmaquina1.github.io/radar/
 - usa carrosséis com nove fotografias reais incorporadas ao HTML, com troca automática e gesto de deslizar no celular;
 - captura a fotografia verdadeira de cada lote quando o leiloeiro disponibiliza e usa uma imagem real da categoria como segurança;
 - salva oportunidades no próprio aparelho do visitante;
-- atualiza mapa, eventos, lotes e editais todos os dias às 16h de Brasília;
+- usa exclusivamente os eventos cadastrados no Google My Maps;
+- atualiza o mapa e os lotes vinculados a esses eventos a cada 6 horas;
 - mantém uma cópia dos lotes de eventos ativos quando um portal bloqueia temporariamente a consulta.
 
 ## Atualização automática
 
-O workflow `.github/workflows/atualizar-radar.yml` executa diariamente às 19:00 UTC, equivalente a 16:00 no horário de Brasília.
+O workflow `.github/workflows/atualizar-radar.yml` executa a cada 6 horas.
 
 O processo executa, nesta ordem:
 
 1. atualização do Google My Maps e leitura das datas;
-2. leitura dos sites dos leiloeiros e dos editais PDF;
+2. leitura somente dos sites e editais vinculados aos eventos do mapa;
 3. indexação dos lotes com 16 trabalhadores;
 4. exclusão de eventos e lotes encerrados;
 5. geração do `index.html` Premium;
 6. testes, diagnóstico e commit automático.
 
-Também é possível executar manualmente em **Actions → Atualizar Radar diariamente as 16h → Run workflow**.
+Também é possível executar manualmente em **Actions → Atualizar Radar completo → Run workflow**.
+
+Eventos encontrados por busca na internet, OpenAI ou bases paralelas não entram no Radar de Leilões.
 
 ## Arquivos principais
 
@@ -42,7 +45,7 @@ Também é possível executar manualmente em **Actions → Atualizar Radar diari
 - `indexador_lotes.py`: lê sites, APIs, HTML e documentos PDF;
 - `lotes.json`: base dos lotes;
 - as fotografias reais dos carrosséis já estão incorporadas em `index.html` e `site_template.html`;
-- `.github/workflows/atualizar-radar.yml`: agendamento diário.
+- `.github/workflows/atualizar-radar.yml`: agendamento a cada 6 horas.
 
 ## GitHub Pages
 

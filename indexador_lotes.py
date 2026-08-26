@@ -1046,30 +1046,149 @@ def upcoming_lot(row: dict[str, str], now: datetime | None = None) -> bool:
     return event_at > now
 
 
-def clean_existing_outputs(json_path: Path, csv_path: Path) -> int:
-    try:
-        payload = json.loads(json_path.read_text(encoding="utf-8"))
-    except Exception as exc:
-        raise SystemExit(f"Nao foi possivel limpar {json_path}: {exc}")
-    if not isinstance(payload, dict):
-        raise SystemExit(f"Formato invalido em {json_path}")
-    rows = [corrigir_dados(row) for row in payload.get("lotes", []) if isinstance(row, dict) and valid_lot(row)]
-    payload["lotes"] = rows
-    payload["total_lotes"] = len(rows)
-    payload["total_lotes_preservados"] = sum(
-        1 for row in rows if str(row.get("status_captura", "")).startswith("preservado_apos_falha:")
-    )
-    json_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    write_csv(csv_path, rows)
-    return len(rows)
-
-
 def event_key(value: str) -> str:
     return slugify(value or "").casefold()
 
 
 def event_date_key(name: str, event_date: str) -> str:
     return event_key(name) + "|" + clean_text(event_date)
+
+
+def canonical_event_url(value: str) -> str:
+    """Normaliza uma URL para comparar a origem do lote com os eventos do mapa."""
+    text = clean_text(value)
+    if not text:
+        return ""
+    try:
+        parts = urllib.parse.urlsplit(text)
+    except ValueError:
+        return ""
+    query = [
+        (key, item)
+        for key, item in urllib.parse.parse_qsl(parts.query, keep_blank_values=True)
+        if not key.casefold().startswith("utm_")
+    ]
+    return urllib.parse.urlunsplit(
+        (
+            parts.scheme.casefold(),
+            parts.netloc.casefold(),
+            parts.path.rstrip("/") or "/",
+            urllib.parse.urlencode(query),
+            "",
+        )
+    )
+
+
+def map_event_indexes(
+    events: list[dict[str, str]],
+) -> tuple[dict[str, dict[str, str]], dict[str, str]]:
+    by_key: dict[str, dict[str, str]] = {}
+    key_by_url: dict[str, str] = {}
+    for event in events:
+        key = event_date_key(event.get("nome", ""), event.get("data", ""))
+        if not key.strip("|"):
+            continue
+        by_key[key] = event
+        for field in ("site_leiloeiro", "link", "link_edital", "descricao"):
+            for raw_url in all_urls(event.get(field, "")):
+                url = canonical_event_url(unwrap_google_url(raw_url))
+                if url:
+                    key_by_url[url] = key
+    return by_key, key_by_url
+
+
+def matching_map_event_key(
+    row: dict,
+    events_by_key: dict[str, dict[str, str]],
+    key_by_url: dict[str, str],
+) -> str:
+    key = event_date_key(str(row.get("evento", "")), str(row.get("data", "")))
+    if key in events_by_key:
+        return key
+    for field in (
+        "link_evento",
+        "link_lote",
+        "fonte",
+        "url_descoberta",
+        "link",
+        "final_url",
+    ):
+        url = canonical_event_url(str(row.get(field, "")))
+        if url in key_by_url:
+            return key_by_url[url]
+    return ""
+
+
+def clean_existing_outputs(
+    json_path: Path,
+    csv_path: Path,
+    events_path: Path = EVENTOS_CSV,
+) -> int:
+    """Mantem na base somente lotes vinculados aos eventos atuais do My Maps."""
+    try:
+        payload = json.loads(json_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        raise SystemExit(f"Nao foi possivel limpar {json_path}: {exc}")
+    if not isinstance(payload, dict):
+        raise SystemExit(f"Formato invalido em {json_path}")
+
+    events = read_events(events_path)
+    events_by_key, key_by_url = map_event_indexes(events)
+    source_rows = payload.get("lotes", [])
+    source_rows = source_rows if isinstance(source_rows, list) else []
+    rows: list[dict[str, str]] = []
+    lot_event_keys: set[str] = set()
+    for raw in source_rows:
+        if not isinstance(raw, dict) or not valid_lot(raw):
+            continue
+        row = corrigir_dados(raw)
+        matched_key = matching_map_event_key(row, events_by_key, key_by_url)
+        if not matched_key:
+            continue
+        rows.append(row)
+        lot_event_keys.add(matched_key)
+
+    source_logs = payload.get("logs", [])
+    source_logs = source_logs if isinstance(source_logs, list) else []
+    logs = [
+        log
+        for log in source_logs
+        if isinstance(log, dict) and matching_map_event_key(log, events_by_key, key_by_url)
+    ]
+    payload.update(
+        {
+            "total_eventos_lidos": len(events),
+            "total_lotes": len(rows),
+            "total_lotes_capturados_agora": 0,
+            "total_lotes_preservados": sum(
+                1
+                for row in rows
+                if str(row.get("status_captura", "")).startswith("preservado_apos_falha:")
+            ),
+            "eventos_com_lotes": len(lot_event_keys),
+            "eventos_sem_lotes": max(0, len(events_by_key) - len(lot_event_keys)),
+            "eventos_com_erro_ou_bloqueio": sum(
+                1
+                for log in logs
+                if any(
+                    word in str(log.get("status", ""))
+                    for word in ("erro", "bloqueado", "http_0")
+                )
+            ),
+            "fonte_eventos": "google_my_maps",
+            "somente_eventos_do_mapa": True,
+            "lotes_descartados_fora_do_mapa": max(0, len(source_rows) - len(rows)),
+            "filtrado_somente_mapa_em": datetime.now(TIMEZONE).isoformat(timespec="seconds"),
+            "lotes": rows,
+            "logs": logs,
+        }
+    )
+    json_path.write_text(
+        json.dumps(corrigir_dados(payload), ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    write_csv(csv_path, rows)
+    return len(rows)
 
 
 def preserve_unavailable_lots(
@@ -1193,7 +1312,7 @@ def main() -> None:
     args = parser.parse_args()
 
     if args.somente_limpeza:
-        total = clean_existing_outputs(Path(args.saida), Path(args.csv))
+        total = clean_existing_outputs(Path(args.saida), Path(args.csv), Path(args.eventos))
         print(json.dumps({"total_lotes": total, "modo": "somente_limpeza"}, ensure_ascii=False))
         return
 
@@ -1250,6 +1369,8 @@ def main() -> None:
             for log in logs
             if any(word in str(log.get("status", "")) for word in ("erro", "bloqueado", "http_0"))
         ),
+        "fonte_eventos": "google_my_maps",
+        "somente_eventos_do_mapa": True,
         "lotes": lots,
         "logs": logs,
     }

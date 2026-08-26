@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -51,6 +52,21 @@ def count_csv(path: Path) -> int:
         return 0
 
 
+def embedded_radar_data(html: str) -> dict:
+    match = re.search(
+        r'<script[^>]*\bid=["\']radar-data["\'][^>]*>(.*?)</script>',
+        html,
+        re.IGNORECASE | re.DOTALL,
+    )
+    if not match:
+        return {}
+    try:
+        value = json.loads(match.group(1))
+    except json.JSONDecodeError:
+        return {}
+    return value if isinstance(value, dict) else {}
+
+
 def iso_now() -> str:
     return datetime.now(TIMEZONE).isoformat(timespec="seconds")
 
@@ -84,8 +100,12 @@ def build_status(extra: dict | None = None) -> dict:
     workflow_path = ROOT / ".github/workflows/atualizar-radar.yml"
     workflow = workflow_path.read_text(encoding="utf-8", errors="replace") if workflow_path.exists() else ""
 
+    pipeline_path = ROOT / "executar_atualizacao_radar.py"
+    pipeline = pipeline_path.read_text(encoding="utf-8", errors="replace") if pipeline_path.exists() else ""
+
     leiloes_path = ROOT / "leiloes.html"
     leiloes_html = leiloes_path.read_text(encoding="utf-8", errors="replace") if leiloes_path.exists() else ""
+    published = embedded_radar_data(leiloes_html)
 
     event_csv_total = count_csv(ROOT / "radar_leiloes_eventos_futuros.csv")
     yard_csv_total = count_csv(ROOT / "radar_leiloes_patios.csv")
@@ -93,6 +113,10 @@ def build_status(extra: dict | None = None) -> dict:
 
     lot_list = lots.get("lotes", [])
     lot_json_total = len(lot_list) if isinstance(lot_list, list) else 0
+    published_events = published.get("eventos", [])
+    published_lots = published.get("lotes", [])
+    published_event_total = len(published_events) if isinstance(published_events, list) else 0
+    published_lot_total = len(published_lots) if isinstance(published_lots, list) else 0
 
     events_updated = summary.get("atualizado_em", "")
     lots_updated = lots.get("atualizado_em", "")
@@ -106,11 +130,27 @@ def build_status(extra: dict | None = None) -> dict:
         "workflow_agendado_6h": '17 */6 * * *' in workflow,
         "workflow_pode_salvar": "contents: write" in workflow,
         "workflow_executa_indexador": "executar_atualizacao_radar.py" in workflow,
+        "workflow_sem_busca_externa": (
+            "OPENAI_API_KEY" not in workflow
+            and "descobrir_leiloes_web.py" not in workflow
+        ),
+        "pipeline_somente_mapa": (
+            'MAP_EVENTS_FILE = "radar_leiloes_eventos_futuros.csv"' in pipeline
+            and '"descobrir_leiloes_web.py"' not in pipeline
+        ),
         "eventos_csv_ok": event_csv_total > 0,
         "lotes_json_ok": lot_json_total > 0,
         "lotes_csv_consistente": lot_csv_total == lot_json_total,
+        "base_lotes_somente_mapa": (
+            lots.get("fonte_eventos") == "google_my_maps"
+            and lots.get("somente_eventos_do_mapa") is True
+        ),
         "site_gerado": leiloes_path.exists() and leiloes_path.stat().st_size > 100_000,
         "base_embutida_no_site": 'id="radar-data"' in leiloes_html,
+        "site_somente_mapa": (
+            published.get("fonte_eventos") == "Google My Maps"
+            and published.get("somente_eventos_do_mapa") is True
+        ),
         "dominio_configurado": (ROOT / "CNAME").exists() and (ROOT / "CNAME").read_text(encoding="utf-8", errors="replace").strip() == "radar.empaez.com",
         "base_eventos_recente": events_age is not None and events_age <= 12,
         "base_lotes_recente": lots_age is not None and lots_age <= 12,
@@ -125,10 +165,15 @@ def build_status(extra: dict | None = None) -> dict:
         "idade_base_lotes_horas": lots_age,
         "eventos_futuros": int(summary.get("eventos_futuros_ou_hoje") or event_csv_total),
         "patios": int(summary.get("patios") or yard_csv_total),
-        "lotes": int(lots.get("total_lotes") or lot_json_total),
+        "eventos_publicados": published_event_total,
+        "lotes": published_lot_total or int(lots.get("total_lotes") or lot_json_total),
+        "lotes_publicados": published_lot_total,
+        "lotes_na_base": int(lots.get("total_lotes") or lot_json_total),
         "lotes_capturados_agora": int(lots.get("total_lotes_capturados_agora") or 0),
         "lotes_preservados": int(lots.get("total_lotes_preservados") or 0),
         "eventos_indexados_com_lotes": int(lots.get("eventos_com_lotes") or 0),
+        "fonte_eventos": "google_my_maps",
+        "somente_eventos_do_mapa": True,
         "checks": checks,
         "arquivos_faltando": missing,
     }
@@ -176,7 +221,17 @@ def main() -> int:
         "lotes_removidos_ou_encerrados",
         "etapas",
     )
-    keep = {key: previous[key] for key in keep_keys if key in previous}
+    previous_is_map_only = (
+        previous.get("fonte_eventos") == "google_my_maps"
+        and previous.get("somente_eventos_do_mapa") is True
+        and "descobrir_leiloes_web.py"
+        not in json.dumps(previous.get("etapas", []), ensure_ascii=False)
+    )
+    keep = (
+        {key: previous[key] for key in keep_keys if key in previous}
+        if previous_is_map_only
+        else {}
+    )
 
     status = build_status(keep)
     write_status(status)

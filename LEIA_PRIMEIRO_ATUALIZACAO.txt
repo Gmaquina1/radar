@@ -8,7 +8,7 @@ O que foi alterado:
 1. A atualização automática passa a executar a cada 6 horas.
 2. O envio deste pacote para a branch main inicia uma atualização automaticamente.
 3. Continua existindo o botão Run workflow na aba Actions.
-4. A atualização procura novos eventos e novos lotes.
+4. A atualização aceita somente eventos cadastrados no Google My Maps e procura os lotes vinculados a eles.
 5. O site é gerado novamente e os dados são salvos automaticamente.
 6. Se a coleta falhar, a base anterior é restaurada.
 7. O sistema não aceita uma base vazia ou muito menor por erro de coleta.
@@ -31,5 +31,5 @@ Depois:
 
 IMPORTANTE
 
-Os novos lotes não puderam ser coletados dentro deste ambiente porque a coleta depende de acesso externo aos sites dos leiloeiros.
-Assim que o pacote for enviado ao GitHub, o GitHub Actions fará a coleta pela internet e publicará os novos dados.
+Os lotes dependem do acesso externo aos sites vinculados aos eventos do Google My Maps.
+Eventos encontrados fora do mapa não serão adicionados ao site.

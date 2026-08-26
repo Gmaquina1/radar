@@ -1,4 +1,4 @@
-name: Atualizar Radar e novos lotes
+name: Atualizar Radar somente pelo mapa
 
 on:
   workflow_dispatch:
@@ -57,7 +57,7 @@ jobs:
           test -f diagnostico_radar.py
           test -f .github/workflows/atualizar-radar.yml
 
-      - name: Procurar novos leilões e novos lotes
+      - name: Atualizar eventos do mapa e seus lotes
         id: atualizar
         continue-on-error: true
         shell: bash

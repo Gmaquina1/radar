@@ -13,6 +13,7 @@ import indexador_lotes as indexador
 import atualizar_radar_leiloes as atualizador
 import atualizar_licitacoes as licitacoes
 import descobrir_licitacoes_openai as licitacoes_openai
+import diagnostico_radar as diagnostico
 import executar_atualizacao_radar as pipeline
 import gerar_site_github as site
 import sanitizar_conteudo_externo as sanitizer
@@ -141,7 +142,8 @@ class RadarTests(unittest.TestCase):
                 "link_lote": shared,
             },
         ]
-        result = site.enrich_and_dedupe_lots(lots, [], now)
+        events = [{"nome": "Leilão teste", "data": "2026-12-31", "link": shared}]
+        result = site.enrich_and_dedupe_lots(lots, events, now)
         self.assertEqual([row["lote"] for row in result], ["01", "02"])
 
     def test_site_remove_repeticao_do_mesmo_lote(self) -> None:
@@ -153,19 +155,132 @@ class RadarTests(unittest.TestCase):
             "titulo": "Lote 01 - Escavadeira",
             "link_lote": "https://exemplo.com/leilao/1",
         }
-        result = site.enrich_and_dedupe_lots([lot, dict(lot)], [], now)
+        events = [{"nome": "Leilão teste", "data": "2026-12-31", "link": lot["link_lote"]}]
+        result = site.enrich_and_dedupe_lots([lot, dict(lot)], events, now)
         self.assertEqual(len(result), 1)
 
-    def test_site_carrega_oportunidade_verificada(self) -> None:
+    def test_site_descarta_lote_sem_evento_no_mapa(self) -> None:
+        now = datetime(2026, 7, 14, 16, 0, tzinfo=ZoneInfo("America/Sao_Paulo"))
+        events = [{
+            "nome": "Leilão do mapa",
+            "data": "2026-12-31",
+            "link": "https://exemplo.com/evento-do-mapa",
+        }]
+        lots = [
+            {
+                "evento": "Leilão do mapa",
+                "data": "2026-12-31",
+                "titulo": "Escavadeira cadastrada",
+                "link_evento": "https://exemplo.com/evento-do-mapa",
+            },
+            {
+                "evento": "Leilão descoberto fora do mapa",
+                "data": "2026-12-31",
+                "titulo": "Lote externo",
+                "link_evento": "https://externo.test/evento",
+            },
+        ]
+        result = site.enrich_and_dedupe_lots(lots, events, now)
+        self.assertEqual([row["titulo"] for row in result], ["Escavadeira cadastrada"])
+
+    def test_site_carrega_somente_a_base_indexada_do_mapa(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "oportunidades.json"
+            path = Path(directory) / "lotes.json"
             path.write_text(
-                '{"lotes":[{"data":"2026-08-04","titulo":"Garra Florestal"}]}',
+                '{"lotes":[{"data":"2026-12-31","titulo":"Escavadeira do mapa"}]}',
                 encoding="utf-8",
             )
-            with mock.patch.object(site, "VERIFIED_LOTS", path):
-                rows = site.read_verified_lots()
-        self.assertEqual(rows[0]["titulo"], "Garra Florestal")
+            with mock.patch.object(site, "ROOT", Path(directory)):
+                rows = site.read_lotes()
+        self.assertEqual(rows[0]["titulo"], "Escavadeira do mapa")
+
+    def test_pipeline_usa_exclusivamente_eventos_do_mapa(self) -> None:
+        source = Path(pipeline.__file__).read_text(encoding="utf-8")
+        root = Path(pipeline.__file__).resolve().parent
+        workflow = (root / ".github/workflows/atualizar-radar.yml").read_text(
+            encoding="utf-8"
+        )
+        self.assertEqual(
+            pipeline.MAP_EVENTS_FILE,
+            "radar_leiloes_eventos_futuros.csv",
+        )
+        self.assertEqual(pipeline.EVENT_SOURCE, "google_my_maps")
+        self.assertNotIn('"descobrir_leiloes_web.py"', source)
+        self.assertNotIn("descobrir_leiloes_web.py", workflow)
+        self.assertNotIn("OPENAI_API_KEY", workflow)
+        self.assertFalse(
+            (root / ".github/workflows/descoberta-profunda.yml").exists()
+        )
+
+    def test_limpeza_remove_lote_que_nao_pertence_ao_mapa(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            events_path = root / "eventos.csv"
+            lots_path = root / "lotes.json"
+            lots_csv_path = root / "lotes.csv"
+            events_path.write_text(
+                "nome,data,link,site_leiloeiro,link_edital,descricao\n"
+                "Leilão do mapa,2026-12-31,https://exemplo.com/mapa,,,\n",
+                encoding="utf-8",
+            )
+            lots_path.write_text(
+                json.dumps(
+                    {
+                        "lotes": [
+                            {
+                                "evento": "Leilão do mapa",
+                                "data": "2026-12-31",
+                                "titulo": "Escavadeira do mapa",
+                                "link_evento": "https://exemplo.com/mapa",
+                            },
+                            {
+                                "evento": "Evento externo",
+                                "data": "2026-12-31",
+                                "titulo": "Lote externo",
+                                "link_evento": "https://externo.test/evento",
+                            },
+                        ],
+                        "logs": [
+                            {
+                                "evento": "Leilão do mapa",
+                                "data": "2026-12-31",
+                                "status": "html_ok",
+                            },
+                            {
+                                "evento": "Evento externo",
+                                "data": "2026-12-31",
+                                "status": "html_ok",
+                            },
+                        ],
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            total = indexador.clean_existing_outputs(
+                lots_path,
+                lots_csv_path,
+                events_path,
+            )
+            payload = json.loads(lots_path.read_text(encoding="utf-8"))
+
+        self.assertEqual(total, 1)
+        self.assertEqual(payload["total_lotes"], 1)
+        self.assertEqual(payload["lotes"][0]["titulo"], "Escavadeira do mapa")
+        self.assertEqual(len(payload["logs"]), 1)
+        self.assertEqual(payload["lotes_descartados_fora_do_mapa"], 1)
+        self.assertTrue(payload["somente_eventos_do_mapa"])
+
+    def test_diagnostico_confere_fonte_embutida_no_site(self) -> None:
+        payload = diagnostico.embedded_radar_data(
+            '<script type="application/json" id="radar-data">'
+            '{"fonte_eventos":"Google My Maps",'
+            '"somente_eventos_do_mapa":true,"lotes":[]}'
+            '</script>'
+        )
+        self.assertEqual(payload["fonte_eventos"], "Google My Maps")
+        self.assertTrue(payload["somente_eventos_do_mapa"])
 
     def test_site_oferece_hoje_amanha_e_data_especifica(self) -> None:
         personalized = apply_date_highlights(site.TEMPLATE.read_text(encoding="utf-8"))

@@ -4,12 +4,16 @@ Site estatico publicado pelo GitHub Pages e atualizado automaticamente pelo GitH
 
 ## O que atualiza sozinho
 
-- O Google My Maps e verificado a cada 30 minutos.
+- O Google My Maps e verificado a cada 6 horas.
 - Quando o KML muda, as bases de eventos e patios sao reconstruidas.
-- A cada 6 horas, os sites e editais dos leiloeiros sao relidos, mesmo quando o mapa nao mudou.
+- A cada 6 horas, os sites e editais vinculados aos eventos do mapa sao relidos, mesmo quando o KML nao mudou.
 - Os lotes sao capturados por API Superbid/SOLD, JSON, links HTML, texto da pagina e editais PDF.
 - Se um site bloquear o robo ou ficar fora do ar, os lotes validos daquele mesmo evento e data sao preservados.
 - `index.html`, CSVs, JSONs e o diagnostico sao regenerados e enviados por commit automatico.
+
+## Fonte unica dos leiloes
+
+Somente eventos existentes no Google My Maps entram na atualizacao e na pagina publicada. A busca externa de novos eventos e as bases paralelas de oportunidades ficam desativadas. Os sites dos leiloeiros continuam sendo acessados apenas para obter os lotes dos eventos que ja estao no mapa.
 
 ## Arquivos que precisam estar no repositorio
 
@@ -46,10 +50,9 @@ Nao apague a pasta `.github`. Ela e oculta no Windows, mas e ela que faz a atual
 ## Executar uma atualizacao agora
 
 1. Abra a aba `Actions` ou `Acoes`.
-2. Selecione `Atualizar Radar de Leiloes`.
+2. Selecione `Atualizar Radar completo`.
 3. Clique em `Run workflow` ou `Executar fluxo de trabalho`.
-4. Deixe `forcar_atualizacao` em `true`.
-5. Confirme no botao verde.
+4. Confirme no botao verde.
 
 ## Conferir o resultado
 

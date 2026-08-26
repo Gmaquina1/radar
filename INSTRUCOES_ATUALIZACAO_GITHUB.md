@@ -22,7 +22,7 @@ Os arquivos com o mesmo nome, como `index.html`, serão substituídos.
 ## Executar a primeira atualização
 
 1. Abra a aba **Actions** do repositório.
-2. Abra **Atualizar Radar diariamente as 16h**.
+2. Abra **Atualizar Radar completo**.
 3. Clique em **Run workflow**.
 4. Confirme novamente em **Run workflow**.
 5. Aguarde o processo ficar verde. A leitura completa pode demorar porque o sistema visita os leiloeiros e lê editais.
@@ -35,8 +35,10 @@ Se ainda aparecer a página antiga, pressione `Ctrl + F5` ou abra em uma janela 
 
 ## Horário automático
 
-O GitHub executará a atualização diariamente às 16h de Brasília. O GitHub pode iniciar alguns minutos depois do horário em dias de maior movimento.
+O GitHub executará a atualização a cada 6 horas. O GitHub pode iniciar alguns minutos depois do horário previsto em dias de maior movimento.
 
 ## Importante
 
 O Radar mostra somente eventos com data futura ou horário de hoje ainda não iniciado. Os editais disponíveis são lidos para melhorar a pesquisa, mas o Radar não realiza nem intermedeia os leilões.
+
+A fonte de eventos é exclusivamente o Google My Maps. O sistema acessa os sites dos leiloeiros apenas para coletar os lotes dos eventos já cadastrados no mapa.

@@ -8,6 +8,7 @@ import os
 import re
 import unicodedata
 from pathlib import Path
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 from zoneinfo import ZoneInfo
 
 from normalizar_texto import corrigir_dados
@@ -19,7 +20,6 @@ TEMPLATE = ROOT / "site_template.html"
 PORTAL_TEMPLATE = ROOT / "portal_template.html"
 LICITACOES_TEMPLATE = ROOT / "licitacoes_template.html"
 LICITACOES_DATA = ROOT / "licitacoes.json"
-VERIFIED_LOTS = ROOT / "oportunidades_verificadas.json"
 MUNICIPALITIES = ROOT / "municipios_coordenadas.json"
 MAP_EMBED_URL = "https://www.google.com/maps/d/u/0/embed?mid=1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U&ehbc=2E312F"
 TIMEZONE = ZoneInfo("America/Sao_Paulo")
@@ -50,10 +50,6 @@ def read_lot_file(path: Path) -> list[dict[str, str]]:
 
 def read_lotes() -> list[dict[str, str]]:
     return read_lot_file(ROOT / "lotes.json")
-
-
-def read_verified_lots() -> list[dict[str, str]]:
-    return read_lot_file(VERIFIED_LOTS)
 
 
 def read_municipalities() -> list[list]:
@@ -148,6 +144,30 @@ def event_key(name: str, event_date: str) -> str:
     return f"{normalized}|{event_date or ''}"
 
 
+def canonical_event_url(value: str) -> str:
+    text = str(value or "").strip()
+    if not text:
+        return ""
+    try:
+        parts = urlsplit(text)
+    except ValueError:
+        return ""
+    query = [
+        (key, item)
+        for key, item in parse_qsl(parts.query, keep_blank_values=True)
+        if not key.casefold().startswith("utm_")
+    ]
+    return urlunsplit(
+        (
+            parts.scheme.casefold(),
+            parts.netloc.casefold(),
+            parts.path.rstrip("/") or "/",
+            urlencode(query),
+            "",
+        )
+    )
+
+
 def generic_title(value: str) -> bool:
     return bool(re.fullmatch(r"(?:lote\s*[\d.\-/a-z]*|efetuar lance|ver lote|detalhes)", (value or "").strip(), re.I))
 
@@ -181,6 +201,12 @@ def enrich_and_dedupe_lots(
     now: dt.datetime,
 ) -> list[dict[str, str]]:
     event_lookup = {event_key(row.get("nome", ""), row.get("data", "")): row for row in events}
+    event_url_lookup: dict[str, dict[str, str]] = {}
+    for event in events:
+        for field in ("site_leiloeiro", "link", "link_edital"):
+            url = canonical_event_url(event.get(field, ""))
+            if url:
+                event_url_lookup[url] = event
     municipalities = municipality_index(read_municipalities())
     selected: dict[str, dict[str, str]] = {}
     for raw in lots:
@@ -189,7 +215,23 @@ def enrich_and_dedupe_lots(
             continue
         if row.get("uf") not in VALID_UFS:
             row["uf"] = ""
-        event = event_lookup.get(event_key(row.get("evento", ""), row.get("data", "")), {})
+        event = event_lookup.get(
+            event_key(row.get("evento", ""), row.get("data", ""))
+        )
+        if not event:
+            event = next(
+                (
+                    event_url_lookup[url]
+                    for url in (
+                        canonical_event_url(row.get("link_evento", "")),
+                        canonical_event_url(row.get("fonte", "")),
+                    )
+                    if url in event_url_lookup
+                ),
+                None,
+            )
+        if not event:
+            continue
         row["uf"] = row.get("uf") or event.get("uf") or infer_uf(
             row.get("local", ""),
             event.get("endereco_ou_localizacao", ""),
@@ -226,7 +268,9 @@ def main() -> None:
     for event in events:
         if event.get("uf") not in VALID_UFS:
             event["uf"] = ""
-    lots = enrich_and_dedupe_lots(read_lotes() + read_verified_lots(), events, now)
+    # lotes.json e gerado exclusivamente a partir dos eventos do Google My
+    # Maps. Nenhuma base paralela e acrescentada na pagina publicada.
+    lots = enrich_and_dedupe_lots(read_lotes(), events, now)
     patios = read_csv("radar_leiloes_patios.csv")
     municipalities = read_municipalities()
     app_version = os.environ.get("RADAR_VERSION") or now.strftime("v%Y.%m.%d.%H%M")
@@ -239,8 +283,10 @@ def main() -> None:
         "lotes": lots,
         "municipios": municipalities,
         "geodados": {"fonte": "municipios-br 3.2.1", "licenca": "CC0-1.0"},
+        "fonte_eventos": "Google My Maps",
+        "somente_eventos_do_mapa": True,
         "gerado_em": now.isoformat(timespec="seconds"),
-        "proxima_atualizacao": "Atualização diária",
+        "proxima_atualizacao": "Atualização a cada 6 horas",
         "mapa": MAP_EMBED_URL,
         "versao": app_version,
         "editais_eventos": edital_events,
