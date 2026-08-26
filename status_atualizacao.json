@@ -1,8 +1,8 @@
 {
   "status": "ok",
-  "verificado_em": "2026-08-26T16:08:55-03:00",
-  "atualizado_em_base_eventos": "2026-08-26T16:08:24-03:00",
-  "atualizado_em_base_lotes": "2026-08-26T16:08:47-03:00",
+  "verificado_em": "2026-08-26T17:12:44-03:00",
+  "atualizado_em_base_eventos": "2026-08-26T17:12:13-03:00",
+  "atualizado_em_base_lotes": "2026-08-26T17:12:36-03:00",
   "idade_base_eventos_horas": 0.01,
   "idade_base_lotes_horas": 0.0,
   "eventos_futuros": 36,
@@ -38,14 +38,14 @@
   },
   "arquivos_faltando": [],
   "modo": "somente_mapa",
-  "duracao_segundos": 88.35,
-  "ultima_execucao": "2026-08-26T16:08:55-03:00",
+  "duracao_segundos": 680.27,
+  "ultima_execucao": "2026-08-26T17:12:44-03:00",
   "mensagem": "Eventos do Google My Maps, seus lotes e o site foram atualizados com sucesso.",
   "base_anterior_restaurada": false,
-  "lotes_antes": 201,
+  "lotes_antes": 150,
   "lotes_depois": 150,
-  "lotes_novos_detectados": 1,
-  "lotes_removidos_ou_encerrados": 52,
+  "lotes_novos_detectados": 0,
+  "lotes_removidos_ou_encerrados": 0,
   "status_mapa": "ok",
   "status_openai": "desativada_para_leiloes",
   "status_descoberta": "desativada_somente_mapa",
@@ -65,7 +65,7 @@
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 57.75,
+      "duracao_segundos": 649.24,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 900
@@ -83,7 +83,7 @@
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 23.1,
+      "duracao_segundos": 23.5,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 3600
@@ -120,7 +120,7 @@
         "--falhar-se-atencao"
       ],
       "tentativas": 1,
-      "duracao_segundos": 0.06,
+      "duracao_segundos": 0.11,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300
