@@ -1,15 +1,15 @@
 {
-  "executado_em": "2026-08-25T16:08:19-03:00",
-  "lotes_antes": 359,
+  "executado_em": "2026-08-25T23:08:05-03:00",
+  "lotes_antes": 201,
   "lotes_depois": 201,
   "lotes_realmente_novos": 0,
-  "lotes_removidos_ou_encerrados": 158,
+  "lotes_removidos_ou_encerrados": 0,
   "lotes_preservados": 0,
-  "lotes_capturados_agora": 14224,
-  "lotes_capturados_com_chave_nova": 8166,
-  "eventos_analisados": 3178,
-  "eventos_com_lotes": 1046,
-  "eventos_com_erro": 36,
+  "lotes_capturados_agora": 14590,
+  "lotes_capturados_com_chave_nova": 8352,
+  "eventos_analisados": 3177,
+  "eventos_com_lotes": 1056,
+  "eventos_com_erro": 29,
   "eventos_bloqueados": 11,
   "links_invalidos": 46,
   "quantidade_coletada_por_leiloeiro": {
@@ -22,52 +22,50 @@
     "bsbleiloes.com.br": 868,
     "casadeleiloes.com.br": 123,
     "celsocunhaleiloes.com.br": 1,
-    "centralsuldeleiloes.com.br": 176,
+    "centralsuldeleiloes.com.br": 167,
     "colossoleiloes.com.br": 78,
     "compraremleilao.com.br": 7,
     "compras.es.gov.br": 2,
     "detran.es.gov.br": 88,
     "donizetteleiloes.leilao.br": 80,
     "downloads.jfal.jus.br": 16,
-    "drive.google.com": 7,
-    "drive.usercontent.google.com": 18,
-    "e-leiloes.com.br": 228,
+    "drive.google.com": 25,
+    "e-leiloes.com.br": 229,
     "eckertleiloes.com.br": 24,
     "economia.df.gov.br": 1,
     "esleiloes.com.br": 148,
     "goias.gov.br": 12,
-    "goldenlance.com.br": 399,
+    "goldenlance.com.br": 423,
     "gov.br": 44,
-    "grupolance.com.br": 240,
-    "hastapublica.com.br": 51,
+    "grupolance.com.br": 241,
+    "hastapublica.com.br": 46,
     "hisaleiloes.com.br": 307,
-    "hml-web.sodresantoro.com.br": 5,
     "hml-webv2.sodresantoro.com.br": 98,
-    "jeleiloes.com.br": 666,
+    "jeleiloes.com.br": 754,
     "jfal.jus.br": 36,
     "jmleiloes.leilao.br": 6,
     "jrleiloes.com.br": 2,
-    "kleiloes.com.br": 185,
+    "kleiloes.com.br": 188,
     "kronleiloes.com.br": 5,
     "kwara.com.br": 201,
-    "lancecertoleiloes.com.br": 4,
+    "lancecertoleiloes.com.br": 1,
     "lancejusto.com.br": 2,
     "lancevip.com.br": 227,
     "lbleiloes.com.br": 97,
     "leffaleiloes.com.br": 59,
-    "leilao.detran.mg.gov.br": 129,
+    "leilao.detran.mg.gov.br": 118,
     "leilao.sodresantoro.com.br": 3,
-    "leilaobrasil.com.br": 743,
+    "leilaobrasil.com.br": 747,
     "leilaoimovelcaixa.com.br": 217,
     "leilaoonline.com.br": 346,
-    "leiloai.com": 72,
+    "leiloai.com": 74,
     "leiloeiropublico.com.br": 13,
-    "leiloesbr.com.br": 3,
+    "leiloesbr.com.br": 4,
     "leiloesfreire.com.br": 221,
-    "leiloesjudiciais.com.br": 567,
+    "leiloesjudiciais.com.br": 558,
     "leiloesoliveira.com.br": 150,
     "leiloespb.com.br": 121,
-    "leje.com.br": 112,
+    "leje.com.br": 114,
     "liderleiloes.com.br": 116,
     "lilianportugal.com.br": 236,
     "lipinskileiloes.com.br": 142,
@@ -77,16 +75,16 @@
     "mariafixerleiloes.com.br": 2,
     "marquesleiloes.com.br": 13,
     "megaleiloes.com.br": 66,
-    "mjleiloes.com.br": 201,
+    "mjleiloes.com.br": 305,
     "nakakogueleiloes.com.br": 11,
     "nordesteleiloes.com.br": 29,
     "okleiloes.com.br": 32,
     "parquedosleiloes.com.br": 176,
     "peterlongo.leilao.br": 82,
-    "peterlongoleiloes.com.br": 120,
+    "peterlongoleiloes.com.br": 123,
     "portaldoleiloeiro.com.br": 48,
     "portalzuk.com.br": 43,
-    "proleilao.com.br": 523,
+    "proleilao.com.br": 668,
     "ricardogomesleiloes.com.br": 4,
     "rochaleiloes.com.br": 2,
     "rofremleiloes.com.br": 71,
@@ -102,18 +100,18 @@
     "sescamapa.com.br": 63,
     "sfleiloes.com.br": 73,
     "spencerleiloes.com.br": 105,
-    "spyleiloes.com.br": 145,
+    "spyleiloes.com.br": 137,
     "static.suporteleiloes.com.br": 1,
-    "suedpeterleiloes.com.br": 81,
+    "suedpeterleiloes.com.br": 85,
     "superbid.net": 650,
     "swleiloes.com.br": 199,
     "topoleiloes.com.br": 83,
-    "trt16.jus.br": 11,
+    "trt16.jus.br": 10,
     "tulioleiloes.com.br": 66,
-    "vardanaleiloes.com.br": 104,
+    "vardanaleiloes.com.br": 138,
     "vargasepintoleiloes.com.br": 20,
     "vialeiloes.com.br": 200,
-    "webleiloes.com.br": 409,
+    "webleiloes.com.br": 410,
     "wrleiloes.com.br": 6,
     "www7.tjba.jus.br": 4,
     "youtu.be": 37
@@ -122,14 +120,13 @@
     "amaralleiloes.com.br": 1,
     "bidgo.com.br": 1,
     "cargneluttileiloes.com.br": 1,
-    "goldenlance.com.br": 3,
-    "jfal.jus.br": 3,
-    "leilao.detran.mg.gov.br": 2,
+    "jfal.jus.br": 4,
+    "leilao.detran.mg.gov.br": 1,
     "leilaoimovelcaixa.com.br": 4,
-    "pactoleiloes.com.br": 8,
+    "sescamapa.com.br": 3,
     "sodressantoro.com.br": 8,
     "tre-ba.jus.br": 4,
-    "www10.goiania.go.gov.br": 1
+    "trt16.jus.br": 2
   },
   "urls_que_falharam": [
     {
@@ -153,14 +150,34 @@
       "http": 404
     },
     {
-      "url": "https://www10.goiania.go.gov.br/transweb/Licitacoes.aspx",
+      "url": "https://sescamapa.com.br/licitacao/leilao/leilao-publico-para-alienacao-de-veiculos-integrantes-do-patrimonio-do-sesc-dr-ap-2026",
       "status": "erro",
       "http": 0
     },
     {
-      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3409/2026",
+      "url": "https://sescamapa.com.br/licitacoes/leilao",
       "status": "erro",
       "http": 0
+    },
+    {
+      "url": "https://sescamapa.com.br/licitacao/leilao/leilao-publico-de-bens-inserviveis-integrantes-do-patrimonio-do-sesc-dr-ap",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://trt16.jus.br/servicos/publicacoes/leilao-judicial",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://trt16.jus.br/sites/portal/files/roles/leilao_unificado/Edital%201%C2%BA%20Leil%C3%A3o%202026.pdf",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://hml-web.sodresantoro.com.br/",
+      "status": "http_503",
+      "http": 503
     },
     {
       "url": "https://alleiloes.com.br/leilao/392/leilao-de-veiculos-em-santa-catarina",
@@ -208,24 +225,9 @@
       "http": 404
     },
     {
-      "url": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/itemlist/tag/ATUA%C3%87%C3%83O%20DA%20AG%C3%8ANCIA%20REGULADORA%20DE%20SERVI%C3%87OS%20P%C3%9ABLICOS%20DELEGADOS%20DO%20ESTADO%20DO%20CEAR%C3%81%20%E2%80%93%20ARCE",
+      "url": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/itemlist/tag/ADQUIRIR%20E%20DISTRIBUIR%20G%C3%81S%20EM%20BOTIJ%C3%83O%20%C3%80S%20FAMIL%C3%8DAS%20EM%20SITUA%C3%87%C3%83O%20DE%20MAIOR%20VULNERABILIDADE%20SOCIAL",
       "status": "http_503",
       "http": 503
-    },
-    {
-      "url": "https://goldenlance.com.br/eventos/leilao/leilao-de-eletrodomesticos-e-materiais-diversos/lote/27438/fogao-glass-diplomata-grill-4-bocas-no-estado-em-que-se-encontra",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://goldenlance.com.br/eventos/leilao/leilao-de-eletrodomesticos-e-materiais-diversos/lote/27346/mesa-de-escritorio-tampo-em-vidro-no-estado-em-que-se-encontra",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://goldenlance.com.br/eventos/leilao/leilao-de-eletrodomesticos-e-materiais-diversos/lote/27425/3-caixas-de-pecas-para-montagem-de-home-eldorado-no-estado-que-se-encontra",
-      "status": "erro",
-      "http": 0
     },
     {
       "url": "https://www.grupolance.com.br/imoveis/terrenos-e-lotes/sp/sao-paulo/terreno-at-3236m2-vila-independencia-sao-paulo-sp-28463",
@@ -238,12 +240,17 @@
       "http": 0
     },
     {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2026/1-leilao-unificado-1-praca/",
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2026/1-leilao-unificado-2-praca/",
       "status": "erro",
       "http": 0
     },
     {
-      "url": "https://www.jfal.jus.br/tags/leil%C3%A3o-unificado/",
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2025/1-leilao-unificado-2-praca/",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2025/calendar/",
       "status": "erro",
       "http": 0
     },
@@ -266,6 +273,26 @@
       "url": "https://www.leilaoimovelcaixa.com.br/imovel-caixa/al/maceio/casa-em-leilao-em-maceio-al-imovel-caixa-economica-federal-cef-2893061-8787704729265",
       "status": "bloqueado_http_403",
       "http": 403
+    },
+    {
+      "url": "https://leilo.com.br/cadastro?redirect=%2Fleilao%2F%3Fleilao.nome%3DLEIL%25C3%2583O%2520EXCLUSIVO%2520DE%2520MOTOS%2520-%252025.07.26",
+      "status": "http_502",
+      "http": 502
+    },
+    {
+      "url": "https://leilo.com.br/leilao/leiloshop",
+      "status": "http_502",
+      "http": 502
+    },
+    {
+      "url": "https://leilo.com.br/cadastro?redirect=%2Fregulamento%2Fparticipacao-leilao",
+      "status": "http_502",
+      "http": 502
+    },
+    {
+      "url": "https://leilo.com.br/cadastro?redirect=%2Fcadastro%3Fredirect%3D%252Fleilao%252F%253Fsrsltid%253DAfmBOorlr9z96NVBmwbM59lyzmNckLx8QBXJkPGg1W0KwMjCn0kq1v5V",
+      "status": "http_502",
+      "http": 502
     },
     {
       "url": "https://leiloai.com/leilao/0cbd1af8-83f7-4729-ac9a-80fefb04727c",
@@ -366,46 +393,6 @@
       "url": "https://mjleiloes.com.br/leiloes/99?slug=leilao-da-prefeitura-de-cabreuva-sp-veiculos-tratores-e-outros",
       "status": "http_404",
       "http": 404
-    },
-    {
-      "url": "https://www.pactoleiloes.com.br/regulamento/politica-de-privacidade",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.pactoleiloes.com.br/nossos-leiloes",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.pactoleiloes.com.br/login/",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.pactoleiloes.com.br/cliente/compras",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.pactoleiloes.com.br/cliente/meu-perfil",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.pactoleiloes.com.br/login/?redirect=%2Fcomo-funciona",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.pactoleiloes.com.br/login/?redirect=%2Fpatios",
-      "status": "erro",
-      "http": 0
-    },
-    {
-      "url": "https://www.pactoleiloes.com.br/cadastro?redirect=%2Flogin%2F%3Fredirect%3D%252F",
-      "status": "erro",
-      "http": 0
     },
     {
       "url": "https://sodressantoro.com.br/quem-somos",
