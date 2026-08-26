@@ -1,22 +1,20 @@
 {
-  "executado_em": "2026-08-25T23:08:05-03:00",
+  "executado_em": "2026-08-26T04:17:56-03:00",
   "lotes_antes": 201,
   "lotes_depois": 201,
   "lotes_realmente_novos": 0,
   "lotes_removidos_ou_encerrados": 0,
   "lotes_preservados": 0,
-  "lotes_capturados_agora": 14590,
-  "lotes_capturados_com_chave_nova": 8352,
+  "lotes_capturados_agora": 13993,
+  "lotes_capturados_com_chave_nova": 7948,
   "eventos_analisados": 3177,
-  "eventos_com_lotes": 1056,
-  "eventos_com_erro": 29,
+  "eventos_com_lotes": 872,
+  "eventos_com_erro": 39,
   "eventos_bloqueados": 11,
-  "links_invalidos": 46,
+  "links_invalidos": 21,
   "quantidade_coletada_por_leiloeiro": {
     "alfaleiloes.com": 21,
-    "alleiloes.com.br": 36,
     "allianceleiloes.com.br": 26,
-    "amleiloeiro.com.br": 35,
     "api.whatsapp.com": 60,
     "belt.al.ce.gov.br": 60,
     "bsbleiloes.com.br": 868,
@@ -37,30 +35,27 @@
     "goias.gov.br": 12,
     "goldenlance.com.br": 423,
     "gov.br": 44,
-    "grupolance.com.br": 241,
-    "hastapublica.com.br": 46,
+    "grupolance.com.br": 239,
+    "hastapublica.com.br": 48,
     "hisaleiloes.com.br": 307,
     "hml-webv2.sodresantoro.com.br": 98,
     "jeleiloes.com.br": 754,
-    "jfal.jus.br": 36,
+    "jfal.jus.br": 14,
     "jmleiloes.leilao.br": 6,
     "jrleiloes.com.br": 2,
     "kleiloes.com.br": 188,
     "kronleiloes.com.br": 5,
     "kwara.com.br": 201,
-    "lancecertoleiloes.com.br": 1,
-    "lancejusto.com.br": 2,
     "lancevip.com.br": 227,
-    "lbleiloes.com.br": 97,
     "leffaleiloes.com.br": 59,
     "leilao.detran.mg.gov.br": 118,
     "leilao.sodresantoro.com.br": 3,
     "leilaobrasil.com.br": 747,
     "leilaoimovelcaixa.com.br": 217,
     "leilaoonline.com.br": 346,
-    "leiloai.com": 74,
+    "leiloai.com": 55,
     "leiloeiropublico.com.br": 13,
-    "leiloesbr.com.br": 4,
+    "leiloesbr.com.br": 3,
     "leiloesfreire.com.br": 221,
     "leiloesjudiciais.com.br": 558,
     "leiloesoliveira.com.br": 150,
@@ -68,23 +63,22 @@
     "leje.com.br": 114,
     "liderleiloes.com.br": 116,
     "lilianportugal.com.br": 236,
-    "lipinskileiloes.com.br": 142,
+    "lipinskileiloes.com.br": 88,
     "lumussaleiloes.com.br": 57,
     "mapadoleilao.com.br": 168,
     "marcusviniciusleiloes.com.br": 40,
     "mariafixerleiloes.com.br": 2,
-    "marquesleiloes.com.br": 13,
     "megaleiloes.com.br": 66,
     "mjleiloes.com.br": 305,
     "nakakogueleiloes.com.br": 11,
-    "nordesteleiloes.com.br": 29,
+    "nordesteleiloes.com.br": 26,
     "okleiloes.com.br": 32,
     "parquedosleiloes.com.br": 176,
     "peterlongo.leilao.br": 82,
     "peterlongoleiloes.com.br": 123,
     "portaldoleiloeiro.com.br": 48,
     "portalzuk.com.br": 43,
-    "proleilao.com.br": 668,
+    "proleilao.com.br": 662,
     "ricardogomesleiloes.com.br": 4,
     "rochaleiloes.com.br": 2,
     "rofremleiloes.com.br": 71,
@@ -98,16 +92,12 @@
     "satoleiloes.com.br": 1,
     "schulmannleiloes.com.br": 1,
     "sescamapa.com.br": 63,
-    "sfleiloes.com.br": 73,
-    "spencerleiloes.com.br": 105,
-    "spyleiloes.com.br": 137,
+    "spyleiloes.com.br": 155,
     "static.suporteleiloes.com.br": 1,
     "suedpeterleiloes.com.br": 85,
     "superbid.net": 650,
     "swleiloes.com.br": 199,
-    "topoleiloes.com.br": 83,
-    "trt16.jus.br": 10,
-    "tulioleiloes.com.br": 66,
+    "trt16.jus.br": 11,
     "vardanaleiloes.com.br": 138,
     "vargasepintoleiloes.com.br": 20,
     "vialeiloes.com.br": 200,
@@ -120,13 +110,14 @@
     "amaralleiloes.com.br": 1,
     "bidgo.com.br": 1,
     "cargneluttileiloes.com.br": 1,
+    "gov.br": 1,
     "jfal.jus.br": 4,
-    "leilao.detran.mg.gov.br": 1,
+    "lancecertoleiloes.com.br": 1,
+    "leilao.detran.mg.gov.br": 4,
     "leilaoimovelcaixa.com.br": 4,
-    "sescamapa.com.br": 3,
+    "lipinskileiloes.com.br": 10,
     "sodressantoro.com.br": 8,
-    "tre-ba.jus.br": 4,
-    "trt16.jus.br": 2
+    "tre-ba.jus.br": 4
   },
   "urls_que_falharam": [
     {
@@ -150,29 +141,139 @@
       "http": 404
     },
     {
-      "url": "https://sescamapa.com.br/licitacao/leilao/leilao-publico-para-alienacao-de-veiculos-integrantes-do-patrimonio-do-sesc-dr-ap-2026",
-      "status": "erro",
-      "http": 0
+      "url": "https://amleiloeiro.com.br/",
+      "status": "http_521",
+      "http": 521
     },
     {
-      "url": "https://sescamapa.com.br/licitacoes/leilao",
-      "status": "erro",
-      "http": 0
+      "url": "https://amleiloeiro.com.br/leilao/332/leilao-vara-da-fazenda-publica-de-terra-boa",
+      "status": "http_521",
+      "http": 521
     },
     {
-      "url": "https://sescamapa.com.br/licitacao/leilao/leilao-publico-de-bens-inserviveis-integrantes-do-patrimonio-do-sesc-dr-ap",
-      "status": "erro",
-      "http": 0
+      "url": "https://amleiloeiro.com.br/leilao/338/leilao-3a-vara-estadual-empresarial-de-curitibapr",
+      "status": "http_521",
+      "http": 521
     },
     {
-      "url": "https://trt16.jus.br/servicos/publicacoes/leilao-judicial",
-      "status": "erro",
-      "http": 0
+      "url": "https://alleiloes.com.br/",
+      "status": "http_521",
+      "http": 521
     },
     {
-      "url": "https://trt16.jus.br/sites/portal/files/roles/leilao_unificado/Edital%201%C2%BA%20Leil%C3%A3o%202026.pdf",
-      "status": "erro",
-      "http": 0
+      "url": "https://alleiloes.com.br/agenda",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://alleiloes.com.br/venda-direta",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tesouroleiloes.com.br/leilao/8/prefeitura-municipal-de-juripirangapb",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/leilao/135/leilao-da-conab-ms",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/leilao/125/leilao-extrajudicial-particular",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1982/poltronas-e-cadeiras-de-escritorio-diversos",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/leilao/219/leilao-da-prefeitura-municipal-de-ipora-pr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/leilao/218/leilao-da-prefeitura-iacanga-sp",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/lote/201/equipamento-para-frigorifico",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/agenda",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/venda-direta",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://marquesleiloes.com.br/",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://marquesleiloes.com.br/agenda",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://marquesleiloes.com.br/venda-direta",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://instagram.com/ricardo.leiloeiro?igshid=MTk0NTkyODZkYg==",
+      "status": "bloqueado_http_429",
+      "http": 429
+    },
+    {
+      "url": "https://lancejusto.com.br/",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lancejusto.com.br/leilao/97/oportunidade-em-curitiba",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lancejusto.com.br/lote/425/condominio-theodoro-de-bona-50-da-avaliacao-casa-com-piscina-e-instalacoes-de-alto-padrao",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/leilao/20/prefeitura-municipal-de-itambe-pr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/leilao/25/prefeitura-municipal-de-paranacity-pr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/185/fordpampa-l-19951995",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/leilao/341/leilao-de-sucatas-inserviveis-das-varas-criminais",
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://hml-web.sodresantoro.com.br/",
@@ -180,52 +281,242 @@
       "http": 503
     },
     {
+      "url": "https://amleiloeiro.com.br/leilao/340/leilao-das-varas-criminais-2a-3a-4a-7a-8a-9a-10a-e-13a-varas-criminais-de-curitibapr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22887/sofas",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22912/parte-ideal",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/leilao/333/leilao-vara-civel-e-da-fazenda-publica-guaratuba",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22888/terreno",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/leilao/337/leilao-das-varas-criminais-2a-3a-4a-7a-8a-9a-10a-e-13a-varas-criminais-de-curitibapr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22895/renaultkwid-intense-10-mt-20172018",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/leilao/335/leilao-2a-vara-civel-de-toledo",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22892/hondac-100-biz-es-20032003",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22914/hondacg-160-bros-inserviel",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22903/apartamento",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22913/casa",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22899/gmbrasinca-andaluz-19891989",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22902/ipeugeot-206-selection-20022002",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22897/hondacg-125-titan-ks-20032003",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22901/vwgol-special-sucata",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22898/vwgol-10-sucata",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22900/hondacg-150-titan-ks-sucata",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22896/hondac-100-biz-sucata",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://amleiloeiro.com.br/lote/22915/fiatpremio-s-inservivel",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://alleiloes.com.br/encerrados",
+      "status": "http_521",
+      "http": 521
+    },
+    {
       "url": "https://alleiloes.com.br/leilao/392/leilao-de-veiculos-em-santa-catarina",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://alleiloes.com.br/lote/4359/automovel-vwgol-plus-16v-ano-20032004",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://alleiloes.com.br/leilao/400/leilao-de-veiculos-em-apucarana-pr",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://alleiloes.com.br/lote/4393/ibmw-x5-xdrive-50i-zv81-ano-20112011",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://alleiloes.com.br/leilao/401/leilao-de-veiculos-em-tomazina-pr",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://alleiloes.com.br/lote/4395/veiculo-1-camioneta-mmcpajero-tr4-ano-20062006-placa-dqv2d02",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://alleiloes.com.br/leilao/395/imoveis-industriais-em-jataizinho-pr",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://alleiloes.com.br/lote/4370/imoveis-industriais-com-121000m2-em-jataizinho-pr",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://alleiloes.com.br/leilao/402/leilao-de-imoveis-em-ponta-grossa-pr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://alleiloes.com.br/lote/4397/imovel-com-275m2-em-ponta-grossa-pr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://alleiloes.com.br/leilao/403/leilao-de-imoveis-em-ponta-grossa-pr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://alleiloes.com.br/lote/4398/imovel-com-490002-em-ponta-grossa-pr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://alleiloes.com.br/leilao/388/imoveis-com-25480m2-em-corupa-sc",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://alleiloes.com.br/lote/4336/imoveis-com-25480m2-em-corupa-sc",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://alleiloes.com.br/leilao/405/leilao-de-imoveis-em-ponta-grossa-pr",
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://alleiloes.com.br/lote/4406/imovel-com-30000m2-em-ponta-grossa-pr",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
-      "url": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/itemlist/tag/ADQUIRIR%20E%20DISTRIBUIR%20G%C3%81S%20EM%20BOTIJ%C3%83O%20%C3%80S%20FAMIL%C3%8DAS%20EM%20SITUA%C3%87%C3%83O%20DE%20MAIOR%20VULNERABILIDADE%20SOCIAL",
+      "url": "https://alleiloes.com.br/leilao/406/leilao-de-sucata-em-curiuva-pr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://alleiloes.com.br/lote/4407/sucata-motocicleta-honda-cg-ostentando-placa-aow-8293",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://alleiloes.com.br/leilao/407/leilao-de-sucatas-automotivas",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://alleiloes.com.br/lote/4408/sucata0-automovel-renaultlogan-exp-16-ano-20112012-placa-lpz4b99",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://alleiloes.com.br/leilao/404/leilao-de-imoveis-e-veiculos-em-ponta-grossa-pr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://alleiloes.com.br/lote/4405/imovel-com-61318m2-em-ponta-grossa-pr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://alleiloes.com.br/leilao/291/leilao-simulacao",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://alleiloes.com.br/lote/1812/leilao-simulacao-teste-o-seu-lance",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://alleiloes.com.br/leilao/352/imovel-com-78571172-em-iratipr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://alleiloes.com.br/lote/2137/imovel-com-78571172-em-iratipr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/itemlist/tag/ATUA%C3%87%C3%83O%20DA%20AG%C3%8ANCIA%20REGULADORA%20DE%20SERVI%C3%87OS%20P%C3%9ABLICOS%20DELEGADOS%20DO%20ESTADO%20DO%20CEAR%C3%81%20%E2%80%93%20ARCE",
       "status": "http_503",
       "http": 503
     },
@@ -240,17 +531,157 @@
       "http": 0
     },
     {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2026/1-leilao-unificado-2-praca/",
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2025/1-leilao-unificado-1-praca/",
       "status": "erro",
       "http": 0
     },
     {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2025/1-leilao-unificado-2-praca/",
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2024/2-leilao-unificado-2-praca/",
       "status": "erro",
       "http": 0
     },
     {
-      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2025/calendar/",
+      "url": "https://www.jfal.jus.br/eventos/juridico/leiloes/2023/4-leilao-unificado-1-praca/",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://lbleiloes.com.br/leilao/24/prefeitura-municipal-de-sao-sebastiao-da-amoreira-pr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/186/vwkombi-20122012",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/187/fiatfastback-turbo-270-20232023",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/188/agralempolo-senior-gvo-19991999",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/189/vwmasca-granmini-o-20092009",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/190/ivecocityclass-70c17-20122013",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/191/vw15190-eod-ehd-ore-20122013",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/192/gmc12170-19971998",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/193/gmc12170-19971998",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/leilao/27/prefeitura-municipal-de-barra-do-jacare-pr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/194/fordcargo-1317-e-20092009",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/195/pa-carregadeira-fiatallis-fr-12b",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/196/pa-carregadeira-case-w20b-turbo",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/198/minicarregadeira-semax-sx60-2018",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/199/estrutura-de-carretacarretinha-4-rodas",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/200/sucata-de-aparelho-de-raio-x",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/283/impkia-besta-ab-19971998-baixado",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/284/fiatsiena-attractiv-14-20172017",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/285/vwgol-10l-mc4-20182019",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/286/vwvoyage-16l-mb5-20192020",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/287/hyundaihb20-10m-sense-20212022",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/288/hyundaihb20-10m-sense-20212022",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/289/mbenzmasc-granmini-o-20092009",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/290/vw13180-euro3-worker-20072007",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/291/agrale140006x2-20142015",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/292/renaultduster-16-d-4x2-20122013",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://lbleiloes.com.br/lote/293/arado-ikeda-3-aiveca-verde",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://www.gov.br/prf/pt-br/assuntos/deposito-de-veiculos-recolhidos-removidos-patio/amapa",
       "status": "erro",
       "http": 0
     },
@@ -273,26 +704,6 @@
       "url": "https://www.leilaoimovelcaixa.com.br/imovel-caixa/al/maceio/casa-em-leilao-em-maceio-al-imovel-caixa-economica-federal-cef-2893061-8787704729265",
       "status": "bloqueado_http_403",
       "http": 403
-    },
-    {
-      "url": "https://leilo.com.br/cadastro?redirect=%2Fleilao%2F%3Fleilao.nome%3DLEIL%25C3%2583O%2520EXCLUSIVO%2520DE%2520MOTOS%2520-%252025.07.26",
-      "status": "http_502",
-      "http": 502
-    },
-    {
-      "url": "https://leilo.com.br/leilao/leiloshop",
-      "status": "http_502",
-      "http": 502
-    },
-    {
-      "url": "https://leilo.com.br/cadastro?redirect=%2Fregulamento%2Fparticipacao-leilao",
-      "status": "http_502",
-      "http": 502
-    },
-    {
-      "url": "https://leilo.com.br/cadastro?redirect=%2Fcadastro%3Fredirect%3D%252Fleilao%252F%253Fsrsltid%253DAfmBOorlr9z96NVBmwbM59lyzmNckLx8QBXJkPGg1W0KwMjCn0kq1v5V",
-      "status": "http_502",
-      "http": 502
     },
     {
       "url": "https://leiloai.com/leilao/0cbd1af8-83f7-4729-ac9a-80fefb04727c",
@@ -375,6 +786,56 @@
       "http": 404
     },
     {
+      "url": "https://www.lipinskileiloes.com.br/leilao/proximos",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.lipinskileiloes.com.br/leilao/encerrados",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.lipinskileiloes.com.br/venda-direta",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.lipinskileiloes.com.br/quem-somos",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.lipinskileiloes.com.br/contato",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.lipinskileiloes.com.br/leilao/lotes/diversos",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.lipinskileiloes.com.br/leilao/lotes/equipamentos",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.lipinskileiloes.com.br/leilao/lotes/sucatas",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.lipinskileiloes.com.br/leilao/lotes/veiculos",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.lipinskileiloes.com.br/faq",
+      "status": "erro",
+      "http": 0
+    },
+    {
       "url": "https://loopleiloes.com.br/eventos/exclusivo-itapeva/2688?numero_veiculos=36",
       "status": "http_404",
       "http": 404
@@ -385,7 +846,92 @@
       "http": 404
     },
     {
+      "url": "https://marquesleiloes.com.br/encerrados",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://marquesleiloes.com.br/leilao/4/leilao-judicial-em-sao-jose-dos-pinhaispr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://marquesleiloes.com.br/lote/4/apartamento-106-no-residencial-angra-dos-reis-sao-jose-dos-pinhaispr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://marquesleiloes.com.br/leilao/6/leilao-judicial-terreno-em-curitiba-pr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://marquesleiloes.com.br/lote/8/terreno-com-area-total-de-126485m2-avenida-anita-garibaldi-n-4980",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://marquesleiloes.com.br/leilao/8/motocicleta-cg-125-titan-ks",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://marquesleiloes.com.br/lote/10/motocicleta",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://marquesleiloes.com.br/leilao/7/apto-residencial-02-bl-23-residencial-jardim-monte-verdi-rua-wanda-wolf-no-1600-ctba-pr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://marquesleiloes.com.br/lote/9/apartamento-com-48m2-santa-felicidade-curitiba-pr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://marquesleiloes.com.br/leilao/3/leilao-judicial-em-curitibapr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://marquesleiloes.com.br/lote/3/apartamento-101-e-2-fracoes-de-garagem-no-edificio-francisco-lachowski-em-curitibapr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://marquesleiloes.com.br/leilao/2/leilao-judicial-em-curitibapr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://marquesleiloes.com.br/lote/2/apartamento-no-edificio-hilda-maria-em-curitibapr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
       "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/2780/2025",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3468/2026",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3390/2026",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://leilao.detran.mg.gov.br/lotes/lista-lotes/3288/2026",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.lancecertoleiloes.com.br/home",
       "status": "erro",
       "http": 0
     },
@@ -393,6 +939,141 @@
       "url": "https://mjleiloes.com.br/leiloes/99?slug=leilao-da-prefeitura-de-cabreuva-sp-veiculos-tratores-e-outros",
       "status": "http_404",
       "http": 404
+    },
+    {
+      "url": "https://sfleiloes.com.br/",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/lote/202/sucata-de-pecas-de-motor",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/lote/203/jeepcompass-sport-tf-20222022",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/lote/204/massey-ferguson275-20002001-nd",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/lote/205/massey-ferguson283-20002001-nd",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/lote/206/new-hollandrg140b-2014-nd",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/lote/207/caterpillar416e-2012-nd",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/lote/208/bobcats130-2012-nd",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/lote/209/randomrd-406-2020-nd",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/lote/210/lote-de-terras-vila-nilza-885m2",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/agenda",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/venda-direta",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/encerrados",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/leilao/214/veiculos-apreendidos-alto-piquiri-pr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/lote/196/gmvectra-sedan-elegance-20-20092010",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/leilao/216/lote-urbano-288m2-barra-do-jacare-sicoob",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/lote/199/lote-urbano-288m2-em-barra-do-jacare-pr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/leilao/215/veiculo-hondacg-160-titan-2o-vara-criminal-de-londrina",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/lote/198/hondacg-160-titan-20242024",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/leilao/221/veiculo-nissanmarch-10sv-12o-vara-criminal-de-curitiba",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/lote/225/nissanmarch-10sv-20142014",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/leilao/204/terreno-em-apucarana",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/lote/150/lote-de-terras-com-65940m2-apucarana-pr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/lote/214/cpus-impressoras-monitores-calculadoras-fragmentadoras-e-maquinas-de-escrever",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/leilao/209/cota-apartamento-110-do-bloco-a",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/lote/154/cota-apartamento-no-gramado-termas-resort-spa-rs",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://sfleiloes.com.br/leilao/206/canga-de-esmeralda-do-tipo-c-com-642kg",
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://sodressantoro.com.br/quem-somos",
@@ -435,79 +1116,489 @@
       "http": 0
     },
     {
+      "url": "https://spencerleiloes.com.br/encerrados",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/leilao/797/2a-vara-da-civel-de-campo-mourao",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/lote/34320/data-de-terras-no-31-p-c-subdivisao-da-data-no-31-p-a",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/leilao/793/vara-de-familia-e-sucessoes-de-cianorte",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/lote/33144/parte-ideal-de-50-do-imovel-de-lote-urbano-n-1415-a-da-quadra-n-2-com-area-de-27500-m2",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/leilao/791/2a-vara-criminal-de-maringa",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/lote/33139/sucata-veiculo-da-marca-carro-modelo-corsa-super",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/leilao/792/1a-vara-da-fazenda-publica-de-maringa",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/lote/33142/data-de-terras-no-3-c",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/leilao/795/1a-vara-de-execucoes-fiscais-de-londrina",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/lote/33145/lote-de-terras-denominado-quadra-n-02",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/leilao/794/leilao-publico-no-00420226-cpare",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/lote/33733/alarapiraca-casa-em-bom-sucesso",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/leilao/777/leilao-de-alienacao-fiduciaria",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/lote/33101/lote-de-terra-n-58-a1y-gleba-5-colonia-mourao-com-area-de-3959882-m2-em-araruna-pr",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/leilao/745/5a-vara-federal-de-maringa",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/lote/33005/fiat-ducato-minibus",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/leilao/788/3a-vara-de-familia-de-londrina",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/lote/33135/gmcorsa-classic-placa-alg3c74",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/leilao/790/vara-de-familia-e-sucessoes-de-cianorte",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/lote/33138/gmkadett-gl-1993",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/leilao/787/2a-vara-civel-de-maringa",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/lote/33131/apartamento-1007-um-mil-e-sete-do-edificio-residencial-maresias",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/leilao/786/vara-da-infancia-e-da-juventude",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/lote/33129/vw-gol-10-ano-2005",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/leilao/789/1a-vara-civel-de-francisco-beltrao",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://spencerleiloes.com.br/lote/33136/lote-urbano-no-11-onze-da-quadra-no-16-dezesseis",
+      "status": "http_521",
+      "http": 521
+    },
+    {
       "url": "https://tesouroleiloes.com.br/lote/22/chevrolet-spin-ltz-18-8v-flex-5p-mec",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://tesouroleiloes.com.br/lote/23/renault-master-amb-rontan",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://tesouroleiloes.com.br/lote/24/renault-master-amb-rontan",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://tesouroleiloes.com.br/lote/25/chevrolet-spin-ltz-18-8v-flex-5p-mec",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://tesouroleiloes.com.br/lote/26/fordka-s-10-ha-b",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://tesouroleiloes.com.br/lote/27/fordka-se-10-ha-c",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://tesouroleiloes.com.br/lote/28/fordka-se-10-ha-c",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://tesouroleiloes.com.br/lote/29/fiatmobi-easy-on",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://tesouroleiloes.com.br/lote/30/fiatfiorino-modificar",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://tesouroleiloes.com.br/lote/31/retroescavadeira-caterpillar",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://tesouroleiloes.com.br/lote/32/trator-new-holland",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://tesouroleiloes.com.br/lote/33/vw-15-180-cacamba",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://tesouroleiloes.com.br/lote/34/reboque-triturador-de-galhos",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://tesouroleiloes.com.br/lote/35/reboque",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://tesouroleiloes.com.br/lote/36/equipamento-para-trator-rodas-e-pneus",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/leilao/3160/automoveis-maquinas-pesadas-sucatas-mobiliario-eletronicos",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/37596/sucata-audia3-18-ano-2001-modelo-2001-cor-preta",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/37597/sucata-fiatpalio-ex-ano-1999-modelo-1999-cor-azul",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/37598/sucata-fiatuno-mille-way-econ-ano-2008-modelo-2009-cor-branca",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/37599/sucata-fordfiesta-ano-1997-modelo-1997-cor-azul",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/37600/sucata-fordfiesta-gl-ano-2000-modelo-2001-cor-prata",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/37601/sucata-gmcelta-ano-2001-modelo-2001-cor-preta",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/37602/sucata-gmkadett-gl-ano-1994-modelo-1995-cor-cinza",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/37603/sucata-gmvectra-gls-ano-1996-modelo-1997-cor-branca",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/37604/sucata-gmvectra-gls-ano-1998-modelo-1998-cor-azul",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/35827/maquina-pesada-pa-carregadeira-case-w20e",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/35828/sucata-aproveitavel-maquina-pesada-retroescavadeira-jcb-3cx",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/35829/automovel-chevrolet-onix-anomodelo-20192019-cor-branca",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/35830/automovel-ford-fiesta-flex-anomodelo-20142014-cor-branca",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/35831/automovel-volkswagen-voyage-16-mb5-anomodelo-20182019-cor-branca",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/35832/automovel-chevrolet-celta-10-lt-anomodelo-20142014-cor-branca",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/35833/automovel-volkswagen-gol-special-mb-anomodelo-20142015-cor-branca",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/35834/sucata-aproveitavel-maquina-pesada-motoniveladora-marcamodelo-dresser-140zb",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/35835/sucata-inservivel-automovel-fiat-ducato",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/35836/sucata-inservivel-veiculo-reboque",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/35837/automovel-volkswagen-gol-10-ecomotion-g-iv-anomodelo-20102011-cor-branca",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/35838/automovel-fiat-uno-mille-economy-anomodelo-20082009-cor-branca",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/35839/automovel-fiat-uno-mille-fire-flex-anomodelo-20072008-cor-branca",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/35840/sucata-inservivel-maquina-pesada-reboque-tanque",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/35841/equipamento-concha-para-escavadeira",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/35842/sucata-inservivel-equipamento-moedor-de-pasto-colhedora-de-forragens-marca-cremasco",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://topoleiloes.com.br/lote/35843/maquina-pesada-rolo-compactador-marca-sany",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1983/moveis-utensilios-de-escritorio-e-equipamentos-diversos",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1984/moveis-e-utensilios-de-escritorio-informatica-laboratorio-armazem-e-equipamentos-diversos",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1985/equipamentos-de-refrigeracao",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1986/moveis-utensilios-de-escritorio-e-equipamentos-diversos",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1987/moveis-utensilios-de-escritorio-e-equipamentos-diversos",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1988/moveis-utensilios-de-escritorio-e-equipamentos-diversos",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1989/moveis-utensilios-de-escritorio-equipamentos-de-refrigeracao-e-informatica-diversos",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1990/moveis-e-utensilios-de-escritorio-diversos",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1991/moveis-utensilios-de-escritorio-e-equipamentos-diversos",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1992/empilhadeiras-horizontal-inclinada",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1993/veiculo-mmcl200-4x4-gl-ano-20072008-placa-hsh1c74",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1994/veiculo-ivecoeurocargo-230e24-ano-20092009-placa-htn8212",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1995/poltronas-e-cadeiras-de-escritorio-diversos",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1908/pecas-para-plantadeiras-e-semeadeiras-da-marca-gihal",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1909/pecas-para-as-plantadeiras-baldan",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1910/pecas-para-plantadeiras-tatu",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1911/pecas-para-todos-os-modelos-de-pulverizadores-jacto",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1912/pecas-para-plantadeiras-da-marca-seedmax-implefort",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1913/pecas-para-distribuidores-jan",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1914/pecas-para-implementos-budny-e-caixa-de-transmissao-impel",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1915/pecas-para-tratores-valtra-e-valmet",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1916/farol-para-tratores-agricolas-massey-new-holland",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1917/reparos-de-bomba-de-agua-linha-massey-ferguson",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1918/relogios-para-tratores-agricolas",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1919/juntas-para-tratores-agricolas-massey-ferguson-todos-os-modelos",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1920/tubos-e-mangueiras-para-tratores-agricolas",
+      "status": "http_521",
+      "http": 521
+    },
+    {
+      "url": "https://tulioleiloes.com.br/lote/1921/pecas-de-tratores-mf-65x-265-275-283-292-colheitadeira-mf-3640-5650",
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://www.tre-ba.jus.br/servicos-judiciais/leiloes-judiciais/leiloes-judiciais",
@@ -531,8 +1622,8 @@
     },
     {
       "url": "https://topoleiloes.com.br/leilao/3255/semsep-sorriso-sucatas-aproveitaveis-com-motor-inservivel",
-      "status": "http_404",
-      "http": 404
+      "status": "http_521",
+      "http": 521
     },
     {
       "url": "https://vardanaleiloes.com.br/vardana/img_leiloes/EDITAL_1077_5.pdf",
