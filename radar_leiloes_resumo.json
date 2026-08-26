@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-08-26T10:15:36-03:00",
+  "atualizado_em": "2026-08-26T16:08:24-03:00",
   "data_base": "2026-08-26",
   "total_registros": 1277,
   "eventos_atualizacao": 684,
@@ -105,7 +105,7 @@
     ]
   ],
   "download_kml": {
-    "downloaded_at": "2026-08-26T10:14:38-03:00",
+    "downloaded_at": "2026-08-26T16:07:27-03:00",
     "http_status": 200,
     "final_url": "https://www.google.com/maps/d/kml?forcekml=1&mid=1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U",
     "downloaded_bytes": 1511716,
