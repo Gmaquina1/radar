@@ -1,19 +1,19 @@
 {
   "status": "ok",
-  "verificado_em": "2026-08-26T17:12:44-03:00",
-  "atualizado_em_base_eventos": "2026-08-26T17:12:13-03:00",
-  "atualizado_em_base_lotes": "2026-08-26T17:12:36-03:00",
+  "verificado_em": "2026-08-27T06:45:32-03:00",
+  "atualizado_em_base_eventos": "2026-08-27T06:45:01-03:00",
+  "atualizado_em_base_lotes": "2026-08-27T06:45:23-03:00",
   "idade_base_eventos_horas": 0.01,
   "idade_base_lotes_horas": 0.0,
-  "eventos_futuros": 36,
+  "eventos_futuros": 34,
   "patios": 132,
-  "eventos_publicados": 36,
-  "lotes": 150,
-  "lotes_publicados": 150,
-  "lotes_na_base": 150,
-  "lotes_capturados_agora": 150,
+  "eventos_publicados": 33,
+  "lotes": 92,
+  "lotes_publicados": 92,
+  "lotes_na_base": 92,
+  "lotes_capturados_agora": 95,
   "lotes_preservados": 0,
-  "eventos_indexados_com_lotes": 8,
+  "eventos_indexados_com_lotes": 9,
   "fonte_eventos": "google_my_maps",
   "somente_eventos_do_mapa": true,
   "checks": {
@@ -38,14 +38,14 @@
   },
   "arquivos_faltando": [],
   "modo": "somente_mapa",
-  "duracao_segundos": 680.27,
-  "ultima_execucao": "2026-08-26T17:12:44-03:00",
+  "duracao_segundos": 94.8,
+  "ultima_execucao": "2026-08-27T06:45:32-03:00",
   "mensagem": "Eventos do Google My Maps, seus lotes e o site foram atualizados com sucesso.",
   "base_anterior_restaurada": false,
   "lotes_antes": 150,
-  "lotes_depois": 150,
-  "lotes_novos_detectados": 0,
-  "lotes_removidos_ou_encerrados": 0,
+  "lotes_depois": 92,
+  "lotes_novos_detectados": 1,
+  "lotes_removidos_ou_encerrados": 29,
   "status_mapa": "ok",
   "status_openai": "desativada_para_leiloes",
   "status_descoberta": "desativada_somente_mapa",
@@ -65,7 +65,7 @@
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 649.24,
+      "duracao_segundos": 63.92,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 900
@@ -83,7 +83,7 @@
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 23.5,
+      "duracao_segundos": 22.55,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 3600
@@ -95,7 +95,7 @@
         "gerar_site_github.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 5.78,
+      "duracao_segundos": 6.43,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300
@@ -107,7 +107,7 @@
         "sanitizar_conteudo_externo.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 1.62,
+      "duracao_segundos": 1.82,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300
@@ -120,7 +120,7 @@
         "--falhar-se-atencao"
       ],
       "tentativas": 1,
-      "duracao_segundos": 0.11,
+      "duracao_segundos": 0.06,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300

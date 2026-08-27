@@ -1,22 +1,23 @@
 {
-  "executado_em": "2026-08-26T17:12:36-03:00",
+  "executado_em": "2026-08-27T06:45:23-03:00",
   "lotes_antes": 150,
-  "lotes_depois": 150,
-  "lotes_realmente_novos": 0,
-  "lotes_removidos_ou_encerrados": 0,
+  "lotes_depois": 92,
+  "lotes_realmente_novos": 1,
+  "lotes_removidos_ou_encerrados": 29,
   "lotes_preservados": 0,
-  "lotes_capturados_agora": 150,
-  "lotes_capturados_com_chave_nova": 0,
-  "eventos_analisados": 36,
-  "eventos_com_lotes": 8,
-  "eventos_com_erro": 5,
-  "eventos_bloqueados": 5,
+  "lotes_capturados_agora": 95,
+  "lotes_capturados_com_chave_nova": 2,
+  "eventos_analisados": 34,
+  "eventos_com_lotes": 9,
+  "eventos_com_erro": 3,
+  "eventos_bloqueados": 3,
   "links_invalidos": 2,
   "quantidade_coletada_por_leiloeiro": {
     "allianceleiloes.com.br": 26,
+    "claudiokussleiloes.com.br": 1,
     "drive.google.com": 2,
     "eckertleiloes.com.br": 24,
-    "leffaleiloes.com.br": 59,
+    "lancecertoleiloes.com.br": 3,
     "leiloesfreire.com.br": 6,
     "lipinskileiloes.com.br": 25,
     "rochaleiloes.com.br": 1,
@@ -24,19 +25,13 @@
   },
   "erros_por_leiloeiro": {
     "amaralleiloes.com.br": 1,
-    "bidgo.com.br": 2,
     "cargneluttileiloes.com.br": 2
   },
   "urls_que_falharam": [
     {
-      "url": "https://www.bidgo.com.br/leilao/imoveis-em-joinville-sc-24-06-2026-16-40-27/lotes/lista",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.bidgo.com.br/leilao/imoveis-em-joinville-sc-24-06-2026-16-40-27/lotes/lista",
-      "status": "bloqueado_http_403",
-      "http": 403
+      "url": "https://www.sold.com.br/evento/bc2-construtora-790425?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
+      "status": "api_superbid_http_503",
+      "http": ""
     },
     {
       "url": "https://www.amaralleiloes.com.br/leilao/1544/lotes",
