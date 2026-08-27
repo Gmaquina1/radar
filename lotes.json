@@ -1,162 +1,15 @@
 {
-  "atualizado_em": "2026-08-27T06:45:23-03:00",
-  "total_eventos_lidos": 34,
-  "total_lotes": 92,
-  "total_lotes_capturados_agora": 95,
+  "atualizado_em": "2026-08-27T19:15:58-03:00",
+  "total_eventos_lidos": 36,
+  "total_lotes": 85,
+  "total_lotes_capturados_agora": 85,
   "total_lotes_preservados": 0,
-  "eventos_com_lotes": 9,
-  "eventos_sem_lotes": 25,
+  "eventos_com_lotes": 7,
+  "eventos_sem_lotes": 29,
   "eventos_com_erro_ou_bloqueio": 3,
   "fonte_eventos": "google_my_maps",
   "somente_eventos_do_mapa": true,
   "lotes": [
-    {
-      "leiloeiro": "wrleiloes.com.br",
-      "evento": "[ÓRGÃO PÚBLICO] - DETRAN - Sucatas, Equipamentos, Motos - Boa Vista / RR",
-      "data": "2026-08-27",
-      "data_original": "27/08/2026",
-      "hora": "09:00",
-      "uf": "RR",
-      "local": "Rua Três Marias, 139 - Bela Vista - 69316-158 - Boa Vista - RR - Brasil",
-      "link_evento": "https://www.wrleiloes.com.br/leilao/760/leilao-departamento-estadual-de-transito-de-roraima-detran-rr?page=1",
-      "link_edital": "",
-      "resumo_edital": "etalhes Lote nº: 9 | RECUPERAVEL IVECO/Daily Chassi 70C17 CD 3.0 Turbo AMARELA, 2014/2014, RECUPERAVEL Lance inicial: R$ 120.000,00 (Incremento: + R$ 300,00) Ver Detalhes Confira os próximos Leilões Cadastrados JUDICIAL 27/08/2026 às 09:00 Leilão Tribunal de Justiça de Roraima - Judicial/Alienação Antecipada/Vara de Entorpecente Online 1ª Praça » 10/02/2019 2ª Praça » 15/03/2019 --> Aberto para lances (ver lotes) Aberto para lances EXTRAJUDICIAL 28/08/2026 às 10:00 Leilão Departame",
-      "fonte": "https://www.wrleiloes.com.br/",
-      "capturado_em": "2026-08-27T06:45:03-03:00",
-      "status_captura": "http_200",
-      "titulo": "Ver Detalhes",
-      "descricao": "",
-      "lance_atual": "",
-      "lote": "",
-      "link_lote": "https://www.wrleiloes.com.br/lote/53300/lancha-motorizada-voo-da-aguia-",
-      "foto_lote": "https://www.wrleiloes.com.br/imgTmp/169459046c6c1238150c0a3c187e1b27.jpeg"
-    },
-    {
-      "leiloeiro": "wrleiloes.com.br",
-      "evento": "[ÓRGÃO PÚBLICO] - DETRAN - Sucatas, Equipamentos, Motos - Boa Vista / RR",
-      "data": "2026-08-27",
-      "data_original": "27/08/2026",
-      "hora": "09:00",
-      "uf": "RR",
-      "local": "Rua Três Marias, 139 - Bela Vista - 69316-158 - Boa Vista - RR - Brasil",
-      "link_evento": "https://www.wrleiloes.com.br/leilao/760/leilao-departamento-estadual-de-transito-de-roraima-detran-rr?page=1",
-      "link_edital": "",
-      "resumo_edital": "etalhes Lote nº: 9 | RECUPERAVEL IVECO/Daily Chassi 70C17 CD 3.0 Turbo AMARELA, 2014/2014, RECUPERAVEL Lance inicial: R$ 120.000,00 (Incremento: + R$ 300,00) Ver Detalhes Confira os próximos Leilões Cadastrados JUDICIAL 27/08/2026 às 09:00 Leilão Tribunal de Justiça de Roraima - Judicial/Alienação Antecipada/Vara de Entorpecente Online 1ª Praça » 10/02/2019 2ª Praça » 15/03/2019 --> Aberto para lances (ver lotes) Aberto para lances EXTRAJUDICIAL 28/08/2026 às 10:00 Leilão Departame",
-      "fonte": "https://www.wrleiloes.com.br/",
-      "capturado_em": "2026-08-27T06:45:03-03:00",
-      "status_captura": "http_200",
-      "titulo": "Ver Detalhes",
-      "descricao": "",
-      "lance_atual": "",
-      "lote": "",
-      "link_lote": "https://www.wrleiloes.com.br/lote/53283/toyota-hilux-sw4-sr-2-7-16v-vvt-i",
-      "foto_lote": "https://www.wrleiloes.com.br/imgTmp/1787164974580.jpg"
-    },
-    {
-      "leiloeiro": "wrleiloes.com.br",
-      "evento": "[ÓRGÃO PÚBLICO] - DETRAN - Sucatas, Equipamentos, Motos - Boa Vista / RR",
-      "data": "2026-08-27",
-      "data_original": "27/08/2026",
-      "hora": "09:00",
-      "uf": "RR",
-      "local": "Rua Três Marias, 139 - Bela Vista - 69316-158 - Boa Vista - RR - Brasil",
-      "link_evento": "https://www.wrleiloes.com.br/leilao/760/leilao-departamento-estadual-de-transito-de-roraima-detran-rr?page=1",
-      "link_edital": "",
-      "resumo_edital": "etalhes Lote nº: 9 | RECUPERAVEL IVECO/Daily Chassi 70C17 CD 3.0 Turbo AMARELA, 2014/2014, RECUPERAVEL Lance inicial: R$ 120.000,00 (Incremento: + R$ 300,00) Ver Detalhes Confira os próximos Leilões Cadastrados JUDICIAL 27/08/2026 às 09:00 Leilão Tribunal de Justiça de Roraima - Judicial/Alienação Antecipada/Vara de Entorpecente Online 1ª Praça » 10/02/2019 2ª Praça » 15/03/2019 --> Aberto para lances (ver lotes) Aberto para lances EXTRAJUDICIAL 28/08/2026 às 10:00 Leilão Departame",
-      "fonte": "https://www.wrleiloes.com.br/",
-      "capturado_em": "2026-08-27T06:45:03-03:00",
-      "status_captura": "http_200",
-      "titulo": "Ver Detalhes",
-      "descricao": "",
-      "lance_atual": "",
-      "lote": "",
-      "link_lote": "https://www.wrleiloes.com.br/lote/53285/honda-xre-sahara-300-rally",
-      "foto_lote": "https://www.wrleiloes.com.br/imgTmp/7b5bbe54ab508822bfaa80218f3bc727.jpeg"
-    },
-    {
-      "leiloeiro": "wrleiloes.com.br",
-      "evento": "[ÓRGÃO PÚBLICO] - DETRAN - Sucatas, Equipamentos, Motos - Boa Vista / RR",
-      "data": "2026-08-27",
-      "data_original": "27/08/2026",
-      "hora": "09:00",
-      "uf": "RR",
-      "local": "Rua Três Marias, 139 - Bela Vista - 69316-158 - Boa Vista - RR - Brasil",
-      "link_evento": "https://www.wrleiloes.com.br/leilao/760/leilao-departamento-estadual-de-transito-de-roraima-detran-rr?page=1",
-      "link_edital": "",
-      "resumo_edital": "etalhes Lote nº: 9 | RECUPERAVEL IVECO/Daily Chassi 70C17 CD 3.0 Turbo AMARELA, 2014/2014, RECUPERAVEL Lance inicial: R$ 120.000,00 (Incremento: + R$ 300,00) Ver Detalhes Confira os próximos Leilões Cadastrados JUDICIAL 27/08/2026 às 09:00 Leilão Tribunal de Justiça de Roraima - Judicial/Alienação Antecipada/Vara de Entorpecente Online 1ª Praça » 10/02/2019 2ª Praça » 15/03/2019 --> Aberto para lances (ver lotes) Aberto para lances EXTRAJUDICIAL 28/08/2026 às 10:00 Leilão Departame",
-      "fonte": "https://www.wrleiloes.com.br/",
-      "capturado_em": "2026-08-27T06:45:03-03:00",
-      "status_captura": "http_200",
-      "titulo": "Ver Detalhes",
-      "descricao": "",
-      "lance_atual": "",
-      "lote": "",
-      "link_lote": "https://www.wrleiloes.com.br/lote/53298/ram-3500-laramie-6-7-i6-turbo",
-      "foto_lote": "https://www.wrleiloes.com.br/imgTmp/1787150782031.jpg"
-    },
-    {
-      "leiloeiro": "wrleiloes.com.br",
-      "evento": "[ÓRGÃO PÚBLICO] - DETRAN - Sucatas, Equipamentos, Motos - Boa Vista / RR",
-      "data": "2026-08-27",
-      "data_original": "27/08/2026",
-      "hora": "09:00",
-      "uf": "RR",
-      "local": "Rua Três Marias, 139 - Bela Vista - 69316-158 - Boa Vista - RR - Brasil",
-      "link_evento": "https://www.wrleiloes.com.br/leilao/760/leilao-departamento-estadual-de-transito-de-roraima-detran-rr?page=1",
-      "link_edital": "",
-      "resumo_edital": "etalhes Lote nº: 9 | RECUPERAVEL IVECO/Daily Chassi 70C17 CD 3.0 Turbo AMARELA, 2014/2014, RECUPERAVEL Lance inicial: R$ 120.000,00 (Incremento: + R$ 300,00) Ver Detalhes Confira os próximos Leilões Cadastrados JUDICIAL 27/08/2026 às 09:00 Leilão Tribunal de Justiça de Roraima - Judicial/Alienação Antecipada/Vara de Entorpecente Online 1ª Praça » 10/02/2019 2ª Praça » 15/03/2019 --> Aberto para lances (ver lotes) Aberto para lances EXTRAJUDICIAL 28/08/2026 às 10:00 Leilão Departame",
-      "fonte": "https://www.wrleiloes.com.br/",
-      "capturado_em": "2026-08-27T06:45:03-03:00",
-      "status_captura": "http_200",
-      "titulo": "Ver Detalhes",
-      "descricao": "",
-      "lance_atual": "",
-      "lote": "",
-      "link_lote": "https://www.wrleiloes.com.br/lote/53296/toyota-hilux-cd-srx-srx-plus-2-8-d-4d-turbo",
-      "foto_lote": "https://www.wrleiloes.com.br/imgTmp/1787059465952.jpg"
-    },
-    {
-      "leiloeiro": "wrleiloes.com.br",
-      "evento": "[ÓRGÃO PÚBLICO] - DETRAN - Sucatas, Equipamentos, Motos - Boa Vista / RR",
-      "data": "2026-08-27",
-      "data_original": "27/08/2026",
-      "hora": "09:00",
-      "uf": "RR",
-      "local": "Rua Três Marias, 139 - Bela Vista - 69316-158 - Boa Vista - RR - Brasil",
-      "link_evento": "https://www.wrleiloes.com.br/leilao/760/leilao-departamento-estadual-de-transito-de-roraima-detran-rr?page=1",
-      "link_edital": "",
-      "resumo_edital": "etalhes Lote nº: 9 | RECUPERAVEL IVECO/Daily Chassi 70C17 CD 3.0 Turbo AMARELA, 2014/2014, RECUPERAVEL Lance inicial: R$ 120.000,00 (Incremento: + R$ 300,00) Ver Detalhes Confira os próximos Leilões Cadastrados JUDICIAL 27/08/2026 às 09:00 Leilão Tribunal de Justiça de Roraima - Judicial/Alienação Antecipada/Vara de Entorpecente Online 1ª Praça » 10/02/2019 2ª Praça » 15/03/2019 --> Aberto para lances (ver lotes) Aberto para lances EXTRAJUDICIAL 28/08/2026 às 10:00 Leilão Departame",
-      "fonte": "https://www.wrleiloes.com.br/",
-      "capturado_em": "2026-08-27T06:45:03-03:00",
-      "status_captura": "http_200",
-      "titulo": "Ver Detalhes",
-      "descricao": "",
-      "lance_atual": "",
-      "lote": "",
-      "link_lote": "https://www.wrleiloes.com.br/lote/53297/aeronave-",
-      "foto_lote": "https://www.wrleiloes.com.br/imgTmp/66180c635a50e3ecfc73904df8dece4b.jpeg"
-    },
-    {
-      "leiloeiro": "wrleiloes.com.br",
-      "evento": "[ÓRGÃO PÚBLICO] - DETRAN - Sucatas, Equipamentos, Motos - Boa Vista / RR",
-      "data": "2026-08-27",
-      "data_original": "27/08/2026",
-      "hora": "09:00",
-      "uf": "RR",
-      "local": "Rua Três Marias, 139 - Bela Vista - 69316-158 - Boa Vista - RR - Brasil",
-      "link_evento": "https://www.wrleiloes.com.br/leilao/760/leilao-departamento-estadual-de-transito-de-roraima-detran-rr?page=1",
-      "link_edital": "",
-      "resumo_edital": "etalhes Lote nº: 9 | RECUPERAVEL IVECO/Daily Chassi 70C17 CD 3.0 Turbo AMARELA, 2014/2014, RECUPERAVEL Lance inicial: R$ 120.000,00 (Incremento: + R$ 300,00) Ver Detalhes Confira os próximos Leilões Cadastrados JUDICIAL 27/08/2026 às 09:00 Leilão Tribunal de Justiça de Roraima - Judicial/Alienação Antecipada/Vara de Entorpecente Online 1ª Praça » 10/02/2019 2ª Praça » 15/03/2019 --> Aberto para lances (ver lotes) Aberto para lances EXTRAJUDICIAL 28/08/2026 às 10:00 Leilão Departame",
-      "fonte": "https://www.wrleiloes.com.br/",
-      "capturado_em": "2026-08-27T06:45:03-03:00",
-      "status_captura": "http_200",
-      "titulo": "Ver Detalhes",
-      "descricao": "",
-      "lance_atual": "",
-      "lote": "",
-      "link_lote": "https://www.wrleiloes.com.br/lote/53546/iveco-daily-chassi-70c17-cd-3-0-turbo",
-      "foto_lote": "https://www.wrleiloes.com.br/imgTmp/1770133861449.jpg"
-    },
     {
       "leiloeiro": "claudiokussleiloes.com.br",
       "evento": "[FINANCEIRA] - Veículos, Motos - Curitiba / PR",
@@ -169,7 +22,7 @@
       "link_edital": "https://www.claudiokussleiloes.com.br/termoUso.pdf",
       "resumo_edital": "t(); $.ajax ({ type:\"POST\", url:\"json_login.php\", data:{op:\"O\",username:$(\"input[name=username]\").val(),password:$(\"input[name=password]\").val()}, dataType:\"json\", success:function(json) { if (json=='1'){ location.reload(); } } }); }); }); Leilão Presencial / Online 01/09/2026 às 10:00 horas Veículos - Financeiras Acessar leilão Leilão Presencial / Online 09/09/2026 às 13:00 horas Veículos - Financeiras Atenção à data/hora Acessar leilão .carousel-control.left{background:none;} .ca",
       "fonte": "https://www.claudiokussleiloes.com.br/",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "CHEV ONIX 10 MT LT2",
       "descricao": "",
@@ -190,7 +43,7 @@
       "link_edital": "",
       "resumo_edital": "2026. Os interessados dever\\u00e3o entrar em contato com a Prefeitura de WENCESLAU BRAZ - PR (43) 3141-9500 para agendamento de visita. Os lotes a serem apregoados neste leil\\u00e3o encontram-se localizados nos p\\u00e1tios da Prefeitura \",\"leilao_data_controle\":null,\"leilao_data_disponibilizar\":\"2026-07-27 11:22:42\",\"leilao_tipo\":\"extra\",\"leilao_retirado\":0,\"leilao_1_modalidade\":\"virtual\",\"leilao_2_modalidade\":null,\"leilao_3_modalidade\":null,\"leilao_4_modalidade\":null,\"leilao_1_dat",
       "fonte": "https://rochaleiloes.com.br/leilao/6146/lotes",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:35-03:00",
       "status_captura": "http_200",
       "titulo": "Sobre",
       "descricao": "",
@@ -211,7 +64,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "ESQUECI MINHA SENHA",
       "descricao": "",
@@ -232,7 +85,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "Pessoa Fisica",
       "descricao": "",
@@ -253,7 +106,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "Pessoa Jurídica",
       "descricao": "",
@@ -274,7 +127,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "Alliance Leilões",
       "descricao": "",
@@ -295,7 +148,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "QUEM SOMOS",
       "descricao": "",
@@ -316,7 +169,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "DÚVIDAS",
       "descricao": "",
@@ -337,7 +190,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "INDIQUE-NOS",
       "descricao": "",
@@ -358,7 +211,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "FALE CONOSCO",
       "descricao": "",
@@ -379,7 +232,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "Cavalo Mecâsnico M.BENZ/AXOR 2041 LS (VENDA DIRETA)",
       "descricao": "",
@@ -400,7 +253,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "Cavalo Mecânico Mercedes-Benz Axor 2041 LS",
       "descricao": "",
@@ -421,7 +274,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "auditório",
       "descricao": "",
@@ -442,7 +295,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "Dê seu lance",
       "descricao": "",
@@ -463,7 +316,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "Cavalo Mecânico Mercedes-Benz Axor 2041 LS",
       "descricao": "",
@@ -484,7 +337,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "Cavalo Mecânico Mercedes-Benz Axor 2041 LS",
       "descricao": "",
@@ -505,7 +358,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "Cavalo Mecânico Mercedes-Benz Axor 2041 LS",
       "descricao": "",
@@ -526,7 +379,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "Cavalo Mecânico Mercedes-Benz Axor 2041 LS",
       "descricao": "",
@@ -547,7 +400,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "Cavalo Mecânico Mercedes-Benz Axor 2041 LS",
       "descricao": "",
@@ -568,7 +421,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "Cavalo Mecânico Mercedes-Benz Axor 2041 LS",
       "descricao": "",
@@ -589,7 +442,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "Cavalo Mecânico Mercedes-Benz Axor 2041 LS",
       "descricao": "",
@@ -610,7 +463,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "LOTES",
       "descricao": "",
@@ -631,7 +484,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "IMPRESSÃO",
       "descricao": "",
@@ -652,7 +505,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "ENVIE SEU LANCE R$ 290.000,00",
       "descricao": "",
@@ -673,7 +526,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "TERMOS DE USO",
       "descricao": "",
@@ -694,7 +547,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "COMO PARTICIPAR",
       "descricao": "",
@@ -715,7 +568,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "QUERO VENDER",
       "descricao": "",
@@ -736,7 +589,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
-      "capturado_em": "2026-08-27T06:45:02-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "QUERO COMPRAR",
       "descricao": "",
@@ -757,7 +610,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://drive.usercontent.google.com/download?id=1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k&export=download",
-      "capturado_em": "2026-08-27T06:45:07-03:00",
+      "capturado_em": "2026-08-27T19:15:40-03:00",
       "status_captura": "pdf_ok",
       "titulo": "Lote 1-104 - CENTRO LOGÍSTICO DOS CORREIOS - CAJAMAR Avenida Doutor João Abdalla nº 2727, Empresarial Colina CEP 07750-00 Cajamar - SP A visita de que trata o item anterior deverá ser realizada de segundas às sextas- feiras",
       "descricao": "CENTRO LOGÍSTICO DOS CORREIOS - CAJAMAR Avenida Doutor João Abdalla nº 2727, Empresarial Colina CEP 07750-00 Cajamar - SP A visita de que trata o item anterior deverá ser realizada de segundas às sextas- feiras, exceto feriados, em horário comercial, nos seguintes horários: de 09:00 hs às 12:00 hs e 14:00 hs às 16:00 hs. A visitação dos bens deverá ser previamente agendada, por meio do telefone (11) 4313-9389 - Cláudio Basilio ou pelo e-mail: CLAUDIOLOPES@correios.com.br ; (11)4313-7237 Vanildo Aparecido ou pelo e-mail: VANILDO@correios.com.br * Limite do Acolhimento das propostas: mesmos horá",
@@ -777,7 +630,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://drive.usercontent.google.com/download?id=1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k&export=download",
-      "capturado_em": "2026-08-27T06:45:07-03:00",
+      "capturado_em": "2026-08-27T19:15:40-03:00",
       "status_captura": "pdf_ok",
       "titulo": "Lote 4 - do presente edital, que trata das condições de participação, não sou empregados ou dirigente dos Correios, e que não tenho relação de parentesco até o terceiro grau civil com dirigentes ou empregados dos Correi",
       "descricao": "do presente edital, que trata das condições de participação, não sou empregados ou dirigente dos Correios, e que não tenho relação de parentesco até o terceiro grau civil com dirigentes ou empregados dos Correios. Local e data ASSINATURA DO ARREMATANTE OU REPRESENTANTE LEGAL DA EMPRESA NOME E CPF (Modelo III) TERMO DE CONSENTIMENTO Eu ................................................................., inscrito(a) no CPF nº ................., de acordo com as disposições da Lei nº 13.709/2018 - Lei Geral de Proteção de Dados Pessoais (LGPD) e as determinações de órgãos reguladores/fiscalizadores",
@@ -797,7 +650,7 @@
       "link_edital": "https://www.leiloesfreire.com.br/storage/leiloes/July2026/dQH5f4T5CXIEjffg6vAI.pdf",
       "resumo_edital": "",
       "fonte": "https://www.leiloesfreire.com.br/leilao/1139",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:37-03:00",
       "status_captura": "http_200",
       "titulo": "LOTE 001",
       "descricao": "",
@@ -818,7 +671,7 @@
       "link_edital": "https://www.leiloesfreire.com.br/storage/leiloes/July2026/dQH5f4T5CXIEjffg6vAI.pdf",
       "resumo_edital": "",
       "fonte": "https://www.leiloesfreire.com.br/leilao/1139",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:37-03:00",
       "status_captura": "http_200",
       "titulo": "VW/NOVO GOL 1.6 CITY, ANO/MOD 2014, COR BRANCA, COMBUS ALCO/GASOL, PLACA OHH7312, RENAVAM: 00999648730.",
       "descricao": "",
@@ -839,7 +692,7 @@
       "link_edital": "https://www.leiloesfreire.com.br/storage/leiloes/July2026/dQH5f4T5CXIEjffg6vAI.pdf",
       "resumo_edital": "",
       "fonte": "https://www.leiloesfreire.com.br/leilao/1139",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:37-03:00",
       "status_captura": "http_200",
       "titulo": "LOTE 002",
       "descricao": "",
@@ -860,7 +713,7 @@
       "link_edital": "https://www.leiloesfreire.com.br/storage/leiloes/July2026/dQH5f4T5CXIEjffg6vAI.pdf",
       "resumo_edital": "",
       "fonte": "https://www.leiloesfreire.com.br/leilao/1139",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:37-03:00",
       "status_captura": "http_200",
       "titulo": "VW/NOVO GOL 1.6 CITY, ANO/MOD 2014, COR BRANCA, COMBUS ALCO/GASOL, PLACA OHH7322, RENAVAM: 00999649167.",
       "descricao": "",
@@ -881,7 +734,7 @@
       "link_edital": "https://www.leiloesfreire.com.br/storage/leiloes/July2026/dQH5f4T5CXIEjffg6vAI.pdf",
       "resumo_edital": "",
       "fonte": "https://www.leiloesfreire.com.br/leilao/1139",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:37-03:00",
       "status_captura": "http_200",
       "titulo": "LOTE 003",
       "descricao": "",
@@ -902,7 +755,7 @@
       "link_edital": "https://www.leiloesfreire.com.br/storage/leiloes/July2026/dQH5f4T5CXIEjffg6vAI.pdf",
       "resumo_edital": "",
       "fonte": "https://www.leiloesfreire.com.br/leilao/1139",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:37-03:00",
       "status_captura": "http_200",
       "titulo": "CHEV/SPIN 1.8 SL MT LTZ, ANO/MOD 2018, COR BRANCA, COMBUS ALCO/GASOL, PLACA OXN5873, RENAVAM: 01143001416.",
       "descricao": "",
@@ -923,7 +776,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "VEÍCULO VW/8.150E DELIVERY / REB/PIRAMIDE PRB500/ SEMI-REBOQUE/ CASA SÃO LOURENÇO",
       "descricao": "VEÍCULO VW/8.150E DELIVERY / REB/PIRAMIDE PRB500/ SEMI-REBOQUE/ CASA SÃO LOURENÇO",
@@ -944,7 +797,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "VEÍCULO VW/8.150E DELIVERY",
       "descricao": "VEÍCULO VW/8.150E DELIVERY",
@@ -965,7 +818,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "CASA SÃO LOURENÇO DO SUL",
       "descricao": "CASA SÃO LOURENÇO DO SUL",
@@ -986,7 +839,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "VEÍCULO REB/PIRAMIDE PRB500",
       "descricao": "VEÍCULO REB/PIRAMIDE PRB500",
@@ -1007,7 +860,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "SEMI-REBOQUE",
       "descricao": "SEMI-REBOQUE",
@@ -1028,7 +881,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "Lipinski Leilões",
       "descricao": "",
@@ -1049,7 +902,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "LEILÕES",
       "descricao": "",
@@ -1070,7 +923,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "DIVERSOS 0 itens",
       "descricao": "",
@@ -1091,7 +944,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "ELETRÔNICOS 0 itens",
       "descricao": "",
@@ -1112,7 +965,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "EQUIPAMENTOS 0 itens",
       "descricao": "",
@@ -1133,7 +986,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "IMÓVEIS 0 itens",
       "descricao": "",
@@ -1154,7 +1007,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "MÁQUINAS 0 itens",
       "descricao": "",
@@ -1175,7 +1028,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "SEMOVENTES 0 itens",
       "descricao": "",
@@ -1196,7 +1049,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "SUCATAS 0 itens",
       "descricao": "",
@@ -1217,7 +1070,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "VEÍCULOS 0 itens",
       "descricao": "",
@@ -1238,7 +1091,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "LISTA",
       "descricao": "",
@@ -1259,7 +1112,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "$(document).ready(function(){ $(\"#carousel256_front .carousel-item:first\").addClass(\"active\"); $(\"#carousel256_front .carousel-indicators li:first\").addClass(\"active\"); }); LOTE 000 - VEÍCULO VW/8.150E DELIVERY LOTE 000 - VEÍCULO VW/8.150E ",
       "descricao": "",
@@ -1280,7 +1133,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "DETALHES",
       "descricao": "",
@@ -1301,7 +1154,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "$(document).ready(function(){ $(\"#carousel263_front .carousel-item:first\").addClass(\"active\"); $(\"#carousel263_front .carousel-indicators li:first\").addClass(\"active\"); }); LOTE 000 - CASA SÃO LOURENÇO DO SUL",
       "descricao": "",
@@ -1322,7 +1175,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "DETALHES",
       "descricao": "",
@@ -1343,7 +1196,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "$(document).ready(function(){ $(\"#carousel259_front .carousel-item:first\").addClass(\"active\"); $(\"#carousel259_front .carousel-indicators li:first\").addClass(\"active\"); }); LOTE 001 - VEÍCULO REB/PIRAMIDE PRB500 LOTE 001 - VEÍCULO REB/PIRAM",
       "descricao": "",
@@ -1364,7 +1217,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "DETALHES",
       "descricao": "",
@@ -1385,7 +1238,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "$(document).ready(function(){ $(\"#carousel260_front .carousel-item:first\").addClass(\"active\"); $(\"#carousel260_front .carousel-indicators li:first\").addClass(\"active\"); }); LOTE 003 - SEMI-REBOQUE LOTE 003 - SEMI-REBOQUE LOTE 003 - SEMI-REB",
       "descricao": "",
@@ -1406,7 +1259,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "DETALHES",
       "descricao": "",
@@ -1427,7 +1280,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
-      "capturado_em": "2026-08-27T06:45:04-03:00",
+      "capturado_em": "2026-08-27T19:15:36-03:00",
       "status_captura": "http_200",
       "titulo": "Gerenciar Cookies",
       "descricao": "",
@@ -1448,7 +1301,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "TOYOTA COROLLA GLI18 CVT ANO: 2016/2017 PLACA FINAL 8 (SC)",
       "descricao": "TOYOTA COROLLA GLI18 CVT ANO: 2016/2017 PLACA FINAL 8 (SC) MARCA: TOYOTA MODELO: COROLLA GLI18 CVT PLACA FINAL: 8 (SC) ANO FAB/MODELO: 2016/2017 DÉBITOS: R$ 130,16 KM ACIMA DE: 88828 COMBUSTÍVEL: FLEX (ÁLCOOL/GASOLINA) COR: PRATA PORTAS: 04 ACESSÓRIOS: CÂMBIO: AUTOMÁTICO DIREÇÃO: HIDRÁULICA AR CONDICIONADO: SIM VIDROS: ELÉTRICOS RODAS: LIGA LEVE BANCOS: COURO APARELHO DE SOM: SIM, ORIGINAL CONDIÇÕES GERAIS: MOTOR: FUNCIONANDO PINTURA: BOA LATARIA: BOA TAPEÇARIA: BOA PNEUS: REGULARES OBSERVAÇÕES: CAPÔ: PIQUES DE PEDRA PARA-CHOQUE DIANTEIRO: RISCADO/PIQUES DE PEDRA PORTA DIANTEIRA DIREITA: RISCA",
@@ -1469,7 +1322,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "TOYOTA ETIOS HB X 13L MT ANO: 2017/2018 PLACA FINAL 3 (SC)",
       "descricao": "TOYOTA ETIOS HB X 13L MT ANO: 2017/2018 PLACA FINAL 3 (SC) MARCA: TOYOTA MODELO: ETIOS HB X 13L MT PLACA FINAL: 3 (SC) ANO FAB/MODELO: 2017/2018 DÉBITOS: NADA CONSTA KM ACIMA DE: 116070 COMBUSTÍVEL: FLEX (ÁLCOOL/GASOLINA) COR: PRATA PORTAS: 04 ACESSÓRIOS: CÂMBIO: MANUAL DIREÇÃO: HIDRÁULICA AR CONDICIONADO: SIM VIDROS: ELÉTRICOS RODAS: FERRO BANCOS: TECIDO APARELHO DE SOM: SIM CONDIÇÕES GERAIS: MOTOR: FUNCIONANDO PINTURA: REGULAR LATARIA: REGULAR TAPEÇARIA: RUIM, SUJA PNEUS: REGULARES OBSERVAÇÕES: CAPÔ: PIQUES DE PEDRA/RISCADO PARA-CHOQUE DIANTEIRO: QUEBRADO/PIQUES DE PEDRA/RISCADO PARA-LAMA DI",
@@ -1490,7 +1343,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "RENAULT MASTER TCA MIC ANO: 2017/2018 PLACA FINAL 9 (SC)",
       "descricao": "RENAULT MASTER TCA MIC ANO: 2017/2018 PLACA FINAL 9 (SC) MARCA: RENAULT MODELO: MASTER TCA MIC PLACA FINAL: 9 (SC) ANO FAB/MODELO: 2017/2018 DÉBITOS: NADA CONSTA KM ACIMA DE: 276345 COMBUSTÍVEL: DIESEL COR: BRANCA PORTAS: 04 ACESSÓRIOS: CÂMBIO: MANUAL DIREÇÃO: HIDRÁULICA AR CONDICIONADO: SIM VIDROS: ELÉTRICOS RODAS: LIGA LEVE BANCOS: COURO APARELHO DE SOM: NÃO CONDIÇÕES GERAIS: MOTOR: FUNCIONANDO PINTURA: REGULAR LATARIA: REGULAR TAPEÇARIA: REGULAR PNEUS: RUINS OBSERVAÇÕES: COMPRESSOR DO AR CONDICIONADO: AVARIADO PARA-BRISA: QUEBRADO CAPÔ: PIQUES DE PEDRA PARA-CHOQUE DIANTEIRO: FOSCO/RISCADO P",
@@ -1511,7 +1364,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "CAMINHÃO BASCULANTE 4X2 MERCEDES-BENZ LK 1313 ANO: 1982/1983 PLACA FINAL 7 (SC)",
       "descricao": "CAMINHÃO BASCULANTE 4X2 MERCEDES-BENZ LK 1313 ANO: 1982/1983 PLACA FINAL 7 (SC) MARCA: MERCEDES-BENZ MODELO: LK 1313 ANO FAB/MODELO: 1982/1983 PLACA FINAL: 7 (SC) KM ACIMA DE: 191034 COMBUSTÍVEL: DIESEL COR: VERDE DÉBITOS: NADA CONSTA PATRIMÔNIO: 2903 ACESSÓRIOS: CÂMBIO: MANUAL EIXOS: 02 TRAÇÃO: 4X2 CARROCERIA: BASCULANTE MEDIDAS APROXIMADAS DA CARROCERIA: 3,60 X 2,30 X 0,90 1º CARDAN: SIM 1º DIFERENCIAL: SIM TACÓGRAFO: NÃO CONDIÇÕES GERAIS: MOTOR: FUNCIONANDO BANCOS: RASGADOS TAPEÇARIA: RUIM PINTURA: RUIM LATARIA: RUIM PNEUS: 06 ESTADO DOS PNEUS: BONS OBSERVAÇÕES: GRADE: AVARIADA/ENFERRUJADA/",
@@ -1532,7 +1385,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "RETROESCAVADEIRA CASE 580M ANO:2010",
       "descricao": "RETROESCAVADEIRA CASE 580M ANO:2010 MARCA: CASE MODELO: 580M ANO: 2010 SÉRIE: NAAH23550 HORÍMETRO: 10514 CAPACIDADE: NÃO VISUALIZADA IMPLEMENTOS: CONCHA DIANTEIRA COM H E LANÇA TRASEIRA COM CONCHA PNEUS: 04 ESTADO DOS PNEUS: REGULARES CONDIÇÕES GERAIS: MOTOR: NÃO TESTADO TRAÇÃO: 4X4 OBSERVAÇÕES: CONVERSOR DE TORQUE: APRESENTA AVARIAS BANCO DO OPERADOR: RASGADO LANÇA TRASEIRA: APRESENTA SOLDAS BATERIA: FALTA PNEU DIANTEIRO ESQUERDO: FURADO CAPÔ: PINTURA DESCASCANDO/AMASSADO TORQUE: AVARIADO PODENDO APRESENTAR PONTOS DE FERRUGEM E CORROSÃO FALTAM PARTES, PEÇAS E COMPONENTES APRESENTA RISCOS E AM",
@@ -1553,7 +1406,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "RETROESCAVADEIRA CATERPILLAR 416 E ANO: 2013",
       "descricao": "RETROESCAVADEIRA CATERPILLAR 416 E ANO: 2013 MARCA: CATERPILLAR MODELO: 416 E ANO: 2013 SÉRIE: NÃO VISUALIZADA HORÍMETRO: 9861 CAPACIDADE: NÃO VISUALIZADA IMPLEMENTOS: CONCHA DIANTEIRA COM H E LANÇA TRASEIRA COM CONCHA PNEUS: 04 ESTADO DOS PNEUS: REGULARES PATRIMÔNIO: 3256 CONDIÇÕES GERAIS: MOTOR: NÃO TESTADO/CONSOME ÓLEO TRAÇÃO: 4X4 OBSERVAÇÕES: BANCO DO OPERADOR: RASGADO PARA-LAMA ESQUERDO: QUEBRADO CAPÔ: AMASSADO/QUEBRADO LANÇA TRASEIRA: APRESENTA SOLDAS BATERIA: FALTA TAMPAS LATERAIS DO MOTOR: QUEBRADAS EQUIPAMENTO APRESENTA AVARIAS MÁQUINA DESATIVADA EM FUNCIONAMENTO PODENDO APRESENTAR PO",
@@ -1574,7 +1427,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "TRATOR DE PNEUS NEW HOLLAND 7630 ANO: 2008",
       "descricao": "TRATOR DE PNEUS NEW HOLLAND 7630 ANO: 2008 MARCA: NEW HOLLAND MODELO: 7630 ANO: 2008 SÉRIE: LG DP 3248 HORÍMETRO: ACIMA DE 7.031 (HORÍMETRO ORIGINAL AVARIADO, SUSBTITUÍDO) CAPACIDADE: NÃO VISUALIZADA IMPLEMENTOS: 06 CONTRAPESOS TRASEIROS PNEUS: 04 ESTADO DOS PNEUS: REGULARES PATRIMÔNIO: 2723 CONDIÇÕES GERAIS: MOTOR: FUNCIONANDO TRAÇÃO: 4X4 OBSERVAÇÕES: CAPÔ: AMASSADO/PINTURA DESCASCANDO TETO: PINTURA DESCASCANDO/AMASSADO PARA-BRISA: TRINCADO LANTERNAS TRASEIRAS: FALTAM BANCO DO OPERADOR: RASGADO FALTAM PARTES, PEÇAS E COMPONENTES APRESENTA RISCOS E AMASSADOS PODENDO CONTER PONTOS DE FERRUGEM E",
@@ -1595,7 +1448,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "TRATOR DE PNEUS FORD/NEW HOLLAND 5030 ANO: 1996",
       "descricao": "TRATOR DE PNEUS FORD/NEW HOLLAND 5030 ANO: 1996 MARCA: FORD/NEW HOLLAND MODELO: 5030 ANO: 1996 SÉRIE: CB772 CHASSI: 260367 HORÍMETRO: 7066 CAPACIDADE: NÃO VISUALIZADA IMPLEMENTOS: 11 CONTRAPESOS DIANTEIROS E 06 CONTRAPESOS TRASEIROS PNEUS: 04 ESTADO DOS PNEUS: REGULARES CONDIÇÕES GERAIS: MOTOR: FUNCIONANDO TRAÇÃO: 4X4 OBSERVAÇÕES: BATERIA: SEM CARGA BANCO DO OPERADOR: RASGADO PARA-LAMAS DIANTEIROS: QUEBRADOS TETO: ENFERRUJADO PARA-LAMAS TRASEIROS: AMASSADOS PODENDO FALTAR PARTES, PEÇAS E COMPONENTES APRESENTA RISCOS, AMASSADOS E PONTOS DE FERRUGEM CONFORME LOTE EXPOSTO Os bens serão vendidos N",
@@ -1616,7 +1469,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "ROLO COMPACTADOR DYNAPAC ANO: 2010",
       "descricao": "ROLO COMPACTADOR DYNAPAC CH-44 ANO: 2010 MARCA: DYNAPAC MODELO: CH-44 SÉRIE: NÃO VISUALIZADA ANO: 2010 PATRIMÔNIO: 2719 OBSERVAÇÕES: EQUIPAMENTO FUNCIONANDO PODENDO FALTAR PARTES, PEÇAS E COMPONENTES PODENDO CONTER AMASSADOS, AVARIAS E PONTOS DE FERRUGEM CONFORME LOTE EXPOSTO Os bens serão vendidos NO ESTADO em que se encontram, SEM GARANTIA e SEM DIREITO A TROCA. É fundamental que o interessado realize a visitação in loco, visto que a empresa organizadora do leilão e o comitente vendedor não garantem a regularidade mecânica, elétrica, eletrônica ou hidráulica dos itens ofertados no evento, be",
@@ -1637,7 +1490,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "CARRETA AGRÍCOLA IAC BASCULANTE",
       "descricao": "CARRETA AGRÍCOLA IAC BASCULANTE MARCA: IAC MODELO: NÃO VISUALIZADO ANO: NÃO VISUALIZADO PATRIMÔNIO: 632 CAPACIDADE: 4 TONELADAS APROXIMADAMENTE OBSERVAÇÕES: EIXO: TANDEM PISTÃO CENTRAL CARRETA: BASCULANTE 04 PNEUS: REGULARES PODENDO FALTAR PARTES, PEÇAS E COMPONENTES PODENDO CONTER AMASSADOS, AVARIAS E PONTOS DE FERRUGEM CONFORME LOTE EXPOSTO Os bens serão vendidos NO ESTADO em que se encontram, SEM GARANTIA e SEM DIREITO A TROCA. É fundamental que o interessado realize a visitação in loco, visto que a empresa organizadora do leilão e o comitente vendedor não garantem a regularidade mecânica, ",
@@ -1658,7 +1511,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "CARRETA AGRÍCOLA BASCULANTE",
       "descricao": "CARRETA AGRÍCOLA BASCULANTE MARCA: NÃO VISUALIZADA MODELO: NÃO VISUALIZADO ANO: NÃO VISUALIZADO PATRIMÔNIO: 2137 CAPACIDADE: 5 TONELADAS APROXIMADAMENTE OBSERVAÇÕES: EIXO: TANDEM PISTÃO CENTRAL CARRETA: BASCULANTE 04 PNEUS: REGULARES PODENDO FALTAR PARTES, PEÇAS E COMPONENTES PODENDO CONTER AMASSADOS, AVARIAS E PONTOS DE FERRUGEM CONFORME LOTE EXPOSTO Os bens serão vendidos NO ESTADO em que se encontram, SEM GARANTIA e SEM DIREITO A TROCA. É fundamental que o interessado realize a visitação in loco, visto que a empresa organizadora do leilão e o comitente vendedor não garantem a regularidade m",
@@ -1679,7 +1532,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "CARROCERIA METÁLICA BASCULANTE LIBRELATO",
       "descricao": "CARROCERIA METÁLICA BASCULANTE LIBRELATO MARCA: LIBRELATO ANO: NÃO VISUALIZADO MEDIDAS APROXIMADAS: COMPRIMENTO: 4,90 LARGURA: 2,40 ALTURA: 1,05 OBSERVAÇÕES: TAMPA TRASEIRA: ACOMPANHA PISTÃO: ACOMPANHA SOMENTE CARROCERIA, VEÍCULO NÃO ACOMPANHA PODENDO FALTAR PARTES, PEÇAS E COMPONENTES PODENDO CONTER AMASSADOS, AVARIAS E PONTOS DE FERRUGEM CONFORME LOTE EXPOSTO Os bens serão vendidos NO ESTADO em que se encontram, SEM GARANTIA e SEM DIREITO A TROCA. É fundamental que o interessado realize a visitação in loco, visto que a empresa organizadora do leilão e o comitente vendedor não garantem a regu",
@@ -1700,7 +1553,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "BRITADOR MÓVEL AÇOS PLANGG SR-1016",
       "descricao": "BRITADOR MÓVEL AÇOS PLANGG SR-1016 MARCA: AÇOS PLANGG MODELO: SR-1016 ANO: NÃO VISUALIZADO PATRIMÔNIO: 2136 OBSERVAÇÕES: EQUIPAMENTO NÃO TESTADO PODENDO FALTAR PARTES, PEÇAS E COMPONENTES PODENDO CONTER AMASSADOS, AVARIAS E PONTOS DE FERRUGEM CONFORME LOTE EXPOSTO Os bens serão vendidos NO ESTADO em que se encontram, SEM GARANTIA e SEM DIREITO A TROCA. É fundamental que o interessado realize a visitação in loco, visto que a empresa organizadora do leilão e o comitente vendedor não garantem a regularidade mecânica, elétrica, eletrônica ou hidráulica dos itens ofertados no evento, bem como de su",
@@ -1721,7 +1574,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "ENSILADEIRA DE LINHA NOGUEIRA NEW PECUS G2",
       "descricao": "ENSILADEIRA DE LINHA NOGUEIRA NEW PECUS G2 MARCA: NOGUEIRA MODELO: NEW PECUS G2 SÉRIE: AECC- 012525 ANO: NÃO VISUALIZADO PATRIMÔNIO: 19988 OBSERVAÇÕES: EQUIPAMENTO NÃO TESTADO PODENDO FALTAR PARTES, PEÇAS E COMPONENTES PODENDO CONTER AMASSADOS, AVARIAS E PONTOS DE FERRUGEM CONFORME LOTE EXPOSTO Os bens serão vendidos NO ESTADO em que se encontram, SEM GARANTIA e SEM DIREITO A TROCA. É fundamental que o interessado realize a visitação in loco, visto que a empresa organizadora do leilão e o comitente vendedor não garantem a regularidade mecânica, elétrica, eletrônica ou hidráulica dos itens ofer",
@@ -1742,7 +1595,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "TRITURADOR DE GRÃOS VENCEDORA MAQTRON",
       "descricao": "TRITURADOR DE GRÃOS VENCEDORA MAQTRON MARCA: VENCEDORA MAQTRON MODELO: M-10000 TR SÉRIE: 520888 ANO: NÃO VISUALIZADO PATRIMÔNIO: 4738 OBSERVAÇÕES: EQUIPAMENTO NÃO TESTADO PODENDO FALTAR PARTES, PEÇAS E COMPONENTES PODENDO CONTER AMASSADOS, AVARIAS E PONTOS DE FERRUGEM CONFORME LOTE EXPOSTO Os bens serão vendidos NO ESTADO em que se encontram, SEM GARANTIA e SEM DIREITO A TROCA. É fundamental que o interessado realize a visitação in loco, visto que a empresa organizadora do leilão e o comitente vendedor não garantem a regularidade mecânica, elétrica, eletrônica ou hidráulica dos itens ofertados",
@@ -1763,7 +1616,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "TRITURADOR DE MILHO NOGUEIRA TN-8 ANO: 2019",
       "descricao": "TRITURADOR DE MILHO NOGUEIRA TN-8 ANO: 2019 MARCA: NOGUEIRA MODELO: TN-8 SÉRIE: NÃO VISUALIZADA ANO: 2019 PATRIMÔNIO: 4738 OBSERVAÇÕES: EQUIPAMENTO NÃO TESTADO PODENDO FALTAR PARTES, PEÇAS E COMPONENTES PODENDO CONTER AMASSADOS, AVARIAS E PONTOS DE FERRUGEM CONFORME LOTE EXPOSTO Os bens serão vendidos NO ESTADO em que se encontram, SEM GARANTIA e SEM DIREITO A TROCA. É fundamental que o interessado realize a visitação in loco, visto que a empresa organizadora do leilão e o comitente vendedor não garantem a regularidade mecânica, elétrica, eletrônica ou hidráulica dos itens ofertados no evento,",
@@ -1784,7 +1637,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "ROLO FACA SCHEMAQ ROLLER 1040 M1 410 ANO: 2024",
       "descricao": "ROLO FACA SCHEMAQ ROLLER 1040 M1 410 ANO: 2024 MARCA: SCHEMAQ MODELO: ROLLER 1040 M1 410 SÉRIE: 141 ANO: 2024 PATRIMÔNIO: 7219 OBSERVAÇÕES: COMPRIMENTO: 3,8 LARGURA: 4,35 ALTURA: 1,3 EQUIPAMENTO NÃO TESTADO PODENDO FALTAR PARTES, PEÇAS E COMPONENTES PODENDO CONTER AMASSADOS, AVARIAS E PONTOS DE FERRUGEM CONFORME LOTE EXPOSTO Os bens serão vendidos NO ESTADO em que se encontram, SEM GARANTIA e SEM DIREITO A TROCA. É fundamental que o interessado realize a visitação in loco, visto que a empresa organizadora do leilão e o comitente vendedor não garantem a regularidade mecânica, elétrica, eletrôni",
@@ -1805,7 +1658,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "ESTEIRA TRANSPORTADORA PARA CARREGAR ADUBO STAR MACHINE ANO: 2023",
       "descricao": "ESTEIRA TRANSPORTADORA PARA CARREGAR ADUBO STAR MACHINE ANO: 2023 MARCA: STAR MACHINE MODELO: E0105.002 DCA 20 POLEGADAS 8X500 MM 4 CV-Q090 SÉRIE: 754 ANO: 2023 VOLTAGEM: 220 VOLTS MONOFÁSICO OBSERVAÇÕES: EQUIPAMENTO NÃO TESTADO PODENDO FALTAR PARTES, PEÇAS E COMPONENTES PODENDO CONTER AMASSADOS, AVARIAS E PONTOS DE FERRUGEM CONFORME LOTE EXPOSTO Os bens serão vendidos NO ESTADO em que se encontram, SEM GARANTIA e SEM DIREITO A TROCA. É fundamental que o interessado realize a visitação in loco, visto que a empresa organizadora do leilão e o comitente vendedor não garantem a regularidade mecâni",
@@ -1826,7 +1679,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "02 CARACÓIS PARA GRÃOS ÚMIDOS STAR MACHINE ANO: 2023",
       "descricao": "02 CARACÓIS PARA GRÃOS ÚMIDOS STAR MACHINE ANO: 2023 MARCA: STAR MACHINE MODELO: E2806.001-RHT-6 6M-3CV-Q075 SÉRIES: 756 E 755 PATRIMÔNIOS: 1214 E 7215 ANO: 2023 VOLTAGEM: 220 VOLTS MONOFÁSICO OBSERVAÇÕES: EQUIPAMENTOS NÃO TESTADOS PODENDO FALTAR PARTES, PEÇAS E COMPONENTES PODENDO CONTER AMASSADOS, AVARIAS E PONTOS DE FERRUGEM CONFORME LOTE EXPOSTO Os bens serão vendidos NO ESTADO em que se encontram, SEM GARANTIA e SEM DIREITO A TROCA. É fundamental que o interessado realize a visitação in loco, visto que a empresa organizadora do leilão e o comitente vendedor não garantem a regularidade mec",
@@ -1847,7 +1700,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "TANQUE ISOTÉRMICO EM INOX ANO: 2012 COM TUBULAÇÕES",
       "descricao": "TANQUE ISOTÉRMICO EM INOX ANO: 2012 COM TUBULAÇÕES TANQUE HORIZONTAL PARA ESTOCAGEM DE LEITE E TUBULAÇÃO PARA INTERLIGAÇÃO DE TANQUES MARCA: TECNOINOX SÉRIE: 01201231 ANO: 2012 PATRIMÔNIO: 2942 CAPACIDADE APROXIMADA: 40.000 LITROS CONSTRUÍDO TOTALMENTE EM AÇO INOX. CHAPA INTERNA EM AÇO INOX AISI 304 DE NO MÍNIMO 2,00MM DE ESPESSURA. COM ISOLAMENTO TÉRMICO COM POLIUTERANO INJETADO DE ALTA DENSIDADE COM ESPESSURA MÍNIMA DE 50 MM, TANTO NA LATERAL QUANTO NAS CABECEIRAS. SISTEMA DE AGITAÇÃO DO LEITE ATRAVÉS DE (01) UM AGITADOR TIPO HÉLICE MOVIMENTADO POR MOTOR LATERAL DE 3.0 CV. COM ACABAMENTO INT",
@@ -1868,7 +1721,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "SUCATA DE INFORMÁTICA E ITENS HOSPITALARES",
       "descricao": "SUCATA DE INFORMÁTICA E ITENS HOSPITALARES CONTENDO: AUTOCLAVE CRISTÓFOLI - PATRIMÔNIO: 4113 ELETROCARDIÓGRAFO MICROMED COMPUTADORES CPU ESTABILIZADORES TELEFONE FAX CÂMERA FOTOGRÁFICA DIGITAL CARTUCHOS CABOS E FIOS DIVERSOS DVD IMPRESSORA LUMINÁRIAS DE EMERGÊNCIA VENTILADOR DE TETO ENTRE OUTROS OBSERVAÇÕES: QUANTIDADE NÃO ESPECIFICADA ITENS EM ESTADO DE SUCATA PODENDO FALTAR PARTES, PEÇAS E COMPONENTES PODENDO CONTER AMASSADOS, AVARIAS E PONTOS DE FERRUGEM CONFORME LOTE EXPOSTO Os bens serão vendidos NO ESTADO em que se encontram, SEM GARANTIA e SEM DIREITO A TROCA. É fundamental que o intere",
@@ -1889,7 +1742,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "BOTIJÕES DE NITROGÊNIO LTS 30 LITROS",
       "descricao": "BOTIJÕES DE NITROGÊNIO LTS 30 LITROS CONTENDO: 02 BOTIJÕES DE NITROGÊNIO LTS CAPACIDADE: 30 LITROS CADA PATRIMÔNIOS: 1897 E 18484 OBSERVAÇÃO: EQUIPAMENTOS NÃO TESTADOS PODENDO FALTAR PARTES, PEÇAS E COMPONENTES PODENDO CONTER AMASSADOS, AVARIAS E PONTOS DE FERRUGEM CONFORME LOTE EXPOSTO Os bens serão vendidos NO ESTADO em que se encontram, SEM GARANTIA e SEM DIREITO A TROCA. É fundamental que o interessado realize a visitação in loco, visto que a empresa organizadora do leilão e o comitente vendedor não garantem a regularidade mecânica, elétrica, eletrônica ou hidráulica dos itens ofertados no",
@@ -1910,7 +1763,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "SUCATA DE ARES-CONDICIONADOS",
       "descricao": "SUCATA DE ARES-CONDICIONADOS CONTENDO 04 UNIDADES, SENDO: AR CONDICIONADO MARCA ELECTROLUX AR CONDICIONADO MARCA MIDEA OBSERVAÇÕES: EQUIPAMENTOS EM ESTADO DE SUCATA PODENDO FALTAR PARTES, PEÇAS E COMPONENTES PODENDO CONTER AMASSADOS, AVARIAS E PONTOS DE FERRUGEM CONFORME LOTE EXPOSTO Os bens serão vendidos NO ESTADO em que se encontram, SEM GARANTIA e SEM DIREITO A TROCA. É fundamental que o interessado realize a visitação in loco, visto que a empresa organizadora do leilão e o comitente vendedor não garantem a regularidade mecânica, elétrica, eletrônica ou hidráulica dos itens ofertados no ev",
@@ -1931,7 +1784,7 @@
       "link_edital": "",
       "resumo_edital": "",
       "fonte": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-      "capturado_em": "2026-08-27T06:45:05-03:00",
+      "capturado_em": "2026-08-27T19:15:38-03:00",
       "status_captura": "api_superbid_ok",
       "titulo": "SUCATA DE MÓVEIS E ELETRODOMÉSTICOS DIVERSOS",
       "descricao": "SUCATA DE MÓVEIS E ELETRODOMÉSTICOS DIVERSOS CONTENDO: MACA MESA FIXA 02 MESAS DE MDF MESA DE COMPUTAÇÃO 02 PAINÉIS/MURAL MOLDURA DE METAL 01 QUADRO DE MADEIRITE 02 BEBEDOUROS DE ÁGUA 02 CADEIRAS DE RODAS 02 MÁQUINAS DE LAVAR CADEIRAS DE ESCRITÓRIO CADEIRA ESCOLAR ENTRE OUTROS OBSERVAÇÕES: QUANTIDADE NÃO ESPECIFICADA PODENDO FALTAR PARTES, PEÇAS E COMPONENTES PODENDO CONTER AMASSADOS, AVARIAS E PONTOS DE FERRUGEM CONFORME LOTE EXPOSTO Os bens serão vendidos NO ESTADO em que se encontram, SEM GARANTIA e SEM DIREITO A TROCA. É fundamental que o interessado realize a visitação in loco, visto que ",
@@ -1944,22 +1797,16 @@
   "logs": [
     {
       "n": 1,
-      "evento": "[PREFEITURA] - Ônibus, Vans, Veículos - Acari / RN",
-      "data": "2026-08-27",
-      "link": "https://www.lancecertoleiloes.com.br/leilao/040826ACARI",
-      "final_url": "https://www.lancecertoleiloes.com.br/leilao/040826ACARI",
-      "status": "html_ok",
-      "lotes": 3,
+      "evento": "[PRODUTOS] - Produtos - Contagem / MG",
+      "data": "2027-08-26",
+      "link": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8534",
+      "final_url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8534",
+      "status": "http_200",
+      "lotes": 0,
       "fontes_tentadas": [
         {
-          "url": "https://www.lancecertoleiloes.com.br/leilao/040826ACARI",
+          "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8534",
           "status": "http_200",
-          "http": 200,
-          "lotes": 3
-        },
-        {
-          "url": "https://armazviplprd.blob.core.windows.net/controle/geral/1/5c2f68122e3a497e8ca966307d6df0d0.pdf",
-          "status": "pdf_link_sem_lotes",
           "http": 200,
           "lotes": 0
         }
@@ -1967,23 +1814,6 @@
     },
     {
       "n": 2,
-      "evento": "[ÓRGÃO PÚBLICO] - DETRAN - Sucatas, Equipamentos, Motos - Boa Vista / RR",
-      "data": "2026-08-27",
-      "link": "https://www.wrleiloes.com.br/leilao/760/leilao-departamento-estadual-de-transito-de-roraima-detran-rr?page=1",
-      "final_url": "https://www.wrleiloes.com.br/",
-      "status": "html_ok",
-      "lotes": 7,
-      "fontes_tentadas": [
-        {
-          "url": "https://www.wrleiloes.com.br/leilao/760/leilao-departamento-estadual-de-transito-de-roraima-detran-rr?page=1",
-          "status": "http_200",
-          "http": 200,
-          "lotes": 7
-        }
-      ]
-    },
-    {
-      "n": 3,
       "evento": "[FINANCEIRA] - Veículos, Motos - Curitiba / PR",
       "data": "2026-09-01",
       "link": "https://www.claudiokussleiloes.com.br/relacao-foto/885",
@@ -2012,24 +1842,109 @@
       ]
     },
     {
-      "n": 4,
-      "evento": "[ÓRGÃO PÚBLICO] - DETRAN - Motos, Veículos, Sucatas - Manaus / AM",
-      "data": "2026-08-27",
-      "link": "https://www.wrleiloes.com.br/leilao/774/leilao-departamento-estadual-de-transito-do-amazonas-detran-am",
-      "final_url": "https://www.wrleiloes.com.br/",
-      "status": "html_ok",
+      "n": 3,
+      "evento": "[PRODUTOS] - Produtos - Juatuba / MG",
+      "data": "2027-08-26",
+      "link": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8543",
+      "final_url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8543",
+      "status": "http_200",
       "lotes": 0,
       "fontes_tentadas": [
         {
-          "url": "https://www.wrleiloes.com.br/leilao/774/leilao-departamento-estadual-de-transito-do-amazonas-detran-am",
+          "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8543",
           "status": "http_200",
           "http": 200,
-          "lotes": 7
+          "lotes": 0
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "evento": "[EMPRESA] - Veículos - Contagem / MG",
+      "data": "2027-08-26",
+      "link": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8542",
+      "final_url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8542",
+      "status": "http_200",
+      "lotes": 0,
+      "fontes_tentadas": [
+        {
+          "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8542",
+          "status": "http_200",
+          "http": 200,
+          "lotes": 0
         }
       ]
     },
     {
       "n": 5,
+      "evento": "[EMPRESA] - Veículos, Caminhonetes, Motos - Juatuba / MG",
+      "data": "2027-08-26",
+      "link": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8541",
+      "final_url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8541",
+      "status": "http_200",
+      "lotes": 0,
+      "fontes_tentadas": [
+        {
+          "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8541",
+          "status": "http_200",
+          "http": 200,
+          "lotes": 0
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "evento": "[EMPRESA] - Veículos, Caminhonetes, Motos - Juatuba / MG",
+      "data": "2027-08-26",
+      "link": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8538",
+      "final_url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8538",
+      "status": "http_200",
+      "lotes": 0,
+      "fontes_tentadas": [
+        {
+          "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8538",
+          "status": "http_200",
+          "http": 200,
+          "lotes": 0
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "evento": "[PRODUTOS] - Produtos - Juatuba / MG",
+      "data": "2027-08-26",
+      "link": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8538",
+      "final_url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8538",
+      "status": "http_200",
+      "lotes": 0,
+      "fontes_tentadas": [
+        {
+          "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8538",
+          "status": "http_200",
+          "http": 200,
+          "lotes": 0
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "evento": "[PRODUTOS] - Contagem / MG",
+      "data": "2027-08-26",
+      "link": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8539",
+      "final_url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8539",
+      "status": "http_200",
+      "lotes": 0,
+      "fontes_tentadas": [
+        {
+          "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8539",
+          "status": "http_200",
+          "http": 200,
+          "lotes": 0
+        }
+      ]
+    },
+    {
+      "n": 9,
       "evento": "[EMPRESA] - BC2 - Caminhões, Máquinas, Equipamentos, Sucatas - Guararema / SP",
       "data": "2027-07-26",
       "link": "https://www.sold.com.br/evento/bc2-construtora-790425?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
@@ -2039,7 +1954,7 @@
       "fontes_tentadas": [
         {
           "url": "https://www.sold.com.br/evento/bc2-construtora-790425?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
-          "status": "api_superbid_http_503",
+          "status": "api_superbid_http_200",
           "lotes": 0
         },
         {
@@ -2051,7 +1966,7 @@
       ]
     },
     {
-      "n": 6,
+      "n": 10,
       "evento": "[PREFEITURA] - SÃO BERNADO DO CAMPOS - Veículos, Caminhonetes - Campinas / SP",
       "data": "2027-07-26",
       "link": "https://www.hastasp.com.br/evento/leilao-02-2026-munic-sao-b-do-campo-conservados-784297?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=4&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
@@ -2068,24 +1983,7 @@
       ]
     },
     {
-      "n": 7,
-      "evento": "[PREFEITURA] - Produtos, Equipamentos, Caminhonetes, Veículos, Vans, Motos, Ônibus - Boa Vista / RR",
-      "data": "2026-08-27",
-      "link": "https://www.wrleiloes.com.br/leilao/771/leilao-prefeitura-municipal-de-boa-vista-rr",
-      "final_url": "https://www.wrleiloes.com.br/",
-      "status": "html_ok",
-      "lotes": 0,
-      "fontes_tentadas": [
-        {
-          "url": "https://www.wrleiloes.com.br/leilao/771/leilao-prefeitura-municipal-de-boa-vista-rr",
-          "status": "http_200",
-          "http": 200,
-          "lotes": 7
-        }
-      ]
-    },
-    {
-      "n": 8,
+      "n": 11,
       "evento": "[PREFEITURA] - Ônibus, Máquinas, Veículos, Vans - Wenceslau Braz / PR",
       "data": "2027-07-26",
       "link": "https://rochaleiloes.com.br/leilao/6146/lotes",
@@ -2102,7 +2000,7 @@
       ]
     },
     {
-      "n": 9,
+      "n": 12,
       "evento": "[PRODUTOS] - Equipamentos, Produtos - Santo André / SP",
       "data": "2027-07-26",
       "link": "https://www.nextleiloes.com.br/evento/leilao-de-maquinas-e-equipamentos-784616?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
@@ -2119,7 +2017,58 @@
       ]
     },
     {
-      "n": 10,
+      "n": 13,
+      "evento": "[SEGURADORA] - Veículos, Motos, Caminhonetes - Juatuba / MG",
+      "data": "2027-08-26",
+      "link": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8503",
+      "final_url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8503",
+      "status": "http_200",
+      "lotes": 0,
+      "fontes_tentadas": [
+        {
+          "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8503",
+          "status": "http_200",
+          "http": 200,
+          "lotes": 0
+        }
+      ]
+    },
+    {
+      "n": 14,
+      "evento": "[SEGURADORA] - VEÍCULOS/CAMINHONETES - Juatuba/MG",
+      "data": "2027-08-26",
+      "link": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8503",
+      "final_url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8503",
+      "status": "http_200",
+      "lotes": 0,
+      "fontes_tentadas": [
+        {
+          "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8503",
+          "status": "http_200",
+          "http": 200,
+          "lotes": 0
+        }
+      ]
+    },
+    {
+      "n": 15,
+      "evento": "[PRODUTOS] - Contagem / MG",
+      "data": "2027-08-26",
+      "link": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8544",
+      "final_url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8544",
+      "status": "http_200",
+      "lotes": 0,
+      "fontes_tentadas": [
+        {
+          "url": "https://www.palaciodosleiloes.com.br/site/?leilao_pesquisa=8544",
+          "status": "http_200",
+          "http": 200,
+          "lotes": 0
+        }
+      ]
+    },
+    {
+      "n": 16,
       "evento": "[PRODUTOS] - Equipamentos, Produtos - Santo André / SP",
       "data": "2027-07-26",
       "link": "https://www.nextleiloes.com.br/evento/leilao-de-maquinas-e-equipamentos-790426?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
@@ -2136,93 +2085,7 @@
       ]
     },
     {
-      "n": 11,
-      "evento": "[PREFEITURA] - Veículos, Caminhões, Máquinas, Equipamentos, Sucatas - Arroio Trinta / SC",
-      "data": "2026-08-27",
-      "link": "https://drive.google.com/file/d/1v6M-8NnL-GHbp4j-Uzunx2qI7DOoO126/view?usp=drive_link",
-      "final_url": "https://drive.usercontent.google.com/download?id=1v6M-8NnL-GHbp4j-Uzunx2qI7DOoO126&export=download",
-      "status": "pdf_sem_lotes",
-      "lotes": 0,
-      "fontes_tentadas": [
-        {
-          "url": "https://drive.google.com/file/d/1v6M-8NnL-GHbp4j-Uzunx2qI7DOoO126/view?usp=drive_link",
-          "status": "pdf_sem_lotes",
-          "http": 200,
-          "lotes": 0
-        },
-        {
-          "url": "https://drive.usercontent.google.com/download?id=1v6M-8NnL-GHbp4j-Uzunx2qI7DOoO126&export=download",
-          "status": "pdf_sem_lotes",
-          "http": 200,
-          "lotes": 0
-        }
-      ]
-    },
-    {
-      "n": 12,
-      "evento": "[PREFEITURA] - Veículos, Caminhões, Máquinas, Equipamentos, Sucatas - Arroio Trinta / SC",
-      "data": "2026-08-27",
-      "link": "https://drive.google.com/file/d/1v6M-8NnL-GHbp4j-Uzunx2qI7DOoO126/view?usp=drive_link",
-      "final_url": "https://drive.usercontent.google.com/download?id=1v6M-8NnL-GHbp4j-Uzunx2qI7DOoO126&export=download",
-      "status": "pdf_sem_lotes",
-      "lotes": 0,
-      "fontes_tentadas": [
-        {
-          "url": "https://drive.google.com/file/d/1v6M-8NnL-GHbp4j-Uzunx2qI7DOoO126/view?usp=drive_link",
-          "status": "pdf_sem_lotes",
-          "http": 200,
-          "lotes": 0
-        },
-        {
-          "url": "https://drive.usercontent.google.com/download?id=1v6M-8NnL-GHbp4j-Uzunx2qI7DOoO126&export=download",
-          "status": "pdf_sem_lotes",
-          "http": 200,
-          "lotes": 0
-        }
-      ]
-    },
-    {
-      "n": 13,
-      "evento": "[PREFEITURA] - VEÍCULOS/CAMINHÕES/MÁQUINAS/EQUIPAMENTOS/SUCATAS - Arroio Trinta - SC",
-      "data": "2026-08-27",
-      "link": "https://drive.google.com/file/d/1v6M-8NnL-GHbp4j-Uzunx2qI7DOoO126/view?usp=drive_link",
-      "final_url": "https://drive.usercontent.google.com/download?id=1v6M-8NnL-GHbp4j-Uzunx2qI7DOoO126&export=download",
-      "status": "pdf_sem_lotes",
-      "lotes": 0,
-      "fontes_tentadas": [
-        {
-          "url": "https://drive.google.com/file/d/1v6M-8NnL-GHbp4j-Uzunx2qI7DOoO126/view?usp=drive_link",
-          "status": "pdf_sem_lotes",
-          "http": 200,
-          "lotes": 0
-        },
-        {
-          "url": "https://drive.usercontent.google.com/download?id=1v6M-8NnL-GHbp4j-Uzunx2qI7DOoO126&export=download",
-          "status": "pdf_sem_lotes",
-          "http": 200,
-          "lotes": 0
-        }
-      ]
-    },
-    {
-      "n": 14,
-      "evento": "[EMPRESA] - Máquinas - Formiga / MG",
-      "data": "2026-08-27",
-      "link": "https://www.adrianoleiloeiro.com.br/evento/carregadeira-new-holland-12d-784675?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "final_url": "https://www.adrianoleiloeiro.com.br/evento/carregadeira-new-holland-12d-784675?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-      "status": "http_200",
-      "lotes": 0,
-      "fontes_tentadas": [
-        {
-          "url": "https://www.adrianoleiloeiro.com.br/evento/carregadeira-new-holland-12d-784675?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc",
-          "status": "http_200",
-          "http": 200,
-          "lotes": 0
-        }
-      ]
-    },
-    {
-      "n": 15,
+      "n": 17,
       "evento": "[EMPRESA] - AMARAL - Máquinas - São Paulo / SP",
       "data": "2026-08-28",
       "link": "https://www.amaralleiloes.com.br/leilao/1544/lotes",
@@ -2239,7 +2102,7 @@
       ]
     },
     {
-      "n": 16,
+      "n": 18,
       "evento": "[EMPRESA] - Caminhões - São Paulo / SP",
       "data": "2026-08-29",
       "link": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
@@ -2256,7 +2119,7 @@
       ]
     },
     {
-      "n": 17,
+      "n": 19,
       "evento": "[ÓRGÃO PÚBLICO] - CORREIOS - PORTO ALEGRE/RS - Vans - Cajamar / SP",
       "data": "2026-08-31",
       "link": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link",
@@ -2273,7 +2136,7 @@
       ]
     },
     {
-      "n": 18,
+      "n": 20,
       "evento": "[PREFEITURA] - Imóveis - Rio de Janeiro / RJ",
       "data": "2026-08-31",
       "link": "https://drive.google.com/file/d/1TLkuxtpxFtX4SD-bdUZpGQ46i8jnltrT/view?usp=drive_link",
@@ -2290,7 +2153,7 @@
       ]
     },
     {
-      "n": 19,
+      "n": 21,
       "evento": "[ÓRGÃO PÚBLICO] - CORREIOS - PORTO ALEGRE/RS - Vans - Cajamar / SP",
       "data": "2026-08-31",
       "link": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link",
@@ -2307,7 +2170,7 @@
       ]
     },
     {
-      "n": 20,
+      "n": 22,
       "evento": "[PREFEITURA] - CORREIOS - PORTO ALEGRE/RS - Vans - Cajamar / SP",
       "data": "2026-08-31",
       "link": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link",
@@ -2324,7 +2187,7 @@
       ]
     },
     {
-      "n": 21,
+      "n": 23,
       "evento": "[EMPRESA] - UNIMED - Veículos - Maceió / AL",
       "data": "2026-08-31",
       "link": "https://www.leiloesfreire.com.br/leilao/1139",
@@ -2347,7 +2210,7 @@
       ]
     },
     {
-      "n": 22,
+      "n": 24,
       "evento": "[ÓRGÃO PÚBLICO] - DETRAN - 2 - Sucatas - São Luís / MA",
       "data": "2026-08-31",
       "link": "https://www.vipleiloes.com.br/evento/detalhes/100826tdmas",
@@ -2364,7 +2227,7 @@
       ]
     },
     {
-      "n": 23,
+      "n": 25,
       "evento": "[PREFEITURA] - Imóveis - Rio Verde / GO",
       "data": "2026-09-01",
       "link": "https://drive.google.com/file/d/1ewhPwJFLoBbCBiDDRxtj2Nw9Z4bj5UKb/view?usp=drive_link",
@@ -2387,7 +2250,7 @@
       ]
     },
     {
-      "n": 24,
+      "n": 26,
       "evento": "[PREFEITURA] - Imóveis, Ônibus, Caminhões, Vans, Caminhonetes, Veículos, Motos, Máquinas, Equipamentos, Sucatas - Joaquim Távora / PR",
       "data": "2026-09-02",
       "link": "https://www.simonleiloes.com.br/leiloes/leilao-da-prefeitura-de-joaquim-tavora-pr-538",
@@ -2416,41 +2279,41 @@
       ]
     },
     {
-      "n": 25,
-      "evento": "[PREFEITURA] - Veículos, Máquinas, Equipamentos, Produtos, Sucatas, Presencial - Tio Hugo / RS",
-      "data": "2026-09-03",
-      "link": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes",
-      "final_url": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes",
-      "status": "bloqueado_http_403",
-      "lotes": 0,
-      "fontes_tentadas": [
-        {
-          "url": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes",
-          "status": "bloqueado_http_403",
-          "http": 403,
-          "lotes": 0
-        }
-      ]
-    },
-    {
-      "n": 26,
-      "evento": "[PREFEITURA] - Veículos, Máquinas, Equipamentos, Produtos, Sucatas, Presencial - Tio Hugo / RS",
-      "data": "2026-09-03",
-      "link": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes",
-      "final_url": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes",
-      "status": "bloqueado_http_403",
-      "lotes": 0,
-      "fontes_tentadas": [
-        {
-          "url": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes",
-          "status": "bloqueado_http_403",
-          "http": 403,
-          "lotes": 0
-        }
-      ]
-    },
-    {
       "n": 27,
+      "evento": "[PREFEITURA] - Veículos, Máquinas, Equipamentos, Produtos, Sucatas, Presencial - Tio Hugo / RS",
+      "data": "2026-09-03",
+      "link": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes",
+      "final_url": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes",
+      "status": "bloqueado_http_403",
+      "lotes": 0,
+      "fontes_tentadas": [
+        {
+          "url": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes",
+          "status": "bloqueado_http_403",
+          "http": 403,
+          "lotes": 0
+        }
+      ]
+    },
+    {
+      "n": 28,
+      "evento": "[PREFEITURA] - Veículos, Máquinas, Equipamentos, Produtos, Sucatas, Presencial - Tio Hugo / RS",
+      "data": "2026-09-03",
+      "link": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes",
+      "final_url": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes",
+      "status": "bloqueado_http_403",
+      "lotes": 0,
+      "fontes_tentadas": [
+        {
+          "url": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes",
+          "status": "bloqueado_http_403",
+          "http": 403,
+          "lotes": 0
+        }
+      ]
+    },
+    {
+      "n": 29,
       "evento": "[EMPRESA] - Caminhões, Equipamentos, Imóveis - Rio Grande / RS",
       "data": "2026-09-03",
       "link": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
@@ -2467,7 +2330,7 @@
       ]
     },
     {
-      "n": 28,
+      "n": 30,
       "evento": "[PÁTIO] - Caminhões, Equipamentos, Jetskis - Rio Grande / RS",
       "data": "2026-09-03",
       "link": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
@@ -2484,7 +2347,7 @@
       ]
     },
     {
-      "n": 29,
+      "n": 31,
       "evento": "[PÁTIO] - Caminhões, Equipamentos, Jetskis - Rio Grande / RS",
       "data": "2026-09-03",
       "link": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista",
@@ -2501,7 +2364,7 @@
       ]
     },
     {
-      "n": 30,
+      "n": 32,
       "evento": "[PÁTIO]  - CAMINHÕES/EQUIMENTOS/JETSKIS - Rio Grande/RS",
       "data": "2026-09-03",
       "link": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista",
@@ -2518,7 +2381,7 @@
       ]
     },
     {
-      "n": 31,
+      "n": 33,
       "evento": "[PREFEITURA] - Veículos, Vans, Caminhões, Máquinas, Equipamentos, Sucatas - Formosa do Sul / SC",
       "data": "2026-09-09",
       "link": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
@@ -2534,7 +2397,7 @@
       ]
     },
     {
-      "n": 32,
+      "n": 34,
       "evento": "[PREFEITURA] - Imóveis, Presencial - Jandaia do Sul / PR",
       "data": "2026-09-15",
       "link": "https://drive.google.com/file/d/1lswP8Q4LpkLSjd6F_t9f7aqOZZ6YkKB6/view?usp=drive_link",
@@ -2551,7 +2414,7 @@
       ]
     },
     {
-      "n": 33,
+      "n": 35,
       "evento": "[PREFEITURA] - Imóveis - Passo Fundo / RS",
       "data": "2026-09-17",
       "link": "https://drive.google.com/file/d/1PYQsXs4rdIEDPAp0yxQAHWsKEfae9yqp/view?usp=drive_link",
@@ -2574,7 +2437,7 @@
       ]
     },
     {
-      "n": 34,
+      "n": 36,
       "evento": "[PREFEITURA] - IMÓVEIS\t- Tatuí - SP",
       "data": "2026-10-22",
       "link": "https://www.argonetworkleiloes.com.br/evento/prefeitura-municipal-de-tatui-789565?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",

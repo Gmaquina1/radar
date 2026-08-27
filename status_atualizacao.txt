@@ -1,9 +1,9 @@
 Status: ok
-Verificado em: 2026-08-27T06:45:32-03:00
-Base de eventos: 2026-08-27T06:45:01-03:00
-Base de lotes: 2026-08-27T06:45:23-03:00
-Eventos futuros: 34
-Lotes disponíveis: 92
+Verificado em: 2026-08-27T19:16:06-03:00
+Base de eventos: 2026-08-27T19:15:34-03:00
+Base de lotes: 2026-08-27T19:15:58-03:00
+Eventos futuros: 36
+Lotes disponíveis: 85
 Pátios: 132
 Verificações com problema: nenhuma
 Mensagem: Eventos do Google My Maps, seus lotes e o site foram atualizados com sucesso.
