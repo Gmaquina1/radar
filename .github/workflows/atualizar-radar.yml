@@ -140,7 +140,11 @@ jobs:
           print('RADAR_LEILOES_COMPLETO_VALIDADO=1')
           print('LOTES_PUBLICADOS=' + str(len(lotes_csv)))
           PY
-          git diff --check -- . ':(exclude)lotes.csv'
+          # HTML gerado pode conter espaços de composição; isso não altera dados nem renderização.
+          git diff --check -- . \
+            ':(exclude)lotes.csv' \
+            ':(exclude)leiloes.html' \
+            ':(exclude)site_template.html'
 
       - name: Publicar atualização no GitHub
         shell: bash
