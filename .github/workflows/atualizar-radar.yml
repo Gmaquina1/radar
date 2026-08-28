@@ -60,7 +60,9 @@ jobs:
         run: |
           test -f atualizar_radar_leiloes.py
           test -f indexador_lotes.py
+          test -f complementar_lotes_oficiais.py
           test -f gerar_site_github.py
+          test -f corrigir_exibicao_completa.py
           test -f atualizar_licitacoes.py
           test -f atualizar_licitacoes_completo.py
           test -f licitacoes_template.html
@@ -76,20 +78,28 @@ jobs:
             --delay-lotes 0 \
             2>&1 | tee atualizacao.log
 
-      - name: Gerar páginas do site
+      - name: Completar lotes e mostrar a base inteira
         shell: bash
         run: |
+          python complementar_lotes_oficiais.py
           python gerar_site_github.py
+          python corrigir_exibicao_completa.py
+          python diagnostico_radar.py
 
       - name: Validar coleta antes da publicação
         shell: bash
         run: |
-          python -m compileall -q atualizar_licitacoes_completo.py atualizar_licitacoes.py gerar_site_github.py
+          python -m compileall -q atualizar_licitacoes_completo.py atualizar_licitacoes.py complementar_lotes_oficiais.py corrigir_exibicao_completa.py gerar_site_github.py
           python - <<'PY'
           from pathlib import Path
 
+          html = Path('leiloes.html').read_text(encoding='utf-8', errors='replace')
+          template = Path('site_template.html').read_text(encoding='utf-8', errors='replace')
           assert Path('leiloes.html').stat().st_size > 100000, 'Página de leilões não gerada'
-          assert 'id="radar-data"' in Path('leiloes.html').read_text(encoding='utf-8', errors='replace'), 'Base de leilões não embutida'
+          assert 'id="radar-data"' in html, 'Base de leilões não embutida'
+          assert 'visible:5000' in html, 'Listagem completa não habilitada no site gerado'
+          assert 'visible:5000' in template, 'Listagem completa não persistida no template'
+          assert 'LOTES DISPONÍVEIS' in html, 'Contador de lotes disponíveis não atualizado'
 
           print('RADAR_LEILOES_VALIDADO=1')
           PY
@@ -129,5 +139,7 @@ jobs:
             atualizacao.log
             status_licitacoes.json
             status_atualizacao.json
+            relatorio_atualizacao_lotes.json
+            relatorio_complemento_lotes.json
           if-no-files-found: ignore
           retention-days: 14
