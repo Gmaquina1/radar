@@ -30,10 +30,10 @@ jobs:
     env:
       TZ: America/Sao_Paulo
       PYTHONUNBUFFERED: "1"
-      REQUEST_TIMEOUT: "10"
-      PDF_MAX_BYTES: "15000000"
-      PDF_MAX_PAGES: "120"
-      PDF_PARSE_TIMEOUT: "20"
+      REQUEST_TIMEOUT: "15"
+      PDF_MAX_BYTES: "50000000"
+      PDF_MAX_PAGES: "300"
+      PDF_PARSE_TIMEOUT: "45"
 
     steps:
       - name: Baixar o repositório
@@ -48,12 +48,13 @@ jobs:
           python-version: "3.12"
           cache: pip
 
-      - name: Instalar dependências
+      - name: Instalar dependências e navegador
         shell: bash
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install tzdata
+          python -m playwright install --with-deps chromium
 
       - name: Conferir arquivos essenciais
         shell: bash
@@ -61,6 +62,7 @@ jobs:
           test -f atualizar_radar_leiloes.py
           test -f indexador_lotes.py
           test -f complementar_lotes_oficiais.py
+          test -f indexador_lotes_browser.py
           test -f limpar_lotes_publicacao.py
           test -f gerar_site_github.py
           test -f corrigir_exibicao_completa.py
@@ -69,7 +71,7 @@ jobs:
           test -f licitacoes_template.html
           test -f executar_atualizacao_radar.py
 
-      - name: Atualizar somente os eventos do mapa e seus lotes
+      - name: Atualizar eventos e coleta rápida
         shell: bash
         run: |
           set -o pipefail
@@ -79,19 +81,32 @@ jobs:
             --delay-lotes 0 \
             2>&1 | tee atualizacao.log
 
-      - name: Completar lotes e mostrar a base inteira
+      - name: Capturar lotes bloqueados e páginas dinâmicas
         shell: bash
         run: |
-          python complementar_lotes_oficiais.py
-          python limpar_lotes_publicacao.py
+          set -o pipefail
+          python complementar_lotes_oficiais.py 2>&1 | tee -a atualizacao.log
+          python indexador_lotes_browser.py 2>&1 | tee -a atualizacao.log
+          python limpar_lotes_publicacao.py 2>&1 | tee -a atualizacao.log
+
+      - name: Gerar site sem qualquer resumo ou paginação
+        shell: bash
+        run: |
           python gerar_site_github.py
           python corrigir_exibicao_completa.py
           python diagnostico_radar.py
 
-      - name: Validar coleta antes da publicação
+      - name: Validar coleta completa antes da publicação
         shell: bash
         run: |
-          python -m compileall -q atualizar_licitacoes_completo.py atualizar_licitacoes.py complementar_lotes_oficiais.py limpar_lotes_publicacao.py corrigir_exibicao_completa.py gerar_site_github.py
+          python -m compileall -q \
+            atualizar_licitacoes_completo.py \
+            atualizar_licitacoes.py \
+            complementar_lotes_oficiais.py \
+            indexador_lotes_browser.py \
+            limpar_lotes_publicacao.py \
+            corrigir_exibicao_completa.py \
+            gerar_site_github.py
           python - <<'PY'
           import csv
           import json
@@ -100,18 +115,30 @@ jobs:
           html = Path('leiloes.html').read_text(encoding='utf-8', errors='replace')
           template = Path('site_template.html').read_text(encoding='utf-8', errors='replace')
           lotes = json.loads(Path('lotes.json').read_text(encoding='utf-8'))
+          browser_report = json.loads(Path('relatorio_browser_lotes.json').read_text(encoding='utf-8'))
           with Path('lotes.csv').open(newline='', encoding='utf-8') as handle:
               lotes_csv = list(csv.DictReader(handle))
 
           assert Path('leiloes.html').stat().st_size > 100000, 'Página de leilões não gerada'
           assert 'id="radar-data"' in html, 'Base de leilões não embutida'
-          assert 'visible:5000' in html, 'Listagem completa não habilitada no site gerado'
-          assert 'visible:5000' in template, 'Listagem completa não persistida no template'
+          assert 'visible:999999999' in html, 'Ainda existe limitação na listagem do site gerado'
+          assert 'visible:999999999' in template, 'Ainda existe limitação persistida no template'
           assert 'LOTES DISPONÍVEIS' in html, 'Contador de lotes disponíveis não atualizado'
+          assert 'auction-lot-description' in html, 'Descrição completa dos lotes não está sendo exibida'
+          assert 'shown=hasLots?group.items:[]' in html, 'Os lotes ainda estão sendo cortados por leilão'
           assert len(lotes.get('lotes', [])) == len(lotes_csv), 'JSON e CSV de lotes divergentes'
           assert all('esqueci minha senha' not in str(r.get('titulo','')).casefold() for r in lotes_csv), 'Falso lote de login encontrado'
 
-          print('RADAR_LEILOES_VALIDADO=1')
+          shortfalls = browser_report.get('shortfalls') or []
+          if shortfalls:
+              details = '; '.join(
+                  f"{item.get('evento')}: {item.get('lotes_browser')}/{item.get('total_declarado_na_pagina')}"
+                  for item in shortfalls[:20]
+              )
+              raise AssertionError('Página declarou mais lotes do que foram capturados: ' + details)
+
+          print('RADAR_LEILOES_COMPLETO_VALIDADO=1')
+          print('LOTES_PUBLICADOS=' + str(len(lotes_csv)))
           PY
           git diff --check -- . ':(exclude)lotes.csv'
 
@@ -151,5 +178,6 @@ jobs:
             status_atualizacao.json
             relatorio_atualizacao_lotes.json
             relatorio_complemento_lotes.json
+            relatorio_browser_lotes.json
           if-no-files-found: ignore
           retention-days: 14
