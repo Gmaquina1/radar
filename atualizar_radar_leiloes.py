@@ -38,6 +38,7 @@ PDF_MAX_PAGES = max(1, int(os.getenv("PDF_MAX_PAGES", "120")))
 PDF_PARSE_TIMEOUT = max(1, int(os.getenv("PDF_PARSE_TIMEOUT", "20")))
 REQUEST_TIMEOUT = max(1, int(os.getenv("REQUEST_TIMEOUT", "10")))
 FIELDS = [
+    "id_marcador_mapa",
     "nome",
     "camada",
     "data",
@@ -253,6 +254,30 @@ def data_dict(pm, ns):
         name = corrigir_texto((item.attrib.get("name") or "").strip())
         out[name] = text(item, "kml:value", ns)
     return out
+
+
+def embedded_semicolon_event(data):
+    """Recupera linhas CSV que o My Maps importou inteiras em uma coluna."""
+    for key, value in data.items():
+        header = (key or "").upper()
+        if ";DATA;MARCADOR;" not in header or not value:
+            continue
+        try:
+            fields = next(csv.reader([value], delimiter=";", quotechar='"'))
+        except (csv.Error, StopIteration):
+            continue
+        if len(fields) == 1 and fields[0].strip():
+            return {"nome": fields[0].strip()}
+        if len(fields) != 5 or not parse_date(fields[1]):
+            continue
+        return {
+            "nome": fields[0].strip(),
+            "data_original": fields[1].strip(),
+            "hora_marcador": fields[2].strip(),
+            "descricao": fields[3].strip(),
+            "endereco_ou_localizacao": fields[4].strip(),
+        }
+    return {}
 
 
 def links_from(*values):
@@ -552,22 +577,25 @@ def parse_kml(kml_path, today):
     parents = parent_map(root)
     rows = []
 
-    for pm in root.findall(".//kml:Placemark", ns):
+    for marker_index, pm in enumerate(root.findall(".//kml:Placemark", ns), start=1):
         data = data_dict(pm, ns)
-        name = text(pm, "kml:name", ns)
         camada = folder_for(pm, parents, ns)
+        embedded = embedded_semicolon_event(data)
+        name = text(pm, "kml:name", ns) or embedded.get("nome", "")
         desc_raw = text(pm, "kml:description", ns)
         address = (
             text(pm, "kml:address", ns)
             or data.get("LOCALIZAÇÃO")
             or data.get("ENDEREÇO DO PATIO")
             or data.get("LOCALIZAÇÃO ALTERNATIVA", "")
+            or embedded.get("endereco_ou_localizacao", "")
         )
-        data_original = data.get("DATA", "")
+        data_original = data.get("DATA", "") or embedded.get("data_original", "")
         data_iso = parse_date(data_original)
-        descricao = clean_html(data.get("DESCRIÇÃO", "") or desc_raw)
+        description_source = data.get("DESCRIÇÃO", "") or embedded.get("descricao", "")
+        descricao = clean_html(description_source or desc_raw)
         site = data.get("SITE DO LEILOEIRO", "")
-        link = links_from(data.get("DESCRIÇÃO", ""), desc_raw, site)
+        link = links_from(description_source, desc_raw, site)
         coords = text(pm, ".//kml:coordinates", ns)
         latitude = longitude = ""
         if coords:
@@ -581,11 +609,12 @@ def parse_kml(kml_path, today):
 
         rows.append(
             {
+                "id_marcador_mapa": f"marcador-{marker_index}",
                 "nome": name,
                 "camada": camada,
                 "data": data_iso,
                 "data_original": data_original,
-                "hora_marcador": data.get("MARCADOR", ""),
+                "hora_marcador": data.get("MARCADOR", "") or embedded.get("hora_marcador", ""),
                 "status_data": status,
                 "uf": infer_uf(name, address, descricao),
                 "endereco_ou_localizacao": address,

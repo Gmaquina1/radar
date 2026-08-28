@@ -7,7 +7,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta name="description" content="Radar de Leilões: busca nacional de leilões e lotes futuros, atualizada diariamente.">
+  <meta name="description" content="Radar de Leilões: consulte todos os registros de leilões do Google My Maps, com busca e filtros por data.">
   <title>Radar de Leilões</title>
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-F2ZZFWTKE5"></script>
@@ -90,11 +90,11 @@
       <div>
         <p class="eyebrow">INTELIGÊNCIA EM LEILÕES</p>
         <h1>O Brasil inteiro.<br>Um só radar.</h1>
-        <p class="hero-text">Encontre máquinas, veículos e imóveis em leilões que ainda irão acontecer. Pesquise oportunidades e confira os detalhes no site oficial responsável pela publicação.</p>
+        <p class="hero-text">Consulte todos os leilões cadastrados no mapa, incluindo registros futuros, históricos, sem data e pátios. Use os filtros para encontrar o que procura e confirme os detalhes no site oficial.</p>
         <div class="daily-note"><i></i><span id="hero-update-label">CONSULTANDO A ÚLTIMA ATUALIZAÇÃO</span></div>
       </div>
       <div class="metrics" aria-label="Resumo da base">
-        <div><span class="metric-icon"><svg class="icon"><use href="#i-gavel"/></svg></span><strong id="metric-events">0</strong><small>LEILÕES FUTUROS</small></div>
+        <div><span class="metric-icon"><svg class="icon"><use href="#i-gavel"/></svg></span><strong id="metric-events">0</strong><small>LEILÕES NO MAPA</small></div>
         <div><span class="metric-icon"><svg class="icon"><use href="#i-box"/></svg></span><strong id="metric-lots">0</strong><small>LOTES FUTUROS</small></div>
         <div><span class="metric-icon"><svg class="icon"><use href="#i-pin"/></svg></span><strong id="metric-yards">0</strong><small>PÁTIOS</small></div>
       </div>
@@ -127,7 +127,7 @@
       <button type="button" data-category="realestate"><svg class="icon"><use href="#i-building"/></svg>Imóveis</button>
       <span class="filter-spacer"></span>
       <label class="filter-select"><svg class="icon"><use href="#i-pin"/></svg><span class="sr-only">Estado</span><select id="state-filter"><option value="">Todos os estados</option></select></label>
-      <label class="filter-select"><svg class="icon"><use href="#i-calendar"/></svg><span class="sr-only">Período</span><select id="date-filter"><option value="all">Todas as datas futuras</option><option value="7">Próximos 7 dias</option><option value="15">Próximos 15 dias</option><option value="30">Próximos 30 dias</option></select></label>
+      <label class="filter-select"><svg class="icon"><use href="#i-calendar"/></svg><span class="sr-only">Período</span><select id="date-filter"><option value="all">Todos os períodos</option><option value="future">Somente futuros</option><option value="7">Próximos 7 dias</option><option value="15">Próximos 15 dias</option><option value="30">Próximos 30 dias</option><option value="past">Já realizados</option><option value="undated">Sem data informada</option></select></label>
     </div>
   </section>
 
@@ -135,7 +135,7 @@
     <div class="panel">
       <div class="panel-head"><div><span>SELEÇÃO DO RADAR</span><h2>Encontre oportunidades</h2></div><a class="section-head-link" href="#resultados">Ver todos <svg class="icon"><use href="#i-arrow"/></svg></a></div>
       <div class="feature-grid">
-        <article class="auction-card"><div class="card-image photo-carousel" data-carousel="machines" tabindex="0" aria-label="Galeria de máquinas pesadas"><img class="active" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Big_heavy_trucks_and_excavator_machine_working.jpg" alt="Escavadeira trabalhando" loading="eager"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/CAT_140_M_MOTORGRADER.jpg" alt="Motoniveladora" loading="eager"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/CASE-Wheel-Loader.jpg" alt="Carregadeira de rodas" loading="eager"><span class="status-tag">EM BREVE</span><small>FOTOS REAIS • REFERÊNCIA VISUAL</small><div class="carousel-dots"><button class="active" type="button" data-slide="0" aria-label="Foto 1"></button><button type="button" data-slide="1" aria-label="Foto 2"></button><button type="button" data-slide="2" aria-label="Foto 3"></button></div></div><div class="card-body"><h3>Máquinas pesadas</h3><p><svg class="icon"><use href="#i-pin"/></svg>Oportunidades em todo o Brasil</p><p><svg class="icon"><use href="#i-calendar"/></svg>Somente leilões futuros</p><p><svg class="icon"><use href="#i-gavel"/></svg>Busca organizada</p><div class="card-footer"><span>Escavadeiras</span><button type="button" data-feature-search="escavadeira">BUSCAR AGORA <svg class="icon"><use href="#i-arrow"/></svg></button></div></div></article>
+        <article class="auction-card"><div class="card-image photo-carousel" data-carousel="machines" tabindex="0" aria-label="Galeria de máquinas pesadas"><img class="active" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Big_heavy_trucks_and_excavator_machine_working.jpg" alt="Escavadeira trabalhando" loading="eager"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/CAT_140_M_MOTORGRADER.jpg" alt="Motoniveladora" loading="eager"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/CASE-Wheel-Loader.jpg" alt="Carregadeira de rodas" loading="eager"><span class="status-tag">EM BREVE</span><small>FOTOS REAIS • REFERÊNCIA VISUAL</small><div class="carousel-dots"><button class="active" type="button" data-slide="0" aria-label="Foto 1"></button><button type="button" data-slide="1" aria-label="Foto 2"></button><button type="button" data-slide="2" aria-label="Foto 3"></button></div></div><div class="card-body"><h3>Máquinas pesadas</h3><p><svg class="icon"><use href="#i-pin"/></svg>Oportunidades em todo o Brasil</p><p><svg class="icon"><use href="#i-calendar"/></svg>Todos os períodos do mapa</p><p><svg class="icon"><use href="#i-gavel"/></svg>Busca organizada</p><div class="card-footer"><span>Escavadeiras</span><button type="button" data-feature-search="escavadeira">BUSCAR AGORA <svg class="icon"><use href="#i-arrow"/></svg></button></div></div></article>
         <article class="auction-card"><div class="card-image photo-carousel" data-carousel="trucks" tabindex="0" aria-label="Galeria de caminhões e implementos"><img class="active" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Mack_Energoprojekt1.jpg" alt="Caminhões pesados" loading="eager"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Mercedes-Benz_Arocs_-_dump_truck_version_(1).JPG" alt="Caminhão basculante Mercedes-Benz" loading="eager"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dump_truck_unloads_its_trough_at_Uddevalla_port_4.jpg" alt="Caminhão basculante em obra" loading="eager"><span class="status-tag amber">ATUALIZADO</span><small>FOTOS REAIS • REFERÊNCIA VISUAL</small><div class="carousel-dots"><button class="active" type="button" data-slide="0" aria-label="Foto 1"></button><button type="button" data-slide="1" aria-label="Foto 2"></button><button type="button" data-slide="2" aria-label="Foto 3"></button></div></div><div class="card-body"><h3>Caminhões e implementos</h3><p><svg class="icon"><use href="#i-pin"/></svg>Leiloeiros de vários estados</p><p><svg class="icon"><use href="#i-calendar"/></svg>Atualizado todos os dias</p><p><svg class="icon"><use href="#i-gavel"/></svg>Links oficiais</p><div class="card-footer"><span>Veículos pesados</span><button type="button" data-feature-search="caminhao">BUSCAR AGORA <svg class="icon"><use href="#i-arrow"/></svg></button></div></div></article>
         <article class="auction-card"><div class="card-image photo-carousel" data-carousel="vehicles" tabindex="0" aria-label="Galeria de carros e caminhonetes"><img class="active" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/2021_Toyota_Hilux_Invincible_D-4D_4WD_2.4.jpg" alt="Toyota Hilux" loading="eager"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ford_Ranger_4x4_Sport_2022_(1).jpg" alt="Ford Ranger" loading="eager"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Brazilian_2012_All-New_Chevy_S10.jpg" alt="Chevrolet S10" loading="eager"><span class="status-tag blue">NACIONAL</span><small>FOTOS REAIS • REFERÊNCIA VISUAL</small><div class="carousel-dots"><button class="active" type="button" data-slide="0" aria-label="Foto 1"></button><button type="button" data-slide="1" aria-label="Foto 2"></button><button type="button" data-slide="2" aria-label="Foto 3"></button></div></div><div class="card-body"><h3>Carros e caminhonetes</h3><p><svg class="icon"><use href="#i-pin"/></svg>Busca por cidade e estado</p><p><svg class="icon"><use href="#i-calendar"/></svg>Datas organizadas</p><p><svg class="icon"><use href="#i-gavel"/></svg>Salve seus interesses</p><div class="card-footer"><span>Veículos</span><button type="button" data-feature-search="caminhonete">BUSCAR AGORA <svg class="icon"><use href="#i-arrow"/></svg></button></div></div></article>
       </div>
@@ -143,7 +143,7 @@
   </section>
 
   <section class="results-section" id="resultados">
-    <div class="results-header"><div><span class="section-kicker">TODOS OS LEILÕES FUTUROS DO MAPA</span><h2 id="results-title">Oportunidades encontradas</h2><p id="results-status">Carregando a base nacional…</p></div><div class="results-actions"><button type="button" id="show-all" hidden>Ver todos os leilões</button><span class="sync-badge"><i></i><span id="updated-label">BASE SINCRONIZADA</span></span></div></div>
+    <div class="results-header"><div><span class="section-kicker" id="results-kicker">TODOS OS REGISTROS DO MAPA</span><h2 id="results-title">Leilões encontrados</h2><p id="results-status">Carregando a base nacional…</p></div><div class="results-actions"><button type="button" id="show-all" hidden>Ver todos os leilões</button><span class="sync-badge"><i></i><span id="updated-label">BASE SINCRONIZADA</span></span></div></div>
     <div class="result-grid" id="result-grid"></div>
     <button class="load-more" id="load-more" type="button" hidden>CARREGAR MAIS LEILÕES <svg class="icon"><use href="#i-arrow"/></svg></button>
   </section>
@@ -164,7 +164,7 @@
 
 <script id="radar-data" type="application/json">__RADAR_DATA__</script>
 <script>
-(() => {
+(async()=>{
   'use strict';
   const BASE=JSON.parse(document.getElementById('radar-data').textContent);
   const STORE='radar_premium_salvos_v1';
@@ -187,7 +187,7 @@
   const truckTerms=['caminhao','cavalo mecanico','carreta','semirreboque','semi-reboque','basculante','caminhao pipa','truck'];
   const aliases={caminhao:['caminhao','caminhoes','truck','cavalo'],maquina:['maquina','maquinas','trator','escavadeira','carregadeira','retroescavadeira','motoniveladora','patrol','rolo'],veiculo:['veiculo','veiculos','carro','automovel','caminhonete','camionete','suv','moto'],carro:['carro','carros','automovel','automoveis'],onibus:['onibus','microonibus','micro-onibus']};
   const stop=new Set(['de','da','do','das','dos','e','em','no','na','nos','nas','para','por','com','a','o','as','os']);
-  const state={query:'',category:'all',uf:'',days:'all',exactDate:'',visible:100000,savedOnly:false,locationActive:false,userLat:null,userLon:null,radius:200,locationLabel:''};
+  const state={query:'',category:'all',uf:'',days:'all',exactDate:'',visible:60,savedOnly:false,locationActive:false,userLat:null,userLon:null,radius:200,locationLabel:''};
   let current=[];
   let currentGroups=[];
   const expandedAuctions=new Set();
@@ -195,8 +195,8 @@
 
   function parseStart(row){if(!row.data)return null;const match=String(row.hora||'').match(/(\d{1,2})[:h](\d{2})?/i);const hour=match?String(Math.min(23,+match[1])).padStart(2,'0'):'23';const min=match?String(Math.min(59,+(match[2]||0))).padStart(2,'0'):'59';const value=new Date(`${row.data}T${hour}:${min}:00`);return Number.isNaN(value.getTime())?null:value}
   function upcoming(row){const start=parseStart(row);return !!start&&start.getTime()>Date.now()}
-  const events=(BASE.eventos||[]).filter(upcoming);
-  const lots=(BASE.lotes||[]).filter(upcoming);
+  const events=await fetch(`${BASE.eventos_url}?v=${encodeURIComponent(BASE.versao||'atual')}`,{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error(`HTTP ${response.status}`);return response.json()}).catch(error=>{console.error('Falha ao carregar os registros do mapa.',error);return[]});
+  const lots=BASE.lotes||[];
   function loadSaved(){try{return JSON.parse(localStorage.getItem(STORE)||'[]')}catch{return[]}}
   function saveSaved(rows){localStorage.setItem(STORE,JSON.stringify(rows))}
   function isSaved(row){return loadSaved().includes(lotId(row))}
@@ -224,7 +224,8 @@
   function groupDistance(group){const values=groupRows(group).map(row=>distanceKm(row)).filter(value=>value!==null);return values.length?Math.min(...values):null}
   function filteredGroups(){
     const now=new Date();
-    const max=state.days==='all'?null:new Date(now.getTime()+Number(state.days)*86400000);
+    const numericDays=/^\d+$/.test(state.days)?Number(state.days):null;
+    const max=numericDays===null?null:new Date(now.getTime()+numericDays*86400000);
     const saved=loadSaved();
     return allGroups.filter(group=>{
       const rows=groupRows(group),text=groupText(group);
@@ -235,7 +236,10 @@
       if(state.exactDate&&group.row.data!==state.exactDate)return false;
       if(state.locationActive){const distance=groupDistance(group);if(distance===null||distance>state.radius)return false}
       const start=parseStart(group.row);
-      if(!state.exactDate&&max&&start&&start>max)return false;
+      if(!state.exactDate&&state.days==='future'&&(!start||start<=now))return false;
+      if(!state.exactDate&&state.days==='past'&&(!start||start>now))return false;
+      if(!state.exactDate&&state.days==='undated'&&start)return false;
+      if(!state.exactDate&&max&&(!start||start<now||start>max))return false;
       return true;
     }).sort((a,b)=>{
       if(state.locationActive){const distanceOrder=(groupDistance(a)??Infinity)-(groupDistance(b)??Infinity);if(distanceOrder)return distanceOrder}
@@ -257,7 +261,7 @@
     currentGroups=filteredGroups();
     current=currentGroups.flatMap(group=>group.items.map(entry=>entry.row));
     $('results-title').textContent=state.savedOnly?'Seus lotes salvos':state.exactDate?(state.locationActive?`${selectedDateTitle(state.exactDate)} perto de ${state.locationLabel}`:selectedDateTitle(state.exactDate)):state.locationActive?`Leilões perto de ${state.locationLabel}`:'Leilões encontrados';
-    $('results-status').textContent=state.locationActive?`${formatNumber(currentGroups.length)} leilões · ${formatNumber(current.length)} lotes em um raio de ${state.radius} km.`:`${formatNumber(currentGroups.length)} leilões · ${formatNumber(current.length)} lotes identificados. Todos os leilões aparecem, mesmo sem lotes indexados.`;
+    $('results-status').textContent=state.locationActive?`${formatNumber(currentGroups.length)} registros · ${formatNumber(current.length)} lotes em um raio de ${state.radius} km.`:`${formatNumber(currentGroups.length)} registros do mapa · ${formatNumber(current.length)} lotes identificados. Use o filtro de período para ver somente os futuros.`;
     $('nearby-status').textContent=state.locationActive?`${formatNumber(currentGroups.length)} leilões até ${state.radius} km de ${state.locationLabel}. Mais próximos primeiro.`:'Informe sua região para ordenar os leilões mais próximos.';
     $('show-all').hidden=!state.savedOnly;
     document.querySelectorAll('[data-category]').forEach(btn=>btn.classList.toggle('active',btn.dataset.category===state.category));
@@ -278,10 +282,10 @@
     grid.querySelectorAll('[data-open-auction]').forEach(link=>link.addEventListener('click',()=>track('open_auction',{auction_key:link.dataset.openAuction})));
     $('load-more').hidden=state.visible>=currentGroups.length;
   }
-  function resetVisible(){state.visible=100000;render()}
+  function resetVisible(){state.visible=60;render()}
   function clearFilters(){state.query='';state.category='all';state.uf='';state.days='all';state.exactDate='';state.savedOnly=false;$('search-input').value='';$('state-filter').value='';$('date-filter').value='all';$('exact-date-filter').value='';localStorage.removeItem(SEARCH_STORE);clearNearby(false);resetVisible()}
-  function showSaved(event){if(event)event.preventDefault();state.savedOnly=true;state.visible=100000;render();track('view_saved_lots',{result_count:current.length});$('resultados').scrollIntoView({behavior:'smooth'})}
-  function setup(){state.query=localStorage.getItem(SEARCH_STORE)||'';$('search-input').value=state.query;$('metric-events').textContent=formatNumber(events.length);$('metric-lots').textContent=formatNumber(lots.length);$('metric-yards').textContent=formatNumber((BASE.patios||[]).length);const ufs=[...new Set([...events,...lots].map(row=>row.uf).filter(Boolean))].sort();$('state-filter').innerHTML='<option value="">Todos os estados</option>'+ufs.map(uf=>`<option value="${esc(uf)}">${esc(uf)}</option>`).join('');restoreLocation();$('exact-date-filter').min=dateKey(0);$('today-count').textContent=formatNumber(events.filter(row=>row.data===dateKey(0)).length);$('tomorrow-count').textContent=formatNumber(events.filter(row=>row.data===dateKey(1)).length);const updated=formatUpdate(BASE.gerado_em);$('updated-label').textContent=`ATUALIZADO ${updated}`;$('top-update-label').textContent=`ATUALIZADO ${updated}`;$('hero-update-label').textContent=`ATUALIZADO EM ${updated}`;$('footer-update').textContent=`Última atualização: ${updated} • Fonte: Google My Maps.`;render()}
+  function showSaved(event){if(event)event.preventDefault();state.savedOnly=true;state.visible=60;render();track('view_saved_lots',{result_count:current.length});$('resultados').scrollIntoView({behavior:'smooth'})}
+  function setup(){state.query=localStorage.getItem(SEARCH_STORE)||'';$('search-input').value=state.query;$('metric-events').textContent=formatNumber(events.length);$('metric-lots').textContent=formatNumber(lots.length);$('metric-yards').textContent=formatNumber(BASE.patios_total||0);$('results-kicker').textContent=`TODOS OS ${formatNumber(events.length)} REGISTROS DO MAPA`;const ufs=[...new Set([...events,...lots].map(row=>row.uf).filter(Boolean))].sort();$('state-filter').innerHTML='<option value="">Todos os estados</option>'+ufs.map(uf=>`<option value="${esc(uf)}">${esc(uf)}</option>`).join('');restoreLocation();$('exact-date-filter').min='';$('today-count').textContent=formatNumber(events.filter(row=>row.data===dateKey(0)).length);$('tomorrow-count').textContent=formatNumber(events.filter(row=>row.data===dateKey(1)).length);const updated=formatUpdate(BASE.gerado_em);$('updated-label').textContent=`ATUALIZADO ${updated}`;$('top-update-label').textContent=`ATUALIZADO ${updated}`;$('hero-update-label').textContent=`ATUALIZADO EM ${updated}`;$('footer-update').textContent=`Última atualização: ${updated} • Fonte: Google My Maps.`;render()}
   $('search-form').addEventListener('submit',event=>{event.preventDefault();state.query=$('search-input').value.trim();localStorage.setItem(SEARCH_STORE,state.query);state.savedOnly=false;resetVisible();track('search',{search_term:state.query||'busca_vazia',result_count:current.length,search_source:'campo_principal'});$('resultados').scrollIntoView({behavior:'smooth'})});
   $('search-input').addEventListener('input',event=>{state.query=event.target.value;localStorage.setItem(SEARCH_STORE,state.query)});
   document.querySelectorAll('[data-category]').forEach(btn=>btn.addEventListener('click',()=>{state.category=btn.dataset.category;state.savedOnly=false;resetVisible();track('filter_category',{category:state.category,result_count:current.length})}));
@@ -298,7 +302,7 @@
   $('clear-location').addEventListener('click',()=>clearNearby(true));
   $('radius-filter').addEventListener('change',event=>{state.radius=Number(event.target.value)||200;if(state.locationActive){saveLocation();resetVisible();track('filter_distance_radius',{radius_km:state.radius,result_count:current.length})}});
   $('show-all').addEventListener('click',()=>{state.savedOnly=false;resetVisible()});
-  $('load-more').addEventListener('click',()=>{state.visible+=12;render();track('view_more_results',{visible_results:Math.min(state.visible,currentGroups.length),total_results:currentGroups.length})});
+  $('load-more').addEventListener('click',()=>{state.visible+=60;render();track('view_more_results',{visible_results:Math.min(state.visible,currentGroups.length),total_results:currentGroups.length})});
   $('accept-disclaimer').addEventListener('click',acceptDisclaimer);
   $('open-disclaimer').addEventListener('click',openDisclaimer);
   window.addEventListener('keydown',event=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='k'){event.preventDefault();$('search-input').focus()}});

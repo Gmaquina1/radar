@@ -124,6 +124,29 @@ class RadarTests(unittest.TestCase):
         )
         self.assertEqual(captured[:2], ("2026-08-27", "27/08/2026"))
 
+    def test_recupera_evento_de_camada_csv_importada_incorretamente(self) -> None:
+        data = {
+            "TITULO;DATA;MARCADOR;DESCRIÇÃO;LOCALIZAÇÃO": (
+                '[PREFEITURA] - Ônibus - Camutanga / PE;28/08/2026;04:00;'
+                '"<a href=""https://exemplo.com/leilao/1"">Abrir</a>";'
+                "Av. Presidente Getúlio Vargas"
+            )
+        }
+        recovered = atualizador.embedded_semicolon_event(data)
+        self.assertEqual(recovered["nome"], "[PREFEITURA] - Ônibus - Camutanga / PE")
+        self.assertEqual(recovered["data_original"], "28/08/2026")
+        self.assertEqual(recovered["hora_marcador"], "04:00")
+        self.assertEqual(recovered["endereco_ou_localizacao"], "Av. Presidente Getúlio Vargas")
+
+    def test_recupera_titulo_de_registro_importado_sem_data(self) -> None:
+        data = {
+            "TITULO;DATA;MARCADOR;DESCRIÇÃO;LOCALIZAÇÃO": "[PREFEITURA] - Veículos"
+        }
+        self.assertEqual(
+            atualizador.embedded_semicolon_event(data)["nome"],
+            "[PREFEITURA] - Veículos",
+        )
+
     def test_pipeline_preserva_data_do_google_my_maps(self) -> None:
         source = Path(pipeline.__file__).read_text(encoding="utf-8")
         self.assertIn('"--sem-editais"', source)
@@ -156,6 +179,31 @@ class RadarTests(unittest.TestCase):
         result = site.enrich_and_dedupe_lots(lots, events, now)
         self.assertEqual([row["lote"] for row in result], ["01", "02"])
         self.assertTrue(all(row.get("evento_id", "").startswith("evento-") for row in result))
+
+    def test_site_preserva_marcadores_iguais_com_ids_diferentes(self) -> None:
+        base = {
+            "nome": "Leilão teste",
+            "data": "2026-12-31",
+            "hora_marcador": "10:00",
+            "link": "https://exemplo.com/leilao/1",
+        }
+        prepared = site.prepare_events([
+            {**base, "id_marcador_mapa": "marcador-1"},
+            {**base, "id_marcador_mapa": "marcador-2"},
+        ])
+        self.assertEqual(len({row["evento_id"] for row in prepared}), 2)
+
+    def test_site_diferencia_mesmo_evento_em_horarios_distintos(self) -> None:
+        base = {
+            "nome": "Leilão teste",
+            "data": "2026-12-31",
+            "link": "https://exemplo.com/leilao/1",
+        }
+        prepared = site.prepare_events([
+            {**base, "hora_marcador": "04:00"},
+            {**base, "hora_marcador": "05:00"},
+        ])
+        self.assertEqual(len({row["evento_id"] for row in prepared}), 2)
 
     def test_site_remove_repeticao_do_mesmo_lote(self) -> None:
         now = datetime(2026, 7, 14, 16, 0, tzinfo=ZoneInfo("America/Sao_Paulo"))
@@ -334,7 +382,16 @@ class RadarTests(unittest.TestCase):
         self.assertIn("MOSTRAR MAIS LOTES", personalized)
         self.assertIn("LOTES NO SITE OFICIAL", personalized)
         self.assertIn("data-open-auction", personalized)
-        self.assertIn("Todos os leilões aparecem", personalized)
+        self.assertIn("registros do mapa", personalized)
+
+    def test_site_publica_todos_os_registros_do_mapa(self) -> None:
+        source = Path(site.__file__).read_text(encoding="utf-8")
+        personalized = apply_date_highlights(site.TEMPLATE.read_text(encoding="utf-8"))
+        self.assertIn('read_csv("radar_leiloes_base_completa.csv")', source)
+        self.assertIn("const events=await fetch", personalized)
+        self.assertIn('"radar_eventos_site.json"', source)
+        self.assertIn('value="past">Já realizados', personalized)
+        self.assertIn('value="undated">Sem data informada', personalized)
 
     def test_site_oferece_escolha_entre_leiloes_e_licitacoes(self) -> None:
         portal = site.PORTAL_TEMPLATE.read_text(encoding="utf-8")

@@ -1,8 +1,9 @@
 Status: ok
-Verificado em: 2026-08-27T22:54:05-03:00
-Base de eventos: 2026-08-27T22:53:34-03:00
-Base de lotes: 2026-08-27T22:53:57-03:00
-Eventos futuros: 20
+Verificado em: 2026-08-27T23:13:26-03:00
+Base de eventos: 2026-08-27T23:07:49-03:00
+Base de lotes: 2026-08-27T22:41:02-03:00
+Registros do mapa publicados: 1277
+Eventos futuros: 37
 Lotes disponíveis: 145
 Pátios: 132
 Verificações com problema: nenhuma

@@ -1,67 +1,79 @@
 {
-  "atualizado_em": "2026-08-27T22:53:34-03:00",
+  "atualizado_em": "2026-08-27T23:07:49-03:00",
   "data_base": "2026-08-27",
   "total_registros": 1277,
-  "eventos_atualizacao": 684,
-  "eventos_futuros_ou_hoje": 20,
+  "eventos_atualizacao": 867,
+  "eventos_futuros_ou_hoje": 37,
   "patios": 132,
-  "eventos_com_link": 20,
+  "eventos_com_link": 37,
   "eventos_com_data_hora_de_edital": 0,
   "eventos_com_data_hora_de_site": 0,
   "eventos_por_uf": [
     [
       "RS",
-      10
+      15
     ],
     [
       "SP",
-      3
+      7
     ],
     [
       "PR",
-      2
-    ],
-    [
-      "RJ",
-      1
-    ],
-    [
-      "AL",
-      1
+      4
     ],
     [
       "MA",
-      1
+      3
+    ],
+    [
+      "RJ",
+      2
+    ],
+    [
+      "AL",
+      2
     ],
     [
       "GO",
-      1
+      2
     ],
     [
       "SC",
+      1
+    ],
+    [
+      "PE",
       1
     ]
   ],
   "datas": [
     [
       "2026-08-31",
-      6
+      14
     ],
     [
       "2026-09-03",
-      6
+      7
     ],
     [
       "2026-08-28",
-      1
+      4
     ],
     [
       "2026-08-29",
-      1
+      2
     ],
     [
       "2026-09-01",
-      1
+      2
+    ],
+    [
+      "2026-09-17",
+      2
+    ],
+    [
+      "2026-10-22",
+      2
     ],
     [
       "2026-09-02",
@@ -76,23 +88,19 @@
       1
     ],
     [
-      "2026-09-17",
-      1
-    ],
-    [
-      "2026-10-22",
+      "2026-09-04",
       1
     ]
   ],
   "download_kml": {
-    "downloaded_at": "2026-08-27T22:53:33-03:00",
-    "http_status": 200,
-    "final_url": "https://www.google.com/maps/d/kml?forcekml=1&mid=1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U",
-    "downloaded_bytes": 1511716,
+    "downloaded_at": "",
+    "http_status": "",
+    "final_url": "",
+    "downloaded_bytes": "",
     "old_sha256": "84b4e30cb724d896070b2066e5fc80e4a137905d2edb8a28fba62577ecd0b27e",
     "new_sha256": "84b4e30cb724d896070b2066e5fc80e4a137905d2edb8a28fba62577ecd0b27e",
     "old_markers": 1277,
     "new_markers": 1277,
-    "source": "google_my_maps_live_kml"
+    "source": "local_existing_kml"
   }
 }

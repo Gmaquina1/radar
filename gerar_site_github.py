@@ -92,7 +92,7 @@ def add_municipality_coordinates(
         for value in (
             row.get("cidade"),
             row.get("local"),
-            event.get("endereco_ou_localizacao"),
+            event.get("local") or event.get("endereco_ou_localizacao"),
             row.get("evento"),
         )
     )
@@ -182,13 +182,20 @@ def event_urls(row: dict[str, str]) -> list[str]:
 def event_identity(row: dict[str, str]) -> str:
     urls = event_urls(row)
     parts = [
+        str(row.get("id_marcador_mapa") or ""),
         urls[0] if urls else "",
         normalize_place(row.get("nome") or row.get("evento") or ""),
         str(row.get("data") or ""),
+        format_event_hour(row.get("hora") or row.get("hora_marcador") or ""),
         normalize_place(row.get("endereco_ou_localizacao") or row.get("local") or ""),
     ]
     digest = hashlib.sha256("|".join(parts).encode("utf-8")).hexdigest()[:20]
     return f"evento-{digest}"
+
+
+def format_event_hour(value: str) -> str:
+    parsed = parse_hour(value)
+    return f"{parsed[0]:02d}:{parsed[1]:02d}" if parsed else ""
 
 
 def prepare_events(events: list[dict[str, str]]) -> list[dict[str, str]]:
@@ -198,14 +205,28 @@ def prepare_events(events: list[dict[str, str]]) -> list[dict[str, str]]:
         urls = event_urls(row)
         primary_url = urls[0] if urls else ""
         host = urlsplit(primary_url).netloc.casefold().removeprefix("www.") if primary_url else ""
-        row["evento_id"] = row.get("evento_id") or event_identity(row)
-        row["evento"] = row.get("evento") or row.get("nome", "")
-        row["titulo"] = row.get("titulo") or row.get("nome", "")
-        row["hora"] = row.get("hora") or row.get("hora_marcador", "")
-        row["local"] = row.get("local") or row.get("endereco_ou_localizacao", "")
-        row["link_evento"] = row.get("link_evento") or primary_url
-        row["leiloeiro"] = row.get("leiloeiro") or host or row.get("site_leiloeiro", "")
-        prepared.append(row)
+        name = row.get("evento") or row.get("nome", "")
+        location = row.get("local") or row.get("endereco_ou_localizacao", "")
+        prepared.append(
+            {
+                "id_marcador_mapa": row.get("id_marcador_mapa", ""),
+                "evento_id": row.get("evento_id") or event_identity(row),
+                "nome": row.get("nome") or name,
+                "evento": name,
+                "titulo": row.get("titulo") or name,
+                "data": row.get("data", ""),
+                "data_original": row.get("data_original", ""),
+                "hora": row.get("hora") or row.get("hora_marcador", ""),
+                "uf": row.get("uf", ""),
+                "local": location,
+                "latitude": row.get("latitude", ""),
+                "longitude": row.get("longitude", ""),
+                "link_evento": row.get("link_evento") or primary_url,
+                "leiloeiro": row.get("leiloeiro") or host or row.get("site_leiloeiro", ""),
+                "link_edital": row.get("link_edital", ""),
+                "resumo_edital": row.get("resumo_edital", ""),
+            }
+        )
     return prepared
 
 
@@ -274,7 +295,7 @@ def enrich_and_dedupe_lots(
             continue
         row["uf"] = row.get("uf") or event.get("uf") or infer_uf(
             row.get("local", ""),
-            event.get("endereco_ou_localizacao", ""),
+            event.get("local") or event.get("endereco_ou_localizacao", ""),
             row.get("evento", ""),
         )
         row["link_edital"] = row.get("link_edital") or event.get("link_edital", "")
@@ -308,9 +329,9 @@ def main() -> None:
         raise SystemExit(f"Template nao encontrado: {', '.join(missing)}")
 
     now = dt.datetime.now(TIMEZONE)
-    events = prepare_events(
-        [row for row in read_csv("radar_leiloes_eventos_futuros.csv") if is_upcoming(row, now)]
-    )
+    # O site publica todos os marcadores do Google My Maps. A base de eventos
+    # futuros continua existindo apenas para limitar o indexador de lotes.
+    events = prepare_events(read_csv("radar_leiloes_base_completa.csv"))
     for event in events:
         if event.get("uf") not in VALID_UFS:
             event["uf"] = ""
@@ -323,9 +344,15 @@ def main() -> None:
     edital_events = sum(1 for row in events if row.get("link_edital"))
     edital_lots = sum(1 for row in lots if row.get("link_edital"))
 
+    events_filename = "radar_eventos_site.json"
+    (ROOT / events_filename).write_text(
+        json.dumps(events, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"),
+        encoding="utf-8",
+    )
     payload = {
-        "eventos": events,
-        "patios": patios,
+        "eventos_url": f"./{events_filename}",
+        "eventos_total": len(events),
+        "patios_total": len(patios),
         "lotes": lots,
         "municipios": municipalities,
         "geodados": {"fonte": "municipios-br 3.2.1", "licenca": "CC0-1.0"},
@@ -377,7 +404,7 @@ def main() -> None:
         json.dumps(
             {
                 "gerado_em": payload["gerado_em"],
-                "eventos_futuros": len(events),
+                "registros_mapa": len(events),
                 "lotes_futuros": len(lots),
                 "lotes_com_edital": edital_lots,
                 "licitacoes": len(licitacoes_payload.get("licitacoes", [])),

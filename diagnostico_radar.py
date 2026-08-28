@@ -27,6 +27,7 @@ REQUIRED_FILES = [
     ".github/workflows/atualizar-radar.yml",
     "radar_leiloes_eventos_futuros.csv",
     "radar_leiloes_eventos_todos.csv",
+    "radar_eventos_site.json",
     "radar_leiloes_patios.csv",
     "radar_leiloes_base_completa.csv",
     "radar_leiloes_resumo.json",
@@ -108,12 +109,16 @@ def build_status(extra: dict | None = None) -> dict:
     published = embedded_radar_data(leiloes_html)
 
     event_csv_total = count_csv(ROOT / "radar_leiloes_eventos_futuros.csv")
+    map_csv_total = count_csv(ROOT / "radar_leiloes_base_completa.csv")
     yard_csv_total = count_csv(ROOT / "radar_leiloes_patios.csv")
     lot_csv_total = count_csv(ROOT / "lotes.csv")
 
     lot_list = lots.get("lotes", [])
     lot_json_total = len(lot_list) if isinstance(lot_list, list) else 0
-    published_events = published.get("eventos", [])
+    try:
+        published_events = json.loads((ROOT / "radar_eventos_site.json").read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        published_events = []
     published_lots = published.get("lotes", [])
     published_event_total = len(published_events) if isinstance(published_events, list) else 0
     published_lot_total = len(published_lots) if isinstance(published_lots, list) else 0
@@ -139,6 +144,7 @@ def build_status(extra: dict | None = None) -> dict:
             and '"descobrir_leiloes_web.py"' not in pipeline
         ),
         "eventos_csv_ok": event_csv_total > 0,
+        "mapa_completo_publicado": map_csv_total > 0 and published_event_total == map_csv_total,
         "lotes_json_ok": lot_json_total > 0,
         "lotes_csv_consistente": lot_csv_total == lot_json_total,
         "base_lotes_somente_mapa": (
@@ -147,6 +153,10 @@ def build_status(extra: dict | None = None) -> dict:
         ),
         "site_gerado": leiloes_path.exists() and leiloes_path.stat().st_size > 100_000,
         "base_embutida_no_site": 'id="radar-data"' in leiloes_html,
+        "arquivo_completo_do_mapa": (
+            published.get("eventos_total") == map_csv_total
+            and published_event_total == map_csv_total
+        ),
         "site_somente_mapa": (
             published.get("fonte_eventos") == "Google My Maps"
             and published.get("somente_eventos_do_mapa") is True
@@ -164,6 +174,7 @@ def build_status(extra: dict | None = None) -> dict:
         "idade_base_eventos_horas": events_age,
         "idade_base_lotes_horas": lots_age,
         "eventos_futuros": int(summary.get("eventos_futuros_ou_hoje") or event_csv_total),
+        "registros_mapa": map_csv_total,
         "patios": int(summary.get("patios") or yard_csv_total),
         "eventos_publicados": published_event_total,
         "lotes": published_lot_total or int(lots.get("total_lotes") or lot_json_total),
@@ -194,6 +205,7 @@ def write_status(status: dict) -> None:
         f"Verificado em: {status.get('verificado_em')}",
         f"Base de eventos: {status.get('atualizado_em_base_eventos')}",
         f"Base de lotes: {status.get('atualizado_em_base_lotes')}",
+        f"Registros do mapa publicados: {status.get('eventos_publicados')}",
         f"Eventos futuros: {status.get('eventos_futuros')}",
         f"Lotes disponíveis: {status.get('lotes')}",
         f"Pátios: {status.get('patios')}",
