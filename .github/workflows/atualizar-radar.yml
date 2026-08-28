@@ -61,6 +61,7 @@ jobs:
           test -f atualizar_radar_leiloes.py
           test -f indexador_lotes.py
           test -f complementar_lotes_oficiais.py
+          test -f limpar_lotes_publicacao.py
           test -f gerar_site_github.py
           test -f corrigir_exibicao_completa.py
           test -f atualizar_licitacoes.py
@@ -82,6 +83,7 @@ jobs:
         shell: bash
         run: |
           python complementar_lotes_oficiais.py
+          python limpar_lotes_publicacao.py
           python gerar_site_github.py
           python corrigir_exibicao_completa.py
           python diagnostico_radar.py
@@ -89,21 +91,29 @@ jobs:
       - name: Validar coleta antes da publicação
         shell: bash
         run: |
-          python -m compileall -q atualizar_licitacoes_completo.py atualizar_licitacoes.py complementar_lotes_oficiais.py corrigir_exibicao_completa.py gerar_site_github.py
+          python -m compileall -q atualizar_licitacoes_completo.py atualizar_licitacoes.py complementar_lotes_oficiais.py limpar_lotes_publicacao.py corrigir_exibicao_completa.py gerar_site_github.py
           python - <<'PY'
+          import csv
+          import json
           from pathlib import Path
 
           html = Path('leiloes.html').read_text(encoding='utf-8', errors='replace')
           template = Path('site_template.html').read_text(encoding='utf-8', errors='replace')
+          lotes = json.loads(Path('lotes.json').read_text(encoding='utf-8'))
+          with Path('lotes.csv').open(newline='', encoding='utf-8') as handle:
+              lotes_csv = list(csv.DictReader(handle))
+
           assert Path('leiloes.html').stat().st_size > 100000, 'Página de leilões não gerada'
           assert 'id="radar-data"' in html, 'Base de leilões não embutida'
           assert 'visible:5000' in html, 'Listagem completa não habilitada no site gerado'
           assert 'visible:5000' in template, 'Listagem completa não persistida no template'
           assert 'LOTES DISPONÍVEIS' in html, 'Contador de lotes disponíveis não atualizado'
+          assert len(lotes.get('lotes', [])) == len(lotes_csv), 'JSON e CSV de lotes divergentes'
+          assert all('esqueci minha senha' not in str(r.get('titulo','')).casefold() for r in lotes_csv), 'Falso lote de login encontrado'
 
           print('RADAR_LEILOES_VALIDADO=1')
           PY
-          git diff --check
+          git diff --check -- . ':(exclude)lotes.csv'
 
       - name: Publicar atualização no GitHub
         shell: bash
