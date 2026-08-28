@@ -1,19 +1,19 @@
 {
   "status": "ok",
-  "verificado_em": "2026-08-27T19:16:06-03:00",
-  "atualizado_em_base_eventos": "2026-08-27T19:15:34-03:00",
-  "atualizado_em_base_lotes": "2026-08-27T19:15:58-03:00",
-  "idade_base_eventos_horas": 0.01,
+  "verificado_em": "2026-08-27T22:41:17-03:00",
+  "atualizado_em_base_eventos": "2026-08-27T22:40:23-03:00",
+  "atualizado_em_base_lotes": "2026-08-27T22:41:02-03:00",
+  "idade_base_eventos_horas": 0.02,
   "idade_base_lotes_horas": 0.0,
-  "eventos_futuros": 36,
+  "eventos_futuros": 20,
   "patios": 132,
-  "eventos_publicados": 36,
-  "lotes": 85,
-  "lotes_publicados": 85,
-  "lotes_na_base": 85,
-  "lotes_capturados_agora": 85,
-  "lotes_preservados": 0,
-  "eventos_indexados_com_lotes": 7,
+  "eventos_publicados": 20,
+  "lotes": 145,
+  "lotes_publicados": 145,
+  "lotes_na_base": 145,
+  "lotes_capturados_agora": 121,
+  "lotes_preservados": 24,
+  "eventos_indexados_com_lotes": 6,
   "fonte_eventos": "google_my_maps",
   "somente_eventos_do_mapa": true,
   "checks": {
@@ -38,14 +38,14 @@
   },
   "arquivos_faltando": [],
   "modo": "somente_mapa",
-  "duracao_segundos": 98.28,
-  "ultima_execucao": "2026-08-27T19:16:06-03:00",
+  "duracao_segundos": 63.77,
+  "ultima_execucao": "2026-08-27T22:41:17-03:00",
   "mensagem": "Eventos do Google My Maps, seus lotes e o site foram atualizados com sucesso.",
   "base_anterior_restaurada": false,
-  "lotes_antes": 92,
-  "lotes_depois": 85,
-  "lotes_novos_detectados": 0,
-  "lotes_removidos_ou_encerrados": 7,
+  "lotes_antes": 85,
+  "lotes_depois": 145,
+  "lotes_novos_detectados": 22,
+  "lotes_removidos_ou_encerrados": 2,
   "status_mapa": "ok",
   "status_openai": "desativada_para_leiloes",
   "status_descoberta": "desativada_somente_mapa",
@@ -59,13 +59,14 @@
     {
       "nome": "Atualizar eventos pelo Google My Maps",
       "comando": [
-        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
         "atualizar_radar_leiloes.py",
+        "--sem-editais",
         "--workers",
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 66.57,
+      "duracao_segundos": 10.12,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 900
@@ -73,7 +74,7 @@
     {
       "nome": "Capturar lotes dos eventos cadastrados no Google My Maps",
       "comando": [
-        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
         "indexador_lotes.py",
         "--eventos",
         "radar_leiloes_eventos_futuros.csv",
@@ -83,7 +84,7 @@
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 23.58,
+      "duracao_segundos": 38.38,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 3600
@@ -91,11 +92,11 @@
     {
       "nome": "Gerar novamente o site",
       "comando": [
-        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
         "gerar_site_github.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 6.23,
+      "duracao_segundos": 10.78,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300
@@ -103,11 +104,11 @@
     {
       "nome": "Sanitizar conteúdo externo",
       "comando": [
-        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
         "sanitizar_conteudo_externo.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 1.82,
+      "duracao_segundos": 4.24,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300
@@ -115,12 +116,12 @@
     {
       "nome": "Gerar diagnóstico final",
       "comando": [
-        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
         "diagnostico_radar.py",
         "--falhar-se-atencao"
       ],
       "tentativas": 1,
-      "duracao_segundos": 0.06,
+      "duracao_segundos": 0.22,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300

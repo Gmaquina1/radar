@@ -357,13 +357,14 @@ def main() -> int:
             [
                 sys.executable,
                 "atualizar_radar_leiloes.py",
+                "--sem-editais",
                 "--workers",
                 str(args.workers_mapa),
             ],
             attempts=3,
-            # A importação inclui centenas de eventos, páginas e editais.
-            # Em execuções nacionais ela pode ultrapassar dez minutos sem
-            # estar travada; o limite maior ainda cabe no job rápido.
+            # A data oficial do evento é a cadastrada no Google My Maps.
+            # Os sites dos leiloeiros continuam sendo consultados pelo
+            # indexador de lotes, mas não podem substituir a data do mapa.
             timeout_seconds=900,
         )
         results.append(event_step)

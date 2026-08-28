@@ -24,7 +24,7 @@ PROXIMITY_STYLES = """    .nearby-panel{position:relative;z-index:2;margin-top:1
 
 
 PROXIMITY_HTML = """    <section class="nearby-panel" aria-labelledby="nearby-title">
-      <div class="nearby-copy"><span>RADAR PERTO DE VOCÊ</span><strong id="nearby-title">Encontre lotes na sua região</strong><p>Escolha sua cidade ou use sua localização. O cálculo acontece somente no seu aparelho.</p></div>
+      <div class="nearby-copy"><span>RADAR PERTO DE VOCÊ</span><strong id="nearby-title">Encontre leilões na sua região</strong><p>Escolha sua cidade ou use sua localização. O cálculo acontece somente no seu aparelho.</p></div>
       <div class="nearby-controls">
         <input id="location-input" type="search" list="municipality-list" autocomplete="off" placeholder="Digite sua cidade, ex.: Taiobeiras - MG" aria-label="Sua cidade">
         <datalist id="municipality-list"></datalist>
@@ -62,7 +62,7 @@ def _replace_once(source: str, old: str, new: str, label: str) -> str:
 
 
 def apply_date_highlights(template: str) -> str:
-    """Adiciona ao template os filtros Hoje, Amanhã e data específica."""
+    """Adiciona os controles de data/proximidade e suas funções auxiliares."""
     result = _replace_once(
         template,
         "</style>",
@@ -83,80 +83,11 @@ def apply_date_highlights(template: str) -> str:
     )
     result = _replace_once(
         result,
-        "  const SEARCH_STORE='radar_premium_busca_v1';",
-        "  const SEARCH_STORE='radar_premium_busca_v1';\n  const LOCATION_STORE='radar_localizacao_v1';",
-        "armazenamento da localização",
-    )
-    result = _replace_once(
-        result,
-        "const state={query:'',category:'all',uf:'',days:'all',visible:12,savedOnly:false};",
-        "const state={query:'',category:'all',uf:'',days:'all',exactDate:'',visible:12,savedOnly:false,locationActive:false,userLat:null,userLon:null,radius:200,locationLabel:''};",
-        "estado dos filtros",
-    )
-    result = _replace_once(
-        result,
         "  function parseStart(row){",
         PROXIMITY_FUNCTIONS + """  function dateKey(offset=0){const day=new Date();day.setHours(12,0,0,0);day.setDate(day.getDate()+offset);return `${day.getFullYear()}-${String(day.getMonth()+1).padStart(2,'0')}-${String(day.getDate()).padStart(2,'0')}`}
   function selectedDateTitle(value){if(!value)return 'Oportunidades encontradas';if(value===dateKey(0))return 'Leilões de hoje';if(value===dateKey(1))return 'Leilões de amanhã';const [year,month,day]=value.split('-');return `Leilões de ${day}/${month}/${year}`}
   function applyExactDate(value,source){if(!value)return;if(state.exactDate===value&&source!=='calendar'){state.exactDate='';$('exact-date-filter').value='';resetVisible();track('filter_exact_date',{date:'all',source,result_count:current.length});return}state.exactDate=value;state.days='all';state.savedOnly=false;$('date-filter').value='all';$('exact-date-filter').value=value;resetVisible();track('filter_exact_date',{date:value,source,result_count:current.length});$('resultados').scrollIntoView({behavior:'smooth'})}
   function parseStart(row){""",
         "funções de data",
-    )
-    result = _replace_once(
-        result,
-        "function filtered(){const now=new Date();const max=state.days==='all'?null:new Date(now.getTime()+Number(state.days)*86400000);const saved=loadSaved();return lots.filter(row=>{const text=rowText(row);if(!matchesQuery(row))return false;if(state.category!=='all'&&!categories[state.category].some(term=>text.includes(term)))return false;if(state.uf&&row.uf!==state.uf)return false;if(state.savedOnly&&!saved.includes(lotId(row)))return false;const start=parseStart(row);if(max&&start&&start>max)return false;return true}).sort((a,b)=>{const query=norm(state.query);const sa=query&&norm(displayTitle(a)).includes(query)?1:0;const sb=query&&norm(displayTitle(b)).includes(query)?1:0;return sb-sa||String(a.data||'9999').localeCompare(String(b.data||'9999'))||String(a.hora||'').localeCompare(String(b.hora||''))})}",
-        "function filtered(){const now=new Date();const max=state.days==='all'?null:new Date(now.getTime()+Number(state.days)*86400000);const saved=loadSaved();return lots.filter(row=>{const text=rowText(row);if(!matchesQuery(row))return false;if(state.category!=='all'&&!categories[state.category].some(term=>text.includes(term)))return false;if(state.uf&&row.uf!==state.uf)return false;if(state.savedOnly&&!saved.includes(lotId(row)))return false;if(state.exactDate&&row.data!==state.exactDate)return false;if(state.locationActive){const distance=distanceKm(row);if(distance===null||distance>state.radius)return false}const start=parseStart(row);if(!state.exactDate&&max&&start&&start>max)return false;return true}).sort((a,b)=>{if(state.locationActive){const distanceOrder=distanceKm(a)-distanceKm(b);if(distanceOrder)return distanceOrder}const query=norm(state.query);const sa=query&&norm(displayTitle(a)).includes(query)?1:0;const sb=query&&norm(displayTitle(b)).includes(query)?1:0;return sb-sa||String(a.data||'9999').localeCompare(String(b.data||'9999'))||String(a.hora||'').localeCompare(String(b.hora||''))})}",
-        "filtragem dos lotes",
-    )
-    result = _replace_once(
-        result,
-        "$('results-title').textContent=state.savedOnly?'Seus lotes salvos':'Leilões encontrados';",
-        "$('results-title').textContent=state.savedOnly?'Seus lotes salvos':state.exactDate?(state.locationActive?`${selectedDateTitle(state.exactDate)} perto de ${state.locationLabel}`:selectedDateTitle(state.exactDate)):state.locationActive?`Leilões perto de ${state.locationLabel}`:'Leilões encontrados';",
-        "título dos resultados",
-    )
-    result = _replace_once(
-        result,
-        "$('results-status').textContent=`${formatNumber(currentGroups.length)} leilões · ${formatNumber(current.length)} lotes correspondem aos filtros atuais.`;",
-        "$('results-status').textContent=state.locationActive?`${formatNumber(currentGroups.length)} leilões · ${formatNumber(current.length)} lotes em um raio de ${state.radius} km.`:`${formatNumber(currentGroups.length)} leilões · ${formatNumber(current.length)} lotes correspondem aos filtros atuais.`;$('nearby-status').textContent=state.locationActive?`${formatNumber(current.length)} oportunidades até ${state.radius} km de ${state.locationLabel}. Mais próximas primeiro.`:'Informe sua região para ordenar os leilões mais próximos.';",
-        "resumo da proximidade",
-    )
-    result = _replace_once(
-        result,
-        "  const lotDistanceBadge=row=>'';\n  const groupDistanceBadge=group=>'';",
-        "  const lotDistanceBadge=row=>{const distance=distanceKm(row);return distance===null?'':`<span class=\"distance-badge\">A ${Math.round(distance)} KM</span>`};\n  const groupDistanceBadge=group=>{if(!state.locationActive)return '';const distances=group.items.map(entry=>distanceKm(entry.row)).filter(value=>value!==null);return distances.length?`<span class=\"distance-badge\">MAIS PRÓXIMO A ${Math.round(Math.min(...distances))} KM</span>`:''};",
-        "distância nos leilões e lotes",
-    )
-    result = _replace_once(
-        result,
-        "document.querySelectorAll('[data-category]').forEach(btn=>btn.classList.toggle('active',btn.dataset.category===state.category));",
-        """document.querySelectorAll('[data-category]').forEach(btn=>btn.classList.toggle('active',btn.dataset.category===state.category));
-    document.querySelectorAll('[data-date-shortcut]').forEach(btn=>{const offset=btn.dataset.dateShortcut==='tomorrow'?1:0;const active=state.exactDate===dateKey(offset);btn.classList.toggle('active',active);btn.setAttribute('aria-pressed',String(active))});""",
-        "estado visual dos botões",
-    )
-    result = _replace_once(
-        result,
-        "function clearFilters(){state.query='';state.category='all';state.uf='';state.days='all';state.savedOnly=false;$('search-input').value='';$('state-filter').value='';$('date-filter').value='all';localStorage.removeItem(SEARCH_STORE);resetVisible()}",
-        "function clearFilters(){state.query='';state.category='all';state.uf='';state.days='all';state.exactDate='';state.savedOnly=false;$('search-input').value='';$('state-filter').value='';$('date-filter').value='all';$('exact-date-filter').value='';localStorage.removeItem(SEARCH_STORE);clearNearby(false);resetVisible()}",
-        "limpeza dos filtros",
-    )
-    result = _replace_once(
-        result,
-        "$('updated-label').textContent='ATUALIZADO TODOS OS DIAS';",
-        "restoreLocation();$('exact-date-filter').min=dateKey(0);$('today-count').textContent=formatNumber(lots.filter(row=>row.data===dateKey(0)).length);$('tomorrow-count').textContent=formatNumber(lots.filter(row=>row.data===dateKey(1)).length);$('updated-label').textContent='ATUALIZADO TODOS OS DIAS';",
-        "configuração inicial",
-    )
-    result = _replace_once(
-        result,
-        "  $('date-filter').addEventListener('change',event=>{state.days=event.target.value;state.savedOnly=false;resetVisible();track('filter_date',{days:state.days,result_count:current.length})});",
-        """  document.querySelectorAll('[data-date-shortcut]').forEach(btn=>btn.addEventListener('click',()=>applyExactDate(dateKey(btn.dataset.dateShortcut==='tomorrow'?1:0),btn.dataset.dateShortcut)));
-  $('exact-date-filter').addEventListener('change',event=>{if(event.target.value)applyExactDate(event.target.value,'calendar');else{state.exactDate='';resetVisible()}});
-  $('date-filter').addEventListener('change',event=>{state.days=event.target.value;state.exactDate='';$('exact-date-filter').value='';state.savedOnly=false;resetVisible();track('filter_date',{days:state.days,result_count:current.length})});
-  $('location-input').addEventListener('input',event=>loadMunicipalityOptions(event.target.value));
-  $('location-input').addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();applyTypedLocation()}});
-  $('apply-location').addEventListener('click',applyTypedLocation);
-  $('use-location').addEventListener('click',useCurrentLocation);
-  $('clear-location').addEventListener('click',()=>clearNearby(true));
-  $('radius-filter').addEventListener('change',event=>{state.radius=Number(event.target.value)||200;if(state.locationActive){saveLocation();resetVisible();track('filter_distance_radius',{radius_km:state.radius,result_count:current.length})}});""",
-        "eventos dos filtros de data",
     )
     return result

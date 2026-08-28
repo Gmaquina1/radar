@@ -118,6 +118,16 @@ class RadarTests(unittest.TestCase):
         self.assertFalse(atualizador.is_upcoming_event(passado, now))
         self.assertTrue(atualizador.is_upcoming_event(futuro, now))
 
+    def test_data_iso_de_site_nao_vira_ano_seguinte(self) -> None:
+        captured = atualizador.parse_datetime_from_text(
+            'Leilão com startDate "2026-08-27 14:00:00"'
+        )
+        self.assertEqual(captured[:2], ("2026-08-27", "27/08/2026"))
+
+    def test_pipeline_preserva_data_do_google_my_maps(self) -> None:
+        source = Path(pipeline.__file__).read_text(encoding="utf-8")
+        self.assertIn('"--sem-editais"', source)
+
     def test_remove_lote_de_data_passada(self) -> None:
         now = datetime(2026, 7, 14, 16, 0, tzinfo=ZoneInfo("America/Sao_Paulo"))
         self.assertFalse(indexador.upcoming_lot({"data": "2026-07-13", "hora": "18:00"}, now))
@@ -145,6 +155,7 @@ class RadarTests(unittest.TestCase):
         events = [{"nome": "Leilão teste", "data": "2026-12-31", "link": shared}]
         result = site.enrich_and_dedupe_lots(lots, events, now)
         self.assertEqual([row["lote"] for row in result], ["01", "02"])
+        self.assertTrue(all(row.get("evento_id", "").startswith("evento-") for row in result))
 
     def test_site_remove_repeticao_do_mesmo_lote(self) -> None:
         now = datetime(2026, 7, 14, 16, 0, tzinfo=ZoneInfo("America/Sao_Paulo"))
@@ -315,12 +326,15 @@ class RadarTests(unittest.TestCase):
 
     def test_site_mostra_leilao_antes_dos_lotes(self) -> None:
         personalized = apply_date_highlights(site.TEMPLATE.read_text(encoding="utf-8"))
-        self.assertIn("function groupAuctions(rows)", personalized)
+        self.assertIn("function groupAuctions(eventRows,lotRows)", personalized)
+        self.assertIn("const allGroups=groupAuctions(events,lots)", personalized)
         self.assertIn('class="auction-group"', personalized)
         self.assertIn('data-toggle-auction=', personalized)
         self.assertIn("expandedAuctions", personalized)
         self.assertIn("MOSTRAR MAIS LOTES", personalized)
-        self.assertIn("leilões · ${formatNumber(current.length)} lotes", personalized)
+        self.assertIn("LOTES NO SITE OFICIAL", personalized)
+        self.assertIn("data-open-auction", personalized)
+        self.assertIn("Todos os leilões aparecem", personalized)
 
     def test_site_oferece_escolha_entre_leiloes_e_licitacoes(self) -> None:
         portal = site.PORTAL_TEMPLATE.read_text(encoding="utf-8")

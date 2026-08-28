@@ -67,7 +67,8 @@ SPACE_RE = re.compile(r"\s+")
 UF_RE = re.compile(r"(?:^|[\s,\-/])([A-Z]{2})(?:\s|,|$)")
 PDF_RE = re.compile(r"\.pdf(?:$|[?#])", re.I)
 HREF_RE = re.compile(r"""href=["']([^"']+)["']""", re.I)
-DATE_RE = re.compile(r"(\d{1,2})[/-](\d{1,2})[/-](\d{2,4})")
+ISO_DATE_RE = re.compile(r"(?<!\d)(\d{4})-(\d{2})-(\d{2})(?!\d)")
+DATE_RE = re.compile(r"(?<![\d-])(\d{1,2})[/-](\d{1,2})[/-](\d{2,4})(?!\d)")
 DATE_LONG_RE = re.compile(
     r"(\d{1,2})\s+de\s+"
     r"(janeiro|fevereiro|mar[cç]o|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)"
@@ -290,6 +291,15 @@ def parse_date_match(match):
     return parsed.isoformat(), f"{int(day):02d}/{int(month):02d}/{year:04d}"
 
 
+def parse_iso_date_match(match):
+    year, month, day = match.groups()
+    try:
+        parsed = date(int(year), int(month), int(day))
+    except ValueError:
+        return "", ""
+    return parsed.isoformat(), f"{int(day):02d}/{int(month):02d}/{int(year):04d}"
+
+
 def parse_long_date_match(match):
     months = {
         "janeiro": 1,
@@ -335,7 +345,11 @@ def candidate_snippets(text, radius=240):
 
 def parse_datetime_from_text(text):
     for snippet in candidate_snippets(text):
-        dates = [(match.start(), match.end(), *parse_date_match(match)) for match in DATE_RE.finditer(snippet)]
+        dates = [
+            (match.start(), match.end(), *parse_iso_date_match(match))
+            for match in ISO_DATE_RE.finditer(snippet)
+        ]
+        dates += [(match.start(), match.end(), *parse_date_match(match)) for match in DATE_RE.finditer(snippet)]
         dates += [(match.start(), match.end(), *parse_long_date_match(match)) for match in DATE_LONG_RE.finditer(snippet)]
         dates = sorted(item for item in dates if item[2])
         if not dates:

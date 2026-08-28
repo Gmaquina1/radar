@@ -1,45 +1,36 @@
 {
-  "executado_em": "2026-08-27T19:15:58-03:00",
-  "lotes_antes": 92,
-  "lotes_depois": 85,
-  "lotes_realmente_novos": 0,
-  "lotes_removidos_ou_encerrados": 7,
-  "lotes_preservados": 0,
-  "lotes_capturados_agora": 85,
-  "lotes_capturados_com_chave_nova": 0,
-  "eventos_analisados": 36,
-  "eventos_com_lotes": 7,
-  "eventos_com_erro": 3,
-  "eventos_bloqueados": 3,
+  "executado_em": "2026-08-27T22:41:02-03:00",
+  "lotes_antes": 85,
+  "lotes_depois": 145,
+  "lotes_realmente_novos": 22,
+  "lotes_removidos_ou_encerrados": 2,
+  "lotes_preservados": 24,
+  "lotes_capturados_agora": 121,
+  "lotes_capturados_com_chave_nova": 22,
+  "eventos_analisados": 20,
+  "eventos_com_lotes": 6,
+  "eventos_com_erro": 5,
+  "eventos_bloqueados": 0,
   "links_invalidos": 2,
   "quantidade_coletada_por_leiloeiro": {
     "allianceleiloes.com.br": 26,
-    "claudiokussleiloes.com.br": 1,
+    "amaralleiloes.com.br": 10,
+    "cargneluttileiloes.com.br": 52,
     "drive.google.com": 2,
-    "eckertleiloes.com.br": 24,
     "leiloesfreire.com.br": 6,
-    "lipinskileiloes.com.br": 25,
-    "rochaleiloes.com.br": 1
+    "lipinskileiloes.com.br": 25
   },
   "erros_por_leiloeiro": {
-    "amaralleiloes.com.br": 1,
-    "cargneluttileiloes.com.br": 2
+    "argonetworkleiloes.com.br": 1,
+    "drive.google.com": 2,
+    "eckertleiloes.com.br": 1,
+    "vipleiloes.com.br": 1
   },
   "urls_que_falharam": [
     {
-      "url": "https://www.amaralleiloes.com.br/leilao/1544/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
-    },
-    {
-      "url": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes",
-      "status": "bloqueado_http_403",
-      "http": 403
+      "url": "https://www.vipleiloes.com.br/evento/detalhes/100826tdmas",
+      "status": "erro",
+      "http": 0
     },
     {
       "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista",
@@ -50,6 +41,31 @@
       "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista",
       "status": "http_404",
       "http": 404
+    },
+    {
+      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
+      "status": "api_superbid_erro",
+      "http": ""
+    },
+    {
+      "url": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://drive.google.com/file/d/1lswP8Q4LpkLSjd6F_t9f7aqOZZ6YkKB6/view?usp=drive_link",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://drive.google.com/file/d/1PYQsXs4rdIEDPAp0yxQAHWsKEfae9yqp/view?usp=drive_link",
+      "status": "erro",
+      "http": 0
+    },
+    {
+      "url": "https://www.argonetworkleiloes.com.br/evento/prefeitura-municipal-de-tatui-789565?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
+      "status": "erro",
+      "http": 0
     }
   ],
   "status": "ok",

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import csv
 import datetime as dt
+import hashlib
 import json
 import os
 import re
@@ -168,6 +169,46 @@ def canonical_event_url(value: str) -> str:
     )
 
 
+def event_urls(row: dict[str, str]) -> list[str]:
+    urls: list[str] = []
+    for field in ("site_leiloeiro", "link", "link_edital", "link_evento"):
+        for value in str(row.get(field, "") or "").split("|"):
+            url = canonical_event_url(value.strip())
+            if url and url not in urls:
+                urls.append(url)
+    return urls
+
+
+def event_identity(row: dict[str, str]) -> str:
+    urls = event_urls(row)
+    parts = [
+        urls[0] if urls else "",
+        normalize_place(row.get("nome") or row.get("evento") or ""),
+        str(row.get("data") or ""),
+        normalize_place(row.get("endereco_ou_localizacao") or row.get("local") or ""),
+    ]
+    digest = hashlib.sha256("|".join(parts).encode("utf-8")).hexdigest()[:20]
+    return f"evento-{digest}"
+
+
+def prepare_events(events: list[dict[str, str]]) -> list[dict[str, str]]:
+    prepared: list[dict[str, str]] = []
+    for raw in events:
+        row = dict(raw)
+        urls = event_urls(row)
+        primary_url = urls[0] if urls else ""
+        host = urlsplit(primary_url).netloc.casefold().removeprefix("www.") if primary_url else ""
+        row["evento_id"] = row.get("evento_id") or event_identity(row)
+        row["evento"] = row.get("evento") or row.get("nome", "")
+        row["titulo"] = row.get("titulo") or row.get("nome", "")
+        row["hora"] = row.get("hora") or row.get("hora_marcador", "")
+        row["local"] = row.get("local") or row.get("endereco_ou_localizacao", "")
+        row["link_evento"] = row.get("link_evento") or primary_url
+        row["leiloeiro"] = row.get("leiloeiro") or host or row.get("site_leiloeiro", "")
+        prepared.append(row)
+    return prepared
+
+
 def generic_title(value: str) -> bool:
     return bool(re.fullmatch(r"(?:lote\s*[\d.\-/a-z]*|efetuar lance|ver lote|detalhes)", (value or "").strip(), re.I))
 
@@ -200,13 +241,12 @@ def enrich_and_dedupe_lots(
     events: list[dict[str, str]],
     now: dt.datetime,
 ) -> list[dict[str, str]]:
+    events = prepare_events(events)
     event_lookup = {event_key(row.get("nome", ""), row.get("data", "")): row for row in events}
     event_url_lookup: dict[str, dict[str, str]] = {}
     for event in events:
-        for field in ("site_leiloeiro", "link", "link_edital"):
-            url = canonical_event_url(event.get(field, ""))
-            if url:
-                event_url_lookup[url] = event
+        for url in event_urls(event):
+            event_url_lookup[url] = event
     municipalities = municipality_index(read_municipalities())
     selected: dict[str, dict[str, str]] = {}
     for raw in lots:
@@ -239,7 +279,11 @@ def enrich_and_dedupe_lots(
         )
         row["link_edital"] = row.get("link_edital") or event.get("link_edital", "")
         row["resumo_edital"] = row.get("resumo_edital") or event.get("resumo_edital", "")
-        row["link_evento"] = row.get("link_evento") or event.get("link", "")
+        linked_event_urls = event_urls(event)
+        row["link_evento"] = row.get("link_evento") or (
+            linked_event_urls[0] if linked_event_urls else ""
+        )
+        row["evento_id"] = event.get("evento_id") or event_identity(event)
         add_municipality_coordinates(row, event, municipalities)
         key = lot_key(row)
         current = selected.get(key)
@@ -264,7 +308,9 @@ def main() -> None:
         raise SystemExit(f"Template nao encontrado: {', '.join(missing)}")
 
     now = dt.datetime.now(TIMEZONE)
-    events = [row for row in read_csv("radar_leiloes_eventos_futuros.csv") if is_upcoming(row, now)]
+    events = prepare_events(
+        [row for row in read_csv("radar_leiloes_eventos_futuros.csv") if is_upcoming(row, now)]
+    )
     for event in events:
         if event.get("uf") not in VALID_UFS:
             event["uf"] = ""

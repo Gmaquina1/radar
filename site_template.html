@@ -56,6 +56,7 @@
     @media(max-width:760px){.result-photo{height:190px}.carousel-dots button{width:9px;height:9px}.carousel-dots button.active{width:22px}}
     @media(max-width:760px){.auction-group-head{padding:16px 14px;grid-template-columns:1fr}.auction-toggle{width:100%}.auction-group-meta{display:grid;gap:7px}.auction-group-meta span{max-width:100%}.auction-lots{padding:0 10px 10px}.auction-lot-row{padding:14px 3px;grid-template-columns:1fr}.auction-lot-actions{width:100%}.auction-lot-actions a{flex:1}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+    .auction-toggle{text-decoration:none}.auction-toggle.unavailable{border-color:#52606c;color:#d7e0e7;background:#2c3a45;cursor:default}
   </style>
 </head>
 <body>
@@ -79,7 +80,7 @@
     <a class="brand" href="./" aria-label="Radar de Oportunidades"><span class="brand-mark">R</span><span class="brand-name">RADAR</span></a>
     <nav class="desktop-nav" aria-label="Navegação principal"><a href="./">Início</a><a href="#resultados">Leilões</a><a href="./licitacoes.html">Licitações</a><a href="#resultados" data-show-saved>Salvos</a></nav>
     <div class="radar-word"><span class="radar-glyph"></span>RADAR DE LEILÕES</div>
-    <div class="live"><i></i>ATUALIZADO TODOS OS DIAS</div>
+    <div class="live"><i></i><span id="top-update-label">ATUALIZAÇÃO AUTOMÁTICA</span></div>
     <a class="top-cta" data-whatsapp href="#" rel="noopener">WHATSAPP <svg class="icon"><use href="#i-arrow"/></svg></a>
   </header>
 
@@ -90,7 +91,7 @@
         <p class="eyebrow">INTELIGÊNCIA EM LEILÕES</p>
         <h1>O Brasil inteiro.<br>Um só radar.</h1>
         <p class="hero-text">Encontre máquinas, veículos e imóveis em leilões que ainda irão acontecer. Pesquise oportunidades e confira os detalhes no site oficial responsável pela publicação.</p>
-        <div class="daily-note"><i></i>SITE ATUALIZADO TODOS OS DIAS</div>
+        <div class="daily-note"><i></i><span id="hero-update-label">CONSULTANDO A ÚLTIMA ATUALIZAÇÃO</span></div>
       </div>
       <div class="metrics" aria-label="Resumo da base">
         <div><span class="metric-icon"><svg class="icon"><use href="#i-gavel"/></svg></span><strong id="metric-events">0</strong><small>LEILÕES FUTUROS</small></div>
@@ -142,12 +143,12 @@
   </section>
 
   <section class="results-section" id="resultados">
-    <div class="results-header"><div><span class="section-kicker">BASE FUTURA • ATUALIZAÇÃO AUTOMÁTICA</span><h2 id="results-title">Oportunidades encontradas</h2><p id="results-status">Carregando a base nacional…</p></div><div class="results-actions"><button type="button" id="show-all" hidden>Ver todos os lotes</button><span class="sync-badge"><i></i><span id="updated-label">BASE SINCRONIZADA</span></span></div></div>
+    <div class="results-header"><div><span class="section-kicker">TODOS OS LEILÕES FUTUROS DO MAPA</span><h2 id="results-title">Oportunidades encontradas</h2><p id="results-status">Carregando a base nacional…</p></div><div class="results-actions"><button type="button" id="show-all" hidden>Ver todos os leilões</button><span class="sync-badge"><i></i><span id="updated-label">BASE SINCRONIZADA</span></span></div></div>
     <div class="result-grid" id="result-grid"></div>
-    <button class="load-more" id="load-more" type="button" hidden>CARREGAR MAIS LOTES <svg class="icon"><use href="#i-arrow"/></svg></button>
+    <button class="load-more" id="load-more" type="button" hidden>CARREGAR MAIS LEILÕES <svg class="icon"><use href="#i-arrow"/></svg></button>
   </section>
 
-  <footer class="site-footer"><div class="footer-brand"><span class="brand-mark">R</span><div><strong>RADAR</strong><small>RADAR DE LEILÕES</small></div></div><p id="footer-update">Site atualizado todos os dias.</p><button class="footer-disclaimer" id="open-disclaimer" type="button">Aviso importante</button><div class="footer-contact"><a href="mailto:contato@empaez.com?subject=Contato%20pelo%20Radar%20de%20Leilões">Enviar e-mail</a><a class="whatsapp" data-whatsapp href="#" rel="noopener">Falar pelo WhatsApp</a></div><a href="#inicio">Voltar ao topo ↑</a></footer>
+  <footer class="site-footer"><div class="footer-brand"><span class="brand-mark">R</span><div><strong>RADAR</strong><small>RADAR DE LEILÕES</small></div></div><p id="footer-update">Carregando a data da base…</p><button class="footer-disclaimer" id="open-disclaimer" type="button">Aviso importante</button><div class="footer-contact"><a href="mailto:contato@empaez.com?subject=Contato%20pelo%20Radar%20de%20Leilões">Enviar e-mail</a><a class="whatsapp" data-whatsapp href="#" rel="noopener">Falar pelo WhatsApp</a></div><a href="#inicio">Voltar ao topo ↑</a></footer>
   <div class="photo-credits">Fotografias reais de referência via Wikimedia Commons: <a href="https://commons.wikimedia.org/wiki/File:Big_heavy_trucks_and_excavator_machine_working.jpg" target="_blank" rel="noopener">Roy Lowe/USFWS</a> • <a href="https://commons.wikimedia.org/wiki/File:CAT_140_M_MOTORGRADER.jpg" target="_blank" rel="noopener">Shinx990</a> • <a href="https://commons.wikimedia.org/wiki/File:CASE-Wheel-Loader.jpg" target="_blank" rel="noopener">Case Construction</a> • <a href="https://commons.wikimedia.org/wiki/File:Dump_truck_unloads_its_trough_at_Uddevalla_port_4.jpg" target="_blank" rel="noopener">W.carter</a> • <a href="https://commons.wikimedia.org/wiki/File:Mercedes-Benz_Arocs_-_dump_truck_version_(1).JPG" target="_blank" rel="noopener">High Contrast</a> • <a href="https://commons.wikimedia.org/wiki/File:Mack_Energoprojekt1.jpg" target="_blank" rel="noopener">Srđan Popović</a> • <a href="https://commons.wikimedia.org/wiki/File:2021_Toyota_Hilux_Invincible_D-4D_4WD_2.4.jpg" target="_blank" rel="noopener">Vauxford</a> • <a href="https://commons.wikimedia.org/wiki/File:Ford_Ranger_4x4_Sport_2022_(1).jpg" target="_blank" rel="noopener">Ethan Llamas</a> • <a href="https://commons.wikimedia.org/wiki/File:Brazilian_2012_All-New_Chevy_S10.jpg" target="_blank" rel="noopener">Simoloko</a>. Licenças livres indicadas nas páginas; imagens recortadas e otimizadas.</div>
   <div class="toast" id="toast" role="status" hidden></div>
   <div class="disclaimer-overlay" id="disclaimer" hidden>
@@ -168,7 +169,8 @@
   const BASE=JSON.parse(document.getElementById('radar-data').textContent);
   const STORE='radar_premium_salvos_v1';
   const DISCLAIMER_STORE='radar_premium_aviso_v1';
-  const SEARCH_STORE='radar_premium_busca_v1';
+  const SEARCH_STORE='radar_premium_busca_v2';
+  const LOCATION_STORE='radar_localizacao_v1';
   const $=id=>document.getElementById(id);
   const track=(eventName,params={})=>{if(typeof window.gtag==='function')window.gtag('event',eventName,params)};
   const norm=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR');
@@ -185,7 +187,7 @@
   const truckTerms=['caminhao','cavalo mecanico','carreta','semirreboque','semi-reboque','basculante','caminhao pipa','truck'];
   const aliases={caminhao:['caminhao','caminhoes','truck','cavalo'],maquina:['maquina','maquinas','trator','escavadeira','carregadeira','retroescavadeira','motoniveladora','patrol','rolo'],veiculo:['veiculo','veiculos','carro','automovel','caminhonete','camionete','suv','moto'],carro:['carro','carros','automovel','automoveis'],onibus:['onibus','microonibus','micro-onibus']};
   const stop=new Set(['de','da','do','das','dos','e','em','no','na','nos','nas','para','por','com','a','o','as','os']);
-  const state={query:'',category:'all',uf:'',days:'all',visible:12,savedOnly:false};
+  const state={query:'',category:'all',uf:'',days:'all',exactDate:'',visible:100000,savedOnly:false,locationActive:false,userLat:null,userLon:null,radius:200,locationLabel:''};
   let current=[];
   let currentGroups=[];
   const expandedAuctions=new Set();
@@ -193,6 +195,7 @@
 
   function parseStart(row){if(!row.data)return null;const match=String(row.hora||'').match(/(\d{1,2})[:h](\d{2})?/i);const hour=match?String(Math.min(23,+match[1])).padStart(2,'0'):'23';const min=match?String(Math.min(59,+(match[2]||0))).padStart(2,'0'):'59';const value=new Date(`${row.data}T${hour}:${min}:00`);return Number.isNaN(value.getTime())?null:value}
   function upcoming(row){const start=parseStart(row);return !!start&&start.getTime()>Date.now()}
+  const events=(BASE.eventos||[]).filter(upcoming);
   const lots=(BASE.lotes||[]).filter(upcoming);
   function loadSaved(){try{return JSON.parse(localStorage.getItem(STORE)||'[]')}catch{return[]}}
   function saveSaved(rows){localStorage.setItem(STORE,JSON.stringify(rows))}
@@ -207,24 +210,61 @@
   function setupCarousels(){document.querySelectorAll('[data-carousel]').forEach(carousel=>{const slides=[...carousel.querySelectorAll('img')];const dots=[...carousel.querySelectorAll('[data-slide]')];let current=0,timer=null,touchStart=0;const show=index=>{current=(index+slides.length)%slides.length;slides.forEach((slide,i)=>slide.classList.toggle('active',i===current));dots.forEach((dot,i)=>dot.classList.toggle('active',i===current))};const stop=()=>{if(timer)clearInterval(timer);timer=null};const play=()=>{stop();timer=setInterval(()=>show(current+1),4200)};dots.forEach(dot=>dot.addEventListener('click',event=>{event.stopPropagation();show(Number(dot.dataset.slide));play()}));carousel.addEventListener('touchstart',event=>{touchStart=event.changedTouches[0].clientX;stop()},{passive:true});carousel.addEventListener('touchend',event=>{const distance=event.changedTouches[0].clientX-touchStart;if(Math.abs(distance)>35)show(current+(distance<0?1:-1));play()},{passive:true});carousel.addEventListener('mouseenter',stop);carousel.addEventListener('mouseleave',play);carousel.addEventListener('focusin',stop);carousel.addEventListener('focusout',play);show(0);play()})}
   function queryAlternatives(term){const out=new Set([term]);if(term.endsWith('s')&&term.length>3)out.add(term.slice(0,-1));else if(term.length>3)out.add(term+'s');(aliases[term]||[]).forEach(x=>out.add(norm(x)));return [...out]}
   function matchesQuery(row){const terms=norm(state.query).split(/\s+/).filter(term=>term&&!stop.has(term));if(!terms.length)return true;const text=rowText(row);return terms.every(term=>queryAlternatives(term).some(candidate=>text.includes(candidate)))}
-  function filtered(){const now=new Date();const max=state.days==='all'?null:new Date(now.getTime()+Number(state.days)*86400000);const saved=loadSaved();return lots.filter(row=>{const text=rowText(row);if(!matchesQuery(row))return false;if(state.category!=='all'&&!categories[state.category].some(term=>text.includes(term)))return false;if(state.uf&&row.uf!==state.uf)return false;if(state.savedOnly&&!saved.includes(lotId(row)))return false;const start=parseStart(row);if(max&&start&&start>max)return false;return true}).sort((a,b)=>{const query=norm(state.query);const sa=query&&norm(displayTitle(a)).includes(query)?1:0;const sb=query&&norm(displayTitle(b)).includes(query)?1:0;return sb-sa||String(a.data||'9999').localeCompare(String(b.data||'9999'))||String(a.hora||'').localeCompare(String(b.hora||''))})}
-  function auctionKey(row){const eventUrl=String(row.link_evento||'').replace(/#.*$/,'').trim();return norm([eventUrl,row.evento,row.leiloeiro,row.data,row.local,row.uf].filter(Boolean).join('|'))}
-  function groupAuctions(rows){const groups=new Map();rows.forEach((row,index)=>{const key=auctionKey(row);if(!groups.has(key))groups.set(key,{key,row,items:[]});groups.get(key).items.push({row,index})});return [...groups.values()]}
+  function auctionKey(row){if(row.evento_id)return String(row.evento_id);const eventUrl=String(row.link_evento||'').replace(/#.*$/,'').trim();return norm([eventUrl,row.evento,row.leiloeiro,row.data,row.local,row.uf].filter(Boolean).join('|'))}
+  function groupAuctions(eventRows,lotRows){
+    const groups=new Map();
+    eventRows.forEach(row=>{const key=auctionKey(row);if(!groups.has(key))groups.set(key,{key,row,items:[]})});
+    lotRows.forEach((row,index)=>{const key=auctionKey(row);if(!groups.has(key))groups.set(key,{key,row,items:[]});groups.get(key).items.push({row,index})});
+    return [...groups.values()].sort((a,b)=>String(a.row.data||'9999').localeCompare(String(b.row.data||'9999'))||String(a.row.hora||'').localeCompare(String(b.row.hora||'')));
+  }
+  const allGroups=groupAuctions(events,lots);
+  const groupRows=group=>[group.row,...group.items.map(entry=>entry.row)];
+  const groupText=group=>norm(groupRows(group).map(row=>rowText(row)).join(' '));
+  function groupMatchesQuery(group){const terms=norm(state.query).split(/\s+/).filter(term=>term&&!stop.has(term));if(!terms.length)return true;const text=groupText(group);return terms.every(term=>queryAlternatives(term).some(candidate=>text.includes(candidate)))}
+  function groupDistance(group){const values=groupRows(group).map(row=>distanceKm(row)).filter(value=>value!==null);return values.length?Math.min(...values):null}
+  function filteredGroups(){
+    const now=new Date();
+    const max=state.days==='all'?null:new Date(now.getTime()+Number(state.days)*86400000);
+    const saved=loadSaved();
+    return allGroups.filter(group=>{
+      const rows=groupRows(group),text=groupText(group);
+      if(!groupMatchesQuery(group))return false;
+      if(state.category!=='all'&&!categories[state.category].some(term=>text.includes(term)))return false;
+      if(state.uf&&!rows.some(row=>row.uf===state.uf))return false;
+      if(state.savedOnly&&!group.items.some(entry=>saved.includes(lotId(entry.row))))return false;
+      if(state.exactDate&&group.row.data!==state.exactDate)return false;
+      if(state.locationActive){const distance=groupDistance(group);if(distance===null||distance>state.radius)return false}
+      const start=parseStart(group.row);
+      if(!state.exactDate&&max&&start&&start>max)return false;
+      return true;
+    }).sort((a,b)=>{
+      if(state.locationActive){const distanceOrder=(groupDistance(a)??Infinity)-(groupDistance(b)??Infinity);if(distanceOrder)return distanceOrder}
+      const query=norm(state.query),sa=query&&norm(auctionTitle(a.row)).includes(query)?1:0,sb=query&&norm(auctionTitle(b.row)).includes(query)?1:0;
+      return sb-sa||String(a.row.data||'9999').localeCompare(String(b.row.data||'9999'))||String(a.row.hora||'').localeCompare(String(b.row.hora||''));
+    });
+  }
   const lotDistanceBadge=row=>'';
-  const groupDistanceBadge=group=>'';
+  const groupDistanceBadge=group=>{if(!state.locationActive)return '';const distance=groupDistance(group);return distance===null?'':`<span class="distance-badge">A ${Math.round(distance)} KM</span>`};
   function auctionTitle(row){return row.evento||`Leilão de ${auctioneer(row.leiloeiro)}`}
   function renderLotRow(entry){const {row,index}=entry;const saved=isSaved(row);const lotLink=safeUrl(row.link_lote||row.link_evento);return `<article class="auction-lot-row"><div class="auction-lot-main"><div class="auction-lot-top"><span class="lot-number">LOTE ${esc(row.lote||'—')}</span>${lotDistanceBadge(row)}</div><h4>${esc(displayTitle(row))}</h4><div class="auction-lot-meta"><span>${icon('pin')}${esc(row.local||row.uf||'Local a confirmar')}</span><span>${icon('calendar')}${esc(formatDate(row))}</span>${row.lance_atual?`<span>${icon('gavel')}${esc(row.lance_atual)}</span>`:''}</div></div><div class="auction-lot-actions"><button type="button" class="save-btn ${saved?'saved':''}" data-save-index="${index}" aria-label="${saved?'Remover lote dos salvos':'Salvar lote'}">${icon('bookmark')}</button>${lotLink?`<a href="${esc(lotLink)}" target="_blank" rel="noopener" data-open-index="${index}">ABRIR LOTE ${icon('external')}</a>`:''}</div></article>`}
-  function renderAuctionGroup(group){const row=group.row;const expanded=expandedAuctions.has(group.key);const visibleLots=visibleLotsByAuction.get(group.key)||12;const shown=expanded?group.items.slice(0,visibleLots):[];const official=safeUrl(row.link_evento);return `<section class="auction-group" data-auction-key="${esc(group.key)}"><div class="auction-group-head"><div class="auction-group-copy"><div class="auction-group-labels"><span class="auction-group-kicker">LEILÃO</span><span class="auction-lot-count">${formatNumber(group.items.length)} ${group.items.length===1?'LOTE':'LOTES'}</span>${groupDistanceBadge(group)}</div><h3>${esc(auctionTitle(row))}</h3><div class="auction-group-meta"><span>${icon('calendar')}${esc(formatDate(row))}</span><span>${icon('pin')}${esc(row.local||row.uf||'Local a confirmar')}</span><span>${icon('gavel')}${esc(auctioneer(row.leiloeiro))}</span></div></div><button type="button" class="auction-toggle" data-toggle-auction="${esc(group.key)}" aria-expanded="${expanded}">${expanded?'FECHAR LOTES':`VER ${formatNumber(group.items.length)} ${group.items.length===1?'LOTE':'LOTES'}`} ${icon('arrow')}</button></div>${expanded?`<div class="auction-lots">${shown.map(renderLotRow).join('')}${visibleLots<group.items.length?`<button type="button" class="auction-more-lots" data-more-auction="${esc(group.key)}">MOSTRAR MAIS LOTES ${icon('arrow')}</button>`:''}${official?`<div class="card-actions single"><a href="${esc(official)}" target="_blank" rel="noopener">VER LEILÃO OFICIAL ${icon('external')}</a></div>`:''}</div>`:''}</section>`}
+  function renderAuctionGroup(group){
+    const row=group.row,hasLots=group.items.length>0,expanded=hasLots&&expandedAuctions.has(group.key),visibleLots=visibleLotsByAuction.get(group.key)||12,shown=expanded?group.items.slice(0,visibleLots):[],official=safeUrl(row.link_evento);
+    const lotLabel=hasLots?`${formatNumber(group.items.length)} ${group.items.length===1?'LOTE':'LOTES'}`:'LOTES NO SITE OFICIAL';
+    const action=hasLots?`<button type="button" class="auction-toggle" data-toggle-auction="${esc(group.key)}" aria-expanded="${expanded}">${expanded?'FECHAR LOTES':`VER ${formatNumber(group.items.length)} ${group.items.length===1?'LOTE':'LOTES'}`} ${icon('arrow')}</button>`:official?`<a class="auction-toggle" href="${esc(official)}" target="_blank" rel="noopener" data-open-auction="${esc(group.key)}">ABRIR LEILÃO ${icon('external')}</a>`:`<span class="auction-toggle unavailable">LINK A CONFIRMAR</span>`;
+    return `<section class="auction-group" data-auction-key="${esc(group.key)}"><div class="auction-group-head"><div class="auction-group-copy"><div class="auction-group-labels"><span class="auction-group-kicker">LEILÃO</span><span class="auction-lot-count">${lotLabel}</span>${groupDistanceBadge(group)}</div><h3>${esc(auctionTitle(row))}</h3><div class="auction-group-meta"><span>${icon('calendar')}${esc(formatDate(row))}</span><span>${icon('pin')}${esc(row.local||row.uf||'Local a confirmar')}</span><span>${icon('gavel')}${esc(auctioneer(row.leiloeiro))}</span></div></div>${action}</div>${expanded?`<div class="auction-lots">${shown.map(renderLotRow).join('')}${visibleLots<group.items.length?`<button type="button" class="auction-more-lots" data-more-auction="${esc(group.key)}">MOSTRAR MAIS LOTES ${icon('arrow')}</button>`:''}${official?`<div class="card-actions single"><a href="${esc(official)}" target="_blank" rel="noopener">VER LEILÃO OFICIAL ${icon('external')}</a></div>`:''}</div>`:''}</section>`;
+  }
   function render(){
-    current=filtered();
-    currentGroups=groupAuctions(current);
-    $('results-title').textContent=state.savedOnly?'Seus lotes salvos':'Leilões encontrados';
-    $('results-status').textContent=`${formatNumber(currentGroups.length)} leilões · ${formatNumber(current.length)} lotes correspondem aos filtros atuais.`;
+    currentGroups=filteredGroups();
+    current=currentGroups.flatMap(group=>group.items.map(entry=>entry.row));
+    $('results-title').textContent=state.savedOnly?'Seus lotes salvos':state.exactDate?(state.locationActive?`${selectedDateTitle(state.exactDate)} perto de ${state.locationLabel}`:selectedDateTitle(state.exactDate)):state.locationActive?`Leilões perto de ${state.locationLabel}`:'Leilões encontrados';
+    $('results-status').textContent=state.locationActive?`${formatNumber(currentGroups.length)} leilões · ${formatNumber(current.length)} lotes em um raio de ${state.radius} km.`:`${formatNumber(currentGroups.length)} leilões · ${formatNumber(current.length)} lotes identificados. Todos os leilões aparecem, mesmo sem lotes indexados.`;
+    $('nearby-status').textContent=state.locationActive?`${formatNumber(currentGroups.length)} leilões até ${state.radius} km de ${state.locationLabel}. Mais próximos primeiro.`:'Informe sua região para ordenar os leilões mais próximos.';
     $('show-all').hidden=!state.savedOnly;
     document.querySelectorAll('[data-category]').forEach(btn=>btn.classList.toggle('active',btn.dataset.category===state.category));
+    document.querySelectorAll('[data-date-shortcut]').forEach(btn=>{const offset=btn.dataset.dateShortcut==='tomorrow'?1:0;const active=state.exactDate===dateKey(offset);btn.classList.toggle('active',active);btn.setAttribute('aria-pressed',String(active))});
     const grid=$('result-grid');
     grid.classList.add('auction-group-grid');
-    if(!current.length){
+    if(!currentGroups.length){
       grid.innerHTML=`<div class="empty" style="grid-column:1/-1">${icon('search')}<h3>Nenhuma oportunidade encontrada</h3><p>Tente retirar um filtro ou pesquisar outro termo.</p><button type="button" id="clear-filters">Limpar filtros</button></div>`;
       $('load-more').hidden=true;
       $('clear-filters').addEventListener('click',clearFilters);
@@ -233,21 +273,30 @@
     grid.innerHTML=currentGroups.slice(0,state.visible).map(renderAuctionGroup).join('');
     grid.querySelectorAll('[data-toggle-auction]').forEach(btn=>btn.addEventListener('click',()=>{const key=btn.dataset.toggleAuction;if(expandedAuctions.has(key))expandedAuctions.delete(key);else expandedAuctions.add(key);render();track('toggle_auction',{action:expandedAuctions.has(key)?'open':'close'})}));
     grid.querySelectorAll('[data-more-auction]').forEach(btn=>btn.addEventListener('click',()=>{const key=btn.dataset.moreAuction;visibleLotsByAuction.set(key,(visibleLotsByAuction.get(key)||12)+12);render()}));
-    grid.querySelectorAll('[data-save-index]').forEach(btn=>btn.addEventListener('click',()=>toggleSaved(current[Number(btn.dataset.saveIndex)])));
-    grid.querySelectorAll('[data-open-index]').forEach(link=>link.addEventListener('click',()=>{const row=current[Number(link.dataset.openIndex)];if(row)track('open_opportunity',{lot_title:displayTitle(row),auctioneer:auctioneer(row.leiloeiro),state:row.uf||'nao_informado'})}));
+    grid.querySelectorAll('[data-save-index]').forEach(btn=>btn.addEventListener('click',()=>toggleSaved(lots[Number(btn.dataset.saveIndex)])));
+    grid.querySelectorAll('[data-open-index]').forEach(link=>link.addEventListener('click',()=>{const row=lots[Number(link.dataset.openIndex)];if(row)track('open_opportunity',{lot_title:displayTitle(row),auctioneer:auctioneer(row.leiloeiro),state:row.uf||'nao_informado'})}));
+    grid.querySelectorAll('[data-open-auction]').forEach(link=>link.addEventListener('click',()=>track('open_auction',{auction_key:link.dataset.openAuction})));
     $('load-more').hidden=state.visible>=currentGroups.length;
   }
-  function resetVisible(){state.visible=12;render()}
-  function clearFilters(){state.query='';state.category='all';state.uf='';state.days='all';state.savedOnly=false;$('search-input').value='';$('state-filter').value='';$('date-filter').value='all';localStorage.removeItem(SEARCH_STORE);resetVisible()}
-  function showSaved(event){if(event)event.preventDefault();state.savedOnly=true;state.visible=12;render();track('view_saved_lots',{result_count:current.length});$('resultados').scrollIntoView({behavior:'smooth'})}
-  function setup(){state.query=localStorage.getItem(SEARCH_STORE)||'';$('search-input').value=state.query;$('metric-events').textContent=formatNumber((BASE.eventos||[]).length);$('metric-lots').textContent=formatNumber(lots.length);$('metric-yards').textContent=formatNumber((BASE.patios||[]).length);const ufs=[...new Set(lots.map(row=>row.uf).filter(Boolean))].sort();$('state-filter').innerHTML='<option value="">Todos os estados</option>'+ufs.map(uf=>`<option value="${esc(uf)}">${esc(uf)}</option>`).join('');$('updated-label').textContent='ATUALIZADO TODOS OS DIAS';$('footer-update').textContent='Site atualizado todos os dias.';render()}
+  function resetVisible(){state.visible=100000;render()}
+  function clearFilters(){state.query='';state.category='all';state.uf='';state.days='all';state.exactDate='';state.savedOnly=false;$('search-input').value='';$('state-filter').value='';$('date-filter').value='all';$('exact-date-filter').value='';localStorage.removeItem(SEARCH_STORE);clearNearby(false);resetVisible()}
+  function showSaved(event){if(event)event.preventDefault();state.savedOnly=true;state.visible=100000;render();track('view_saved_lots',{result_count:current.length});$('resultados').scrollIntoView({behavior:'smooth'})}
+  function setup(){state.query=localStorage.getItem(SEARCH_STORE)||'';$('search-input').value=state.query;$('metric-events').textContent=formatNumber(events.length);$('metric-lots').textContent=formatNumber(lots.length);$('metric-yards').textContent=formatNumber((BASE.patios||[]).length);const ufs=[...new Set([...events,...lots].map(row=>row.uf).filter(Boolean))].sort();$('state-filter').innerHTML='<option value="">Todos os estados</option>'+ufs.map(uf=>`<option value="${esc(uf)}">${esc(uf)}</option>`).join('');restoreLocation();$('exact-date-filter').min=dateKey(0);$('today-count').textContent=formatNumber(events.filter(row=>row.data===dateKey(0)).length);$('tomorrow-count').textContent=formatNumber(events.filter(row=>row.data===dateKey(1)).length);const updated=formatUpdate(BASE.gerado_em);$('updated-label').textContent=`ATUALIZADO ${updated}`;$('top-update-label').textContent=`ATUALIZADO ${updated}`;$('hero-update-label').textContent=`ATUALIZADO EM ${updated}`;$('footer-update').textContent=`Última atualização: ${updated} • Fonte: Google My Maps.`;render()}
   $('search-form').addEventListener('submit',event=>{event.preventDefault();state.query=$('search-input').value.trim();localStorage.setItem(SEARCH_STORE,state.query);state.savedOnly=false;resetVisible();track('search',{search_term:state.query||'busca_vazia',result_count:current.length,search_source:'campo_principal'});$('resultados').scrollIntoView({behavior:'smooth'})});
   $('search-input').addEventListener('input',event=>{state.query=event.target.value;localStorage.setItem(SEARCH_STORE,state.query)});
   document.querySelectorAll('[data-category]').forEach(btn=>btn.addEventListener('click',()=>{state.category=btn.dataset.category;state.savedOnly=false;resetVisible();track('filter_category',{category:state.category,result_count:current.length})}));
   document.querySelectorAll('[data-feature-search]').forEach(btn=>btn.addEventListener('click',()=>{state.query=btn.dataset.featureSearch;$('search-input').value=state.query;localStorage.setItem(SEARCH_STORE,state.query);state.category='all';state.savedOnly=false;resetVisible();track('search',{search_term:state.query,result_count:current.length,search_source:'atalho_destaque'});$('resultados').scrollIntoView({behavior:'smooth'})}));
   document.querySelectorAll('[data-show-saved]').forEach(item=>item.addEventListener('click',showSaved));
   $('state-filter').addEventListener('change',event=>{state.uf=event.target.value;state.savedOnly=false;resetVisible();track('filter_state',{state:state.uf||'todos',result_count:current.length})});
-  $('date-filter').addEventListener('change',event=>{state.days=event.target.value;state.savedOnly=false;resetVisible();track('filter_date',{days:state.days,result_count:current.length})});
+  document.querySelectorAll('[data-date-shortcut]').forEach(btn=>btn.addEventListener('click',()=>applyExactDate(dateKey(btn.dataset.dateShortcut==='tomorrow'?1:0),btn.dataset.dateShortcut)));
+  $('exact-date-filter').addEventListener('change',event=>{if(event.target.value)applyExactDate(event.target.value,'calendar');else{state.exactDate='';resetVisible()}});
+  $('date-filter').addEventListener('change',event=>{state.days=event.target.value;state.exactDate='';$('exact-date-filter').value='';state.savedOnly=false;resetVisible();track('filter_date',{days:state.days,result_count:current.length})});
+  $('location-input').addEventListener('input',event=>loadMunicipalityOptions(event.target.value));
+  $('location-input').addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();applyTypedLocation()}});
+  $('apply-location').addEventListener('click',applyTypedLocation);
+  $('use-location').addEventListener('click',useCurrentLocation);
+  $('clear-location').addEventListener('click',()=>clearNearby(true));
+  $('radius-filter').addEventListener('change',event=>{state.radius=Number(event.target.value)||200;if(state.locationActive){saveLocation();resetVisible();track('filter_distance_radius',{radius_km:state.radius,result_count:current.length})}});
   $('show-all').addEventListener('click',()=>{state.savedOnly=false;resetVisible()});
   $('load-more').addEventListener('click',()=>{state.visible+=12;render();track('view_more_results',{visible_results:Math.min(state.visible,currentGroups.length),total_results:currentGroups.length})});
   $('accept-disclaimer').addEventListener('click',acceptDisclaimer);
