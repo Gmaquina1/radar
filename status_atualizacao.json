@@ -1,9 +1,9 @@
 {
   "status": "ok",
-  "verificado_em": "2026-08-27T22:41:17-03:00",
-  "atualizado_em_base_eventos": "2026-08-27T22:40:23-03:00",
-  "atualizado_em_base_lotes": "2026-08-27T22:41:02-03:00",
-  "idade_base_eventos_horas": 0.02,
+  "verificado_em": "2026-08-27T22:54:05-03:00",
+  "atualizado_em_base_eventos": "2026-08-27T22:53:34-03:00",
+  "atualizado_em_base_lotes": "2026-08-27T22:53:57-03:00",
+  "idade_base_eventos_horas": 0.01,
   "idade_base_lotes_horas": 0.0,
   "eventos_futuros": 20,
   "patios": 132,
@@ -11,9 +11,9 @@
   "lotes": 145,
   "lotes_publicados": 145,
   "lotes_na_base": 145,
-  "lotes_capturados_agora": 121,
-  "lotes_preservados": 24,
-  "eventos_indexados_com_lotes": 6,
+  "lotes_capturados_agora": 83,
+  "lotes_preservados": 62,
+  "eventos_indexados_com_lotes": 5,
   "fonte_eventos": "google_my_maps",
   "somente_eventos_do_mapa": true,
   "checks": {
@@ -38,14 +38,14 @@
   },
   "arquivos_faltando": [],
   "modo": "somente_mapa",
-  "duracao_segundos": 63.77,
-  "ultima_execucao": "2026-08-27T22:41:17-03:00",
+  "duracao_segundos": 32.12,
+  "ultima_execucao": "2026-08-27T22:54:05-03:00",
   "mensagem": "Eventos do Google My Maps, seus lotes e o site foram atualizados com sucesso.",
   "base_anterior_restaurada": false,
-  "lotes_antes": 85,
+  "lotes_antes": 145,
   "lotes_depois": 145,
-  "lotes_novos_detectados": 22,
-  "lotes_removidos_ou_encerrados": 2,
+  "lotes_novos_detectados": 0,
+  "lotes_removidos_ou_encerrados": 0,
   "status_mapa": "ok",
   "status_openai": "desativada_para_leiloes",
   "status_descoberta": "desativada_somente_mapa",
@@ -59,14 +59,14 @@
     {
       "nome": "Atualizar eventos pelo Google My Maps",
       "comando": [
-        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
         "atualizar_radar_leiloes.py",
         "--sem-editais",
         "--workers",
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 10.12,
+      "duracao_segundos": 1.42,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 900
@@ -74,7 +74,7 @@
     {
       "nome": "Capturar lotes dos eventos cadastrados no Google My Maps",
       "comando": [
-        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
         "indexador_lotes.py",
         "--eventos",
         "radar_leiloes_eventos_futuros.csv",
@@ -84,7 +84,7 @@
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 38.38,
+      "duracao_segundos": 22.72,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 3600
@@ -92,11 +92,11 @@
     {
       "nome": "Gerar novamente o site",
       "comando": [
-        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
         "gerar_site_github.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 10.78,
+      "duracao_segundos": 6.13,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300
@@ -104,11 +104,11 @@
     {
       "nome": "Sanitizar conteúdo externo",
       "comando": [
-        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
         "sanitizar_conteudo_externo.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 4.24,
+      "duracao_segundos": 1.72,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300
@@ -116,12 +116,12 @@
     {
       "nome": "Gerar diagnóstico final",
       "comando": [
-        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
         "diagnostico_radar.py",
         "--falhar-se-atencao"
       ],
       "tentativas": 1,
-      "duracao_segundos": 0.22,
+      "duracao_segundos": 0.11,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300
