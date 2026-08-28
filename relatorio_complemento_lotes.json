@@ -1,9 +1,9 @@
 {
-  "executado_em": "2026-08-27T23:45:14-03:00",
-  "lotes_antes": 175,
+  "executado_em": "2026-08-28T00:05:37-03:00",
+  "lotes_antes": 134,
   "falsos_positivos_removidos": 16,
-  "lotes_adicionados": 3,
-  "lotes_depois": 119,
+  "lotes_adicionados": 2,
+  "lotes_depois": 117,
   "eventos_processados": 37,
   "eventos_com_lotes": 10,
   "logs": [
@@ -472,8 +472,8 @@
         },
         {
           "url": "https://drive.google.com/file/d/1PYQsXs4rdIEDPAp0yxQAHWsKEfae9yqp/view?usp=drive_link&page=1",
-          "http": 503,
-          "status": "http_503",
+          "http": 200,
+          "status": "http_200",
           "lotes": 0
         },
         {
