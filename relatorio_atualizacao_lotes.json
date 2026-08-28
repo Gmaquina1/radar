@@ -1,27 +1,28 @@
 {
-  "executado_em": "2026-08-27T22:53:57-03:00",
+  "executado_em": "2026-08-27T23:16:02-03:00",
   "lotes_antes": 145,
-  "lotes_depois": 145,
-  "lotes_realmente_novos": 0,
+  "lotes_depois": 175,
+  "lotes_realmente_novos": 30,
   "lotes_removidos_ou_encerrados": 0,
   "lotes_preservados": 62,
-  "lotes_capturados_agora": 83,
-  "lotes_capturados_com_chave_nova": 0,
-  "eventos_analisados": 20,
-  "eventos_com_lotes": 5,
-  "eventos_com_erro": 4,
-  "eventos_bloqueados": 3,
-  "links_invalidos": 1,
+  "lotes_capturados_agora": 113,
+  "lotes_capturados_com_chave_nova": 30,
+  "eventos_analisados": 37,
+  "eventos_com_lotes": 7,
+  "eventos_com_erro": 7,
+  "eventos_bloqueados": 6,
+  "links_invalidos": 2,
   "quantidade_coletada_por_leiloeiro": {
     "allianceleiloes.com.br": 26,
     "drive.google.com": 2,
-    "eckertleiloes.com.br": 24,
+    "eckertleiloes.com.br": 54,
     "leiloesfreire.com.br": 6,
     "lipinskileiloes.com.br": 25
   },
   "erros_por_leiloeiro": {
-    "amaralleiloes.com.br": 1,
+    "amaralleiloes.com.br": 3,
     "cargneluttileiloes.com.br": 2,
+    "danielgarcialeiloes.com.br": 1,
     "lipinskileiloes.com.br": 1
   },
   "urls_que_falharam": [
@@ -49,6 +50,26 @@
       "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista",
       "status": "erro",
       "http": 0
+    },
+    {
+      "url": "https://www.danielgarcialeiloes.com.br/leilao/7789/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.amaralleiloes.com.br/leilao/1544/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.amaralleiloes.com.br/leilao/1544/lotes",
+      "status": "bloqueado_http_403",
+      "http": 403
+    },
+    {
+      "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista",
+      "status": "http_404",
+      "http": 404
     }
   ],
   "status": "ok",

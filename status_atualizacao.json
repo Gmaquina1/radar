@@ -1,20 +1,20 @@
 {
   "status": "ok",
-  "verificado_em": "2026-08-27T23:13:26-03:00",
-  "atualizado_em_base_eventos": "2026-08-27T23:07:49-03:00",
-  "atualizado_em_base_lotes": "2026-08-27T22:41:02-03:00",
-  "idade_base_eventos_horas": 0.09,
-  "idade_base_lotes_horas": 0.54,
+  "verificado_em": "2026-08-27T23:16:08-03:00",
+  "atualizado_em_base_eventos": "2026-08-27T23:15:37-03:00",
+  "atualizado_em_base_lotes": "2026-08-27T23:16:02-03:00",
+  "idade_base_eventos_horas": 0.01,
+  "idade_base_lotes_horas": 0.0,
   "eventos_futuros": 37,
   "registros_mapa": 1277,
   "patios": 132,
   "eventos_publicados": 1277,
-  "lotes": 145,
-  "lotes_publicados": 145,
-  "lotes_na_base": 145,
-  "lotes_capturados_agora": 121,
-  "lotes_preservados": 24,
-  "eventos_indexados_com_lotes": 6,
+  "lotes": 175,
+  "lotes_publicados": 175,
+  "lotes_na_base": 175,
+  "lotes_capturados_agora": 113,
+  "lotes_preservados": 62,
+  "eventos_indexados_com_lotes": 7,
   "fonte_eventos": "google_my_maps",
   "somente_eventos_do_mapa": true,
   "checks": {
@@ -40,25 +40,36 @@
     "base_lotes_recente": true
   },
   "arquivos_faltando": [],
-  "ultima_execucao": "2026-08-27T22:41:17-03:00",
+  "modo": "somente_mapa",
+  "duracao_segundos": 33.15,
+  "ultima_execucao": "2026-08-27T23:16:08-03:00",
   "mensagem": "Eventos do Google My Maps, seus lotes e o site foram atualizados com sucesso.",
   "base_anterior_restaurada": false,
-  "lotes_antes": 85,
-  "lotes_depois": 145,
-  "lotes_novos_detectados": 22,
-  "lotes_removidos_ou_encerrados": 2,
+  "lotes_antes": 145,
+  "lotes_depois": 175,
+  "lotes_novos_detectados": 30,
+  "lotes_removidos_ou_encerrados": 0,
+  "status_mapa": "ok",
+  "status_openai": "desativada_para_leiloes",
+  "status_descoberta": "desativada_somente_mapa",
+  "status_descoberta_web": "desativada_somente_mapa",
+  "status_lotes": "ok",
+  "status_site": "ok",
+  "openai_funcionou": false,
+  "descoberta_funcionou": false,
+  "descoberta_web_funcionou": false,
   "etapas": [
     {
       "nome": "Atualizar eventos pelo Google My Maps",
       "comando": [
-        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
         "atualizar_radar_leiloes.py",
         "--sem-editais",
         "--workers",
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 10.12,
+      "duracao_segundos": 2.37,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 900
@@ -66,7 +77,7 @@
     {
       "nome": "Capturar lotes dos eventos cadastrados no Google My Maps",
       "comando": [
-        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
         "indexador_lotes.py",
         "--eventos",
         "radar_leiloes_eventos_futuros.csv",
@@ -76,7 +87,7 @@
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 38.38,
+      "duracao_segundos": 24.71,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 3600
@@ -84,11 +95,11 @@
     {
       "nome": "Gerar novamente o site",
       "comando": [
-        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
         "gerar_site_github.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 10.78,
+      "duracao_segundos": 4.57,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300
@@ -96,11 +107,11 @@
     {
       "nome": "Sanitizar conteúdo externo",
       "comando": [
-        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
         "sanitizar_conteudo_externo.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 4.24,
+      "duracao_segundos": 1.42,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300
@@ -108,12 +119,12 @@
     {
       "nome": "Gerar diagnóstico final",
       "comando": [
-        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
         "diagnostico_radar.py",
         "--falhar-se-atencao"
       ],
       "tentativas": 1,
-      "duracao_segundos": 0.22,
+      "duracao_segundos": 0.06,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300

@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-08-27T23:07:49-03:00",
+  "atualizado_em": "2026-08-27T23:15:37-03:00",
   "data_base": "2026-08-27",
   "total_registros": 1277,
   "eventos_atualizacao": 867,
@@ -93,14 +93,14 @@
     ]
   ],
   "download_kml": {
-    "downloaded_at": "",
-    "http_status": "",
-    "final_url": "",
-    "downloaded_bytes": "",
+    "downloaded_at": "2026-08-27T23:15:36-03:00",
+    "http_status": 200,
+    "final_url": "https://www.google.com/maps/d/kml?forcekml=1&mid=1fYo8R4P75VxKA3TqsiuLsWIqIDEO27U",
+    "downloaded_bytes": 1511716,
     "old_sha256": "84b4e30cb724d896070b2066e5fc80e4a137905d2edb8a28fba62577ecd0b27e",
     "new_sha256": "84b4e30cb724d896070b2066e5fc80e4a137905d2edb8a28fba62577ecd0b27e",
     "old_markers": 1277,
     "new_markers": 1277,
-    "source": "local_existing_kml"
+    "source": "google_my_maps_live_kml"
   }
 }
