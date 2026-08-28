@@ -1,17 +1,17 @@
 {
-  "executado_em": "2026-08-27T23:16:02-03:00",
-  "lotes_antes": 145,
+  "executado_em": "2026-08-27T23:43:58-03:00",
+  "lotes_antes": 175,
   "lotes_depois": 175,
-  "lotes_realmente_novos": 30,
+  "lotes_realmente_novos": 0,
   "lotes_removidos_ou_encerrados": 0,
   "lotes_preservados": 62,
   "lotes_capturados_agora": 113,
-  "lotes_capturados_com_chave_nova": 30,
+  "lotes_capturados_com_chave_nova": 0,
   "eventos_analisados": 37,
   "eventos_com_lotes": 7,
-  "eventos_com_erro": 7,
+  "eventos_com_erro": 6,
   "eventos_bloqueados": 6,
-  "links_invalidos": 2,
+  "links_invalidos": 3,
   "quantidade_coletada_por_leiloeiro": {
     "allianceleiloes.com.br": 26,
     "drive.google.com": 2,
@@ -22,8 +22,7 @@
   "erros_por_leiloeiro": {
     "amaralleiloes.com.br": 3,
     "cargneluttileiloes.com.br": 2,
-    "danielgarcialeiloes.com.br": 1,
-    "lipinskileiloes.com.br": 1
+    "danielgarcialeiloes.com.br": 1
   },
   "urls_que_falharam": [
     {
@@ -48,8 +47,8 @@
     },
     {
       "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista",
-      "status": "erro",
-      "http": 0
+      "status": "http_404",
+      "http": 404
     },
     {
       "url": "https://www.danielgarcialeiloes.com.br/leilao/7789/lotes",

@@ -95,7 +95,7 @@
       </div>
       <div class="metrics" aria-label="Resumo da base">
         <div><span class="metric-icon"><svg class="icon"><use href="#i-gavel"/></svg></span><strong id="metric-events">0</strong><small>LEILÕES NO MAPA</small></div>
-        <div><span class="metric-icon"><svg class="icon"><use href="#i-box"/></svg></span><strong id="metric-lots">0</strong><small>LOTES FUTUROS</small></div>
+        <div><span class="metric-icon"><svg class="icon"><use href="#i-box"/></svg></span><strong id="metric-lots">0</strong><small>LOTES DISPONÍVEIS</small></div>
         <div><span class="metric-icon"><svg class="icon"><use href="#i-pin"/></svg></span><strong id="metric-yards">0</strong><small>PÁTIOS</small></div>
       </div>
     </div>
@@ -187,7 +187,7 @@
   const truckTerms=['caminhao','cavalo mecanico','carreta','semirreboque','semi-reboque','basculante','caminhao pipa','truck'];
   const aliases={caminhao:['caminhao','caminhoes','truck','cavalo'],maquina:['maquina','maquinas','trator','escavadeira','carregadeira','retroescavadeira','motoniveladora','patrol','rolo'],veiculo:['veiculo','veiculos','carro','automovel','caminhonete','camionete','suv','moto'],carro:['carro','carros','automovel','automoveis'],onibus:['onibus','microonibus','micro-onibus']};
   const stop=new Set(['de','da','do','das','dos','e','em','no','na','nos','nas','para','por','com','a','o','as','os']);
-  const state={query:'',category:'all',uf:'',days:'all',exactDate:'',visible:60,savedOnly:false,locationActive:false,userLat:null,userLon:null,radius:200,locationLabel:''};
+  const state={query:'',category:'all',uf:'',days:'all',exactDate:'',visible:5000,savedOnly:false,locationActive:false,userLat:null,userLon:null,radius:200,locationLabel:''};
   let current=[];
   let currentGroups=[];
   const expandedAuctions=new Set();
@@ -195,6 +195,7 @@
 
   function parseStart(row){if(!row.data)return null;const match=String(row.hora||'').match(/(\d{1,2})[:h](\d{2})?/i);const hour=match?String(Math.min(23,+match[1])).padStart(2,'0'):'23';const min=match?String(Math.min(59,+(match[2]||0))).padStart(2,'0'):'59';const value=new Date(`${row.data}T${hour}:${min}:00`);return Number.isNaN(value.getTime())?null:value}
   function upcoming(row){const start=parseStart(row);return !!start&&start.getTime()>Date.now()}
+  function sortAuctionRows(a,b){const now=Date.now(),da=parseStart(a),db=parseStart(b),ra=da?(da.getTime()>=now?0:2):1,rb=db?(db.getTime()>=now?0:2):1;if(ra!==rb)return ra-rb;if(ra===0)return da-db;if(ra===2)return db-da;return String(a.evento||a.nome||'').localeCompare(String(b.evento||b.nome||''),'pt-BR')}
   const events=await fetch(`${BASE.eventos_url}?v=${encodeURIComponent(BASE.versao||'atual')}`,{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error(`HTTP ${response.status}`);return response.json()}).catch(error=>{console.error('Falha ao carregar os registros do mapa.',error);return[]});
   const lots=BASE.lotes||[];
   function loadSaved(){try{return JSON.parse(localStorage.getItem(STORE)||'[]')}catch{return[]}}
@@ -215,7 +216,7 @@
     const groups=new Map();
     eventRows.forEach(row=>{const key=auctionKey(row);if(!groups.has(key))groups.set(key,{key,row,items:[]})});
     lotRows.forEach((row,index)=>{const key=auctionKey(row);if(!groups.has(key))groups.set(key,{key,row,items:[]});groups.get(key).items.push({row,index})});
-    return [...groups.values()].sort((a,b)=>String(a.row.data||'9999').localeCompare(String(b.row.data||'9999'))||String(a.row.hora||'').localeCompare(String(b.row.hora||'')));
+    return [...groups.values()].sort((a,b)=>sortAuctionRows(a.row,b.row));
   }
   const allGroups=groupAuctions(events,lots);
   const groupRows=group=>[group.row,...group.items.map(entry=>entry.row)];
@@ -244,7 +245,7 @@
     }).sort((a,b)=>{
       if(state.locationActive){const distanceOrder=(groupDistance(a)??Infinity)-(groupDistance(b)??Infinity);if(distanceOrder)return distanceOrder}
       const query=norm(state.query),sa=query&&norm(auctionTitle(a.row)).includes(query)?1:0,sb=query&&norm(auctionTitle(b.row)).includes(query)?1:0;
-      return sb-sa||String(a.row.data||'9999').localeCompare(String(b.row.data||'9999'))||String(a.row.hora||'').localeCompare(String(b.row.hora||''));
+      return sb-sa||sortAuctionRows(a.row,b.row);
     });
   }
   const lotDistanceBadge=row=>'';
@@ -282,9 +283,9 @@
     grid.querySelectorAll('[data-open-auction]').forEach(link=>link.addEventListener('click',()=>track('open_auction',{auction_key:link.dataset.openAuction})));
     $('load-more').hidden=state.visible>=currentGroups.length;
   }
-  function resetVisible(){state.visible=60;render()}
+  function resetVisible(){state.visible=5000;render()}
   function clearFilters(){state.query='';state.category='all';state.uf='';state.days='all';state.exactDate='';state.savedOnly=false;$('search-input').value='';$('state-filter').value='';$('date-filter').value='all';$('exact-date-filter').value='';localStorage.removeItem(SEARCH_STORE);clearNearby(false);resetVisible()}
-  function showSaved(event){if(event)event.preventDefault();state.savedOnly=true;state.visible=60;render();track('view_saved_lots',{result_count:current.length});$('resultados').scrollIntoView({behavior:'smooth'})}
+  function showSaved(event){if(event)event.preventDefault();state.savedOnly=true;state.visible=5000;render();track('view_saved_lots',{result_count:current.length});$('resultados').scrollIntoView({behavior:'smooth'})}
   function setup(){state.query=localStorage.getItem(SEARCH_STORE)||'';$('search-input').value=state.query;$('metric-events').textContent=formatNumber(events.length);$('metric-lots').textContent=formatNumber(lots.length);$('metric-yards').textContent=formatNumber(BASE.patios_total||0);$('results-kicker').textContent=`TODOS OS ${formatNumber(events.length)} REGISTROS DO MAPA`;const ufs=[...new Set([...events,...lots].map(row=>row.uf).filter(Boolean))].sort();$('state-filter').innerHTML='<option value="">Todos os estados</option>'+ufs.map(uf=>`<option value="${esc(uf)}">${esc(uf)}</option>`).join('');restoreLocation();$('exact-date-filter').min='';$('today-count').textContent=formatNumber(events.filter(row=>row.data===dateKey(0)).length);$('tomorrow-count').textContent=formatNumber(events.filter(row=>row.data===dateKey(1)).length);const updated=formatUpdate(BASE.gerado_em);$('updated-label').textContent=`ATUALIZADO ${updated}`;$('top-update-label').textContent=`ATUALIZADO ${updated}`;$('hero-update-label').textContent=`ATUALIZADO EM ${updated}`;$('footer-update').textContent=`Última atualização: ${updated} • Fonte: Google My Maps.`;render()}
   $('search-form').addEventListener('submit',event=>{event.preventDefault();state.query=$('search-input').value.trim();localStorage.setItem(SEARCH_STORE,state.query);state.savedOnly=false;resetVisible();track('search',{search_term:state.query||'busca_vazia',result_count:current.length,search_source:'campo_principal'});$('resultados').scrollIntoView({behavior:'smooth'})});
   $('search-input').addEventListener('input',event=>{state.query=event.target.value;localStorage.setItem(SEARCH_STORE,state.query)});

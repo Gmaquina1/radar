@@ -1,0 +1,977 @@
+{
+  "executado_em": "2026-08-27T23:45:14-03:00",
+  "lotes_antes": 175,
+  "falsos_positivos_removidos": 16,
+  "lotes_adicionados": 3,
+  "lotes_depois": 119,
+  "eventos_processados": 37,
+  "eventos_com_lotes": 10,
+  "logs": [
+    {
+      "evento": "[EMPRESA] - AMARAL - Máquinas - São Paulo / SP",
+      "data": "2026-08-28",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://www.amaralleiloes.com.br/leilao/1544/lotes",
+          "http": 403,
+          "status": "bloqueado_http_403",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.amaralleiloes.com.br/leilao/1544/lotes?page=1",
+          "http": 403,
+          "status": "bloqueado_http_403",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.amaralleiloes.com.br/leilao/1544/lotes/?page=1",
+          "http": 403,
+          "status": "bloqueado_http_403",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.amaralleiloes.com.br/leilao/1544/lotes",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[EMPRESA] - Caminhões - São Paulo / SP",
+      "data": "2026-08-29",
+      "status": "ok",
+      "lotes": 20,
+      "tentativas": [
+        {
+          "url": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 26
+        }
+      ]
+    },
+    {
+      "evento": "[ÓRGÃO PÚBLICO] - CORREIOS - PORTO ALEGRE/RS - Vans - Cajamar / SP",
+      "data": "2026-08-31",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link&page=1",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[PREFEITURA] - Imóveis - Rio de Janeiro / RJ",
+      "data": "2026-08-31",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://drive.google.com/file/d/1TLkuxtpxFtX4SD-bdUZpGQ46i8jnltrT/view?usp=drive_link",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1TLkuxtpxFtX4SD-bdUZpGQ46i8jnltrT/view?usp=drive_link&page=1",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1TLkuxtpxFtX4SD-bdUZpGQ46i8jnltrT/view?usp=drive_link",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[ÓRGÃO PÚBLICO] - CORREIOS - PORTO ALEGRE/RS - Vans - Cajamar / SP",
+      "data": "2026-08-31",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link&page=1",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[PREFEITURA] - CORREIOS - PORTO ALEGRE/RS - Vans - Cajamar / SP",
+      "data": "2026-08-31",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link&page=1",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[EMPRESA] - UNIMED - Veículos - Maceió / AL",
+      "data": "2026-08-31",
+      "status": "ok",
+      "lotes": 6,
+      "tentativas": [
+        {
+          "url": "https://www.leiloesfreire.com.br/leilao/1139",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 6
+        }
+      ]
+    },
+    {
+      "evento": "[ÓRGÃO PÚBLICO] - DETRAN - 2 - Sucatas - São Luís / MA",
+      "data": "2026-08-31",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://www.vipleiloes.com.br/evento/detalhes/100826tdmas",
+          "http": 302,
+          "status": "http_302",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.vipleiloes.com.br/evento/detalhes/100826tdmas?page=1",
+          "http": 302,
+          "status": "http_302",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.vipleiloes.com.br/evento/detalhes/100826tdmas",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[PREFEITURA] - Imóveis - Rio Verde / GO",
+      "data": "2026-09-01",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://drive.google.com/file/d/1ewhPwJFLoBbCBiDDRxtj2Nw9Z4bj5UKb/view?usp=drive_link",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1ewhPwJFLoBbCBiDDRxtj2Nw9Z4bj5UKb/view?usp=drive_link&page=1",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1ewhPwJFLoBbCBiDDRxtj2Nw9Z4bj5UKb/view?usp=drive_link",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[PREFEITURA] - Imóveis, Ônibus, Caminhões, Vans, Caminhonetes, Veículos, Motos, Máquinas, Equipamentos, Sucatas - Joaquim Távora / PR",
+      "data": "2026-09-02",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://www.simonleiloes.com.br/leiloes/leilao-da-prefeitura-de-joaquim-tavora-pr-538",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.simonleiloes.com.br/leiloes/leilao-da-prefeitura-de-joaquim-tavora-pr-538?page=1",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.simonleiloes.com.br/leiloes/leilao-da-prefeitura-de-joaquim-tavora-pr-538",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[PREFEITURA] - Veículos, Máquinas, Equipamentos, Produtos, Sucatas, Presencial - Tio Hugo / RS",
+      "data": "2026-09-03",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes",
+          "http": 403,
+          "status": "bloqueado_http_403",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes?page=1",
+          "http": 403,
+          "status": "bloqueado_http_403",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes/?page=1",
+          "http": 403,
+          "status": "bloqueado_http_403",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[PREFEITURA] - Veículos, Máquinas, Equipamentos, Produtos, Sucatas, Presencial - Tio Hugo / RS",
+      "data": "2026-09-03",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes",
+          "http": 403,
+          "status": "bloqueado_http_403",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes?page=1",
+          "http": 403,
+          "status": "bloqueado_http_403",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes/?page=1",
+          "http": 403,
+          "status": "bloqueado_http_403",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.cargneluttileiloes.com.br/leilao/4470/lotes",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[EMPRESA] - Caminhões, Equipamentos, Imóveis - Rio Grande / RS",
+      "data": "2026-09-03",
+      "status": "ok",
+      "lotes": 12,
+      "tentativas": [
+        {
+          "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 25
+        }
+      ]
+    },
+    {
+      "evento": "[PÁTIO] - Caminhões, Equipamentos, Jetskis - Rio Grande / RS",
+      "data": "2026-09-03",
+      "status": "ok",
+      "lotes": 12,
+      "tentativas": [
+        {
+          "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-casa-sao-lourenco-22-04-2026-14-59-24/lotes/lista",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 25
+        }
+      ]
+    },
+    {
+      "evento": "[PÁTIO] - Caminhões, Equipamentos, Jetskis - Rio Grande / RS",
+      "data": "2026-09-03",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista",
+          "http": 404,
+          "status": "http_404",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista?page=1",
+          "http": 404,
+          "status": "http_404",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[PÁTIO]  - CAMINHÕES/EQUIMENTOS/JETSKIS - Rio Grande/RS",
+      "data": "2026-09-03",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista",
+          "http": 404,
+          "status": "http_404",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista?page=1",
+          "http": 404,
+          "status": "http_404",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[PREFEITURA] - Veículos, Vans, Caminhões, Máquinas, Equipamentos, Sucatas - Formosa do Sul / SC",
+      "data": "2026-09-09",
+      "status": "ok",
+      "lotes": 24,
+      "tentativas": [
+        {
+          "url": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
+          "status": "api_superbid_ok",
+          "lotes": 24,
+          "modo": "api"
+        },
+        {
+          "url": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.eckertleiloes.com.br/evento/municipio-de-formosa-do-sul-sc-790442?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc&page=1",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        }
+      ]
+    },
+    {
+      "evento": "[PREFEITURA] - Imóveis, Presencial - Jandaia do Sul / PR",
+      "data": "2026-09-15",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://drive.google.com/file/d/1lswP8Q4LpkLSjd6F_t9f7aqOZZ6YkKB6/view?usp=drive_link",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1lswP8Q4LpkLSjd6F_t9f7aqOZZ6YkKB6/view?usp=drive_link&page=1",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1lswP8Q4LpkLSjd6F_t9f7aqOZZ6YkKB6/view?usp=drive_link",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[PREFEITURA] - Imóveis - Passo Fundo / RS",
+      "data": "2026-09-17",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://drive.google.com/file/d/1PYQsXs4rdIEDPAp0yxQAHWsKEfae9yqp/view?usp=drive_link",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1PYQsXs4rdIEDPAp0yxQAHWsKEfae9yqp/view?usp=drive_link&page=1",
+          "http": 503,
+          "status": "http_503",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1PYQsXs4rdIEDPAp0yxQAHWsKEfae9yqp/view?usp=drive_link",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[PREFEITURA] - IMÓVEIS\t- Tatuí - SP",
+      "data": "2026-10-22",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://www.argonetworkleiloes.com.br/evento/prefeitura-municipal-de-tatui-789565?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
+          "status": "api_superbid_http_200",
+          "lotes": 0,
+          "modo": "api"
+        },
+        {
+          "url": "https://www.argonetworkleiloes.com.br/evento/prefeitura-municipal-de-tatui-789565?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.argonetworkleiloes.com.br/evento/prefeitura-municipal-de-tatui-789565?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc&page=1",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.argonetworkleiloes.com.br/evento/prefeitura-municipal-de-tatui-789565?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[PREFEITURA] - Ônibus - Camutanga / PE",
+      "data": "2026-08-28",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://www.danielgarcialeiloes.com.br/leilao/7789/lotes",
+          "http": 403,
+          "status": "bloqueado_http_403",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.danielgarcialeiloes.com.br/leilao/7789/lotes?page=1",
+          "http": 403,
+          "status": "bloqueado_http_403",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.danielgarcialeiloes.com.br/leilao/7789/lotes/?page=1",
+          "http": 403,
+          "status": "bloqueado_http_403",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.danielgarcialeiloes.com.br/leilao/7789/lotes",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[EMPRESA] - AMARAL - Máquinas - São Paulo / SP",
+      "data": "2026-08-28",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://www.amaralleiloes.com.br/leilao/1544/lotes",
+          "http": 403,
+          "status": "bloqueado_http_403",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.amaralleiloes.com.br/leilao/1544/lotes?page=1",
+          "http": 403,
+          "status": "bloqueado_http_403",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.amaralleiloes.com.br/leilao/1544/lotes/?page=1",
+          "http": 403,
+          "status": "bloqueado_http_403",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.amaralleiloes.com.br/leilao/1544/lotes",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[EMPRESA] - AMARAL - Máquinas - São Paulo / SP",
+      "data": "2026-08-28",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://www.amaralleiloes.com.br/leilao/1544/lotes",
+          "http": 403,
+          "status": "bloqueado_http_403",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.amaralleiloes.com.br/leilao/1544/lotes?page=1",
+          "http": 403,
+          "status": "bloqueado_http_403",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.amaralleiloes.com.br/leilao/1544/lotes/?page=1",
+          "http": 403,
+          "status": "bloqueado_http_403",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.amaralleiloes.com.br/leilao/1544/lotes",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[EMPRESA] - Caminhões - São Paulo / SP",
+      "data": "2026-08-29",
+      "status": "ok",
+      "lotes": 20,
+      "tentativas": [
+        {
+          "url": "https://www.allianceleiloes.com.br/lotes/514-01-cavalo-mecanico-mercedes-benz-axor-2041-ls",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 26
+        }
+      ]
+    },
+    {
+      "evento": "[PREFEITURA] - Imóveis - Nova Prata do Iguaçu / PR",
+      "data": "2026-08-31",
+      "status": "ok",
+      "lotes": 20,
+      "tentativas": [
+        {
+          "url": "https://www.eckertleiloes.com.br/evento/municipio-de-nova-prata-do-iguacu-pr-790600?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
+          "status": "api_superbid_ok",
+          "lotes": 20,
+          "modo": "api"
+        },
+        {
+          "url": "https://www.eckertleiloes.com.br/evento/municipio-de-nova-prata-do-iguacu-pr-790600?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.eckertleiloes.com.br/evento/municipio-de-nova-prata-do-iguacu-pr-790600?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc&page=1",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        }
+      ]
+    },
+    {
+      "evento": "[ÓRGÃO PÚBLICO] - CORREIOS - PORTO ALEGRE/RS - Vans - Cajamar / SP",
+      "data": "2026-08-31",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link&page=1",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[PREFEITURA] - Imóveis - Rio de Janeiro / RJ",
+      "data": "2026-08-31",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://drive.google.com/file/d/1TLkuxtpxFtX4SD-bdUZpGQ46i8jnltrT/view?usp=drive_link",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1TLkuxtpxFtX4SD-bdUZpGQ46i8jnltrT/view?usp=drive_link&page=1",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1TLkuxtpxFtX4SD-bdUZpGQ46i8jnltrT/view?usp=drive_link",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[ÓRGÃO PÚBLICO] - DETRAN - 2 - Sucatas - São Luís / MA",
+      "data": "2026-08-31",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://www.vipleiloes.com.br/evento/detalhes/100826tdmas",
+          "http": 302,
+          "status": "http_302",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.vipleiloes.com.br/evento/detalhes/100826tdmas?page=1",
+          "http": 302,
+          "status": "http_302",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.vipleiloes.com.br/evento/detalhes/100826tdmas",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[ÓRGÃO PÚBLICO] - CORREIOS - PORTO ALEGRE/RS - Vans - Cajamar / SP",
+      "data": "2026-08-31",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link&page=1",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[PREFEITURA] - CORREIOS - PORTO ALEGRE/RS - Vans - Cajamar / SP",
+      "data": "2026-08-31",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link&page=1",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1of8YRZJf08jaf1XFtPhq0cUlJBLHEa4k/view?usp=drive_link",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[EMPRESA] - UNIMED - Veículos - Maceió / AL",
+      "data": "2026-08-31",
+      "status": "ok",
+      "lotes": 6,
+      "tentativas": [
+        {
+          "url": "https://www.leiloesfreire.com.br/leilao/1139",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 6
+        }
+      ]
+    },
+    {
+      "evento": "[ÓRGÃO PÚBLICO] - DETRAN - 2 - Sucatas - São Luís / MA",
+      "data": "2026-08-31",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://www.vipleiloes.com.br/evento/detalhes/100826tdmas",
+          "http": 302,
+          "status": "http_302",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.vipleiloes.com.br/evento/detalhes/100826tdmas?page=1",
+          "http": 302,
+          "status": "http_302",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.vipleiloes.com.br/evento/detalhes/100826tdmas",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[PREFEITURA] - Imóveis - Rio Verde / GO",
+      "data": "2026-09-01",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://drive.google.com/file/d/1ewhPwJFLoBbCBiDDRxtj2Nw9Z4bj5UKb/view?usp=drive_link",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1ewhPwJFLoBbCBiDDRxtj2Nw9Z4bj5UKb/view?usp=drive_link&page=1",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1ewhPwJFLoBbCBiDDRxtj2Nw9Z4bj5UKb/view?usp=drive_link",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[PÁTIO] - CAMINHÕES/EQUIMENTOS/JETSKIS - Rio Grande/RS",
+      "data": "2026-09-03",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista",
+          "http": 404,
+          "status": "http_404",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista?page=1",
+          "http": 404,
+          "status": "http_404",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.lipinskileiloes.com.br/leilao/veiculo-vw-8-150e-delivery-reb-piramide-prb500-semi-reboque-22-04-2026-14-59-24/lotes/lista",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[PREFEITURA] - Imóveis - Nova Prata do Iguaçu / PR",
+      "data": "2026-09-04",
+      "status": "ok",
+      "lotes": 10,
+      "tentativas": [
+        {
+          "url": "https://www.eckertleiloes.com.br/evento/municipio-de-nova-prata-do-iguacu-pr-790594?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
+          "status": "api_superbid_ok",
+          "lotes": 10,
+          "modo": "api"
+        },
+        {
+          "url": "https://www.eckertleiloes.com.br/evento/municipio-de-nova-prata-do-iguacu-pr-790594?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.eckertleiloes.com.br/evento/municipio-de-nova-prata-do-iguacu-pr-790594?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc&page=1",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        }
+      ]
+    },
+    {
+      "evento": "[PREFEITURA] - Imóveis - Passo Fundo / RS",
+      "data": "2026-09-17",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://drive.google.com/file/d/1PYQsXs4rdIEDPAp0yxQAHWsKEfae9yqp/view?usp=drive_link",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1PYQsXs4rdIEDPAp0yxQAHWsKEfae9yqp/view?usp=drive_link&page=1",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://drive.google.com/file/d/1PYQsXs4rdIEDPAp0yxQAHWsKEfae9yqp/view?usp=drive_link",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    },
+    {
+      "evento": "[PREFEITURA] - IMÓVEIS - Tatuí - SP",
+      "data": "2026-10-22",
+      "status": "sem_lotes",
+      "lotes": 0,
+      "tentativas": [
+        {
+          "url": "https://www.argonetworkleiloes.com.br/evento/prefeitura-municipal-de-tatui-789565?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
+          "status": "api_superbid_http_200",
+          "lotes": 0,
+          "modo": "api"
+        },
+        {
+          "url": "https://www.argonetworkleiloes.com.br/evento/prefeitura-municipal-de-tatui-789565?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.argonetworkleiloes.com.br/evento/prefeitura-municipal-de-tatui-789565?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber%3Aasc%3BsubLotNumber%3Aasc&page=1",
+          "http": 200,
+          "status": "http_200",
+          "lotes": 0
+        },
+        {
+          "url": "https://www.argonetworkleiloes.com.br/evento/prefeitura-municipal-de-tatui-789565?searchType=opened&preOrderBy=orderByFirstOpenedOffers&pageNumber=1&pageSize=30&orderBy=lotNumber:asc;subLotNumber:asc&",
+          "http": 403,
+          "status": "reader_oficial",
+          "lotes": 0,
+          "modo": "fallback"
+        }
+      ]
+    }
+  ]
+}
