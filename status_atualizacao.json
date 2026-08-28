@@ -1,20 +1,20 @@
 {
   "status": "ok",
-  "verificado_em": "2026-08-28T00:09:41-03:00",
-  "atualizado_em_base_eventos": "2026-08-28T00:03:04-03:00",
-  "atualizado_em_base_lotes": "2026-08-28T00:09:34-03:00",
-  "idade_base_eventos_horas": 0.11,
+  "verificado_em": "2026-08-28T00:21:20-03:00",
+  "atualizado_em_base_eventos": "2026-08-28T00:15:09-03:00",
+  "atualizado_em_base_lotes": "2026-08-28T00:21:13-03:00",
+  "idade_base_eventos_horas": 0.1,
   "idade_base_lotes_horas": 0.0,
   "eventos_futuros": 37,
   "registros_mapa": 1277,
   "patios": 132,
   "eventos_publicados": 1277,
-  "lotes": 153,
-  "lotes_publicados": 153,
-  "lotes_na_base": 153,
+  "lotes": 98,
+  "lotes_publicados": 98,
+  "lotes_na_base": 98,
   "lotes_capturados_agora": 113,
-  "lotes_preservados": 21,
-  "eventos_indexados_com_lotes": 11,
+  "lotes_preservados": 47,
+  "eventos_indexados_com_lotes": 10,
   "fonte_eventos": "google_my_maps",
   "somente_eventos_do_mapa": true,
   "checks": {
@@ -40,13 +40,13 @@
     "base_lotes_recente": true
   },
   "arquivos_faltando": [],
-  "ultima_execucao": "2026-08-28T00:04:01-03:00",
+  "ultima_execucao": "2026-08-28T00:16:07-03:00",
   "mensagem": "Eventos do Google My Maps, seus lotes e o site foram atualizados com sucesso.",
   "base_anterior_restaurada": false,
-  "lotes_antes": 83,
-  "lotes_depois": 134,
-  "lotes_novos_detectados": 31,
-  "lotes_removidos_ou_encerrados": 0,
+  "lotes_antes": 153,
+  "lotes_depois": 160,
+  "lotes_novos_detectados": 29,
+  "lotes_removidos_ou_encerrados": 37,
   "etapas": [
     {
       "nome": "Atualizar eventos pelo Google My Maps",
@@ -58,7 +58,7 @@
         "24"
       ],
       "tentativas": 1,
-      "duracao_segundos": 1.52,
+      "duracao_segundos": 1.32,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 900
@@ -76,7 +76,7 @@
         "16"
       ],
       "tentativas": 1,
-      "duracao_segundos": 47.88,
+      "duracao_segundos": 50.03,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 3600
@@ -88,7 +88,7 @@
         "gerar_site_github.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 6.68,
+      "duracao_segundos": 6.33,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300
@@ -100,7 +100,7 @@
         "sanitizar_conteudo_externo.py"
       ],
       "tentativas": 1,
-      "duracao_segundos": 1.82,
+      "duracao_segundos": 1.72,
       "status": "ok",
       "codigo": 0,
       "timeout_segundos": 300

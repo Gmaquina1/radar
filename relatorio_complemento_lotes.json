@@ -1,11 +1,11 @@
 {
-  "executado_em": "2026-08-28T00:05:37-03:00",
-  "lotes_antes": 134,
+  "executado_em": "2026-08-28T00:17:24-03:00",
+  "lotes_antes": 160,
   "falsos_positivos_removidos": 16,
-  "lotes_adicionados": 2,
-  "lotes_depois": 117,
+  "lotes_adicionados": 3,
+  "lotes_depois": 132,
   "eventos_processados": 37,
-  "eventos_com_lotes": 10,
+  "eventos_com_lotes": 12,
   "logs": [
     {
       "evento": "[EMPRESA] - AMARAL - Máquinas - São Paulo / SP",
